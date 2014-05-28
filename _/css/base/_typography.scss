@@ -1,0 +1,62 @@
+/* ==========================================================================
+   BASE/_TYPOGRAPHY.SCSS
+   ========================================================================== */
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 62.5%;
+}
+
+// Headings
+h1, .h1   {
+    line-height: 1.2;
+}
+
+h2, .h2    {
+    line-height: 1.2;
+}
+
+h3, .h3   {
+    line-height: 1.2;
+}
+
+h4, .h4   {
+
+}
+
+h5, .h5 {
+
+}
+
+h6, .h6    {
+
+}
+
+
+// Subheadings
+.subheading {
+    font-weight: normal;
+}
+
+
+// Paragraphs
+p {
+    margin-bottom: $space;
+}
+
+
+// Blockquote
+blockquote {
+    font-style:italic;
+    border-left: 1px solid $gray;
+    color: $gray;
+    padding-left: $pad;
+    margin-bottom: $space;
+}
+
+
+// Others
+abbr {
+    border-bottom: 1px dotted $gray;
+    cursor: help;
+}

@@ -1,0 +1,49 @@
+/* ==========================================================================
+   HELPERS/_VARIABLES.SCSS
+   ========================================================================== */
+
+//Colors
+$black: #000;
+$white: #fff;
+$gray: #808080;
+$gray-dark : #333;
+
+$error: #f00;
+$valid: #089e00;
+
+
+//Typography
+
+
+//Layout
+$max-width: 72em;
+// $offset-left-1: 4.5em;
+// $l-sidebar-width: 19.75em;
+
+
+//Defaults
+$space: 1em;
+$space-and-half: $space*1.5;
+$space-double: $space*2;
+$space-triple: $space*3;
+$space-quad: $space*4;
+$space-half: $space/2;
+$space-quarter: $space/4;
+$pad: 1em;
+$pad-and-half: $pad*1.5;
+$pad-double: $pad*2;
+$pad-half: $pad/2;
+$pad-quarter :$pad/4;
+
+
+//Breakpoints
+$bp-small: 24em;
+$bp-small-2: 29.75em;
+$bp-small-3: 39.8em;
+$bp-med: 46.8em;
+$bp-med-2: 48em;
+$bp-large: 50em;
+$bp-large-2: 66em;
+$bp-xl: 73em;
+$bp-xxl: 89em;
+$bp-xxxl: 93em;

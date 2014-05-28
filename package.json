@@ -1,0 +1,29 @@
+{
+  "name": "1415-GNU-WordPress-Theme",
+  "description": "GNU theme template for custom Wordpress website.",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "https://github.com/MervinMfg/1415-GNU-WordPress-Theme",
+  "contributors": [
+    {
+      "name": "Brian Behrens (http://brainbrian.com)"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MervinMfg/1415-GNU-WordPress-Theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MervinMfg/1415-GNU-WordPress-Theme/issues"
+  },
+  "dependencies": {
+    "grunt": "~0.4.4",
+    "grunt-cli": "~0.1.13",
+    "grunt-shell": "~0.7.0",
+    "grunt-contrib-sass": "~0.7.3",
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt-contrib-cssmin": "~0.9.0",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-watch": "~0.6.1"
+  }
+}

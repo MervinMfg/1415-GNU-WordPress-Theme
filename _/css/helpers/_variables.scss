@@ -2,26 +2,32 @@
    HELPERS/_VARIABLES.SCSS
    ========================================================================== */
 
-//Colors
+// Colors
 $black: #000;
-$white: #fff;
+$white: #FFF;
 $gray: #808080;
-$gray-dark : #333;
+$gray-dark: #333;
+$blue: #0099FF;
+$purple: #9933CC;
+$pink: #FF3399;
+$yellow: #FFFF00;
+$green: #99CC33;
 
 $error: #f00;
 $valid: #089e00;
 
+// Typography
+$neuron: "Neuron", Helvetica, Arial, sans-serif;
+$neuronLight: "Neuron Light", Helvetica, Arial, sans-serif;
+$neuronExtraBold: "Neuron Extra Bold", Helvetica, Arial, sans-serif;
+$neuronBlack: "Neuron Black", Helvetica, Arial, sans-serif;
 
-//Typography
-
-
-//Layout
+// Layout
 $max-width: 72em;
 // $offset-left-1: 4.5em;
 // $l-sidebar-width: 19.75em;
 
-
-//Defaults
+// Defaults
 $space: 1em;
 $space-and-half: $space*1.5;
 $space-double: $space*2;
@@ -35,15 +41,20 @@ $pad-double: $pad*2;
 $pad-half: $pad/2;
 $pad-quarter :$pad/4;
 
-
 //Breakpoints
-$bp-small: 24em;
-$bp-small-2: 29.75em;
-$bp-small-3: 39.8em;
-$bp-med: 46.8em;
-$bp-med-2: 48em;
-$bp-large: 50em;
-$bp-large-2: 66em;
-$bp-xl: 73em;
-$bp-xxl: 89em;
-$bp-xxxl: 93em;
+$breakpoint-small: 24em; // 384px
+$breakpoint-medium: 46.8em; // 748.8px
+$breakpoint-large: 66em; // 1056px
+/*
+other breakpoints
+$bp-small: 24em; // 384px
+$bp-small-2: 29.75em; // 476px
+$bp-small-3: 39.8em; // 636.8px
+$bp-med: 46.8em; // 748.8px
+$bp-med-2: 48em; // 768px
+$bp-large: 50em; // 800px
+$bp-large-2: 66em; // 1056px
+$bp-xl: 73em; // 1168px
+$bp-xxl: 89em; // 1424px
+$bp-xxxl: 93em; // 1488px
+*/

@@ -159,4 +159,482 @@
 		);
 	}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******************************
+CODE FOR CUSTOM POST TYPES
+******************************/
+// order menus for custom post types
+function set_custom_post_types_admin_order($wp_query) {  
+  if (is_admin()) {  
+    $post_type = $wp_query->query['post_type'];
+    if ( $post_type == 'gnu_snowboards' || $post_type == 'gnu_bindings' || $post_type == 'gnu_accessories' || $post_type == 'gnu_weirdwear' || $post_type == 'gnu_technology' || $post_type == 'gnu_awards' || $post_type == 'gnu_team' ) { 
+      $wp_query->set('orderby', 'menu_order');  
+      $wp_query->set('order', 'ASC');  
+    }  
+  }  
+}  
+add_filter('pre_get_posts', 'set_custom_post_types_admin_order');  
+
+// SET UP CUSTOM POST TYPES
+function register_custom_post_types() {
+    // START SNOWBOARDS
+    $labels = array(
+        'name' => _x('Snowboards', 'post type general name'),
+        'singular_name' => _x('Snowboard', 'post type singular name'),
+        'add_new' => _x('Add New', 'gnu_snowboards'),
+        'add_new_item' => __('Add New Snowboard'),
+        'edit_item' => __('Edit Snowboard'),
+        'new_item' => __('New Snowboard'),
+        'all_items' => __('All Snowboards'),
+        'view_item' => __('View Snowboard'),
+        'search_items' => __('Search Snowboards'),
+        'not_found' =>  __('No Snowboard Found'),
+        'not_found_in_trash' => __('No Snowbaords Found In Trash'), 
+        'parent_item_colon' => '',
+        'menu_name' => 'Snowboards'
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true, 
+        'show_in_menu' => true, 
+        'query_var' => true,
+        'rewrite' => array("slug" => "snowboards"),
+        'capability_type' => 'page',
+        'has_archive' => false, 
+        'hierarchical' => true,
+        'menu_position' => null,
+        'supports' => array( 'title', 'editor', 'page-attributes', 'comments' )
+    ); 
+    register_post_type('gnu_snowboards',$args);
+    // start taxonamy for Snowboards
+    $labels = array(
+        'name'                          => 'Categories',
+        'singular_name'                 => 'Category',
+        'search_items'                  => 'Search Category',
+        'popular_items'                 => 'Popular Categories',
+        'all_items'                     => 'All Categories',
+        'parent_item'                   => 'Parent Category',
+        'edit_item'                     => 'Edit Category',
+        'update_item'                   => 'Update Category',
+        'add_new_item'                  => 'Add New Category',
+        'new_item_name'                 => 'New Category',
+        'separate_items_with_commas'    => 'Separate Categories with commas',
+        'add_or_remove_items'           => 'Add or remove Categories',
+        'choose_from_most_used'         => 'Choose from most used Categories'
+    );
+    $args = array(
+        'label'                         => 'Categories',
+        'labels'                        => $labels,
+        'public'                        => true,
+        'hierarchical'                  => true,
+        'show_ui'                       => true,
+        'show_in_nav_menus'             => true,
+        'args'                          => array( 'orderby' => 'term_order' ),
+        'query_var'                     => true
+    );
+    register_taxonomy( 'gnu_snowboard_categories', 'gnu_snowboards', $args );
+    // END SNOWBOARDS
+
+    // START BINDINGS
+    $labels = array(
+        'name' => _x('Bindings', 'post type general name'),
+        'singular_name' => _x('Binding', 'post type singular name'),
+        'add_new' => _x('Add New', 'gnu_bindings'),
+        'add_new_item' => __('Add New Binding'),
+        'edit_item' => __('Edit Binding'),
+        'new_item' => __('New Binding'),
+        'all_items' => __('All Bindings'),
+        'view_item' => __('View Binding'),
+        'search_items' => __('Search Bindings'),
+        'not_found' =>  __('No Binding Found'),
+        'not_found_in_trash' => __('No Bindings Found In Trash'), 
+        'parent_item_colon' => '',
+        'menu_name' => 'Bindings'
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true, 
+        'show_in_menu' => true, 
+        'query_var' => true,
+        'rewrite' => array("slug" => "bindings"),
+        'capability_type' => 'page',
+        'has_archive' => false, 
+        'hierarchical' => true,
+        'menu_position' => null,
+        'supports' => array( 'title', 'editor', 'page-attributes', 'comments' )
+    ); 
+    register_post_type('gnu_bindings',$args);
+    // start taxonamy for Bindings
+    $labels = array(
+        'name'                          => 'Categories',
+        'singular_name'                 => 'Category',
+        'search_items'                  => 'Search Category',
+        'popular_items'                 => 'Popular Categories',
+        'all_items'                     => 'All Categories',
+        'parent_item'                   => 'Parent Category',
+        'edit_item'                     => 'Edit Category',
+        'update_item'                   => 'Update Category',
+        'add_new_item'                  => 'Add New Category',
+        'new_item_name'                 => 'New Category',
+        'separate_items_with_commas'    => 'Separate Categories with commas',
+        'add_or_remove_items'           => 'Add or remove Categories',
+        'choose_from_most_used'         => 'Choose from most used Categories'
+    );
+    $args = array(
+        'label'                         => 'Categories',
+        'labels'                        => $labels,
+        'public'                        => true,
+        'hierarchical'                  => true,
+        'show_ui'                       => true,
+        'show_in_nav_menus'             => true,
+        'args'                          => array( 'orderby' => 'term_order' ),
+        'query_var'                     => true
+    );
+    register_taxonomy( 'gnu_bindings_categories', 'gnu_bindings', $args );
+    // END BINDINGS
+
+    // START ACCESSORIES
+    $labels = array(
+        'name' => _x('Accessories', 'post type general name'),
+        'singular_name' => _x('Accessory', 'post type singular name'),
+        'add_new' => _x('Add New', 'gnu_accessories'),
+        'add_new_item' => __('Add New Accessory'),
+        'edit_item' => __('Edit Accessory'),
+        'new_item' => __('New Accessory'),
+        'all_items' => __('All Accessories'),
+        'view_item' => __('View Accessory'),
+        'search_items' => __('Search Accessories'),
+        'not_found' =>  __('No Accessories Found'),
+        'not_found_in_trash' => __('No Accessories Found In Trash'), 
+        'parent_item_colon' => '',
+        'menu_name' => 'Accessories'
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true, 
+        'show_in_menu' => true, 
+        'query_var' => true,
+        'rewrite' => array("slug" => 'accessories'),
+        'capability_type' => 'page',
+        'has_archive' => false, 
+        'hierarchical' => true,
+        'menu_position' => null,
+        'supports' => array( 'title', 'editor', 'page-attributes', 'comments' )
+    ); 
+    register_post_type('gnu_accessories',$args);
+    // start taxonamy for Accessories
+    $labels = array(
+        'name'                          => 'Categories',
+        'singular_name'                 => 'Category',
+        'search_items'                  => 'Search Category',
+        'popular_items'                 => 'Popular Categories',
+        'all_items'                     => 'All Categories',
+        'parent_item'                   => 'Parent Category',
+        'edit_item'                     => 'Edit Category',
+        'update_item'                   => 'Update Category',
+        'add_new_item'                  => 'Add New Category',
+        'new_item_name'                 => 'New Category',
+        'separate_items_with_commas'    => 'Separate Categories with commas',
+        'add_or_remove_items'           => 'Add or remove Categories',
+        'choose_from_most_used'         => 'Choose from most used Categories'
+    );
+    $args = array(
+        'label'                         => 'Categories',
+        'labels'                        => $labels,
+        'public'                        => true,
+        'hierarchical'                  => true,
+        'show_ui'                       => true,
+        'show_in_nav_menus'             => true,
+        'args'                          => array( 'orderby' => 'term_order' ),
+        //'rewrite'                       => array( 'slug' => 'outerwear' ),
+        'query_var'                     => true
+    );
+    register_taxonomy( 'gnu_accessories_categories', 'gnu_accessories', $args );
+    // END ACCESSORIES
+
+    // START WEIRDWEAR
+    $labels = array(
+        'name' => _x('Weirdwear', 'post type general name'),
+        'singular_name' => _x('Weirdwear', 'post type singular name'),
+        'add_new' => _x('Add New', 'gnu_weirdwear'),
+        'add_new_item' => __('Add New Weirdwear'),
+        'edit_item' => __('Edit Weirdwear'),
+        'new_item' => __('New Weirdwear'),
+        'all_items' => __('All Weirdwear'),
+        'view_item' => __('View Weirdwear'),
+        'search_items' => __('Search Weirdwear'),
+        'not_found' =>  __('No Weirdwear Found'),
+        'not_found_in_trash' => __('No Weirdwear Found In Trash'), 
+        'parent_item_colon' => '',
+        'menu_name' => 'Weirdwear'
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true, 
+        'show_in_menu' => true, 
+        'query_var' => true,
+        'rewrite' => array("slug" => 'weirdwear'),
+        'capability_type' => 'page',
+        'has_archive' => false, 
+        'hierarchical' => true,
+        'menu_position' => null,
+        'supports' => array( 'title', 'editor', 'page-attributes', 'comments' )
+    ); 
+    register_post_type('gnu_weirdwear',$args);
+    // start taxonamy for Weirdwear
+    $labels = array(
+        'name'                          => 'Categories',
+        'singular_name'                 => 'Category',
+        'search_items'                  => 'Search Category',
+        'popular_items'                 => 'Popular Categories',
+        'all_items'                     => 'All Categories',
+        'parent_item'                   => 'Parent Category',
+        'edit_item'                     => 'Edit Category',
+        'update_item'                   => 'Update Category',
+        'add_new_item'                  => 'Add New Category',
+        'new_item_name'                 => 'New Category',
+        'separate_items_with_commas'    => 'Separate Categories with commas',
+        'add_or_remove_items'           => 'Add or remove Categories',
+        'choose_from_most_used'         => 'Choose from most used Categories'
+    );
+    $args = array(
+        'label'                         => 'Categories',
+        'labels'                        => $labels,
+        'public'                        => true,
+        'hierarchical'                  => true,
+        'show_ui'                       => true,
+        'show_in_nav_menus'             => true,
+        'args'                          => array( 'orderby' => 'term_order' ),
+        //'rewrite'                       => array( 'slug' => 'outerwear' ),
+        'query_var'                     => true
+    );
+    register_taxonomy( 'gnu_weirdwear_categories', 'gnu_weirdwear', $args );
+    // END WEIRDWEAR
+
+    // START TECHNOLOGY
+    $labels = array(
+        'name' => _x('Technology', 'post type general name'),
+        'singular_name' => _x('Technology', 'post type singular name'),
+        'add_new' => _x('Add New', 'gnu_technology'),
+        'add_new_item' => __('Add New Tech Item'),
+        'edit_item' => __('Edit Tech Item'),
+        'new_item' => __('New Technology'),
+        'all_items' => __('All Technology'),
+        'view_item' => __('View Tech Item'),
+        'search_items' => __('Search Technology'),
+        'not_found' =>  __('No Tech Item Found'),
+        'not_found_in_trash' => __('No Technology Found In Trash'), 
+        'parent_item_colon' => '',
+        'menu_name' => 'Technology'
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true, 
+        'show_in_menu' => true, 
+        'query_var' => true,
+        'rewrite' => array("slug" => "technology"),
+        'capability_type' => 'page',
+        'has_archive' => false, 
+        'hierarchical' => false,
+        'menu_position' => null,
+        'supports' => array( 'title', 'editor', 'page-attributes' )
+    ); 
+    register_post_type('gnu_technology',$args);
+    // END TECHNOLOGY
+
+    // START AWARDS
+    $labels = array(
+        'name' => _x('Awards', 'post type general name'),
+        'singular_name' => _x('Award', 'post type singular name'),
+        'add_new' => _x('Add New', 'gnu_awards'),
+        'add_new_item' => __('Add New Award'),
+        'edit_item' => __('Edit Award'),
+        'new_item' => __('New Award'),
+        'all_items' => __('All Awards'),
+        'view_item' => __('View Award'),
+        'search_items' => __('Search Awards'),
+        'not_found' =>  __('No Award Found'),
+        'not_found_in_trash' => __('No Awards Found In Trash'), 
+        'parent_item_colon' => '',
+        'menu_name' => 'Awards'
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true, 
+        'show_in_menu' => true, 
+        'query_var' => true,
+        'rewrite' => array("slug" => "awards"),
+        'capability_type' => 'page',
+        'has_archive' => false, 
+        'hierarchical' => false,
+        'menu_position' => null,
+        'supports' => array( 'title', 'page-attributes' )
+    ); 
+    register_post_type('gnu_awards',$args);
+    // END AWARDS
+
+    // START TEAM
+    $labels = array(
+        'name' => _x('Team', 'post type general name'),
+        'singular_name' => _x('Team Member', 'post type singular name'),
+        'add_new' => _x('Add Team Member', 'gnu_team'),
+        'add_new_item' => __('Add New Team Member'),
+        'edit_item' => __('Edit Team Member'),
+        'new_item' => __('New Team Member'),
+        'all_items' => __('All Team Members'),
+        'view_item' => __('View Team Member'),
+        'search_items' => __('Search Team'),
+        'not_found' =>  __('No Team Member Found'),
+        'not_found_in_trash' => __('No Team Member Found In Trash'), 
+        'parent_item_colon' => '',
+        'menu_name' => 'Team'
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true, 
+        'show_in_menu' => true, 
+        'query_var' => true,
+        'rewrite' => array("slug" => "team"),
+        'capability_type' => 'page',
+        'has_archive' => false, 
+        'hierarchical' => false,
+        'menu_position' => null,
+        'supports' => array( 'title', 'editor', 'page-attributes' )
+    ); 
+    register_post_type('gnu_team',$args);
+    // start taxonamy for Team
+    $labels = array(
+        'name'                          => 'Team Categories',
+        'singular_name'                 => 'Team Category',
+        'search_items'                  => 'Search Team Catagories',
+        'popular_items'                 => 'Popular Team Categories',
+        'all_items'                     => 'All Team Categories',
+        'parent_item'                   => 'Parent Team Category',
+        'edit_item'                     => 'Edit Team Category',
+        'update_item'                   => 'Update Team Category',
+        'add_new_item'                  => 'Add New Team Category',
+        'new_item_name'                 => 'New Team Category',
+        'separate_items_with_commas'    => 'Separate Team Categories with commas',
+        'add_or_remove_items'           => 'Add or remove Team Categories',
+        'choose_from_most_used'         => 'Choose from most used Team Categories'
+    );
+    $args = array(
+        'label'                         => 'Team Categories',
+        'labels'                        => $labels,
+        'public'                        => true,
+        'hierarchical'                  => true,
+        'show_ui'                       => true,
+        'show_in_nav_menus'             => true,
+        'args'                          => array( 'orderby' => 'term_order' ),
+        //'rewrite'                       => array( 'slug' => 'outerwear' ),
+        'query_var'                     => true
+    );
+    register_taxonomy( 'gnu_team_categories', 'gnu_team', $args );
+    // END TEAM
+
+    // START PARTNERS
+    $labels = array(
+        'name' => _x('Partners', 'post type general name'),
+        'singular_name' => _x('Partner', 'post type singular name'),
+        'add_new' => _x('Add New', 'gnu_partners'),
+        'add_new_item' => __('Add New Partner'),
+        'edit_item' => __('Edit Partner'),
+        'new_item' => __('New Partner'),
+        'all_items' => __('All Partners'),
+        'view_item' => __('View Partner'),
+        'search_items' => __('Search Partners'),
+        'not_found' =>  __('No Partner Found'),
+        'not_found_in_trash' => __('No Partner Found In Trash'), 
+        'parent_item_colon' => '',
+        'menu_name' => 'Partners'
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true, 
+        'show_in_menu' => true, 
+        'query_var' => true,
+        //'rewrite' => array("slug" => "dealers"),
+        'capability_type' => 'page',
+        'has_archive' => false, 
+        'hierarchical' => false,
+        'menu_position' => null,
+        'supports' => array( 'title', 'editor', 'page-attributes' )
+    ); 
+    register_post_type('gnu_partners',$args);
+    // start taxonamy for Partners
+    $labels = array(
+        'name'                          => 'Categories',
+        'singular_name'                 => 'Category',
+        'search_items'                  => 'Search Category',
+        'popular_items'                 => 'Popular Categories',
+        'all_items'                     => 'All Categories',
+        'parent_item'                   => 'Parent Category',
+        'edit_item'                     => 'Edit Category',
+        'update_item'                   => 'Update Category',
+        'add_new_item'                  => 'Add New Category',
+        'new_item_name'                 => 'New Category',
+        'separate_items_with_commas'    => 'Separate Categories with commas',
+        'add_or_remove_items'           => 'Add or remove Categories',
+        'choose_from_most_used'         => 'Choose from most used Categories'
+    );
+    $args = array(
+        'label'                         => 'Categories',
+        'labels'                        => $labels,
+        'public'                        => true,
+        'hierarchical'                  => true,
+        'show_ui'                       => true,
+        'show_in_nav_menus'             => true,
+        'args'                          => array( 'orderby' => 'term_order' ),
+        'query_var'                     => true
+    );
+    register_taxonomy( 'gnu_partner_categories', 'gnu_partners', $args );
+    // END PARTNERS
+}
+// run the registration
+add_action( 'init', 'register_custom_post_types' );
 ?>

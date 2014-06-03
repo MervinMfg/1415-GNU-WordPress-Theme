@@ -5,6 +5,8 @@ module.exports = function (grunt) {
     ];
     var footerScripts = [
         '_/js/lib/jquery-1.11.1.js',
+        '_/js/lib/GSAP/TweenMax.js',
+        '_/js/lib/jquery.scrollmagic-1.0.8.js',
         '_/js/lib/jquery.fitvids-1.1.0.js',
         '_/js/gnu.main.js',
         '_/js/components/*.js'
@@ -68,6 +70,12 @@ module.exports = function (grunt) {
             }
         },
         watch: {
+            markup: {
+                files: ['*.php', 'page-templates/*.php'],
+                options: {
+                    livereload: true,
+                }
+            },
             js: {
                 files: ['_/js/*.js', '_/js/**/*.js'],
                 options: {
@@ -75,7 +83,7 @@ module.exports = function (grunt) {
                 }
             },
             sass: {
-                files: ['_/css/*.scss', '_ui/css/**/*.scss'],
+                files: ['_/css/*.scss', '_/css/**/*.scss'],
                 tasks: ['sass'],
                 options: {
                     livereload: true

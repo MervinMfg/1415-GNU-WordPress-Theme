@@ -3,60 +3,103 @@
    ========================================================================== */
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 62.5%;
+	font-size: 62.5%;
+	font-family: $neuronLight;
 }
-
 // Headings
-h1, .h1   {
-    line-height: 1.2;
+h1, .h1 {
+	font-family: $neuronExtraBold;
+	font-weight: normal;
+	line-height: 1.2;
+	font-size: 3em;
+	// 72, 48, 30, 30
 }
-
-h2, .h2    {
-    line-height: 1.2;
+h2, .h2 {
+	font-family: $neuronExtraBold;
+	line-height: 2.4em;
+	// 48, 30, 24, 24
 }
-
 h3, .h3   {
-    line-height: 1.2;
+	font-family: $neuronExtraBold;
+	line-height: 1.2;
+	font-size: 1.8em;
+	// 30, 24, 18, 18
 }
-
 h4, .h4   {
-
+	font-family: $neuron;
+	font-size: 1.4em;
+	// 24, 18, 14, 14
 }
-
 h5, .h5 {
-
+	font-family: $neuronLight;
+	font-size: 1.2em;
+	// 18, 14, 12, 12
 }
-
-h6, .h6    {
-
-}
-
-
 // Subheadings
 .subheading {
-    font-weight: normal;
+	font-weight: normal;
 }
-
-
 // Paragraphs
 p {
-    margin-bottom: $space;
+	margin-bottom: $space;
+	font-family: $neuronLight;
+	font-size: 1.2em;
+	line-height: 1.3em;
+	// 18, 14, 12, 12
 }
-
-
 // Blockquote
 blockquote {
-    font-style:italic;
-    border-left: 1px solid $gray;
-    color: $gray;
-    padding-left: $pad;
-    margin-bottom: $space;
+	font-style: italic;
+	border-left: 1px solid $gray;
+	color: $gray;
+	padding-left: $pad;
+	margin-bottom: $space;
 }
-
-
 // Others
 abbr {
-    border-bottom: 1px dotted $gray;
-    cursor: help;
+	border-bottom: 1px dotted $gray;
+	cursor: help;
+}
+
+@media screen and (min-width: $breakpoint-medium) {
+	h1, .h1 {
+		font-size: 4.8em;
+	}
+	h2, .h2 {
+		font-size: 3.0em;
+	}
+	h3, .h3 {
+		font-size: 2.4em;
+	}
+	h4, .h4 {
+		font-size: 1.8em;
+	}
+	h5, .h5 {
+		font-size: 1.4em;
+	}
+	p {
+		font-size: 1.4em;
+		line-height: 1.6em;
+	}
+}
+@media screen and (min-width: $breakpoint-large) {
+	h1, .h1 {
+		font-size: 7.2em;
+	}
+	h2, .h2 {
+		font-size: 4.8em;
+	}
+	h3, .h3 {
+		font-size: 3.0em;
+	}
+	h4, .h4 {
+		font-size: 2.4em;
+	}
+	h5, .h5 {
+		font-size: 1.8em;
+	}
+	p {
+		font-size: 1.8em;
+		line-height: 2em;
+	}
 }

@@ -47,11 +47,45 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<div id="wrapper">
-		<header id="header" role="banner">
-			<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<div class="description"><?php bloginfo( 'description' ); ?></div>
-		</header>
-		<nav id="nav" role="navigation">
-			<?php wp_nav_menu( array('menu' => 'primary') ); ?>
-		</nav>
+	<div id="page">
+		<header id="masthead" class="site-header<?php if ( is_front_page() ) echo ' active-takeover'; ?>" role="banner">
+			<div class="header-wrapper">
+				<div class="header-main">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" id="logo" class="site-title" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/_/img/gnu-logo.png" alt="<?php bloginfo( 'name' ); ?>" /></a>
+					<a href="#primary-navigation" class="menu-toggle"><span class="toggle-icon"></span>Menu</a>
+					<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+						<a class="screen-reader-text skip-link" href="#content">Skip to content</a>
+						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+					</nav>
+					<nav id="secondary-navigation" class="secondary-navigation" role="navigation">
+						<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_class' => 'nav-menu' ) ); ?>
+					</nav>
+					<div class="black-bar"></div>
+					<div class="quick-cart-toggle">
+						<a href="#quick-cart"><span class="offscreen">Quick Cart</span></a>
+					</div>
+					<div class="search-toggle">
+						<a href="#search"><span class="offscreen">Search</span></a>
+					</div>
+					<div class="takeover">
+						<div class="logo">
+							<img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/gnu-logo-takeover.png" alt="<?php bloginfo( 'name' ); ?>" class="lazy" />
+						</div>
+						<div class="h1">KAITLYN FARRINGTON</div>
+						<div class="h5">B Pro Splitboard</div>
+						<div class="photo"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/takeovers/takeover-image-kaitlyn.png" alt="Maria Debari" class="lazy" /></div>
+					</div><!-- .takeover -->
+					<div class="clearfix"></div>
+				</div>
+			</div><!-- .header-wrapper -->
+			<div class="takeover-green-bar"></div>
+			<div class="takeover-white-fade"></div>
+			<!--
+			<div id="search" class="search-box-wrapper hide">
+				<div class="search-box">
+					<?php get_search_form(); ?>
+				</div>
+			</div>
+			-->
+		</header><!-- #masthead -->
+		<div id="main" class="site-main">

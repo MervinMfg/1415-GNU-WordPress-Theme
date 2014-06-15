@@ -1,0 +1,400 @@
+/* ==========================================================================
+   COMPONENTS/_HEADER.SCSS
+   ========================================================================== */
+.site-header {
+	background: $white url('../img/bg-horizontal-color.png') no-repeat;
+	padding-top: 4px;
+	background-size: 100% 4px;
+
+	.header-wrapper {
+		background: url('../img/bg-green-triangles.png') repeat-x bottom;
+	}
+	.header-main {
+		position: relative;
+		height: 71px;
+
+		.site-title {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 146px;
+			height: 51px;
+			z-index: 10;
+			// preload gif rollover
+			background: url('../img/gnu-logo.gif') no-repeat -9999px -9999px;
+		}
+		.menu-toggle {
+			width: 146px;
+			height: 20px;
+			background: url('../img/bg-purple-lines.png');
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 3;
+			font-family: $neuronExtraBold;
+			font-size: 1.8em;
+			text-transform: uppercase;
+			color: #000;
+			text-align: center;
+			font-weight: normal;
+
+			.toggle-icon {
+				display: inline-block;
+				width: 13px;
+				height: 12px;
+				background: url('../img/sprite.png') -212px -10px;
+				margin-right: 8px;
+			}
+			&:hover,
+			&:focus {
+				color: #fff;
+
+				.toggle-icon {
+					background-position: -235px -10px;
+				}
+			}
+		}
+		.primary-navigation {
+			background: url('../img/bg-purple-lines.png');
+			position: absolute;
+			top: 20px;
+			left: 0;
+			width: 100%;
+			height: 0px;
+			overflow: hidden;
+
+			.nav-menu {
+				font-family: $neuronBlack;
+				font-size: 22px;
+				text-transform: uppercase;
+				text-align: center;
+
+				.menu-item {
+					padding: 10px 0;
+
+					// font link color groups
+					&.boards a:hover,
+					&.boards a:focus,
+					&.boards.current-menu-item a {
+						color: $blue;
+					}
+					&.bindings a:hover,
+					&.bindings a:focus,
+					&.bindings.current-menu-item a {
+						color: $pink;
+					}
+					&.supplies a:hover,
+					&.supplies a:focus,
+					&.supplies.current-menu-item a {
+						color: $yellow;
+					}
+					&.team a:hover,
+					&.team a:focus,
+					&.team.current-menu-item a {
+						color: $purple;
+					}
+					&.blog a:hover,
+					&.blog a:focus,
+					&.blog.current-menu-item a {
+						color: $green;
+					}
+				}
+			}
+		}
+		.secondary-navigation {
+			width: 100%;
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 20px;
+			z-index: 2;
+
+			.nav-menu {
+				background: #fff;
+				font-family: $neuronExtraBold;
+				font-size: 1.8em;
+				text-transform: uppercase;
+				text-align: right;
+				height: 20px;
+
+				.menu-item {
+					display: inline-block;
+					margin-right: 10px;
+					height: 20px;
+				}
+
+				.events,
+				.about {
+					display: none;
+				}
+			}
+		}
+		.black-bar {
+			display: none;
+		}
+		.quick-cart-toggle {
+			position: absolute;
+			bottom: 5px;
+			right: 55px;
+			z-index: 5;
+
+			a {
+				display: block;
+				width: 40px;
+				height: 40px;
+				background: url('../img/sprite.png') -10px -10px;
+
+			}
+		}
+		.search-toggle {
+			position: absolute;
+			bottom: 5px;
+			right: 5px;
+			z-index: 5;
+			width: 40px;
+			height: 40px;
+			background: url('../img/sprite.png') -60px -10px;
+
+			a {
+				display: block;
+				width: 40px;
+				height: 40px;
+				// preload gif rollover
+				// background: url('../img/search-compass.gif') no-repeat -9999px -9999px;
+			}
+		}
+	}
+	.takeover-green-bar {
+		display: none;
+	}
+	.search-box-wrapper {
+		.search-box {
+
+		}
+	}
+	.takeover {
+		display: none;
+	}
+}
+@media screen and (min-width: $breakpoint-small) {
+	.site-header .header-main {
+		.primary-navigation .nav-menu .menu-item {
+			display: inline-block;
+			padding: 10px 2.8%;
+		}
+		.secondary-navigation .nav-menu {
+			.events,
+			.about {
+				display: inline-block;
+			}
+		}
+		.black-bar {
+			height: 51px;
+			width: 45%;
+			background: url('../img/bg-black-triangles-nav.png') top right;
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 146px;
+			z-index: 1;
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-medium) {
+	.site-header {
+		position: fixed;
+		width: 100%;
+
+		.header-main {
+			.menu-toggle {
+				display: none;
+			}
+			.primary-navigation {
+				position: absolute;
+				bottom: 0;
+				top: auto;
+				left: 146px;
+				width: auto;
+				height: 51px;
+				z-index: 2;
+				padding: 23px 45px 0 15px;
+				background: url('../img/bg-black-triangles-nav.png') no-repeat top right;
+
+				.nav-menu {
+					text-align: left;
+					font-family: $neuronExtraBold;
+
+					.menu-item {
+						padding: 0 10px;
+						display: inline-block;
+
+						a {
+							color: $white;
+						}
+					}
+				}
+			}
+			.black-bar {
+				display: none;
+			}
+		}
+		&.active-takeover {
+			background-position: bottom center;
+
+			.takeover-green-bar {
+				background: url('../img/bg-green-triangles.png') repeat-x;
+				height: 51px;
+				width: 100%;
+				position: absolute;
+				bottom: 0px;
+				@include vendorize(opacity, 0);
+			}
+			.takeover-white-fade {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 40px;
+				background: url('../img/bg-white-vertical-fade.png') repeat-x;
+				z-index: 5;
+			}
+			.header-wrapper {
+				background: url('../img/bg-black-triangles.png') repeat-x;
+				background-position: 0 202px;
+			}
+			.header-main {
+				height: 480px;
+
+				.site-title {
+					top: 202px;
+					bottom: auto;
+					left: -146px;
+				}
+				.quick-cart-toggle,
+				.search-toggle {
+					display: none;
+					@include vendorize(opacity, 0);
+				}
+				.primary-navigation {
+					bottom: auto;
+					top: 202px;
+					left: 0;
+					width: 100%;
+					padding: 23px 45px 0 10px;
+					background-position: -1076px 0;
+
+					.nav-menu {
+						font-size: 19px;
+					}
+				}
+				.secondary-navigation {
+					z-index: 6;
+
+					.nav-menu {
+						background: none;
+					}
+				}
+			}
+			.takeover {
+				height: 480px;
+				display: block;
+				position: relative;
+				max-width: 768px;
+				margin: 0 auto;
+				position: absolute;
+				width: 100%;
+				bottom: 0;
+				left: 0;
+
+				.logo {
+					width: 366px;
+					height: 163px;
+					margin: 20px 0 102px 20px;
+				}
+				.h1 {
+					font-size: 4.8em;
+					line-height: 1em;
+					width: 386px;
+					text-align: right;
+					margin-bottom: 8px;
+				}
+				.h5 {
+					width: 386px;
+					text-transform: uppercase;
+					text-align: right;
+				}
+				.photo {
+					position: absolute;
+					top: -4px;
+					right: -265px;
+					width: 625px;
+					height: 480px;
+					z-index: 5;
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-large) {
+	.site-header {
+		.header-main {
+			max-width: 1056px;
+			margin: 0 auto;
+			height: 51px;
+
+			.site-title {
+				top: 0px;
+			}
+
+			.secondary-navigation {
+				position: absolute;
+				top: 6px;
+				right: 100px;
+				height: 20px;
+				z-index: 2;
+
+				.nav-menu {
+					background: none;
+					text-align: right;
+					height: 20px;
+
+					.menu-item {
+						display: inline-block;
+						margin-right: 10px;
+						height: 20px;
+					}
+				}
+			}
+		}
+		&.active-takeover {
+			.header-main {
+				.site-title {
+					@include vendorize(opacity, 0);
+				}
+				.primary-navigation {
+					padding-left: 12px;
+
+					.nav-menu {
+						font-size: 22px;
+					}
+				}
+			}
+			.takeover {
+				max-width: 1056px;
+
+				.logo {
+					margin-left: 84px;
+				}
+				.h1 {
+					width: 450px;
+				}
+				.h5 {
+					width: 450px;
+				}
+				.photo {
+					right: -100px;
+				}
+			}
+		}
+	}
+}

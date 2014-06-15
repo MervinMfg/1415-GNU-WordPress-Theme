@@ -7,11 +7,19 @@
  * @since 1415 GNU WordPress Theme 1.0.0
  */
 ?>
-		<footer id="footer" class="source-org vcard copyright" role="contentinfo">
-			<small>&copy;<?php echo date("Y"); echo " "; bloginfo('name'); ?></small>
-		</footer>
-	</div><!-- END #wrapper -->
 
+		</div><!-- #main -->
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			<div class="site-info">
+				<p>&copy;<?php echo date("Y"); echo " "; bloginfo('name'); ?></p>
+			</div><!-- .site-info -->
+		</footer><!-- #colophon -->
+	</div><!-- #page -->
+	<div class="responsive-check">
+		<div class="breakpoint-small"></div>
+		<div class="breakpoint-medium"></div>
+		<div class="breakpoint-large"></div>
+	</div><!-- .responsive-check -->
 	<?php wp_footer(); ?>
 
 	<!-- JavaScript includes -->

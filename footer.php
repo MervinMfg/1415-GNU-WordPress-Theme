@@ -10,9 +10,69 @@
 
 		</div><!-- #main -->
 		<footer id="colophon" class="site-footer" role="contentinfo">
-			<div class="site-info">
-				<p>&copy;<?php echo date("Y"); echo " "; bloginfo('name'); ?></p>
-			</div><!-- .site-info -->
+			<div class="footer-wrapper">
+				<div class="footer-content">
+					<nav class="footer-menu">
+						<div class="nav-group">
+							<h3>Gear</h3>
+							<ul class="nav-menu">
+								<li class="menu-item"><a href="/snowboards/">Snowboards</a></li>
+								<li class="menu-item"><a href="/bindings/">Bindings</a></li>
+								<li class="menu-item"><a href="/supplies/">Supplies</a></li>
+							</ul>
+						</div><!-- .nav-group -->
+						<div class="nav-group">
+							<h3>Site</h3>
+							<ul class="nav-menu">
+								<li class="menu-item"><a href="/team/">Team</a></li>
+								<li class="menu-item"><a href="/blog/">Blog</a></li>
+								<li class="menu-item"><a href="/about/">About</a></li>
+								<li class="menu-item"><a href="/events/">Events</a></li>
+								<li class="menu-item"><a href="/store-locator/">Store Locator</a></li>
+							</ul>
+						</div><!-- .nav-group -->
+						<div class="nav-group">
+							<h3>Support</h3>
+							<ul class="nav-menu">
+								<li class="menu-item"><a href="http://www.mervin.com/contact/" target="_blank">Contact</a></li>
+								<li class="menu-item"><a href="http://www.mervin.com/support/register/" target="_blank">Register</a></li>
+								<li class="menu-item"><a href="http://www.mervin.com/support/warranty/">Warranty</a></li>
+								<li class="menu-item"><a href="/faq/">Faq</a></li>
+								<li class="menu-item"><a href="/partners/">Partners</a></li>
+								<li class="menu-item"><a href="/binding-manual/">Manual</a></li>
+								<li class="menu-item"><a href="/supplies/#">Spare Parts</a></li>
+							</ul>
+						</div><!-- .nav-group -->
+						<div class="nav-group">
+							<h3>Online</h3>
+							<ul class="nav-menu">
+								<li class="menu-item"><a href="http://gnu.shptron.com/account/?mfg_id=4374.6&language_id=1" target="_blank" id="link-login">My Account</a></li>
+								<li class="menu-item"><a href="http://gnu.shptron.com/home/privacy/4374.6.1.1" target="_blank" id="link-privacy">Privacy</a></li>
+								<li class="menu-item"><a href="http://gnu.shptron.com/home/policies/4374.6.1.1" target="_blank" id="link-policies">Policies</a></li>
+								<li class="menu-item"><a href="http://gnu.shptron.com/home/security/4374.6.1.1" target="_blank" id="link-safety">Security</a></li>
+								<li class="menu-item"><a href="http://gnu.shptron.com/home/policies/4374.6.1.1#Returns" target="_blank" id="link-returns">Returns</a></li>
+								<li class="menu-item"><a href="http://gnu.shptron.com/home/ordering/4374.6.1.1" target="_blank" id="link-ordering">Ordering Info</a></li>
+							</ul>
+						</div><!-- .nav-group -->
+					</nav><!-- .footer-menu -->
+					<div class="region-social-wrapper">
+						<div class="region-toggle">
+							<h5>Select Region</h5>
+							<a href="#region-selector" class="h4">United States (USD)</a>
+						</div>
+						<ul class="social-icons nav-menu">
+							<li class="menu-item"><a href="http://www.facebook.com/gnuSnowboards" class="icon-facebook" target="_blank"><span class="offscreen">Facebook</span></a></li>
+							<li class="menu-item"><a href="http://instagram.com/GNUsnowboards" class="icon-instagram" target="_blank"><span class="offscreen">Instagram</span></a></li>
+							<li class="menu-item"><a href="http://twitter.com/GNUsnowboards" class="icon-twitter" target="_blank"><span class="offscreen">Twitter</span></a></li>
+							<li class="menu-item"><a href="http://pinterest.com/gnugirls" class="icon-pinterest" target="_blank"><span class="offscreen">Pinterest</span></a></li>
+							<li class="menu-item"><a href="http://vimeo.com/gnu" class="icon-vimeo" target="_blank"><span class="offscreen">Vimeo</span></a></li>
+							<li class="menu-item"><a href="<?php bloginfo('rss2_url'); ?>" class="icon-rss" target="_blank"><span class="offscreen">RSS</span></a></li>
+						</ul>
+					</div><!-- .region-social-wrapper -->
+					<div class="clearfix"></div>
+					<p>701 N. 34th St, Ste #100 – Seattle, WA 98103 <span>&copy;<?php echo date("Y"); echo " "; bloginfo('name'); ?></span></p>
+				</div><!-- .footer-content -->
+			</div><!-- .footer-wrapper -->
 		</footer><!-- #colophon -->
 	</div><!-- #page -->
 	<div class="responsive-check">

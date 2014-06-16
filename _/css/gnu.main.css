@@ -874,5 +874,168 @@ abbr {
     right: -100px;
   }
 }
+/* ==========================================================================
+   COMPONENTS/_FOOTER.SCSS
+   ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\000035}}
+.site-footer {
+  background: white url("../img/bg-horizontal-color.png") no-repeat;
+  padding-top: 4px;
+  background-size: 100% 4px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\0000310}}
+.site-footer .footer-wrapper {
+  background: url("../img/bg-footer.png");
+  padding-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\0000315}}
+.site-footer .footer-content {
+  color: white;
+  max-width: 360px;
+  margin: 0 auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\0000320}}
+.site-footer .footer-content .footer-menu {
+  text-transform: uppercase;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\0000323}}
+.site-footer .footer-content .footer-menu .nav-group {
+  width: 50%;
+  float: left;
+  padding: 10px 0 30px 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\0000333}}
+.site-footer .footer-content .footer-menu .nav-group .nav-menu .menu-item a {
+  color: white;
+  font-size: 1.4em;
+  line-height: 1.33em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\0000342}}
+.site-footer .footer-content .region-toggle {
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\0000350}}
+.site-footer .footer-content .region-toggle a {
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\0000354}}
+.site-footer .footer-content p {
+  margin: 0;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\0000358}}
+.site-footer .footer-content p span {
+  display: block;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\0000364}}
+.social-icons {
+  text-align: center;
+  padding-bottom: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\0000368}}
+.social-icons .menu-item {
+  display: inline-block;
+  padding: 0 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\0000372}}
+.social-icons .menu-item a {
+  display: block;
+  width: 26px;
+  height: 30px;
+  background: url("../img/sprite.png");
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\0000378}}
+.social-icons .menu-item a.icon-facebook {
+  background-position: -10px -112px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\0000381}}
+.social-icons .menu-item a.icon-twitter {
+  background-position: -40px -112px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\0000384}}
+.social-icons .menu-item a.icon-pinterest {
+  background-position: -70px -112px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\0000387}}
+.social-icons .menu-item a.icon-vimeo {
+  background-position: -100px -112px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\0000390}}
+.social-icons .menu-item a.icon-rss {
+  background-position: -130px -112px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\0000393}}
+.social-icons .menu-item a.icon-instagram {
+  background-position: -160px -112px;
+}
+
+@media screen and (min-width: 46.8em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\00003100}}
+  .site-footer .footer-content {
+    max-width: 100%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\00003103}}
+  .site-footer .footer-content .footer-menu .nav-group {
+    width: 25%;
+    float: left;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\00003107}}
+  .site-footer .footer-content .region-social-wrapper {
+    padding: 0 10%;
+    clear: both;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\00003111}}
+  .site-footer .footer-content .region-social-wrapper .region-toggle,
+  .site-footer .footer-content .region-social-wrapper .social-icons {
+    width: 50%;
+    float: left;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\00003116}}
+  .site-footer .footer-content .region-social-wrapper .social-icons {
+    padding-top: 20px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\00003120}}
+  .site-footer .footer-content p span {
+    display: inline;
+  }
+}
+@media screen and (min-width: 66em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\00003126}}
+  .site-footer .footer-content {
+    max-width: 1032px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\00003129}}
+  .site-footer .footer-content .footer-menu {
+    width: 70%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\00003136}}
+  .site-footer .footer-content .region-social-wrapper {
+    width: 30%;
+    float: left;
+    clear: none;
+    padding: 30px 0 0;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\00003142}}
+  .site-footer .footer-content .region-social-wrapper .region-toggle,
+  .site-footer .footer-content .region-social-wrapper .social-icons {
+    width: 100%;
+    padding: 0;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_footer\.scss}line{font-family:\00003147}}
+  .site-footer .footer-content .region-social-wrapper .social-icons {
+    padding-top: 20px;
+  }
+}
+/* ==========================================================================
+   COMPONENTS/_SHOPATRON.SCSS
+   ========================================================================== */
+/* hide shopatron api key */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_shopatron\.scss}line{font-family:\000036}}
+#shopatronCart {
+  display: none;
+}
 
 /*# sourceMappingURL=gnu.main.css.map */

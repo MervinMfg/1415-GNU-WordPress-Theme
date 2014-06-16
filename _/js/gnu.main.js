@@ -13,6 +13,8 @@ GNU.main = {
 	init: function () {
 		var self = this;
 
+		self.shopatronInit();
+
 		$(window).load(function () {
 			self.menuInit(); // init main menu
 		});
@@ -110,7 +112,7 @@ GNU.main = {
 				controller.destroy();
 			} 
 			// check browser size
-			if ( scrollSize == 'medium' ) {
+			if ( self.config.responsiveSize == 'medium' ) {
 				// TABLET SIZE ANIMATION
 				controller = new ScrollMagic({vertical: true});
 				// set up scenes/tweens
@@ -130,7 +132,7 @@ GNU.main = {
 					TweenMax.to(".active-takeover .takeover-white-fade", 1, {display: 'none', opacity: 0, ease: Linear.easeNone})
 				]);
 				scene = new ScrollScene({offset: 227, duration: 182}).setTween(tween).addTo(controller);
-			} else if ( scrollSize == 'large') {
+			} else if ( self.config.responsiveSize == 'large') {
 				// DESKTOP SIZE ANIMATION
 				controller = new ScrollMagic({vertical: true});
 				// set up scenes/tweens
@@ -153,6 +155,123 @@ GNU.main = {
 			}
 		}
 		$(window).resize(); // trigger resize to init features
+	},
+	shopatronInit: function () {
+		var self, lang, regionCookie, shopAPIKey, shopAPIKeyString;
+		self = this;
+		// check the language on the cookie
+		regionCookie = self.utilities.cookie.getCookie('gnu_region');
+		if (regionCookie !== null || regionCookie !== "") {
+			lang = regionCookie;
+		}
+		if (lang) {
+			if (lang === 'ca') {
+				shopAPIKey = "iyzc7e8i"; // CA Key
+				// set shopatron footer links for Canada
+				$('#link-privacy').attr('href', 'http://gnu-ca.shptron.com/home/privacy/4374.7.1.2');
+				$('#link-policies').attr('href', 'http://gnu-ca.shptron.com/home/policies/4374.7.1.2');
+				$('#link-login').attr('href', 'http://gnu-ca.shptron.com/account/?mfg_id=4374.7&language_id=1');
+				$('#link-safety').attr('href', 'http://gnu-ca.shptron.com/home/security/4374.7.1.2');
+				$('#link-returns').attr('href', 'http://gnu-ca.shptron.com/home/policies/4374.7.1.2#Returns');
+				$('#link-ordering').attr('href', 'http://gnu-ca.shptron.com/home/ordering/4374.7.1.2');
+				// set my account in header for Canada
+				$('header .nav-utility .link-account a').attr('href', 'http://gnu-ca.shptron.com/account/?mfg_id=4374.7&language_id=1');
+			} else if (lang === 'euro') {
+				shopAPIKey = "95tuotu0"; // International key
+				// set shopatron footer links for International
+				$('#link-privacy').attr('href', 'http://gnu-euro.shptron.com/home/privacy/4374.7.1.2');
+				$('#link-policies').attr('href', 'http://gnu-euro.shptron.com/home/policies/4374.7.1.2');
+				$('#link-login').attr('href', 'http://gnu-euro.shptron.com/account/?mfg_id=4374.7&language_id=1');
+				$('#link-safety').attr('href', 'http://gnu-euro.shptron.com/home/security/4374.7.1.2');
+				$('#link-returns').attr('href', 'http://gnu-euro.shptron.com/home/policies/4374.7.1.2#Returns');
+				$('#link-ordering').attr('href', 'http://gnu-euro.shptron.com/home/ordering/4374.7.1.2');
+				// set my account in header for International
+				$('header .nav-utility .link-account a').attr('href', 'http://gnu-euro.shptron.com/account/?mfg_id=4374.7&language_id=1');
+			} else if (lang === 'int') {
+				// INTERNATIONAL
+				shopAPIKey = "a29smylj"; // US Key
+			} else {
+				shopAPIKey = "a29smylj"; // US Key
+			}
+		} else {
+			shopAPIKey = "a29smylj"; // US Key
+		}
+		shopAPIKeyString = '{"apiKey": "' + shopAPIKey + '"}';
+		// add key to the body of the page for shopatron's api to grab via ID
+		$("body").append('<div id="shopatronCart">' + shopAPIKeyString + '</div>');
+		// request the shopatron api
+		$.ajax({
+			url: "//mediacdn.shopatron.com/media/js/product/shopatronAPI-2.5.0.min.js",
+			dataType: "script",
+			success: function (data) {
+				// request other aditional api for quick cart and shopping cart
+				$.ajax({
+					url: "//mediacdn.shopatron.com/media/js/product/shopatronJST-2.5.0.min.js",
+					dataType: "script",
+					success: function (data) {
+						// init the shopatron page elements
+						self.quickCartInit();
+						if ($('body').hasClass('page-template-page-templatespage-shopping-cart-php')) {
+							self.shoppingCartInit();
+						}
+					}
+				});
+			}
+		});
+	},
+	quickCartInit: function () {
+		Shopatron.getCart({
+			success: function (data, textStatus) {
+				var itemsInCart = 0;
+				// find quantity of items in cart
+				$.each(data.cartItems, function (key, value) {
+					itemsInCart += parseInt(value.quantity, 10);
+				});
+				$('#quick-cart a span').html(itemsInCart);
+			},
+		});
+	},
+	shoppingCartInit: function () {
+		var self, lang, regionCookie;
+		self = this;
+
+		Shopatron('#shopping-cart').getCart({
+			imageWidth: 100,
+			imageHeight: 100
+		}, {
+			success: function (cartData) {},
+			error: function () {},
+			complete: function () {}
+		});
+		// check for the region
+		regionCookie = self.utilities.cookie.getCookie('libtech_region');
+		if (regionCookie !== null || regionCookie !== "") {
+			lang = regionCookie;
+		} else {
+			lang = 'us';
+		}
+		// update links on page
+		if (lang === 'ca') {
+			$("a.link-ordering-info").prop("href", "http://libtech-ca.shptron.com/k/ordering");
+			$("a.link-return-policy").prop("href", "http://libtech-ca.shptron.com/k/policies#Returns");
+		} else if (lang === 'int') {
+			$("a.link-ordering-info").prop("href", "http://libtech-int.shptron.com/k/ordering");
+			$("a.link-return-policy").prop("href", "http://libtech-int.shptron.com/k/policies#Returns");
+		} else {
+			$("a.link-ordering-info").prop("href", "http://checkout.lib-tech.com/k/ordering");
+			$("a.link-return-policy").prop("href", "http://checkout.lib-tech.com/k/policies#Returns");
+		}
+
+		// region selector trigger
+		$('.link-region-selector').click(function (e) {
+			e.preventDefault();
+			e.stopPropagation(); // kill even from firing further
+			if (navigator.cookieEnabled === false) {
+				alert('Enable cookies in your browser in order to select your region.');
+			} else {
+				self.regionSelectorOverlayInit();
+			}
+		});
 	},
 	utilities: {
 		cookie: {

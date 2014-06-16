@@ -62,10 +62,10 @@
 					</nav>
 					<div class="black-bar"></div>
 					<div class="quick-cart-toggle">
-						<a href="#quick-cart"><span class="offscreen">Quick Cart</span></a>
+						<a href="/shopping-cart/" title="Shopping Cart"><span class="offscreen">Quick Cart</span></a>
 					</div>
 					<div class="search-toggle">
-						<a href="#search"><span class="offscreen">Search</span></a>
+						<a href="/search/?q=" title="Search"><span class="offscreen">Search</span></a>
 					</div>
 					<div class="takeover">
 						<div class="logo">
@@ -73,7 +73,7 @@
 						</div>
 						<div class="h1">KAITLYN FARRINGTON</div>
 						<div class="h5">B Pro Splitboard</div>
-						<div class="photo"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/takeovers/takeover-image-kaitlyn.png" alt="Maria Debari" class="lazy" /></div>
+						<div class="photo"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/takeovers/takeover-kaitlyn-farrington.png" alt="Maria Debari" class="lazy" /></div>
 					</div><!-- .takeover -->
 					<div class="clearfix"></div>
 				</div>

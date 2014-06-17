@@ -14,47 +14,14 @@ GNU.main = {
 		var self = this;
 
 		self.shopatronInit();
-
-		$(window).load(function () {
-			self.menuInit(); // init main menu
-		});
+		self.menuInit();
 		// lazy load
 		$("img.lazy").unveil();
 	},
 	menuInit: function () {
 		var self, controller, tween, scene;
 		self = this;
-		// SWAP LOGO
-		$('.site-header .header-main .site-title').on('mouseenter', function () {
-			$(this).find('img').attr('src', self.config.wpImgPath + 'gnu-logo.gif');
-		}).on('mouseleave', function () {
-			$(this).find('img').attr('src', self.config.wpImgPath + 'gnu-logo.png');
-		});
-		// SWAP SEARCH
-		$('.site-header .header-main .search-toggle a').on('mouseenter', function () {
-			$(this).css('background-image', 'url("' + self.config.wpImgPath + 'search-compass.gif")').css('background-position', '0px 0px');
-		}).on('mouseleave', function () {
-			$(this).removeAttr('style');
-		});
-		// show indicators (requires debug extension)
-		//scene.addIndicators();
-		// reinit menu on resize
-		$(window).on('resize.menu', function () {
-			if ( self.config.responsiveSize != "base" && self.utilities.responsiveCheck() == "base" ) {
-				self.config.responsiveSize = "base";
-				initJSMenu();
-			} else if ( self.config.responsiveSize != "small" && self.utilities.responsiveCheck() == "small" ) {
-				self.config.responsiveSize = "small";
-				initJSMenu();
-			} else if ( self.config.responsiveSize != "medium" && self.utilities.responsiveCheck() == "medium" ) {
-				self.config.responsiveSize = "medium";
-				initJSMenu();
-			} else if ( self.config.responsiveSize != "large" && self.utilities.responsiveCheck() == "large" ) {
-				self.config.responsiveSize = "large";
-				initJSMenu();
-			}
-		});
-
+		// DROPDOWN MENU
 		function initJSMenu() {
 			// MOBILE DROPDOWN MENU
 			// remove old active styles and event listeners
@@ -154,7 +121,73 @@ GNU.main = {
 				scene = new ScrollScene({offset: 227, duration: 202}).setTween(tween).addTo(controller);
 			}
 		}
+		// SHOW SEARCH BAR
+		function showSearch() {
+			$('.site-header .search-box-wrapper').removeClass('hide');
+			TweenLite.to('.site-header .search-box-wrapper', .3, {opacity: 1, onComplete: function () {$('.site-header .search-box-wrapper .search-form .search-field').focus();}});
+			// don't hide if clicked within search area
+			$('.site-header .search-box-wrapper .search-form .search-field, .site-header .search-box-wrapper .search-form .search-submit').on('click.search', function (e) {
+				e.stopPropagation();
+			});
+			// document events to kill search
+			$(document).on('keyup.search', function (e) {
+				if (e.keyCode == 27) {
+					hideSearch(); // listen for escape key
+				}
+			}).on('click.search', function () {
+				hideSearch(); // hide if clicked anywhere outside search area
+			});
+		}
+		// HIDE SEARCH BAR
+		function hideSearch() {
+			// kill event listeners
+			$(document).off('keyup.search').off('click.search');
+			$('.site-header .search-box-wrapper .search-form .search-field, .site-header .search-box-wrapper .search-form .search-submit').off('click.search');
+			// fade out search bar
+			TweenLite.to('.site-header .search-box-wrapper', .3, {opacity: 0, onComplete: function () {$('.site-header .search-box-wrapper').addClass('hide');}});
+		}
+		// show indicators (requires debug extension)
+		//scene.addIndicators();
+		// reinit menu on resize
+		$(window).on('resize.menu', function () {
+			if ( self.config.responsiveSize != "base" && self.utilities.responsiveCheck() == "base" ) {
+				self.config.responsiveSize = "base";
+				initJSMenu();
+			} else if ( self.config.responsiveSize != "small" && self.utilities.responsiveCheck() == "small" ) {
+				self.config.responsiveSize = "small";
+				initJSMenu();
+			} else if ( self.config.responsiveSize != "medium" && self.utilities.responsiveCheck() == "medium" ) {
+				self.config.responsiveSize = "medium";
+				initJSMenu();
+			} else if ( self.config.responsiveSize != "large" && self.utilities.responsiveCheck() == "large" ) {
+				self.config.responsiveSize = "large";
+				initJSMenu();
+			}
+		});
 		$(window).resize(); // trigger resize to init features
+		// SWAP LOGO
+		$('.site-header .header-main .site-title').on('mouseenter', function () {
+			$(this).find('img').attr('src', self.config.wpImgPath + 'gnu-logo.gif');
+		}).on('mouseleave', function () {
+			$(this).find('img').attr('src', self.config.wpImgPath + 'gnu-logo.png');
+		});
+		// SEARCH BAR FUNCTIONALITY
+		// spin compass w/ gif
+		$('.site-header .header-main .search-toggle a').on('mouseenter', function () {
+			$(this).css('background-image', 'url("' + self.config.wpImgPath + 'search-compass.gif")').css('background-position', '0px 0px');
+		}).on('mouseleave', function () {
+			$(this).removeAttr('style');
+		});
+		// check for click event on search icon
+		$('.site-header .header-main .search-toggle a').on('click.search', function (e) {
+			e.preventDefault();
+			e.stopPropagation(); // kill event from firing further
+			if ( $('.site-header .search-box-wrapper').hasClass('hide') ) {
+				showSearch();
+			} else {
+				hideSearch();
+			}
+		});
 	},
 	shopatronInit: function () {
 		var self, lang, regionCookie, shopAPIKey, shopAPIKeyString;

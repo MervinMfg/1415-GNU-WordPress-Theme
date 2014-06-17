@@ -39,6 +39,9 @@
 				}
 			}
 		}
+		.region-social-wrapper {
+			clear: both;
+		}
 		.region-toggle {
 			text-transform: uppercase;
 			text-align: center;
@@ -106,7 +109,6 @@
 		}
 		.region-social-wrapper {
 			padding: 0 10%;
-			clear: both;
 
 			.region-toggle,
 			.social-icons {
@@ -125,7 +127,7 @@
 @media screen and (min-width: $breakpoint-large) {
 	.site-footer .footer-content {
 		max-width: 1032px;
-		
+
 		.footer-menu {
 			width: 70%;
 

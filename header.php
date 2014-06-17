@@ -65,7 +65,7 @@
 						<a href="/shopping-cart/" title="Shopping Cart"><span class="offscreen">Quick Cart</span></a>
 					</div>
 					<div class="search-toggle">
-						<a href="/search/?q=" title="Search"><span class="offscreen">Search</span></a>
+						<a href="#search" title="Search"><span class="offscreen">Search</span></a>
 					</div>
 					<div class="takeover">
 						<div class="logo">
@@ -80,12 +80,8 @@
 			</div><!-- .header-wrapper -->
 			<div class="takeover-green-bar"></div>
 			<div class="takeover-white-fade"></div>
-			<!--
 			<div id="search" class="search-box-wrapper hide">
-				<div class="search-box">
-					<?php get_search_form(); ?>
-				</div>
+				<?php get_search_form(); ?>
 			</div>
-			-->
 		</header><!-- #masthead -->
 		<div id="main" class="site-main">

@@ -15,6 +15,7 @@ GNU.main = {
 
 		self.shopatronInit();
 		self.menuInit();
+		self.searchInit();
 		// lazy load
 		$("img.lazy").unveil();
 	},
@@ -121,8 +122,47 @@ GNU.main = {
 				scene = new ScrollScene({offset: 227, duration: 202}).setTween(tween).addTo(controller);
 			}
 		}
+		// (RE)INIT MENU ON RESIZE
+		$(window).on('resize.menu', function () {
+			if ( self.config.responsiveSize != "base" && self.utilities.responsiveCheck() == "base" ) {
+				self.config.responsiveSize = "base";
+				initJSMenu();
+			} else if ( self.config.responsiveSize != "small" && self.utilities.responsiveCheck() == "small" ) {
+				self.config.responsiveSize = "small";
+				initJSMenu();
+			} else if ( self.config.responsiveSize != "medium" && self.utilities.responsiveCheck() == "medium" ) {
+				self.config.responsiveSize = "medium";
+				initJSMenu();
+			} else if ( self.config.responsiveSize != "large" && self.utilities.responsiveCheck() == "large" ) {
+				self.config.responsiveSize = "large";
+				initJSMenu();
+			}
+		});
+		$(window).resize(); // trigger resize to init features
+		// SWAP LOGO
+		$('.site-header .header-main .site-title').on('mouseenter', function () {
+			$(this).find('img').attr('src', self.config.wpImgPath + 'gnu-logo.gif');
+		}).on('mouseleave', function () {
+			$(this).find('img').attr('src', self.config.wpImgPath + 'gnu-logo.png');
+		});
+	},
+	searchInit: function (visible) {
+		var self;
+		self = this;
+		// check default
+		visible = typeof visible !== 'undefined' ? visible : false;
+		if (visible) {
+			showSearch();
+			self.quickCartInit(false);
+		} else {
+			hideSearch();
+		}
+		// remove old listeners
+		$('.site-header .header-main .search-toggle a').off('mouseenter.search').off('mouseleave.search');
+		$('.site-header .header-main .search-toggle a').off('click.search');
 		// SHOW SEARCH BAR
 		function showSearch() {
+			self.quickCartInit(false);
 			$('.site-header .search-box-wrapper').removeClass('hide');
 			TweenLite.to('.site-header .search-box-wrapper', .3, {opacity: 1, onComplete: function () {$('.site-header .search-box-wrapper .search-form .search-field').focus();}});
 			// don't hide if clicked within search area
@@ -146,36 +186,11 @@ GNU.main = {
 			// fade out search bar
 			TweenLite.to('.site-header .search-box-wrapper', .3, {opacity: 0, onComplete: function () {$('.site-header .search-box-wrapper').addClass('hide');}});
 		}
-		// show indicators (requires debug extension)
-		//scene.addIndicators();
-		// reinit menu on resize
-		$(window).on('resize.menu', function () {
-			if ( self.config.responsiveSize != "base" && self.utilities.responsiveCheck() == "base" ) {
-				self.config.responsiveSize = "base";
-				initJSMenu();
-			} else if ( self.config.responsiveSize != "small" && self.utilities.responsiveCheck() == "small" ) {
-				self.config.responsiveSize = "small";
-				initJSMenu();
-			} else if ( self.config.responsiveSize != "medium" && self.utilities.responsiveCheck() == "medium" ) {
-				self.config.responsiveSize = "medium";
-				initJSMenu();
-			} else if ( self.config.responsiveSize != "large" && self.utilities.responsiveCheck() == "large" ) {
-				self.config.responsiveSize = "large";
-				initJSMenu();
-			}
-		});
-		$(window).resize(); // trigger resize to init features
-		// SWAP LOGO
-		$('.site-header .header-main .site-title').on('mouseenter', function () {
-			$(this).find('img').attr('src', self.config.wpImgPath + 'gnu-logo.gif');
-		}).on('mouseleave', function () {
-			$(this).find('img').attr('src', self.config.wpImgPath + 'gnu-logo.png');
-		});
 		// SEARCH BAR FUNCTIONALITY
 		// spin compass w/ gif
-		$('.site-header .header-main .search-toggle a').on('mouseenter', function () {
+		$('.site-header .header-main .search-toggle a').on('mouseenter.search', function () {
 			$(this).css('background-image', 'url("' + self.config.wpImgPath + 'search-compass.gif")').css('background-position', '0px 0px');
-		}).on('mouseleave', function () {
+		}).on('mouseleave.search', function () {
 			$(this).removeAttr('style');
 		});
 		// check for click event on search icon
@@ -252,16 +267,129 @@ GNU.main = {
 			}
 		});
 	},
-	quickCartInit: function () {
+	quickCartInit: function (visible) {
+		var self;
+		self = this;
+		// check default
+		visible = typeof visible !== 'undefined' ? visible : false;
+		if (visible) {
+			showQuickCart();
+			self.searchInit(false);
+		} else {
+			hideQuickCart();
+		}
+		// remove old handler
+		$('.site-header .header-main .quick-cart-toggle a').off('click.cart');
+		// SHOW QUICK CART
+		function showQuickCart() {
+			self.searchInit(false);
+			$('.site-header .quick-cart').removeClass('hide');
+			TweenLite.to('.site-header .quick-cart', .3, {opacity: 1});
+			// don't hide if clicked within search area
+			$('.site-header .quick-cart').on('click.cart', function (e) {
+				e.stopPropagation();
+			});
+			// document events to kill search
+			$(document).on('keyup.cart', function (e) {
+				if (e.keyCode == 27) {
+					hideQuickCart(); // listen for escape key
+				}
+			}).on('click.cart', function () {
+				hideQuickCart(); // hide if clicked anywhere outside cart area
+			});
+		}
+		// HIDE QUICK CART
+		function hideQuickCart() {
+			// kill event listeners
+			$(document).off('keyup.cart').off('click.cart');
+			$('.site-header .quick-cart').off('click.cart');
+			// fade out search bar
+			TweenLite.to('.site-header .quick-cart', .3, {opacity: 0, onComplete: function () {$('.site-header .quick-cart').addClass('hide');}});
+		}
+		// check for click event on cart icon
+		$('.site-header .header-main .quick-cart-toggle a').on('click.cart', function (e) {
+			e.preventDefault();
+			e.stopPropagation(); // kill event from firing further
+			if ( $('.site-header .quick-cart').hasClass('hide') ) {
+				showQuickCart();
+			} else {
+				hideQuickCart();
+			}
+		});
+		// REQUEST CART DATA
 		Shopatron.getCart({
-			success: function (data, textStatus) {
-				var itemsInCart = 0;
+			success: function (cartData, textStatus) {
+				var itemsInCart, lastCartItem;
+				itemsInCart = 0;
+				// remove old remove handler
+				$('.quick-cart .cart-details .cart-item-price .cart-item-remove').off('click.cart');
 				// find quantity of items in cart
-				$.each(data.cartItems, function (key, value) {
+				$.each(cartData.cartItems, function (key, value) {
 					itemsInCart += parseInt(value.quantity, 10);
 				});
-				$('#quick-cart a span').html(itemsInCart);
-			},
+				// check if there is more than 1 item in cart
+				if (itemsInCart > 0) {
+					// change display of cart
+					$('.site-header .quick-cart').addClass('full');
+					// update amount of items in cart
+					$('.quick-cart .cart-details .total-items a span').html(itemsInCart);
+					// grab last item in cart
+					lastCartItem = cartData.cartItems[cartData.cartItems.length - 1];
+					// set the image of last item added
+					$('.quick-cart .cart-item-image img').attr('src', lastCartItem.image);
+					// get the name of the last item added
+					// got the regular expression from Shopatron's API
+					// this decodes the funky string to just the product sku - "/product/3214710?api_key=a29smylj"
+					// http://mediacdn.shopatron.com/media/js/product/shopatronAPI-2.5.0.js
+					var lastCartItemPN = decodeURIComponent((lastCartItem.product).match(/\/product\/([^\/\?]*)/)[1]);
+					// get the name and price of the latest product, kinda dumb you don't get it with the cart request
+					Shopatron.getProduct({
+						partNumber: lastCartItemPN
+					}, {
+						success: function (productData, textStatus) {
+							$('.quick-cart .cart-details .cart-item-title').html(productData.name);
+							// set the price of the last item added
+							$('.quick-cart .cart-details .cart-item-price .cart-item-amount').html(productData.priceDisplay + " " + cartData.currency);
+						},
+						error: function (textStatus, errorThrown) {},
+						complete: function (textStatus) {}
+					});
+					// add handler to remove item from cart
+					$('.quick-cart .cart-details .cart-item-price .cart-item-remove').on('click.cart', function () {
+						Shopatron.removeItem({
+							cartItemID: lastCartItem.cartItemID
+						}, {
+							success: function (data, textStatus) {
+								// item removed, update cart
+								self.quickCartInit(true);
+							},
+							error: function (textStatus, errorThrown) {},
+							complete: function (textStatus) {}
+						});
+						$(this).blur();
+					});
+				} else {
+					// change display of cart
+					$('.site-header .quick-cart').removeClass('full');
+					$('.quick-cart .cart-details .total-items a span').html('0');
+				}
+			}
+			/*
+			SAMPLE ADD TO CART - Use to get product in the cart
+			ASS PICKLE - 3211905
+			AGRO - 3214710
+
+			Shopatron.addToCart({
+				quantity: '1',
+				partNumber: 3211905
+			}, {
+				success: function (data, textStatus) {
+					console.log(data);
+				},
+				error: function (textStatus, errorThrown) {},
+				complete: function (textStatus) {}
+			});
+			*/
 		});
 	},
 	shoppingCartInit: function () {

@@ -2,13 +2,33 @@
    BASE/_LINKS.SCSS
    ========================================================================== */
 
-//Inline Text
+// Inline Text
 a {
-    color: $gray-dark;
+    color: $black;
     text-decoration: none;
     outline: 0;
 
     &:hover, &:focus {
-        color: $gray;
+        color: $purple;
     }
+}
+// Box Links
+a.green-box {
+	color: $black;
+	background: $green;
+
+	&:hover,
+	&:focus {
+		background: $yellow;
+	}
+}
+a.black-box {
+	color: $white;
+	background: $black;
+
+	&:hover,
+	&:focus {
+		color: $black;
+		background: $yellow;
+	}
 }

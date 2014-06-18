@@ -12,6 +12,28 @@
 <!--[if IE 8 ]>    <html class="ie ie8 ie-lt10 ie-lt9 no-js" <?php language_attributes(); ?>> <![endif]-->
 <!--[if IE 9 ]>    <html class="ie ie9 ie-lt10 no-js" <?php language_attributes(); ?>> <![endif]-->
 <!--[if gt IE 9]><!--><html class="no-js" <?php language_attributes(); ?>><!--<![endif]-->
+<!--
+                G                                           GGGGGGGGGGG
+               GGG          GGGGGGGGGGGGGGGGGGGGGGGGGG   GGGGGGGGGGGGGGGGG
+              GGGGG         GGGGGGGGGGGGGGGGGGGGGGGGGG GGGGGGGGGGGGGGGGGGGGGG
+             GGG GGG        GG      GGGGGGGGGGG    GGGGGG    GGGGGGGGG    GGG
+            GGG   GGG       GG        GGGGGGGGG    GGGGGG    GGGGGGGGG    GGGG
+           GGG     GGG      GG         GGGGGGGG    GGGGGG    GGGGGGGGG    GGGGG
+          GGG       GGG     GG           GGGGGG    GGGGGG    GGGGGGGGG    GGGGG
+         GGG    GG   GGG    GG     G      GGGGG    GGGGGG    GGGGGGGGG    GGGGGG
+        GGG    GGG    GGG   GG     GGG     GGGG    GGGGGG    GGGGGGGGG    GGGGGG
+       GGG    GGGGGGGGGGGG  GG     GGGG      GG    GGGGGG    GGGGGGGGG    GGGGGG
+      GGG    GGGGGGGGGGGGGG GG     GGGGGG     G    GGGGGG    GGGGGGGGG    GGGGG
+     GGG    GGG         GGGGGG     GGGGGGGG        GGGGGG    GGGGGGGGG    GGGGG
+    GGG    GGGGGGGGGGG   GGGGG     GGGGGGGG        GGGGGG     GGGGGGG     GGGG
+   GGG    GGGGGGGGGGGGG   GGGG     GGGGGGGGGG      GGGGGGD     GGGGG     GGGGG
+  GGG                      GGG     GGGGGGGGGGG     GGGGGGGG             GGGGG
+ GGG                        GG     GGGGGGGGGGGG    GGG  GGGGGG      GGGGGGG
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG     GGGGGGGGGGGGGG
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG         GGGGGG
+
+               - HANDBUILT IN THE USA BY SNOWBOARDERS WITH JOBS -
+-->
 <head id="mervinmfg-template" data-template-set="mervinmfg-wordpress-theme-template">
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<!--[if IE ]>
@@ -80,8 +102,28 @@
 			</div><!-- .header-wrapper -->
 			<div class="takeover-green-bar"></div>
 			<div class="takeover-white-fade"></div>
+			<div id="quick-cart" class="quick-cart hide">
+				<div class="quick-cart-wrapper">
+					<div class="cart-default-image">
+						<img src="<?php echo get_template_directory_uri(); ?>/_/img/quick-cart-default.jpg" alt="Default product image" />
+					</div>
+					<div class="cart-item-image">
+						<img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" alt="Last product added" />
+					</div>
+					<div class="cart-details">
+						<p class="cart-default-title"><a href="https://www.youtube.com/watch?v=L7SkrYF8lCU" target="_blank">Feed me Seymour!</a></p>
+						<p class="cart-item-title"></p>
+						<div class="cart-item-price">
+							<div class="cart-item-amount"></div>
+							<button class="cart-item-remove">REMOVE X</button>
+						</div>
+						<p class="total-items"><a href="/shopping-cart/">View <span>0</span> Item(s) in Cart</a></p>
+						<a href="/shopping-cart/" class="cart-checkout green-box">Checkout</a>
+					</div>
+				</div>
+			</div>
 			<div id="search" class="search-box-wrapper hide">
 				<?php get_search_form(); ?>
 			</div>
-		</header><!-- #masthead -->
+		</header><!-- .site-header -->
 		<div id="main" class="site-main">

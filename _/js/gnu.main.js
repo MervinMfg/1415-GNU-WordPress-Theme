@@ -164,7 +164,7 @@ GNU.main = {
 		function showSearch() {
 			self.quickCartInit(false);
 			$('.site-header .search-box-wrapper').removeClass('hide');
-			TweenLite.to('.site-header .search-box-wrapper', .3, {opacity: 1, onComplete: function () {$('.site-header .search-box-wrapper .search-form .search-field').focus();}});
+			TweenLite.to('.site-header .search-box-wrapper', 0.2, {opacity: 1, onComplete: function () {$('.site-header .search-box-wrapper .search-form .search-field').focus();}});
 			// don't hide if clicked within search area
 			$('.site-header .search-box-wrapper .search-form .search-field, .site-header .search-box-wrapper .search-form .search-submit').on('click.search', function (e) {
 				e.stopPropagation();
@@ -184,7 +184,7 @@ GNU.main = {
 			$(document).off('keyup.search').off('click.search');
 			$('.site-header .search-box-wrapper .search-form .search-field, .site-header .search-box-wrapper .search-form .search-submit').off('click.search');
 			// fade out search bar
-			TweenLite.to('.site-header .search-box-wrapper', .3, {opacity: 0, onComplete: function () {$('.site-header .search-box-wrapper').addClass('hide');}});
+			TweenLite.to('.site-header .search-box-wrapper', 0.2, {opacity: 0, onComplete: function () {$('.site-header .search-box-wrapper').addClass('hide');}});
 		}
 		// SEARCH BAR FUNCTIONALITY
 		// spin compass w/ gif
@@ -259,7 +259,7 @@ GNU.main = {
 					success: function (data) {
 						// init the shopatron page elements
 						self.quickCartInit();
-						if ($('body').hasClass('page-template-page-templatespage-shopping-cart-php')) {
+						if ($('body').hasClass('page-template-page-templatesshopping-cart-php')) {
 							self.shoppingCartInit();
 						}
 					}
@@ -284,7 +284,7 @@ GNU.main = {
 		function showQuickCart() {
 			self.searchInit(false);
 			$('.site-header .quick-cart').removeClass('hide');
-			TweenLite.to('.site-header .quick-cart', .3, {opacity: 1});
+			TweenLite.to('.site-header .quick-cart', 0.2, {opacity: 1});
 			// don't hide if clicked within search area
 			$('.site-header .quick-cart').on('click.cart', function (e) {
 				e.stopPropagation();
@@ -304,7 +304,7 @@ GNU.main = {
 			$(document).off('keyup.cart').off('click.cart');
 			$('.site-header .quick-cart').off('click.cart');
 			// fade out search bar
-			TweenLite.to('.site-header .quick-cart', .3, {opacity: 0, onComplete: function () {$('.site-header .quick-cart').addClass('hide');}});
+			TweenLite.to('.site-header .quick-cart', 0.2, {opacity: 0, onComplete: function () {$('.site-header .quick-cart').addClass('hide');}});
 		}
 		// check for click event on cart icon
 		$('.site-header .header-main .quick-cart-toggle a').on('click.cart', function (e) {
@@ -396,6 +396,8 @@ GNU.main = {
 		var self, lang, regionCookie;
 		self = this;
 
+		console.log('init shopping cart');
+		
 		Shopatron('#shopping-cart').getCart({
 			imageWidth: 100,
 			imageHeight: 100
@@ -405,7 +407,7 @@ GNU.main = {
 			complete: function () {}
 		});
 		// check for the region
-		regionCookie = self.utilities.cookie.getCookie('libtech_region');
+		regionCookie = self.utilities.cookie.getCookie('gnu_region');
 		if (regionCookie !== null || regionCookie !== "") {
 			lang = regionCookie;
 		} else {
@@ -413,16 +415,15 @@ GNU.main = {
 		}
 		// update links on page
 		if (lang === 'ca') {
-			$("a.link-ordering-info").prop("href", "http://libtech-ca.shptron.com/k/ordering");
-			$("a.link-return-policy").prop("href", "http://libtech-ca.shptron.com/k/policies#Returns");
-		} else if (lang === 'int') {
-			$("a.link-ordering-info").prop("href", "http://libtech-int.shptron.com/k/ordering");
-			$("a.link-return-policy").prop("href", "http://libtech-int.shptron.com/k/policies#Returns");
+			$("a.link-ordering-info").prop("href", "http://gnu-ca.shptron.com/k/ordering");
+			$("a.link-return-policy").prop("href", "http://gnu-ca.shptron.com/k/policies#Returns");
+		} else if (lang === 'euro') {
+			$("a.link-ordering-info").prop("href", "http://gnu-euro.shptron.com/k/ordering");
+			$("a.link-return-policy").prop("href", "http://gnu-euro.shptron.com/k/policies#Returns");
 		} else {
-			$("a.link-ordering-info").prop("href", "http://checkout.lib-tech.com/k/ordering");
-			$("a.link-return-policy").prop("href", "http://checkout.lib-tech.com/k/policies#Returns");
+			$("a.link-ordering-info").prop("href", "http://gnu.shptron.com/k/ordering");
+			$("a.link-return-policy").prop("href", "http://gnu.shptron.com/k/policies#Returns");
 		}
-
 		// region selector trigger
 		$('.link-region-selector').click(function (e) {
 			e.preventDefault();

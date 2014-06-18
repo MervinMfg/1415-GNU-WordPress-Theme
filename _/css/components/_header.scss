@@ -193,13 +193,19 @@
 			.total-items {
 				text-align: center;
 				text-transform: uppercase;
-				margin: 5px 0;
 				font-size: 1.8em;
 				font-family: $neuron;
 				font-style: italic;
+				margin: 0;
 
-				span {
-					font-weight: 700;
+				a {
+					width: 100%;
+					display: block;
+					padding: 5px 0;
+
+					span {
+						font-weight: 700;
+					}
 				}
 			}
 		}
@@ -216,7 +222,7 @@
 	position: relative;
 
 	.search-field {
-		border-top: 1px solid $black;
+		border-top: none;
 		border-bottom: 1px solid $black;
 		border-left: none;
 		border-right: none;

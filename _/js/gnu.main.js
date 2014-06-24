@@ -295,15 +295,16 @@ GNU.main = {
 		}
 	},
 	shopatronInit: function () {
-		var self, lang, regionCookie, shopAPIKey, shopAPIKeyString;
+		var self, currency, regionCookie, shopAPIKey, shopAPIKeyString;
 		self = this;
 		// check the language on the cookie
-		regionCookie = self.utilities.cookie.getCookie('gnu_region');
-		if (regionCookie !== null || regionCookie !== "") {
-			lang = regionCookie;
+		currencyCookie = self.utilities.cookie.getCookie('gnu_currency');
+		console.log('region: ' + currencyCookie);
+		if (currencyCookie !== null || currencyCookie !== "") {
+			currency = currencyCookie;
 		}
-		if (lang) {
-			if (lang === 'ca') {
+		if (currency) {
+			if (currency === 'CAD') {
 				shopAPIKey = "iyzc7e8i"; // CA Key
 				// set shopatron footer links for Canada
 				$('#link-privacy').attr('href', 'http://gnu-ca.shptron.com/home/privacy/4374.7.1.2');
@@ -314,18 +315,18 @@ GNU.main = {
 				$('#link-ordering').attr('href', 'http://gnu-ca.shptron.com/home/ordering/4374.7.1.2');
 				// set my account in header for Canada
 				$('header .nav-utility .link-account a').attr('href', 'http://gnu-ca.shptron.com/account/?mfg_id=4374.7&language_id=1');
-			} else if (lang === 'euro') {
-				shopAPIKey = "95tuotu0"; // International key
-				// set shopatron footer links for International
+			} else if (currency === 'EUR') {
+				shopAPIKey = "4xbcoau0"; // European key
+				// set shopatron footer links for Europe
 				$('#link-privacy').attr('href', 'http://gnu-euro.shptron.com/home/privacy/4374.7.1.2');
 				$('#link-policies').attr('href', 'http://gnu-euro.shptron.com/home/policies/4374.7.1.2');
 				$('#link-login').attr('href', 'http://gnu-euro.shptron.com/account/?mfg_id=4374.7&language_id=1');
 				$('#link-safety').attr('href', 'http://gnu-euro.shptron.com/home/security/4374.7.1.2');
 				$('#link-returns').attr('href', 'http://gnu-euro.shptron.com/home/policies/4374.7.1.2#Returns');
 				$('#link-ordering').attr('href', 'http://gnu-euro.shptron.com/home/ordering/4374.7.1.2');
-				// set my account in header for International
+				// set my account in header for Europe
 				$('header .nav-utility .link-account a').attr('href', 'http://gnu-euro.shptron.com/account/?mfg_id=4374.7&language_id=1');
-			} else if (lang === 'int') {
+			} else if (currency === 'INT') {
 				// INTERNATIONAL
 				shopAPIKey = "a29smylj"; // US Key
 			} else {

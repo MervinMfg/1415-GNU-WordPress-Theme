@@ -14,10 +14,13 @@ GNU.main = {
 		var self = this;
 
 		self.shopatronInit();
+		self.regionSelectorInit();
 		self.menuInit();
 		self.searchInit();
-		// lazy load
+		// lazy load of images
 		$("img.lazy").unveil();
+		// trigger load before scroll or resize
+		$(window).on('load.lazy', function () { $(window).resize(); $(window).off('load.lazy')});
 	},
 	menuInit: function () {
 		var self, controller, tween, scene;
@@ -69,12 +72,19 @@ GNU.main = {
 				});
 			}
 			// check if takeover should be initialized
-			if ($('.site-header').hasClass('active-takeover')) initTakeoverScroll();
+			if ( $('body').hasClass('active-takeover') ) {
+				if ($('html').hasClass('ie-lt9')) {
+					// if IE8 or earlier, remove takeover
+					$('body').removeClass('active-takeover');
+				} else {
+					initTakeoverScroll();
+				}
+			}
 		}
 		// TAKEOVER SCROLLING
 		function initTakeoverScroll() {
 			// remove previous scroll attributes
-			$('.active-takeover, .active-takeover .header-wrapper, .active-takeover .header-main, .active-takeover .header-main .takeover, .active-takeover .header-main .takeover .photo, .active-takeover .header-main .site-title, .active-takeover .header-main .primary-navigation, .active-takeover .header-main .primary-navigation .nav-menu, .active-takeover .header-main .quick-cart-toggle, .active-takeover .header-main .search-toggle, .active-takeover .takeover-green-bar, .active-takeover .takeover-white-fade').removeAttr('style');
+			$('.site-header, .site-header .header-wrapper, .site-header .header-main, .site-header .header-main .takeover, .site-header .header-main .takeover .photo, .site-header .header-main .site-title, .site-header .header-main .primary-navigation, .site-header .header-main .primary-navigation .nav-menu, .site-header .header-main .quick-cart-toggle, .site-header .header-main .search-toggle, .site-header .takeover-green-bar, .site-header .takeover-white-fade').removeAttr('style');
 			// set up controller
 			if (typeof controller !== 'undefined') {
 				controller.destroy();
@@ -84,40 +94,40 @@ GNU.main = {
 				// TABLET SIZE ANIMATION
 				controller = new ScrollMagic({vertical: true});
 				// set up scenes/tweens
-				tween = new TweenMax.to(".active-takeover .header-main", 1, {height: "71px", display: 'block', ease: Linear.easeNone});
+				tween = new TweenMax.to(".site-header .header-main", 1, {height: "71px", display: 'block', ease: Linear.easeNone});
 				scene = new ScrollScene({duration: 409}).setTween(tween).addTo(controller);
 				tween = new TimelineMax().add([
-					TweenMax.to(".active-takeover", 1, {backgroundPosition: 'top center', ease: Linear.easeNone}),
-					TweenMax.to(".active-takeover .header-wrapper", 1, {backgroundPosition: '0 20px', ease: Linear.easeNone}),
-					TweenMax.to(".active-takeover .header-main .takeover", 1, {opacity: 0, ease: Linear.easeNone}),
-					TweenMax.to(".active-takeover .header-main .takeover .photo", 1, {top: 0, ease: Linear.easeNone}),
-					TweenMax.to(".active-takeover .header-main .site-title", 1, {display: 'block', top: '20px', left: '0px', ease: Linear.easeNone}),
-					TweenMax.to(".active-takeover .header-main .primary-navigation", 1, {top: '20px', left: '146px', backgroundPosition: '-590px 0px', width: 'auto', ease: Linear.easeNone}),
-					TweenMax.to(".active-takeover .header-main .primary-navigation .nav-menu", 1, {fontSize: '22px', ease: Linear.easeNone}),
-					TweenMax.to(".active-takeover .header-main .quick-cart-toggle", 1, {display: 'block', opacity: 1, ease: Linear.easeNone}),
-					TweenMax.to(".active-takeover .header-main .search-toggle", 1, {display: 'block', opacity: 1, ease: Linear.easeNone}),
-					TweenMax.to(".active-takeover .takeover-green-bar", 1, {display: 'block', opacity: 1, ease: Linear.easeNone}),
-					TweenMax.to(".active-takeover .takeover-white-fade", 1, {display: 'none', opacity: 0, ease: Linear.easeNone})
+					TweenMax.to(".site-header", 1, {backgroundPosition: 'top center', ease: Linear.easeNone}),
+					TweenMax.to(".site-header .header-wrapper", 1, {backgroundPosition: '0 20px', ease: Linear.easeNone}),
+					TweenMax.to(".site-header .header-main .takeover", 1, {opacity: 0, ease: Linear.easeNone}),
+					TweenMax.to(".site-header .header-main .takeover .photo", 1, {top: 0, ease: Linear.easeNone}),
+					TweenMax.to(".site-header .header-main .site-title", 1, {display: 'block', top: '20px', left: '0px', ease: Linear.easeNone}),
+					TweenMax.to(".site-header .header-main .primary-navigation", 1, {top: '20px', left: '146px', backgroundPosition: '-590px 0px', width: 'auto', ease: Linear.easeNone}),
+					TweenMax.to(".site-header .header-main .primary-navigation .nav-menu", 1, {fontSize: '22px', ease: Linear.easeNone}),
+					TweenMax.to(".site-header .header-main .quick-cart-toggle", 1, {display: 'block', opacity: 1, ease: Linear.easeNone}),
+					TweenMax.to(".site-header .header-main .search-toggle", 1, {display: 'block', opacity: 1, ease: Linear.easeNone}),
+					TweenMax.to(".site-header .takeover-green-bar", 1, {display: 'block', opacity: 1, ease: Linear.easeNone}),
+					TweenMax.to(".site-header .takeover-white-fade", 1, {display: 'none', opacity: 0, ease: Linear.easeNone})
 				]);
 				scene = new ScrollScene({offset: 227, duration: 182}).setTween(tween).addTo(controller);
 			} else if ( self.config.responsiveSize == 'large') {
 				// DESKTOP SIZE ANIMATION
 				controller = new ScrollMagic({vertical: true});
 				// set up scenes/tweens
-				tween = new TweenMax.to(".active-takeover .header-main", 1, {height: "51px", display: 'block', ease: Linear.easeNone});
+				tween = new TweenMax.to(".site-header .header-main", 1, {height: "51px", display: 'block', ease: Linear.easeNone});
 				scene = new ScrollScene({duration: 429}).setTween(tween).addTo(controller);
 				tween = new TimelineMax().add([
-					TweenMax.to(".active-takeover", 1, {backgroundPosition: 'top center', ease: Linear.easeNone}),
-					TweenMax.to(".active-takeover .header-wrapper", 1, {backgroundPosition: '0 0px', ease: Linear.easeNone}),
-					TweenMax.to(".active-takeover .header-main .takeover", 1, {opacity: 0, ease: Linear.easeNone}),
-					TweenMax.to(".active-takeover .header-main .takeover .photo", 1, {top: 0, ease: Linear.easeNone}),
-					TweenMax.to(".active-takeover .header-main .site-title", 1, {display: 'block', opacity: 1, top: '0px', left: '0px', ease: Linear.easeNone}),
-					TweenMax.to(".active-takeover .header-main .primary-navigation", 1, {top: '0px', left: '146px', backgroundPosition: '-590px 0px', width: 'auto', ease: Linear.easeNone}),
-					TweenMax.to(".active-takeover .header-main .primary-navigation .nav-menu", 1, {fontSize: '22px', ease: Linear.easeNone}),
-					TweenMax.to(".active-takeover .header-main .quick-cart-toggle", 1, {display: 'block', opacity: 1, ease: Linear.easeNone}),
-					TweenMax.to(".active-takeover .header-main .search-toggle", 1, {display: 'block', opacity: 1, ease: Linear.easeNone}),
-					TweenMax.to(".active-takeover .takeover-green-bar", 1, {display: 'block', opacity: 1, ease: Linear.easeNone}),
-					TweenMax.to(".active-takeover .takeover-white-fade", 1, {display: 'none', opacity: 0, ease: Linear.easeNone})
+					TweenMax.to(".site-header", 1, {backgroundPosition: 'top center', ease: Linear.easeNone}),
+					TweenMax.to(".site-header .header-wrapper", 1, {backgroundPosition: '0 0px', ease: Linear.easeNone}),
+					TweenMax.to(".site-header .header-main .takeover", 1, {opacity: 0, ease: Linear.easeNone}),
+					TweenMax.to(".site-header .header-main .takeover .photo", 1, {top: 0, ease: Linear.easeNone}),
+					TweenMax.to(".site-header .header-main .site-title", 1, {display: 'block', opacity: 1, top: '0px', left: '0px', ease: Linear.easeNone}),
+					TweenMax.to(".site-header .header-main .primary-navigation", 1, {top: '0px', left: '146px', backgroundPosition: '-590px 0px', width: 'auto', ease: Linear.easeNone}),
+					TweenMax.to(".site-header .header-main .primary-navigation .nav-menu", 1, {fontSize: '22px', ease: Linear.easeNone}),
+					TweenMax.to(".site-header .header-main .quick-cart-toggle", 1, {display: 'block', opacity: 1, ease: Linear.easeNone}),
+					TweenMax.to(".site-header .header-main .search-toggle", 1, {display: 'block', opacity: 1, ease: Linear.easeNone}),
+					TweenMax.to(".site-header .takeover-green-bar", 1, {display: 'block', opacity: 1, ease: Linear.easeNone}),
+					TweenMax.to(".site-header .takeover-white-fade", 1, {display: 'none', opacity: 0, ease: Linear.easeNone})
 				]);
 				scene = new ScrollScene({offset: 227, duration: 202}).setTween(tween).addTo(controller);
 			}
@@ -203,6 +213,86 @@ GNU.main = {
 				hideSearch();
 			}
 		});
+	},
+	regionSelectorInit: function () {
+		// check language cookie on load
+		var self, $body, regionCookie, currencyCookie;
+		self = this;
+		$body = $('body');
+		regionCookie = self.utilities.cookie.getCookie('gnu_region');
+		currencyCookie = self.utilities.cookie.getCookie('gnu_currency');
+
+		if (regionCookie !== null || currencyCookie !== null) {
+			if (currencyCookie !== 'INT') {
+				$body.removeClass("international");
+			} else {
+				$body.addClass("international");
+			}
+			$(".region-toggle a").html(regionCookie);
+		} else {
+			if (navigator.cookieEnabled === true) {
+				// if no region cookie has been set, open selector if on product page
+				if ($body.hasClass('page-template-page-templatesshopping-cart-php') || $body.hasClass('page-template-page-templatesoverview-products-php') || $body.hasClass('single-gnu_supplies') || $body.hasClass('single-gnu_bindings') || $body.hasClass('single-gnu_snowboards')) {
+					self.regionSelectorOverlayInit();
+				}
+				// pick us by default, but don't set cookie
+				$('.region-toggle a').html('United States <span>(USD)</span>');
+			} else {
+				// cookies are disabled, pick USD
+				$('.region-toggle a').html('United States <span>(USD)</span>');
+			}
+		}
+		// add click events
+		$(".region-toggle a").click(function (e) {
+			e.preventDefault();
+			e.stopPropagation(); // kill even from firing further
+			if (navigator.cookieEnabled === false) {
+				alert('Enable cookies in your browser in order to select your region.');
+			} else {
+				self.regionSelectorOverlayInit();
+			}
+		});
+	},
+	regionSelectorOverlayInit: function () {
+		var self = this;
+		$('#region-selector').toggleClass('hide');
+		$('#main').toggleClass('hide');
+		// scroll to selector
+		self.utilities.pageScroll('#region-selector');
+		// add click events
+		$("#region-selector .location-group .location-list a").on('click.region', function (e) {
+			var selectedCurrency, selectedRegion;
+			e.preventDefault();
+			selectedCurrency = $(this).attr('data-currency');
+			selectedRegion = $(this).html();
+			self.utilities.cookie.setCookie('gnu_currency', selectedCurrency, 60);
+			self.utilities.cookie.setCookie('gnu_region', selectedRegion, 60);
+			window.location.reload();
+		});
+		// listen for escape key
+		$(document).on('keyup.region', function (e) {
+			if (e.keyCode == 27) {
+				closeOverlay();
+			}
+		}).on('click.region', function () {
+			closeOverlay(); // hide if clicked anywhere outside region selector
+		});
+		// don't hide if clicked within region selector
+		$('#region-selector .choose-region').on('click.region', function (e) {
+			e.stopPropagation();
+		});
+		$('#region-selector .btn-close').on('click.region', function (e) {
+			closeOverlay();
+		});
+		function closeOverlay() {
+			$('#region-selector').toggleClass('hide');
+			$('#main').toggleClass('hide');
+			// kill event listeners
+			$("#region-selector .location-group .location-list a").off('click.region');
+			$(document).off('keyup.region').off('click.region');
+			$('#region-selector .choose-region').off('click.region');
+			$('#region-selector .btn-close').off('click.region');
+		}
 	},
 	shopatronInit: function () {
 		var self, lang, regionCookie, shopAPIKey, shopAPIKeyString;
@@ -395,8 +485,6 @@ GNU.main = {
 	shoppingCartInit: function () {
 		var self, lang, regionCookie;
 		self = this;
-
-		console.log('init shopping cart');
 		
 		Shopatron('#shopping-cart').getCart({
 			imageWidth: 100,

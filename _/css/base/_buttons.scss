@@ -1,0 +1,13 @@
+/* ==========================================================================
+   BASE/_BUTTONS.SCSS
+   ========================================================================== */
+.btn-close {
+	width: 20px;
+	height: 20px;
+	background: url('../img/sprite.png') no-repeat -258px -10px;
+
+	&:hover,
+	&:focus {
+		background-position: -287px -10px;
+	}
+}

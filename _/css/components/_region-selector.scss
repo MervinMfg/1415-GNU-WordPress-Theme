@@ -1,0 +1,87 @@
+/* ==========================================================================
+   COMPONENTS/_REGION-SELECTOR.SCSS
+   ========================================================================== */
+
+.region-selector {
+	padding: 10px 20px;
+	background: url('../img/bg-region-selector.jpg');
+
+	.btn-close {
+		float: right;
+	}
+	.head {
+		padding-top: 5px;
+		clear: both;
+		text-align: center;
+	}
+	.subhead {
+		text-align: center;
+		line-height: 1em;
+		margin-bottom: 1.12em;
+	}
+	.location-group {
+		max-width: 300px;
+		margin: 0 auto;
+
+		.location-title {
+			clear: both;
+			margin-bottom: 0.42em;
+		}
+		.location-list {
+			width: 50%;
+			float: left;
+			padding-bottom: 1.5em;
+
+			li p {
+				margin-bottom: 0;
+
+				a {
+					color: $black;
+
+					span {
+						font-weight: 700;
+					}
+					&:hover {
+						color: $purple;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-medium) {
+	.region-selector {
+		padding-top: 125px;
+		padding-bottom: 60px;
+
+		.head {
+			padding-top: 30px;
+			margin-bottom: 0.28em;
+		}
+		.subhead {
+			margin-bottom: 2.22em;
+		}
+		.choose-region {
+			max-width: 640px;
+			margin: 0 auto;
+		}
+		.location-group {
+			float: left;
+			max-width: 100%;
+
+			&.north-america {
+				width: 35%;
+			}
+			&.europe {
+				width: 50%;
+			}
+			&.international {
+				width: 15%;
+			}
+		}
+		
+	}
+	.active-takeover .region-selector {
+		padding-top: 534px;
+	}
+}

@@ -12,30 +12,36 @@ h1, .h1 {
 	font-family: $neuronExtraBold;
 	font-size: 4.8em;
 	font-weight: 400;
-	line-height: 1.2;
+	line-height: 0.75em;
 	text-transform: uppercase;
 }
 h2, .h2 {
 	font-family: $neuronExtraBold;
 	font-size: 3em;
 	font-weight: 400;
+	line-height: 1em;
 	text-transform: uppercase;
 }
 h3, .h3   {
 	font-family: $neuron;
 	font-size: 2.4em;
 	font-weight: 700;
-	line-height: 1.2;
+	line-height: 1em;
+	text-transform: none;
 }
 h4, .h4   {
 	font-family: $neuron;
-	font-weight: 700;
 	font-size: 1.8em;
+	font-weight: 700;
+	text-transform: none;
+	line-height: 0.78em;
 }
 h5, .h5 {
 	font-family: $neuron;
 	font-size: 2.4em;
 	font-weight: 400;
+	text-transform: none;
+	line-height: 1em;
 }
 // Subheadings
 .subheading {
@@ -43,11 +49,18 @@ h5, .h5 {
 }
 // Paragraphs
 p {
-	margin-bottom: $space;
 	font-family: $neuronLight;
-	font-size: 1.2em;
-	line-height: 1.3em;
-	// 18, 14, 12, 12
+	font-size: 1.8em;
+	font-weight: 400;
+	line-height: 2em;
+	margin-bottom: 2em;
+}
+p.small {
+	font-family: $neuron;
+	font-size: 1.4em;
+	font-weight: 400;
+	line-height: 1.71em;
+	margin-bottom: 2em;
 }
 // Blockquote
 blockquote {
@@ -64,11 +77,9 @@ abbr {
 }
 
 @media screen and (min-width: $breakpoint-medium) {
-	h1, .h1 {
+	h1, .h1, h2, .h2 {
 		font-size: 7.2em;
-	}
-	h2, .h2 {
-		font-size: 7.2em;
+		line-height: 0.7em;
 	}
 	h3, .h3 {
 		font-family: $neuronExtraBold;
@@ -77,13 +88,10 @@ abbr {
 	}
 	h4, .h4 {
 		font-size: 2.4em;
+		line-height: 1em;
 	}
 	h5, .h5 {
 		font-family: $neuronLight;
 		font-size: 3.6em;
-	}
-	p {
-		font-size: 1.4em;
-		line-height: 1.6em;
 	}
 }

@@ -22,17 +22,14 @@ body.international .shopping-cart-wrapper { display: none; }
 .shopping-cart-wrapper p {
 	padding-bottom: 20px;
 }
-.shopping-cart-wrapper a {
-	color: $yellow;
-}
 
 #shopping-cart {
 	min-height: 100px;
 }
 	#shopping-cart .loading {
-		width: 34px;
-		height: 34px;
-		background: url('_/img/loading.gif') no-repeat top left;
+		width: 100px;
+		height: 50px;
+		background: url('../img/loading.gif') no-repeat top left;
 		display: block;
 	}
 /* Default */

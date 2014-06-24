@@ -1,0 +1,20 @@
+/* ==========================================================================
+   COMPONENTS/_GLOBAL.SCSS
+   ========================================================================== */
+
+.site-main {
+	
+}
+@media screen and (min-width: $breakpoint-medium) {
+	.site-main {
+		padding-top: 75px;
+	}
+	.active-takeover .site-main {
+		padding-top: 484px;
+	}
+}
+@media screen and (min-width: $breakpoint-large) {
+	.site-main {
+		padding-top: 55px;
+	}
+}

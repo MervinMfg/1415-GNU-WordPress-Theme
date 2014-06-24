@@ -7,8 +7,105 @@
  * @since 1415 GNU WordPress Theme 1.0.0
  */
 ?>
-
-		</div><!-- #main -->
+		</div><!-- .site-main -->
+		<div id="region-selector" class="region-selector hide<?php if ( is_front_page() ) echo ' active-takeover'; ?>">
+			<button class="btn-close"><span class="offscreen">Close</span></button>
+			<div class="choose-region">
+				<h2 class="head">Select region</h2>
+				<p class="subhead">Region selection indicates currency and shipping address</p>
+				<div class="location-group north-america">
+					<h3 class="location-title">North America</h3>
+					<ul class="location-list">
+						<li class="us">
+							<p class="small"><a href="#region-selector" data-currency="USD">United States <span>(USD)</span></a></p>
+						</li>
+						<li class="ca">
+							<p class="small"><a href="#region-selector" data-currency="CAD">Canada <span>(CAD)</span></a></p>
+						</li>
+					</ul>
+				</div>
+				<div class="location-group europe">
+					<h3 class="location-title">Europe</h3>
+					<ul class="location-list">
+						<li class="us">
+							<p class="small"><a href="#region-selector" data-currency="EUD">Austria <span>(EUD)</span></a></p>
+						</li>
+						<li class="ca">
+							<p class="small"><a href="#region-selector" data-currency="EUD">Belgium <span>(EUD)</span></a></p>
+						</li>
+						<li class="ca">
+							<p class="small"><a href="#region-selector" data-currency="EUD">Czech Republic <span>(EUD)</span></a></p>
+						</li>
+						<li class="ca">
+							<p class="small"><a href="#region-selector" data-currency="EUD">Denmark <span>(EUD)</span></a></p>
+						</li>
+						<li class="ca">
+							<p class="small"><a href="#region-selector" data-currency="EUD">Estonia <span>(EUD)</span></a></p>
+						</li>
+						<li class="ca">
+							<p class="small"><a href="#region-selector" data-currency="EUD">France <span>(EUD)</span></a></p>
+						</li>
+						<li class="ca">
+							<p class="small"><a href="#region-selector" data-currency="EUD">Germany <span>(EUD)</span></a></p>
+						</li>
+						<li class="ca">
+							<p class="small"><a href="#region-selector" data-currency="EUD">Hungary <span>(EUD)</span></a></p>
+						</li>
+						<li class="ca">
+							<p class="small"><a href="#region-selector" data-currency="EUD">Ireland <span>(EUD)</span></a></p>
+						</li>
+						<li class="ca">
+							<p class="small"><a href="#region-selector" data-currency="EUD">Italy <span>(EUD)</span></a></p>
+						</li>
+						<li class="ca">
+							<p class="small"><a href="#region-selector" data-currency="EUD">Latvia <span>(EUD)</span></a></p>
+						</li>
+					</ul>
+					<ul class="location-list">
+						<li class="ca">
+							<p class="small"><a href="#region-selector" data-currency="EUD">Liechtenstein <span>(EUD)</span></a></p>
+						</li>
+						<li class="ca">
+							<p class="small"><a href="#region-selector" data-currency="EUD">Lithuania <span>(EUD)</span></a></p>
+						</li>
+						<li class="ca">
+							<p class="small"><a href="#region-selector" data-currency="EUD">Luxembourg <span>(EUD)</span></a></p>
+						</li>
+						<li class="ca">
+							<p class="small"><a href="#region-selector" data-currency="EUD">Netherlands <span>(EUD)</span></a></p>
+						</li>
+						<li class="ca">
+							<p class="small"><a href="#region-selector" data-currency="EUD">Poland <span>(EUD)</span></a></p>
+						</li>
+						<li class="ca">
+							<p class="small"><a href="#region-selector" data-currency="EUD">Portugal <span>(EUD)</span></a></p>
+						</li>
+						<li class="ca">
+							<p class="small"><a href="#region-selector" data-currency="EUD">Romania <span>(EUD)</span></a></p>
+						</li>
+						<li class="ca">
+							<p class="small"><a href="#region-selector" data-currency="EUD">Slovakia <span>(EUD)</span></a></p>
+						</li>
+						<li class="ca">
+							<p class="small"><a href="#region-selector" data-currency="EUD">Slovenia <span>(EUD)</span></a></p>
+						</li>
+						<li class="ca">
+							<p class="small"><a href="#region-selector" data-currency="EUD">Spain <span>(EUD)</span></a></p>
+						</li>
+					</ul>
+				</div>
+				<div class="location-group international">
+					<h3 class="location-title">Other</h3>
+					<ul class="location-list">
+						<li class="us">
+							<p class="small"><a href="#region-selector" data-currency="INT">International</a></p>
+						</li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div><!-- .choose-region -->
+		</div><!-- .region-selector -->
+		
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="footer-wrapper">
 				<div class="footer-content">

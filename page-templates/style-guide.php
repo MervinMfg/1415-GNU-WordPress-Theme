@@ -15,7 +15,7 @@
 
 <div role="main" class="style-guide">
     <header class="container">
-        <h1>Style Guide</h1>
+        <h1 class="h4">Style Guide Style Guidek Style Guide Style GuideStyle Guide Style Guide Style Guide Style Guide</h1>
         <p>This document is a guide to the mark-up styles used throughout the site. Parts of this markup guide are attributable <a href="http://paulrobertlloyd.com/about/styleguide/"> Paul Lloyd's style guide</a>, others to <a href="http://www.mezzoblue.com/">Dave Shea</a>, and licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.0/uk/">Creative Commons License</a>.</p>
     </header>
 

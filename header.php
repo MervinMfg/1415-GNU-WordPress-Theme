@@ -66,11 +66,15 @@ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG         GGGGGG
 	<script src="<?php echo get_template_directory_uri(); ?>/_/js/lib/respond-1.4.2.min.js"></script>
 	<![endif]-->
 	<!-- WordPress Head -->
-	<?php wp_head(); ?>
+	<?php
+		wp_head();
+		$bodyClass = "";
+		if ( is_front_page() ) $bodyClass = 'active-takeover';
+	?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class($bodyClass); ?>>
 	<div id="page">
-		<header id="masthead" class="site-header<?php if ( is_front_page() ) echo ' active-takeover'; ?>" role="banner">
+		<header id="masthead" class="site-header" role="banner">
 			<div class="header-wrapper">
 				<div class="header-main">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" id="logo" class="site-title" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/_/img/gnu-logo.png" alt="<?php bloginfo( 'name' ); ?>" /></a>
@@ -89,6 +93,9 @@ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG         GGGGGG
 					<div class="search-toggle">
 						<a href="#search" title="Search"><span class="offscreen">Search</span></a>
 					</div>
+
+					<?php if ( is_front_page() ) : ?>
+
 					<div class="takeover">
 						<div class="logo">
 							<img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/gnu-logo-takeover.png" alt="<?php bloginfo( 'name' ); ?>" class="lazy" />
@@ -97,11 +104,20 @@ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG         GGGGGG
 						<div class="h5">B Pro Splitboard</div>
 						<div class="photo"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/takeovers/takeover-kaitlyn-farrington.png" alt="Maria Debari" class="lazy" /></div>
 					</div><!-- .takeover -->
+
+					<?php endif; ?>
+
 					<div class="clearfix"></div>
 				</div>
 			</div><!-- .header-wrapper -->
+
+			<?php if ( is_front_page() ) : ?>
+
 			<div class="takeover-green-bar"></div>
 			<div class="takeover-white-fade"></div>
+
+			<?php endif; ?>
+
 			<div id="quick-cart" class="quick-cart hide">
 				<div class="quick-cart-wrapper">
 					<div class="cart-default-image">

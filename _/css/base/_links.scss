@@ -12,6 +12,14 @@ a {
         color: $purple;
     }
 }
+p a {
+	color: $blue;
+	font-family: $neuron;
+
+	&:hover {
+		color: $gray;
+	}
+}
 // Box Links
 a.green-box {
 	color: $black;

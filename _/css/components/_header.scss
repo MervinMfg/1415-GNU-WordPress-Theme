@@ -75,28 +75,24 @@
 
 					// font link color groups
 					&.boards a:hover,
-					&.boards a:focus,
-					&.boards.current-menu-item a {
+					&.boards a:focus {
+					//&.boards.current-menu-item a
 						color: $blue;
 					}
 					&.bindings a:hover,
-					&.bindings a:focus,
-					&.bindings.current-menu-item a {
+					&.bindings a:focus {
 						color: $pink;
 					}
 					&.supplies a:hover,
-					&.supplies a:focus,
-					&.supplies.current-menu-item a {
+					&.supplies a:focus {
 						color: $yellow;
 					}
 					&.team a:hover,
-					&.team a:focus,
-					&.team.current-menu-item a {
+					&.team a:focus {
 						color: $purple;
 					}
 					&.blog a:hover,
-					&.blog a:focus,
-					&.blog.current-menu-item a {
+					&.blog a:focus {
 						color: $green;
 					}
 				}
@@ -305,6 +301,8 @@
 				z-index: 2;
 				padding: 23px 45px 0 15px;
 				background: url('../img/bg-black-triangles-nav.png') no-repeat top right;
+				-webkit-transform: translateZ(0); // triggers GPU, Safari fix
+				transform: translateZ(0); // non-webkit specific
 
 				.nav-menu {
 					text-align: left;
@@ -316,6 +314,18 @@
 
 						a {
 							color: $white;
+							display: block;
+							-webkit-transform: matrix(1.0, 0, 0, 1.0, 0, 0);
+							-ms-transform: scale(1.0, 1.0);
+							transform: scale(1.0, 1.0);
+							@include transition(all, 100ms, ease-in-out);
+
+							&:hover,
+							&:focus {
+								-webkit-transform: matrix(1.1, 0, 0, 1.1, 0, 0);
+								-ms-transform: scale(1.1, 1.1);
+								transform: scale(1.1, 1.1);
+							}
 						}
 					}
 				}
@@ -400,17 +410,9 @@
 								font-size: 1.8em;
 								cursor: pointer;
 
-								-webkit-font-smoothing: antialiased;
-								-webkit-appearance: none;
-								background: none;
-								border: 0;
-								padding: 0;
-								margin: 0;
-
 								&:hover,
 								&:focus {
 									color: $purple;
-									outline: none;
 								}
 							}
 						}
@@ -428,99 +430,99 @@
 				}
 			}
 		}
-		&.active-takeover {
-			background-position: bottom center;
+	}
+	.active-takeover .site-header {
+		background-position: bottom center;
 
-			.takeover-green-bar {
-				background: url('../img/bg-green-triangles.png') repeat-x;
-				height: 51px;
-				width: 100%;
-				position: absolute;
-				bottom: 0px;
+		.takeover-green-bar {
+			background: url('../img/bg-green-triangles.png') repeat-x;
+			height: 51px;
+			width: 100%;
+			position: absolute;
+			bottom: 0px;
+			@include vendorize(opacity, 0);
+		}
+		.takeover-white-fade {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 40px;
+			background: url('../img/bg-white-vertical-fade.png') repeat-x;
+			z-index: 5;
+		}
+		.header-wrapper {
+			background: url('../img/bg-black-triangles.png') repeat-x;
+			background-position: 0 202px;
+		}
+		.header-main {
+			height: 480px;
+
+			.site-title {
+				top: 202px;
+				bottom: auto;
+				left: -146px;
+			}
+			.quick-cart-toggle,
+			.search-toggle {
+				display: none;
 				@include vendorize(opacity, 0);
 			}
-			.takeover-white-fade {
-				position: absolute;
-				top: 0;
+			.primary-navigation {
+				bottom: auto;
+				top: 202px;
 				left: 0;
 				width: 100%;
-				height: 40px;
-				background: url('../img/bg-white-vertical-fade.png') repeat-x;
+				padding: 23px 45px 0 10px;
+				background-position: -1076px 0;
+
+				.nav-menu {
+					font-size: 19px;
+				}
+			}
+			.secondary-navigation {
+				z-index: 6;
+
+				.nav-menu {
+					background: none;
+				}
+			}
+		}
+		.takeover {
+			height: 480px;
+			display: block;
+			position: relative;
+			max-width: 768px;
+			margin: 0 auto;
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+			left: 0;
+
+			.logo {
+				width: 366px;
+				height: 163px;
+				margin: 20px 0 102px 20px;
+			}
+			.h1 {
+				font-size: 4.8em;
+				line-height: 1em;
+				width: 386px;
+				text-align: right;
+				margin-bottom: 8px;
+			}
+			.h5 {
+				width: 386px;
+				text-transform: uppercase;
+				text-align: right;
+			}
+			.photo {
+				position: absolute;
+				top: -4px;
+				right: -265px;
+				width: 625px;
+				height: 480px;
 				z-index: 5;
-			}
-			.header-wrapper {
-				background: url('../img/bg-black-triangles.png') repeat-x;
-				background-position: 0 202px;
-			}
-			.header-main {
-				height: 480px;
-
-				.site-title {
-					top: 202px;
-					bottom: auto;
-					left: -146px;
-				}
-				.quick-cart-toggle,
-				.search-toggle {
-					display: none;
-					@include vendorize(opacity, 0);
-				}
-				.primary-navigation {
-					bottom: auto;
-					top: 202px;
-					left: 0;
-					width: 100%;
-					padding: 23px 45px 0 10px;
-					background-position: -1076px 0;
-
-					.nav-menu {
-						font-size: 19px;
-					}
-				}
-				.secondary-navigation {
-					z-index: 6;
-
-					.nav-menu {
-						background: none;
-					}
-				}
-			}
-			.takeover {
-				height: 480px;
-				display: block;
-				position: relative;
-				max-width: 768px;
-				margin: 0 auto;
-				position: absolute;
-				width: 100%;
-				bottom: 0;
-				left: 0;
-
-				.logo {
-					width: 366px;
-					height: 163px;
-					margin: 20px 0 102px 20px;
-				}
-				.h1 {
-					font-size: 4.8em;
-					line-height: 1em;
-					width: 386px;
-					text-align: right;
-					margin-bottom: 8px;
-				}
-				.h5 {
-					width: 386px;
-					text-transform: uppercase;
-					text-align: right;
-				}
-				.photo {
-					position: absolute;
-					top: -4px;
-					right: -265px;
-					width: 625px;
-					height: 480px;
-					z-index: 5;
-				}
 			}
 		}
 	}
@@ -556,36 +558,6 @@
 				}
 			}
 		}
-		&.active-takeover {
-			.header-main {
-				.site-title {
-					@include vendorize(opacity, 0);
-				}
-				.primary-navigation {
-					padding-left: 12px;
-
-					.nav-menu {
-						font-size: 22px;
-					}
-				}
-			}
-			.takeover {
-				max-width: 1056px;
-
-				.logo {
-					margin-left: 84px;
-				}
-				.h1 {
-					width: 450px;
-				}
-				.h5 {
-					width: 450px;
-				}
-				.photo {
-					right: -100px;
-				}
-			}
-		}
 		.search-box-wrapper {
 			.search-form {
 				max-width: 1056px;
@@ -596,6 +568,36 @@
 					width: 320px;
 					border-left: 1px solid $black;
 				}
+			}
+		}
+	}
+	.active-takeover .site-header {
+		.header-main {
+			.site-title {
+				@include vendorize(opacity, 0);
+			}
+			.primary-navigation {
+				padding-left: 12px;
+
+				.nav-menu {
+					font-size: 22px;
+				}
+			}
+		}
+		.takeover {
+			max-width: 1056px;
+
+			.logo {
+				margin-left: 84px;
+			}
+			.h1 {
+				width: 450px;
+			}
+			.h5 {
+				width: 450px;
+			}
+			.photo {
+				right: -100px;
 			}
 		}
 	}

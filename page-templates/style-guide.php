@@ -42,7 +42,7 @@
                     <td>rgb(128, 128, 128)</td>
                 </tr>
                 <tr style="background-color: #333;">
-                    <td>$gray-dark</td>
+                    <td>$grayDark</td>
                     <td>#333</td>
                     <td>rgb(51, 51, 51)</td>
                 </tr>

@@ -11,9 +11,9 @@ Template Name: Home
 			<section class="social-slider">
 				<!-- // section content -->
 			</section>
-			<section class="featured-posts">
-				<!-- // section content -->
-			</section>
+
+			<?php include get_template_directory() . '/_/inc/components/featured-posts.php'; ?>
+
 			<section class="featured-products">
 				<!-- // section content -->
 			</section>

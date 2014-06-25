@@ -32,6 +32,7 @@ GNU.main = {
 	homeInit: function () {
 		var self = this;
 		self.followInit();
+		self.featuredPostsInit();
 	},
 	followInit: function () {
 		var self, controller, tween, scene, responsiveSize;
@@ -63,6 +64,46 @@ GNU.main = {
 			}
 		});
 		initBGScroll();
+	},
+	featuredPostsInit: function () {
+		var self, controller, tween, scene, responsiveSize;
+		self = this;
+		function initPostsScroll() {
+			$('.featured-posts').removeClass('animate');
+			$('.featured-posts .featured-post').removeAttr('style');
+			// set up controller
+			if (typeof controller !== 'undefined') {
+				controller.destroy();
+			}
+			if ( self.utilities.responsiveCheck() === 'medium' || self.utilities.responsiveCheck() === 'large' ) {
+				$('.featured-posts').addClass('animate');
+				controller = new ScrollMagic({vertical: true});
+				tween = new TweenMax.to('.featured-posts .featured-post-list .featured-post', 1, {marginLeft: "0px", marginRight: "0px", ease: Linear.easeNone});
+				scene = new ScrollScene({triggerElement: '.featured-posts', offset: $(window).height()/2*-1, duration: $(window).height()/2}).setTween(tween).addTo(controller);
+			}
+		}
+		// (RE)INIT MENU ON RESIZE
+		$(window).on('resize.featuredPosts', function () {
+			if ( responsiveSize != "base" && self.utilities.responsiveCheck() == "base" ) {
+				responsiveSize = "base";
+				initPostsScroll();
+			} else if ( responsiveSize != "small" && self.utilities.responsiveCheck() == "small" ) {
+				responsiveSize = "small";
+				initPostsScroll();
+			} else if ( responsiveSize != "medium" && self.utilities.responsiveCheck() == "medium" ) {
+				responsiveSize = "medium";
+				initPostsScroll();
+			} else if ( responsiveSize != "large" && self.utilities.responsiveCheck() == "large" ) {
+				responsiveSize = "large";
+				initPostsScroll();
+			}
+		});
+		$('.featured-posts .featured-post .post-link').on('mouseenter', function () {
+			$(this).parents('.featured-post').find('.post-link').addClass('selected');
+		}).on('mouseleave', function () {
+			$(this).parents('.featured-post').find('.post-link').removeClass('selected');
+		});
+		initPostsScroll();
 	},
 	menuInit: function () {
 		var self, controller, tween, scene, responsiveSize;

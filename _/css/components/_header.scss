@@ -279,8 +279,7 @@
 				z-index: 2;
 				padding: 23px 45px 0 15px;
 				background: url('../img/bg-black-triangles-nav.png') no-repeat top right;
-				-webkit-transform: translateZ(0); // triggers GPU, Safari fix
-				transform: translateZ(0); // non-webkit specific
+				@include vendorize(transform, translateZ(0)); // triggers GPU, Safari fix
 
 				.nav-menu {
 					text-align: left;

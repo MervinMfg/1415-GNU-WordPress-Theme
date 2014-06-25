@@ -12,12 +12,12 @@ Template Name: Home
 				<!-- // section content -->
 			</section>
 
-			<?php include get_template_directory() . '/_/inc/components/featured-posts.php'; ?>
+			<?php include get_template_directory() . '/_/inc/modules/featured-posts.php'; ?>
 
 			<section class="featured-products">
 				<!-- // section content -->
 			</section>
 
-			<?php include get_template_directory() . '/_/inc/components/follow.php'; ?>
+			<?php include get_template_directory() . '/_/inc/modules/follow.php'; ?>
 
 <?php get_footer(); ?>

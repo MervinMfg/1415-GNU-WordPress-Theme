@@ -33,8 +33,10 @@
 @import "components/global";
 @import "components/shopatron";
 @import "components/region-selector";
-@import "components/follow";
-@import "components/featured-posts";
+
+// Modules
+@import "modules/follow";
+@import "modules/featured-posts";
 
 // Libraries
 @import "lib/owl-carousel";

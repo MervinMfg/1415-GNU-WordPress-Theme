@@ -7,12 +7,13 @@
 
 GNU.main = {
 	config: {
-		responsiveSize: '',
 		wpImgPath: '/wp-content/themes/1415-GNU-WordPress-Theme/_/img/'
 	},
 	init: function () {
-		var self = this;
-
+		var self, $body;
+		self = this;
+		$body = $('body');
+		// init global components
 		self.shopatronInit();
 		self.regionSelectorInit();
 		self.menuInit();
@@ -21,9 +22,50 @@ GNU.main = {
 		$("img.lazy").unveil();
 		// trigger load before scroll or resize
 		$(window).on('load.lazy', function () { $(window).resize(); $(window).off('load.lazy')});
+		// init respective page template
+		if ($body.hasClass('home')) {
+			self.homeInit();
+		} else if ($body.hasClass('page-template-page-templatespage-home-sport-php')) {
+			self.homeSportInit();
+		}
+	},
+	homeInit: function () {
+		var self = this;
+		self.followInit();
+	},
+	followInit: function () {
+		var self, controller, tween, scene, responsiveSize;
+		self = this;
+		function initBGScroll() {
+			$('.follow').removeAttr('style');
+			// set up controller
+			if (typeof controller !== 'undefined') {
+				controller.destroy();
+			}
+			controller = new ScrollMagic({vertical: true});
+			tween = new TweenMax.to('.follow', 1, {backgroundPosition: "50% 30%", ease: Linear.easeNone});
+			scene = new ScrollScene({triggerElement: '.follow', offset: $(window).height()/2*-1, duration: $('.follow').outerHeight() + $('.site-footer').outerHeight()}).setTween(tween).addTo(controller);
+		}
+		// (RE)INIT MENU ON RESIZE
+		$(window).on('resize.follow', function () {
+			if ( responsiveSize != "base" && self.utilities.responsiveCheck() == "base" ) {
+				responsiveSize = "base";
+				initBGScroll();
+			} else if ( responsiveSize != "small" && self.utilities.responsiveCheck() == "small" ) {
+				responsiveSize = "small";
+				initBGScroll();
+			} else if ( responsiveSize != "medium" && self.utilities.responsiveCheck() == "medium" ) {
+				responsiveSize = "medium";
+				initBGScroll();
+			} else if ( responsiveSize != "large" && self.utilities.responsiveCheck() == "large" ) {
+				responsiveSize = "large";
+				initBGScroll();
+			}
+		});
+		initBGScroll();
 	},
 	menuInit: function () {
-		var self, controller, tween, scene;
+		var self, controller, tween, scene, responsiveSize;
 		self = this;
 		// DROPDOWN MENU
 		function initJSMenu() {
@@ -33,7 +75,7 @@ GNU.main = {
 			$('.site-header .header-main .menu-toggle').removeClass('active');
 			$('.site-header .header-main .menu-toggle').off('click.menu');
 			// check size and it proper menu settings
-			if ( self.config.responsiveSize === 'base' ) {
+			if ( self.utilities.responsiveCheck() === 'base' ) {
 				$('.site-header .header-main .menu-toggle').on('click.menu', function (e) {
 					var menuHeight, headerHeight;
 					e.preventDefault();
@@ -52,7 +94,7 @@ GNU.main = {
 					}
 					
 				});
-			} else if ( self.config.responsiveSize === 'small' ) {
+			} else if ( self.utilities.responsiveCheck() === 'small' ) {
 				$('.site-header .header-main .menu-toggle').on('click.menu', function (e) {
 					var menuHeight, headerHeight;
 					e.preventDefault();
@@ -90,7 +132,7 @@ GNU.main = {
 				controller.destroy();
 			} 
 			// check browser size
-			if ( self.config.responsiveSize == 'medium' ) {
+			if ( self.utilities.responsiveCheck() == 'medium' ) {
 				// TABLET SIZE ANIMATION
 				controller = new ScrollMagic({vertical: true});
 				// set up scenes/tweens
@@ -110,7 +152,7 @@ GNU.main = {
 					TweenMax.to(".site-header .takeover-white-fade", 1, {display: 'none', opacity: 0, ease: Linear.easeNone})
 				]);
 				scene = new ScrollScene({offset: 227, duration: 182}).setTween(tween).addTo(controller);
-			} else if ( self.config.responsiveSize == 'large') {
+			} else if ( self.utilities.responsiveCheck() == 'large') {
 				// DESKTOP SIZE ANIMATION
 				controller = new ScrollMagic({vertical: true});
 				// set up scenes/tweens
@@ -134,17 +176,17 @@ GNU.main = {
 		}
 		// (RE)INIT MENU ON RESIZE
 		$(window).on('resize.menu', function () {
-			if ( self.config.responsiveSize != "base" && self.utilities.responsiveCheck() == "base" ) {
-				self.config.responsiveSize = "base";
+			if ( responsiveSize != "base" && self.utilities.responsiveCheck() == "base" ) {
+				responsiveSize = "base";
 				initJSMenu();
-			} else if ( self.config.responsiveSize != "small" && self.utilities.responsiveCheck() == "small" ) {
-				self.config.responsiveSize = "small";
+			} else if ( responsiveSize != "small" && self.utilities.responsiveCheck() == "small" ) {
+				responsiveSize = "small";
 				initJSMenu();
-			} else if ( self.config.responsiveSize != "medium" && self.utilities.responsiveCheck() == "medium" ) {
-				self.config.responsiveSize = "medium";
+			} else if ( responsiveSize != "medium" && self.utilities.responsiveCheck() == "medium" ) {
+				responsiveSize = "medium";
 				initJSMenu();
-			} else if ( self.config.responsiveSize != "large" && self.utilities.responsiveCheck() == "large" ) {
-				self.config.responsiveSize = "large";
+			} else if ( responsiveSize != "large" && self.utilities.responsiveCheck() == "large" ) {
+				responsiveSize = "large";
 				initJSMenu();
 			}
 		});
@@ -174,9 +216,9 @@ GNU.main = {
 		function showSearch() {
 			self.quickCartInit(false);
 			$('.site-header .search-box-wrapper').removeClass('hide');
-			TweenLite.to('.site-header .search-box-wrapper', 0.2, {opacity: 1, onComplete: function () {$('.site-header .search-box-wrapper .search-form .search-field').focus();}});
+			TweenLite.to('.site-header .search-box-wrapper', 0.2, {opacity: 1, onComplete: function () {$('.site-header .search-box-wrapper .search-form .input-text').focus();}});
 			// don't hide if clicked within search area
-			$('.site-header .search-box-wrapper .search-form .search-field, .site-header .search-box-wrapper .search-form .search-submit').on('click.search', function (e) {
+			$('.site-header .search-box-wrapper .search-form .input-text, .site-header .search-box-wrapper .search-form .search-submit').on('click.search', function (e) {
 				e.stopPropagation();
 			});
 			// document events to kill search
@@ -192,7 +234,7 @@ GNU.main = {
 		function hideSearch() {
 			// kill event listeners
 			$(document).off('keyup.search').off('click.search');
-			$('.site-header .search-box-wrapper .search-form .search-field, .site-header .search-box-wrapper .search-form .search-submit').off('click.search');
+			$('.site-header .search-box-wrapper .search-form .input-text, .site-header .search-box-wrapper .search-form .search-submit').off('click.search');
 			// fade out search bar
 			TweenLite.to('.site-header .search-box-wrapper', 0.2, {opacity: 0, onComplete: function () {$('.site-header .search-box-wrapper').addClass('hide');}});
 		}
@@ -299,7 +341,6 @@ GNU.main = {
 		self = this;
 		// check the language on the cookie
 		currencyCookie = self.utilities.cookie.getCookie('gnu_currency');
-		console.log('region: ' + currencyCookie);
 		if (currencyCookie !== null || currencyCookie !== "") {
 			currency = currencyCookie;
 		}

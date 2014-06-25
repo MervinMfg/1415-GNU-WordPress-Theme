@@ -1,0 +1,99 @@
+/* ==========================================================================
+   COMPONENTS/_FOLLOW.SCSS
+   ========================================================================== */
+
+.follow {
+	height: 225px;
+	background-image: url('../img/bg-follow.jpg');
+	background-repeat: none;
+	overflow: hidden;
+	background-size: cover;
+	background-position: 50% 60%;
+	text-align: center;
+	padding-top: 40px;
+
+	.follow-groups {
+		.follow-group {
+			h5 {
+				text-transform: uppercase;
+			}
+			&.email-group {
+				.input-text {
+					padding: 0.29em 0.33em;
+					width: 182px;
+					height: 32px;
+				}
+				.btn-submit {
+					font-size: 2.4em;
+					padding: 0.15em 0.33em;
+					height: 32px;
+				}
+			}
+			&.social-group {
+				padding-top: 20px;
+
+				.social-icons .menu-item a {
+					width: 36px;
+					height: 41px;
+
+					&.icon-facebook {
+						background-position: -10px -60px; 
+					}
+					&.icon-instagram {
+						background-position: -216px -60px; 
+					}
+					&.icon-twitter {
+						background-position: -51px -60px; 
+					}
+					&.icon-pinterest {
+						background-position: -93px -60px; 
+					}
+					&.icon-vimeo {
+						background-position: -134px -60px; 
+					}
+					&.icon-rss {
+						background-position: -176px -60px; 
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-small) {
+	.follow .follow-groups .follow-group.email-group {
+		.input-text {
+			width: 282px;
+		}
+		.btn-submit {
+			padding: 0.15em 1.42em;
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-medium) {
+	.follow {
+		background-image: url('../img/bg-follow-medium.jpg');
+
+		.follow-groups .follow-group {
+			float: left;
+
+			&.email-group {
+				width: 60%;
+				padding-top: 30px;
+
+				.input-text {
+					width: 260px;
+				}
+			}
+			&.social-group {
+				width: 40%;
+				padding-top: 30px;
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-large) {
+	.follow .follow-groups {
+		max-width: $breakpoint-large;
+		margin: 0 auto;
+	}
+}

@@ -35,6 +35,17 @@ function gnu_setup() {
 	add_theme_support( 'post-thumbnails' );
 }
 add_action( 'after_setup_theme', 'gnu_setup' );
+
+if ( function_exists( 'add_image_size' ) ) {
+    // additional image sizes
+    add_image_size('blog-thumb', 300, 170, true);
+    add_image_size('home-blog-thumb', 192, 192, true);
+    add_image_size('overview-thumb', 220, 220, true);
+    add_image_size('snowboard-detail', 340, 715, true);
+    add_image_size('square-medium', 300, 300, true);
+}
+
+
 // Scripts & Styles (based on twentythirteen: http://make.wordpress.org/core/tag/twentythirteen/)
 function html5reset_scripts_styles() {
 	global $wp_styles;
@@ -130,8 +141,6 @@ function posted_on() {
 }
 
 
-
-
 // REMOVE AUTOMATED CSS MENU CLASSES, CLEAN 'EM UP!
 add_filter('nav_menu_css_class', 'my_css_attributes_filter', 100, 1);
 add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1);
@@ -139,6 +148,72 @@ add_filter('page_css_class', 'my_css_attributes_filter', 100, 1);
 function my_css_attributes_filter($var) {
   return is_array($var) ? array_intersect($var, array('menu-item', 'current-menu-item', 'boards', 'bindings', 'supplies', 'team', 'blog', 'events', 'about', 'locator')) : '';
 }
+
+
+
+
+
+
+
+
+// get the featured image of a post in a specified size, if no featured image set grab 1st image in post, if no image return default
+function get_post_image($imageSize = "thumbnail", $imageName = "") {
+    global $post;
+    if ($imageName == "") {
+        // just getting default thumbnail for post
+        if ( has_post_thumbnail() ) {
+            $image = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), $imageSize);
+        }else{
+            $files = get_children('post_parent='.get_the_ID().'&post_type=attachment&post_mime_type=image');
+            if($files){
+                $keys = array_reverse(array_keys($files));
+                $j=0;
+                $num = $keys[$j];
+                $image = wp_get_attachment_image_src($num, $imageSize, false);
+            }else{
+                // if no image is found use default image
+                $image = array(get_bloginfo('template_url')."/_/img/blog-stock-image.png",300,300);
+            }
+        }
+    } else {
+        // getting a specific image for the post
+        $image = get_post_meta($post->ID, $imageName, true);
+        $image = wp_get_attachment_image_src($image, $imageSize, false);
+    }
+    return $image;
+}
+// EXCERPT LENGTH CONTROLLERS
+// Puts link in excerpts more tag
+function new_excerpt_more($more) {
+    global $post;
+    //return '... <a class="moretag" href="'. get_permalink($post->ID) . '">Continue Reading</a>';
+    return '...';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+// default excerpt length
+function new_excerpt_length($length) {
+    return 30;
+}
+add_filter('excerpt_length', 'new_excerpt_length');
+// custom excerpt length for home page
+function gnu_excerptlength_home($length) {
+    return 20;
+}
+// custom excerpt length for home page
+function gnu_excerptlength_blog($length) {
+    return 16;
+}
+function gnu_excerpt($length_callback='gnu_excerptlength_home') {
+    global $post;
+    add_filter('excerpt_length', $length_callback);
+    $output = get_the_excerpt();
+    $output = apply_filters('wptexturize', $output);
+    $output = apply_filters('convert_chars', $output);
+    echo $output;
+}
+// removes auto paragraph wrapper
+remove_filter('the_excerpt', 'wpautop');
+
 /******************************
 CODE FOR CUSTOM POST TYPES
 ******************************/

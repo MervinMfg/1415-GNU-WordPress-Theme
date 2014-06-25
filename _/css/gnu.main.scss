@@ -25,7 +25,7 @@
 @import "base/fonts";
 @import "base/utility";
 @import "base/typography";
-@import "base/buttons";
+@import "base/forms";
 
 // Components
 @import "components/header";
@@ -33,6 +33,7 @@
 @import "components/global";
 @import "components/shopatron";
 @import "components/region-selector";
+@import "components/follow";
 
 // Libraries
 @import "lib/owl-carousel";

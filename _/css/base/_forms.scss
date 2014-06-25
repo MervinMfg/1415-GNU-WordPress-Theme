@@ -1,0 +1,45 @@
+/* ==========================================================================
+   BASE/_FORMS.SCSS
+   ========================================================================== */
+
+// inputs
+.input-text {
+	border: 1px solid $black;
+	margin: 0;
+	padding: 0;
+	text-align: right;
+	font-family: $neuron;
+	font-size: 2.4em;
+	font-style: italic;
+	text-transform: uppercase;
+	-webkit-font-smoothing: antialiased;
+	-webkit-appearance: none;
+
+	&:focus {
+		outline: none;
+	}
+}
+// buttons
+.btn-submit {
+	color: $white;
+	background: $black;
+	border: none;
+	margin: 0;
+	padding: 0;
+	font-family: $neuron;
+	text-transform: uppercase;
+	font-style: italic;
+	cursor: pointer;
+	-webkit-font-smoothing: antialiased;
+	-webkit-appearance: none;
+}
+.btn-close {
+	width: 20px;
+	height: 20px;
+	background: url('../img/sprite.png') no-repeat -258px -10px;
+
+	&:hover,
+	&:focus {
+		background-position: -287px -10px;
+	}
+}

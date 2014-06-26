@@ -107,10 +107,8 @@ GNU.main = {
 		initPostsScroll();
 	},
 	photoSliderInit: function () {
-		var self, controller, tween, scene, responsiveSize, displayDots;
+		var self, carousel, controller, tween, scene, responsiveSize, displayDots;
 		self = this;
-
-		$(".photo-slider .lazy").unveil();
 		// check to see if pagination on slider should be displayed
 		if ($('.photo-slider .photo-list .photo-item').length > 1) {
 			displayDots = true;
@@ -118,7 +116,7 @@ GNU.main = {
 			displayDots = false;
 		}
 		// set up owl carousel
-		$(".photo-slider .owl-carousel").owlCarousel({
+		carousel = $(".photo-slider .owl-carousel").owlCarousel({
 			items: 1,
 			dots: displayDots,
 			lazyLoad: true

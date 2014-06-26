@@ -33,6 +33,7 @@ GNU.main = {
 		var self = this;
 		self.followInit();
 		self.featuredPostsInit();
+		self.photoSliderInit();
 	},
 	followInit: function () {
 		var self, controller, tween, scene, responsiveSize;
@@ -104,6 +105,56 @@ GNU.main = {
 			$(this).parents('.featured-post').find('.post-link').removeClass('selected');
 		});
 		initPostsScroll();
+	},
+	photoSliderInit: function () {
+		var self, controller, tween, scene, responsiveSize, displayDots;
+		self = this;
+
+		$(".photo-slider .lazy").unveil();
+		// check to see if pagination on slider should be displayed
+		if ($('.photo-slider .photo-list .photo-item').length > 1) {
+			displayDots = true;
+		} else {
+			displayDots = false;
+		}
+		// set up owl carousel
+		$(".photo-slider .owl-carousel").owlCarousel({
+			items: 1,
+			dots: displayDots,
+			lazyLoad: true
+		});
+		// set up background scroll animation functionality
+		function initPhotoScroll() {
+			// reset background position css
+			$('.photo-slider .photo-list .photo-item').css('background-position', '50% 100%');
+			// set up controller
+			if (typeof controller !== 'undefined') {
+				controller.destroy();
+			}
+			// if we're medium or bigger, do the scroll. hidden on base and small
+			if ( self.utilities.responsiveCheck() === 'medium' || self.utilities.responsiveCheck() === 'large' ) {
+				controller = new ScrollMagic({vertical: true});
+				tween = new TweenMax.to('.photo-slider .photo-list .photo-item', 1, {backgroundPosition: "50% 0%", ease: Linear.easeNone});
+				scene = new ScrollScene({triggerElement: '.photo-slider', offset: $(window).height()/2*-1, duration: $(window).height() + $('.photo-slider').outerHeight()}).setTween(tween).addTo(controller);
+			}
+		}
+		// (RE)INIT MENU ON RESIZE
+		$(window).on('resize.photoSlider', function () {
+			if ( responsiveSize != "base" && self.utilities.responsiveCheck() == "base" ) {
+				responsiveSize = "base";
+				initPhotoScroll();
+			} else if ( responsiveSize != "small" && self.utilities.responsiveCheck() == "small" ) {
+				responsiveSize = "small";
+				initPhotoScroll();
+			} else if ( responsiveSize != "medium" && self.utilities.responsiveCheck() == "medium" ) {
+				responsiveSize = "medium";
+				initPhotoScroll();
+			} else if ( responsiveSize != "large" && self.utilities.responsiveCheck() == "large" ) {
+				responsiveSize = "large";
+				initPhotoScroll();
+			}
+		});
+		initPhotoScroll();
 	},
 	menuInit: function () {
 		var self, controller, tween, scene, responsiveSize;

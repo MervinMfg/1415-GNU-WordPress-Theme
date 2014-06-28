@@ -1,0 +1,74 @@
+/* ==========================================================================
+   MODULES/_FEATURED-SLIDER.SCSS
+   ========================================================================== */
+
+.featured-slider {
+	position: relative;
+	height: 195px;
+	@include vendorize(transform, translateZ(0)); // triggers GPU, Safari fix
+
+	.slide-list {
+		.slide-item {
+			height: 195px;
+			background-repeat: none;
+			overflow: hidden;
+			background-size: cover;
+			background-position: 50% 100%;
+
+			.slide-details {
+				position: relative;
+
+				.slide-overlay {
+					padding: 20px;
+
+					img {
+						max-width: 100%;
+						width: auto;
+						max-height: 155px;
+					}
+				}
+				&.right {
+					.slide-overlay img {
+						float: right;
+					}
+				}
+			}
+		}
+		.owl-controls {
+			position: absolute;
+			bottom: 10px;
+			width: 100%;
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-medium) {
+	.featured-slider {
+		height: 315px;
+
+		.slide-list .slide-item {
+			height: 315px;
+
+			.slide-details .slide-overlay img {
+				max-height: 275px;
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-large) {
+	.featured-slider {
+		height: 410px;
+
+		.slide-list .slide-item {
+			height: 410px;
+
+			.slide-details {
+				margin: 0 auto;
+				max-width: $breakpoint-large;
+
+				.slide-overlay img {
+					max-height: 370px;
+				}
+			}
+		}
+	}
+}

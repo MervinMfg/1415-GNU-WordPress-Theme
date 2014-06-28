@@ -73,7 +73,7 @@ module.exports = function (grunt) {
 		},
 		watch: {
 			markup: {
-				files: ['*.php', 'page-templates/*.php'],
+				files: ['*.php', 'page-templates/*.php', '_/inc/**/*.php'],
 				options: {
 					livereload: true,
 				}

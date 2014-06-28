@@ -31,80 +31,58 @@ GNU.main = {
 	},
 	homeInit: function () {
 		var self = this;
-		self.followInit();
+		self.featuredSliderInit();
 		self.featuredPostsInit();
 		self.photoSliderInit();
+		self.followInit();
 	},
-	followInit: function () {
-		var self, controller, tween, scene, responsiveSize;
+	featuredSliderInit: function () {
+		var self, carousel, controller, tween, scene, responsiveSize, displayDots;
 		self = this;
-		function initBGScroll() {
-			$('.follow').removeAttr('style');
-			// set up controller
-			if (typeof controller !== 'undefined') {
-				controller.destroy();
-			}
-			controller = new ScrollMagic({vertical: true});
-			tween = new TweenMax.to('.follow', 1, {backgroundPosition: "50% 30%", ease: Linear.easeNone});
-			scene = new ScrollScene({triggerElement: '.follow', offset: $(window).height()/2*-1, duration: $('.follow').outerHeight() + $('.site-footer').outerHeight()}).setTween(tween).addTo(controller);
+		// check to see if pagination on slider should be displayed
+		if ($('.featured-slider .slide-list .slide-item').length > 1) {
+			displayDots = true;
+		} else {
+			displayDots = false;
 		}
-		// (RE)INIT MENU ON RESIZE
-		$(window).on('resize.follow', function () {
-			if ( responsiveSize != "base" && self.utilities.responsiveCheck() == "base" ) {
-				responsiveSize = "base";
-				initBGScroll();
-			} else if ( responsiveSize != "small" && self.utilities.responsiveCheck() == "small" ) {
-				responsiveSize = "small";
-				initBGScroll();
-			} else if ( responsiveSize != "medium" && self.utilities.responsiveCheck() == "medium" ) {
-				responsiveSize = "medium";
-				initBGScroll();
-			} else if ( responsiveSize != "large" && self.utilities.responsiveCheck() == "large" ) {
-				responsiveSize = "large";
-				initBGScroll();
-			}
+		// set up owl carousel
+		carousel = $(".featured-slider .owl-carousel").owlCarousel({
+			items: 1,
+			dots: displayDots,
+			lazyLoad: true
 		});
-		initBGScroll();
-	},
-	featuredPostsInit: function () {
-		var self, controller, tween, scene, responsiveSize;
-		self = this;
-		function initPostsScroll() {
-			$('.featured-posts').removeClass('animate');
-			$('.featured-posts .featured-post').removeAttr('style');
+		// set up background scroll animation functionality
+		function initFeaturedScroll() {
+			// reset background position css
+			$('.featured-slider .slide-list .slide-item').css('background-position', '50% 100%');
 			// set up controller
 			if (typeof controller !== 'undefined') {
 				controller.destroy();
 			}
+			// if we're medium or bigger, do the scroll. hidden on base and small
 			if ( self.utilities.responsiveCheck() === 'medium' || self.utilities.responsiveCheck() === 'large' ) {
-				$('.featured-posts').addClass('animate');
 				controller = new ScrollMagic({vertical: true});
-				tween = new TweenMax.to('.featured-posts .featured-post-list .featured-post', 1, {marginLeft: "0px", marginRight: "0px", ease: Linear.easeNone});
-				scene = new ScrollScene({triggerElement: '.featured-posts', offset: $(window).height()/2*-1, duration: $(window).height()/2}).setTween(tween).addTo(controller);
+				tween = new TweenMax.to('.featured-slider .slide-list .slide-item', 1, {backgroundPosition: "50% 0%", ease: Linear.easeNone});
+				scene = new ScrollScene({triggerElement: '.featured-slider', offset: $(window).height()/2*-1, duration: $(window).height() + $('.featured-slider').outerHeight()}).setTween(tween).addTo(controller);
 			}
 		}
 		// (RE)INIT MENU ON RESIZE
-		$(window).on('resize.featuredPosts', function () {
+		$(window).on('resize.featuredSlider', function () {
 			if ( responsiveSize != "base" && self.utilities.responsiveCheck() == "base" ) {
 				responsiveSize = "base";
-				initPostsScroll();
+				initFeaturedScroll();
 			} else if ( responsiveSize != "small" && self.utilities.responsiveCheck() == "small" ) {
 				responsiveSize = "small";
-				initPostsScroll();
+				initFeaturedScroll();
 			} else if ( responsiveSize != "medium" && self.utilities.responsiveCheck() == "medium" ) {
 				responsiveSize = "medium";
-				initPostsScroll();
+				initFeaturedScroll();
 			} else if ( responsiveSize != "large" && self.utilities.responsiveCheck() == "large" ) {
 				responsiveSize = "large";
-				initPostsScroll();
+				initFeaturedScroll();
 			}
 		});
-		$('.featured-posts .featured-post .post-link').on('mouseenter', function () {
-			$(this).parents('.featured-post').find('.post-link').addClass('selected');
-		}).on('mouseleave', function () {
-			$(this).parents('.featured-post').find('.post-link').removeClass('selected');
-		});
-		initPostsScroll();
+		initFeaturedScroll();
 	},
 	photoSliderInit: function () {
 		var self, carousel, controller, tween, scene, responsiveSize, displayDots;
@@ -153,6 +131,77 @@ GNU.main = {
 			}
 		});
 		initPhotoScroll();
+	},
+	featuredPostsInit: function () {
+		var self, controller, tween, scene, responsiveSize;
+		self = this;
+		function initPostsScroll() {
+			$('.featured-posts').removeClass('animate');
+			$('.featured-posts .featured-post').removeAttr('style');
+			// set up controller
+			if (typeof controller !== 'undefined') {
+				controller.destroy();
+			}
+			if ( self.utilities.responsiveCheck() === 'medium' || self.utilities.responsiveCheck() === 'large' ) {
+				$('.featured-posts').addClass('animate');
+				controller = new ScrollMagic({vertical: true});
+				tween = new TweenMax.to('.featured-posts .featured-post-list .featured-post', 1, {marginLeft: "0px", marginRight: "0px", ease: Linear.easeNone});
+				scene = new ScrollScene({triggerElement: '.featured-posts', offset: $(window).height()/2*-1, duration: $(window).height()/2}).setTween(tween).addTo(controller);
+			}
+		}
+		// (RE)INIT MENU ON RESIZE
+		$(window).on('resize.featuredPosts', function () {
+			if ( responsiveSize != "base" && self.utilities.responsiveCheck() == "base" ) {
+				responsiveSize = "base";
+				initPostsScroll();
+			} else if ( responsiveSize != "small" && self.utilities.responsiveCheck() == "small" ) {
+				responsiveSize = "small";
+				initPostsScroll();
+			} else if ( responsiveSize != "medium" && self.utilities.responsiveCheck() == "medium" ) {
+				responsiveSize = "medium";
+				initPostsScroll();
+			} else if ( responsiveSize != "large" && self.utilities.responsiveCheck() == "large" ) {
+				responsiveSize = "large";
+				initPostsScroll();
+			}
+		});
+		$('.featured-posts .featured-post .post-link').on('mouseenter', function () {
+			$(this).parents('.featured-post').find('.post-link').addClass('selected');
+		}).on('mouseleave', function () {
+			$(this).parents('.featured-post').find('.post-link').removeClass('selected');
+		});
+		initPostsScroll();
+	},
+	followInit: function () {
+		var self, controller, tween, scene, responsiveSize;
+		self = this;
+		function initBGScroll() {
+			$('.follow').removeAttr('style');
+			// set up controller
+			if (typeof controller !== 'undefined') {
+				controller.destroy();
+			}
+			controller = new ScrollMagic({vertical: true});
+			tween = new TweenMax.to('.follow', 1, {backgroundPosition: "50% 30%", ease: Linear.easeNone});
+			scene = new ScrollScene({triggerElement: '.follow', offset: $(window).height()/2*-1, duration: $('.follow').outerHeight() + $('.site-footer').outerHeight()}).setTween(tween).addTo(controller);
+		}
+		// (RE)INIT MENU ON RESIZE
+		$(window).on('resize.follow', function () {
+			if ( responsiveSize != "base" && self.utilities.responsiveCheck() == "base" ) {
+				responsiveSize = "base";
+				initBGScroll();
+			} else if ( responsiveSize != "small" && self.utilities.responsiveCheck() == "small" ) {
+				responsiveSize = "small";
+				initBGScroll();
+			} else if ( responsiveSize != "medium" && self.utilities.responsiveCheck() == "medium" ) {
+				responsiveSize = "medium";
+				initBGScroll();
+			} else if ( responsiveSize != "large" && self.utilities.responsiveCheck() == "large" ) {
+				responsiveSize = "large";
+				initBGScroll();
+			}
+		});
+		initBGScroll();
 	},
 	menuInit: function () {
 		var self, controller, tween, scene, responsiveSize;

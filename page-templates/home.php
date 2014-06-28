@@ -5,9 +5,8 @@ Template Name: Home
 ?>
 <?php get_header(); ?>
 
-			<section class="featured-slider">
-				<h2>Featured Slider</h2>
-			</section>
+			<?php include get_template_directory() . '/_/inc/modules/featured-slider.php'; ?>
+
 			<section class="social-slider">
 				<h2>Social Slider</h2>
 			</section>

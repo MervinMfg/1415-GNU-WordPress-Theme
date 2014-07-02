@@ -2274,6 +2274,89 @@ body.international .shopping-cart-wrapper {
   }
 }
 /* ==========================================================================
+   MODULES/_FEATURED-PRODUCTS.SCSS
+   ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-products\.scss}line{font-family:\000035}}
+.featured-products {
+  padding: 20px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-products\.scss}line{font-family:\0000315}}
+.featured-products .product-list .product .product-details .product-image {
+  padding-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-products\.scss}line{font-family:\0000318}}
+.featured-products .product-list .product .product-details .product-image img {
+  width: 100%;
+  max-width: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-products\.scss}line{font-family:\0000324}}
+.featured-products .product-list .product .product-details .product-copy .product-title {
+  margin-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-products\.scss}line{font-family:\0000327}}
+.featured-products .product-list .product .product-details .product-copy .product-slogan {
+  margin-bottom: 40px;
+  font-size: 2.4em;
+  line-height: 1em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-products\.scss}line{font-family:\0000332}}
+.featured-products .product-list .product .product-details .product-copy .btn-submit {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-products\.scss}line{font-family:\0000337}}
+.featured-products .product-list .product.snowboards .product-details .product-image img, .featured-products .product-list .product.apparel .product-details .product-image img {
+  width: 140%;
+  margin-left: -20%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-products\.scss}line{font-family:\0000343}}
+.featured-products .product-list .owl-controls {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-products\.scss}line{font-family:\0000348}}
+.featured-products .product-list .owl-controls .owl-dots .owl-dot.active span,
+.featured-products .product-list .owl-controls .owl-dots .owl-dot:hover span {
+  background: #99cc33;
+}
+
+@media screen and (min-width: 476px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-products\.scss}line{font-family:\0000356}}
+  .featured-products {
+    text-align: left;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-products\.scss}line{font-family:\0000359}}
+  .featured-products .product-list .product .product-details {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-products\.scss}line{font-family:\0000363}}
+  .featured-products .product-list .product .product-details .product-image {
+    width: 40%;
+    float: left;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-products\.scss}line{font-family:\0000367}}
+  .featured-products .product-list .product .product-details .product-copy {
+    width: 60%;
+    float: right;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-products\.scss}line{font-family:\0000371}}
+  .featured-products .product-list .product .product-details .product-copy .btn-submit {
+    display: block;
+    font-size: 4em;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+/* ==========================================================================
    MODULES/_FOLLOW.SCSS
    ========================================================================== */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_follow\.scss}line{font-family:\000035}}
@@ -2449,7 +2532,6 @@ body.international .shopping-cart-wrapper {
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/lib\/_owl-carousel\.scss}line{font-family:\0000354}}
 .owl-carousel {
-  display: none;
   width: 100%;
   -webkit-tap-highlight-color: transparent;
   /* position relative and z-index fix webkit rendering fonts issue */

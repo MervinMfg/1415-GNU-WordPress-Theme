@@ -1,0 +1,80 @@
+/* ==========================================================================
+   MODULES/_FEATURED-PRODUCTS.SCSS
+   ========================================================================== */
+
+.featured-products {
+	padding: 20px 40px;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	@include vendorize(transform, translateZ(0)); // triggers GPU, Safari fix
+
+	.product-list {
+		.product {
+			.product-details {
+				.product-image {
+					padding-bottom: 10px;
+
+					img {
+						width: 100%;
+						max-width: none;
+					}
+				}
+				.product-copy {
+					.product-title {
+						margin-bottom: 10px;
+					}
+					.product-slogan {
+						margin-bottom: 40px;
+						font-size: 2.4em;
+						line-height: 1em;
+					}
+					.btn-submit {
+						display: none;
+					}
+				}
+			}
+			&.snowboards .product-details .product-image img,
+			&.apparel .product-details .product-image img {
+				width: 140%;
+				margin-left: -20%;
+			}
+		}
+		.owl-controls {
+			position: absolute;
+			bottom: 0px;
+			width: 100%;
+
+			.owl-dots .owl-dot.active span,
+			.owl-dots .owl-dot:hover span {
+				background: $green;
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-small) {
+	.featured-products {
+		text-align: left;
+
+		.product-list .product .product-details {
+			max-width: 640px;
+			margin: 0 auto;
+
+			.product-image {
+				width: 40%;
+				float: left;
+			}
+			.product-copy {
+				width: 60%;
+				float: right;
+
+				.btn-submit {
+					display: block;
+					font-size: 4em;
+					padding-left: 40px;
+					padding-right: 40px;
+				}
+			}
+		}
+	}
+}

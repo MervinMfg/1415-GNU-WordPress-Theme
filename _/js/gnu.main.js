@@ -34,10 +34,11 @@ GNU.main = {
 		self.featuredSliderInit();
 		self.featuredPostsInit();
 		self.photoSliderInit();
+		self.featuredProductsInit();
 		self.followInit();
 	},
 	featuredSliderInit: function () {
-		var self, carousel, controller, tween, scene, responsiveSize, displayDots;
+		var self, carousel, displayDots;
 		self = this;
 		// check to see if pagination on slider should be displayed
 		if ($('.featured-slider .slide-list .slide-item').length > 1) {
@@ -49,7 +50,11 @@ GNU.main = {
 		carousel = $(".featured-slider .owl-carousel").owlCarousel({
 			items: 1,
 			dots: displayDots,
-			lazyLoad: true
+			lazyLoad: true,
+			autoplay: true,
+			autoplayTimeout: 5000,
+			autoplayHoverPause: true,
+			loop: true
 		});
 		// set up background scroll animation functionality
 		function initFeaturedScroll() {
@@ -97,7 +102,11 @@ GNU.main = {
 		carousel = $(".photo-slider .owl-carousel").owlCarousel({
 			items: 1,
 			dots: displayDots,
-			lazyLoad: true
+			lazyLoad: true,
+			autoplay: true,
+			autoplayTimeout: 5000,
+			autoplayHoverPause: true,
+			loop: true
 		});
 		// set up background scroll animation functionality
 		function initPhotoScroll() {
@@ -171,6 +180,26 @@ GNU.main = {
 			$(this).parents('.featured-post').find('.post-link').removeClass('selected');
 		});
 		initPostsScroll();
+	},
+	featuredProductsInit: function () {
+		var self, carousel;
+		self = this;
+		// check to see if pagination on slider should be displayed
+		if ($('.featured-products .product-list .product').length > 1) {
+			displayDots = true;
+		} else {
+			displayDots = false;
+		}
+		// set up owl carousel
+		carousel = $(".featured-products .owl-carousel").owlCarousel({
+			items: 1,
+			dots: displayDots,
+			lazyLoad: true,
+			autoplay: true,
+			autoplayTimeout: 5000,
+			autoplayHoverPause: true,
+			loop: true
+		});
 	},
 	followInit: function () {
 		var self, controller, tween, scene, responsiveSize;

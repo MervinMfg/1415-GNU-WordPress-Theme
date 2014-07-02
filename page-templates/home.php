@@ -1,4 +1,4 @@
-<?php
+	<?php
 /*
 Template Name: Home
 */
@@ -15,9 +15,7 @@ Template Name: Home
 
 			<?php include get_template_directory() . '/_/inc/modules/photo-slider.php'; ?>
 
-			<section class="featured-products">
-				<h2>Featured Products</h2>
-			</section>
+			<?php include get_template_directory() . '/_/inc/modules/featured-products.php'; ?>
 
 			<?php include get_template_directory() . '/_/inc/modules/follow.php'; ?>
 

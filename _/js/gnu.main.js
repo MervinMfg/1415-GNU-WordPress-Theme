@@ -38,24 +38,8 @@ GNU.main = {
 		self.followInit();
 	},
 	featuredSliderInit: function () {
-		var self, carousel, displayDots;
+		var self, carousel, dots, loop, responsiveSize;
 		self = this;
-		// check to see if pagination on slider should be displayed
-		if ($('.featured-slider .slide-list .slide-item').length > 1) {
-			displayDots = true;
-		} else {
-			displayDots = false;
-		}
-		// set up owl carousel
-		carousel = $(".featured-slider .owl-carousel").owlCarousel({
-			items: 1,
-			dots: displayDots,
-			lazyLoad: true,
-			autoplay: true,
-			autoplayTimeout: 8000,
-			autoplayHoverPause: true,
-			loop: true
-		});
 		// set up background scroll animation functionality
 		function initFeaturedScroll() {
 			// reset background position css
@@ -71,6 +55,24 @@ GNU.main = {
 				scene = new ScrollScene({triggerElement: '.featured-slider', offset: $(window).height()/2*-1, duration: $(window).height() + $('.featured-slider').outerHeight()}).setTween(tween).addTo(controller);
 			}
 		}
+		// check to see if slider should be activated
+		if ($('.featured-slider .slide-list .slide-item').length > 1) {
+			dots = true;
+			loop = true;
+		} else {
+			dots = false;
+			loop = false;
+		}
+		// set up owl carousel
+		carousel = $(".featured-slider .owl-carousel").owlCarousel({
+			items: 1,
+			dots: dots,
+			lazyLoad: true,
+			autoplay: true,
+			autoplayTimeout: 8000,
+			autoplayHoverPause: true,
+			loop: loop
+		});
 		// (RE)INIT MENU ON RESIZE
 		$(window).on('resize.featuredSlider', function () {
 			if ( responsiveSize != "base" && self.utilities.responsiveCheck() == "base" ) {
@@ -90,24 +92,8 @@ GNU.main = {
 		initFeaturedScroll();
 	},
 	photoSliderInit: function () {
-		var self, carousel, controller, tween, scene, responsiveSize, displayDots;
+		var self, carousel, controller, tween, scene, dots, loop, responsiveSize;
 		self = this;
-		// check to see if pagination on slider should be displayed
-		if ($('.photo-slider .photo-list .photo-item').length > 1) {
-			displayDots = true;
-		} else {
-			displayDots = false;
-		}
-		// set up owl carousel
-		carousel = $(".photo-slider .owl-carousel").owlCarousel({
-			items: 1,
-			dots: displayDots,
-			lazyLoad: true,
-			autoplay: true,
-			autoplayTimeout: 8000,
-			autoplayHoverPause: true,
-			loop: true
-		});
 		// set up background scroll animation functionality
 		function initPhotoScroll() {
 			// reset background position css
@@ -123,6 +109,24 @@ GNU.main = {
 				scene = new ScrollScene({triggerElement: '.photo-slider', offset: $(window).height()/2*-1, duration: $(window).height() + $('.photo-slider').outerHeight()}).setTween(tween).addTo(controller);
 			}
 		}
+		// check to see if slider should be activated
+		if ($('.photo-slider .photo-list .photo-item').length > 1) {
+			dots = true;
+			loop = true;
+		} else {
+			dots = false;
+			loop = false;
+		}
+		// set up owl carousel
+		carousel = $(".photo-slider .owl-carousel").owlCarousel({
+			items: 1,
+			dots: dots,
+			lazyLoad: true,
+			autoplay: true,
+			autoplayTimeout: 8000,
+			autoplayHoverPause: true,
+			loop: loop
+		});
 		// (RE)INIT MENU ON RESIZE
 		$(window).on('resize.photoSlider', function () {
 			if ( responsiveSize != "base" && self.utilities.responsiveCheck() == "base" ) {
@@ -182,23 +186,35 @@ GNU.main = {
 		initPostsScroll();
 	},
 	featuredProductsInit: function () {
-		var self, carousel;
+		var self, carousel, dots, loop;
 		self = this;
-		// check to see if pagination on slider should be displayed
+		// check to see if slider should be activated
 		if ($('.featured-products .product-list .product').length > 1) {
-			displayDots = true;
+			dots = true;
+			loop = true;
 		} else {
-			displayDots = false;
+			dots = false;
+			loop = false;
 		}
 		// set up owl carousel
 		carousel = $(".featured-products .owl-carousel").owlCarousel({
 			items: 1,
-			dots: displayDots,
+			dots: dots,
 			lazyLoad: true,
 			autoplay: true,
 			autoplayTimeout: 5000,
 			autoplayHoverPause: true,
-			loop: true
+			loop: loop,
+			responsiveClass:true,
+			responsive:{
+				0:{
+					items: 1
+				},
+				1056:{
+					items: 2,
+					margin: 10
+				}
+			}
 		});
 	},
 	followInit: function () {

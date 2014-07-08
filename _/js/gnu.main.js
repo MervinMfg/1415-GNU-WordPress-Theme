@@ -52,7 +52,7 @@ GNU.main = {
 			dots: displayDots,
 			lazyLoad: true,
 			autoplay: true,
-			autoplayTimeout: 5000,
+			autoplayTimeout: 8000,
 			autoplayHoverPause: true,
 			loop: true
 		});
@@ -104,7 +104,7 @@ GNU.main = {
 			dots: displayDots,
 			lazyLoad: true,
 			autoplay: true,
-			autoplayTimeout: 5000,
+			autoplayTimeout: 8000,
 			autoplayHoverPause: true,
 			loop: true
 		});

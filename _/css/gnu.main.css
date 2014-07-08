@@ -2094,6 +2094,20 @@ body.international .shopping-cart-wrapper {
   }
 }
 /* ==========================================================================
+   MODULES/_SOCIAL-SLIDER.SCSS
+   ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\000035}}
+.social-slider {
+  height: 250px;
+  background: url("../img/bg-social-slider.png");
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* ==========================================================================
    MODULES/_PHOTO-SLIDER.SCSS
    ========================================================================== */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_photo-slider\.scss}line{font-family:\000035}}

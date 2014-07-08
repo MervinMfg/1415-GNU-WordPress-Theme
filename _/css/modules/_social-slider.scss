@@ -1,0 +1,15 @@
+/* ==========================================================================
+   MODULES/_SOCIAL-SLIDER.SCSS
+   ========================================================================== */
+
+.social-slider {
+	height: 250px;
+	background: url('../img/bg-social-slider.png');
+	@include vendorize(transform, translateZ(0)); // triggers GPU, Safari fix
+}
+@media screen and (min-width: $breakpoint-small) {
+}
+@media screen and (min-width: $breakpoint-medium) {
+}
+@media screen and (min-width: $breakpoint-large) {
+}

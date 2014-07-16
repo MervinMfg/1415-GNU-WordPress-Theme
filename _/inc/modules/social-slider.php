@@ -14,7 +14,7 @@
 								$hash = unserialize(file_get_contents("http://vimeo.com/api/v2/video/$vimeoID.php"));
 					?>
 					<div class="social-item vimeo">
-						<a href="https://vimeo.com/<?php echo $vimeoID ?>" target="_blank" class="owl-lazy" data-src="<?php echo $hash[0]['thumbnail_large']; ?>">
+						<a href="https://vimeo.com/<?php echo $vimeoID ?>" target="_blank" class="owl-lazy" data-src="<?php echo $hash[0]['thumbnail_large']; ?>" title="<?php echo $hash[0]['title']; ?>">
 							<div class="item-icon">
 								<div class="icon"></div>
 							</div>
@@ -26,4 +26,9 @@
 					?>
 
 				</div><!-- .social-list -->
+				<div class="video-player">
+					<h3 class="video-title">Headline for video</h3>
+					<button class="btn-close white"><span class="offscreen">Close</span></button>
+					<div class="video-wrapper"><!-- rendered by JavaScript --></div>
+				</div><!-- .video-player -->
 			</section><!-- .social-slider -->

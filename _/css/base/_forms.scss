@@ -38,8 +38,11 @@
 	height: 20px;
 	background: url('../img/sprite.png') no-repeat -258px -10px;
 
+	&.white {
+		background-position: -287px -10px;
+	}
 	&:hover,
 	&:focus {
-		background-position: -287px -10px;
+		background-position: -316px -10px;
 	}
 }

@@ -4,11 +4,14 @@
 
 .social-slider {
 	height: 240px;
+	min-height: 240px;
+	max-height: 240px;
 	background: url('../img/bg-social-slider.png');
+	@include transition(all, 300ms, ease-in-out);
 	@include vendorize(transform, translateZ(0)); // triggers GPU, Safari fix
 
 	.social-list {
-		padding: 10px 5px;
+		padding: 10px 10px 10px 5px;
 
 		.social-item {
 			width: 220px;
@@ -148,10 +151,42 @@
 			}
 		}
 	}
+	.video-player {
+		display: none;
+	}
+	&.video {
+		height: auto;
+		min-height: 240px;
+		max-height: 1000px;
+
+		.social-list {
+			display: none;
+		}
+		.video-player {
+			display: block;
+			position: relative;
+
+			.video-title {
+				color: $white;
+				padding: 50px 20px 20px;
+				text-align: center;
+			}
+			.btn-close {
+				position: absolute;
+				top: 20px;
+				right: 20px;
+			}
+			.video-wrapper {
+				text-align: center;
+			}
+		}
+	}
 }
 @media screen and (min-width: $breakpoint-medium) {
 	.social-slider {
 		height: 260px;
+		min-height: 260px;
+		max-height: 260px;
 
 		.social-list {
 			.social-item {
@@ -174,6 +209,31 @@
 						height: 72px;
 					}
 				}
+			}
+		}
+		&.video {
+			min-height: 450px;
+
+			.video-player {
+				.btn-close {
+					top: 25px;
+				}
+				.video-title {
+					padding: 20px;
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-large) {
+	.social-slider.video {
+		min-height: 640px;
+
+		.video-player {
+			.video-wrapper {
+				width: $breakpoint-large;
+				margin: 0 auto;
+				padding: 0 20px 20px;
 			}
 		}
 	}

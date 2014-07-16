@@ -185,7 +185,7 @@
 	<!-- Init the main JS -->
 	<script type="text/javascript">
 		$(document).ready(function(){
-			GNU.main.init();
+			GNU.Main.init();
 		});
 	</script>
 	<!-- Social Media Includes -->

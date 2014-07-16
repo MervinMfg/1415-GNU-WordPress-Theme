@@ -3,13 +3,178 @@
    ========================================================================== */
 
 .social-slider {
-	height: 250px;
+	height: 240px;
 	background: url('../img/bg-social-slider.png');
 	@include vendorize(transform, translateZ(0)); // triggers GPU, Safari fix
-}
-@media screen and (min-width: $breakpoint-small) {
+
+	.social-list {
+		padding: 10px 5px;
+
+		.social-item {
+			width: 220px;
+			height: 220px;
+			padding: 0 5px;
+			float: left;
+
+			a {
+				width: 220px;
+				height: 220px;
+				display: block;
+				position: relative;
+				background: $white;
+				background-size: auto 100%;
+				background-position: 50%;
+				@include transition(background-size, 200ms, ease-in-out);
+
+				.item-icon {
+					width: 66px;
+					height: 68px;
+					background: url('../img/bg-social-slider-icon-bottom.png') no-repeat;
+					background-position: 0px 0px;
+					position: absolute;
+					bottom: 0px;
+					right: 0px;
+					z-index: 10;
+					@include transition(background-position, 100ms, ease-out);
+
+					.icon {
+						background: url('../img/sprite.png');
+						width: 36px;
+						height: 41px;
+						position: absolute;
+						bottom: 5px;
+						right: 5px;
+						@include transition(all, 100ms, ease-in-out);
+					}
+				}
+
+				&:hover,
+				&:focus {
+					background-size: auto 110%;
+
+					.item-icon {
+						background-position: 10px 10px;
+
+						.icon {
+							bottom: 7px;
+							right: 7px;
+						}
+					}
+				}
+			}
+			&.instagram {
+				a .item-icon .icon {
+					background-position: -216px -60px;
+				}	
+			}
+			&.facebook {
+				a {
+					height: 105px;
+					overflow: hidden;
+					margin-bottom: 10px;
+
+					.item-icon {
+						bottom: auto;
+						right: auto;
+						top: 0px;
+						left: 0px;
+						background: url('../img/bg-social-slider-icon-top.png') no-repeat;
+
+						.icon {
+							background-position: -10px -60px;
+							bottom: auto;
+							right: auto;
+							top: 5px;
+							left: 4px;
+						}
+					}
+					.item-photo {
+						width: 90px;
+						padding: 20px 5px 0 5px;
+						float: left;
+					}
+					.item-copy {
+						width: 130px;
+						float: left;
+						padding: 5px 5px 0 0;
+
+						.fb-page {
+							font-family: $neuron;
+							font-size: 1.4em;
+							font-weight: 700;
+							line-height: 1em;
+							text-transform: uppercase;
+							margin-bottom: 0;
+						}
+						.fb-date {
+							font-family: $neuron;
+							font-size: 1.2em;
+							font-weight: 700;
+							line-height: 1em;
+							margin-bottom: 5px;
+						}
+						.fb-excerpt {
+							font-size: 1.2em;
+							line-height: 1em;
+							margin-bottom: 0;
+							height: 60px;
+						}
+					}
+					&:hover,
+					&:focus {
+						.item-icon {
+							background-position: -10px -10px;
+
+							.icon {
+								top: 7px;
+								left: 6px;
+							}
+						}
+					}
+				}
+			}
+			&.vimeo {
+				a .item-icon .icon {
+					background-position: -134px -60px;
+				}
+			}
+		}
+		&.loading {
+			background: url('../img/loading-black.gif') no-repeat center center;
+			height: 240px;
+
+			.social-item {
+				display: none;
+			}
+		}
+	}
 }
 @media screen and (min-width: $breakpoint-medium) {
-}
-@media screen and (min-width: $breakpoint-large) {
+	.social-slider {
+		height: 260px;
+
+		.social-list {
+			.social-item {
+				width: 240px;
+				height: 240px;
+
+				a {
+					width: 240px;
+					height: 240px;
+				}
+				&.facebook a {
+					height: 115px;
+					overflow: hidden;
+					margin-bottom: 10px;
+
+					.item-photo {
+						padding-top: 30px;
+					}
+					.item-copy .fb-excerpt {
+						height: 72px;
+					}
+				}
+			}
+		}
+	}
 }

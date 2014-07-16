@@ -1,0 +1,52 @@
+{
+    "key": "group_53baea2acefa8",
+    "title": "Featured\/Related Products",
+    "fields": [
+        {
+            "key": "field_53b30b46d5da5",
+            "label": "Products",
+            "name": "gnu_featured_products",
+            "prefix": "",
+            "type": "relationship",
+            "instructions": "Select featured or related products here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "return_format": "object",
+            "post_type": [
+                "gnu_snowboards",
+                "gnu_bindings",
+                "gnu_accessories",
+                "gnu_weirdwear"
+            ],
+            "taxonomy": [
+
+            ],
+            "filters": [
+                "search",
+                "post_type"
+            ],
+            "result_elements": [
+                "post_type"
+            ],
+            "max": "",
+            "elements": [
+
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/home.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ""
+}

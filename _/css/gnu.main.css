@@ -2104,7 +2104,7 @@ body.international .shopping-cart-wrapper {
    ========================================================================== */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\000035}}
 .social-slider {
-  height: 250px;
+  height: 240px;
   background: url("../img/bg-social-slider.png");
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
@@ -2112,7 +2112,190 @@ body.international .shopping-cart-wrapper {
   -o-transform: translateZ(0);
   transform: translateZ(0);
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\0000310}}
+.social-slider .social-list {
+  padding: 10px 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\0000313}}
+.social-slider .social-list .social-item {
+  width: 220px;
+  height: 220px;
+  padding: 0 5px;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\0000319}}
+.social-slider .social-list .social-item a {
+  width: 220px;
+  height: 220px;
+  display: block;
+  position: relative;
+  background: white;
+  background-size: auto 100%;
+  background-position: 50%;
+  -webkit-transition: background-size 200ms ease-in-out;
+  -moz-transition: background-size 200ms ease-in-out;
+  -ms-transition: background-size 200ms ease-in-out;
+  -o-transition: background-size 200ms ease-in-out;
+  transition: background-size 200ms ease-in-out;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\0000329}}
+.social-slider .social-list .social-item a .item-icon {
+  width: 66px;
+  height: 68px;
+  background: url("../img/bg-social-slider-icon-bottom.png") no-repeat;
+  background-position: 0px 0px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  z-index: 10;
+  -webkit-transition: background-position 100ms ease-out;
+  -moz-transition: background-position 100ms ease-out;
+  -ms-transition: background-position 100ms ease-out;
+  -o-transition: background-position 100ms ease-out;
+  transition: background-position 100ms ease-out;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\0000340}}
+.social-slider .social-list .social-item a .item-icon .icon {
+  background: url("../img/sprite.png");
+  width: 36px;
+  height: 41px;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  -webkit-transition: all 100ms ease-in-out;
+  -moz-transition: all 100ms ease-in-out;
+  -ms-transition: all 100ms ease-in-out;
+  -o-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\0000351}}
+.social-slider .social-list .social-item a:hover, .social-slider .social-list .social-item a:focus {
+  background-size: auto 110%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\0000355}}
+.social-slider .social-list .social-item a:hover .item-icon, .social-slider .social-list .social-item a:focus .item-icon {
+  background-position: 10px 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\0000358}}
+.social-slider .social-list .social-item a:hover .item-icon .icon, .social-slider .social-list .social-item a:focus .item-icon .icon {
+  bottom: 7px;
+  right: 7px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\0000366}}
+.social-slider .social-list .social-item.instagram a .item-icon .icon {
+  background-position: -216px -60px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\0000371}}
+.social-slider .social-list .social-item.facebook a {
+  height: 105px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\0000376}}
+.social-slider .social-list .social-item.facebook a .item-icon {
+  bottom: auto;
+  right: auto;
+  top: 0px;
+  left: 0px;
+  background: url("../img/bg-social-slider-icon-top.png") no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\0000383}}
+.social-slider .social-list .social-item.facebook a .item-icon .icon {
+  background-position: -10px -60px;
+  bottom: auto;
+  right: auto;
+  top: 5px;
+  left: 4px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\0000391}}
+.social-slider .social-list .social-item.facebook a .item-photo {
+  width: 90px;
+  padding: 20px 5px 0 5px;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\0000396}}
+.social-slider .social-list .social-item.facebook a .item-copy {
+  width: 130px;
+  float: left;
+  padding: 5px 5px 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\00003101}}
+.social-slider .social-list .social-item.facebook a .item-copy .fb-page {
+  font-family: "Neuron", Helvetica, Arial, sans-serif;
+  font-size: 1.4em;
+  font-weight: 700;
+  line-height: 1em;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\00003109}}
+.social-slider .social-list .social-item.facebook a .item-copy .fb-date {
+  font-family: "Neuron", Helvetica, Arial, sans-serif;
+  font-size: 1.2em;
+  font-weight: 700;
+  line-height: 1em;
+  margin-bottom: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\00003116}}
+.social-slider .social-list .social-item.facebook a .item-copy .fb-excerpt {
+  font-size: 1.2em;
+  line-height: 1em;
+  margin-bottom: 0;
+  height: 60px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\00003125}}
+.social-slider .social-list .social-item.facebook a:hover .item-icon, .social-slider .social-list .social-item.facebook a:focus .item-icon {
+  background-position: -10px -10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\00003128}}
+.social-slider .social-list .social-item.facebook a:hover .item-icon .icon, .social-slider .social-list .social-item.facebook a:focus .item-icon .icon {
+  top: 7px;
+  left: 6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\00003137}}
+.social-slider .social-list .social-item.vimeo a .item-icon .icon {
+  background-position: -134px -60px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\00003142}}
+.social-slider .social-list.loading {
+  background: url("../img/loading-black.gif") no-repeat center center;
+  height: 240px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\00003146}}
+.social-slider .social-list.loading .social-item {
+  display: none;
+}
 
+@media screen and (min-width: 748.8px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\00003153}}
+  .social-slider {
+    height: 260px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\00003157}}
+  .social-slider .social-list .social-item {
+    width: 240px;
+    height: 240px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\00003161}}
+  .social-slider .social-list .social-item a {
+    width: 240px;
+    height: 240px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\00003165}}
+  .social-slider .social-list .social-item.facebook a {
+    height: 115px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\00003170}}
+  .social-slider .social-list .social-item.facebook a .item-photo {
+    padding-top: 30px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_social-slider\.scss}line{font-family:\00003173}}
+  .social-slider .social-list .social-item.facebook a .item-copy .fb-excerpt {
+    height: 72px;
+  }
+}
 /* ==========================================================================
    MODULES/_PHOTO-SLIDER.SCSS
    ========================================================================== */

@@ -1,0 +1,123 @@
+{
+    "key": "group_53baea2ac50ce",
+    "title": "Feature Slider",
+    "fields": [
+        {
+            "key": "field_53af4595c4f86",
+            "label": "Feature Slider",
+            "name": "gnu_feature_slider",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "row_min": "",
+            "row_limit": "",
+            "layout": "table",
+            "button_label": "Add Slider",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_53af45e2c4f87",
+                    "label": "Image",
+                    "name": "gnu_feature_slider_img",
+                    "prefix": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "return_format": "array"
+                },
+                {
+                    "key": "field_53af4636c4f88",
+                    "label": "Overlay Image",
+                    "name": "gnu_feature_slider_overlay_img",
+                    "prefix": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "return_format": "array"
+                },
+                {
+                    "key": "field_53af466ec4f89",
+                    "label": "Overlay Image Alt",
+                    "name": "gnu_feature_slider_overlay_img_alt",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "formatting": "none",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_53bdb8b366fc5",
+                    "label": "Overlay Image Align",
+                    "name": "gnu_feature_slider_overlay_img_align",
+                    "prefix": "",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "choices": {
+                        "left": "Left",
+                        "right": "Right"
+                    },
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "",
+                    "layout": "vertical"
+                },
+                {
+                    "key": "field_53bdbef56eda7",
+                    "label": "Link",
+                    "name": "gnu_feature_slider_url",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/home.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ""
+}

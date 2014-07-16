@@ -1,0 +1,129 @@
+{
+    "key": "group_53baea2b4da9c",
+    "title": "Photo Slider",
+    "fields": [
+        {
+            "key": "field_53ac8a6b725cd",
+            "label": "Sliders",
+            "name": "gnu_photo_slider",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "row_min": "",
+            "row_limit": "",
+            "layout": "table",
+            "button_label": "Add Slider",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_53ac8aab725ce",
+                    "label": "Image",
+                    "name": "gnu_photo_slider_img",
+                    "prefix": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "return_format": "array"
+                },
+                {
+                    "key": "field_53ac8af7725cf",
+                    "label": "Title",
+                    "name": "gnu_photo_slider_title",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "formatting": "none",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_53ac8e17725d0",
+                    "label": "Photo Credit",
+                    "name": "gnu_photo_slider_credit",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "formatting": "none",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_53ac8e87725d1",
+                    "label": "Text Color",
+                    "name": "gnu_photo_slider_text_color",
+                    "prefix": "",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "choices": {
+                        "dark": "Dark",
+                        "light": "Light"
+                    },
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "dark",
+                    "layout": "vertical"
+                },
+                {
+                    "key": "field_53ac8f17725d2",
+                    "label": "Text Alignment",
+                    "name": "gnu_photo_slider_text_align",
+                    "prefix": "",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "choices": {
+                        "left": "Left",
+                        "right": "Right"
+                    },
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "left",
+                    "layout": "vertical"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/home.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ""
+}

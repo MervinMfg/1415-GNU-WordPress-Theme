@@ -58,6 +58,8 @@ GNU.FeaturedSlider.prototype = {
 		// set up background scroll animation functionality
 		// reset background position css
 		$('.featured-slider .slide-list .slide-item').css('background-position', '50% 100%');
+		// reset takeover overlay
+		$('.active-takeover .featured-slider .slide-list .slide-item .takeover-overlay').removeAttr('style');
 		// if scene already exists, remove it
 		if (typeof self.config.scene1 !== 'undefined') {
 			self.config.scrollController.removeScene(self.config.scene1);

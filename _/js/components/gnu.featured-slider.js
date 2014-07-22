@@ -9,7 +9,8 @@ GNU.FeaturedSlider = function (scrollController) {
 	this.config = {
 		dots: false,
 		loop: false,
-		scene: null,
+		scene1: null,
+		scene2: null,
 		scrollController: scrollController
 	};
 	// check to see if slider should be activated
@@ -58,14 +59,22 @@ GNU.FeaturedSlider.prototype = {
 		// reset background position css
 		$('.featured-slider .slide-list .slide-item').css('background-position', '50% 100%');
 		// if scene already exists, remove it
-		if (typeof self.config.scene !== 'undefined') {
-			self.config.scrollController.removeScene(self.config.scene);
+		if (typeof self.config.scene1 !== 'undefined') {
+			self.config.scrollController.removeScene(self.config.scene1);
+		}
+		if (typeof self.config.scene2 !== 'undefined') {
+			self.config.scrollController.removeScene(self.config.scene2);
 		}
 		// if we're medium or bigger, do the scroll. hidden on base and small
 		if ( GNU.Main.utilities.responsiveCheck() === 'medium' || GNU.Main.utilities.responsiveCheck() === 'large' ) {
 			//controller = new ScrollMagic({vertical: true, container: '#page'});
 			tween = new TweenMax.to('.featured-slider .slide-list .slide-item', 1, {backgroundPosition: "50% 0%", ease: Linear.easeNone});
-			self.config.scene = new ScrollScene({triggerElement: '.featured-slider', offset: $(window).height()/2*-1, duration: $(window).height() + $('.featured-slider').outerHeight()}).setTween(tween).addTo(self.config.scrollController);
+			self.config.scene1 = new ScrollScene({triggerElement: '.featured-slider', offset: $(window).height()/2*-1, duration: $(window).height() + $('.featured-slider').outerHeight()}).setTween(tween).addTo(self.config.scrollController);
+			// check if takeover is active, if so, active takeover scroll overlay
+			if ($('body').hasClass('active-takeover')) {
+				tween = new TweenMax.to('.active-takeover .featured-slider .slide-list .slide-item .takeover-overlay', 1, {opacity: "0", display: 'none', ease: Linear.easeNone});
+				self.config.scene2 = new ScrollScene({duration: $('.featured-slider').position().top/1.75}).setTween(tween).addTo(self.config.scrollController);
+			}
 		}
 	}
 };

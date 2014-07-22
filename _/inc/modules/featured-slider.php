@@ -14,6 +14,7 @@
 					?>
 					<div class="slide-item owl-lazy" data-src="<?php echo $image['url']; ?>" data-src-retina="<?php echo $image['url']; ?>">
 						<a href="<?php echo $link; ?>">
+							<div class="takeover-overlay"></div>
 							<div class="slide-details <?php echo $overlayImageAlign; ?>">
 								<div class="slide-overlay">
 									<img src="<?php echo $overlayImage['url']; ?>" alt="<?php echo $overlayImageAlt; ?>" />

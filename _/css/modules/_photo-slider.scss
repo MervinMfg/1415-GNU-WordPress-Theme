@@ -10,7 +10,7 @@
 		display: block;
 		position: relative;
 		height: 420px;
-		@include vendorize(transform, translateZ(0)); // triggers GPU, Safari fix
+		//@include vendorize(transform, translateZ(0)); // triggers GPU, Safari fix
 
 		.photo-list {
 			.photo-item {

@@ -3,16 +3,19 @@
  * Author: brian.behrens@mervin.com - http://www.mervin.com
  */
 
- var GNU = GNU || {};
+var GNU = GNU || {};
 
-GNU.SocialSlider = {
-	config: {
+GNU.SocialSlider = function () {
+	this.config = {
 		carousel: null,
 		instagramUsername: null,
 		instagramPosts: null,
 		facebookUsername: null,
 		facebookPosts: null
-	},
+	};
+	this.init();
+};
+GNU.SocialSlider.prototype = {
 	init: function () {
 		var self = this;
 		self.loadInstagram();

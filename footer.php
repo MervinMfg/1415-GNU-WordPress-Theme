@@ -105,7 +105,6 @@
 				<div class="clearfix"></div>
 			</div><!-- .choose-region -->
 		</div><!-- .region-selector -->
-		
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="footer-wrapper">
 				<div class="footer-content">

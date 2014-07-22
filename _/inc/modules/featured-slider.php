@@ -1,5 +1,5 @@
 <?php if ( basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"]) ) header('Location: /'); // do not allow stanalone viewing ?>
-			
+		
 			<?php if(have_rows('gnu_feature_slider')): ?>
 			<section class="featured-slider">
 				<div class="slide-list owl-carousel">

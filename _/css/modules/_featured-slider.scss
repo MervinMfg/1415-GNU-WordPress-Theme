@@ -5,7 +5,7 @@
 .featured-slider {
 	position: relative;
 	height: 195px;
-	@include vendorize(transform, translateZ(0)); // triggers GPU, Safari fix
+	//@include vendorize(transform, translateZ(0)); // triggers GPU, Safari fix
 
 	.slide-list {
 		.slide-item {

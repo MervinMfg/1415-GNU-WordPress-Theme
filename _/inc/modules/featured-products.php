@@ -2,9 +2,9 @@
 
 			<?php
 			$posts = get_field('gnu_featured_products');
-    		if( $posts ):
-    			$featuredProducts = Array();
-	    		$imageSize = 'square-medium';
+			if( $posts ):
+				$featuredProducts = Array();
+				$imageSize = 'square-medium';
 				// get each featured/related product
 				foreach( $posts as $post):
 					// get product values

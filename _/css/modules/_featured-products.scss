@@ -7,7 +7,7 @@
 	text-align: center;
 	position: relative;
 	overflow: hidden;
-	@include vendorize(transform, translateZ(0)); // triggers GPU, Safari fix
+	//@include vendorize(transform, translateZ(0)); // triggers GPU, Safari fix
 
 	.product-list {
 		.product {

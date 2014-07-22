@@ -11,7 +11,7 @@
 	background-position: 50% 60%;
 	text-align: center;
 	padding-top: 40px;
-	@include vendorize(transform, translateZ(0)); // triggers GPU, Safari fix
+	//@include vendorize(transform, translateZ(0)); // triggers GPU, Safari fix
 
 	.follow-groups {
 		.follow-group {

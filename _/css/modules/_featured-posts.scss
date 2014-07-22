@@ -82,7 +82,7 @@
 		}
 		&.animate {
 			overflow: hidden;
-			@include vendorize(transform, translateZ(0)); // triggers GPU, Safari fix
+			// @include vendorize(transform, translateZ(0)); // triggers GPU, Safari fix
 
 			.featured-post {
 				width: 50%;

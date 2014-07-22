@@ -8,7 +8,7 @@
 	max-height: 240px;
 	background: url('../img/bg-social-slider.png');
 	@include transition(all, 300ms, ease-in-out);
-	@include vendorize(transform, translateZ(0)); // triggers GPU, Safari fix
+	//@include vendorize(transform, translateZ(0)); // triggers GPU, Safari fix
 
 	.social-list {
 		padding: 10px 10px 10px 5px;

@@ -131,16 +131,25 @@ GNU.SocialSlider.prototype = {
 		}
 	},
 	grabVideo: function () {
-		var self = this;
+		var self;
+		self = this;
 		// overwrite vimeo links
-		$('.social-slider .social-list .vimeo a').on('click', function (e) {
-			var videoID, videoTitle;
+		$('.social-slider .social-list .vimeo a').on('mousedown.video', function (e) {
+			var $this, videoID, videoTitle, timeout;
+			$this = $(this);
+			videoID = $this.attr('href');
+			videoID = self.utilities.getVimeoId(videoID);
+			videoTitle = $this.attr('title');
+			timeout = setTimeout(function() { $this.off('mouseup.video'); clearTimeout(timeout); }, 300);
+			// on mouseup, init the video, unless we timeout and this is removed
+			$this.on('mouseup.video', function (e) {
+				$this.off('mouseup.video');
+				clearTimeout(timeout);
+				self.initVideo(videoID, videoTitle);
+			});
+		}).on('click.video', function (e) {
 			e.preventDefault();
 			e.stopPropagation();
-			videoID = $(this).attr('href');
-			videoID = self.utilities.getVimeoId(videoID);
-			videoTitle = $(this).attr('title');
-			self.initVideo(videoID, videoTitle);
 		});
 	},
 	initVideo: function (videoID, videoTitle) {

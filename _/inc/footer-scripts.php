@@ -16,5 +16,6 @@
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/gnu.photo-slider.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/gnu.region-selector.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/gnu.search.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/gnu.section-header.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/gnu.shop.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/gnu.social-slider.js"></script>

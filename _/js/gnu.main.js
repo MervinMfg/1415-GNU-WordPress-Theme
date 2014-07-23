@@ -24,12 +24,6 @@ GNU.Main = {
 		$("img.lazy").unveil();
 		// trigger load before scroll or resize
 		$(window).on('load.lazy', function () { $(window).resize(); $(window).off('load.lazy')});
-		// init respective page template
-		if ($body.hasClass('home')) {
-			self.homeInit();
-		} else if ($body.hasClass('page-template-page-templatespage-home-sport-php')) {
-			self.homeSportInit();
-		}
 		// Listen for the events between quick cart and search
 		document.addEventListener('QuickCartShow', function (e) {
 			search.hideSearch();
@@ -37,6 +31,14 @@ GNU.Main = {
 		document.addEventListener('SearchShow', function (e) {
 			shop.hideQuickCart();
 		}, false);
+		// init respective page template
+		if ($body.hasClass('home')) {
+			self.homeInit();
+		} else if ($body.hasClass('page-template-page-templatespage-home-sport-php')) {
+			self.homeSportInit();
+		} else if ($body.hasClass('page-template-page-templatesproduct-overview-php')) {
+			self.productOverviewInit();
+		}
 	},
 	homeInit: function () {
 		var self = this;
@@ -46,6 +48,13 @@ GNU.Main = {
 		new GNU.PhotoSlider(self.config.scrollController);
 		new GNU.FeaturedProducts();
 		new GNU.Follow(self.config.scrollController);
+	},
+	productOverviewInit: function () {
+		var self = this;
+		// grab all section headers and assign correct scrolling
+		$('.section-header').each(function (index) {
+			new GNU.SectionHeader($(this), self.config.scrollController);
+		});
 	},
 	utilities: {
 		cookie: {

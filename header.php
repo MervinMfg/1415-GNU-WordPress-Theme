@@ -16,19 +16,19 @@
                 G                                           GGGGGGGGGGG
                GGG          GGGGGGGGGGGGGGGGGGGGGGGGGG   GGGGGGGGGGGGGGGGG
               GGGGG         GGGGGGGGGGGGGGGGGGGGGGGGGG GGGGGGGGGGGGGGGGGGGGGG
-             GGG GGG        GG      GGGGGGGGGGG    GGGGGG    GGGGGGGGG    GGG
-            GGG   GGG       GG        GGGGGGGGG    GGGGGG    GGGGGGGGG    GGGG
-           GGG     GGG      GG         GGGGGGGG    GGGGGG    GGGGGGGGG    GGGGG
-          GGG       GGG     GG           GGGGGG    GGGGGG    GGGGGGGGG    GGGGG
-         GGG    GG   GGG    GG     G      GGGGG    GGGGGG    GGGGGGGGG    GGGGGG
-        GGG    GGG    GGG   GG     GGG     GGGG    GGGGGG    GGGGGGGGG    GGGGGG
-       GGG    GGGGGGGGGGGG  GG     GGGG      GG    GGGGGG    GGGGGGGGG    GGGGGG
-      GGG    GGGGGGGGGGGGGG GG     GGGGGG     G    GGGGGG    GGGGGGGGG    GGGGG
-     GGG    GGG         GGGGGG     GGGGGGGG        GGGGGG    GGGGGGGGG    GGGGG
-    GGG    GGGGGGGGGGG   GGGGG     GGGGGGGG        GGGGGG     GGGGGGG     GGGG
-   GGG    GGGGGGGGGGGGG   GGGG     GGGGGGGGGG      GGGGGGD     GGGGG     GGGGG
-  GGG                      GGG     GGGGGGGGGGG     GGGGGGGG             GGGGG
- GGG                        GG     GGGGGGGGGGGG    GGG  GGGGGG      GGGGGGG
+             GGG GGG        GG        GGGGGGGG     GGGGGG    GGGGGGGGG    GGG
+            GGG   GGG       GG         GGGGGGG     GGGGGG    GGGGGGGGG    GGGG
+           GGG     GGG      GG          GGGGGG     GGGGGG    GGGGGGGGG    GGGGG
+          GGG       GGG     GG           GGGGG     GGGGGG    GGGGGGGGG    GGGGG
+         GGG    G    GGG    GG     G      GGGG     GGGGGG    GGGGGGGGG    GGGGGG
+        GGG    GGG    GGG   GG     GG      GGG     GGGGGG    GGGGGGGGG    GGGGGG
+       GGG    GGGGGGGGGGGG  GG     GGG      GG     GGGGGG    GGGGGGGGG    GGGGGG
+      GGG    GGGGGGGGGGGGGG GG     GGGG      G     GGGGGG    GGGGGGGGG    GGGGG
+     GGG    GGG         GGGGGG     GGGGG           GGGGGG    GGGGGGGGG    GGGGG
+    GGG    GGGGGGGGGGG   GGGGG     GGGGGG          GGGGGG     GGGGGGG     GGGG
+   GGG    GGGGGGGGGGGGG   GGGG     GGGGGGG         GGGGGGG     GGGGG     GGGGG
+  GGG                      GGG     GGGGGGGG        GGGGGGGG             GGGGG
+ GGG                        GG     GGGGGGGGG       GGG  GGGGGGG     GGGGGGG
 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG     GGGGGGGGGGGGGG
 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG         GGGGGG
 

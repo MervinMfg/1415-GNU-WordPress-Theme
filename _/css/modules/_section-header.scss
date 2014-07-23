@@ -1,0 +1,163 @@
+/* ==========================================================================
+   MODULES/_SECTION-HEADER.SCSS
+   ========================================================================== */
+
+.section-header {
+	padding: 40px 20px;
+	text-align: center;
+	background: url('../img/bg-product-overview-header.png') center center;
+
+	&.alt {
+		background-image: url('../img/bg-product-overview-header-alt.png');
+	}
+	.title {}
+	.subtitle,
+	.vibe {
+		display: none;
+	}
+}
+.signs {
+	display: none;
+}
+@media screen and (min-width: $breakpoint-medium) {
+	.section-header {
+		position: relative;
+		overflow: hidden;
+
+		.header-wrapper {
+			position: relative;
+			max-width: $breakpoint-large;
+			margin: 0 auto;
+		}
+		.title {
+			position: relative;
+			z-index: 3;
+			max-width: $breakpoint-medium;
+			margin: 0 auto 0.2em;
+		}
+		.subtitle {
+			display: block;
+			position: relative;
+			z-index: 2;
+			max-width: $breakpoint-medium;
+			margin: 0 auto;
+		}
+		.vibe {
+			display: block;
+			position: absolute;
+			z-index: 1;
+			bottom: 25px;
+			left: 10%;
+			background: url('../img/vibes.png');
+
+			&.vibe-1 {
+				width: 203px;
+				height: 64px;
+				bottom: auto;
+				top: 20px;
+			}
+			&.vibe-2 {
+				width: 240px;
+				height: 35px;
+				background-position: 0px -74px;
+			}
+			&.vibe-3 {
+				width: 191px;
+				height: 28px;
+				background-position: 0px -119px;
+				bottom: 30px;
+			}
+			&.vibe-4 {
+				width: 236px;
+				height: 38px;
+				background-position: 0px -157px;
+			}
+			&.vibe-5 {
+				width: 131px;
+				height: 65px;
+				background-position: 0px -205px;
+				bottom: 30px;
+			}
+			&.vibe-6 {
+				width: 75px;
+				height: 62px;
+				background-position: 0px -280px;
+			}
+		}
+		.signs {
+			position: absolute;
+			bottom: -48px;
+			right: -30px;
+			z-index: 4;
+		}
+	}
+	.signs {
+		height: 180px;
+		width: 200px;
+		display: block;
+		position: relative;
+
+		.post {
+			width: 27px;
+			height: 180px;
+			background-image: url('../img/signs.png');
+			position: absolute;
+			left: 86px;
+		}
+		.sign-navigation {
+			.sign {
+				position: absolute;
+				background-image: url('../img/signs.png');
+				display: block;
+				width: 186px;
+				height: 49px;
+				background-position: -37px 0px;
+				font-family: $neuronBlack;
+				font-size: 2.4em;
+				text-transform: uppercase;
+
+				&.large {
+					@include vendorize(transform, rotate(8deg));
+
+					a {
+						padding: 10px 0 0 10px;
+					}
+				}
+				&.medium {
+					width: 174px;
+					height: 42px;
+					top: 77px;
+					left: 5px;
+					background-position: -37px -59px;
+					@include vendorize(transform, rotate(-10deg));
+
+					a {
+						padding: 7px 0 0 22px;
+					}
+				}
+				&.small {
+					width: 150px;
+					height: 37px;
+					top: 125px;
+					left: 15px;
+					background-position: -37px -112px;
+					@include vendorize(transform, rotate(-3deg));
+
+					a {
+						padding: 4px 0 0 22px;
+					}
+				}
+				a {
+					display: block;
+					width: 100%;
+					height: 100%;
+
+					&:hover,
+					&:focus {
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+}

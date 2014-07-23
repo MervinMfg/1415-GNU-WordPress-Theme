@@ -1,20 +1,25 @@
 /* ==========================================================================
-   COMPONENTS/_GLOBAL.SCSS
+   COMPONENTS/_PRODUCT-OVERVIEW.SCSS
    ========================================================================== */
 
-.site-main {
+.product-overview {
+	.product-header {
+		
+	}
+	.product-filters {
+
+	}
+	.product-list {
+		height: 1000px;
+	}
+}
+
+@media screen and (min-width: $breakpoint-small) {
 	//
 }
 @media screen and (min-width: $breakpoint-medium) {
-	.site-main {
-		padding-top: 75px;
-	}
-	.active-takeover .site-main {
-		padding-top: 484px;
-	}
+	//
 }
 @media screen and (min-width: $breakpoint-large) {
-	.site-main {
-		padding-top: 55px;
-	}
+	//
 }

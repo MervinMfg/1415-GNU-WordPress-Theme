@@ -34,6 +34,12 @@ GNU.SectionHeader.prototype = {
 			}
 		});
 		self.scrollVibe();
+		// scroll to section on hash click
+		self.config.$sectionHeader.find('.signs .sign-navigation .sign a').on('click.secitonHeader', function (e) {
+			e.preventDefault();
+			var url = $(this).attr('href');
+			GNU.Main.utilities.pageScroll(url);
+		});
 	},
 	scrollVibe: function () {
 		// set up background scroll animation functionality

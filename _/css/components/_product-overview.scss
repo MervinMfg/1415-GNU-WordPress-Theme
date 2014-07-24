@@ -18,7 +18,108 @@
 	//
 }
 @media screen and (min-width: $breakpoint-medium) {
-	//
+	#mens-snowboards,
+	#mens-bindings {
+		.product-header .signs {
+			.post {
+				top: 40px;
+			}
+			.sign {
+				top: 60px;
+				@include vendorize(transform, rotate(-8deg));
+			}
+		}
+	}
+	#womens-snowboards,
+	#womens-bindings {
+		.product-header .signs {
+			.post {
+				top: 60px;
+			}
+			.sign {
+				top: 80px;
+				@include vendorize(transform, rotate(8deg));
+			}
+		}
+	}
+	#compare-bindings {
+		.product-header .signs {
+			.post {
+				top: 40px;
+			}
+			.sign.medium {
+				top: 50px;
+				@include vendorize(transform, rotate(8deg));
+			}
+			.sign.large {
+				top: 100px;
+				@include vendorize(transform, rotate(4deg));
+			}
+		}
+	}
+	#wearables,
+	#headwear {
+		.product-header .signs {
+			.post {
+				top: 40px;
+			}
+			.sign.small {
+				top: 50px;
+				@include vendorize(transform, rotate(-4deg));
+
+				a {
+					font-size: 0.7em;
+					padding: 9px 0 0 22px;
+				}
+			}
+			.sign.large {
+				top: 100px;
+				@include vendorize(transform, rotate(-8deg));
+
+				a {
+					font-size: 0.8em;
+					padding: 13px 0 0 22px;
+				}
+			}
+		}
+	}
+	#headwear,
+	#accessories {
+		.product-header .signs {
+			.post {
+				top: 20px;
+			}
+			.sign.medium {
+				top: 35px;
+				@include vendorize(transform, rotate(4deg));
+
+				a {
+					font-size: 0.8em;
+					padding: 8px 0 0 22px;
+				}
+			}
+		}
+	}
+	#accessories {
+		.product-header .signs {
+			.post {
+				top: 40px;
+			}
+			.sign.small {
+				top: 110px;
+				@include vendorize(transform, rotate(4deg));
+
+				a {
+					font-size: 0.7em;
+					padding: 9px 0 0 22px;
+				}
+			}
+			.sign.medium {
+				top: 55px;
+				@include vendorize(transform, rotate(8deg));
+			}
+		}
+	}
 }
 @media screen and (min-width: $breakpoint-large) {
 	//

@@ -1,0 +1,93 @@
+{
+    "key": "group_53baea2a2a6b2",
+    "title": "Accessory Details",
+    "fields": [
+        {
+            "key": "field_504fa3905d6cc",
+            "label": "SKU",
+            "name": "gnu_accessory_sku",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_504fa3905da48",
+            "label": "Availability US",
+            "name": "gnu_accessory_availability_us",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "Yes": "Yes",
+                "No": "No"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "Yes",
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_504fa39060a5f",
+            "label": "Availability CA",
+            "name": "gnu_accessory_availability_ca",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "Yes": "Yes",
+                "No": "No"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "Yes",
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_53a9dafc151ac",
+            "label": "Availability EUR",
+            "name": "gnu_accessory_availability_eur",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "Yes": "Yes",
+                "No": "No"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "Yes",
+            "layout": "horizontal"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "gnu_accessories"
+            }
+        ]
+    ],
+    "menu_order": 40,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ""
+}

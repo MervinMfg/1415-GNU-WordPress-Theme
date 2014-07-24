@@ -1,0 +1,236 @@
+{
+    "key": "group_53baea2a8b608",
+    "title": "Binding Options",
+    "fields": [
+        {
+            "key": "field_504e364cdd142",
+            "label": "Options",
+            "name": "gnu_binding_options",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "row_min": 0,
+            "row_limit": "",
+            "layout": "row",
+            "button_label": "Add Option",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_504e364cdd25d",
+                    "label": "Color",
+                    "name": "gnu_binding_options_color",
+                    "prefix": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "choices": {
+                        "Black": "Black",
+                        "White": "White",
+                        "Grey": "Grey",
+                        "Blue": "Blue",
+                        "Brown": "Brown",
+                        "Green": "Green",
+                        "Orange": "Orange",
+                        "Red": "Red",
+                        "Charcoal": "Charcoal",
+                        "Copper": "Copper",
+                        "Silver": "Silver"
+                    },
+                    "default_value": [
+
+                    ],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "disabled": 0,
+                    "readonly": 0
+                },
+                {
+                    "key": "field_504e364cdd367",
+                    "label": "Image",
+                    "name": "gnu_binding_options_img",
+                    "prefix": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "return_format": "id"
+                },
+                {
+                    "key": "field_504e364cdd9ab",
+                    "label": "Additional Images",
+                    "name": "gnu_binding_options_images",
+                    "prefix": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "row_min": 0,
+                    "row_limit": "",
+                    "layout": "table",
+                    "button_label": "Add Additional Image",
+                    "min": 0,
+                    "max": 0,
+                    "sub_fields": [
+                        {
+                            "key": "field_504e364cddaa3",
+                            "label": "Additional Image",
+                            "name": "gnu_binding_options_images_img",
+                            "prefix": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "column_width": "",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "return_format": "id"
+                        }
+                    ]
+                },
+                {
+                    "key": "field_504e364cdd457",
+                    "label": "Variations",
+                    "name": "gnu_binding_options_variations",
+                    "prefix": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "row_min": 0,
+                    "row_limit": "",
+                    "layout": "table",
+                    "button_label": "Add Variation",
+                    "min": 0,
+                    "max": 0,
+                    "sub_fields": [
+                        {
+                            "key": "field_504e364cdd598",
+                            "label": "Size",
+                            "name": "gnu_binding_options_variations_size",
+                            "prefix": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "column_width": "",
+                            "choices": {
+                                "XS (US 1-4)": "XS (US 1-4)",
+                                "S (US W 5-7)": "S (US W 5-7)",
+                                "S (US M 6-8), S (US W 7-9)": "S (US M 6-8), S (US W 7-9)",
+                                "S (US M 4-7)": "S (US M 4-7)",
+                                "S\/M (US W 4-7)": "S\/M (US W 4-7)",
+                                "S\/M (US M 5-9)": "S\/M (US M 5-9)",
+                                "M (US W 7-9)": "M (US W 7-9)",
+                                "M (US M 7-9)": "M (US M 7-9)",
+                                "M (US M 8.5-11), W (US W 8+)": "M (US M 8.5-11), W (US W 8+)",
+                                "M (US M 7-10)": "M (US M 7-10)",
+                                "M\/L (US W 6-9)": "M\/L (US W 6-9)",
+                                "M\/L (US M 9-14)": "M\/L (US M 9-14)",
+                                "L (US W 9-10)": "L (US W 9-10)",
+                                "L (US M 9-11)": "L (US M 9-11)",
+                                "L (US M 9-12)": "L (US M 9-12)",
+                                "L (US M 11.5-13)": "L (US M 11.5-13)",
+                                "XL (US M 11-14)": "XL (US M 11-14)"
+                            },
+                            "default_value": {
+                                "M": "M"
+                            },
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "disabled": 0,
+                            "readonly": 0
+                        },
+                        {
+                            "key": "field_504e364cdd693",
+                            "label": "SKU",
+                            "name": "gnu_binding_options_variations_sku",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "column_width": "",
+                            "default_value": "",
+                            "formatting": "none",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_504e364cdd781",
+                            "label": "Availability US",
+                            "name": "gnu_binding_options_variations_availability_us",
+                            "prefix": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "column_width": "",
+                            "choices": {
+                                "Yes": "Yes",
+                                "No": "No"
+                            },
+                            "default_value": "Yes",
+                            "layout": "vertical",
+                            "other_choice": 0,
+                            "save_other_choice": 0
+                        },
+                        {
+                            "key": "field_504e364cdd8a8",
+                            "label": "Availability CA",
+                            "name": "gnu_binding_options_variations_availability_ca",
+                            "prefix": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "column_width": "",
+                            "choices": {
+                                "Yes": "Yes",
+                                "No": "No"
+                            },
+                            "default_value": "Yes",
+                            "layout": "vertical",
+                            "other_choice": 0,
+                            "save_other_choice": 0
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "gnu_bindings"
+            }
+        ]
+    ],
+    "menu_order": 30,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ""
+}

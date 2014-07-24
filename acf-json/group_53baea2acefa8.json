@@ -25,12 +25,9 @@
                 "search",
                 "post_type"
             ],
-            "result_elements": [
-                "post_type"
-            ],
             "max": "",
             "elements": [
-
+                "post_type"
             ]
         }
     ],
@@ -40,6 +37,34 @@
                 "param": "page_template",
                 "operator": "==",
                 "value": "page-templates\/home.php"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "gnu_snowboards"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "gnu_bindings"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "gnu_accessories"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "gnu_apparel"
             }
         ]
     ],

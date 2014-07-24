@@ -1,0 +1,34 @@
+{
+    "key": "group_53baea2a3f6dd",
+    "title": "Award Details",
+    "fields": [
+        {
+            "key": "field_50479ebfa0375",
+            "label": "Image",
+            "name": "gnu_award_image",
+            "prefix": "",
+            "type": "image",
+            "instructions": "160x160 PNG",
+            "required": 0,
+            "conditional_logic": 0,
+            "preview_size": "thumbnail",
+            "return_format": "id",
+            "library": "all"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "gnu_awards"
+            }
+        ]
+    ],
+    "menu_order": 70,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ""
+}

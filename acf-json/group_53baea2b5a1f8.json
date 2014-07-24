@@ -1,0 +1,54 @@
+{
+    "key": "group_53baea2b5a1f8",
+    "title": "Product Awards",
+    "fields": [
+        {
+            "key": "field_503fd556c223a",
+            "label": "Awards",
+            "name": "gnu_product_awards",
+            "prefix": "",
+            "type": "relationship",
+            "instructions": "Select the awards applicable to this product.",
+            "required": 0,
+            "conditional_logic": 0,
+            "post_type": [
+                "gnu_awards"
+            ],
+            "taxonomy": [
+
+            ],
+            "max": "-1",
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "elements": [
+
+            ],
+            "return_format": "object"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "gnu_snowboards"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "gnu_bindings"
+            }
+        ]
+    ],
+    "menu_order": 70,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ""
+}

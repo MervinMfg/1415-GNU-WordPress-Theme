@@ -12,9 +12,25 @@
 	.active-takeover .site-main {
 		padding-top: 484px;
 	}
+	/* fix for fixed header, adds spacing to div you have anchor links to */
+	.deeplink-top-fix:before {
+		display: block;
+		content: "";
+		height: 75px;
+		margin: -75px 0 0;
+		z-index: -1;
+		position: relative;
+	}
 }
 @media screen and (min-width: $breakpoint-large) {
 	.site-main {
 		padding-top: 55px;
+	}
+	/* fix for fixed header, adds spacing to div you have anchor links to */
+	.deeplink-top-fix:before {
+		display: block;
+		content: "";
+		height: 55px;
+		margin: -55px 0 0;
 	}
 }

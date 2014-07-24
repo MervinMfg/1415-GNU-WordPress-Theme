@@ -1,0 +1,93 @@
+{
+    "key": "group_53baea2d01089",
+    "title": "Apparel Images",
+    "fields": [
+        {
+            "key": "field_504f83f675fa2",
+            "label": "Images",
+            "name": "gnu_apparel_images",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "min": "",
+            "max": "",
+            "layout": "table",
+            "button_label": "Add Image",
+            "sub_fields": [
+                {
+                    "key": "field_504f83f6760e5",
+                    "label": "Image",
+                    "name": "gnu_apparel_images_img",
+                    "prefix": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "return_format": "id",
+                    "preview_size": "thumbnail",
+                    "library": "all"
+                },
+                {
+                    "key": "field_504f83f6761d8",
+                    "label": "Color",
+                    "name": "gnu_apparel_images_color",
+                    "prefix": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "choices": {
+                        "White": "White",
+                        "Black": "Black",
+                        "Blue": "Blue",
+                        "Brown": "Brown",
+                        "Green": "Green",
+                        "Army": "Army",
+                        "Navy": "Navy",
+                        "Mustard": "Mustard",
+                        "Red": "Red",
+                        "Grey": "Grey",
+                        "Dark Grey": "Dark Grey",
+                        "Heather Grey": "Heather Grey",
+                        "Heather Green": "Heather Green",
+                        "Heather Charcoal": "Heather Charcoal",
+                        "Scarlet": "Scarlet",
+                        "Columbian Gold": "Columbian Gold",
+                        "Hunter": "Hunter",
+                        "Military": "Military",
+                        "All Over Print": "All Over Print"
+                    },
+                    "default_value": {
+                        "Black": "Black"
+                    },
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "disabled": 0,
+                    "readonly": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "gnu_apparel"
+            }
+        ]
+    ],
+    "menu_order": 50,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ""
+}

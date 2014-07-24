@@ -1,0 +1,173 @@
+{
+    "key": "group_53baea2bb4667",
+    "title": "Snowboard Details",
+    "fields": [
+        {
+            "key": "field_503fe882efa2e",
+            "label": "Board Shape",
+            "name": "gnu_snowboard_shape",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "Directional": "Directional",
+                "Directional Twin": "Directional Twin",
+                "True Twin": "True Twin",
+                "Asym Twin": "Asym Twin",
+                "Tapered": "Tapered"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_503fe882efdd9",
+            "label": "Board Contour",
+            "name": "gnu_snowboard_contour",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "BTX": "BTX",
+                "PBTX": "PBTX",
+                "SMART PBTX": "SMART PBTX",
+                "C2 PBTX": "C2 PBTX",
+                "C2 BTX": "C2 BTX",
+                "XC2 BTX": "XC2 BTX",
+                "C3 BTX": "C3 BTX",
+                "DC3 BTX": "DC3 BTX",
+                "EC2 BTX": "EC2 BTX",
+                "EC2 PBTX": "EC2 PBTX"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_503fec780a96f",
+            "label": "Weird Science",
+            "name": "gnu_snowboard_science",
+            "prefix": "",
+            "type": "checkbox",
+            "instructions": "Select the Weird Science you want to highlight on the board detail page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "Weird Science": "Weird Science",
+                "Construction": "Construction",
+                "Magne-Traction": "Magne-Traction",
+                "Pickle Tech": "Pickle Tech",
+                "ASS Tech": "ASS Tech",
+                "Liquid Crystal Polymer": "Liquid Crystal Polymer",
+                "Magnesium": "Magnesium",
+                "Magic": "Magic",
+                "Wood Core": "Wood Core"
+            },
+            "default_value": "",
+            "layout": "vertical"
+        },
+        {
+            "key": "field_503ffdc6710a7",
+            "label": "About the Art",
+            "name": "gnu_snowboard_about_art",
+            "prefix": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "toolbar": "basic",
+            "media_upload": 0
+        },
+        {
+            "key": "field_503ffdc6713da",
+            "label": "Interview Type",
+            "name": "gnu_snowboard_interview_type",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "Select what type of interview this is.",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "Artist Interview": "Artist Interview",
+                "Rider Interview": "Rider Interview",
+                "Tech Talk": "Tech Talk"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_503ffdc671600",
+            "label": "Interview Image",
+            "name": "gnu_snowboard_interview_image",
+            "prefix": "",
+            "type": "image",
+            "instructions": "Upload an image of the rider or artist being interviewed. 340 x 340 pixels in best.",
+            "required": 0,
+            "conditional_logic": 0,
+            "preview_size": "thumbnail",
+            "library": "all",
+            "return_format": "id"
+        },
+        {
+            "key": "field_503ffdc6718db",
+            "label": "Interview",
+            "name": "gnu_snowboard_interview",
+            "prefix": "",
+            "type": "wysiwyg",
+            "instructions": "Enter the copy for the interview.",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "toolbar": "basic",
+            "media_upload": 0
+        },
+        {
+            "key": "field_51d1fc8b64464",
+            "label": "Binding Collaboration",
+            "name": "gnu_snowboard_collab",
+            "prefix": "",
+            "type": "relationship",
+            "instructions": "If this snowboard is associated with a binding, select the binding below.",
+            "required": 0,
+            "conditional_logic": 0,
+            "return_format": "object",
+            "post_type": [
+                "gnu_bindings"
+            ],
+            "taxonomy": [
+
+            ],
+            "filters": [
+                "search"
+            ],
+            "max": 1,
+            "elements": [
+                "post_type"
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "gnu_snowboards"
+            }
+        ]
+    ],
+    "menu_order": 20,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ""
+}

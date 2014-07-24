@@ -82,11 +82,8 @@ GNU.Main = {
 		},
 		pageScroll: function (hash) {
 			// Smooth Page Scrolling, update hash on complete of animation
-			$('html,body').animate({
-				scrollTop: $(hash).offset().top
-			}, 'slow', function () {
-				window.location = hash;
-			});
+			var yPosition = $(hash).offset().top;
+			TweenMax.to(window, 1, {scrollTo:{y: yPosition, x: 0}, onComplete: function () { window.location = hash; }});
 		},
 		responsiveCheck: function () {
 			var size;

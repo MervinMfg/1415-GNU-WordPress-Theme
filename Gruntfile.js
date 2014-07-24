@@ -6,6 +6,7 @@ module.exports = function (grunt) {
 	var footerScripts = [
 		'_/js/lib/jquery-1.11.1.js',
 		'_/js/lib/GSAP/TweenMax.js',
+		'_/js/lib/GSAP/plugins/ScrollToPlugin.js',
 		'_/js/lib/jquery.scrollmagic-1.0.8.js',
 		'_/js/lib/jquery.fitvids-1.1.0.js',
 		'_/js/lib/jquery.unveil.js',

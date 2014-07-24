@@ -374,7 +374,7 @@ function register_custom_post_types() {
         'show_ui' => true, 
         'show_in_menu' => true, 
         'query_var' => true,
-        'rewrite' => array("slug" => 'accessories'),
+        'rewrite' => array("slug" => 'supplies/accessories'),
         'capability_type' => 'page',
         'has_archive' => false, 
         'hierarchical' => true,
@@ -406,27 +406,26 @@ function register_custom_post_types() {
         'show_ui'                       => true,
         'show_in_nav_menus'             => true,
         'args'                          => array( 'orderby' => 'term_order' ),
-        //'rewrite'                       => array( 'slug' => 'outerwear' ),
         'query_var'                     => true
     );
     register_taxonomy( 'gnu_accessories_categories', 'gnu_accessories', $args );
     // END ACCESSORIES
-
-    // START WEIRDWEAR
+    
+    // START APPAREL
     $labels = array(
-        'name' => _x('Weirdwear', 'post type general name'),
-        'singular_name' => _x('Weirdwear', 'post type singular name'),
-        'add_new' => _x('Add New', 'gnu_weirdwear'),
-        'add_new_item' => __('Add New Weirdwear'),
-        'edit_item' => __('Edit Weirdwear'),
-        'new_item' => __('New Weirdwear'),
-        'all_items' => __('All Weirdwear'),
-        'view_item' => __('View Weirdwear'),
-        'search_items' => __('Search Weirdwear'),
-        'not_found' =>  __('No Weirdwear Found'),
-        'not_found_in_trash' => __('No Weirdwear Found In Trash'), 
+        'name' => _x('Apparel', 'post type general name'),
+        'singular_name' => _x('Apparel', 'post type singular name'),
+        'add_new' => _x('Add New', 'gnu_apparel'),
+        'add_new_item' => __('Add New Apparel'),
+        'edit_item' => __('Edit Apparel'),
+        'new_item' => __('New Apparel'),
+        'all_items' => __('All Apparel'),
+        'view_item' => __('View Apparel'),
+        'search_items' => __('Search Apparel'),
+        'not_found' =>  __('No Apparel Found'),
+        'not_found_in_trash' => __('No Apparel Found In Trash'), 
         'parent_item_colon' => '',
-        'menu_name' => 'Weirdwear'
+        'menu_name' => 'Apparel'
     );
     $args = array(
         'labels' => $labels,
@@ -435,15 +434,15 @@ function register_custom_post_types() {
         'show_ui' => true, 
         'show_in_menu' => true, 
         'query_var' => true,
-        'rewrite' => array("slug" => 'weirdwear'),
+        'rewrite' => array("slug" => 'supplies/apparel'),
         'capability_type' => 'page',
         'has_archive' => false, 
         'hierarchical' => true,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes', 'comments' )
     ); 
-    register_post_type('gnu_weirdwear',$args);
-    // start taxonamy for Weirdwear
+    register_post_type('gnu_apparel',$args);
+    // start taxonamy for Apparel
     $labels = array(
         'name'                          => 'Categories',
         'singular_name'                 => 'Category',
@@ -467,11 +466,10 @@ function register_custom_post_types() {
         'show_ui'                       => true,
         'show_in_nav_menus'             => true,
         'args'                          => array( 'orderby' => 'term_order' ),
-        //'rewrite'                       => array( 'slug' => 'outerwear' ),
         'query_var'                     => true
     );
-    register_taxonomy( 'gnu_weirdwear_categories', 'gnu_weirdwear', $args );
-    // END WEIRDWEAR
+    register_taxonomy( 'gnu_apparel_categories', 'gnu_apparel', $args );
+    // END APPAREL
 
     // START TECHNOLOGY
     $labels = array(

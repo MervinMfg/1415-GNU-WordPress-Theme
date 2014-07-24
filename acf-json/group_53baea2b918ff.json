@@ -1,0 +1,86 @@
+{
+    "key": "group_53baea2b918ff",
+    "title": "Product Sale",
+    "fields": [
+        {
+            "key": "field_503fd2e328ed0",
+            "label": "On Sale",
+            "name": "gnu_product_on_sale",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "No": "No",
+                "Yes": "Yes"
+            },
+            "default_value": "No",
+            "layout": "horizontal",
+            "other_choice": 0,
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_503fd2e32922b",
+            "label": "Percentage Off",
+            "name": "gnu_product_sale_percentage",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "5": 5,
+                "10": 10,
+                "15": 15,
+                "20": 20,
+                "25": 25,
+                "30": 30,
+                "35": 35,
+                "40": 40,
+                "45": 45,
+                "50": 50
+            },
+            "default_value": "",
+            "layout": "vertical",
+            "other_choice": 0,
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "gnu_snowboards"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "gnu_bindings"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "gnu_accessories"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "gnu_apparel"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ""
+}

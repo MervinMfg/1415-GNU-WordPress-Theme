@@ -1,0 +1,312 @@
+{
+    "key": "group_53baea2a475b4",
+    "title": "Binding Details",
+    "fields": [
+        {
+            "key": "field_504e3228352f0",
+            "label": "Flex",
+            "name": "gnu_binding_flex",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "Select the level of binding flex.",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "1": 1,
+                "2": 2,
+                "3": 3,
+                "4": 4,
+                "5": 5,
+                "6": 6,
+                "7": 7,
+                "8": 8,
+                "9": 9,
+                "10": 10
+            },
+            "default_value": "",
+            "layout": "horizontal",
+            "other_choice": 0,
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_50ef30f5f3144",
+            "label": "Highback",
+            "name": "gnu_binding_highback",
+            "prefix": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "Symmetric": "Symmetric",
+                "Symmetric Power Strap Slots: Symmetric Power Strap Slots": "Symmetric Power Strap Slots: Symmetric Power Strap Slots",
+                "Asymmetric": "Asymmetric",
+                "Asymmetric Bio-Renewable": "Asymmetric Bio-Renewable",
+                "Youth": "Youth"
+            },
+            "default_value": [
+
+            ],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
+        },
+        {
+            "key": "field_50ef3109f3145",
+            "label": "Forward Lean",
+            "name": "gnu_binding_forward_lean",
+            "prefix": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "3 Positions via Cable Anchor": "3 Positions via Cable Anchor",
+                "5 Positions": "5 Positions",
+                "Ride\/Stride": "Ride\/Stride",
+                "Barrel Micro Adjust (Tool Less)": "Barrel Micro Adjust (Tool Less)",
+                "Spindle Micro Adjust (Tool Less)": "Spindle Micro Adjust (Tool Less)"
+            },
+            "default_value": [
+
+            ],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
+        },
+        {
+            "key": "field_50ef3126f3146",
+            "label": "Baseplate",
+            "name": "gnu_binding_baseplate",
+            "prefix": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "FT-JR": "FT-JR",
+                "FT-4": "FT-4",
+                "FT-3": "FT-3",
+                "FT-2": "FT-2",
+                "CNC": "CNC",
+                "Stroma": "Stroma"
+            },
+            "default_value": [
+
+            ],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
+        },
+        {
+            "key": "field_50ef313cf3147",
+            "label": "Footbed",
+            "name": "gnu_binding_footbed",
+            "prefix": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "Snow Shedding with Micro Traction": "Snow Shedding with Micro Traction",
+                "Snow Shedding": "Snow Shedding",
+                "Snow Shedding with Shock Pads": "Snow Shedding with Shock Pads",
+                "Full EVA": "Full EVA",
+                "Full EVA with Shock Pads": "Full EVA with Shock Pads",
+                "Canted Full EVA with Shock Pads": "Canted Full EVA with Shock Pads",
+                "Canted Full EVA with Heel Shock Pad": "Canted Full EVA with Heel Shock Pad"
+            },
+            "default_value": [
+
+            ],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
+        },
+        {
+            "key": "field_50ef315df3148",
+            "label": "Ankle Strap",
+            "name": "gnu_binding_ankle_strap",
+            "prefix": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "C.C.C.": "C.C.C.",
+                "Inverted Single Panel": "Inverted Single Panel",
+                "Inverted Tri-Panel": "Inverted Tri-Panel",
+                "Asymmetric": "Asymmetric",
+                "Comprex": "Comprex",
+                "": ""
+            },
+            "default_value": [
+
+            ],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
+        },
+        {
+            "key": "field_50ef3199f3149",
+            "label": "Toe Strap",
+            "name": "gnu_binding_toe_strap",
+            "prefix": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "C.C.C.": "C.C.C.",
+                "Thin Fit": "Thin Fit",
+                "Comprex": "Comprex",
+                "Roll Over": "Roll Over",
+                "Comprex with Rubber Grip": "Comprex with Rubber Grip"
+            },
+            "default_value": [
+
+            ],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
+        },
+        {
+            "key": "field_50ef31b1f314a",
+            "label": "Buckles",
+            "name": "gnu_binding_buckles",
+            "prefix": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "Cam Levers": "Cam Levers",
+                "Die Cast Aluminum": "Die Cast Aluminum",
+                "Micro Buckle 2 with Cam Levers": "Micro Buckle 2 with Cam Levers",
+                "Micro Buckle 2 with Die Cast Cam Levers": "Micro Buckle 2 with Die Cast Cam Levers"
+            },
+            "default_value": [
+
+            ],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
+        },
+        {
+            "key": "field_50ef31ccf314b",
+            "label": "Disks",
+            "name": "gnu_binding_disks",
+            "prefix": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "Youth 4 Hole Plastic": "Youth 4 Hole Plastic",
+                "Multi Disk Plastic": "Multi Disk Plastic",
+                "Die Cast Aluminum": "Die Cast Aluminum",
+                "4 Hole Ultra Light Plastic": "4 Hole Ultra Light Plastic",
+                "Multi Disk Forged Aluminum": "Multi Disk Forged Aluminum",
+                "4-Hole": "4-Hole",
+                "Combi Disk": "Combi Disk"
+            },
+            "default_value": [
+
+            ],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
+        },
+        {
+            "key": "field_50ef31e9f314c",
+            "label": "Base Buffer",
+            "name": "gnu_binding_base_buffer",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "None": "None",
+                "EVA": "EVA",
+                "-": "-",
+                "Rubber": "Rubber"
+            },
+            "default_value": "",
+            "layout": "horizontal",
+            "other_choice": 0,
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_504e322835690",
+            "label": "Snowboard Collaboration",
+            "name": "gnu_binding_collab",
+            "prefix": "",
+            "type": "relationship",
+            "instructions": "If this binding is associated with a snowboard, select the snowboard below.",
+            "required": 0,
+            "conditional_logic": 0,
+            "post_type": [
+                "gnu_snowboards"
+            ],
+            "taxonomy": [
+
+            ],
+            "filters": [
+                "search"
+            ],
+            "max": 1,
+            "elements": [
+                "post_type"
+            ],
+            "return_format": "object"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "gnu_bindings"
+            }
+        ]
+    ],
+    "menu_order": 30,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ""
+}

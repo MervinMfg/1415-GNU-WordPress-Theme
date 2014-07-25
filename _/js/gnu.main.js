@@ -55,6 +55,8 @@ GNU.Main = {
 		$('.section-header').each(function (index) {
 			new GNU.SectionHeader($(this), self.config.scrollController);
 		});
+		new GNU.ProductOverview();
+		console.log('oh yeah!');
 	},
 	utilities: {
 		cookie: {

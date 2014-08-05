@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .section-header {
-	padding: 40px 20px;
+	padding: 35px 20px;
 	text-align: center;
 	background: url('../img/bg-section-header.png') center center;
 
@@ -21,6 +21,7 @@
 }
 @media screen and (min-width: $breakpoint-medium) {
 	.section-header {
+		padding: 50px 20px;
 		position: relative;
 		overflow: hidden;
 

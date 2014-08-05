@@ -2,8 +2,7 @@
    MODULES/_FEATURED-POSTS.SCSS
    ========================================================================== */
 .featured-posts {
-	background-image: url('../img/bg-grey-triangles.png');
-	background-repeat: repeat;
+	background: url('../img/bg-grey-triangles.png') repeat;
 	text-align: center;
 	padding: 30px 0 10px;
 
@@ -69,7 +68,7 @@
 }
 @media screen and (min-width: $breakpoint-medium) {
 	.featured-posts {
-		padding: 40px 10px 10px;
+		padding: 40px 10px 20px;
 
 		.featured-post-list {
 			max-width: $breakpoint-large;
@@ -98,6 +97,8 @@
 }
 @media screen and (min-width: $breakpoint-large) {
 	.featured-posts {
+		padding: 60px 10px 20px;
+
 		&.animate .featured-post {
 			margin-left: -100px;
 

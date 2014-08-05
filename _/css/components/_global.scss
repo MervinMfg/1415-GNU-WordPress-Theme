@@ -5,6 +5,10 @@
 .site-main {
 	//
 }
+.section-spacer {
+	height: 10px;
+	background: url('../img/bg-grey-triangles.png') repeat;
+}
 @media screen and (min-width: $breakpoint-medium) {
 	.site-main {
 		padding-top: 75px;

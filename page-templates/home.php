@@ -7,6 +7,8 @@ Template Name: Home
 
 			<?php include get_template_directory() . '/_/inc/modules/featured-slider.php'; ?>
 
+			<div class="section-spacer"></div>
+
 			<?php include get_template_directory() . '/_/inc/modules/social-slider.php'; ?>
 
 			<?php include get_template_directory() . '/_/inc/modules/featured-posts.php'; ?>

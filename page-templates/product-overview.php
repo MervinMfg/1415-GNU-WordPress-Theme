@@ -23,129 +23,52 @@ Template Name: Product Overview
 					<div class="vibe vibe-1"></div>
 				</header>
 				<div class="product-filters">
-					<button>Board Filters</button>
+					<button class="btn-filter">Board Filters</button>
 				</div>
 				<div class="product-list owl-carousel">
+
+					<?php
+						// Get Mens
+						$args = array(
+							'post_type' => 'gnu_snowboards',
+							'posts_per_page' => -1,
+							'orderby' => 'menu_order',
+							'order' => 'ASC',
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'gnu_snowboard_categories',
+									'field' => 'slug',
+									'terms' => array('mens', 'mens-splitboards', 'mens-youth'),
+									'include_children' => false
+								)
+							)
+						);
+						$loop = new WP_Query( $args );
+						while ( $loop->have_posts() ) : $loop->the_post();
+							$image = get_field('gnu_snowboard_overview_img');
+							$detail = get_field('gnu_snowboard_contour');
+					?>
+
 					<div class="product">
-						<a href="#">
+						<a href="<? the_permalink(); ?>">
 							<div class="info">
 								<div class="vertical-center">
-									<h4 class="name">Eco Impossible</h4>
-									<p class="collection">The Weird Collection</p>
-									<p class="price">$499.99 USD</p>
+									<h4 class="name"><?php the_title(); ?></h4>
+									<p class="detail"><?php echo $detail; ?></p>
+									<div class="price">
+										<?php echo getPrice( get_field('gnu_product_price_us'), get_field('gnu_product_price_ca'), get_field('gnu_product_price_eur'), get_field('gnu_product_on_sale'), get_field('gnu_product_sale_percentage') ); ?>
+									</div>
 								</div>
 							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/_/img/placeholder-snowboard.png" alt="Snowboard Name" class="image" />
+							<img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" />
 						</a>
 					</div><!-- .product -->
-					<div class="product">
-						<a href="#">
-							<div class="info">
-								<div class="vertical-center">
-									<h4 class="name">Ladies Gateway</h4>
-									<p class="collection">The Weird Collection</p>
-									<p class="price">$499.99 USD</p>
-								</div>
-							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/_/img/placeholder-snowboard.png" alt="Snowboard Name" class="image" />
-						</a>
-					</div><!-- .product -->
-					<div class="product">
-						<a href="#">
-							<div class="info">
-								<div class="vertical-center">
-									<h4 class="name">Mini Smart Pickle</h4>
-									<p class="collection">The Weird Collection</p>
-									<p class="price">$499.99 USD</p>
-								</div>
-							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/_/img/placeholder-snowboard.png" alt="Snowboard Name" class="image" />
-						</a>
-					</div><!-- .product -->
-					<div class="product">
-						<a href="#">
-							<div class="info">
-								<div class="vertical-center">
-									<h4 class="name">Riders<br />Choice</h4>
-									<p class="collection">The Weird Collection</p>
-									<p class="price">$499.99 USD</p>
-								</div>
-							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/_/img/placeholder-snowboard.png" alt="Snowboard Name" class="image" />
-						</a>
-					</div><!-- .product -->
-					<div class="product">
-						<a href="#">
-							<div class="info">
-								<div class="vertical-center">
-									<h4 class="name">Riders Choice</h4>
-									<p class="collection">The Weird Collection</p>
-									<p class="price">$499.99 USD</p>
-								</div>
-							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/_/img/placeholder-snowboard.png" alt="Snowboard Name" class="image" />
-						</a>
-					</div><!-- .product -->
-					<div class="product">
-						<a href="#">
-							<div class="info">
-								<div class="vertical-center">
-									<h4 class="name">Riders Choice</h4>
-									<p class="collection">The Weird Collection</p>
-									<p class="price">$499.99 USD</p>
-								</div>
-							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/_/img/placeholder-snowboard.png" alt="Snowboard Name" class="image" />
-						</a>
-					</div><!-- .product -->
-					<div class="product">
-						<a href="#">
-							<div class="info">
-								<div class="vertical-center">
-									<h4 class="name">Riders Choice</h4>
-									<p class="collection">The Weird Collection</p>
-									<p class="price">$499.99 USD</p>
-								</div>
-							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/_/img/placeholder-snowboard.png" alt="Snowboard Name" class="image" />
-						</a>
-					</div><!-- .product -->
-					<div class="product">
-						<a href="#">
-							<div class="info">
-								<div class="vertical-center">
-									<h4 class="name">Riders Choice</h4>
-									<p class="collection">The Weird Collection</p>
-									<p class="price">$499.99 USD</p>
-								</div>
-							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/_/img/placeholder-snowboard.png" alt="Snowboard Name" class="image" />
-						</a>
-					</div><!-- .product -->
-					<div class="product">
-						<a href="#">
-							<div class="info">
-								<div class="vertical-center">
-									<h4 class="name">Riders Choice</h4>
-									<p class="collection">The Weird Collection</p>
-									<p class="price">$499.99 USD</p>
-								</div>
-							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/_/img/placeholder-snowboard.png" alt="Snowboard Name" class="image" />
-						</a>
-					</div><!-- .product -->
-					<div class="product">
-						<a href="#">
-							<div class="info">
-								<div class="vertical-center">
-									<h4 class="name">Riders Choice</h4>
-									<p class="collection">The Weird Collection</p>
-									<p class="price">$499.99 USD</p>
-								</div>
-							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/_/img/placeholder-snowboard.png" alt="Snowboard Name" class="image" />
-						</a>
-					</div><!-- .product -->
+
+					<?
+						endwhile;
+						wp_reset_query();
+					?>
+
 				</div><!-- .product-list -->
 				<div class="clearfix"></div>
 			</section><!-- .product-overview -->
@@ -166,129 +89,50 @@ Template Name: Product Overview
 					<div class="vibe vibe-2"></div>
 				</header>
 				<div class="product-filters">
-					<button>Board Filters</button>
+					<button class="btn-filter">Board Filters</button>
 				</div>
 				<div class="product-list owl-carousel">
+					<?php
+						// Get Womens
+						$args = array(
+							'post_type' => 'gnu_snowboards',
+							'posts_per_page' => -1,
+							'orderby' => 'menu_order',
+							'order' => 'ASC',
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'gnu_snowboard_categories',
+									'field' => 'slug',
+									'terms' => array('womens', 'womens-splitboards', 'womens-youth'),
+									'include_children' => false
+								)
+							)
+						);
+						$loop = new WP_Query( $args );
+						while ( $loop->have_posts() ) : $loop->the_post();
+							$image = get_field('gnu_snowboard_overview_img');
+							$detail = get_field('gnu_snowboard_contour');
+					?>
+
 					<div class="product">
-						<a href="#">
+						<a href="<? the_permalink(); ?>">
 							<div class="info">
 								<div class="vertical-center">
-									<h4 class="name">Eco Impossible</h4>
-									<p class="collection">The Weird Collection</p>
-									<p class="price">$499.99 USD</p>
+									<h4 class="name"><?php the_title(); ?></h4>
+									<p class="detail"><?php echo $detail; ?></p>
+									<div class="price">
+										<?php echo getPrice( get_field('gnu_product_price_us'), get_field('gnu_product_price_ca'), get_field('gnu_product_price_eur'), get_field('gnu_product_on_sale'), get_field('gnu_product_sale_percentage') ); ?>
+									</div>
 								</div>
 							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/_/img/placeholder-snowboard.png" alt="Snowboard Name" class="image" />
+							<img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" />
 						</a>
 					</div><!-- .product -->
-					<div class="product">
-						<a href="#">
-							<div class="info">
-								<div class="vertical-center">
-									<h4 class="name">Ladies Gateway</h4>
-									<p class="collection">The Weird Collection</p>
-									<p class="price">$499.99 USD</p>
-								</div>
-							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/_/img/placeholder-snowboard.png" alt="Snowboard Name" class="image" />
-						</a>
-					</div><!-- .product -->
-					<div class="product">
-						<a href="#">
-							<div class="info">
-								<div class="vertical-center">
-									<h4 class="name">Mini Smart Pickle</h4>
-									<p class="collection">The Weird Collection</p>
-									<p class="price">$499.99 USD</p>
-								</div>
-							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/_/img/placeholder-snowboard.png" alt="Snowboard Name" class="image" />
-						</a>
-					</div><!-- .product -->
-					<div class="product">
-						<a href="#">
-							<div class="info">
-								<div class="vertical-center">
-									<h4 class="name">Riders<br />Choice</h4>
-									<p class="collection">The Weird Collection</p>
-									<p class="price">$499.99 USD</p>
-								</div>
-							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/_/img/placeholder-snowboard.png" alt="Snowboard Name" class="image" />
-						</a>
-					</div><!-- .product -->
-					<div class="product">
-						<a href="#">
-							<div class="info">
-								<div class="vertical-center">
-									<h4 class="name">Riders Choice</h4>
-									<p class="collection">The Weird Collection</p>
-									<p class="price">$499.99 USD</p>
-								</div>
-							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/_/img/placeholder-snowboard.png" alt="Snowboard Name" class="image" />
-						</a>
-					</div><!-- .product -->
-					<div class="product">
-						<a href="#">
-							<div class="info">
-								<div class="vertical-center">
-									<h4 class="name">Riders Choice</h4>
-									<p class="collection">The Weird Collection</p>
-									<p class="price">$499.99 USD</p>
-								</div>
-							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/_/img/placeholder-snowboard.png" alt="Snowboard Name" class="image" />
-						</a>
-					</div><!-- .product -->
-					<div class="product">
-						<a href="#">
-							<div class="info">
-								<div class="vertical-center">
-									<h4 class="name">Riders Choice</h4>
-									<p class="collection">The Weird Collection</p>
-									<p class="price">$499.99 USD</p>
-								</div>
-							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/_/img/placeholder-snowboard.png" alt="Snowboard Name" class="image" />
-						</a>
-					</div><!-- .product -->
-					<div class="product">
-						<a href="#">
-							<div class="info">
-								<div class="vertical-center">
-									<h4 class="name">Riders Choice</h4>
-									<p class="collection">The Weird Collection</p>
-									<p class="price">$499.99 USD</p>
-								</div>
-							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/_/img/placeholder-snowboard.png" alt="Snowboard Name" class="image" />
-						</a>
-					</div><!-- .product -->
-					<div class="product">
-						<a href="#">
-							<div class="info">
-								<div class="vertical-center">
-									<h4 class="name">Riders Choice</h4>
-									<p class="collection">The Weird Collection</p>
-									<p class="price">$499.99 USD</p>
-								</div>
-							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/_/img/placeholder-snowboard.png" alt="Snowboard Name" class="image" />
-						</a>
-					</div><!-- .product -->
-					<div class="product">
-						<a href="#">
-							<div class="info">
-								<div class="vertical-center">
-									<h4 class="name">Riders Choice</h4>
-									<p class="collection">The Weird Collection</p>
-									<p class="price">$499.99 USD</p>
-								</div>
-							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/_/img/placeholder-snowboard.png" alt="Snowboard Name" class="image" />
-						</a>
-					</div><!-- .product -->
+
+					<?
+						endwhile;
+						wp_reset_query();
+					?>
 				</div><!-- .product-list -->
 				<div class="clearfix"></div>
 			</section><!-- .product-overview -->
@@ -311,19 +155,50 @@ Template Name: Product Overview
 					</div>
 					<div class="vibe vibe-6"></div>
 				</header>
-				<div class="product-filters">
-					<button>Board Filters</button>
-				</div>
-				<ul class="product-list">
-					<li class="list-item">
-						<a href="#">
-							<img src="" alt="" />
-							<h4 class="product-name">Board Name</h4>
-							<h5 class="product-category">Board Category</h5>
-							<p class="product-price">$499.99 USD</p>
+				<div class="product-filters"></div>
+				<div class="product-list owl-carousel">
+					<?php
+						// Get Mens Bindings
+						$args = array(
+							'post_type' => 'gnu_bindings',
+							'posts_per_page' => -1,
+							'orderby' => 'menu_order',
+							'order' => 'ASC',
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'gnu_bindings_categories',
+									'field' => 'slug',
+									'terms' => array('mens', 'youth'),
+									'include_children' => false
+								)
+							)
+						);
+						$loop = new WP_Query( $args );
+						while ( $loop->have_posts() ) : $loop->the_post();
+							$image = get_field('gnu_product_image');
+							$detail = get_field('gnu_binding_type');
+					?>
+
+					<div class="product">
+						<a href="<? the_permalink(); ?>">
+							<div class="info">
+								<div class="vertical-center">
+									<h4 class="name"><?php the_title(); ?></h4>
+									<p class="detail"><?php echo $detail; ?></p>
+									<div class="price">
+										<?php echo getPrice( get_field('gnu_product_price_us'), get_field('gnu_product_price_ca'), get_field('gnu_product_price_eur'), get_field('gnu_product_on_sale'), get_field('gnu_product_sale_percentage') ); ?>
+									</div>
+								</div>
+							</div>
+							<img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" />
 						</a>
-					</li>
-				</ul>
+					</div><!-- .product -->
+
+					<?
+						endwhile;
+						wp_reset_query();
+					?>
+				</div><!-- .product-list -->
 				<div class="clearfix"></div>
 			</section><!-- .product-overview -->
 			<section id="womens-bindings" class="product-overview deeplink-top-fix">
@@ -342,19 +217,50 @@ Template Name: Product Overview
 					</div>
 					<div class="vibe vibe-3"></div>
 				</header>
-				<div class="product-filters">
-					<button>Board Filters</button>
-				</div>
-				<ul class="product-list">
-					<li class="list-item">
-						<a href="#">
-							<img src="" alt="" />
-							<h4 class="product-name">Board Name</h4>
-							<h5 class="product-category">Board Category</h5>
-							<p class="product-price">$499.99 USD</p>
+				<div class="product-filters"></div>
+				<div class="product-list owl-carousel">
+					<?php
+						// Get Womens Bindings
+						$args = array(
+							'post_type' => 'gnu_bindings',
+							'posts_per_page' => -1,
+							'orderby' => 'menu_order',
+							'order' => 'ASC',
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'gnu_bindings_categories',
+									'field' => 'slug',
+									'terms' => array('womens', 'youth'),
+									'include_children' => false
+								)
+							)
+						);
+						$loop = new WP_Query( $args );
+						while ( $loop->have_posts() ) : $loop->the_post();
+							$image = get_field('gnu_product_image');
+							$detail = get_field('gnu_binding_type');
+					?>
+
+					<div class="product">
+						<a href="<? the_permalink(); ?>">
+							<div class="info">
+								<div class="vertical-center">
+									<h4 class="name"><?php the_title(); ?></h4>
+									<p class="detail"><?php echo $detail; ?></p>
+									<div class="price">
+										<?php echo getPrice( get_field('gnu_product_price_us'), get_field('gnu_product_price_ca'), get_field('gnu_product_price_eur'), get_field('gnu_product_on_sale'), get_field('gnu_product_sale_percentage') ); ?>
+									</div>
+								</div>
+							</div>
+							<img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" />
 						</a>
-					</li>
-				</ul>
+					</div><!-- .product -->
+
+					<?
+						endwhile;
+						wp_reset_query();
+					?>
+				</div><!-- .product-list -->
 				<div class="clearfix"></div>
 			</section><!-- .product-overview -->
 			<section id="compare-bindings" class="product-compare deeplink-top-fix">
@@ -374,9 +280,7 @@ Template Name: Product Overview
 					</div>
 					<div class="vibe vibe-5"></div>
 				</header>
-				<div class="product-filters">
-					<button>Board Filters</button>
-				</div>
+				<div class="product-filters"></div>
 				<ul class="product-list">
 					<li class="list-item">
 						<a href="#">
@@ -410,18 +314,51 @@ Template Name: Product Overview
 					<div class="vibe vibe-2"></div>
 				</header>
 				<div class="product-filters">
-					<button>Board Filters</button>
+					<button class="btn-filter">Supply Filters</button>
 				</div>
-				<ul class="product-list">
-					<li class="list-item">
-						<a href="#">
-							<img src="" alt="" />
-							<h4 class="product-name">Board Name</h4>
-							<h5 class="product-category">Board Category</h5>
-							<p class="product-price">$499.99 USD</p>
+				<div class="product-list owl-carousel">
+					<?php
+						// Get Wearables
+						$args = array(
+							'post_type' => 'gnu_apparel',
+							'posts_per_page' => -1,
+							'orderby' => 'menu_order',
+							'order' => 'ASC',
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'gnu_apparel_categories',
+									'field' => 'slug',
+									'terms' => array('sweatshirts', 't-shirts', 'socks'),
+									'include_children' => false
+								)
+							)
+						);
+						$loop = new WP_Query( $args );
+						while ( $loop->have_posts() ) : $loop->the_post();
+							$image = get_field('gnu_product_image');
+							$detail = 'Wearables';
+					?>
+
+					<div class="product">
+						<a href="<? the_permalink(); ?>">
+							<div class="info">
+								<div class="vertical-center">
+									<h4 class="name"><?php the_title(); ?></h4>
+									<p class="detail"><?php echo $detail; ?></p>
+									<div class="price">
+										<?php echo getPrice( get_field('gnu_product_price_us'), get_field('gnu_product_price_ca'), get_field('gnu_product_price_eur'), get_field('gnu_product_on_sale'), get_field('gnu_product_sale_percentage') ); ?>
+									</div>
+								</div>
+							</div>
+							<img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" />
 						</a>
-					</li>
-				</ul>
+					</div><!-- .product -->
+
+					<?
+						endwhile;
+						wp_reset_query();
+					?>
+				</div><!-- .product-list -->
 				<div class="clearfix"></div>
 			</section><!-- .product-overview -->
 			<section id="headwear" class="product-overview deeplink-top-fix">
@@ -442,18 +379,51 @@ Template Name: Product Overview
 					<div class="vibe vibe-5"></div>
 				</header>
 				<div class="product-filters">
-					<button>Board Filters</button>
+					<button class="btn-filter">Supply Filters</button>
 				</div>
-				<ul class="product-list">
-					<li class="list-item">
-						<a href="#">
-							<img src="" alt="" />
-							<h4 class="product-name">Board Name</h4>
-							<h5 class="product-category">Board Category</h5>
-							<p class="product-price">$499.99 USD</p>
+				<div class="product-list owl-carousel">
+					<?php
+						// Get Wearables
+						$args = array(
+							'post_type' => 'gnu_apparel',
+							'posts_per_page' => -1,
+							'orderby' => 'menu_order',
+							'order' => 'ASC',
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'gnu_apparel_categories',
+									'field' => 'slug',
+									'terms' => array('hats', 'beanies'),
+									'include_children' => false
+								)
+							)
+						);
+						$loop = new WP_Query( $args );
+						while ( $loop->have_posts() ) : $loop->the_post();
+							$image = get_field('gnu_product_image');
+							$detail = 'Headwear';
+					?>
+
+					<div class="product">
+						<a href="<? the_permalink(); ?>">
+							<div class="info">
+								<div class="vertical-center">
+									<h4 class="name"><?php the_title(); ?></h4>
+									<p class="detail"><?php echo $detail; ?></p>
+									<div class="price">
+										<?php echo getPrice( get_field('gnu_product_price_us'), get_field('gnu_product_price_ca'), get_field('gnu_product_price_eur'), get_field('gnu_product_on_sale'), get_field('gnu_product_sale_percentage') ); ?>
+									</div>
+								</div>
+							</div>
+							<img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" />
 						</a>
-					</li>
-				</ul>
+					</div><!-- .product -->
+
+					<?
+						endwhile;
+						wp_reset_query();
+					?>
+				</div><!-- .product-list -->
 				<div class="clearfix"></div>
 			</section><!-- .product-overview -->
 			<section id="accessories" class="product-overview deeplink-top-fix">
@@ -474,18 +444,43 @@ Template Name: Product Overview
 					<div class="vibe vibe-4"></div>
 				</header>
 				<div class="product-filters">
-					<button>Board Filters</button>
+					<button class="btn-filter">Supply Filters</button>
 				</div>
-				<ul class="product-list">
-					<li class="list-item">
-						<a href="#">
-							<img src="" alt="" />
-							<h4 class="product-name">Board Name</h4>
-							<h5 class="product-category">Board Category</h5>
-							<p class="product-price">$499.99 USD</p>
+				<div class="product-list owl-carousel">
+					<?php
+						// Get Wearables
+						$args = array(
+							'post_type' => 'gnu_accessories',
+							'posts_per_page' => -1,
+							'orderby' => 'menu_order',
+							'order' => 'ASC'
+						);
+						$loop = new WP_Query( $args );
+						while ( $loop->have_posts() ) : $loop->the_post();
+							$image = get_field('gnu_product_image');
+							$detail = 'Accessories';
+					?>
+
+					<div class="product">
+						<a href="<? the_permalink(); ?>">
+							<div class="info">
+								<div class="vertical-center">
+									<h4 class="name"><?php the_title(); ?></h4>
+									<p class="detail"><?php echo $detail; ?></p>
+									<div class="price">
+										<?php echo getPrice( get_field('gnu_product_price_us'), get_field('gnu_product_price_ca'), get_field('gnu_product_price_eur'), get_field('gnu_product_on_sale'), get_field('gnu_product_sale_percentage') ); ?>
+									</div>
+								</div>
+							</div>
+							<img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" />
 						</a>
-					</li>
-				</ul>
+					</div><!-- .product -->
+
+					<?
+						endwhile;
+						wp_reset_query();
+					?>
+				</div><!-- .product-list -->
 				<div class="clearfix"></div>
 			</section><!-- .product-overview -->
 

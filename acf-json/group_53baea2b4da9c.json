@@ -118,6 +118,41 @@
                 "operator": "==",
                 "value": "page-templates\/home.php"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "gnu_snowboards"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "gnu_bindings"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "gnu_accessories"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "gnu_apparel"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "gnu_team"
+            }
         ]
     ],
     "menu_order": 0,

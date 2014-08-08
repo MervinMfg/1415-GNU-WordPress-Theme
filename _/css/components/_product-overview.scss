@@ -7,7 +7,7 @@
 		
 	}
 	.product-filters {
-
+		display: none;
 	}
 	.product-list {
 		text-align: center;
@@ -21,6 +21,7 @@
 
 			.info {
 				background: $black;
+				background-image: url('../img/bg-overview-title.png');
 				height: 50px;
 				width: 100%;
 				position: absolute;
@@ -47,7 +48,7 @@
 				.name {
 					color: $white;
 				}
-				.collection {
+				.detail {
 					display: none;
 				}
 				.price {
@@ -66,7 +67,7 @@
 			a:focus {
 				.info {
 					.name,
-					.collection {
+					.detail {
 						color: $pink;
 					}
 				}
@@ -74,26 +75,79 @@
 		}
 	}
 }
+#mens-bindings,
+#womens-bindings,
+#wearables,
+#headwear,
+#accessories {
+	.product-list .product {
+		width: 150px;
+		height: 190px;
+
+		.info {
+			bottom: 0px;
+			height: 35px;
+		}
+		.image {
+			width: 180px;
+			height: 180px;
+			max-width: 180px;
+			left: -15px;
+		}
+	}
+}
+#wearables,
+#headwear,
+#accessories {
+	.product-list .product {
+		.image {
+			width: 150px;
+			height: 150px;
+			max-width: 150px;
+			left: 0px;
+		}
+	}
+}
+#compare-bindings {
+	display: none;
+}
 
 @media screen and (min-width: $breakpoint-small) {
 	//
 }
 @media screen and (min-width: $breakpoint-medium) {
 	.product-overview {
+		.product-filters {
+			display: block;
+			height: 40px;
+			background: url('../img/bg-black-triangles-filter.png');
+
+			.btn-filter {
+				display: none;
+				height: 40px;
+				background: url('../img/bg-yellow-triangles-filter.png');
+				text-transform: uppercase;
+				color: $black;
+				font-size: 2.4em;
+				font-family: $neuron;
+				font-weight: 700;
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+		}
 		.product-list {
 			.product {
 				width: 210px;
 				height: 640px;
 
 				.info {
-					background-image: url('../img/bg-overview-title.png');
 					height: 88px;
 					bottom: 40px;
 					padding: 0 10px;
 					//@include vendorize(transform, scale(1,1));
 					//@include transition(transform, 100ms, ease-in-out);
 
-					.collection {
+					.detail {
 						display: block;
 						color: $white;
 						text-transform: uppercase;
@@ -102,11 +156,19 @@
 					}
 					.price {
 						display: block;
-						color: $grayLight;
-						text-transform: uppercase;
-						margin-bottom: 0;
-						line-height: 1em;
-						font-size: 1.4em;
+
+						p {
+							color: $grayLight;
+							text-transform: uppercase;
+							margin-bottom: 0;
+							line-height: 1em;
+							font-size: 1.4em;
+							display: none;
+
+							&.active {
+								display: block;
+							}
+						}
 					}
 				}
 				.image {
@@ -131,7 +193,44 @@
 		}
 	}
 
+	#mens-bindings,
+	#womens-bindings,
+	#wearables,
+	#headwear,
+	#accessories {
+		.product-list .product {
+			width: 350px;
+			height: 445px;
 
+			.info {
+				height: 88px;
+			}
+			.image {
+				width: 420px;
+				height: 420px;
+				max-width: 420px;
+				left: -35px;
+			}
+		}
+	}
+	#wearables,
+	#headwear,
+	#accessories {
+		.product-list .product {
+			width: 350px;
+			height: 445px;
+
+			.info {
+				height: 88px;
+			}
+			.image {
+				width: 350px;
+				height: 350px;
+				max-width: 350px;
+				left: 0px;
+			}
+		}
+	}
 
 	#mens-snowboards,
 	#mens-bindings {

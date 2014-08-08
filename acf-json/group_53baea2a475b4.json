@@ -3,6 +3,25 @@
     "title": "Binding Details",
     "fields": [
         {
+            "key": "field_53e4178f36e81",
+            "label": "Type",
+            "name": "gnu_binding_type",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "Front Entry": "Front Entry",
+                "Rear Entry": "Rear Entry",
+                "Splitboard": "Splitboard"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal"
+        },
+        {
             "key": "field_504e3228352f0",
             "label": "Flex",
             "name": "gnu_binding_flex",

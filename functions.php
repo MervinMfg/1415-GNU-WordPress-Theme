@@ -146,13 +146,29 @@ add_filter('nav_menu_css_class', 'my_css_attributes_filter', 100, 1);
 add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1);
 add_filter('page_css_class', 'my_css_attributes_filter', 100, 1);
 function my_css_attributes_filter($var) {
-  return is_array($var) ? array_intersect($var, array('menu-item', 'current-menu-item', 'boards', 'bindings', 'supplies', 'team', 'blog', 'events', 'about', 'locator')) : '';
+	return is_array($var) ? array_intersect($var, array('menu-item', 'current-menu-item', 'boards', 'bindings', 'supplies', 'team', 'blog', 'events', 'about', 'locator')) : '';
 }
 
 
 
-
-
+// GET PRICE DISPLAY
+function getPrice ($usPrice, $caPrice, $eurPrice, $sale, $salePercent) {
+	$price = "";
+	/*if ($sale == "Yes") {
+		// US Sale Price
+		$price = '<p class="us-price strike"><span>$' . $usPrice . '</span> USD</p><p class="us-price"><span>$' . round($usPrice * ((100 - $salePercent) / 100), 2) . '</span> USD (' . $salePercent . '% off)</p>';
+		// CA Sale Price
+		$price .= '<p class="ca-price strike"><span>$' . $caPrice . '</span> CAD</p><p class="ca-price"><span>$' . round($caPrice * ((100 - $salePercent) / 100), 2) . '</span> CAD (' . $salePercent . '% off)</p>';
+	} else {*/
+		// US Price
+		$price = '<p class="us-price">$' . $usPrice . ' <span>USD</span></p>';
+		// CA Price
+		$price .= '<p class="ca-price">$' . $caPrice . ' <span>CAD</span></p>';
+		// CA Price
+		$price .= '<p class="eur-price">$' . $eurPrice . ' <span>EUD</span></p>';
+	//}
+	return $price;
+}
 
 
 

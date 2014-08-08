@@ -38,7 +38,7 @@ GNU.SectionHeader.prototype = {
 		self.config.$sectionHeader.find('.signs .sign-navigation .sign a').on('click.secitonHeader', function (e) {
 			e.preventDefault();
 			var url = $(this).attr('href');
-			GNU.Main.utilities.pageScroll(url);
+			GNU.Main.utilities.pageScroll(url, 0.5);
 		});
 	},
 	scrollVibe: function () {
@@ -56,7 +56,7 @@ GNU.SectionHeader.prototype = {
 		// if we're medium or bigger, do the scroll. hidden on base and small
 		if ( GNU.Main.utilities.responsiveCheck() === 'medium' || GNU.Main.utilities.responsiveCheck() === 'large' ) {
 			windowHeight = $(window).height();
-			tween = new TweenMax.to($vibe, 1, {x: "100px", force3D: true, ease: Linear.easeNone});
+			tween = new TweenMax.to($vibe, 1, {x: "200px", force3D: true, ease: Linear.easeNone});
 			if(windowHeight > self.config.$sectionHeader.position().top) {
 				scrollDuration = (self.config.$sectionHeader.outerHeight() + self.config.$sectionHeader.position().top) - ($('.site-header').outerHeight() + $('.site-header').position().top);
 				self.config.scene = new ScrollScene({duration: scrollDuration}).setTween(tween).addTo(self.config.scrollController);

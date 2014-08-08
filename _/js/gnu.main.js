@@ -56,7 +56,6 @@ GNU.Main = {
 			new GNU.SectionHeader($(this), self.config.scrollController);
 		});
 		new GNU.ProductOverview();
-		console.log('oh yeah!');
 	},
 	utilities: {
 		cookie: {
@@ -82,10 +81,15 @@ GNU.Main = {
 				document.cookie = name + "=" + value + expires + "; path=/";
 			}
 		},
-		pageScroll: function (hash) {
+		pageScroll: function (hash, duration) {
+			var duration, yPosition;
+			// check duration
+			if (typeof duration === 'undefined') {
+				duration = 1;
+			}
 			// Smooth Page Scrolling, update hash on complete of animation
-			var yPosition = $(hash).offset().top;
-			TweenMax.to(window, 1, {scrollTo:{y: yPosition, x: 0}, onComplete: function () { window.location = hash; }});
+			yPosition = $(hash).offset().top;
+			TweenMax.to(window, duration, {scrollTo:{y: yPosition, x: 0}, onComplete: function () { window.location = hash; }});
 		},
 		responsiveCheck: function () {
 			var size;

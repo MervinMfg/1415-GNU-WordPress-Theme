@@ -3,19 +3,6 @@
     "title": "Product Details",
     "fields": [
         {
-            "key": "field_51ae56c19fca2",
-            "label": "Title Image",
-            "name": "gnu_product_title_image",
-            "prefix": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "preview_size": "thumbnail",
-            "library": "all",
-            "return_format": "id"
-        },
-        {
             "key": "field_503fd45bbdd1e",
             "label": "Slogan",
             "name": "gnu_product_slogan",

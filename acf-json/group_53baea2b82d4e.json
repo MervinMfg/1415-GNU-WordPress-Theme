@@ -37,6 +37,23 @@
             "append": "",
             "readonly": 0,
             "disabled": 0
+        },
+        {
+            "key": "field_53e2b145a024c",
+            "label": "EUR Price",
+            "name": "gnu_product_price_eur",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "0.00",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
         }
     ],
     "location": [

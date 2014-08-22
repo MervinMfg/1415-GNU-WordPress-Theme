@@ -13,7 +13,6 @@ GNU.ProductOverview.prototype = {
 	init: function () {
 		var self, responsiveSize;
 		self = this;
-		self.displayPrice();
 		// (RE)INIT MENU ON RESIZE
 		$(window).on('resize.productOverview', function () {
 			if ( responsiveSize != "base" && GNU.Main.utilities.responsiveCheck() == "base" ) {
@@ -32,29 +31,6 @@ GNU.ProductOverview.prototype = {
 		});
 		self.setupProducts();
 	},
-	displayPrice: function () {
-		var currencyCookie;
-		// CHECK AND DISPLAY CORRECT CURRENCY
-		currencyCookie = GNU.Main.utilities.cookie.getCookie('gnu_currency');
-		if (currencyCookie !== null || currencyCookie !== "") {
-			switch(currencyCookie) {
-				case 'USD':
-					$('.us-price').addClass('active');
-					break;
-				case 'CAD':
-					$('.ca-price').addClass('active');
-					break;
-				case 'EUD':
-					$('.eur-price').addClass('active');
-					break;
-				default:
-					// do nothing, international
-			}
-		} else {
-			// no cookie, display US
-			$('.us-price').addClass('active');
-		}
-	},
 	setupProducts: function () {
 		var self = this;
 		// reset owl carousel(s)
@@ -63,8 +39,6 @@ GNU.ProductOverview.prototype = {
 				$(this).data('owl.carousel').destroy();
 			});
 		}
-		
-
 		if ( GNU.Main.utilities.responsiveCheck() === 'medium' || GNU.Main.utilities.responsiveCheck() === 'large' ) {
 			TweenMax.to('.product-overview .product-list .product a .info', 0, {scale: 1, force3D: true});
 			TweenMax.to('.product-overview .product-list .product a .image', 0, {scale: 0.95, force3D: true});

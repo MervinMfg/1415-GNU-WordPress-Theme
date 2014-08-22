@@ -150,10 +150,18 @@ function my_css_attributes_filter($var) {
 }
 
 
-
+// GET REGION CODE
+function getCurrencyCode () {
+	if (isset($_COOKIE["gnu_currency"])) {
+		$GLOBALS['gnu_currency'] = $_COOKIE["gnu_currency"];
+	} else {
+		$GLOBALS['gnu_currency'] = "USD";
+	}
+	return $GLOBALS['gnu_currency'];
+}
 // GET PRICE DISPLAY
 function getPrice ($usPrice, $caPrice, $eurPrice, $sale, $salePercent) {
-	$price = "";
+	$price = '<div class="price">';
 	/*if ($sale == "Yes") {
 		// US Sale Price
 		$price = '<p class="us-price strike"><span>$' . $usPrice . '</span> USD</p><p class="us-price"><span>$' . round($usPrice * ((100 - $salePercent) / 100), 2) . '</span> USD (' . $salePercent . '% off)</p>';
@@ -161,14 +169,16 @@ function getPrice ($usPrice, $caPrice, $eurPrice, $sale, $salePercent) {
 		$price .= '<p class="ca-price strike"><span>$' . $caPrice . '</span> CAD</p><p class="ca-price"><span>$' . round($caPrice * ((100 - $salePercent) / 100), 2) . '</span> CAD (' . $salePercent . '% off)</p>';
 	} else {*/
 		// US Price
-		$price = '<p class="us-price">$' . $usPrice . ' <span>USD</span></p>';
+		$price .= '<p class="us-price">$' . $usPrice . ' <span>USD</span></p>';
 		// CA Price
 		$price .= '<p class="ca-price">$' . $caPrice . ' <span>CAD</span></p>';
 		// CA Price
 		$price .= '<p class="eur-price">$' . $eurPrice . ' <span>EUD</span></p>';
 	//}
+    $price .= '</div><!-- .price -->';
 	return $price;
 }
+
 
 
 
@@ -237,7 +247,7 @@ CODE FOR CUSTOM POST TYPES
 function set_custom_post_types_admin_order($wp_query) {  
   if (is_admin()) {  
     $post_type = $wp_query->query['post_type'];
-    if ( $post_type == 'gnu_snowboards' || $post_type == 'gnu_bindings' || $post_type == 'gnu_accessories' || $post_type == 'gnu_weirdwear' || $post_type == 'gnu_technology' || $post_type == 'gnu_awards' || $post_type == 'gnu_team' ) { 
+    if ( $post_type == 'gnu_snowboards' || $post_type == 'gnu_bindings' || $post_type == 'gnu_accessories' || $post_type == 'gnu_weirdwear' || $post_type == 'gnu_technology' || $post_type == 'gnu_awards' || $post_type == 'gnu_team' || $post_type == 'gnu_partners' ) { 
       $wp_query->set('orderby', 'menu_order');  
       $wp_query->set('order', 'ASC');  
     }  
@@ -273,7 +283,7 @@ function register_custom_post_types() {
         'rewrite' => array("slug" => "snowboards"),
         'capability_type' => 'page',
         'has_archive' => false, 
-        'hierarchical' => true,
+        'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes', 'comments' )
     ); 
@@ -333,7 +343,7 @@ function register_custom_post_types() {
         'rewrite' => array("slug" => "bindings"),
         'capability_type' => 'page',
         'has_archive' => false, 
-        'hierarchical' => true,
+        'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes', 'comments' )
     ); 
@@ -393,7 +403,7 @@ function register_custom_post_types() {
         'rewrite' => array("slug" => 'supplies/accessories'),
         'capability_type' => 'page',
         'has_archive' => false, 
-        'hierarchical' => true,
+        'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes', 'comments' )
     ); 
@@ -453,7 +463,7 @@ function register_custom_post_types() {
         'rewrite' => array("slug" => 'supplies/apparel'),
         'capability_type' => 'page',
         'has_archive' => false, 
-        'hierarchical' => true,
+        'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes', 'comments' )
     ); 

@@ -38,6 +38,8 @@ GNU.Main = {
 			self.homeSportInit();
 		} else if ($body.hasClass('page-template-page-templatesproduct-overview-php')) {
 			self.productOverviewInit();
+		} else if ($body.hasClass('single-gnu_snowboards')) {
+			self.productDetailsInit();
 		}
 	},
 	homeInit: function () {
@@ -56,6 +58,12 @@ GNU.Main = {
 			new GNU.SectionHeader($(this), self.config.scrollController);
 		});
 		new GNU.ProductOverview();
+	},
+	productDetailsInit: function () {
+		var self = this;
+		new GNU.ProductDetails();
+		new GNU.PhotoSlider(self.config.scrollController);
+		new GNU.FeaturedProducts();
 	},
 	utilities: {
 		cookie: {

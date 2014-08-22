@@ -34,6 +34,7 @@
 @import "components/shopatron";
 @import "components/region-selector";
 @import "components/product-overview";
+@import "components/product-details";
 
 // Modules
 @import "modules/featured-slider";
@@ -45,5 +46,6 @@
 @import "modules/section-header";
 
 // Libraries
+@import "lib/animate";
 @import "lib/owl-carousel";
 @import "lib/owl-theme-default";

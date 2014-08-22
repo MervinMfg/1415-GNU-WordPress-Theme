@@ -11,36 +11,9 @@
             "instructions": "160x160 png",
             "required": 0,
             "conditional_logic": 0,
+            "return_format": "array",
             "preview_size": "thumbnail",
-            "return_format": "id",
             "library": "all"
-        },
-        {
-            "key": "field_50479fad34133",
-            "label": "Related Products",
-            "name": "gnu_technology_related_products",
-            "prefix": "",
-            "type": "relationship",
-            "instructions": "Select the products this technology is corresponds with.",
-            "required": 0,
-            "conditional_logic": 0,
-            "post_type": [
-                "gnu_snowboards",
-                "gnu_bindings"
-            ],
-            "taxonomy": [
-
-            ],
-            "max": "",
-            "filters": [
-                "search",
-                "post_type",
-                "taxonomy"
-            ],
-            "elements": [
-
-            ],
-            "return_format": "object"
         }
     ],
     "location": [

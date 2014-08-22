@@ -7,8 +7,6 @@
 	display: none;
 }
 
-
-
 /* Shopping Cart styles
 -------------------------------------------------------------------------------*/
 /* hide shopatron api key */
@@ -26,12 +24,7 @@ body.international .shopping-cart-wrapper { display: none; }
 #shopping-cart {
 	min-height: 100px;
 }
-	#shopping-cart .loading {
-		width: 100px;
-		height: 50px;
-		background: url('../img/loading.gif') no-repeat top left;
-		display: block;
-	}
+	#shopping-cart .loading { /* check globals */ }
 /* Default */
 .shptrn_quantity {
 	overflow:hidden;

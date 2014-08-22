@@ -63,6 +63,22 @@
             "layout": "horizontal"
         },
         {
+            "key": "field_53e937f2eadbe",
+            "label": "Board Colorways",
+            "name": "gnu_snowboard_colorways",
+            "prefix": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "Random Bases": "Random Bases",
+                "Alternate Colorways": "Alternate Colorways"
+            },
+            "default_value": "",
+            "layout": "vertical"
+        },
+        {
             "key": "field_503ffdc6710a7",
             "label": "Artist Name",
             "name": "gnu_snowboard_artists_name",

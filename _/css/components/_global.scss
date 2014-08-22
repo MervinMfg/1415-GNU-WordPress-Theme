@@ -9,6 +9,24 @@
 	height: 10px;
 	background: url('../img/bg-grey-triangles.png') repeat;
 }
+.price p {
+	display: none;
+
+	&.active {
+		display: block;
+		margin: 0;
+	}
+	span {
+		font-size: 0.5em;
+		font-style: italic;
+	}
+}
+.loading {
+	width: 100px;
+	height: 50px;
+	background: url("../img/loading.gif") no-repeat top left;
+	display: block;
+}
 @media screen and (min-width: $breakpoint-medium) {
 	.site-main {
 		padding-top: 75px;

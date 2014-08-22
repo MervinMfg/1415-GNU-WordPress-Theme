@@ -6,6 +6,10 @@
  * @subpackage 1415-GNU-WordPress-Theme
  * @since 1415 GNU WordPress Theme 1.0.0
  */
+
+// GET THE REGION
+getCurrencyCode();
+
 ?><!doctype html>
 <!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" <?php language_attributes(); ?>> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" <?php language_attributes(); ?>> <![endif]-->

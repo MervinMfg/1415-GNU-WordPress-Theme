@@ -11,24 +11,20 @@
             "instructions": "Select featured or related products here.",
             "required": 0,
             "conditional_logic": 0,
-            "return_format": "object",
             "post_type": [
                 "gnu_snowboards",
                 "gnu_bindings",
                 "gnu_accessories",
-                "gnu_weirdwear"
+                "gnu_apparel"
             ],
-            "taxonomy": [
-
-            ],
+            "taxonomy": "",
             "filters": [
                 "search",
                 "post_type"
             ],
+            "elements": "",
             "max": "",
-            "elements": [
-                "post_type"
-            ]
+            "return_format": "object"
         }
     ],
     "location": [

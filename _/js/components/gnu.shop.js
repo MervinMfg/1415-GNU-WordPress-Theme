@@ -76,6 +76,7 @@ GNU.Shop.prototype = {
 				});
 			}
 		});
+		self.displayPrices();
 	},
 	quickCartInit: function (visible) {
 		var self;
@@ -249,5 +250,28 @@ GNU.Shop.prototype = {
 				self.regionSelectorOverlayInit();
 			}
 		});
+	},
+	displayPrices: function () {
+		var currencyCookie;
+		// CHECK AND DISPLAY CORRECT CURRENCY
+		currencyCookie = GNU.Main.utilities.cookie.getCookie('gnu_currency');
+		if (currencyCookie !== null || currencyCookie !== "") {
+			switch(currencyCookie) {
+				case 'USD':
+					$('.price .us-price').addClass('active');
+					break;
+				case 'CAD':
+					$('.price .ca-price').addClass('active');
+					break;
+				case 'EUD':
+					$('.price .eur-price').addClass('active');
+					break;
+				default:
+					// do nothing, international
+			}
+		} else {
+			// no cookie, display US
+			$('.price .us-price').addClass('active');
+		}
 	}
 };

@@ -241,12 +241,18 @@
 	.specs-title {
 		text-align: center;
 		padding: 20px 20px 10px;
+		max-width: 320px;
+		margin: 0 auto;
 	}
 	.spec-navigation {
 		text-align: center;
+		padding: 0 10px 20px;
+		max-width: 320px;
+		margin: 0 auto;
 
 		li {
 			display: inline-block;
+			margin-bottom: 5px;
 
 			a {
 				color: $white;
@@ -263,28 +269,118 @@
 		}
 	}
 	.spec-listing {
+		padding: 0 20px 10px;
+		max-width: 320px;
+		margin: 0 auto;
 		display: none;
 
 		&.active {
 			display: block;
 		}
-		.spec-title {
-			width: 50%;
+		.group-1,
+		.group-2,
+		.group-3 {
+			clear: both;
 			float: left;
+			width: 100%;
 		}
-		.spec-value {
-			width: 50%;
-			float: left;
+		p {
+			clear: both;
+			margin-bottom: 5px;
+
+			.spec-title {
+				width: 50%;
+				float: left;
+			}
+			.spec-value {
+				width: 50%;
+				float: left;
+				text-align: right;
+			}
 		}
 	}
 }
 
 @media screen and (min-width: $breakpoint-small) {
-	//
+	.product-specifications {
+		.specs-title,
+		.spec-navigation {
+			max-width: $breakpoint-small;
+		}
+		.spec-listing {
+			max-width: $breakpoint-small;
+			padding: 0 0 10px;
+
+			.group-1,
+			.group-2,
+			.group-3 {
+				clear: none;
+				float: none;
+
+				p {
+					clear: none;
+					padding: 0 20px;
+				}
+			}
+			.group-1 p,
+			.group-2 p:nth-child(1) {
+				width: 50%;
+				float: left;
+			}
+			.group-2 p:nth-child(2),
+			.group-2 p:nth-child(3),
+			.group-3 p {
+				width: 50%;
+				float: right;
+			}
+		}
+	}
 }
 @media screen and (min-width: $breakpoint-medium) {
-	//
+	.product-specifications {
+		.specs-title,
+		.spec-navigation {
+			max-width: $breakpoint-medium;
+		}
+		.spec-listing {
+			max-width: $breakpoint-medium;
+
+			.group-1,
+			.group-2,
+			.group-3 {
+				width: 33.3%;
+				float: left;
+
+				p {
+					float: none !important;
+					width: 100% !important;
+				}
+			}
+			.group-1 p,
+			.group-2 p,
+			.group-3 p {
+				width: 100%;
+				float: none;
+			}
+		}
+	}
 }
 @media screen and (min-width: $breakpoint-large) {
-	//
+	.product-specifications {
+		.specs-title,
+		.spec-navigation {
+			max-width: $breakpoint-large;
+		}
+		.spec-listing {
+			max-width: $breakpoint-large;
+
+			.group-1,
+			.group-2,
+			.group-3 {
+				p {
+					padding: 0 40px;
+				}
+			}
+		}
+	}
 }

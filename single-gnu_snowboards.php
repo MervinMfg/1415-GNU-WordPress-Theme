@@ -79,13 +79,13 @@ Template Name: Snowboards Detail Template
 				<div class="product-images">
 					<div class="image-list owl-carousel">
 
-						<?php foreach ($snowboardOptions as $snowboardOption) : ?>
+						<?php foreach ($snowboardOptions as $snowboardOption) : if ($snowboardOption['image']) : ?>
 
 						<div class="product-image">
 							<a href="<?php echo $snowboardOption['image']['url']; ?>" title="<?php the_title(); ?> - <?php echo $snowboardOption['sizes']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo $snowboardOption['image']['sizes']['medium']; ?>" alt="<?php the_title(); ?> - <?php echo $snowboardOption['sizes']; ?>" class="owl-lazy" /></a>
 						</div><!-- .product-image -->
 
-						<?php endforeach; ?>
+						<?php endif; endforeach; ?>
 						
 					</div><!-- .image-list -->
 				</div><!-- .product-images -->
@@ -134,13 +134,13 @@ Template Name: Snowboards Detail Template
 				</div><!-- product-sizes -->
 				<div class="product-thumbnails">
 					<div class="image-list owl-carousel">
-						<?php foreach ($snowboardOptions as $snowboardOption) : ?>
+						<?php foreach ($snowboardOptions as $snowboardOption) : if ($snowboardOption['image']) :?>
 						
 						<div class="product-thumbnail">
 							<a href="<?php echo $snowboardOption['image']['url']; ?>" title="<?php echo $snowboardOption['name']; ?> - <?php echo $snowboardOption['sizes']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo $snowboardOption['image']['sizes']['medium']; ?>" alt="<?php echo $snowboardOption['name']; ?> - <?php echo $snowboardOption['sizes']; ?>" class="owl-lazy" /></a>
 						</div><!-- .product-image -->
 
-						<?php endforeach; ?>
+						<?php endif; endforeach; ?>
 					</div>
 				</div><!-- product-thumbnails -->
 

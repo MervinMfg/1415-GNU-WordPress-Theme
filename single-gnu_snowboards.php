@@ -298,7 +298,7 @@ Template Name: Snowboards Detail Template
 			?>
 
 			<section id="specifications" class="product-specifications">
-				<h3>Sizing Information</h3>
+				<h3 class="specs-title">Sizing Information</h3>
 
 				<?php
 					$specs = Array();
@@ -331,49 +331,51 @@ Template Name: Snowboards Detail Template
 				<nav class="spec-navigation">
 					<ul>
 						<?php foreach( $specs as $spec): ?>
-						<li><a href="#board-<?php echo $spec['length']; ?>"><?php echo $spec['length']; ?></a></li>
+						<li><a href="#board-<?php echo $spec['length']; ?>" class="h4"><?php echo $spec['length']; ?></a></li>
 						<?php endforeach; ?>
 					</ul>
 				</nav>
 				<?php foreach( $specs as $spec): ?>
-				<ul id="board-<?php echo $spec['length']; ?>">
+				<ul id="board-<?php echo $spec['length']; ?>" class="spec-listing clearfix">
 					<li>
-						<div class="title">Contact</div>
-						<div class="value"><?php echo $spec['contact']; ?></div>
+						<div class="spec-title">Contact</div>
+						<div class="spec-value"><?php echo $spec['contact']; ?></div>
 					</li>
 					<li>
-						<div class="title">Side Cut</div>
-						<div class="value"><?php echo $spec['sideCut']; ?></div>
+						<div class="spec-title">Side Cut</div>
+						<div class="spec-value"><?php echo $spec['sideCut']; ?></div>
 					</li>
 					<li>
-						<div class="title">Nose Width</div>
-						<div class="value"><?php echo $spec['noseWidth']; ?></div>
+						<div class="spec-title">Nose Width</div>
+						<div class="spec-value"><?php echo $spec['noseWidth']; ?></div>
 					</li>
 					<li>
-						<div class="title">Waist Width</div>
-						<div class="value"><?php echo $spec['waistWidth']; ?></div>
+						<div class="spec-title">Waist Width</div>
+						<div class="spec-value"><?php echo $spec['waistWidth']; ?></div>
 					</li>
 					<li>
-						<div class="title">Tail Width</div>
-						<div class="value"><?php echo $spec['tailWidth']; ?></div>
+						<div class="spec-title">Tail Width</div>
+						<div class="spec-value"><?php echo $spec['tailWidth']; ?></div>
 					</li>
 					<li>
-						<div class="title">Stance</div>
-						<div class="value"><?php echo $spec['stance']; ?></div>
+						<div class="spec-title">Stance</div>
+						<div class="spec-value"><?php echo $spec['stance']; ?></div>
 					</li>
 					<li>
-						<div class="title">Flex</div>
-						<div class="value"><?php echo $spec['flex']; ?></div>
+						<div class="spec-title">Flex</div>
+						<div class="spec-value"><?php echo $spec['flex']; ?></div>
 					</li>
 					<li>
-						<div class="title">Weight Range</div>
-						<div class="value"><?php echo $spec['weightRange']; ?> +</div>
+						<div class="spec-title">Weight Range</div>
+						<div class="spec-value"><?php echo $spec['weightRange']; ?> +</div>
 					</li>
 				</ul>
 				<?php endforeach; ?>
 			</section><!-- #specifications -->
 
 			<?php include get_template_directory() . '/_/inc/modules/featured-products.php'; ?>
+
+			<?php comments_template(); ?>
 
 <?php
 		endwhile;

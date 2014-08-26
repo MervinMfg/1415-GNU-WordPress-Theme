@@ -17,6 +17,7 @@ GNU.ProductDetails.prototype = {
 		self.initAvailability();
 		self.initNavigation();
 		$('.product-video').fitVids();
+		self.initSpecs();
 	},
 	initProductCarousel: function () {
 		// set up owl carousel
@@ -96,5 +97,21 @@ GNU.ProductDetails.prototype = {
 			var url = $(this).attr('href');
 			GNU.Main.utilities.pageScroll(url, 0.5);
 		});
+	},
+	initSpecs: function () {
+		$('.spec-navigation ul li a').on('click', function (e) {
+			e.preventDefault();
+			// reset selected nav items
+			$('.spec-navigation ul li a').removeClass('active');
+			// hide all spec listings
+			$('.spec-listing').removeClass('active');
+			// select active nav item
+			$(this).addClass('active');
+			// select spec to show
+			var objId = $(this).attr('href');
+			$(objId).addClass('active');
+		});
+		// fire click event on first element
+		$('.spec-navigation ul li:first a').click();
 	}
 }

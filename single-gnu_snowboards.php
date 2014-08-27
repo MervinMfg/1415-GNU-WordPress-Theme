@@ -155,28 +155,32 @@ Template Name: Snowboards Detail Template
 						}
 					}
 				?>
-				<?php
-					// display awards if there are any
-					$awards = get_field('gnu_product_awards');
-					if( $awards ):
-				?>
-				<div class="product-awards">
-					<ul>
+
+				<div class="product-awards-price">
+
 					<?php
-						foreach( $awards as $award):
-							$imageID = get_field('gnu_award_image', $award->ID);
-							$imageFile = wp_get_attachment_image_src($imageID, 'thumbnail');
-							echo '<li><img src="'.$imageFile[0].'" width="'.$imageFile[1].'" height="'.$imageFile[2].'" /><div class="tool-tip">' . get_the_title($award->ID) . '</div></li>';
-						endforeach;
+						// display awards if there are any
+						$awards = get_field('gnu_product_awards');
+						if( $awards ):
 					?>
+					<div class="product-awards">
+						<ul>
+						<?php
+							foreach( $awards as $award):
+								$imageID = get_field('gnu_award_image', $award->ID);
+								$imageFile = wp_get_attachment_image_src($imageID, 'thumbnail');
+								echo '<li><img src="'.$imageFile[0].'" width="'.$imageFile[1].'" height="'.$imageFile[2].'" /><div class="tool-tip">' . get_the_title($award->ID) . '</div></li>';
+							endforeach;
+						?>
 
-					</ul>
-				</div><!-- .product-awards -->
-				<? endif; // end awards ?>
+						</ul>
+					</div><!-- .product-awards -->
+					<? endif; // end awards ?>
 
-				<div class="product-price">
-					<?php echo getPrice( get_field('gnu_product_price_us'), get_field('gnu_product_price_ca'), get_field('gnu_product_price_eur'), get_field('gnu_product_on_sale'), get_field('gnu_product_sale_percentage') ); ?>
-				</div>
+					<div class="product-price">
+						<?php echo getPrice( get_field('gnu_product_price_us'), get_field('gnu_product_price_ca'), get_field('gnu_product_price_eur'), get_field('gnu_product_on_sale'), get_field('gnu_product_sale_percentage') ); ?>
+					</div><!-- .product-price -->
+				</div><!-- .product-awards-price -->
 				<div class="product-buy" data-avail-us="<?php echo $productAvailUS; ?>" data-avail-ca="<?php echo $productAvailCA; ?>" data-avail-eur="<?php echo $productAvailEUR; ?>">
 					<div class="product-available">
 						<div class="form">
@@ -202,11 +206,11 @@ Template Name: Snowboards Detail Template
 						<img src="<?php echo get_template_directory_uri(); ?>/_/img/shopatron-secure-logo.png" alt="Shopatron Secure"/>
 					</div>
 				</div><!-- .product-buy -->
-				<ul class="product-share clearfix">
-					<li><div class="fb-like" data-href="<? the_permalink(); ?>" data-layout="button_count" data-width="120" data-show-faces="false" data-colorscheme="dark" data-font="trebuchet ms"></div></li>
-					<li><a href="https://twitter.com/share" class="twitter-share-button" data-via="GNUsnowboards">Tweet</a></li>
-					<li><div class="g-plusone" data-size="medium" data-href="<? the_permalink(); ?>"></div></li>
-					<li><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo $GLOBALS['pageImage']; ?>&description=<?php echo $GLOBALS['pageTitle']; ?>" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></li>
+				<ul class="product-share">
+					<li class="facebook"><div class="fb-like" data-href="<? the_permalink(); ?>" data-layout="button" data-action="like" data-share="false" data-show-faces="false" data-colorscheme="light"></div></li>
+					<li class="twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-via="GNUsnowboards" data-count="none">Tweet</a></li>
+					<li class="g-plus"><div class="g-plusone" data-size="tall" data-annotation="none" data-href="<? the_permalink(); ?>"></div></li>
+					<li class="pinterest"><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo $GLOBALS['pageImage']; ?>&description=<?php echo $GLOBALS['pageTitle']; ?>" data-pin-do="buttonPin" data-pin-config="none" data-pin-color="white"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_white_20.png" alt="Pin It" /></a></li>
 				</ul><!-- .product-share -->
 			</section><!-- product-main -->
 			<nav class="product-navigation">

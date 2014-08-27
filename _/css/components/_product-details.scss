@@ -70,6 +70,7 @@
 
 		li {
 			display: inline-block;
+			padding: 0 5px;
 
 			img {
 				width: 70px;
@@ -302,6 +303,22 @@
 }
 
 @media screen and (min-width: $breakpoint-small) {
+	.product-navigation ul li {
+		padding: 0 20px;
+	}
+	.product-awards-price {
+		position: relative;
+
+		.product-awards {
+			position: absolute;
+			top: -20px;
+			right: 15px;
+		}
+	}
+	.tech-major,
+	.tech-minor {
+		padding: 0;
+	}
 	.product-specifications {
 		.specs-title,
 		.spec-navigation {
@@ -337,6 +354,23 @@
 	}
 }
 @media screen and (min-width: $breakpoint-medium) {
+	
+	.product-buy {
+		.shopatron-secure {
+			margin-bottom: 20px;
+		}
+	}
+	.product-share {
+		display: block;
+		padding: 10px 10px 30px;
+		text-align: center;
+
+		li {
+			padding: 0 10px;
+			display: inline-block;
+			vertical-align: top;
+		}
+	}
 	.product-specifications {
 		.specs-title,
 		.spec-navigation {

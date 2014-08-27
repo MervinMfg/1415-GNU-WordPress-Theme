@@ -91,6 +91,7 @@
 }
 .product-buy {
 	text-align: center;
+	margin-bottom: 40px;
 
 	.product-available {
 		display: none;
@@ -123,10 +124,6 @@
 	}
 	.product-unavailable {
 		display: none;
-
-		p {
-
-		}
 	}
 	&.available .product-available {
 		display: block;
@@ -137,9 +134,7 @@
 	.dealer-link {
 		margin-bottom: 10px;
 	}
-	.shopatron-secure {
-		margin-bottom: 40px;
-	}
+	.shopatron-secure {}
 }
 .product-share {
 	display: none;
@@ -313,6 +308,33 @@
 			position: absolute;
 			top: -20px;
 			right: 15px;
+
+			ul li {
+				padding: 0;
+			}
+		}
+	}
+	.product-buy {
+		position: relative;
+		margin-bottom: 60px;
+
+		.product-available {
+			.form {
+				padding: 0 20px;
+
+				.product-variation {
+					width: 65%;
+				}
+				.btn-submit {
+					width: 35%;
+				}
+			}
+		}
+		.shopatron-secure {
+			position: absolute;
+			bottom: -15px;
+			right: 20px;
+			margin: 0;
 		}
 	}
 	.tech-major,

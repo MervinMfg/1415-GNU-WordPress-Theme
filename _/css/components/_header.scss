@@ -176,6 +176,7 @@
 			background: $white;
 			background: rgba(255, 255, 255, 0.5);
 			border-bottom: 1px solid $black;
+			z-index: 100;
 
 			.cart-default-image,
 			.cart-item-image,
@@ -210,6 +211,7 @@
 		bottom: -42px;
 		right: 0;
 		width: 100%;
+		z-index: 100;
 		@include vendorize(opacity, 0);
 	}
 }

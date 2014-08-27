@@ -349,7 +349,7 @@ Template Name: Snowboards Detail Template
 					<div class="group-2">
 						<p><span class="spec-title">Waist Width</span> <span class="spec-value"><?php echo $spec['waistWidth']; ?></span></p>
 						<p><span class="spec-title">Tail Width</span> <span class="spec-value"><?php echo $spec['tailWidth']; ?></span></p>
-						<p><span class="spec-title">Stance</span> <span class="spec-value"><?php echo $spec['stance']; ?></span></p>
+						<p><span class="spec-title">Stance<br /><span class="spec-small">Min-Max / Set Back</span></span> <span class="spec-value"><?php echo $spec['stance']; ?></span></p>
 					</div>
 					<div class="group-3">
 						<p><span class="spec-title">Flex</span> <span class="spec-value"><?php echo $spec['flex']; ?></span></p>

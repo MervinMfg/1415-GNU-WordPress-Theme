@@ -282,11 +282,17 @@
 		}
 		p {
 			clear: both;
-			margin-bottom: 5px;
+			margin: 0;
+			line-height: 1em;
+			height: 30px;
 
 			.spec-title {
 				width: 50%;
 				float: left;
+
+				.spec-small {
+					font-size: .6em;
+				}
 			}
 			.spec-value {
 				width: 50%;
@@ -359,6 +365,7 @@
 				p {
 					clear: none;
 					padding: 0 20px;
+					height: 40px;
 				}
 			}
 			.group-1 p,

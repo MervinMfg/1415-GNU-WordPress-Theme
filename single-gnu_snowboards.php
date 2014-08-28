@@ -187,7 +187,7 @@ Template Name: Snowboards Detail Template
 							<select class="product-variation input-text">
 								<option value="-1">Select a Size</option>
 								<?php foreach ($snowboards as $snowboard) : // render out snowboards dropdown ?>
-								<option value="<?php echo $snowboard['sku']; ?>" title="<?php echo $snowboard['name']; ?>" data-avail-us="<?php echo $snowboard['availUS']; ?>" data-avail-ca="<?php echo $snowboard['availCA']; ?>" data-avail-eur="<?php echo $snowboard['availEUR']; ?>"><?php echo $snowboard['name']; ?></option>
+								<option value="<?php echo $snowboard['sku']; ?>" title="<?php echo $snowboard['name']; ?>" class="selectable-option" data-avail-us="<?php echo $snowboard['availUS']; ?>" data-avail-ca="<?php echo $snowboard['availCA']; ?>" data-avail-eur="<?php echo $snowboard['availEUR']; ?>"><?php echo $snowboard['name']; ?></option>
 								<?php endforeach; ?>
 							</select><button class="btn-submit visible">Add to Cart</button>
 						</div><!-- .form -->
@@ -215,10 +215,10 @@ Template Name: Snowboards Detail Template
 			</section><!-- product-main -->
 			<nav class="product-navigation">
 				<ul>
-					<li><a href="#information" class="h3">Info</a></li>
-					<li><a href="#technology" class="h3">Tech</a></li>
-					<?php if (get_field('gnu_product_video')) : ?><li><a href="#video" class="h3">Video</a></li><?php endif; ?>
-					<li><a href="#specifications" class="h3">Specs</a></li>
+					<li><a href="#information" class="h3 info">Info<span class="nav-icon"></span></a></li>
+					<li><a href="#technology" class="h3 tech">Tech<span class="nav-icon"></span></a></li>
+					<?php if (get_field('gnu_product_video')) : ?><li><a href="#video" class="h3 video">Video<span class="nav-icon"></span></a></li><?php endif; ?>
+					<li><a href="#specifications" class="h3 specs">Specs<span class="nav-icon"></span></a></li>
 				</ul>
 				<div class="clearfix"></div>
 			</nav><!-- .product-navigation -->

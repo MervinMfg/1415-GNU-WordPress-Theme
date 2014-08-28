@@ -157,6 +157,23 @@
 			a {
 				color: $white;
 				text-transform: uppercase;
+
+				&.info:hover,
+				&.info:focus {
+					color: $yellow;
+				}
+				&.tech:hover,
+				&.tech:focus {
+					color: $green;
+				}
+				&.video:hover,
+				&.video:focus {
+					color: $pink;
+				}
+				&.specs:hover,
+				&.specs:focus {
+					color: $blue;
+				}
 			}
 		}
 	}
@@ -302,11 +319,7 @@
 		}
 	}
 }
-
 @media screen and (min-width: $breakpoint-small) {
-	.product-navigation ul li {
-		padding: 0 20px;
-	}
 	.product-awards-price {
 		position: relative;
 
@@ -342,6 +355,9 @@
 			right: 20px;
 			margin: 0;
 		}
+	}
+	.product-navigation ul li {
+		padding: 0 20px;
 	}
 	.tech-major,
 	.tech-minor {
@@ -383,10 +399,32 @@
 	}
 }
 @media screen and (min-width: $breakpoint-medium) {
-	
+	.product-awards-price {
+		width: 520px;
+		margin: 0 auto;
+	}
 	.product-buy {
-		.shopatron-secure {
-			margin-bottom: 20px;
+		width: 520px;
+		margin: 0 auto;
+
+		.product-available {
+			.form {
+				.product-variation {
+					font-size: 4em;
+					width: 50%;
+
+					option.selectable-option {
+						font-size: 0.7em;
+					}
+				}
+				.btn-submit {
+					font-size: 4em;
+					width: 50%;
+				}
+			}
+		}
+		.dealer-link .h5 {
+			font-size: 2.4em;
 		}
 	}
 	.product-share {
@@ -398,6 +436,65 @@
 			padding: 0 10px;
 			display: inline-block;
 			vertical-align: top;
+		}
+	}
+	.product-navigation ul li {
+		padding: 0 40px;
+
+		a {
+			vertical-align: top;
+
+			.nav-icon {
+				display: inline-block;
+				width: 25px;
+				height: 25px;
+				background-image: url('../img/sprite.png');
+				margin-left: 10px;
+			}
+			&.info {
+				.nav-icon {
+					background-position: -10px -151px;
+				}
+				&:hover,
+				&:focus {
+					.nav-icon {
+						background-position: -150px -151px;
+					}
+				}
+			}
+			&.tech {
+				.nav-icon {
+					background-position: -46px -151px;
+				}
+				&:hover,
+				&:focus {
+					.nav-icon {
+						background-position: -186px -151px;
+					}
+				}
+			}
+			&.video {
+				.nav-icon {
+					background-position: -116px -151px;
+				}
+				&:hover,
+				&:focus {
+					.nav-icon {
+						background-position: -256px -151px;
+					}
+				}
+			}
+			&.specs {
+				.nav-icon {
+					background-position: -81px -151px;
+				}
+				&:hover,
+				&:focus {
+					.nav-icon {
+						background-position: -221px -151px;
+					}
+				}
+			}
 		}
 	}
 	.product-specifications {

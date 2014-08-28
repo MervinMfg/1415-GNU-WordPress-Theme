@@ -11,9 +11,13 @@
 	font-family: $neuron;
 	font-size: 2.4em;
 	font-style: italic;
-	text-transform: uppercase;
+	
 	-webkit-font-smoothing: antialiased;
 	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+
+	text-transform: uppercase;
 
 	&:focus {
 		outline: none;
@@ -32,6 +36,8 @@
 	cursor: pointer;
 	-webkit-font-smoothing: antialiased;
 	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
 .btn-close {
 	width: 20px;

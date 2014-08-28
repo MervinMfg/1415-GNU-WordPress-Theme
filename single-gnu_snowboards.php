@@ -253,7 +253,7 @@ Template Name: Snowboards Detail Template
 					if (count($technologyMajor) > 0) :
 				?>
 
-				<ul class="tech-major">
+				<ul class="tech-major clearfix">
 					<?php foreach( $technologyMajor as $techItem): ?>
 
 					<li class="clearfix">
@@ -271,10 +271,10 @@ Template Name: Snowboards Detail Template
 					if (count($technologyMinor) > 0) :
 				?>
 
-				<ul class="tech-minor">
+				<ul class="tech-minor clearfix">
 					<?php foreach( $technologyMinor as $techItem): ?>
 
-					<li class="clearfix">
+					<li>
 						<h3 class="title"><?php echo $techItem['title']; ?></h3>
 						<p class="description small"><?php echo $techItem['content']; ?></p>
 					</li>

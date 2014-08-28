@@ -497,6 +497,32 @@
 			}
 		}
 	}
+	.tech-major {
+		max-width: $breakpoint-small;
+
+		li {
+			.title {
+				width: $breakpoint-small - 120;
+			}
+			.icon {
+				width: 120px;
+			}
+			.description {
+				width: $breakpoint-small - 120;
+			}
+		}
+	}
+	.tech-minor {
+		max-width: none;
+		padding: 0 10px;
+
+		li {
+			display: block;
+			width: 50%;
+			float: left;
+			padding: 10px;
+		}
+	}
 	.product-specifications {
 		.specs-title,
 		.spec-navigation {

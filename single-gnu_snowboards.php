@@ -228,75 +228,79 @@ Template Name: Snowboards Detail Template
 					<div class="clearfix"></div>
 				</div><!-- .nav-container -->
 			</nav><!-- .product-navigation -->
-			<section id="information" class="product-info">
-				<div class="section-wrapper">
-					<div class="section-content">
-						<?php the_content(); ?>
-						<div class="clearfix"></div>
-					</div><!-- .section-content -->
-				</div><!-- .section-wrapper -->
+			<section id="information">
+				<div class="product-info">
+					<div class="section-wrapper">
+						<div class="section-content">
+							<?php the_content(); ?>
+							<div class="clearfix"></div>
+						</div><!-- .section-content -->
+					</div><!-- .section-wrapper -->
+				</div><!-- .product-info -->
 			</section><!-- #information -->
 
 			<?php include get_template_directory() . '/_/inc/modules/photo-slider.php'; ?>
 
-			<section id="technology" class="product-technology">
-				<div class="section-content">
-					<h2 class="h1">Weird Science</h2>
+			<section id="technology">
+				<div class="product-technology">
+					<div class="section-content">
+						<h2 class="h1">Weird Science</h2>
 
-					<?php // grab technology if there is any
-					$technology = get_field('gnu_product_technology');
-					if( $technology ):
-						$technologyMajor = Array();
-						$technologyMinor = Array();
-						foreach( $technology as $techItem):
-							$title = get_the_title($techItem->ID);
-							$content = $techItem->post_content;
-							$image = get_field("gnu_technology_icon", $techItem->ID);
-							if ($image) {
-								array_push($technologyMajor, Array('title' => $title, 'content' => $content, 'image' => $image));
-							} else {
-								array_push($technologyMinor, Array('title' => $title, 'content' => $content));
-							}
-						endforeach;
-						// CHECK IF WE SHOULD DISPLAY MAJOR TECHNOLOGY
-						if (count($technologyMajor) > 0) :
-					?>
+						<?php // grab technology if there is any
+						$technology = get_field('gnu_product_technology');
+						if( $technology ):
+							$technologyMajor = Array();
+							$technologyMinor = Array();
+							foreach( $technology as $techItem):
+								$title = get_the_title($techItem->ID);
+								$content = $techItem->post_content;
+								$image = get_field("gnu_technology_icon", $techItem->ID);
+								if ($image) {
+									array_push($technologyMajor, Array('title' => $title, 'content' => $content, 'image' => $image));
+								} else {
+									array_push($technologyMinor, Array('title' => $title, 'content' => $content));
+								}
+							endforeach;
+							// CHECK IF WE SHOULD DISPLAY MAJOR TECHNOLOGY
+							if (count($technologyMajor) > 0) :
+						?>
 
-					<ul class="tech-major clearfix">
-						<?php foreach( $technologyMajor as $techItem): ?>
+						<ul class="tech-major clearfix">
+							<?php foreach( $technologyMajor as $techItem): ?>
 
-						<li class="clearfix">
-							<h3 class="title"><?php echo $techItem['title']; ?></h3>
-							<img src="<?php echo $techItem['image']['url']; ?>" alt="<?php echo $techItem['title']; ?> Icon" class="icon" />
-							<p class="description small"><?php echo $techItem['content']; ?></p>
-						</li>
+							<li class="clearfix">
+								<h3 class="title"><?php echo $techItem['title']; ?></h3>
+								<img src="<?php echo $techItem['image']['url']; ?>" alt="<?php echo $techItem['title']; ?> Icon" class="icon" />
+								<p class="description small"><?php echo $techItem['content']; ?></p>
+							</li>
 
-						<?php endforeach; ?>
-					</ul><!-- .tech-major -->
+							<?php endforeach; ?>
+						</ul><!-- .tech-major -->
 
-					<?
-						endif; // end tech major check
-						// CHECK IF WE SHOULD DISPLAY MINOR TECHNOLOGY
-						if (count($technologyMinor) > 0) :
-					?>
+						<?
+							endif; // end tech major check
+							// CHECK IF WE SHOULD DISPLAY MINOR TECHNOLOGY
+							if (count($technologyMinor) > 0) :
+						?>
 
-					<ul class="tech-minor clearfix">
-						<?php foreach( $technologyMinor as $techItem): ?>
+						<ul class="tech-minor clearfix">
+							<?php foreach( $technologyMinor as $techItem): ?>
 
-						<li>
-							<h3 class="title"><?php echo $techItem['title']; ?></h3>
-							<p class="description small"><?php echo $techItem['content']; ?></p>
-						</li>
+							<li>
+								<h3 class="title"><?php echo $techItem['title']; ?></h3>
+								<p class="description small"><?php echo $techItem['content']; ?></p>
+							</li>
 
-						<?php endforeach; ?>
-					</ul><!-- .tech-minor -->
+							<?php endforeach; ?>
+						</ul><!-- .tech-minor -->
 
-					<?
-						endif; // end tech minor check
-					endif;// end technology check
-					?>
+						<?
+							endif; // end tech minor check
+						endif;// end technology check
+						?>
 
-				</div><!-- .section-content -->
+					</div><!-- .section-content -->
+				</div><!-- .product-technology -->
 			</section><!-- #technology -->
 
 			<?php
@@ -304,73 +308,77 @@ Template Name: Snowboards Detail Template
 				$videoID = get_field('gnu_product_video');
 				if( $videoID ):
 			?>
-			<section id="video" class="product-video">
-				<div class="section-content">
-					<div class="video-wrapper">
-						<iframe src="http://player.vimeo.com/video/<?php echo $videoID; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+			<section id="video">
+				<div class="product-video">
+					<div class="section-content">
+						<div class="video-wrapper">
+							<iframe src="http://player.vimeo.com/video/<?php echo $videoID; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+						</div>
 					</div>
-				</div>
+				</div><!-- .product-video -->
 			</section><!-- #video -->
 			<?php
 				endif;
 			?>
 
-			<section id="specifications" class="product-specifications">
-				<h3 class="specs-title">Sizing Information</h3>
+			<section id="specifications">
+				<div class="product-specifications">
+					<h3 class="specs-title">Sizing Information</h3>
 
-				<?php
-					$specs = Array();
-					if(get_field('gnu_snowboard_specs')):
-						while(the_repeater_field('gnu_snowboard_specs')):
-							$snowboardLength = get_sub_field('gnu_snowboard_specs_length');
-							$snowboardWidth = get_sub_field('gnu_snowboard_specs_width');
-							if ($snowboardWidth == "Narrow") {
-								$snowboardLength = $snowboardLength . "N";
-							} else if ($snowboardWidth == "Mid Wide") {
-								$snowboardLength = $snowboardLength . "MW";
-							} else if($snowboardWidth == "Wide") {
-								$snowboardLength = $snowboardLength . "W";
-							}
-							array_push($specs, Array(
-								'length' => $snowboardLength,
-								'contact' => get_sub_field('gnu_snowboard_specs_contact_length'),
-								'sideCut' => get_sub_field('gnu_snowboard_specs_sidecut'),
-								'noseWidth' => get_sub_field('gnu_snowboard_specs_nose_width'),
-								'waistWidth' => get_sub_field('gnu_snowboard_specs_waist_width'),
-								'tailWidth' => get_sub_field('gnu_snowboard_specs_tail_width'),
-								'stance' => get_sub_field('gnu_snowboard_specs_stance_range'),
-								'flex' => get_sub_field('gnu_snowboard_specs_flex_rating'),
-								'weightRange' => get_sub_field('gnu_snowboard_specs_weight_range')
-							));
-						endwhile;
-					endif;
-				?>
+					<?php
+						$specs = Array();
+						if(get_field('gnu_snowboard_specs')):
+							while(the_repeater_field('gnu_snowboard_specs')):
+								$snowboardLength = get_sub_field('gnu_snowboard_specs_length');
+								$snowboardWidth = get_sub_field('gnu_snowboard_specs_width');
+								if ($snowboardWidth == "Narrow") {
+									$snowboardLength = $snowboardLength . "N";
+								} else if ($snowboardWidth == "Mid Wide") {
+									$snowboardLength = $snowboardLength . "MW";
+								} else if($snowboardWidth == "Wide") {
+									$snowboardLength = $snowboardLength . "W";
+								}
+								array_push($specs, Array(
+									'length' => $snowboardLength,
+									'contact' => get_sub_field('gnu_snowboard_specs_contact_length'),
+									'sideCut' => get_sub_field('gnu_snowboard_specs_sidecut'),
+									'noseWidth' => get_sub_field('gnu_snowboard_specs_nose_width'),
+									'waistWidth' => get_sub_field('gnu_snowboard_specs_waist_width'),
+									'tailWidth' => get_sub_field('gnu_snowboard_specs_tail_width'),
+									'stance' => get_sub_field('gnu_snowboard_specs_stance_range'),
+									'flex' => get_sub_field('gnu_snowboard_specs_flex_rating'),
+									'weightRange' => get_sub_field('gnu_snowboard_specs_weight_range')
+								));
+							endwhile;
+						endif;
+					?>
 
-				<nav class="spec-navigation">
-					<ul>
-						<?php foreach( $specs as $spec): ?>
-						<li><a href="#board-<?php echo str_replace('.', '_', $spec['length']); ?>" class="h4"><?php echo $spec['length']; ?></a></li>
-						<?php endforeach; ?>
-					</ul>
-				</nav>
-				<?php foreach( $specs as $spec): ?>
-				<div id="board-<?php echo str_replace('.', '_', $spec['length']); ?>" class="spec-listing clearfix">
-					<div class="group-1">
-						<p><span class="spec-title">Contact</span> <span class="spec-value"><?php echo $spec['contact']; ?></span></p>
-						<p><span class="spec-title">Side Cut</span> <span class="spec-value"><?php echo $spec['sideCut']; ?></span></p>
-						<p><span class="spec-title">Nose Width</span> <span class="spec-value"><?php echo $spec['noseWidth']; ?></span></p>
+					<nav class="spec-navigation">
+						<ul>
+							<?php foreach( $specs as $spec): ?>
+							<li><a href="#board-<?php echo str_replace('.', '_', $spec['length']); ?>" class="h4"><?php echo $spec['length']; ?></a></li>
+							<?php endforeach; ?>
+						</ul>
+					</nav>
+					<?php foreach( $specs as $spec): ?>
+					<div id="board-<?php echo str_replace('.', '_', $spec['length']); ?>" class="spec-listing clearfix">
+						<div class="group-1">
+							<p><span class="spec-title">Contact</span> <span class="spec-value"><?php echo $spec['contact']; ?></span></p>
+							<p><span class="spec-title">Side Cut</span> <span class="spec-value"><?php echo $spec['sideCut']; ?></span></p>
+							<p><span class="spec-title">Nose Width</span> <span class="spec-value"><?php echo $spec['noseWidth']; ?></span></p>
+						</div>
+						<div class="group-2">
+							<p><span class="spec-title">Waist Width</span> <span class="spec-value"><?php echo $spec['waistWidth']; ?></span></p>
+							<p><span class="spec-title">Tail Width</span> <span class="spec-value"><?php echo $spec['tailWidth']; ?></span></p>
+							<p><span class="spec-title">Stance<br /><span class="spec-small">Min-Max / Set Back</span></span> <span class="spec-value"><?php echo $spec['stance']; ?></span></p>
+						</div>
+						<div class="group-3">
+							<p><span class="spec-title">Flex</span> <span class="spec-value"><?php echo $spec['flex']; ?></span></p>
+							<p><span class="spec-title">Weight Range</span> <span class="spec-value"><?php echo $spec['weightRange']; ?> +</span></p>
+						</div>
 					</div>
-					<div class="group-2">
-						<p><span class="spec-title">Waist Width</span> <span class="spec-value"><?php echo $spec['waistWidth']; ?></span></p>
-						<p><span class="spec-title">Tail Width</span> <span class="spec-value"><?php echo $spec['tailWidth']; ?></span></p>
-						<p><span class="spec-title">Stance<br /><span class="spec-small">Min-Max / Set Back</span></span> <span class="spec-value"><?php echo $spec['stance']; ?></span></p>
-					</div>
-					<div class="group-3">
-						<p><span class="spec-title">Flex</span> <span class="spec-value"><?php echo $spec['flex']; ?></span></p>
-						<p><span class="spec-title">Weight Range</span> <span class="spec-value"><?php echo $spec['weightRange']; ?> +</span></p>
-					</div>
-				</div>
-				<?php endforeach; ?>
+					<?php endforeach; ?>
+				</div><!-- .product-specifications -->
 			</section><!-- #specifications -->
 
 			<?php include get_template_directory() . '/_/inc/modules/featured-products.php'; ?>

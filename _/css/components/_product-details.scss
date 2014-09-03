@@ -505,6 +505,13 @@
 			}
 		}
 	}
+	#information,
+	#technology,
+	#video,
+	#specifications {
+		padding-top: 75px;
+		margin-top: -75px;
+	}
 	.product-technology {
 		.tech-major {
 			max-width: 420px;
@@ -597,6 +604,13 @@
 				padding: 0 15px;
 			}
 		}
+	}
+	#information,
+	#technology,
+	#video,
+	#specifications {
+		padding-top: 55px;
+		margin-top: -55px;
 	}
 	.product-info {
 		.section-wrapper {

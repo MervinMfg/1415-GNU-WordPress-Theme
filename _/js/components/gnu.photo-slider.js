@@ -12,12 +12,15 @@ GNU.PhotoSlider = function (scrollController) {
 		scene: null,
 		scrollController: scrollController
 	};
-	// check to see if slider should be activated
-	if ($('.photo-slider .photo-list .photo-item').length > 1) {
-		this.config.dots = true;
-		this.config.loop = true;
+	// init if slider exists
+	if ($('.photo-slider').length) {
+		// check to see if slider should be activated
+		if ($('.photo-slider .photo-list .photo-item').length > 1) {
+			this.config.dots = true;
+			this.config.loop = true;
+		}
+		this.init();
 	}
-	this.init();
 };
 GNU.PhotoSlider.prototype = {
 	init: function () {

@@ -347,12 +347,12 @@ Template Name: Snowboards Detail Template
 				<nav class="spec-navigation">
 					<ul>
 						<?php foreach( $specs as $spec): ?>
-						<li><a href="#board-<?php echo $spec['length']; ?>" class="h4"><?php echo $spec['length']; ?></a></li>
+						<li><a href="#board-<?php echo str_replace('.', '_', $spec['length']); ?>" class="h4"><?php echo $spec['length']; ?></a></li>
 						<?php endforeach; ?>
 					</ul>
 				</nav>
 				<?php foreach( $specs as $spec): ?>
-				<div id="board-<?php echo $spec['length']; ?>" class="spec-listing clearfix">
+				<div id="board-<?php echo str_replace('.', '_', $spec['length']); ?>" class="spec-listing clearfix">
 					<div class="group-1">
 						<p><span class="spec-title">Contact</span> <span class="spec-value"><?php echo $spec['contact']; ?></span></p>
 						<p><span class="spec-title">Side Cut</span> <span class="spec-value"><?php echo $spec['sideCut']; ?></span></p>

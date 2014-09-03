@@ -90,4 +90,4 @@ GNU.RegionSelector.prototype = {
 		$('#region-selector .choose-region').off('click.region');
 		$('#region-selector .btn-close').off('click.region');
 	}
-}
+};

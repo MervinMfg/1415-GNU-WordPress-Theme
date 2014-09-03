@@ -23,7 +23,7 @@ GNU.Main = {
 		// lazy load of images
 		$("img.lazy").unveil();
 		// trigger load before scroll or resize
-		$(window).on('load.lazy', function () { $(window).resize(); $(window).off('load.lazy')});
+		$(window).on('load.lazy', function () { $(window).resize(); $(window).off('load.lazy'); });
 		// Listen for the events between quick cart and search
 		document.addEventListener('QuickCartShow', function (e) {
 			search.hideSearch();
@@ -90,7 +90,7 @@ GNU.Main = {
 			}
 		},
 		pageScroll: function (hash, duration) {
-			var duration, yPosition;
+			var yPosition;
 			// check duration
 			if (typeof duration === 'undefined') {
 				duration = 1;
@@ -113,4 +113,4 @@ GNU.Main = {
 			return size;
 		}
 	}
-}
+};

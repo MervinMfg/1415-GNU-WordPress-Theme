@@ -89,4 +89,4 @@ GNU.ProductOverview.prototype = {
 			});
 		}
 	}
-}
+};

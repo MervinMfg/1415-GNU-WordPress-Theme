@@ -63,4 +63,4 @@ GNU.Search.prototype = {
 		// fade out search bar
 		TweenLite.to('.site-header .search-box-wrapper', 0.2, {opacity: 0, onComplete: function () {$('.site-header .search-box-wrapper').addClass('hide');}});
 	}
-}
+};

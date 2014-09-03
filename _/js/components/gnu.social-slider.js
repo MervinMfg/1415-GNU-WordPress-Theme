@@ -26,7 +26,7 @@ GNU.SocialSlider.prototype = {
 		var self = this;
 		// INSTAGRAM POSTS
 		self.config.instagramUsername = $('.social-slider').attr('data-instagram');
-		self.config.instagramPosts = new Array();
+		self.config.instagramPosts = [];
 		$.ajax({
 			dataType: "json",
 			url: '/feeds/instagram/?username=' + self.config.instagramUsername + '&limit=4',
@@ -49,7 +49,7 @@ GNU.SocialSlider.prototype = {
 		var self = this;
 		// FACEBOOK POSTS
 		self.config.facebookUsername = $('.social-slider').attr('data-facebook');
-		self.config.facebookPosts = new Array();
+		self.config.facebookPosts = [];
 		$.ajax({
 			dataType: "json",
 			url: '/feeds/facebook/?username=' + self.config.facebookUsername + '&limit=16',
@@ -82,7 +82,7 @@ GNU.SocialSlider.prototype = {
 						postImage = postImage.replace("_s", "_n");
 						// get message
 						postMessage = postData.message;
-						if(postMessage == undefined) postMessage = "";
+						if(postMessage === undefined) postMessage = "";
 						// set up facebook item
 						postItem = '<a href="' + postData.link + '" target="_blank"><div class="item-icon"><div class="icon"></div></div><div class="item-photo"><img src="' + GNU.Main.config.wpImgPath + 'square.gif" alt="" class="lazy" data-src="' + postImage + '" /></div><div class="item-copy"><p class="fb-page">' + postData.from.name + ' on Facebook</p><p class="fb-date">' + postDate + '</p><p class="fb-excerpt">' + postMessage + '</p></div></a>';
 						self.config.facebookPosts.push(postItem);
@@ -176,17 +176,4 @@ GNU.SocialSlider.prototype = {
 			}
 		}
 	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
+};

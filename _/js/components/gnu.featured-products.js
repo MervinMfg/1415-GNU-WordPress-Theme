@@ -42,4 +42,4 @@ GNU.FeaturedProducts.prototype = {
 			}
 		});
 	}
-}
+};

@@ -33,39 +33,41 @@ Template Name: Snowboards Detail Template
 				$optionVariationSizes = "";
 				$optionVariationSKUs = "";
 				// loop through variations
-				for ($i = 0; $i < count($optionVariations); $i++) {
-					$variationWidth = $optionVariations[$i]['gnu_snowboard_options_variations_width'];
-					$variationLength = $optionVariations[$i]['gnu_snowboard_options_variations_length'];
-					$variationSKU = $optionVariations[$i]['gnu_snowboard_options_variations_sku'];
-					// grab availability
-					$variationAvailUS = $optionVariations[$i]['gnu_snowboard_options_variations_availability_us'];
-					$variationAvailCA = $optionVariations[$i]['gnu_snowboard_options_variations_availability_ca'];
-					$variationAvailEUR = $optionVariations[$i]['gnu_snowboard_options_variations_availability_eur'];
-					if($variationAvailUS == "Yes") $productAvailUS = "Yes";
-					if($variationAvailCA == "Yes") $productAvailCA = "Yes";
-					if($variationAvailEUR == "Yes") $productAvailEUR = "Yes";
-					// setup readable short form of length and width
-					if($variationWidth == "Narrow"){
-						$variationLength = $variationLength . "N";
-					}else if($variationWidth == "Wide"){
-						$variationLength = $variationLength . "W";
+				if ($optionVariations) :
+					for ($i = 0; $i < count($optionVariations); $i++) {
+						$variationWidth = $optionVariations[$i]['gnu_snowboard_options_variations_width'];
+						$variationLength = $optionVariations[$i]['gnu_snowboard_options_variations_length'];
+						$variationSKU = $optionVariations[$i]['gnu_snowboard_options_variations_sku'];
+						// grab availability
+						$variationAvailUS = $optionVariations[$i]['gnu_snowboard_options_variations_availability_us'];
+						$variationAvailCA = $optionVariations[$i]['gnu_snowboard_options_variations_availability_ca'];
+						$variationAvailEUR = $optionVariations[$i]['gnu_snowboard_options_variations_availability_eur'];
+						if($variationAvailUS == "Yes") $productAvailUS = "Yes";
+						if($variationAvailCA == "Yes") $productAvailCA = "Yes";
+						if($variationAvailEUR == "Yes") $productAvailEUR = "Yes";
+						// setup readable short form of length and width
+						if($variationWidth == "Narrow"){
+							$variationLength = $variationLength . "N";
+						}else if($variationWidth == "Wide"){
+							$variationLength = $variationLength . "W";
+						}
+						// set up sizes and skus list
+						$optionVariationSizes .= $variationLength;
+						$optionVariationSKUs .= $variationSKU;
+						// add comas except last item
+						if($i < count($optionVariations)-1){
+							$optionVariationSizes .= ", ";
+							$optionVariationSKUs .= ", ";
+						}
+						// setup variation name
+						if($optionName != ""){
+							$variationName = $variationLength . " - " . $optionName;
+						} else {
+							$variationName = $variationLength;
+						}
+						array_push($snowboards, Array('name' => $variationName, 'sku' => $variationSKU, 'availUS' => $variationAvailUS, 'availCA' => $variationAvailCA, 'availEUR' => $variationAvailEUR));
 					}
-					// set up sizes and skus list
-					$optionVariationSizes .= $variationLength;
-					$optionVariationSKUs .= $variationSKU;
-					// add comas except last item
-					if($i < count($optionVariations)-1){
-						$optionVariationSizes .= ", ";
-						$optionVariationSKUs .= ", ";
-					}
-					// setup variation name
-					if($optionName != ""){
-						$variationName = $variationLength . " - " . $optionName;
-					} else {
-						$variationName = $variationLength;
-					}
-					array_push($snowboards, Array('name' => $variationName, 'sku' => $variationSKU, 'availUS' => $variationAvailUS, 'availCA' => $variationAvailCA, 'availEUR' => $variationAvailEUR));
-				}
+				endif;
 				array_push($snowboardOptions, Array('image' => $optionImage, 'name' => $optionName, 'sizes' => $optionVariationSizes, 'skus' => $optionVariationSKUs));
 			endwhile;
 		endif;

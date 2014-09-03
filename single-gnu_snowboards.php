@@ -85,7 +85,7 @@ Template Name: Snowboards Detail Template
 							<?php foreach ($snowboardOptions as $snowboardOption) : if ($snowboardOption['image']) : ?>
 
 							<div class="product-image">
-								<a href="<?php echo $snowboardOption['image']['url']; ?>" title="<?php the_title(); ?> - <?php echo $snowboardOption['sizes']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo $snowboardOption['image']['sizes']['medium']; ?>" alt="<?php the_title(); ?> - <?php echo $snowboardOption['sizes']; ?>" class="owl-lazy" /></a>
+								<a href="<?php echo $snowboardOption['image']['url']; ?>" title="<?php the_title(); ?> - <?php echo $snowboardOption['sizes']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo $snowboardOption['image']['url']; ?>" alt="<?php the_title(); ?> - <?php echo $snowboardOption['sizes']; ?>" class="owl-lazy" /></a>
 							</div><!-- .product-image -->
 
 							<?php endif; endforeach; ?>

@@ -14,7 +14,7 @@ GNU.ProductDetails = function () {
 GNU.ProductDetails.prototype = {
 	init: function () {
 		var self = this;
-		self.initThumbnailCarousel();
+		
 		self.initAvailability();
 		self.initNavigation();
 		$('.product-video').fitVids();
@@ -22,6 +22,7 @@ GNU.ProductDetails.prototype = {
 		// wait for images to load and build the carousel
 		$(window).on('load', function () {
 			self.initProductCarousel();
+			self.initThumbnailCarousel();
 		});
 	},
 	initProductCarousel: function () {

@@ -5,9 +5,11 @@
 
 var GNU = GNU || {};
 
-GNU.ProductDetails = function () {
+GNU.ProductDetails = function (scrollController) {
 	this.config = {
-		pastWaypoint: false
+		pastWaypoint: false,
+		scene: null,
+		scrollController: scrollController
 	};
 	this.init();
 };
@@ -19,6 +21,7 @@ GNU.ProductDetails.prototype = {
 		self.initNavigation();
 		$('.product-video').fitVids();
 		self.initSpecs();
+		self.initProductNavigation();
 		// wait for images to load and build the carousel
 		$(window).on('load', function () {
 			self.initProductCarousel();
@@ -103,6 +106,30 @@ GNU.ProductDetails.prototype = {
 				self.updateCarouselImageSize();
 			}
 		}
+	},
+	initProductNavigation: function () {
+		var self, responsiveSize, navOffset;
+		self = this;
+		// if we're large or bigger, do the scroll
+		if ( responsiveSize != "large" && GNU.Main.utilities.responsiveCheck() == "large" ) {
+			responsiveSize = "large";
+			// if scene already exists, remove it
+			if (typeof self.config.scene !== 'undefined') {
+				self.config.scrollController.removeScene(self.config.scene);
+			}
+			navOffset = Math.floor($(window).height() / 2) - $('.site-header').outerHeight() + 1;
+			self.config.scene = new ScrollScene({triggerElement: ".product-navigation", offset: navOffset}).setPin(".product-navigation").addTo(self.config.scrollController);
+		} else if (GNU.Main.utilities.responsiveCheck() != "large") {
+			responsiveSize = "other";
+			// if scene already exists, remove it
+			if (typeof self.config.scene !== 'undefined') {
+				self.config.scrollController.removeScene(self.config.scene);
+			}
+			$('.product-navigation').removeAttr('style');
+		}
+		$(window).on('resize.productDetails', function () {
+			self.initProductNavigation();
+		});
 	},
 	initThumbnailCarousel: function () {
 		if ($(".product-thumbnails .image-list .product-thumbnail").length > 3) {

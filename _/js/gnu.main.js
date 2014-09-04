@@ -61,7 +61,7 @@ GNU.Main = {
 	},
 	productDetailsInit: function () {
 		var self = this;
-		new GNU.ProductDetails();
+		new GNU.ProductDetails(self.config.scrollController);
 		new GNU.PhotoSlider(self.config.scrollController);
 		new GNU.FeaturedProducts();
 	},

@@ -593,15 +593,19 @@
 			}
 		}
 	}
-	.product-navigation .nav-container {
-		max-width: $breakpoint-large;
-		margin: 0 auto;
+	.product-navigation {
+		z-index: 5;
 
-		ul {
-			width: 520px;
+		.nav-container {
+			max-width: $breakpoint-large;
+			margin: 0 auto;
 
-			li {
-				padding: 0 15px;
+			ul {
+				width: 520px;
+
+				li {
+					padding: 0 15px;
+				}
 			}
 		}
 	}
@@ -609,8 +613,8 @@
 	#technology,
 	#video,
 	#specifications {
-		padding-top: 55px;
-		margin-top: -55px;
+		padding-top: 94px;
+		margin-top: -94px;
 	}
 	.product-info {
 		.section-wrapper {

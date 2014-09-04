@@ -7,6 +7,7 @@ var GNU = GNU || {};
 
 GNU.ProductDetails = function (scrollController) {
 	this.config = {
+		productCarousel: null,
 		pastWaypoint: false,
 		scene: null,
 		scrollController: scrollController
@@ -16,12 +17,12 @@ GNU.ProductDetails = function (scrollController) {
 GNU.ProductDetails.prototype = {
 	init: function () {
 		var self = this;
-		
 		self.initAvailability();
 		self.initNavigation();
 		$('.product-video').fitVids();
 		self.initSpecs();
 		self.initProductNavigation();
+		self.initBuy();
 		// wait for images to load and build the carousel
 		$(window).on('load', function () {
 			self.initProductCarousel();
@@ -32,11 +33,10 @@ GNU.ProductDetails.prototype = {
 		var self = this;
 		self.updateCarouselImageSize();
 		// set up owl carousel
-		$(".product-images .owl-carousel").owlCarousel({
+		self.config.productCarousel = $(".product-images .owl-carousel").owlCarousel({
 			items: 1,
 			dots: false,
 			lazyLoad: true,
-			nav: true,
 			mouseDrag: false,
 			touchDrag: false,
 			animateIn: 'pulse'
@@ -107,6 +107,31 @@ GNU.ProductDetails.prototype = {
 			}
 		}
 	},
+	initThumbnailCarousel: function () {
+		var self = this;
+		if ($(".product-thumbnails .image-list .product-thumbnail").length > 3) {
+			// set up owl carousel
+			$(".product-thumbnails .owl-carousel").owlCarousel({
+				items: 3,
+				responsive: false,
+				dots: false,
+				lazyLoad: true,
+				nav: false
+			});
+		} else if ($(".product-thumbnails .image-list .product-thumbnail").length == 1) {
+			$(".product-thumbnails").addClass('hidden');
+		} else {
+			$("img.owl-lazy").unveil();
+		}
+		$('.product-thumbnails .image-list .product-thumbnail a').on('click', function (e) {
+			var imageIndex;
+			e.preventDefault();
+			//e.stopPropagation();
+			imageIndex = $(this).parent().parent().index();
+			// trigger owl event to display appropriate product image 
+			self.config.productCarousel.trigger('to.owl.carousel', [imageIndex, 1, 1]);
+		});
+	},
 	initProductNavigation: function () {
 		var self, responsiveSize, navOffset;
 		self = this;
@@ -130,20 +155,6 @@ GNU.ProductDetails.prototype = {
 		$(window).on('resize.productDetails', function () {
 			self.initProductNavigation();
 		});
-	},
-	initThumbnailCarousel: function () {
-		if ($(".product-thumbnails .image-list .product-thumbnail").length > 3) {
-			// set up owl carousel
-			$(".product-thumbnails .owl-carousel").owlCarousel({
-				items: 3,
-				responsive: false,
-				dots: false,
-				lazyLoad: true,
-				nav: false
-			});
-		} else {
-			$("img.owl-lazy").unveil();
-		}
 	},
 	initAvailability: function () {
 		var currencyCookie, currency;
@@ -213,5 +224,76 @@ GNU.ProductDetails.prototype = {
 		});
 		// fire click event on first element
 		$('.spec-navigation ul li:first a').click();
+	},
+	initBuy: function () {
+		var self = this;
+		// ADD TO CART COMPLETION METHODS
+		function addToCartSuccess() {
+			// update quickcart
+			GNU.Main.config.shop.quickCartInit();
+			GNU.Main.config.shop.showQuickCart();
+		}
+		function addToCartError() {
+			$('.product-buy .product-available .failure').removeClass('hidden');
+		}
+		function addToCartComplete() {
+			$('.product-buy .product-available .loading').addClass('hidden');
+			$('.product-buy .product-available .form').removeClass('hidden');
+		}
+		// FUNCTIONALITY FOR PRODUCTS WITH ONLY 1 SELECTION
+		$('.product-variation').change(function () {
+			// display the correct image matching selected option
+			var productSKU, productSKUs, productThumbs;
+			productSKU = $(this).val();
+			productSKUs = [];
+			if (productSKU != "-1") {
+				$(this).removeClass('alert');
+			}
+			$(".product-thumbnails .product-thumbnail a").each(function () {
+				var skus = $(this).attr('data-sku');
+				productSKUs.push([$(this), skus]);
+				$(this).removeClass('active');
+			});
+			for (var i = 0; i < productSKUs.length; i++) {
+				var skus = productSKUs[i][1];
+				if (skus.indexOf(productSKU) != -1) {
+					productSKUs[i][0].click();
+					break;
+				}
+			}
+		});
+		// add to cart api btn
+		$('.add-to-cart').on('click', function (e) {
+			var productSKU;
+			e.preventDefault();
+			// check size selection
+			productSKU = $('.product-variation').val();
+			if (productSKU === "-1") {
+				// add alert to class
+				$('#product-variation').addClass('alert');
+				return;
+			}
+			// hide add to cart, show loading while request is made
+			$('.product-buy .product-available .loading').removeClass('hidden');
+			$('.product-buy .product-available .form').addClass('hidden');
+			// make sure to hide cart failure message on each add
+			$('.product-buy .product-available .failure').addClass('hidden');
+			// call shopatron's api
+			Shopatron.addToCart({
+				quantity: '1', // Optional: Defaults to 1 if not set
+				partNumber: productSKU // Required: This is the product that will be added to the cart.
+			}, {
+				// All event handlers are optional
+				success: function (data, textStatus) {
+					addToCartSuccess();
+				},
+				error: function (textStatus, errorThrown) {
+					addToCartError();
+				},
+				complete: function (textStatus) {
+					addToCartComplete();
+				}
+			});
+		});
 	}
 };

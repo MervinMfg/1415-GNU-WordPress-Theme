@@ -140,7 +140,7 @@ Template Name: Snowboards Detail Template
 							<?php foreach ($snowboardOptions as $snowboardOption) : if ($snowboardOption['image']) :?>
 							
 							<div class="product-thumbnail">
-								<a href="<?php echo $snowboardOption['image']['url']; ?>" title="<?php echo $snowboardOption['name']; ?> - <?php echo $snowboardOption['sizes']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo $snowboardOption['image']['sizes']['medium']; ?>" alt="<?php echo $snowboardOption['name']; ?> - <?php echo $snowboardOption['sizes']; ?>" class="owl-lazy" /></a>
+								<a href="<?php echo $snowboardOption['image']['url']; ?>" title="<?php echo $snowboardOption['name']; ?> - <?php echo $snowboardOption['sizes']; ?>" data-sku="<?php echo $snowboardOption['skus']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo $snowboardOption['image']['sizes']['medium']; ?>" alt="<?php echo $snowboardOption['name']; ?> - <?php echo $snowboardOption['sizes']; ?>" class="owl-lazy" /></a>
 							</div><!-- .product-image -->
 
 							<?php endif; endforeach; ?>
@@ -192,7 +192,7 @@ Template Name: Snowboards Detail Template
 									<?php foreach ($snowboards as $snowboard) : // render out snowboards dropdown ?>
 									<option value="<?php echo $snowboard['sku']; ?>" title="<?php echo $snowboard['name']; ?>" class="selectable-option" data-avail-us="<?php echo $snowboard['availUS']; ?>" data-avail-ca="<?php echo $snowboard['availCA']; ?>" data-avail-eur="<?php echo $snowboard['availEUR']; ?>"><?php echo $snowboard['name']; ?></option>
 									<?php endforeach; ?>
-								</select><button class="btn-submit visible">Add to Cart</button>
+								</select><button class="add-to-cart btn-submit visible">Add to Cart</button>
 							</div><!-- .form -->
 							<div class="loading hidden"></div>
 							<div class="failure hidden">
@@ -383,7 +383,7 @@ Template Name: Snowboards Detail Template
 
 			<?php include get_template_directory() . '/_/inc/modules/featured-products.php'; ?>
 
-			<?php comments_template(); ?>
+			<?php //comments_template(); ?>
 
 <?php
 		endwhile;

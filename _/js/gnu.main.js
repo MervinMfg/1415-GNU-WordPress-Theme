@@ -8,6 +8,7 @@ var GNU = GNU || {};
 GNU.Main = {
 	config: {
 		wpImgPath: '/wp-content/themes/1415-GNU-WordPress-Theme/_/img/',
+		shop: null,
 		scrollController: null
 	},
 	init: function () {
@@ -16,7 +17,7 @@ GNU.Main = {
 		$body = $('body');
 		// init global components
 		self.config.scrollController = new ScrollMagic({ vertical: true });
-		shop = new GNU.Shop();
+		self.config.shop = new GNU.Shop();
 		regionSelector = new GNU.RegionSelector();
 		mainMenu = new GNU.MainMenu(self.config.scrollController);
 		search = new GNU.Search();
@@ -29,7 +30,7 @@ GNU.Main = {
 			search.hideSearch();
 		}, false);
 		document.addEventListener('SearchShow', function (e) {
-			shop.hideQuickCart();
+			self.config.shop.hideQuickCart();
 		}, false);
 		// init respective page template
 		if ($body.hasClass('home')) {

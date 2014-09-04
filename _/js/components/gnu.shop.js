@@ -160,22 +160,6 @@ GNU.Shop.prototype = {
 					$('.quick-cart .cart-details .total-items a span').html('0');
 				}
 			}
-			/*
-			SAMPLE ADD TO CART - Use to get product in the cart
-			ASS PICKLE - 3211905
-			AGRO - 3214710
-
-			Shopatron.addToCart({
-				quantity: '1',
-				partNumber: 3211905
-			}, {
-				success: function (data, textStatus) {
-					console.log(data);
-				},
-				error: function (textStatus, errorThrown) {},
-				complete: function (textStatus) {}
-			});
-			*/
 		});
 	},
 	showQuickCart: function () {
@@ -200,6 +184,8 @@ GNU.Shop.prototype = {
 		}).on('click.cart', function () {
 			self.hideQuickCart(); // hide if clicked anywhere outside cart area
 		});
+		// scroll to top of page
+		TweenMax.to(window, 0.5, {scrollTo:{y: 0, x: 0}});
 	},
 	// HIDE QUICK CART
 	hideQuickCart: function () {

@@ -109,7 +109,7 @@ GNU.ProductDetails.prototype = {
 	},
 	initThumbnailCarousel: function () {
 		var self = this;
-		if ($(".product-thumbnails .image-list .product-thumbnail").length > 3) {
+		if ($(".product-thumbnails .image-list .product-thumbnail").length > 1) {
 			// set up owl carousel
 			$(".product-thumbnails .owl-carousel").owlCarousel({
 				items: 3,
@@ -118,16 +118,18 @@ GNU.ProductDetails.prototype = {
 				lazyLoad: true,
 				nav: false
 			});
-		} else if ($(".product-thumbnails .image-list .product-thumbnail").length == 1) {
-			$(".product-thumbnails").addClass('hidden');
 		} else {
-			$("img.owl-lazy").unveil();
+			$(".product-thumbnails").addClass('hidden');
 		}
 		$('.product-thumbnails .image-list .product-thumbnail a').on('click', function (e) {
 			var imageIndex;
 			e.preventDefault();
-			//e.stopPropagation();
-			imageIndex = $(this).parent().parent().index();
+			if ($(".product-thumbnails .image-list .product-thumbnail").length == 1) {
+				// only 1 thumbnail
+				imageIndex = $(this).parent().index();
+			} else {
+				imageIndex = $(this).parent().parent().index();
+			}
 			// trigger owl event to display appropriate product image 
 			self.config.productCarousel.trigger('to.owl.carousel', [imageIndex, 1, 1]);
 		});

@@ -41,7 +41,7 @@ GNU.ProductDetails.prototype = {
 			touchDrag: false,
 			animateIn: 'pulse'
 		});
-		$(window).on('resize.productDetails', function () {
+		$(window).on('resize.productCarousel', function () {
 			self.updateCarouselImageSize();
 		});
 	},
@@ -144,9 +144,10 @@ GNU.ProductDetails.prototype = {
 			if (typeof self.config.scene !== 'undefined') {
 				self.config.scrollController.removeScene(self.config.scene);
 			}
+			$('.product-navigation').removeAttr('style');
 			navOffset = Math.floor($(window).height() / 2) - $('.site-header').outerHeight() + 1;
 			self.config.scene = new ScrollScene({triggerElement: ".product-navigation", offset: navOffset}).setPin(".product-navigation").addTo(self.config.scrollController);
-		} else if (GNU.Main.utilities.responsiveCheck() != "large") {
+		} else if (GNU.Main.utilities.responsiveCheck() != "other") {
 			responsiveSize = "other";
 			// if scene already exists, remove it
 			if (typeof self.config.scene !== 'undefined') {
@@ -154,7 +155,8 @@ GNU.ProductDetails.prototype = {
 			}
 			$('.product-navigation').removeAttr('style');
 		}
-		$(window).on('resize.productDetails', function () {
+		$(window).on('resize.productNavigation', function () {
+			$(this).off('resize.productNavigation');
 			self.initProductNavigation();
 		});
 	},

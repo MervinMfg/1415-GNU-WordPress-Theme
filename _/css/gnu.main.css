@@ -2483,7 +2483,7 @@ body.international .shopping-cart-wrapper {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\0000322}}
 .product-images .owl-carousel {
-  display: visible;
+  display: block;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\0000325}}
 .product-images .owl-carousel .owl-item {

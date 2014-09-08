@@ -39,6 +39,8 @@ GNU.Main = {
 			self.homeSportInit();
 		} else if ($body.hasClass('page-template-page-templatesproduct-overview-php')) {
 			self.productOverviewInit();
+		} else if ($body.hasClass('page-template-page-templatesstore-locator-php')) {
+			self.storeLocatorInit();
 		} else if ($body.hasClass('single-gnu_snowboards')) {
 			self.productDetailsInit();
 		}
@@ -65,6 +67,13 @@ GNU.Main = {
 		new GNU.ProductDetails(self.config.scrollController);
 		new GNU.PhotoSlider(self.config.scrollController);
 		new GNU.FeaturedProducts();
+	},
+	storeLocatorInit: function () {
+		var self = this;
+		// grab all section headers and assign correct scrolling
+		$('.section-header').each(function (index) {
+			new GNU.SectionHeader($(this), self.config.scrollController);
+		});
 	},
 	utilities: {
 		cookie: {

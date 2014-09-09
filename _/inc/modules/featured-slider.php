@@ -2,7 +2,7 @@
 		
 			<?php if(have_rows('gnu_feature_slider')): ?>
 			<section class="featured-slider">
-				<div class="slide-list owl-carousel">
+				<div class="slide-list owl-carousel owl-theme">
 					<?php
 						while( have_rows('gnu_feature_slider') ):
 							the_row();

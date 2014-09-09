@@ -3308,7 +3308,7 @@ body.international .shopping-cart-wrapper {
   float: right;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-slider\.scss}line{font-family:\0000342}}
-.featured-slider .slide-list .owl-controls {
+.featured-slider .slide-list .owl-dots {
   position: absolute;
   bottom: 10px;
   width: 100%;
@@ -3667,7 +3667,7 @@ body.international .shopping-cart-wrapper {
     text-align: right;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_photo-slider\.scss}line{font-family:\0000344}}
-  .photo-slider .photo-list .owl-controls {
+  .photo-slider .photo-list .owl-dots {
     position: absolute;
     bottom: 10px;
     width: 100%;
@@ -3833,14 +3833,14 @@ body.international .shopping-cart-wrapper {
   margin-left: -20%;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-products\.scss}line{font-family:\0000343}}
-.featured-products .product-list .owl-controls {
+.featured-products .product-list .owl-dots {
   position: absolute;
   bottom: 0px;
   width: 100%;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-products\.scss}line{font-family:\0000348}}
-.featured-products .product-list .owl-controls .owl-dots .owl-dot.active span,
-.featured-products .product-list .owl-controls .owl-dots .owl-dot:hover span {
+.featured-products .product-list .owl-dots .owl-dot.active span,
+.featured-products .product-list .owl-dots .owl-dot:hover span {
   background: #99cc33;
 }
 

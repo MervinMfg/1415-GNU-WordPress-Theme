@@ -21,7 +21,7 @@
 			?>
 
 			<section class="featured-products">
-				<div class="product-list owl-carousel">
+				<div class="product-list owl-carousel owl-theme">
 
 					<?php
 						// loop through products

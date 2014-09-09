@@ -2,7 +2,7 @@
 
 			<?php if(have_rows('gnu_photo_slider')): ?>
 			<section class="photo-slider">
-				<div class="photo-list owl-carousel">
+				<div class="photo-list owl-carousel owl-theme">
 					<?php
 						while( have_rows('gnu_photo_slider') ):
 							the_row();

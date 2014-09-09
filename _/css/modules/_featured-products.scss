@@ -40,13 +40,13 @@
 				margin-left: -20%;
 			}
 		}
-		.owl-controls {
+		.owl-dots {
 			position: absolute;
 			bottom: 0px;
 			width: 100%;
 
-			.owl-dots .owl-dot.active span,
-			.owl-dots .owl-dot:hover span {
+			.owl-dot.active span,
+			.owl-dot:hover span {
 				background: $green;
 			}
 		}

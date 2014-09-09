@@ -233,8 +233,12 @@ Template Name: Snowboards Detail Template
 				<div class="product-info">
 					<div class="section-wrapper">
 						<div class="section-content">
-							<?php the_content(); ?>
-							<div class="clearfix"></div>
+							<?php
+								the_content();
+								if (get_field('gnu_snowboard_artists_name')) {
+									echo '<h3><a href="' . get_field('gnu_snowboard_artists_url') . '" target="_blank">Art by ' . get_field('gnu_snowboard_artists_name') . '</a></h3>';
+								}
+							?>
 						</div><!-- .section-content -->
 					</div><!-- .section-wrapper -->
 				</div><!-- .product-info -->

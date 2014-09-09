@@ -11,13 +11,13 @@
 	text-align: center;
 }
 .product-title {
-	margin: 20px 0;
+	margin: 18px 0;
 }
 .product-slogan {
-	margin-bottom: 30px;
+	margin-bottom: 25px;
 }
 .product-images {
-	margin-bottom: 20px;
+	margin-bottom: 18px;
 
 	.owl-carousel {
 		display: block;
@@ -190,14 +190,22 @@
 }
 .product-info {
 	background: $white url('../img/bg-grey-triangles-details.png') center center;
-	padding: 10px 20px 0px;
+	padding: 40px 20px;
 
 	h3, .h3 {
 		text-align: center;
 		margin-bottom: 0.5em;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 	p {
 		margin-bottom: 1em;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 	ul li {
 		text-align: center;
@@ -417,7 +425,7 @@
 		.product-images {
 			position: relative;
 			max-width: 800px;
-			margin: 0 auto;
+			margin: 0 auto 18px;
 
 			.zoom-icon {
 				position: absolute;
@@ -553,6 +561,10 @@
 		margin-top: -75px;
 	}
 	.product-technology {
+		background: url('../img/weird-science.png') no-repeat top left;
+		background-size: 224px 148px;
+		background-position: 10% -8px;
+
 		.tech-major {
 			max-width: 420px;
 
@@ -616,8 +628,16 @@
 		.section-content {
 			width: 520px;
 		}
+		.product-title,
+		.product-slogan,
+		.product-sizes,
+		.product-buy .product-available .form,
+		.product-buy .product-available .failure {
+			padding: 0;
+		}
 		.product-title {
-			margin: 40px 0;
+			margin: 90px 0 30px;
+			
 		}
 		.product-images {
 			position: fixed;
@@ -637,6 +657,9 @@
 				top: 30px;
 				right: 20px;
 			}
+		}
+		.product-sizes {
+			margin-bottom: 20px;
 		}
 		&.zoom-active {
 			.section-content {
@@ -680,6 +703,8 @@
 		margin-top: -94px;
 	}
 	.product-info {
+		padding: 60px 20px;
+
 		.section-wrapper {
 			max-width: $breakpoint-large;
 			margin: 0 auto;
@@ -692,9 +717,13 @@
 	.product-technology {
 		max-width: $breakpoint-large;
 		margin: 0 auto;
+		background-position: 0 -8px;
 
 		.section-content {
 			max-width: 520px;
+		}
+		.h1 {
+			padding: 60px 20px 40px;
 		}
 	}
 	.product-video {

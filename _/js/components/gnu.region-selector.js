@@ -52,8 +52,8 @@ GNU.RegionSelector.prototype = {
 		var self = this;
 		$('#region-selector').toggleClass('hide');
 		$('#main').toggleClass('hide');
-		// scroll to selector
-		GNU.Main.utilities.pageScroll('#region-selector');
+		// scroll to top of window
+		TweenMax.to(window, 0.5, {scrollTo:{y: 0, x: 0}, delay:0.2});
 		// add click events
 		$("#region-selector .location-group .location-list a").on('click.region', function (e) {
 			var selectedCurrency, selectedRegion;
@@ -69,8 +69,6 @@ GNU.RegionSelector.prototype = {
 			if (e.keyCode == 27) {
 				self.overlayUninit();
 			}
-		}).on('click.region', function () {
-			self.overlayUninit(); // hide if clicked anywhere outside region selector
 		});
 		// don't hide if clicked within region selector
 		$('#region-selector .choose-region').on('click.region', function (e) {
@@ -89,5 +87,6 @@ GNU.RegionSelector.prototype = {
 		$(document).off('keyup.region').off('click.region');
 		$('#region-selector .choose-region').off('click.region');
 		$('#region-selector .btn-close').off('click.region');
+		$(window).resize();
 	}
 };

@@ -18,7 +18,6 @@ GNU.ProductDetails.prototype = {
 	init: function () {
 		var self = this;
 		self.initAvailability();
-		self.initNavigation();
 		$('.product-video').fitVids();
 		self.initSpecs();
 		self.initProductNavigation();
@@ -184,8 +183,16 @@ GNU.ProductDetails.prototype = {
 			}
 			$('.product-navigation').removeAttr('style');
 		}
+		// listen for click on nav items
+		$('.product-navigation a').on('click', function (e) {
+			e.preventDefault();
+			var url = $(this).attr('href');
+			GNU.Main.utilities.pageScroll(url, 0.5);
+		});
+		// listen for resize
 		$(window).on('resize.productNavigation', function () {
 			$(this).off('resize.productNavigation');
+			$('.product-navigation a').off('click');
 			self.initProductNavigation();
 		});
 	},
@@ -234,13 +241,6 @@ GNU.ProductDetails.prototype = {
 				}
 			}
 		}
-	},
-	initNavigation: function () {
-		$('.product-navigation a').on('click', function (e) {
-			e.preventDefault();
-			var url = $(this).attr('href');
-			GNU.Main.utilities.pageScroll(url, 0.5);
-		});
 	},
 	initSpecs: function () {
 		$('.spec-navigation ul li a').on('click', function (e) {

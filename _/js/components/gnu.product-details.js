@@ -35,7 +35,7 @@ GNU.ProductDetails.prototype = {
 		// set up owl carousel
 		self.config.productCarousel = $(".product-images .owl-carousel").owlCarousel({
 			items: 1,
-			dots: false,
+			dots: true,
 			lazyLoad: true,
 			mouseDrag: false,
 			touchDrag: false,
@@ -44,12 +44,41 @@ GNU.ProductDetails.prototype = {
 		$(window).on('resize.productCarousel', function () {
 			self.updateCarouselImageSize();
 		});
+		// listen for click of images / zoom
+		$(".product-images .image-list .product-image a").on('click', function (e) {
+			// only run zoom functionality if we're on tablet or bigger
+			if (GNU.Main.utilities.responsiveCheck() == "medium" || GNU.Main.utilities.responsiveCheck() == "large") {
+				var prevPosition = $(".owl-carousel").data('owl.carousel').current();
+				e.preventDefault();
+				$(".product-main").toggleClass('zoom-active');
+				// destory and rebuild, calling refresh seems to do nothing
+				$('.product-images').removeAttr('style');
+				$(".owl-carousel").data('owl.carousel').destroy();
+				if (!$('.product-main').hasClass('zoom-active')) {
+					// reset image when zoom is not active
+					self.updateCarouselImageSize();
+				} else {
+					// make sure we are scrolled to top when zoom is selected
+					TweenMax.to(window, 0.5, {scrollTo:{y: 0, x: 0}, delay:0.2});
+				}
+				// build new carousel, refresh doesn't seem to work
+				self.config.productCarousel = $(".product-images .owl-carousel").owlCarousel({
+					items: 1,
+					dots: true,
+					lazyLoad: true,
+					mouseDrag: false,
+					touchDrag: false,
+					animateIn: 'pulse',
+					startPosition: prevPosition
+				});
+			}
+		});
 	},
 	updateCarouselImageSize: function () {
 		var self, widthPercentage, windowWidth, contentWidth, sectionWidth, productImageWidth, maxImageHeight, maxImageWidth;
 		self = this;
 		// check for the desktop+ width
-		if ( GNU.Main.utilities.responsiveCheck() == "large" ) {
+		if ( GNU.Main.utilities.responsiveCheck() == "large" && !$('.product-main').hasClass('zoom-active')) {
 			// set vars
 			widthPercentage = $('.product-image').width() / $('.product-image').height();
 			windowWidth = $(window).width();
@@ -91,7 +120,7 @@ GNU.ProductDetails.prototype = {
 			productImageHeight = $('.product-image').height();
 			productImageTop = $('.product-images').position().top;
 			// check to see if we have past the waypoint or not
-			if (specsOffset < windowScrollTop + productImageHeight + productImageTop && self.config.pastWaypoint === false) {
+			if (specsOffset < windowScrollTop + productImageHeight + productImageTop && self.config.pastWaypoint === false && !$('.product-main').hasClass('zoom-active')) {
 				// past waypoint
 				// change images to absolute position and adjust top height
 				$('.product-images').css('position', 'absolute').css('top', specsOffset - productImageHeight);

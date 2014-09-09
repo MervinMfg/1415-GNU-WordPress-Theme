@@ -80,7 +80,7 @@ Template Name: Snowboards Detail Template
 					<h1 class="product-title"><?php the_title(); ?></h1>
 					<h5 class="product-slogan"><span><?php the_field('gnu_snowboard_contour'); ?></span> <?php the_field('gnu_product_slogan'); ?></h5>
 					<div class="product-images">
-						<div class="image-list owl-carousel">
+						<div class="image-list owl-carousel owl-theme">
 
 							<?php foreach ($snowboardOptions as $snowboardOption) : if ($snowboardOption['image']) : ?>
 
@@ -91,6 +91,7 @@ Template Name: Snowboards Detail Template
 							<?php endif; endforeach; ?>
 							
 						</div><!-- .image-list -->
+						<div class="zoom-icon"></div>
 					</div><!-- .product-images -->
 					<?php
 						// Build String of Sizes

@@ -27,6 +27,9 @@
 	background: url("../img/loading.gif") no-repeat top left;
 	display: block;
 }
+.zoom-icon {
+	display: none;
+}
 #disqus_thread {
 	padding: 10px 20px;
 	max-width: $breakpoint-large;
@@ -47,6 +50,16 @@
 		margin: -75px 0 0;
 		z-index: -1;
 		position: relative;
+	}
+	.zoom-icon {
+		display: block;
+		width: 40px;
+		height: 40px;
+		background: url("../img/sprite.png") no-repeat;
+		background-position: -111px -10px;
+	}
+	.zoom-active .zoom-icon {
+		background-position: -162px -10px;
 	}
 }
 @media screen and (min-width: $breakpoint-large) {

@@ -1,18 +1,18 @@
 <?php if ( basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"]) ) header('Location: /'); // do not allow stanalone viewing ?>
 
 			<?php
-			$posts = get_field('gnu_featured_products');
-			if( $posts ):
+			$products = get_field('gnu_featured_products');
+			if( $products ):
 				$featuredProducts = Array();
 				$imageSize = 'square-medium';
 				// get each featured/related product
-				foreach( $posts as $post):
+				foreach( $products as $product):
 					// get product values
-					$productTitle = get_the_title($post->ID);
-					$productLink = get_permalink($post->ID);
-					$productSlogan = get_field('gnu_product_slogan', $post->ID);
-					$productImage = get_field('gnu_product_image', $post->ID);
-					$productType = substr($post->post_type, 4); // remove gnu_ from post type
+					$productTitle = get_the_title($product->ID);
+					$productLink = get_permalink($product->ID);
+					$productSlogan = get_field('gnu_product_slogan', $product->ID);
+					$productImage = get_field('gnu_product_image', $product->ID);
+					$productType = substr($product->post_type, 4); // remove gnu_ from post type
 					// add to related product array
 					array_push($featuredProducts, Array($productTitle, $productLink, $productSlogan, $productImage, $productType));
 				endforeach;

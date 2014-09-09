@@ -386,9 +386,9 @@ Template Name: Snowboards Detail Template
 				</div><!-- .product-specifications -->
 			</section><!-- #specifications -->
 
-			<?php include get_template_directory() . '/_/inc/modules/featured-products.php'; ?>
+			<?php comments_template(); ?>
 
-			<?php //comments_template(); ?>
+			<?php include get_template_directory() . '/_/inc/modules/featured-products.php'; ?>
 
 <?php
 		endwhile;

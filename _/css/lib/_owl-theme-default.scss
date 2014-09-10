@@ -59,3 +59,6 @@
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
   background: $pink;
 }
+.owl-carousel .owl-item .owl-lazy {
+  opacity: 1;
+}

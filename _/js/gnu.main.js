@@ -41,7 +41,7 @@ GNU.Main = {
 			self.productOverviewInit();
 		} else if ($body.hasClass('page-template-page-templatesstore-locator-php')) {
 			self.storeLocatorInit();
-		} else if ($body.hasClass('single-gnu_snowboards')) {
+		} else if ($body.hasClass('single-gnu_snowboards') || $body.hasClass('single-gnu_bindings')) {
 			self.productDetailsInit();
 		}
 	},

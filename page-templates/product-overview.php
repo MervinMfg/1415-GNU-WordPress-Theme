@@ -58,7 +58,7 @@ Template Name: Product Overview
 									<?php echo getPrice( get_field('gnu_product_price_us'), get_field('gnu_product_price_ca'), get_field('gnu_product_price_eur'), get_field('gnu_product_on_sale'), get_field('gnu_product_sale_percentage') ); ?>
 								</div>
 							</div>
-							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
+							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-board.png" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
 						</a>
 					</div><!-- .product -->
 
@@ -123,7 +123,7 @@ Template Name: Product Overview
 									</div>
 								</div>
 							</div>
-							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
+							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-board.png" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
 						</a>
 					</div><!-- .product -->
 
@@ -188,7 +188,7 @@ Template Name: Product Overview
 									</div>
 								</div>
 							</div>
-							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
+							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-binding.png" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
 						</a>
 					</div><!-- .product -->
 
@@ -250,7 +250,7 @@ Template Name: Product Overview
 									</div>
 								</div>
 							</div>
-							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
+							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-binding.png" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
 						</a>
 					</div><!-- .product -->
 

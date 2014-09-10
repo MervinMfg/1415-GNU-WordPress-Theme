@@ -19,6 +19,17 @@
 .product-images {
 	margin-bottom: 18px;
 
+	.image-list {
+		.product-image {
+			display: none;
+
+			&:first-child {
+				display: block;
+			}
+		}
+	}
+	
+
 	.owl-carousel {
 		display: block;
 
@@ -28,6 +39,9 @@
 			&.active,
 			&.animated {
 				visibility: visible;
+			}
+			.product-image {
+				display: block;
 			}
 		}
 		.owl-dots {

@@ -43,12 +43,12 @@ GNU.ProductOverview.prototype = {
 			TweenMax.to('.product-overview .product-list .product a .info', 0, {scale: 1, force3D: true});
 			TweenMax.to('.product-overview .product-list .product a .image', 0, {scale: 0.95, force3D: true});
 			// add listners for over and out
-			$('.product-overview .product-list .product a').on('mouseover', function () {
+			$('.product-overview .product-list .product a').on('mouseover.productOverview', function () {
 				$info = $(this).find('.info');
 				$image = $(this).find('.image');
 				TweenMax.to($info, 0.2, {scale: 1.05, force3D: true});
 				TweenMax.to($image, 0.2, {scale: 1, force3D: true});
-			}).on('mouseout', function () {
+			}).on('mouseout.productOverview', function () {
 				$info = $(this).find('.info');
 				$image = $(this).find('.image');
 				TweenMax.to($info, 0.2, {scale: 1, force3D: true});
@@ -71,7 +71,7 @@ GNU.ProductOverview.prototype = {
 		} else {
 			TweenMax.to('.product-overview .product-list .product a .info', 0, {scale: 1, force3D: true});
 			TweenMax.to('.product-overview .product-list .product a .image', 0, {scale: 1, force3D: true});
-			$('.product-overview .product-list .product a .info, .product-overview .product-list .product a .image').removeAttr('style');
+			$('.product-overview .product-list .product a .info').removeAttr('style'); // omit '.product-overview .product-list .product a .image'
 			// remove listeners for mobile
 			$('.product-overview .product-list .product a').off('mouseover.productOverview, mouseout.productOverview');
 			// set up owl carousel(s)

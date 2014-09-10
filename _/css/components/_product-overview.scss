@@ -85,26 +85,13 @@
 		height: 190px;
 
 		.info {
-			bottom: 0px;
 			height: 35px;
 		}
-		.image {
-			width: 180px;
-			height: 180px;
-			max-width: 180px;
-			left: -15px;
-		}
-	}
-}
-#wearables,
-#headwear,
-#accessories {
-	.product-list .product {
 		.image {
 			width: 150px;
 			height: 150px;
 			max-width: 150px;
-			left: 0px;
+			left: 0;
 		}
 	}
 }
@@ -112,9 +99,6 @@
 	display: none;
 }
 
-@media screen and (min-width: $breakpoint-small) {
-	//
-}
 @media screen and (min-width: $breakpoint-medium) {
 	.product-overview {
 		.product-filters {
@@ -190,24 +174,6 @@
 
 	#mens-bindings,
 	#womens-bindings,
-	#wearables,
-	#headwear,
-	#accessories {
-		.product-list .product {
-			width: 350px;
-			height: 445px;
-
-			.info {
-				height: 88px;
-			}
-			.image {
-				width: 420px;
-				height: 420px;
-				max-width: 420px;
-				left: -35px;
-			}
-		}
-	}
 	#wearables,
 	#headwear,
 	#accessories {

@@ -42,9 +42,7 @@
                         "Silver": "Silver",
                         "Teal": "Teal"
                     },
-                    "default_value": [
-
-                    ],
+                    "default_value": [],
                     "allow_null": 0,
                     "multiple": 0,
                     "ui": 0,
@@ -63,9 +61,9 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "column_width": "",
+                    "return_format": "array",
                     "preview_size": "thumbnail",
-                    "library": "all",
-                    "return_format": "id"
+                    "library": "all"
                 },
                 {
                     "key": "field_504e364cdd9ab",
@@ -213,6 +211,25 @@
                             "layout": "vertical",
                             "other_choice": 0,
                             "save_other_choice": 0
+                        },
+                        {
+                            "key": "field_54108aef0bddf",
+                            "label": "Availability EUR",
+                            "name": "gnu_binding_options_variations_availability_eur",
+                            "prefix": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "column_width": "",
+                            "choices": {
+                                "Yes": "Yes",
+                                "No": "No"
+                            },
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "No",
+                            "layout": "vertical"
                         }
                     ]
                 }

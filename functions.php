@@ -140,7 +140,6 @@ function posted_on() {
 	);
 }
 
-
 // REMOVE AUTOMATED CSS MENU CLASSES, CLEAN 'EM UP!
 add_filter('nav_menu_css_class', 'my_css_attributes_filter', 100, 1);
 add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1);
@@ -148,7 +147,6 @@ add_filter('page_css_class', 'my_css_attributes_filter', 100, 1);
 function my_css_attributes_filter($var) {
 	return is_array($var) ? array_intersect($var, array('menu-item', 'current-menu-item', 'boards', 'bindings', 'supplies', 'team', 'blog', 'events', 'about', 'locator')) : '';
 }
-
 
 // GET REGION CODE
 function getCurrencyCode () {
@@ -159,6 +157,7 @@ function getCurrencyCode () {
 	}
 	return $GLOBALS['gnu_currency'];
 }
+
 // GET PRICE DISPLAY
 function getPrice ($usPrice, $caPrice, $eurPrice, $sale, $salePercent) {
 	$price = '<div class="price">';
@@ -178,9 +177,6 @@ function getPrice ($usPrice, $caPrice, $eurPrice, $sale, $salePercent) {
     $price .= '</div><!-- .price -->';
 	return $price;
 }
-
-
-
 
 // get the featured image of a post in a specified size, if no featured image set grab 1st image in post, if no image return default
 function get_post_image($imageSize = "thumbnail", $imageName = "") {
@@ -239,6 +235,133 @@ function gnu_excerpt($length_callback='gnu_excerptlength_home') {
 }
 // removes auto paragraph wrapper
 remove_filter('the_excerpt', 'wpautop');
+
+// function to determine the proper size to display for bindings
+function bindingSizeLookup ($sizeString, $verbose = true) {
+    $returnString = "";
+    switch ($sizeString) {
+        case "XS (US 1-4)":
+            if ($verbose) {
+                $returnString = "XS (US 1-4), (MP 19-22)";
+            } else {
+                $returnString = "XS";
+            }
+            break;
+        case "S (US W 5-7)":
+            if ($verbose) {
+                $returnString = "S (US W 5-7), (MP 22-24)";
+            } else {
+                $returnString = "S";
+            }
+            break;
+        case "S (US M 4-7)":
+            if ($verbose) {
+                $returnString = "S (US M 4-7), (MP 22-25)";
+            } else {
+                $returnString = "S";
+            }
+            break;
+        case "S (US M 6-8), S (US W 7-9)":
+            if ($verbose) {
+                $returnString = "S (US M 6-8), S (US W 7-9)";
+            } else {
+                $returnString = "S";
+            }
+            break;
+        case "S/M (US W 4-7)":
+            if ($verbose) {
+                $returnString = "S/M (US W 4-7), (MP 21-24)";
+            } else {
+                $returnString = "S/M";
+            }
+            break;
+        case "S/M (US M 5-9)":
+            if ($verbose) {
+                $returnString = "S/M (US M 5-9)";
+            } else {
+                $returnString = "S/M";
+            }
+            break;
+        case "M (US W 7-9)":
+            if ($verbose) {
+                $returnString = "M (US W 7-9), (MP 24-26)";
+            } else {
+                $returnString = "M";
+            }
+            break;
+        case "M (US M 7-9)":
+            if ($verbose) {
+                $returnString = "M (US M 7-9), (MP 25-27)";
+            } else {
+                $returnString = "M";
+            }
+            break;
+        case "M (US M 7-10)":
+            if ($verbose) {
+                $returnString = "M (US M 7-10), (MP 25-28)";
+            } else {
+                $returnString = "M";
+            }
+            break;
+        case "M (US M 8.5-11), W (US W 8+)":
+            if ($verbose) {
+                $returnString = "M (US M 8.5-11), W (US W 8+)";
+            } else {
+                $returnString = "M";
+            }
+            break;            
+        case "M/L (US W 6-9)":
+            if ($verbose) {
+                $returnString = "M/L (US W 6-9), (MP 23-26)";
+            } else {
+                $returnString = "M/L";
+            }
+            break;
+        case "M/L (US M 9-14)":
+            if ($verbose) {
+                $returnString = "M/L (US M 9-14)";
+            } else {
+                $returnString = "M/L";
+            }
+            break;
+        case "L (US W 9-10)":
+            if ($verbose) {
+                $returnString = "L (US W 9-10), (MP 26-27)";
+            } else {
+                $returnString = "L";
+            }
+            break;
+        case "L (US M 9-11)":
+            if ($verbose) {
+                $returnString = "L (US M 9-11), (MP 27-29)";
+            } else {
+                $returnString = "L";
+            }
+            break;
+        case "L (US M 9-12)":
+            if ($verbose) {
+                $returnString = "L (US M 9-12), (MP 27-30)";
+            } else {
+                $returnString = "L";
+            }
+            break;
+        case "L (US M 11.5-13)":
+            if ($verbose) {
+                $returnString = "L (US M 11.5-13)";
+            } else {
+                $returnString = "L";
+            }
+            break;
+        case "XL (US M 11-14)":
+            if ($verbose) {
+                $returnString = "XL (US M 11-14), (MP 29-32)";
+            } else {
+                $returnString = "XL";
+            }
+            break;
+    }
+    return $returnString;
+}
 
 /******************************
 CODE FOR CUSTOM POST TYPES

@@ -14,18 +14,13 @@
             "post_type": [
                 "gnu_technology"
             ],
-            "taxonomy": [
-
-            ],
-            "max": "-1",
+            "taxonomy": "",
             "filters": [
                 "search",
-                "post_type",
                 "taxonomy"
             ],
-            "elements": [
-
-            ],
+            "elements": "",
+            "max": "",
             "return_format": "object"
         }
     ],

@@ -28,8 +28,6 @@
 			}
 		}
 	}
-	
-
 	.owl-carousel {
 		display: block;
 
@@ -229,6 +227,36 @@
 		margin-bottom: 1em;
 		text-transform: uppercase;
 	}
+	.binding-chart {
+		ul li {
+			font-size: 1em;
+
+			h3 {
+				text-transform: uppercase;
+			}
+			img {
+				width: 100%;
+			}
+		}
+	}
+	.binding-animation {
+		.owl-carousel {
+			.owl-item {
+				visibility: hidden;
+
+				&.active,
+				&.animated {
+					visibility: visible;
+				}
+			}
+		}
+		.binding-steps .binding-step {
+			h4 {
+				text-align: center;
+				margin-bottom: 0.5em;
+			}
+		}
+	}
 }
 .product-technology {
 	.h1 {
@@ -392,6 +420,30 @@
 	}
 	.product-navigation .nav-container ul li {
 		padding: 0 20px;
+	}
+	.product-info {
+		.binding-chart {
+			width: 90%;
+			margin: 0 auto;
+			max-width: 480px;
+
+			ul li {
+				h3 {
+					width: 30%;
+					float: left;
+					text-align: right;
+					padding-right: 20px;
+				}
+				img {
+					width: 70%;
+					float: left;
+				}
+			}
+		}
+		.binding-animation {
+			max-width: 320px;
+			margin: 0 auto;
+		}
 	}
 	.product-technology {
 		.tech-major,
@@ -574,6 +626,33 @@
 		padding-top: 75px;
 		margin-top: -75px;
 	}
+	.product-info {
+		.binding-chart {
+			width: 50%;
+			margin: 0;
+			max-width: none;
+			float: left;
+
+			ul li {
+				h3 {
+					width: 100%;
+					float: none;
+					text-align: center;
+					padding: 0;
+				}
+				img {
+					width: 100%;
+					float: none;
+					padding: 0 40px;
+				}
+			}
+		}
+		.binding-animation {
+			width: 50%;
+			float: left;
+			max-width: none;
+		}
+	}
 	.product-technology {
 		background: url('../img/weird-science.png') no-repeat top left;
 		background-size: 224px 148px;
@@ -663,8 +742,7 @@
 			margin: 0;
 
 			.image-list .product-image a img {
-				margin-left: -30%;
-				width: 160%;
+				width: 100%;
 				max-width: none;
 			}
 			.zoom-icon {
@@ -692,6 +770,10 @@
 				}
 			}
 		}
+	}
+	.single-gnu_snowboards .product-main .product-images .image-list .product-image a img {
+		margin-left: -30%;
+		width: 160%;
 	}
 	.product-navigation {
 		z-index: 5;
@@ -726,6 +808,30 @@
 			.section-content {
 				max-width: 520px;
 			}
+		}
+		.binding-chart {
+			width: 90%;
+			margin: 0 auto;
+			float: none;
+
+			ul li {
+				h3 {
+					width: 30%;
+					float: left;
+					text-align: right;
+					padding-right: 20px;
+				}
+				img {
+					width: 70%;
+					float: left;
+					padding: 0;
+				}
+			}
+		}
+		.binding-animation {
+			width: 100%;
+			float: none;
+			max-width: 320px;
 		}
 	}
 	.product-technology {

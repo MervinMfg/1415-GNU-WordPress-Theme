@@ -22,6 +22,7 @@ GNU.ProductDetails.prototype = {
 		self.initSpecs();
 		self.initProductNavigation();
 		self.initBuy();
+		if ($('body').hasClass('single-gnu_bindings')) self.initBindingAnimation();
 		// wait for images to load and build the carousel
 		$(window).on('load', function () {
 			self.initProductCarousel();
@@ -74,7 +75,7 @@ GNU.ProductDetails.prototype = {
 		});
 	},
 	updateCarouselImageSize: function () {
-		var self, widthPercentage, windowWidth, contentWidth, sectionWidth, productImageWidth, maxImageHeight, maxImageWidth;
+		var self, widthPercentage, windowWidth, contentWidth, sectionWidth, productImageWidth, maxImageHeight, minImageWidth;
 		self = this;
 		// check for the desktop+ width
 		if ( GNU.Main.utilities.responsiveCheck() == "large" && !$('.product-main').hasClass('zoom-active')) {
@@ -85,12 +86,12 @@ GNU.ProductDetails.prototype = {
 			sectionWidth = $('.product-main .section-content').width();
 			productImageWidth = (contentWidth - sectionWidth) + ((windowWidth - contentWidth) / 2);
 			maxImageHeight = $(window).height() - $('.product-images').position().top;
-			maxImageWidth = 536;
-			// check max image height
-			if (productImageWidth + (productImageWidth * widthPercentage) > maxImageHeight) {
+			minImageWidth = 536;
+			// check max image height if it's a snowboard (not square, but vertical)
+			if ($('body').hasClass('single-gnu_snowboards') && productImageWidth + (productImageWidth * widthPercentage) > maxImageHeight) {
 				productImageWidth = maxImageHeight * widthPercentage;
-				if (productImageWidth < maxImageWidth) {
-					productImageWidth = maxImageWidth;
+				if (productImageWidth < minImageWidth) {
+					productImageWidth = minImageWidth;
 				}
 			}
 			// round to whole number
@@ -115,7 +116,11 @@ GNU.ProductDetails.prototype = {
 			var windowScrollTop, windowHeight, specsOffset, productImageHeight, productImageTop;
 			windowScrollTop = $(window).scrollTop();
 			windowHeight = $(window).height();
-			specsOffset = $('#specifications').offset().top;
+			if ($('#specifications').length > 0) {
+				specsOffset = $('#specifications').offset().top;
+			} else {
+				specsOffset = $('#disqus_thread').offset().top;
+			}
 			productImageHeight = $('.product-image').height();
 			productImageTop = $('.product-images').position().top;
 			// check to see if we have past the waypoint or not
@@ -327,6 +332,16 @@ GNU.ProductDetails.prototype = {
 					addToCartComplete();
 				}
 			});
+		});
+	},
+	initBindingAnimation: function () {
+		$(".binding-animation .owl-carousel").owlCarousel({
+			items: 1,
+			dots: true,
+			lazyLoad: true,
+			mouseDrag: false,
+			touchDrag: false,
+			animateIn: 'fadeIn'
 		});
 	}
 };

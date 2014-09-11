@@ -2,28 +2,14 @@
 /*
 Template Name: Snowboards Detail Template
 */
-
 	get_header();
 	if (have_posts()) : while (have_posts()) : the_post();
-		$thePostID = $post->ID;
-		$slug = $post->post_name;
-		// find the associated tax associated with post
-		$taxTerms = get_the_terms($thePostID, 'gnu_snowboard_categories');
-
-		// display video if we have an id
-		$videoID = get_field('gnu_product_video');
-		if( $videoID ){
-			$productImagesClass = " video";
-		} else {
-			$productImagesClass = "";
-		}
 		// set up snowboards
 		$snowboards = Array();
 		$snowboardOptions = Array();
 		$productAvailUS = "No";
 		$productAvailCA = "No";
 		$productAvailEUR = "No";
-
 		if(get_field('gnu_snowboard_options')):
 			while(the_repeater_field('gnu_snowboard_options')):
 				$optionName = get_sub_field('gnu_snowboard_options_name');
@@ -317,7 +303,7 @@ Template Name: Snowboards Detail Template
 				<div class="product-video">
 					<div class="section-content">
 						<div class="video-wrapper">
-							<iframe src="http://player.vimeo.com/video/<?php echo $videoID; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+							<iframe src="http://player.vimeo.com/video/<?php echo $videoID; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100&amp;loop=1" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 						</div>
 					</div>
 				</div><!-- .product-video -->
@@ -391,7 +377,6 @@ Template Name: Snowboards Detail Template
 			<?php include get_template_directory() . '/_/inc/modules/featured-products.php'; ?>
 
 <?php
-		endwhile;
-	endif;
+	endwhile; endif;
 	get_footer();
 ?>

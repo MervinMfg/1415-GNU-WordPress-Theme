@@ -27,7 +27,7 @@
             "name": "gnu_binding_flex",
             "prefix": "",
             "type": "radio",
-            "instructions": "Select the level of binding flex.",
+            "instructions": "1 = Soft \u2014 3 = Medium \u2014 5 = Stiff",
             "required": 0,
             "conditional_logic": 0,
             "choices": {
@@ -35,17 +35,54 @@
                 "2": 2,
                 "3": 3,
                 "4": 4,
-                "5": 5,
-                "6": 6,
-                "7": 7,
-                "8": 8,
-                "9": 9,
-                "10": 10
+                "5": 5
             },
-            "default_value": "",
-            "layout": "horizontal",
             "other_choice": 0,
-            "save_other_choice": 0
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_541209a5ba25d",
+            "label": "Response",
+            "name": "gnu_binding_response",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "1 = Playful \u2014 3 = All Around \u2014 5 = Agressive",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "1": 1,
+                "2": 2,
+                "3": 3,
+                "4": 4,
+                "5": 5
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_541209c3ba25e",
+            "label": "Terrain",
+            "name": "gnu_binding_terrain",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "1 = Park \u2014 3 = Groomers \u2014 5 = Steeps",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "1": 1,
+                "2": 2,
+                "3": 3,
+                "4": 4,
+                "5": 5
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal"
         },
         {
             "key": "field_50ef30f5f3144",
@@ -63,9 +100,7 @@
                 "Asymmetric Bio-Renewable": "Asymmetric Bio-Renewable",
                 "Youth": "Youth"
             },
-            "default_value": [
-
-            ],
+            "default_value": [],
             "allow_null": 1,
             "multiple": 0,
             "ui": 0,
@@ -90,9 +125,7 @@
                 "Barrel Micro Adjust (Tool Less)": "Barrel Micro Adjust (Tool Less)",
                 "Spindle Micro Adjust (Tool Less)": "Spindle Micro Adjust (Tool Less)"
             },
-            "default_value": [
-
-            ],
+            "default_value": [],
             "allow_null": 1,
             "multiple": 0,
             "ui": 0,
@@ -118,9 +151,7 @@
                 "CNC": "CNC",
                 "Stroma": "Stroma"
             },
-            "default_value": [
-
-            ],
+            "default_value": [],
             "allow_null": 1,
             "multiple": 0,
             "ui": 0,
@@ -147,9 +178,7 @@
                 "Canted Full EVA with Shock Pads": "Canted Full EVA with Shock Pads",
                 "Canted Full EVA with Heel Shock Pad": "Canted Full EVA with Heel Shock Pad"
             },
-            "default_value": [
-
-            ],
+            "default_value": [],
             "allow_null": 1,
             "multiple": 0,
             "ui": 0,
@@ -175,9 +204,7 @@
                 "Comprex": "Comprex",
                 "": ""
             },
-            "default_value": [
-
-            ],
+            "default_value": [],
             "allow_null": 1,
             "multiple": 0,
             "ui": 0,
@@ -202,9 +229,7 @@
                 "Roll Over": "Roll Over",
                 "Comprex with Rubber Grip": "Comprex with Rubber Grip"
             },
-            "default_value": [
-
-            ],
+            "default_value": [],
             "allow_null": 1,
             "multiple": 0,
             "ui": 0,
@@ -228,9 +253,7 @@
                 "Micro Buckle 2 with Cam Levers": "Micro Buckle 2 with Cam Levers",
                 "Micro Buckle 2 with Die Cast Cam Levers": "Micro Buckle 2 with Die Cast Cam Levers"
             },
-            "default_value": [
-
-            ],
+            "default_value": [],
             "allow_null": 1,
             "multiple": 0,
             "ui": 0,
@@ -257,9 +280,7 @@
                 "4-Hole": "4-Hole",
                 "Combi Disk": "Combi Disk"
             },
-            "default_value": [
-
-            ],
+            "default_value": [],
             "allow_null": 1,
             "multiple": 0,
             "ui": 0,
@@ -300,9 +321,7 @@
             "post_type": [
                 "gnu_snowboards"
             ],
-            "taxonomy": [
-
-            ],
+            "taxonomy": [],
             "filters": [
                 "search"
             ],

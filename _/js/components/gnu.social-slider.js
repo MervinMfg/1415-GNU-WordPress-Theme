@@ -155,7 +155,7 @@ GNU.SocialSlider.prototype = {
 	initVideo: function (videoID, videoTitle) {
 		$('.social-slider').addClass('video');
 		$('.social-slider .video-player .video-title').html(videoTitle);
-		$('.social-slider .video-player .video-wrapper').html('<iframe src="http://player.vimeo.com/video/' + videoID + '?title=0&amp;byline=0&amp;portrait=0&amp;color=99CC33&amp;autoplay=1" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');
+		$('.social-slider .video-player .video-wrapper').html('<iframe src="http://player.vimeo.com/video/' + videoID + '?title=0&amp;byline=0&amp;portrait=0&amp;color=99CC33&amp;autoplay=1&amp;loop=1" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');
 		$('.social-slider .video-player .video-wrapper').fitVids();
 		$('.social-slider .video-player .btn-close').on('click', function () {
 			$('.social-slider .video-player .video-title').html("");

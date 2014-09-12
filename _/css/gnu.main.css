@@ -3167,10 +3167,10 @@ body.international .shopping-cart-wrapper {
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003680}}
   .product-technology .tech-minor li {
-    display: block;
-    width: 50%;
-    float: left;
+    display: inline-block;
+    width: 49.5%;
     padding: 10px;
+    vertical-align: top;
   }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003689}}

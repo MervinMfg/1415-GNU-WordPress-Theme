@@ -678,10 +678,10 @@
 			padding: 0 10px;
 
 			li {
-				display: block;
-				width: 50%;
-				float: left;
+				display: inline-block;
+				width: 49.5%;
 				padding: 10px;
+				vertical-align: top;
 			}
 		}
 	}

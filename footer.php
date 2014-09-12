@@ -123,7 +123,6 @@
 								<li class="menu-item"><a href="/team/">Team</a></li>
 								<li class="menu-item"><a href="/blog/">Blog</a></li>
 								<li class="menu-item"><a href="/about/">About</a></li>
-								<li class="menu-item"><a href="/events/">Events</a></li>
 								<li class="menu-item"><a href="/store-locator/">Store Locator</a></li>
 							</ul>
 						</div><!-- .nav-group -->

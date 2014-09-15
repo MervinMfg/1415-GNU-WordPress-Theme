@@ -43,6 +43,8 @@ GNU.Main = {
 			self.storeLocatorInit();
 		} else if ($body.hasClass('single-gnu_snowboards') || $body.hasClass('single-gnu_bindings')) {
 			self.productDetailsInit();
+		} else if ($body.hasClass('single-gnu_team')) {
+			self.teamDetailInit();
 		}
 	},
 	homeInit: function () {
@@ -65,6 +67,13 @@ GNU.Main = {
 	productDetailsInit: function () {
 		var self = this;
 		new GNU.ProductDetails(self.config.scrollController);
+		new GNU.PhotoSlider(self.config.scrollController);
+		new GNU.FeaturedProducts();
+	},
+	teamDetailInit: function () {
+		var self = this;
+		new GNU.SocialSlider();
+		new GNU.FeaturedPosts(self.config.scrollController);
 		new GNU.PhotoSlider(self.config.scrollController);
 		new GNU.FeaturedProducts();
 	},

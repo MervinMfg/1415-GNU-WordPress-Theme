@@ -16,72 +16,12 @@
             "library": "all"
         },
         {
-            "key": "field_5050391f46332",
-            "label": "Profile Name",
-            "name": "gnu_team_profile_name",
-            "prefix": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "preview_size": "thumbnail",
-            "return_format": "id",
-            "library": "all"
-        },
-        {
-            "key": "field_50503bb907906",
-            "label": "Related Products",
-            "name": "gnu_team_related_products",
-            "prefix": "",
-            "type": "relationship",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "post_type": [
-                "gnu_snowboards",
-                "gnu_bindings",
-                "gnu_accessories",
-                "gnu_weirdwear"
-            ],
-            "taxonomy": [
-
-            ],
-            "max": "",
-            "filters": [
-                "search",
-                "post_type",
-                "taxonomy"
-            ],
-            "elements": [
-
-            ],
-            "return_format": "object"
-        },
-        {
             "key": "field_506c8afd7845c",
             "label": "Blog Category Slug",
             "name": "gnu_team_blog_category_slug",
             "prefix": "",
             "type": "text",
             "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "default_value": "",
-            "formatting": "none",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_506c6a35ab8bc",
-            "label": "Photo Album ID",
-            "name": "gnu_team_photo_album_id",
-            "prefix": "",
-            "type": "text",
-            "instructions": "Enter the Slideshow Director album ID here. Omit \"album-\"",
             "required": 0,
             "conditional_logic": 0,
             "default_value": "",
@@ -184,57 +124,6 @@
             "disabled": 0
         },
         {
-            "key": "field_506c6a35c8d7b",
-            "label": "Hero Images",
-            "name": "gnu_team_hero_images",
-            "prefix": "",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "row_min": 0,
-            "row_limit": "",
-            "layout": "table",
-            "button_label": "Add Image",
-            "min": 0,
-            "max": 0,
-            "sub_fields": [
-                {
-                    "key": "field_506c6a35cdb9f",
-                    "label": "Image",
-                    "name": "gnu_team_hero_images_image",
-                    "prefix": "",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "column_width": "",
-                    "preview_size": "thumbnail",
-                    "return_format": "id",
-                    "library": "all"
-                },
-                {
-                    "key": "field_506c6a35d03c0",
-                    "label": "Alt Text",
-                    "name": "gnu_team_hero_images_alt_text",
-                    "prefix": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "column_width": "",
-                    "default_value": "",
-                    "formatting": "none",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "readonly": 0,
-                    "disabled": 0
-                }
-            ]
-        },
-        {
             "key": "field_506c6a35d4717",
             "label": "Featured Videos",
             "name": "gnu_team_featured_videos",
@@ -320,23 +209,10 @@
                     "default_value": "",
                     "toolbar": "basic",
                     "media_upload": 0,
-                    "the_content": "no"
+                    "the_content": "no",
+                    "tabs": "all"
                 }
             ]
-        },
-        {
-            "key": "field_506c6a35ded05",
-            "label": "Questions and Answers",
-            "name": "gnu_team_q_and_a",
-            "prefix": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "default_value": "",
-            "toolbar": "full",
-            "media_upload": 0,
-            "the_content": "no"
         }
     ],
     "location": [

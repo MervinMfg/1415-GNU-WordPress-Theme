@@ -62,6 +62,13 @@
                 "operator": "==",
                 "value": "gnu_apparel"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "gnu_team"
+            }
         ]
     ],
     "menu_order": 0,

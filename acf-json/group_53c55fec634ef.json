@@ -73,6 +73,13 @@
                 "operator": "==",
                 "value": "page-templates\/home.php"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "gnu_team"
+            }
         ]
     ],
     "menu_order": 0,

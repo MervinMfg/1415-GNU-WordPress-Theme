@@ -1646,19 +1646,49 @@ abbr {
   margin: 0 auto;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_global\.scss}line{font-family:\0000338}}
+.social-icons.black .menu-item a {
+  width: 36px;
+  height: 41px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_global\.scss}line{font-family:\0000342}}
+.social-icons.black .menu-item a.icon-facebook {
+  background-position: -10px -60px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_global\.scss}line{font-family:\0000345}}
+.social-icons.black .menu-item a.icon-instagram {
+  background-position: -216px -60px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_global\.scss}line{font-family:\0000348}}
+.social-icons.black .menu-item a.icon-twitter {
+  background-position: -51px -60px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_global\.scss}line{font-family:\0000351}}
+.social-icons.black .menu-item a.icon-pinterest {
+  background-position: -93px -60px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_global\.scss}line{font-family:\0000354}}
+.social-icons.black .menu-item a.icon-vimeo {
+  background-position: -134px -60px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_global\.scss}line{font-family:\0000357}}
+.social-icons.black .menu-item a.icon-rss {
+  background-position: -176px -60px;
+}
+
 @media screen and (min-width: 748.8px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_global\.scss}line{font-family:\0000339}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_global\.scss}line{font-family:\0000362}}
   .site-main {
     padding-top: 75px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_global\.scss}line{font-family:\0000342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_global\.scss}line{font-family:\0000365}}
   .active-takeover .site-main {
     padding-top: 484px;
   }
 
   /* fix for fixed header, adds spacing to div you have anchor links to */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_global\.scss}line{font-family:\0000346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_global\.scss}line{font-family:\0000369}}
   .deeplink-top-fix:before {
     display: block;
     content: "";
@@ -1668,7 +1698,7 @@ abbr {
     position: relative;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_global\.scss}line{font-family:\0000354}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_global\.scss}line{font-family:\0000377}}
   .zoom-icon {
     display: block;
     width: 40px;
@@ -1677,19 +1707,19 @@ abbr {
     background-position: -111px -10px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_global\.scss}line{font-family:\0000361}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_global\.scss}line{font-family:\0000384}}
   .zoom-active .zoom-icon {
     background-position: -162px -10px;
   }
 }
 @media screen and (min-width: 1056px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_global\.scss}line{font-family:\0000366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_global\.scss}line{font-family:\0000389}}
   .site-main {
     padding-top: 55px;
   }
 
   /* fix for fixed header, adds spacing to div you have anchor links to */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_global\.scss}line{font-family:\0000370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_global\.scss}line{font-family:\0000393}}
   .deeplink-top-fix:before {
     display: block;
     content: "";
@@ -4025,72 +4055,43 @@ body.international .shopping-cart-wrapper {
 .follow .follow-groups .follow-group.social-group {
   padding-top: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_follow\.scss}line{font-family:\0000336}}
-.follow .follow-groups .follow-group.social-group .social-icons .menu-item a {
-  width: 36px;
-  height: 41px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_follow\.scss}line{font-family:\0000340}}
-.follow .follow-groups .follow-group.social-group .social-icons .menu-item a.icon-facebook {
-  background-position: -10px -60px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_follow\.scss}line{font-family:\0000343}}
-.follow .follow-groups .follow-group.social-group .social-icons .menu-item a.icon-instagram {
-  background-position: -216px -60px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_follow\.scss}line{font-family:\0000346}}
-.follow .follow-groups .follow-group.social-group .social-icons .menu-item a.icon-twitter {
-  background-position: -51px -60px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_follow\.scss}line{font-family:\0000349}}
-.follow .follow-groups .follow-group.social-group .social-icons .menu-item a.icon-pinterest {
-  background-position: -93px -60px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_follow\.scss}line{font-family:\0000352}}
-.follow .follow-groups .follow-group.social-group .social-icons .menu-item a.icon-vimeo {
-  background-position: -134px -60px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_follow\.scss}line{font-family:\0000355}}
-.follow .follow-groups .follow-group.social-group .social-icons .menu-item a.icon-rss {
-  background-position: -176px -60px;
-}
 
 @media screen and (min-width: 476px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_follow\.scss}line{font-family:\0000365}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_follow\.scss}line{font-family:\0000342}}
   .follow .follow-groups .follow-group.email-group .input-text {
     width: 282px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_follow\.scss}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_follow\.scss}line{font-family:\0000345}}
   .follow .follow-groups .follow-group.email-group .btn-submit {
     padding: 0.15em 1.42em;
   }
 }
 @media screen and (min-width: 748.8px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_follow\.scss}line{font-family:\0000374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_follow\.scss}line{font-family:\0000351}}
   .follow {
     background-image: url("../img/bg-follow-medium.jpg");
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_follow\.scss}line{font-family:\0000377}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_follow\.scss}line{font-family:\0000354}}
   .follow .follow-groups .follow-group {
     float: left;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_follow\.scss}line{font-family:\0000380}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_follow\.scss}line{font-family:\0000357}}
   .follow .follow-groups .follow-group.email-group {
     width: 60%;
     padding-top: 30px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_follow\.scss}line{font-family:\0000384}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_follow\.scss}line{font-family:\0000361}}
   .follow .follow-groups .follow-group.email-group .input-text {
     width: 260px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_follow\.scss}line{font-family:\0000388}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_follow\.scss}line{font-family:\0000365}}
   .follow .follow-groups .follow-group.social-group {
     width: 40%;
     padding-top: 30px;
   }
 }
 @media screen and (min-width: 1056px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_follow\.scss}line{font-family:\0000396}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_follow\.scss}line{font-family:\0000373}}
   .follow .follow-groups {
     max-width: 1056px;
     margin: 0 auto;

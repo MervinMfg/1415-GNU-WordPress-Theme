@@ -35,6 +35,29 @@
 	max-width: $breakpoint-large;
 	margin: 0 auto;
 }
+.social-icons.black .menu-item a {
+	width: 36px;
+	height: 41px;
+
+	&.icon-facebook {
+		background-position: -10px -60px; 
+	}
+	&.icon-instagram {
+		background-position: -216px -60px; 
+	}
+	&.icon-twitter {
+		background-position: -51px -60px; 
+	}
+	&.icon-pinterest {
+		background-position: -93px -60px; 
+	}
+	&.icon-vimeo {
+		background-position: -134px -60px; 
+	}
+	&.icon-rss {
+		background-position: -176px -60px; 
+	}
+}
 @media screen and (min-width: $breakpoint-medium) {
 	.site-main {
 		padding-top: 75px;

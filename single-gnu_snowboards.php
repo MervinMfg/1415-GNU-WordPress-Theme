@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Snowboards Detail Template
+Template Name: Snowboards Detail
 */
 	get_header();
 	if (have_posts()) : while (have_posts()) : the_post();

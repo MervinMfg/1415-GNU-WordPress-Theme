@@ -58,14 +58,14 @@ GNU.MainMenu.prototype = {
 					$(this).removeClass('active');
 					menuHeight = 0;
 					headerHeight = menuHeight + $('.site-header .header-main .site-title').height() + 20;
-					TweenLite.to('.site-header .header-main .primary-navigation', .5, {height: menuHeight});
-					TweenLite.to('.site-header .header-main', .5, {height: headerHeight});
+					TweenLite.to('.site-header .header-main .primary-navigation', 0.5, {height: menuHeight});
+					TweenLite.to('.site-header .header-main', 0.5, {height: headerHeight});
 				} else {
 					$(this).addClass('active');
 					menuHeight = $('.site-header .header-main .primary-navigation .menu-item').outerHeight() * $('.site-header .header-main .primary-navigation .nav-menu').children().length;
 					headerHeight = menuHeight + $('.site-header .header-main .site-title').height() + 20;
-					TweenLite.to('.site-header .header-main .primary-navigation', .5, {height: menuHeight});
-					TweenLite.to('.site-header .header-main', .5, {height: headerHeight});
+					TweenLite.to('.site-header .header-main .primary-navigation', 0.5, {height: menuHeight});
+					TweenLite.to('.site-header .header-main', 0.5, {height: headerHeight});
 				}
 				
 			});
@@ -77,14 +77,14 @@ GNU.MainMenu.prototype = {
 					$(this).removeClass('active');
 					menuHeight = 0;
 					headerHeight = menuHeight + $('.site-header .header-main .site-title').height() + 20;
-					TweenLite.to('.site-header .header-main .primary-navigation', .3, {height: menuHeight});
-					TweenLite.to('.site-header .header-main', .3, {height: headerHeight});
+					TweenLite.to('.site-header .header-main .primary-navigation', 0.3, {height: menuHeight});
+					TweenLite.to('.site-header .header-main', 0.3, {height: headerHeight});
 				} else {
 					$(this).addClass('active');
 					menuHeight = $('.site-header .header-main .primary-navigation .menu-item').outerHeight();
 					headerHeight = menuHeight + $('.site-header .header-main .site-title').height() + 20;
-					TweenLite.to('.site-header .header-main .primary-navigation', .3, {height: menuHeight});
-					TweenLite.to('.site-header .header-main', .3, {height: headerHeight});
+					TweenLite.to('.site-header .header-main .primary-navigation', 0.3, {height: menuHeight});
+					TweenLite.to('.site-header .header-main', 0.3, {height: headerHeight});
 				}
 			});
 		}
@@ -112,26 +112,7 @@ GNU.MainMenu.prototype = {
 			self.config.scrollController.removeScene(self.config.scene2);
 		}
 		// check browser size
-		if ( GNU.Main.utilities.responsiveCheck() == 'medium' ) {
-			// TABLET SIZE ANIMATION
-			// set up scenes/tweens
-			tween = new TweenMax.to(".site-header .header-main", 1, {height: "71px", display: 'block', ease: Linear.easeNone});
-			self.config.scene1 = new ScrollScene({duration: 409}).setTween(tween).addTo(self.config.scrollController);
-			tween = new TimelineMax().add([
-				TweenMax.to(".site-header", 1, {backgroundPosition: 'top center', ease: Linear.easeNone}),
-				TweenMax.to(".site-header .header-wrapper", 1, {backgroundPosition: '0 20px', ease: Linear.easeNone}),
-				TweenMax.to(".site-header .header-main .takeover", 1, {opacity: 0, ease: Linear.easeNone}),
-				TweenMax.to(".site-header .header-main .takeover .photo", 1, {top: 0, ease: Linear.easeNone}),
-				TweenMax.to(".site-header .header-main .site-title", 1, {display: 'block', top: '20px', left: '0px', ease: Linear.easeNone}),
-				TweenMax.to(".site-header .header-main .primary-navigation", 1, {top: '20px', left: '146px', backgroundPosition: '-590px 0px', width: 'auto', ease: Linear.easeNone}),
-				TweenMax.to(".site-header .header-main .primary-navigation .nav-menu", 1, {fontSize: '22px', ease: Linear.easeNone}),
-				TweenMax.to(".site-header .header-main .quick-cart-toggle", 1, {display: 'block', opacity: 1, ease: Linear.easeNone}),
-				TweenMax.to(".site-header .header-main .search-toggle", 1, {display: 'block', opacity: 1, ease: Linear.easeNone}),
-				TweenMax.to(".site-header .takeover-green-bar", 1, {display: 'block', opacity: 1, ease: Linear.easeNone}),
-				TweenMax.to(".site-header .takeover-white-fade", 1, {display: 'none', opacity: 0, ease: Linear.easeNone})
-			]);
-			self.config.scene2 = new ScrollScene({offset: 227, duration: 182}).setTween(tween).addTo(self.config.scrollController);
-		} else if ( GNU.Main.utilities.responsiveCheck() == 'large') {
+		if ( GNU.Main.utilities.responsiveCheck() == 'large') {
 			// DESKTOP SIZE ANIMATION
 			// set up scenes/tweens
 			tween = new TweenMax.to(".site-header .header-main", 1, {height: "51px", display: 'block', ease: Linear.easeNone});

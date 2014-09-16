@@ -51,7 +51,6 @@ GNU.FeaturedPosts.prototype = {
 		if ( GNU.Main.utilities.responsiveCheck() === 'large' ) {
 			$('.featured-posts').addClass('animate');
 			tween = new TweenMax.to('.featured-posts .featured-post-list .featured-post', 1, {marginLeft: "0px", marginRight: "0px", ease: Linear.easeNone});
-			//tween = new TweenMax.to('.featured-posts .featured-post-list .featured-post', 1, {x: "0px", force3D: true, ease: Linear.easeNone});
 			self.config.scene = new ScrollScene({triggerElement: '.featured-posts', offset: $(window).height()/2*-1, duration: $(window).height()/2}).setTween(tween).addTo(self.config.scrollController);
 		}
 	}

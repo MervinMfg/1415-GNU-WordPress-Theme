@@ -58,14 +58,6 @@
 			}
 		}
 	}
-	.active-takeover .featured-slider .slide-list .slide-item .takeover-overlay {
-		width: 100%;
-		height: 100%;
-		background-color: $black;
-		position: absolute;
-		z-index: 20;
-		@include vendorize(opacity, 0.65);
-	}
 }
 @media screen and (min-width: $breakpoint-large) {
 	.featured-slider {
@@ -83,5 +75,13 @@
 				}
 			}
 		}
+	}
+	.active-takeover .featured-slider .slide-list .slide-item .takeover-overlay {
+		width: 100%;
+		height: 100%;
+		background-color: $black;
+		position: absolute;
+		z-index: 20;
+		@include vendorize(opacity, 0.65);
 	}
 }

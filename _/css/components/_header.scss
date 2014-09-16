@@ -409,101 +409,6 @@
 			}
 		}
 	}
-	.active-takeover .site-header {
-		background-position: bottom center;
-
-		.takeover-green-bar {
-			background: url('../img/bg-green-triangles.png') repeat-x;
-			height: 51px;
-			width: 100%;
-			position: absolute;
-			bottom: 0px;
-			@include vendorize(opacity, 0);
-		}
-		.takeover-white-fade {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 40px;
-			background: url('../img/bg-white-vertical-fade.png') repeat-x;
-			z-index: 5;
-		}
-		.header-wrapper {
-			background: url('../img/bg-black-triangles.png') repeat-x;
-			background-position: 0 202px;
-		}
-		.header-main {
-			height: 480px;
-
-			.site-title {
-				top: 202px;
-				bottom: auto;
-				left: -146px;
-			}
-			.quick-cart-toggle,
-			.search-toggle {
-				display: none;
-				@include vendorize(opacity, 0);
-			}
-			.primary-navigation {
-				bottom: auto;
-				top: 202px;
-				left: 0;
-				width: 100%;
-				padding: 23px 45px 0 10px;
-				background-position: -1076px 0;
-
-				.nav-menu {
-					font-size: 19px;
-				}
-			}
-			.secondary-navigation {
-				z-index: 6;
-
-				.nav-menu {
-					background: none;
-				}
-			}
-		}
-		.takeover {
-			height: 480px;
-			display: block;
-			position: relative;
-			max-width: 768px;
-			margin: 0 auto;
-			position: absolute;
-			width: 100%;
-			bottom: 0;
-			left: 0;
-
-			.logo {
-				width: 366px;
-				height: 163px;
-				margin: 20px 0 102px 20px;
-			}
-			.h1 {
-				font-size: 4.8em;
-				line-height: 1em;
-				width: 386px;
-				text-align: right;
-				margin-bottom: 8px;
-			}
-			.h5 {
-				width: 386px;
-				text-transform: uppercase;
-				text-align: right;
-			}
-			.photo {
-				position: absolute;
-				top: -4px;
-				right: -265px;
-				width: 625px;
-				height: 480px;
-				z-index: 5;
-			}
-		}
-	}
 }
 @media screen and (min-width: $breakpoint-large) {
 	.site-header {
@@ -550,32 +455,98 @@
 		}
 	}
 	.active-takeover .site-header {
+		background-position: bottom center;
+
+		.takeover-green-bar {
+			background: url('../img/bg-green-triangles.png') repeat-x;
+			height: 51px;
+			width: 100%;
+			position: absolute;
+			bottom: 0px;
+			@include vendorize(opacity, 0);
+		}
+		.takeover-white-fade {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 40px;
+			background: url('../img/bg-white-vertical-fade.png') repeat-x;
+			z-index: 5;
+		}
+		.header-wrapper {
+			background: url('../img/bg-black-triangles.png') repeat-x;
+			background-position: 0 202px;
+		}
 		.header-main {
+			height: 480px;
+
 			.site-title {
+				top: 202px;
+				bottom: auto;
+				left: -146px;
+				@include vendorize(opacity, 0);
+			}
+			.quick-cart-toggle,
+			.search-toggle {
+				display: none;
 				@include vendorize(opacity, 0);
 			}
 			.primary-navigation {
-				padding-left: 12px;
+				bottom: auto;
+				top: 202px;
+				left: 0;
+				width: 100%;
+				padding: 23px 45px 0 12px;
+				background-position: -1076px 0;
 
 				.nav-menu {
 					font-size: 22px;
 				}
 			}
+			.secondary-navigation {
+				z-index: 6;
+
+				.nav-menu {
+					background: none;
+				}
+			}
 		}
 		.takeover {
+			height: 480px;
+			display: block;
+			position: relative;
 			max-width: 1056px;
+			margin: 0 auto;
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+			left: 0;
 
 			.logo {
-				margin-left: 84px;
+				width: 366px;
+				height: 163px;
+				margin: 20px 0 102px 84px;
 			}
 			.h1 {
+				font-size: 4.8em;
+				line-height: 1em;
 				width: 450px;
+				text-align: right;
+				margin-bottom: 8px;
 			}
 			.h5 {
 				width: 450px;
+				text-transform: uppercase;
+				text-align: right;
 			}
 			.photo {
+				position: absolute;
+				top: -4px;
 				right: -100px;
+				width: 625px;
+				height: 480px;
+				z-index: 5;
 			}
 		}
 	}

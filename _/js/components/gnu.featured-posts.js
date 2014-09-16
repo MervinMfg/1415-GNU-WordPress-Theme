@@ -48,7 +48,7 @@ GNU.FeaturedPosts.prototype = {
 		if (typeof self.config.scene !== 'undefined') {
 			self.config.scrollController.removeScene(self.config.scene);
 		}
-		if ( GNU.Main.utilities.responsiveCheck() === 'medium' || GNU.Main.utilities.responsiveCheck() === 'large' ) {
+		if ( GNU.Main.utilities.responsiveCheck() === 'large' ) {
 			$('.featured-posts').addClass('animate');
 			tween = new TweenMax.to('.featured-posts .featured-post-list .featured-post', 1, {marginLeft: "0px", marginRight: "0px", ease: Linear.easeNone});
 			//tween = new TweenMax.to('.featured-posts .featured-post-list .featured-post', 1, {x: "0px", force3D: true, ease: Linear.easeNone});

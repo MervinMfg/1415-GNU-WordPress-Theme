@@ -42,7 +42,10 @@ GNU.Follow.prototype = {
 		if (typeof self.config.scene !== 'undefined') {
 			self.config.scrollController.removeScene(self.config.scene);
 		}
-		tween = new TweenMax.to('.follow', 1, {backgroundPosition: "50% 30%", ease: Linear.easeNone});
-		self.config.scene = new ScrollScene({triggerElement: '.follow', offset: $(window).height()/2*-1, duration: $('.follow').outerHeight() + $('.site-footer').outerHeight()}).setTween(tween).addTo(self.config.scrollController);
+		// if we're large (desktop), do the scroll effect
+		if ( GNU.Main.utilities.responsiveCheck() === 'large' ) {
+			tween = new TweenMax.to('.follow', 1, {backgroundPosition: "50% 30%", ease: Linear.easeNone});
+			self.config.scene = new ScrollScene({triggerElement: '.follow', offset: $(window).height()/2*-1, duration: $('.follow').outerHeight() + $('.site-footer').outerHeight()}).setTween(tween).addTo(self.config.scrollController);
+		}
 	}
 };

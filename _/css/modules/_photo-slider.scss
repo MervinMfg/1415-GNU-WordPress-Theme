@@ -3,48 +3,68 @@
    ========================================================================== */
 
 .photo-slider {
-	display: none;
+	position: relative;
+	height: 260px;
+
+	.photo-list {
+		.photo-item {
+			height: 260px;
+			background-repeat: none;
+			overflow: hidden;
+			background-size: cover;
+			background-position: 50% 50%;
+
+			.photo-details {
+				margin-top: 175px;
+				padding: 0 20px;
+
+				.photo-title {
+					text-transform: uppercase;
+				}
+				.photo-credits {
+					line-height: 1em;
+				}
+				&.light {
+					.photo-title,
+					.photo-credits {
+						color: $white;
+					}
+				}
+				&.right {
+					text-align: right;
+				}
+			}
+		}
+		.owl-dots {
+			position: absolute;
+			bottom: 10px;
+			width: 100%;
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-small) {
+	.photo-slider {
+		height: 300px;
+
+		.photo-list {
+			.photo-item {
+				height: 300px;
+			}
+		}
+	}
 }
 @media screen and (min-width: $breakpoint-medium) {
 	.photo-slider {
-		display: block;
-		position: relative;
 		height: 420px;
-		//@include vendorize(transform, translateZ(0)); // triggers GPU, Safari fix
 
 		.photo-list {
 			.photo-item {
 				height: 420px;
-				background-repeat: none;
-				overflow: hidden;
-				background-size: cover;
-				background-position: 50% 100%;
 
 				.photo-details {
 					margin-top: 200px;
 					padding: 0 40px;
-
-					.photo-title {
-						text-transform: uppercase;
-					}
-					.photo-credits {
-						line-height: 1em;
-					}
-					&.light {
-						.photo-title,
-						.photo-credits {
-							color: $white;
-						}
-					}
-					&.right {
-						text-align: right;
-					}
 				}
-			}
-			.owl-dots {
-				position: absolute;
-				bottom: 10px;
-				width: 100%;
 			}
 		}
 	}
@@ -52,10 +72,12 @@
 @media screen and (min-width: $breakpoint-large) {
 	.photo-slider {
 		height: 560px;
+		//@include vendorize(transform, translateZ(0)); // triggers GPU, Safari fix
 
 		.photo-list {
 			.photo-item {
 				height: 560px;
+				background-position: 50% 100%;
 
 				.photo-details {
 					margin: 270px auto 0;

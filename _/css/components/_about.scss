@@ -1,0 +1,76 @@
+/* ==========================================================================
+   COMPONENTS/_ABOUT.SCSS
+   ========================================================================== */
+
+.about-section {
+	text-align: center;
+	padding: 40px 20px 0;
+
+	.title {
+		margin-bottom: 12px;
+	}
+	.subtitle {
+		margin-bottom: 12px;
+	}
+	.content {
+		p {
+			margin-bottom: 1em;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	&.about-info {
+		background: $white url('../img/bg-grey-triangles.png') center center;
+		padding-bottom: 40px;
+	}
+	&.about-technology {
+		background: $white url('../img/bg-section-header.png') center center;
+		padding-bottom: 20px;
+	}
+	&.about-partners {
+		padding-bottom: 20px;
+
+		.partners-list {
+			display: none;
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-small) {
+	//
+}
+@media screen and (min-width: $breakpoint-medium) {
+	.about-section {
+		.title,
+		.subtitle,
+		.content {
+			max-width: $breakpoint-large;
+			margin-right: auto;
+			margin-left: auto;
+		}
+		.content p {
+			max-width: $breakpoint-medium;
+			margin-right: auto;
+			margin-left: auto;
+		}
+		&.about-partners .partners-list {
+			display: block;
+			padding-bottom: 20px;
+
+			li {
+				max-width: 120px;
+				display: inline-block;
+				vertical-align: middle;
+				padding: 0 10px;
+
+				img {
+					max-height: 100px;
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-large) {
+	//
+}

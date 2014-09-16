@@ -59,13 +59,17 @@ GNU.PhotoSlider.prototype = {
 		var self, tween;
 		self = this;
 		// reset background position css
-		$('.photo-slider .photo-list .photo-item').css('background-position', '50% 100%');
+		if ( GNU.Main.utilities.responsiveCheck() === 'large' ) {
+			$('.photo-slider .photo-list .photo-item').css('background-position', '50% 100%');
+		} else {
+			$('.photo-slider .photo-list .photo-item').css('background-position', '50% 50%');
+		}
 		// if scene already exists, remove it
 		if (typeof self.config.scene !== 'undefined') {
 			self.config.scrollController.removeScene(self.config.scene);
 		}
-		// if we're medium or bigger, do the scroll. hidden on base and small
-		if ( GNU.Main.utilities.responsiveCheck() === 'medium' || GNU.Main.utilities.responsiveCheck() === 'large' ) {
+		// if we're large (desktop), do the scroll. hidden on base and small
+		if ( GNU.Main.utilities.responsiveCheck() === 'large' ) {
 			tween = new TweenMax.to('.photo-slider .photo-list .photo-item', 1, {backgroundPosition: "50% 0%", ease: Linear.easeNone});
 			self.config.scene = new ScrollScene({triggerElement: '.photo-slider', offset: $(window).height()/2*-1, duration: $(window).height() + $('.photo-slider').outerHeight()}).setTween(tween).addTo(self.config.scrollController);
 		}

@@ -153,6 +153,13 @@
                 "operator": "==",
                 "value": "gnu_team"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/about.php"
+            }
         ]
     ],
     "menu_order": 0,

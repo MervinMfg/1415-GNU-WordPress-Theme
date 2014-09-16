@@ -45,6 +45,8 @@ GNU.Main = {
 			self.productDetailsInit();
 		} else if ($body.hasClass('single-gnu_team')) {
 			self.teamDetailInit();
+		} else if ($body.hasClass('page-template-page-templatesabout-php')) {
+			self.aboutInit();
 		}
 	},
 	homeInit: function () {
@@ -76,6 +78,11 @@ GNU.Main = {
 		new GNU.FeaturedPosts(self.config.scrollController);
 		new GNU.PhotoSlider(self.config.scrollController);
 		new GNU.FeaturedProducts();
+	},
+	aboutInit: function () {
+		var self = this;
+		new GNU.PhotoSlider(self.config.scrollController);
+		new GNU.Follow(self.config.scrollController);
 	},
 	storeLocatorInit: function () {
 		var self = this;

@@ -1,0 +1,90 @@
+/* ==========================================================================
+   COMPONENTS/_PARTNERS.SCSS
+   ========================================================================== */
+
+.partners {
+	.content {
+		padding: 20px;
+
+		.partner-list {
+			.partner {
+				padding-bottom: 40px;
+
+				.partner-images {
+					width: 35%;
+					display: inline-block;
+					vertical-align: middle;
+
+					.partner-image {
+						display: none;
+						padding-right: 10px;
+
+						&.logo {
+							display: block;
+						}
+					}
+				}
+				.partner-title {
+					width: 64%;
+					display: inline-block;
+					vertical-align: middle;
+				}
+				.partner-description {
+					padding-top: 20px;
+					clear: both;
+
+					p {
+						margin-bottom: 1em;
+
+						.category {
+							text-transform: uppercase;
+							font-weight: 700;
+							margin-right: 0.5em;
+						}
+					}
+					.partner-link {
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-small) {
+	.partners {
+		.content {
+			.partner-list {
+				.partner {
+					.partner-images {
+						width: 30%;
+					}
+					.partner-title {
+						width: 69%;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-medium) {
+	.partners {
+		.content {
+			max-width: $breakpoint-large;
+			margin: 0 auto;
+			padding: 20px;
+
+			.partner-list {
+				.partner {
+					width: 49%;
+					display: inline-block;
+					vertical-align: top;
+					padding-left: 20px;
+					padding-right: 20px;
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-large) {
+	//
+}

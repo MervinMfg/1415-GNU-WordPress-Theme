@@ -10,7 +10,7 @@ Template Name: Product Overview
 				<header class="product-header section-header">
 					<div class="header-wrapper">
 						<h2 class="title">Mens Snowboards</h2>
-						<h5 class="subtitle">Something about gold metal technology</h5>
+						<h5 class="subtitle">Innovation Creation Since 1977</h5>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">
@@ -74,7 +74,7 @@ Template Name: Product Overview
 				<header class="product-header section-header alt">
 					<div class="header-wrapper">
 						<h2 class="title">Womens Snowboards</h2>
-						<h5 class="subtitle">Something about gold metal technology</h5>
+						<h5 class="subtitle">Barrett Christy’s High Performance Vision</h5>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">
@@ -298,7 +298,7 @@ Template Name: Product Overview
 				<header class="product-header section-header">
 					<div class="header-wrapper">
 						<h2 class="title">Wearables</h2>
-						<h5 class="subtitle">Designed to help you progress to the highest level</h5>
+						<h5 class="subtitle">The Weirdwear Collection</h5>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">

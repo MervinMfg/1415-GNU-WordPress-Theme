@@ -68,7 +68,7 @@ GNU.PhotoSlider.prototype = {
 		if (typeof self.config.scene !== 'undefined') {
 			self.config.scrollController.removeScene(self.config.scene);
 		}
-		// if we're large (desktop), do the scroll. hidden on base and small
+		// if we're large (desktop), do the scroll effect
 		if ( GNU.Main.utilities.responsiveCheck() === 'large' ) {
 			tween = new TweenMax.to('.photo-slider .photo-list .photo-item', 1, {backgroundPosition: "50% 0%", ease: Linear.easeNone});
 			self.config.scene = new ScrollScene({triggerElement: '.photo-slider', offset: $(window).height()/2*-1, duration: $(window).height() + $('.photo-slider').outerHeight()}).setTween(tween).addTo(self.config.scrollController);

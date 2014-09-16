@@ -3460,13 +3460,17 @@ body.international .shopping-cart-wrapper {
 }
 
 @media screen and (min-width: 748.8px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_about\.scss}line{font-family:\0000345}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_about\.scss}line{font-family:\0000342}}
   .about-section .title,
   .about-section .subtitle,
   .about-section .content {
     max-width: 1056px;
     margin-right: auto;
     margin-left: auto;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_about\.scss}line{font-family:\0000349}}
+  .about-section .title {
+    margin-bottom: 18px;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_about\.scss}line{font-family:\0000352}}
   .about-section .content p {
@@ -3477,18 +3481,45 @@ body.international .shopping-cart-wrapper {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_about\.scss}line{font-family:\0000357}}
   .about-section.about-partners .partners-list {
     display: block;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_about\.scss}line{font-family:\0000361}}
   .about-section.about-partners .partners-list li {
     max-width: 120px;
     display: inline-block;
     vertical-align: middle;
-    padding: 0 10px;
+    padding: 15px 10px;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_about\.scss}line{font-family:\0000367}}
   .about-section.about-partners .partners-list li img {
     max-height: 100px;
+  }
+}
+@media screen and (min-width: 1056px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_about\.scss}line{font-family:\0000375}}
+  .about-section {
+    text-align: center;
+    padding: 60px 20px 0;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_about\.scss}line{font-family:\0000379}}
+  .about-section .title {
+    margin-bottom: 28px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_about\.scss}line{font-family:\0000382}}
+  .about-section .subtitle {
+    margin-bottom: 26px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_about\.scss}line{font-family:\0000385}}
+  .about-section .content p {
+    margin-bottom: 1.5em;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_about\.scss}line{font-family:\0000388}}
+  .about-section.about-partners .partners-list {
+    padding-bottom: 20px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_about\.scss}line{font-family:\0000391}}
+  .about-section.about-partners .partners-list li {
+    padding: 20px 10px;
   }
 }
 /* ==========================================================================

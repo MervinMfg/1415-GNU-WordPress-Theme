@@ -37,9 +37,6 @@
 		}
 	}
 }
-@media screen and (min-width: $breakpoint-small) {
-	//
-}
 @media screen and (min-width: $breakpoint-medium) {
 	.about-section {
 		.title,
@@ -49,6 +46,9 @@
 			margin-right: auto;
 			margin-left: auto;
 		}
+		.title {
+			margin-bottom: 18px;
+		}
 		.content p {
 			max-width: $breakpoint-medium;
 			margin-right: auto;
@@ -56,13 +56,13 @@
 		}
 		&.about-partners .partners-list {
 			display: block;
-			padding-bottom: 20px;
+			padding-bottom: 15px;
 
 			li {
 				max-width: 120px;
 				display: inline-block;
 				vertical-align: middle;
-				padding: 0 10px;
+				padding: 15px 10px;
 
 				img {
 					max-height: 100px;
@@ -72,5 +72,25 @@
 	}
 }
 @media screen and (min-width: $breakpoint-large) {
-	//
+	.about-section {
+		text-align: center;
+		padding: 60px 20px 0;
+
+		.title {
+			margin-bottom: 28px;
+		}
+		.subtitle {
+			margin-bottom: 26px;
+		}
+		.content p {
+			margin-bottom: 1.5em;
+		}
+		&.about-partners .partners-list {
+			padding-bottom: 20px;
+
+			li {
+				padding: 20px 10px;
+			}
+		}
+	}
 }

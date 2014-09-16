@@ -27,7 +27,7 @@ GNU.RegionSelector.prototype = {
 		} else {
 			if (navigator.cookieEnabled === true) {
 				// if no region cookie has been set, open selector if on product page
-				if ($body.hasClass('page-template-page-templatesshopping-cart-php') || $body.hasClass('page-template-page-templatesoverview-products-php') || $body.hasClass('single-gnu_supplies') || $body.hasClass('single-gnu_bindings') || $body.hasClass('single-gnu_snowboards')) {
+				if ($body.hasClass('page-template-page-templatesshopping-cart-php') || $body.hasClass('page-template-page-templatesproduct-overview-php') || $body.hasClass('single-gnu_snowboards') || $body.hasClass('single-gnu_bindings') || $body.hasClass('single-gnu_supplies')) {
 					self.overlayInit();
 				}
 				// pick us by default, but don't set cookie

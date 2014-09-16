@@ -57,7 +57,11 @@ GNU.FeaturedSlider.prototype = {
 		self = this;
 		// set up background scroll animation functionality
 		// reset background position css
-		$('.featured-slider .slide-list .slide-item').css('background-position', '50% 100%');
+		if ( GNU.Main.utilities.responsiveCheck() === 'large' ) {
+			$('.featured-slider .slide-list .slide-item').css('background-position', '50% 100%');
+		} else {
+			$('.featured-slider .slide-list .slide-item').css('background-position', '50% 50%');
+		}
 		// reset takeover overlay
 		$('.active-takeover .featured-slider .slide-list .slide-item .takeover-overlay').removeAttr('style');
 		// if scene already exists, remove it
@@ -67,8 +71,8 @@ GNU.FeaturedSlider.prototype = {
 		if (typeof self.config.scene2 !== 'undefined') {
 			self.config.scrollController.removeScene(self.config.scene2);
 		}
-		// if we're medium or bigger, do the scroll. hidden on base and small
-		if ( GNU.Main.utilities.responsiveCheck() === 'medium' || GNU.Main.utilities.responsiveCheck() === 'large' ) {
+		// if we're desktop, do the scroll
+		if ( GNU.Main.utilities.responsiveCheck() === 'large' ) {
 			//controller = new ScrollMagic({vertical: true, container: '#page'});
 			tween = new TweenMax.to('.featured-slider .slide-list .slide-item', 1, {backgroundPosition: "50% 0%", ease: Linear.easeNone});
 			self.config.scene1 = new ScrollScene({triggerElement: '.featured-slider', offset: $(window).height()/2*-1, duration: $(window).height() + $('.featured-slider').outerHeight()}).setTween(tween).addTo(self.config.scrollController);

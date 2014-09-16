@@ -5,7 +5,6 @@
 .featured-slider {
 	position: relative;
 	height: 195px;
-	//@include vendorize(transform, translateZ(0)); // triggers GPU, Safari fix
 
 	.slide-list {
 		.slide-item {
@@ -13,7 +12,7 @@
 			background-repeat: none;
 			overflow: hidden;
 			background-size: cover;
-			background-position: 50% 100%;
+			background-position: 50% 50%;
 
 			a {
 				display: block;
@@ -62,9 +61,11 @@
 @media screen and (min-width: $breakpoint-large) {
 	.featured-slider {
 		height: 410px;
+		//@include vendorize(transform, translateZ(0)); // triggers GPU, Safari fix
 
 		.slide-list .slide-item {
 			height: 410px;
+			background-position: 50% 100%;
 
 			.slide-details {
 				margin: 0 auto;

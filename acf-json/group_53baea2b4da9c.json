@@ -160,6 +160,13 @@
                 "operator": "==",
                 "value": "page-templates\/about.php"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/team-overview.php"
+            }
         ]
     ],
     "menu_order": 0,

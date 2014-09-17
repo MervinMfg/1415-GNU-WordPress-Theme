@@ -3,6 +3,19 @@
     "title": "Team Details",
     "fields": [
         {
+            "key": "field_5418d77d6f2b0",
+            "label": "Overview Photo",
+            "name": "gnu_team_overview_photo",
+            "prefix": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all"
+        },
+        {
             "key": "field_5050391f48a1d",
             "label": "Profile Photo",
             "name": "gnu_team_profile_photo",
@@ -11,8 +24,8 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "return_format": "array",
             "preview_size": "thumbnail",
-            "return_format": "id",
             "library": "all"
         },
         {

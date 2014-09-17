@@ -79,7 +79,9 @@
 #womens-bindings,
 #wearables,
 #headwear,
-#accessories {
+#accessories,
+#mens-team,
+#womens-team {
 	.product-list .product {
 		width: 150px;
 		height: 190px;
@@ -98,7 +100,6 @@
 #compare-bindings {
 	display: none;
 }
-
 @media screen and (min-width: $breakpoint-medium) {
 	.product-overview {
 		.product-filters {
@@ -176,7 +177,9 @@
 	#womens-bindings,
 	#wearables,
 	#headwear,
-	#accessories {
+	#accessories,
+	#mens-team,
+	#womens-team {
 		.product-list .product {
 			width: 350px;
 			height: 445px;
@@ -295,7 +298,4 @@
 			}
 		}
 	}
-}
-@media screen and (min-width: $breakpoint-large) {
-	//
 }

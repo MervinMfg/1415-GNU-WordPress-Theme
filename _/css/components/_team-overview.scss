@@ -1,0 +1,60 @@
+/* ==========================================================================
+   COMPONENTS/_TEAM-OVERVIEW.SCSS
+   ========================================================================== */
+
+.team-overview {
+	.more-riders {
+		display: none;
+	}
+}
+@media screen and (min-width: $breakpoint-small) {
+	//
+}
+@media screen and (min-width: $breakpoint-medium) {
+	.team-overview {
+		.more-riders {
+			display: block;
+			text-align: center;
+			background: $white url('../img/bg-grey-triangles-details.png') center center;
+			padding: 40px 20px;
+
+			.title {
+				margin-bottom: 20px;
+			}
+			.rider-list {
+				.list-item {
+					display: inline-block;
+					margin: 0 10px;
+				}
+			}
+		}
+	}
+	#mens-team {
+		.product-header .signs {
+			.post {
+				top: 40px;
+			}
+			.sign {
+				top: 60px;
+				@include vendorize(transform, rotate(-8deg));
+			}
+		}
+	}
+	#womens-team {
+		.product-header .signs {
+			.post {
+				top: 60px;
+			}
+			.sign {
+				top: 80px;
+				@include vendorize(transform, rotate(8deg));
+			}
+		}
+		.more-riders {
+			background: $white url('../img/bg-grey-circles.png') center center;
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-large) {
+	//
+}

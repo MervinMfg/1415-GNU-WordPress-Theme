@@ -43,6 +43,8 @@ GNU.Main = {
 			self.storeLocatorInit();
 		} else if ($body.hasClass('single-gnu_snowboards') || $body.hasClass('single-gnu_bindings') || $body.hasClass('single-gnu_accessories') || $body.hasClass('single-gnu_apparel')) {
 			self.productDetailsInit();
+		} else if ($body.hasClass('page-template-page-templatesteam-overview-php')) {
+			self.teamOverviewInit();
 		} else if ($body.hasClass('single-gnu_team')) {
 			self.teamDetailInit();
 		} else if ($body.hasClass('page-template-page-templatesabout-php')) {
@@ -73,6 +75,15 @@ GNU.Main = {
 		new GNU.ProductDetails(self.config.scrollController);
 		new GNU.PhotoSlider(self.config.scrollController);
 		new GNU.FeaturedProducts();
+	},
+	teamOverviewInit: function () {
+		var self = this;
+		new GNU.PhotoSlider(self.config.scrollController);
+		// grab all section headers and assign correct scrolling
+		$('.section-header').each(function (index) {
+			new GNU.SectionHeader($(this), self.config.scrollController);
+		});
+		new GNU.ProductOverview();
 	},
 	teamDetailInit: function () {
 		var self = this;

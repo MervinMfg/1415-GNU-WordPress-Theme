@@ -3,22 +3,30 @@
 Template Name: Shopping Cart
 */
 ?>
-<?php get_header(); ?>
-		<div id="content">
-			<div class="main-column pad-top">
-			
-				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					
+<?php
+	get_header();
+	if (have_posts()) : while (have_posts()) : the_post();
+?>
+
+			<section class="shopping-cart">
+				<header class="product-header section-header">
+					<div class="header-wrapper">
+						<h1 class="title"><?php the_title(); ?></h1>
+						<h5 class="subtitle">Putting the wild on Mt. Weird</h5>
+					</div>
+					<div class="vibe vibe-6"></div>
+				</header>
 				<div class="shopping-cart-wrapper">
-					<h1><?php the_title(); ?></h1>
-					<div id="shopping-cart"><span class="loading"></span></div>
+					<div id="shopping-cart">
+						<span class="loading"></span>
+					</div>
 
 					<?php the_content(); ?>
 
 				</div>
+			</section>
 
-				<?php endwhile; endif; ?>
-
-			</div><!-- end .main-column -->
-		</div><!-- end #content -->
-<?php get_footer(); ?>
+<?php
+	endwhile; endif;
+	get_footer();
+?>

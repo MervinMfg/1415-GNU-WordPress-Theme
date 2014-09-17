@@ -197,9 +197,8 @@ GNU.Shop.prototype = {
 		TweenLite.to('.site-header .quick-cart', 0.2, {opacity: 0, onComplete: function () {$('.site-header .quick-cart').addClass('hide');}});
 	},
 	shoppingCartInit: function () {
-		var self, lang, regionCookie;
+		var self, currencyCookie;
 		self = this;
-		
 		Shopatron('#shopping-cart').getCart({
 			imageWidth: 100,
 			imageHeight: 100
@@ -209,17 +208,17 @@ GNU.Shop.prototype = {
 			complete: function () {}
 		});
 		// check for the region
-		regionCookie = GNU.Main.utilities.cookie.getCookie('gnu_region');
-		if (regionCookie !== null || regionCookie !== "") {
-			lang = regionCookie;
+		currencyCookie = GNU.Main.utilities.cookie.getCookie('gnu_currency');
+		if (currencyCookie !== null || currencyCookie !== "") {
+			lang = currencyCookie;
 		} else {
-			lang = 'us';
+			lang = 'USD';
 		}
 		// update links on page
-		if (lang === 'ca') {
+		if (lang === 'CAD') {
 			$("a.link-ordering-info").prop("href", "http://gnu-ca.shptron.com/k/ordering");
 			$("a.link-return-policy").prop("href", "http://gnu-ca.shptron.com/k/policies#Returns");
-		} else if (lang === 'euro') {
+		} else if (lang === 'EUD') {
 			$("a.link-ordering-info").prop("href", "http://gnu-euro.shptron.com/k/ordering");
 			$("a.link-return-policy").prop("href", "http://gnu-euro.shptron.com/k/policies#Returns");
 		} else {
@@ -233,7 +232,7 @@ GNU.Shop.prototype = {
 			if (navigator.cookieEnabled === false) {
 				alert('Enable cookies in your browser in order to select your region.');
 			} else {
-				self.regionSelectorOverlayInit();
+				GNU.Main.config.regionSelector.overlayInit();
 			}
 		});
 	},

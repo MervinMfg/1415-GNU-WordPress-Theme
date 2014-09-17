@@ -9,16 +9,17 @@ GNU.Main = {
 	config: {
 		wpImgPath: '/wp-content/themes/1415-GNU-WordPress-Theme/_/img/',
 		shop: null,
+		regionSelector: null,
 		scrollController: null
 	},
 	init: function () {
-		var self, shop, regionSelector, mainMenu, search, $body;
+		var self, shop, mainMenu, search, $body;
 		self = this;
 		$body = $('body');
 		// init global components
 		self.config.scrollController = new ScrollMagic({ vertical: true });
 		self.config.shop = new GNU.Shop();
-		regionSelector = new GNU.RegionSelector();
+		self.config.regionSelector = new GNU.RegionSelector();
 		mainMenu = new GNU.MainMenu(self.config.scrollController);
 		search = new GNU.Search();
 		// lazy load of images

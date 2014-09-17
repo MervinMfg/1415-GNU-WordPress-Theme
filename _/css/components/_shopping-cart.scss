@@ -1,0 +1,34 @@
+/* ==========================================================================
+   COMPONENTS/_SHOPPING-CART.SCSS
+   ========================================================================== */
+
+.shopping-cart {
+	.shopping-cart-wrapper {
+		max-width: $breakpoint-large;
+		margin: 0 auto;
+
+		p {
+			margin-bottom: 1em;
+		}
+		p,
+		h4 {
+			padding: 0 20px;
+		}
+	}
+}
+body.international .shopping-cart-wrapper {
+	display: none;
+}
+#shopping-cart {
+	min-height: 100px;
+	padding-bottom: 20px;
+
+	.loading {
+		margin: 0 auto;
+	}
+}
+@media screen and (min-width: $breakpoint-medium) {
+	.shopping-cart-wrapper {
+		padding-top: 40px;
+	}
+}

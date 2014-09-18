@@ -68,9 +68,7 @@
             "post_type": [
                 "gnu_snowboards"
             ],
-            "taxonomy": [
-
-            ],
+            "taxonomy": [],
             "filters": [
                 "search"
             ],
@@ -85,7 +83,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "default"
+                "value": "page-templates\/feed-instagram-rss.php"
             }
         ]
     ],

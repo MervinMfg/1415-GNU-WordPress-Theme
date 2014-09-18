@@ -564,7 +564,7 @@
 		padding: 0 40px;
 
 		a {
-			vertical-align: top;
+			vertical-align: middle;
 
 			.nav-icon {
 				display: inline-block;
@@ -572,6 +572,7 @@
 				height: 25px;
 				background-image: url('../img/sprite.png');
 				margin-left: 10px;
+				margin-bottom: -3px;
 			}
 			&.info {
 				.nav-icon {

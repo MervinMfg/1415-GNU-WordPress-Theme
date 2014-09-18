@@ -37,14 +37,13 @@ function gnu_setup() {
 add_action( 'after_setup_theme', 'gnu_setup' );
 
 if ( function_exists( 'add_image_size' ) ) {
+	// thumbnail - 200x200
+	// medium - 640x640
+	// large - 1024x1024
     // additional image sizes
-    add_image_size('blog-thumb', 300, 170, true);
-    add_image_size('home-blog-thumb', 192, 192, true);
-    add_image_size('overview-thumb', 220, 220, true);
-    add_image_size('snowboard-detail', 340, 715, true);
-    add_image_size('square-medium', 300, 300, true);
+    add_image_size('square-medium', 400, 400, true);
+    add_image_size('blog-feature', 640, 360, true);
 }
-
 
 // Scripts & Styles (based on twentythirteen: http://make.wordpress.org/core/tag/twentythirteen/)
 function html5reset_scripts_styles() {
@@ -122,13 +121,32 @@ if ( function_exists('register_sidebar' )) {
 	}
 	add_action( 'widgets_init', 'html5reset_widgets_init' );
 }
+
+
 // Navigation - update coming from twentythirteen
 function post_navigation() {
-	echo '<div class="navigation">';
+	/*echo '<div class="navigation">';
 	echo '	<div class="next-posts">'.get_next_posts_link('&laquo; Older Entries').'</div>';
 	echo '	<div class="prev-posts">'.get_previous_posts_link('Newer Entries &raquo;').'</div>';
-	echo '</div>';
+	echo '</div>';*/
+    global $wp_query;
+    if ( $wp_query->max_num_pages > 1 ) {
+        echo '<div class="pagination">';
+        $big = 999999999; // need an unlikely integer
+        echo paginate_links(
+            array(
+                'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                'format' => '?paged=%#%',
+                'current' => max( 1, get_query_var('paged') ),
+                'total' => $wp_query->max_num_pages,
+                'prev_text'    => __('Prev'),
+                'next_text'    => __('Next')
+            )
+        );
+        echo '</div>';
+    }
 }
+
 // Posted On
 function posted_on() {
 	printf( __( '<span class="sep">Posted </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a> by <span class="byline author vcard">%5$s</span>', '' ),
@@ -223,7 +241,7 @@ function gnu_excerptlength_home($length) {
 }
 // custom excerpt length for home page
 function gnu_excerptlength_blog($length) {
-    return 16;
+    return 40;
 }
 function gnu_excerpt($length_callback='gnu_excerptlength_home') {
     global $post;

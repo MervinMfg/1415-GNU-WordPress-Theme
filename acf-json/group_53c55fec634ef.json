@@ -80,6 +80,13 @@
                 "operator": "==",
                 "value": "gnu_team"
             }
+        ],
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "posts_page"
+            }
         ]
     ],
     "menu_order": 0,

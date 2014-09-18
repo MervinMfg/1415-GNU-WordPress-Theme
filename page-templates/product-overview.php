@@ -9,13 +9,13 @@ Template Name: Product Overview
 			<section id="mens-snowboards" class="product-overview deeplink-top-fix">
 				<header class="product-header section-header">
 					<div class="header-wrapper">
-						<h2 class="title">Mens Snowboards</h2>
+						<h2 class="title">Men's Snowboards</h2>
 						<h5 class="subtitle">Innovation Creation Since 1977</h5>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">
 								<ul>
-									<li class="sign large"><a href="#womens-snowboards">View Womens</a></li>
+									<li class="sign large"><a href="#womens-snowboards">View Women's</a></li>
 								</ul>
 							</nav>
 						</div>
@@ -73,13 +73,13 @@ Template Name: Product Overview
 			<section id="womens-snowboards" class="product-overview deeplink-top-fix">
 				<header class="product-header section-header alt">
 					<div class="header-wrapper">
-						<h2 class="title">Womens Snowboards</h2>
-						<h5 class="subtitle">Barrett Christy’s High Performance Vision</h5>
+						<h2 class="title">Women's Snowboards</h2>
+						<h5 class="subtitle">Gold Metal Technology To Make Magic On</h5>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">
 								<ul>
-									<li class="sign medium"><a href="#mens-snowboards">View Mens</a></li>
+									<li class="sign medium"><a href="#mens-snowboards">View Men's</a></li>
 								</ul>
 							</nav>
 						</div>
@@ -140,13 +140,13 @@ Template Name: Product Overview
 			<section id="mens-bindings" class="product-overview deeplink-top-fix">
 				<header class="product-header section-header alt">
 					<div class="header-wrapper">
-						<h2 class="title">Mens Bindings</h2>
-						<h5 class="subtitle">Front door or backdoor. Pick one and slide on in.</h5>
+						<h2 class="title">Men's Bindings</h2>
+						<h5 class="subtitle">Strangely Comfortable</h5>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">
 								<ul>
-									<li class="sign large"><a href="#womens-bindings">View Womens</a></li>
+									<li class="sign large"><a href="#womens-bindings">View Women's</a></li>
 								</ul>
 							</nav>
 						</div>
@@ -202,13 +202,13 @@ Template Name: Product Overview
 			<section id="womens-bindings" class="product-overview deeplink-top-fix">
 				<header class="product-header section-header">
 					<div class="header-wrapper">
-						<h2 class="title">Womens Bindings</h2>
-						<h5 class="subtitle">Front door or backdoor. Pick one and slide on in.</h5>
+						<h2 class="title">Women's Bindings</h2>
+						<h5 class="subtitle">Lightweight, Performance, Strength and Comfort</h5>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">
 								<ul>
-									<li class="sign medium"><a href="#mens-bindings">View Mens</a></li>
+									<li class="sign medium"><a href="#mens-bindings">View Men's</a></li>
 								</ul>
 							</nav>
 						</div>
@@ -270,8 +270,8 @@ Template Name: Product Overview
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">
 								<ul>
-									<li class="sign medium"><a href="#mens-bindings">View Mens</a></li>
-									<li class="sign large"><a href="#womens-bindings">View Womens</a></li>
+									<li class="sign medium"><a href="#mens-bindings">View Men's</a></li>
+									<li class="sign large"><a href="#womens-bindings">View Women's</a></li>
 								</ul>
 							</nav>
 						</div>
@@ -363,7 +363,7 @@ Template Name: Product Overview
 				<header class="product-header section-header alt">
 					<div class="header-wrapper">
 						<h2 class="title">Headwear</h2>
-						<h5 class="subtitle">For the second most important head on your body</h5>
+						<h5 class="subtitle">Advanced Dome Enhancers</h5>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">
@@ -428,7 +428,7 @@ Template Name: Product Overview
 				<header class="product-header section-header">
 					<div class="header-wrapper">
 						<h2 class="title">Accessories</h2>
-						<h5 class="subtitle">Tuning for your gold metal technology</h5>
+						<h5 class="subtitle">Tuning for Your Gold Metal Technology</h5>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">

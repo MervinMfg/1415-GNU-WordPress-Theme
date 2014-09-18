@@ -24,33 +24,35 @@ GNU.FeaturedSlider.prototype = {
 	init: function () {
 		var self, carousel, responsiveSize;
 		self = this;
-		// set up owl carousel
-		carousel = $(".featured-slider .owl-carousel").owlCarousel({
-			items: 1,
-			dots: self.config.dots,
-			lazyLoad: true,
-			autoplay: true,
-			autoplayTimeout: 8000,
-			autoplayHoverPause: true,
-			loop: self.config.loop
-		});
-		// (RE)INIT MENU ON RESIZE
-		$(window).on('resize.featuredSlider', function () {
-			if ( responsiveSize != "base" && GNU.Main.utilities.responsiveCheck() == "base" ) {
-				responsiveSize = "base";
-				self.scrollFeatures();
-			} else if ( responsiveSize != "small" && GNU.Main.utilities.responsiveCheck() == "small" ) {
-				responsiveSize = "small";
-				self.scrollFeatures();
-			} else if ( responsiveSize != "medium" && GNU.Main.utilities.responsiveCheck() == "medium" ) {
-				responsiveSize = "medium";
-				self.scrollFeatures();
-			} else if ( responsiveSize != "large" && GNU.Main.utilities.responsiveCheck() == "large" ) {
-				responsiveSize = "large";
-				self.scrollFeatures();
-			}
-		});
-		self.scrollFeatures();
+		if ($(".featured-slider .owl-carousel").length) {
+			// set up owl carousel
+			carousel = $(".featured-slider .owl-carousel").owlCarousel({
+				items: 1,
+				dots: self.config.dots,
+				lazyLoad: true,
+				autoplay: true,
+				autoplayTimeout: 8000,
+				autoplayHoverPause: true,
+				loop: self.config.loop
+			});
+			// (RE)INIT MENU ON RESIZE
+			$(window).on('resize.featuredSlider', function () {
+				if ( responsiveSize != "base" && GNU.Main.utilities.responsiveCheck() == "base" ) {
+					responsiveSize = "base";
+					self.scrollFeatures();
+				} else if ( responsiveSize != "small" && GNU.Main.utilities.responsiveCheck() == "small" ) {
+					responsiveSize = "small";
+					self.scrollFeatures();
+				} else if ( responsiveSize != "medium" && GNU.Main.utilities.responsiveCheck() == "medium" ) {
+					responsiveSize = "medium";
+					self.scrollFeatures();
+				} else if ( responsiveSize != "large" && GNU.Main.utilities.responsiveCheck() == "large" ) {
+					responsiveSize = "large";
+					self.scrollFeatures();
+				}
+			});
+			self.scrollFeatures();
+		}
 	},
 	scrollFeatures: function () {
 		var self, tween;

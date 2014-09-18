@@ -207,10 +207,10 @@ Template Name: Snowboards Detail
 			<nav class="product-navigation">
 				<div class="nav-container">
 					<ul>
-						<li><a href="#information" class="h3 info">Info<span class="nav-icon"></span></a></li>
-						<li><a href="#technology" class="h3 tech">Tech<span class="nav-icon"></span></a></li>
-						<?php if (get_field('gnu_product_video')) : ?><li><a href="#video" class="h3 video">Video<span class="nav-icon"></span></a></li><?php endif; ?>
-						<li><a href="#specifications" class="h3 specs">Specs<span class="nav-icon"></span></a></li>
+						<li><a href="#information" class="h4 info">Info<span class="nav-icon"></span></a></li>
+						<li><a href="#technology" class="h4 tech">Tech<span class="nav-icon"></span></a></li>
+						<?php if (get_field('gnu_product_video')) : ?><li><a href="#video" class="h4 video">Video<span class="nav-icon"></span></a></li><?php endif; ?>
+						<li><a href="#specifications" class="h4 specs">Specs<span class="nav-icon"></span></a></li>
 					</ul>
 					<div class="clearfix"></div>
 				</div><!-- .nav-container -->

@@ -91,8 +91,8 @@ Template Name: Accessories Detail
 				<div class="nav-container">
 					<ul>
 						<?php if (get_field('gnu_product_video')) : ?>
-						<li><a href="#information" class="h3 info">Info<span class="nav-icon"></span></a></li>
-						<li><a href="#video" class="h3 video">Video<span class="nav-icon"></span></a></li>
+						<li><a href="#information" class="h4 info">Info<span class="nav-icon"></span></a></li>
+						<li><a href="#video" class="h4 video">Video<span class="nav-icon"></span></a></li>
 						<?php endif; ?>
 					</ul>
 					<div class="clearfix"></div>

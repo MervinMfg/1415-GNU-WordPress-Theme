@@ -24,7 +24,7 @@
 						$myposts = get_posts($args);
 						$i=1;
 						foreach ($myposts as $post) :
-							$postImage = get_post_image('blog-thumb');
+							$postImage = get_post_image('blog-feature');
 							// get the main parent category
 							$category = get_the_category();
 							$catTree = get_category_parents($category[0]->term_id, true, '!', true);
@@ -32,11 +32,13 @@
 							$mainCategory = $topCat[0];
 					?>
 
-					<li class="featured-post <?php echo 'post-' . $i; ?>">
+					<li class="blog-post <?php echo 'post-' . $i; ?>">
 						<div class="post-wrapper">
-							<a href="<?php the_permalink() ?>" class="post-link"><img src="<?php echo $postImage[0]; ?>" alt="Image From <?php echo get_the_title(); ?>" /></a>
+							<div class="post-image">
+								<a href="<?php the_permalink() ?>" class="post-link"><img src="<?php echo $postImage[0]; ?>" alt="Image From <?php echo get_the_title(); ?>" /></a>
+							</div>
 							<p class="post-meta small"><?php echo $mainCategory; ?> | <a href="<?php the_permalink() ?>" class="post-link"><time datetime="<?php the_time('c') ?>"><?php the_time('F jS, Y') ?></time></a></p>
-							<a href="<?php the_permalink() ?>" class="post-link"><h3 class="post-title"><?php the_title(); ?></h3></a>
+							<div class="post-title"><a href="<?php the_permalink() ?>" class="post-link"><h3><?php the_title(); ?></h3></a></div>
 						</div>
 					</li>
 

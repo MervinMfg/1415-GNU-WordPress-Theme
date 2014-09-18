@@ -13,38 +13,78 @@
  * @subpackage 1415-GNU-WordPress-Theme
  * @since 1415 GNU WordPress Theme 1.0.0
  */
- get_header(); ?>
+ get_header();
+ if (have_posts()) :
+ ?>
 
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			<?php include get_template_directory() . '/_/inc/modules/featured-slider.php'; ?>
 
-		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
+			<nav class="blog-navigation">
+				<div class="nav-container">
+					<ul>
+						<li><a href="/category/team/mens/" class="h4 mens">Men's</a></li>
+						<li><a href="/category/team/womens/" class="h4 womens">Women's</a></li>
+						<li><a href="/category/events/" class="h4 events">Events</a></li>
+						<li><a href="/category/product/" class="h4 product">Product</a></li>
+						<li><a href="/category/art/" class="h4 art">Art</a></li>
+					</ul>
+					<div class="clearfix"></div>
+				</div><!-- .nav-container -->
+			</nav><!-- .blog-navigation -->
+			<section class="blog-posts">
 
-			<h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+				<?php
+					$i = 0;
+					while (have_posts()) :
+						the_post();
+						$i ++;
+						$postImage = get_post_image('blog-feature');
+						// get the main parent category
+						$category = get_the_category();
+						$catTree = get_category_parents($category[0]->term_id, true, '!', true);
+						$topCat = preg_split('/!/', $catTree);
+						$mainCategory = $topCat[0];
+						$postClass = 'blog-post post-' . $i;
 
-			<?php posted_on(); ?>
+						if ($i == 3) :
+							// break out and include social slider
+							echo '</section><!-- .blog-posts -->';
+							include get_template_directory() . '/_/inc/modules/social-slider.php';
+							echo '<section class="blog-posts">';
+						endif;
+				?>
 
-			<div class="entry">
-				<?php the_content(); ?>
-			</div>
+				<article <?php post_class($postClass); ?> id="post-<?php the_ID(); ?>">	
+					<div class="post-wrapper">
+						<div class="post-image">
+							<a href="<?php the_permalink() ?>" class="post-link"><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-blog.gif" data-src="<?php echo $postImage[0]; ?>" alt="Image From <?php echo get_the_title(); ?>" class="lazy" /></a>
+							<ul class="post-share">
+								<li class="facebook"><div class="fb-like" data-href="<? the_permalink(); ?>" data-layout="button" data-action="like" data-share="false" data-show-faces="false" data-colorscheme="light"></div></li>
+								<li class="twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-via="GNUsnowboards" data-count="none">Tweet</a></li>
+								<li class="g-plus"><div class="g-plusone" data-size="tall" data-annotation="none" data-href="<? the_permalink(); ?>"></div></li>
+								<li class="pinterest"><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo $GLOBALS['pageImage']; ?>&description=<?php echo $GLOBALS['pageTitle']; ?>" data-pin-do="buttonPin" data-pin-config="none" data-pin-color="white"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_white_20.png" alt="Pin It" /></a></li>
+							</ul><!-- .post-share -->
+						</div>
+						<p class="post-meta small"><?php echo $mainCategory; ?> | <a href="<?php the_permalink() ?>" class="post-link"><time datetime="<?php the_time('c') ?>"><?php the_time('F jS, Y') ?></time></a></p>
+						<div class="post-title"><a href="<?php the_permalink() ?>" class="post-link"><h3><?php the_title(); ?></h3></a></div>
+						<p class="post-excerpt"><?php echo gnu_excerpt('gnu_excerptlength_blog', false); ?></p>
+					</div>
+				</article>
 
-			<footer class="postmetadata">
-				<?php the_tags(__('Tags: ','html5reset'), ', ', '<br />'); ?>
-				<?php _e('Posted in','html5reset'); ?> <?php the_category(', ') ?> | 
-				<?php comments_popup_link(__('No Comments &#187;','html5reset'), __('1 Comment &#187;','html5reset'), __('% Comments &#187;','html5reset')); ?>
-			</footer>
+				<?php endwhile; ?>
 
-		</article>
+			</section><!-- .blog-posts -->
 
-	<?php endwhile; ?>
+			<?php post_navigation(); ?>
 
-	<?php post_navigation(); ?>
+<?php else : ?>
 
-	<?php else : ?>
+			<section class="blog-posts">
+				<h2>Nothing Found</h2>
+			</section>
 
-		<h2>Nothing Found</h2>
+<?php endif; ?>
 
-	<?php endif; ?>
-
-<?php get_sidebar(); ?>
+<?php //get_sidebar(); ?>
 
 <?php get_footer(); ?>

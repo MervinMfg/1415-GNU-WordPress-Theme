@@ -11,13 +11,13 @@ Template Name: Team Overview
 			<section id="mens-team" class="product-overview deeplink-top-fix team-overview">
 				<header class="product-header section-header">
 					<div class="header-wrapper">
-						<h2 class="title">The Dudes</h2>
-						<h5 class="subtitle">Putting the wild on Mt. Weird</h5>
+						<h2 class="title">Men's Team</h2>
+						<h5 class="subtitle">Putting the Wild on Mt. Weird</h5>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">
 								<ul>
-									<li class="sign large"><a href="#womens-team">View Ladies</a></li>
+									<li class="sign large"><a href="#womens-team">View Women's</a></li>
 								</ul>
 							</nav>
 						</div>
@@ -80,13 +80,13 @@ Template Name: Team Overview
 			<section id="womens-team" class="product-overview deeplink-top-fix team-overview">
 				<header class="product-header section-header alt">
 					<div class="header-wrapper">
-						<h2 class="title">The Ladies</h2>
-						<h5 class="subtitle">Gold Metal Technology, we did it!</h5>
+						<h2 class="title">Women's Team</h2>
+						<h5 class="subtitle">Gold Metal Technology, We Did It!</h5>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">
 								<ul>
-									<li class="sign medium"><a href="#mens-team">View Dudes</a></li>
+									<li class="sign medium"><a href="#mens-team">View Men's</a></li>
 								</ul>
 							</nav>
 						</div>

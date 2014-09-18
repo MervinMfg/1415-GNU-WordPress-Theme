@@ -52,6 +52,8 @@ GNU.Main = {
 			self.aboutInit();
 		} else if ($body.hasClass('page-template-page-templatespartners-php')) {
 			self.partnersInit();
+		} else if ($body.hasClass('blog') || $body.hasClass('archive')) {
+			self.blogInit();
 		}
 	},
 	homeInit: function () {
@@ -103,6 +105,21 @@ GNU.Main = {
 		// grab all section headers and assign correct scrolling
 		$('.section-header').each(function (index) {
 			new GNU.SectionHeader($(this), self.config.scrollController);
+		});
+	},
+	blogInit: function () {
+		var self = this;
+		new GNU.FeaturedSlider(self.config.scrollController);
+		new GNU.SocialSlider();
+		// grab all section headers and assign correct scrolling
+		$('.section-header').each(function (index) {
+			new GNU.SectionHeader($(this), self.config.scrollController);
+		});
+		// hover links
+		$('.blog-posts .blog-post .post-link').on('mouseenter', function () {
+			$(this).parents('.blog-post').find('.post-link').addClass('selected');
+		}).on('mouseleave', function () {
+			$(this).parents('.blog-post').find('.post-link').removeClass('selected');
 		});
 	},
 	storeLocatorInit: function () {

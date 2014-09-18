@@ -1,46 +1,12 @@
 /* ==========================================================================
    MODULES/_FEATURED-POSTS.SCSS
    ========================================================================== */
+
+/* check _blog.scss for general .blog-post styles */
 .featured-posts {
-	background: url('../img/bg-grey-triangles.png') repeat;
-	text-align: center;
+	background: $white url('../img/bg-grey-triangles.png') center center;
 	padding: 30px 0 10px;
 
-	.featured-post {
-		padding-bottom: 20px;
-
-		.post-wrapper {
-			a {
-				img {
-					width: 100%;
-					margin-bottom: 10px;
-				}
-				.post-title {
-
-				}
-				&:hover .post-title,
-				&:focus .post-title,
-				&.selected .post-title {
-					color: $green;
-				}
-			}
-			.post-meta {
-				text-transform: uppercase;
-				margin-bottom: 10px;
-				line-height: 1em;
-				
-				a {
-					color: $gray;
-
-					&:hover,
-					&:focus,
-					&.selected {
-						color: $grayLight;
-					}
-				}
-			}
-		}
-	}
 	.more-news {
 		display: block;
 		clear: both;
@@ -52,7 +18,7 @@
 	.featured-posts {
 		padding: 30px 5px 10px;
 
-		.featured-post {
+		.blog-post {
 			width: 50%;
 			float: left;
 
@@ -74,7 +40,7 @@
 			max-width: $breakpoint-large;
 			margin: 0 auto;
 		}
-		.featured-post {
+		.blog-post {
 			.post-wrapper {
 				padding: 0 10px;
 			}
@@ -83,7 +49,7 @@
 			overflow: hidden;
 			// @include vendorize(transform, translateZ(0)); // triggers GPU, Safari fix
 
-			.featured-post {
+			.blog-post {
 				width: 50%;
 				margin-left: -50px;
 
@@ -99,7 +65,7 @@
 	.featured-posts {
 		padding: 60px 10px 20px;
 
-		&.animate .featured-post {
+		&.animate .blog-post {
 			margin-left: -100px;
 
 			&.post-2 {

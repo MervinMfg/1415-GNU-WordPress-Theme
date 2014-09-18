@@ -21,48 +21,89 @@ get_header(); ?>
 
 		<?php if (have_posts()) : ?>
 
- 			<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
+ 			<?php
+ 				$post = $posts[0]; // Hack. Set $post so that the_date() works.
+				if (is_category()) {
+					/* If this is a category archive */
+					//$pageTitle = "Archive for &#8216;" . single_cat_title("", false) . "&#8217;";
+					$pageTitle = single_cat_title("", false);
+				} elseif( is_tag() ) {
+					/* If this is a tag archive */ 
+					$pageTitle = "Posts Tagged &#8216;" . single_tag_title("", false) . "&#8217;";
+				} elseif (is_day()) {
+					/* If this is a daily archive */
+					$pageTitle = "Archive for " . get_the_time('F jS, Y');
+				} elseif (is_month()) {
+					/* If this is a monthly archive */
+					$pageTitle = "Archive for " . get_the_time('F, Y');
+				} elseif (is_year()) {
+					/* If this is a yearly archive */
+					$pageTitle = "Archive for " . get_the_time('Y');
 
-			<?php /* If this is a category archive */ if (is_category()) { ?>
-				<h2>Archive for the &#8216;<?php single_cat_title(); ?>&#8217; Category</h2>
+				} elseif (is_author()) {
+					/* If this is an author archive */
+					$pageTitle = "Author Archive";
+				} elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
+					/* If this is a paged archive */
+					$pageTitle = "Blog Archives";
+				}
+			?>
 
-			<?php /* If this is a tag archive */ } elseif( is_tag() ) { ?>
-				<h2>Posts Tagged &#8216;<?php single_tag_title(); ?>&#8217;</h2>
+			<section class="archive-intro">
+				<header class="product-header section-header">
+					<div class="header-wrapper">
+						<h1 class="title"><?php echo $pageTitle; ?></h1>
+					</div>
+					<div class="vibe vibe-5"></div>
+				</header>
+			</section>
+			<nav class="blog-navigation">
+				<div class="nav-container">
+					<ul>
+						<li><a href="/category/team/mens/" class="h4 mens">Men's</a></li>
+						<li><a href="/category/team/womens/" class="h4 womens">Women's</a></li>
+						<li><a href="/category/events/" class="h4 events">Events</a></li>
+						<li><a href="/category/product/" class="h4 product">Product</a></li>
+						<li><a href="/category/art/" class="h4 art">Art</a></li>
+					</ul>
+					<div class="clearfix"></div>
+				</div><!-- .nav-container -->
+			</nav><!-- .blog-navigation -->
+			<section class="blog-posts">
 
-			<?php /* If this is a daily archive */ } elseif (is_day()) { ?>
-				<h2>Archive for <?php the_time('F jS, Y'); ?></h2>
+				<?php
+					$i = 0;
+					while (have_posts()) :
+						the_post();
+						$i ++;
+						$postImage = get_post_image('blog-feature');
+						// get the main parent category
+						$category = get_the_category();
+						$catTree = get_category_parents($category[0]->term_id, true, '!', true);
+						$topCat = preg_split('/!/', $catTree);
+						$mainCategory = $topCat[0];
+						$postClass = 'blog-post post-' . $i;
 
-			<?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
-				<h2>Archive for <?php the_time('F, Y'); ?></h2>
+						if ($i == 3) :
+							// break out and include social slider
+							echo '</section><!-- .blog-posts -->';
+							include get_template_directory() . '/_/inc/modules/social-slider.php';
+							echo '<section class="blog-posts">';
+						endif;
+				?>
 
-			<?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
-				<h2 class="pagetitle">Archive for <?php the_time('Y'); ?></h2>
-
-			<?php /* If this is an author archive */ } elseif (is_author()) { ?>
-				<h2 class="pagetitle">Author Archive</h2>
-
-			<?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
-				<h2 class="pagetitle">Blog Archives</h2>
-			
-			<?php } ?>
-
-			<?php post_navigation(); ?>
-
-			<?php while (have_posts()) : the_post(); ?>
-			
-				<article <?php post_class() ?>>
-				
-						<h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-					
-						<?php posted_on(); ?>
-
-						<div class="entry">
-							<?php the_content(); ?>
-						</div>
-
+				<article <?php post_class($postClass); ?> id="post-<?php the_ID(); ?>">	
+					<div class="post-wrapper">
+						<a href="<?php the_permalink() ?>" class="post-link"><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-blog.gif" data-src="<?php echo $postImage[0]; ?>" alt="Image From <?php echo get_the_title(); ?>" class="lazy" /></a>
+						<p class="post-meta small"><?php echo $mainCategory; ?> | <a href="<?php the_permalink() ?>" class="post-link"><time datetime="<?php the_time('c') ?>"><?php the_time('F jS, Y') ?></time></a></p>
+						<a href="<?php the_permalink() ?>" class="post-link"><h3 class="post-title"><?php the_title(); ?></h3></a>
+						<p class="post-excerpt"><?php echo gnu_excerpt('gnu_excerptlength_blog', false); ?></p>
+					</div>
 				</article>
 
-			<?php endwhile; ?>
+				<?php endwhile; ?>
+
+			</section><!-- .blog-posts -->
 
 			<?php post_navigation(); ?>
 			
@@ -72,6 +113,6 @@ get_header(); ?>
 
 	<?php endif; ?>
 
-<?php get_sidebar(); ?>
+<?php //get_sidebar(); ?>
 
 <?php get_footer(); ?>

@@ -1,0 +1,67 @@
+/* ==========================================================================
+   COMPONENTS/_TEAM-DETAILS.SCSS
+   ========================================================================== */
+
+.team-details {
+	padding-top: 20px;
+	text-align: center;
+
+	.team-content {
+		.team-title {
+			padding: 0 20px;
+			margin-bottom: 20px;
+		}
+		.team-subtitle {
+			padding: 0 20px;
+			margin-bottom: 10px;
+		}
+		.social-icons {
+			padding-bottom: 10px;
+		}
+		.team-website {
+			padding: 0 20px;
+			margin-bottom: 10px;
+		}
+	}
+	.team-photo {
+		img {
+			float: left;
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-small) {
+	.team-details {
+		.team-photo {
+			width: $breakpoint-small;
+			margin: 0 auto;
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-medium) {
+	.team-details {
+		position: relative;
+
+		.team-content {
+			position: absolute;
+			top: 120px;
+			left: 50%;
+			width: 370px;
+			margin-left: -370px;
+		}
+		.team-photo {
+			width: 525px;
+			float: right;
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-large) {
+	.team-details {
+		max-width: $breakpoint-large;
+		margin: 0 auto;
+
+		.team-content {
+			width: 540px;
+			margin-left: -540px;
+		}
+	}
+}

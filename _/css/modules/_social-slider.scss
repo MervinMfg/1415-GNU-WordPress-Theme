@@ -145,6 +145,7 @@
 		&.loading {
 			background: url('../img/loading-black.gif') no-repeat center center;
 			height: 240px;
+			display: block;
 
 			.social-item {
 				display: none;

@@ -131,6 +131,7 @@ GNU.Main = {
 		$('.section-header').each(function (index) {
 			new GNU.SectionHeader($(this), self.config.scrollController);
 		});
+		new GNU.SearchResults();
 	},
 	storeLocatorInit: function () {
 		var self = this;

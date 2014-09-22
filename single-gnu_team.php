@@ -20,7 +20,7 @@ Template Name: Team Detail
 
 				<?php if (get_field('gnu_team_profile_photo')) : ?>
 
-				<div class="team-photo"><img src="<?php echo get_field('gnu_team_profile_photo')['url']; ?>" alt="<?php the_title(); ?> Profile Photo" /></div>
+				<div class="team-photo"><img src="<?php $photo = get_field('gnu_team_profile_photo'); echo $photo['url']; ?>" alt="<?php the_title(); ?> Profile Photo" /></div>
 
 				<?php endif; ?>
 

@@ -8,38 +8,28 @@
  */
  get_header(); ?>
 
-	<?php if (have_posts()) : ?>
-
-		<h2>Search Results</h2>
-
-		<?php post_navigation(); ?>
-
-		<?php while (have_posts()) : the_post(); ?>
-
-			<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
-
-				<h2><?php the_title(); ?></h2>
-
-				<?php posted_on(); ?>
-
-				<div class="entry">
-
-					<?php the_excerpt(); ?>
-
-				</div>
-
-			</article>
-
-		<?php endwhile; ?>
-
-		<?php post_navigation(); ?>
-
-	<?php else : ?>
-
-		<h2>Nothing Found</h2>
-
-	<?php endif; ?>
-
-<?php get_sidebar(); ?>
+			<section class="search">
+				<header class="search-header section-header">
+					<div class="header-wrapper">
+						<h2 class="title">Search</h2>
+						<h5 class="subtitle"><?php echo htmlspecialchars($_GET["s"]); ?></h5>
+					</div>
+					<div class="vibe vibe-2"></div>
+				</header>
+				<div class="search-results">
+					<script>
+						(function() {
+							var cx = '015302828112823652423:xozeufniryq';
+							var gcse = document.createElement('script');
+							gcse.type = 'text/javascript';
+							gcse.async = true;
+							gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.google.com/cse/cse.js?cx=' + cx;
+							var s = document.getElementsByTagName('script')[0];
+							s.parentNode.insertBefore(gcse, s);
+						})();
+					</script>
+					<gcse:search queryParameterName="s"><div class="loading"></div></gcse:search>
+				</div><!-- .search-results -->
+			</section><!-- .search -->
 
 <?php get_footer(); ?>

@@ -1,0 +1,83 @@
+/* ==========================================================================
+   COMPONENTS/_SEARCH.SCSS
+   ========================================================================== */
+
+.search {
+	.search-header {}
+	.search-results {
+		padding-top: 5px;
+		min-height: 400px;
+		max-width: $breakpoint-large;
+		margin: 0 auto;
+
+		.loading {
+			margin: 40px auto;
+		}
+		.gsc-control-cse,
+		.gsc-control-cse .gsc-table-result,
+		.gsc-completion-container {
+			font-family: $neuron;
+		}
+		.gsc-control-cse * {
+			box-sizing: content-box;
+			font-family: $neuron;
+		}
+		.gs-result .gs-title,
+		.gs-result .gs-title * {
+			color: $blue;
+			text-decoration: none;
+			font-size: 18px;
+			font-weight: 700;
+			
+		}
+		.gsc-table-result,
+		.gsc-thumbnail-inside,
+		.gsc-url-top {
+			padding-left: 0px;
+		}
+		.gs-result a.gs-visibleUrl,
+		.gs-result .gs-visibleUrl {
+			color: $purple;
+		}
+		.gsc-results .gsc-cursor-box {
+			text-align: center;
+			
+			.gsc-cursor-page {
+				font-size: 24px;
+				font-family: $neuronBlack;
+				font-style: italic;
+				padding: 2px 8px;
+				margin: 0 2px;
+				color: $white;
+				background: $black;
+
+				&:hover,
+				&:focus {
+					background: $blue;
+					text-decoration: none;
+				}
+				&.gsc-cursor-current-page {
+					color: $black;
+					background: $white;
+				}
+			}
+		}
+	}
+}
+.gssb_c {
+	margin-top: 38px !important;
+}
+.gsc-completion-container {
+	font-family: $neuron !important;
+}
+@media screen and (min-width: $breakpoint-medium) {
+	.search {
+		.search-results {
+			.gs-result .gs-title,
+			.gs-result .gs-title * {
+				font-size: 24px;
+				
+			}
+		}
+	}
+}

@@ -54,10 +54,13 @@ GNU.Main = {
 			self.partnersInit();
 		} else if ($body.hasClass('blog') || $body.hasClass('archive')) {
 			self.blogInit();
+		} else if ($body.hasClass('single')) {
+			self.blogSingleInit();
 		} else if ($body.hasClass('search')) {
 			self.searchInit();
+		} else if ($body.hasClass('error404')) {
+			self.sidebarInit();
 		}
-
 	},
 	homeInit: function () {
 		var self = this;
@@ -124,6 +127,17 @@ GNU.Main = {
 		}).on('mouseleave', function () {
 			$(this).parents('.blog-post').find('.post-link').removeClass('selected');
 		});
+	},
+	blogSingleInit: function () {
+		var self = this;
+		new GNU.BlogSingle();
+		self.sidebarInit();
+	},
+	sidebarInit: function () {
+		var self = this;
+		new GNU.SocialSlider();
+		new GNU.FeaturedPosts(self.config.scrollController);
+		new GNU.Follow(self.config.scrollController);
 	},
 	searchInit: function () {
 		var self = this;

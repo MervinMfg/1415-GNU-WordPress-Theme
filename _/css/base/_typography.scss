@@ -55,7 +55,8 @@ p, .p {
 	line-height: 2em;
 	margin-bottom: 2em;
 }
-p.small {
+p.small,
+.wp-caption-text {
 	font-family: $neuron;
 	font-size: 1.4em;
 	font-weight: 400;

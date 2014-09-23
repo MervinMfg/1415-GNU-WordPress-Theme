@@ -18,7 +18,7 @@
 
 			<h2><?php the_title(); ?></h2>
 
-			<?php posted_on(); ?>
+			<?php //posted_on(); ?>
 
 			<div class="entry">
 

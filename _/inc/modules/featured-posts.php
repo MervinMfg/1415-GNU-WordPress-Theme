@@ -35,7 +35,7 @@
 					<li class="blog-post <?php echo 'post-' . $i; ?>">
 						<div class="post-wrapper">
 							<div class="post-image">
-								<a href="<?php the_permalink() ?>" class="post-link"><img src="<?php echo $postImage[0]; ?>" alt="Image From <?php echo get_the_title(); ?>" /></a>
+								<a href="<?php the_permalink() ?>" class="post-link"><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-blog.gif" data-src="<?php echo $postImage[0]; ?>" alt="Image From <?php echo get_the_title(); ?>" class="lazy" /></a>
 							</div>
 							<p class="post-meta small"><?php echo $mainCategory; ?> | <a href="<?php the_permalink() ?>" class="post-link"><time datetime="<?php the_time('c') ?>"><?php the_time('F jS, Y') ?></time></a></p>
 							<div class="post-title"><a href="<?php the_permalink() ?>" class="post-link"><h3><?php the_title(); ?></h3></a></div>

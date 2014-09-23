@@ -107,21 +107,6 @@ function removeHeadLinks() {
 add_action('init', 'removeHeadLinks');
 // Custom Menu
 register_nav_menu( 'primary', 'Navigation Menu' );
-// Widgets
-if ( function_exists('register_sidebar' )) {
-	function html5reset_widgets_init() {
-		register_sidebar( array(
-			'name'          => __( 'Sidebar Widgets', 'html5reset' ),
-			'id'            => 'sidebar-primary',
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-		) );
-	}
-	add_action( 'widgets_init', 'html5reset_widgets_init' );
-}
-
 
 // Navigation - update coming from twentythirteen
 function post_navigation() {
@@ -145,17 +130,6 @@ function post_navigation() {
         );
         echo '</div>';
     }
-}
-
-// Posted On
-function posted_on() {
-	printf( __( '<span class="sep">Posted </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a> by <span class="byline author vcard">%5$s</span>', '' ),
-		esc_url( get_permalink() ),
-		esc_attr( get_the_time() ),
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_author() )
-	);
 }
 
 // REMOVE AUTOMATED CSS MENU CLASSES, CLEAN 'EM UP!

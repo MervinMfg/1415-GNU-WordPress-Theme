@@ -2,14 +2,13 @@
 	if ( basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"]) ) header('Location: /'); // do not allow stanalone viewing
 	// set up video array
 	$videos = Array();
-	// get data based on if we're in the blog or a single post
-	if (is_home() || is_archive()) {
-		// we're looking at multiple posts
-		$blogPage = get_page_by_path('blog');
-		$instagram = get_field('gnu_social_slider_instagram', $blogPage->ID);
-		$facebook = get_field('gnu_social_slider_facebook', $blogPage->ID);
-		if(have_rows('gnu_social_slider_videos', $blogPage->ID)):
-			while( have_rows('gnu_social_slider_videos', $blogPage->ID) ):
+	// get data based on if we're in a single team post or anywhere else on the site
+	if (is_singular('gnu_team')) {
+		// grab data specific to individual team member
+		$instagram = get_field('gnu_social_slider_instagram');
+		$facebook = get_field('gnu_social_slider_facebook');
+		if(have_rows('gnu_social_slider_videos')):
+			while( have_rows('gnu_social_slider_videos') ):
 				the_row();
 				$videoEmbed = get_sub_field('gnu_social_slider_videos_vid');
 				// find vimeo video ID
@@ -20,11 +19,12 @@
 			endwhile;
 		endif;
 	} else {
-		// we're looking at a single post
-		$instagram = get_field('gnu_social_slider_instagram');
-		$facebook = get_field('gnu_social_slider_facebook');
-		if(have_rows('gnu_social_slider_videos')):
-			while( have_rows('gnu_social_slider_videos') ):
+		// grab data based on what's entered in homepage acf
+		$homePage = get_page_by_title('Home');
+		$instagram = get_field('gnu_social_slider_instagram', $homePage->ID);
+		$facebook = get_field('gnu_social_slider_facebook', $homePage->ID);
+		if(have_rows('gnu_social_slider_videos', $homePage->ID)):
+			while( have_rows('gnu_social_slider_videos', $homePage->ID) ):
 				the_row();
 				$videoEmbed = get_sub_field('gnu_social_slider_videos_vid');
 				// find vimeo video ID

@@ -73,7 +73,9 @@ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG         GGGGGG
 	<?php
 		wp_head();
 		$bodyClass = "";
-		if ( is_front_page() ) $bodyClass = 'active-takeover';
+		if ( is_front_page() ) {
+			if ( get_field('gnu_takeover_active') == "Yes" ) $bodyClass = 'active-takeover';
+		}
 	?>
 </head>
 <body <?php body_class($bodyClass); ?>>
@@ -98,18 +100,26 @@ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG         GGGGGG
 						<a href="#search" title="Search"><span class="offscreen">Search</span></a>
 					</div>
 
-					<?php if ( is_front_page() ) : ?>
+					<?php
+						if ( is_front_page() ) :
+							if ( get_field('gnu_takeover_active') == "Yes" ) :
+								$teamName = get_field('gnu_takeover_team_name');
+								$teamUrl = get_field('gnu_takeover_team_url');
+								$teamImg = get_field('gnu_takeover_team_img');
+								$productName = get_field('gnu_takeover_product_name');
+								$productUrl = get_field('gnu_takeover_product_url');
+					?>
 
 					<div class="takeover">
 						<div class="logo">
 							<img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/gnu-logo-takeover.png" alt="<?php bloginfo( 'name' ); ?>" class="lazy" />
 						</div>
-						<div class="h1">KAITLYN FARRINGTON</div>
-						<div class="h5">B Pro Splitboard</div>
-						<div class="photo"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/takeovers/takeover-kaitlyn-farrington.png" alt="Maria Debari" class="lazy" /></div>
+						<div class="h1"><a href="<?php echo $teamUrl; ?>"><?php echo $teamName; ?></a></div>
+						<div class="h5"><a href="<?php echo $productUrl; ?>"><?php echo $productName; ?></a></div>
+						<div class="photo"><a href="<?php echo $teamUrl; ?>"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo $teamImg['url']; ?>" alt="<?php echo $teamName; ?>" class="lazy" /></a></div>
 					</div><!-- .takeover -->
 
-					<?php endif; ?>
+					<?php endif; endif; ?>
 
 					<div class="clearfix"></div>
 				</div>

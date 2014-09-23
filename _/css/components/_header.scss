@@ -539,6 +539,11 @@
 				width: 450px;
 				text-transform: uppercase;
 				text-align: right;
+
+				a:hover,
+				a:focus {
+					color: $blue;
+				}
 			}
 			.photo {
 				position: absolute;

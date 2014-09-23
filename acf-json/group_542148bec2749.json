@@ -1,0 +1,120 @@
+{
+    "key": "group_542148bec2749",
+    "title": "Homepage Takeover",
+    "fields": [
+        {
+            "key": "field_54214cf4bbfd1",
+            "label": "Active",
+            "name": "gnu_takeover_active",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "Is the takeover active?",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "Yes": "Yes",
+                "No": "No"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_542148f9bbfcc",
+            "label": "Team Member Name",
+            "name": "gnu_takeover_team_name",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_54214ca3bbfcd",
+            "label": "Team Member Link",
+            "name": "gnu_takeover_team_url",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_54214cb1bbfce",
+            "label": "Team Member Photo",
+            "name": "gnu_takeover_team_img",
+            "prefix": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all"
+        },
+        {
+            "key": "field_54214cd8bbfcf",
+            "label": "Product Name",
+            "name": "gnu_takeover_product_name",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_54214ceabbfd0",
+            "label": "Product Link",
+            "name": "gnu_takeover_product_url",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/home.php"
+            }
+        ]
+    ],
+    "menu_order": 75,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ""
+}

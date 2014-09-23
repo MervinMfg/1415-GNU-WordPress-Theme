@@ -1399,6 +1399,11 @@ abbr {
     text-align: right;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_header\.scss}line{font-family:\00003543}}
+  .active-takeover .site-header .takeover .h5 a:hover,
+  .active-takeover .site-header .takeover .h5 a:focus {
+    color: #0099ff;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_header\.scss}line{font-family:\00003548}}
   .active-takeover .site-header .takeover .photo {
     position: absolute;
     top: -4px;

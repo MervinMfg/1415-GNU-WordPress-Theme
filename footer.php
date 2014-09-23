@@ -136,7 +136,7 @@
 								<li class="menu-item"><a href="http://www.mervin.com/support/register/" target="_blank">Register</a></li>
 								<li class="menu-item"><a href="http://www.mervin.com/support/warranty/">Warranty</a></li>
 								<!-- <li class="menu-item"><a href="/faq/">Faq</a></li> -->
-								<li class="menu-item"><a href="/binding-manual/">Manual</a></li>
+								<li class="menu-item"><a href="/support/binding-manual/">Binding Manual</a></li>
 								<li class="menu-item"><a href="/supplies/#accessories">Spare Parts</a></li>
 							</ul>
 						</div><!-- .nav-group -->

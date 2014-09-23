@@ -58,6 +58,11 @@
 		background-position: -176px -60px; 
 	}
 }
+.default-section .default-content {
+	padding: 20px;
+	max-width: $breakpoint-large;
+	margin: 0 auto;
+}
 @media screen and (min-width: $breakpoint-medium) {
 	.site-main {
 		padding-top: 75px;

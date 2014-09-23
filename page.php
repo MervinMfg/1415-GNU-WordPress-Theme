@@ -12,29 +12,23 @@
  */
  get_header(); ?>
 
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
-		<article class="post" id="post-<?php the_ID(); ?>">
-
-			<h2><?php the_title(); ?></h2>
-
-			<?php //posted_on(); ?>
-
-			<div class="entry">
-
-				<?php the_content(); ?>
-
-				<?php wp_link_pages(array('before' => __('Pages: ','html5reset'), 'next_or_number' => 'number')); ?>
-
-			</div>
-
-			<?php edit_post_link(__('Edit this entry','html5reset'), '<p>', '</p>'); ?>
-
-		</article>
+			<section class="default-section post" id="post-<?php the_ID(); ?>">
+				<header class="product-header section-header">
+					<div class="header-wrapper">
+						<h1 class="title"><?php the_title(); ?></h1>
+					</div>
+					<div class="vibe vibe-3"></div>
+				</header>
+				<div class="default-content">
+					<?php the_content(); ?>
+				</div><!-- .content -->
+			</section><!-- .default-section -->
 		
-		<?php comments_template(); ?>
+			<?php comments_template(); ?>
 
-		<?php endwhile; endif; ?>
+			<?php endwhile; endif; ?>
 
 <?php get_sidebar(); ?>
 

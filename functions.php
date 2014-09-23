@@ -29,7 +29,7 @@
 function gnu_setup() {
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'structured-post-formats', array( 'link', 'video' ) );
-	add_theme_support( 'post-formats', array( 'aside', 'audio', 'chat', 'gallery', 'image', 'quote', 'status' ) );
+	add_theme_support( 'post-formats', array( 'audio', 'video', 'chat', 'gallery', 'image', 'quote' ) );
 	register_nav_menu( 'primary', 'Primary Navigation Menu' );
     register_nav_menu( 'secondary', 'Secondary Navigation Menu' );
 	add_theme_support( 'post-thumbnails' );

@@ -28,7 +28,7 @@
 							s.parentNode.insertBefore(gcse, s);
 						})();
 					</script>
-					<div class="gcse-search" data-queryParameterName="s" data-newWindow="true" data-enableHistory="true"><div class="loading"></div></div>
+					<div class="gcse-search" data-queryParameterName="s" data-enableHistory="true"><div class="loading"></div></div>
 				</div><!-- .search-results -->
 			</section><!-- .search -->
 

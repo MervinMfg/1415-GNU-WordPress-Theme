@@ -16,33 +16,40 @@
 						// RELATED POSTS BY CATEGORY
 						// Only grab posts with shared categories and within the same year
 						$relatedPosts = Array();
-						$categories = get_the_category($post->ID);
-						if ($categories) {
-							$category_ids = array();
-							foreach($categories as $individual_category) $category_ids[] = $individual_category->term_id;
-							$args = array(
-								'category__in' => $category_ids,
-								'post__not_in' => array($post->ID),
-								'posts_per_page' => 10,
-								'ignore_sticky_posts' => 1,
-								'date_query' => array(
-									array(
-										'year' => get_the_time('Y')
+						if ($post) {
+							$categories = get_the_category($post->ID);
+							if ($categories) {
+								$category_ids = array();
+								foreach($categories as $individual_category) $category_ids[] = $individual_category->term_id;
+								$args = array(
+									'category__in' => $category_ids,
+									'post__not_in' => array($post->ID),
+									'posts_per_page' => 10,
+									'ignore_sticky_posts' => 1,
+									'date_query' => array(
+										array(
+											'year' => get_the_time('Y')
+										)
 									)
-								)
+								);
+							}
+						} else {
+							$args = array(
+								'posts_per_page' => 10,
+								'ignore_sticky_posts' => 1
 							);
-							$my_query = new WP_Query( $args );
-							if( $my_query->have_posts() ) {
-								while( $my_query->have_posts() ) {
-									$my_query->the_post();
-									$postImage = get_post_image('blog-feature');
-									// get the main parent category
-									$category = get_the_category();
-									$catTree = get_category_parents($category[0]->term_id, true, '!', true);
-									$topCat = preg_split('/!/', $catTree);
-									$mainCategory = $topCat[0];
-									array_push($relatedPosts, Array('title' => get_the_title(), 'url' => get_permalink(), 'image' => $postImage, 'dateTime' => get_the_time('c'), 'displayTime' => get_the_time('F jS, Y'), 'category' => $mainCategory));
-								}
+						}
+						$my_query = new WP_Query( $args );
+						if( $my_query->have_posts() ) {
+							while( $my_query->have_posts() ) {
+								$my_query->the_post();
+								$postImage = get_post_image('blog-feature');
+								// get the main parent category
+								$category = get_the_category();
+								$catTree = get_category_parents($category[0]->term_id, true, '!', true);
+								$topCat = preg_split('/!/', $catTree);
+								$mainCategory = $topCat[0];
+								array_push($relatedPosts, Array('title' => get_the_title(), 'url' => get_permalink(), 'image' => $postImage, 'dateTime' => get_the_time('c'), 'displayTime' => get_the_time('F jS, Y'), 'category' => $mainCategory));
 							}
 						}
 						wp_reset_query();

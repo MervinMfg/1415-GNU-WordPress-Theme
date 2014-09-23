@@ -4289,7 +4289,7 @@ body.international .shopping-cart-wrapper {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_search\.scss}line{font-family:\0000371}}
 .gssb_c {
-  margin-top: 38px !important;
+  margin-top: 30px !important;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_search\.scss}line{font-family:\0000374}}
@@ -4302,6 +4302,36 @@ body.international .shopping-cart-wrapper {
   .search .search-results .gs-result .gs-title,
   .search .search-results .gs-result .gs-title * {
     font-size: 24px;
+  }
+}
+/* ==========================================================================
+   COMPONENTS/_ERROR.SCSS
+   ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_error\.scss}line{font-family:\000036}}
+.error-404 .error-content {
+  padding: 40px 20px;
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_error\.scss}line{font-family:\0000312}}
+.error-404 .error-content .title {
+  margin-bottom: 1em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_error\.scss}line{font-family:\0000315}}
+.error-404 .error-content .gsc-control-searchbox-only * {
+  box-sizing: content-box;
+  font-family: "Neuron", Helvetica, Arial, sans-serif;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_error\.scss}line{font-family:\0000319}}
+.error-404 .error-content .loading {
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1056px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_error\.scss}line{font-family:\0000326}}
+  .error-404 .error-content {
+    padding: 60px 20px;
   }
 }
 /* ==========================================================================

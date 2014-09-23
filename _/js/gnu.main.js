@@ -59,7 +59,7 @@ GNU.Main = {
 		} else if ($body.hasClass('search')) {
 			self.searchInit();
 		} else if ($body.hasClass('error404')) {
-			self.sidebarInit();
+			self.error404Init();
 		}
 	},
 	homeInit: function () {
@@ -146,6 +146,14 @@ GNU.Main = {
 			new GNU.SectionHeader($(this), self.config.scrollController);
 		});
 		new GNU.SearchResults();
+	},
+	error404Init: function () {
+		var self = this;
+		// grab all section headers and assign correct scrolling
+		$('.section-header').each(function (index) {
+			new GNU.SectionHeader($(this), self.config.scrollController);
+		});
+		self.sidebarInit();
 	},
 	storeLocatorInit: function () {
 		var self = this;

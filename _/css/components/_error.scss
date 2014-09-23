@@ -1,0 +1,30 @@
+/* ==========================================================================
+   COMPONENTS/_ERROR.SCSS
+   ========================================================================== */
+
+.error-404 {
+	.error-content {
+		padding: 40px 20px;
+		text-align: center;
+		max-width: 640px;
+		margin: 0 auto;
+
+		.title {
+			margin-bottom: 1em;
+		}
+		.gsc-control-searchbox-only * {
+			box-sizing: content-box;
+			font-family: $neuron;
+		}
+		.loading {
+			margin: 0 auto;
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-large) {
+	.error-404 {
+		.error-content {
+			padding: 60px 20px;
+		}
+	}
+}

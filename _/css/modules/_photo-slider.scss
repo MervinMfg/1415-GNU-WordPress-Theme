@@ -87,3 +87,30 @@
 		}
 	}
 }
+@media screen and (min-width: $breakpoint-xl) {
+	.photo-slider {
+		height: 600px;
+
+		.photo-list .photo-item {
+			height: 600px;
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-xxl) {
+	.photo-slider {
+		height: 640px;
+
+		.photo-list .photo-item {
+			height: 640px;
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-xxxl) {
+	.photo-slider {
+		height: 720px;
+
+		.photo-list .photo-item {
+			height: 720px;
+		}
+	}
+}

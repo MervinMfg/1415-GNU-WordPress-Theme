@@ -14,7 +14,7 @@
    HELPERS/_VARIABLES.SCSS
    ========================================================================== */
 /*
-other breakpoints
+list of sample breakpoints
 $bp-small: 24em; // 384px
 $bp-small-2: 29.75em; // 476px
 $bp-small-3: 39.8em; // 636.8px
@@ -4434,6 +4434,48 @@ body.international .shopping-cart-wrapper {
     opacity: 0.65;
   }
 }
+@media screen and (min-width: 1168px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-slider\.scss}line{font-family:\0000390}}
+  .featured-slider {
+    height: 460px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-slider\.scss}line{font-family:\0000393}}
+  .featured-slider .slide-list .slide-item {
+    height: 460px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-slider\.scss}line{font-family:\0000396}}
+  .featured-slider .slide-list .slide-item .slide-details .slide-overlay img {
+    max-height: 420px;
+  }
+}
+@media screen and (min-width: 1424px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-slider\.scss}line{font-family:\00003103}}
+  .featured-slider {
+    height: 520px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-slider\.scss}line{font-family:\00003106}}
+  .featured-slider .slide-list .slide-item {
+    height: 520px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-slider\.scss}line{font-family:\00003109}}
+  .featured-slider .slide-list .slide-item .slide-details .slide-overlay img {
+    max-height: 480px;
+  }
+}
+@media screen and (min-width: 1600px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-slider\.scss}line{font-family:\00003116}}
+  .featured-slider {
+    height: 580px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-slider\.scss}line{font-family:\00003119}}
+  .featured-slider .slide-list .slide-item {
+    height: 580px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-slider\.scss}line{font-family:\00003122}}
+  .featured-slider .slide-list .slide-item .slide-details .slide-overlay img {
+    max-height: 540px;
+  }
+}
 /* ==========================================================================
    MODULES/_SOCIAL-SLIDER.SCSS
    ========================================================================== */
@@ -4779,6 +4821,36 @@ body.international .shopping-cart-wrapper {
   .photo-slider .photo-list .photo-item .photo-details {
     margin: 270px auto 0;
     max-width: 1056px;
+  }
+}
+@media screen and (min-width: 1168px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_photo-slider\.scss}line{font-family:\0000391}}
+  .photo-slider {
+    height: 600px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_photo-slider\.scss}line{font-family:\0000394}}
+  .photo-slider .photo-list .photo-item {
+    height: 600px;
+  }
+}
+@media screen and (min-width: 1424px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_photo-slider\.scss}line{font-family:\00003100}}
+  .photo-slider {
+    height: 640px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_photo-slider\.scss}line{font-family:\00003103}}
+  .photo-slider .photo-list .photo-item {
+    height: 640px;
+  }
+}
+@media screen and (min-width: 1600px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_photo-slider\.scss}line{font-family:\00003109}}
+  .photo-slider {
+    height: 720px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_photo-slider\.scss}line{font-family:\00003112}}
+  .photo-slider .photo-list .photo-item {
+    height: 720px;
   }
 }
 /* ==========================================================================

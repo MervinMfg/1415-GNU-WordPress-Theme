@@ -86,3 +86,42 @@
 		@include vendorize(opacity, 0.65);
 	}
 }
+@media screen and (min-width: $breakpoint-xl) {
+	.featured-slider {
+		height: 460px;
+
+		.slide-list .slide-item {
+			height: 460px;
+
+			.slide-details .slide-overlay img {
+				max-height: 420px;
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-xxl) {
+	.featured-slider {
+		height: 520px;
+
+		.slide-list .slide-item {
+			height: 520px;
+
+			.slide-details .slide-overlay img {
+				max-height: 480px;
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-xxxl) {
+	.featured-slider {
+		height: 580px;
+
+		.slide-list .slide-item {
+			height: 580px;
+
+			.slide-details .slide-overlay img {
+				max-height: 540px;
+			}
+		}
+	}
+}

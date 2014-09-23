@@ -72,7 +72,6 @@ Template Name: Team Overview
 						<li class="list-item p"><a href="/category/team/mens/ulrik-badertscher/">Ulrik Badertscher</a></li>
 						<li class="list-item p"><a href="/category/team/mens/ams-mens/alex-lopez/">Alex Lopez</a></li>
 						<li class="list-item p">Teo Konttinen</li>
-						<li class="list-item p">Ville Paumola</li>
 					</ul>
 				</div>
 				<div class="clearfix"></div>

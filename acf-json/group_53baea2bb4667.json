@@ -55,7 +55,8 @@
                 "C3 BTX": "C3 BTX",
                 "DC3 BTX": "DC3 BTX",
                 "EC2 BTX": "EC2 BTX",
-                "EC2 PBTX": "EC2 PBTX"
+                "EC2 PBTX": "EC2 PBTX",
+                "BTX - YOUTH": "BTX - YOUTH"
             },
             "other_choice": 0,
             "save_other_choice": 0,
@@ -125,9 +126,7 @@
             "post_type": [
                 "gnu_bindings"
             ],
-            "taxonomy": [
-
-            ],
+            "taxonomy": [],
             "filters": [
                 "search"
             ],

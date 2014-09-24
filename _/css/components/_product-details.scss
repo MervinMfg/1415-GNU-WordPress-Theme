@@ -126,6 +126,12 @@
 				font-size: 2.4em;
 				border: 1px solid $black;
 				padding: 0 10px;
+
+				&:hover,
+				&:focus {
+					background: $purple;
+					border-color: $purple;
+				}
 			}
 		}
 		.loading {

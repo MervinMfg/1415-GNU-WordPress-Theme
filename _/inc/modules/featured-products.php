@@ -21,7 +21,7 @@
 			?>
 
 			<section class="featured-products">
-				<div class="product-list owl-carousel owl-theme">
+				<div class="featured-products-list owl-carousel owl-theme">
 
 					<?php
 						// loop through products
@@ -31,15 +31,15 @@
 							}
 					?>
 
-					<div class="product <?php echo $featuredProducts[$i][4]; ?>">
-						<div class="product-details">
+					<div class="featured-product <?php echo $featuredProducts[$i][4]; ?>">
+						<div class="featured-product-details">
 							<a href="<?php echo $featuredProducts[$i][1]; ?>">
-								<div class="product-image">
+								<div class="featured-product-image">
 									<img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo $featuredProducts[$i][3]['sizes'][$imageSize]; ?>" alt="<?php echo $featuredProducts[$i][0]; ?>" class="owl-lazy" />
 								</div>
-								<div class="product-copy">
-									<h3 class="product-title"><?php echo $featuredProducts[$i][0]; ?></h3>
-									<p class="product-slogan"><?php echo $featuredProducts[$i][2]; ?></p>
+								<div class="featured-product-copy">
+									<h3 class="featured-product-title"><?php echo $featuredProducts[$i][0]; ?></h3>
+									<p class="featured-product-slogan"><?php echo $featuredProducts[$i][2]; ?></p>
 									<button class="btn-submit">Buy</button>
 								</div>
 							</a>

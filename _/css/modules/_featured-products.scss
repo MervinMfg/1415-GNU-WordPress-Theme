@@ -3,16 +3,16 @@
    ========================================================================== */
 
 .featured-products {
-	padding: 20px 40px;
+	padding: 20px;
 	text-align: center;
 	position: relative;
 	overflow: hidden;
 	//@include vendorize(transform, translateZ(0)); // triggers GPU, Safari fix
 
-	.product-list {
-		.product {
-			.product-details {
-				.product-image {
+	.featured-products-list {
+		.featured-product {
+			.featured-product-details {
+				.featured-product-image {
 					padding-bottom: 10px;
 
 					img {
@@ -20,11 +20,11 @@
 						max-width: none;
 					}
 				}
-				.product-copy {
-					.product-title {
+				.featured-product-copy {
+					.featured-product-title {
 						margin-bottom: 10px;
 					}
-					.product-slogan {
+					.featured-product-slogan {
 						margin-bottom: 40px;
 						font-size: 2.4em;
 						line-height: 1em;
@@ -33,11 +33,20 @@
 						display: none;
 					}
 				}
-			}
-			&.snowboards .product-details .product-image img,
-			&.apparel .product-details .product-image img {
-				width: 140%;
-				margin-left: -20%;
+				a:hover,
+				a:focus {
+					.featured-product-copy {
+						.featured-product-title {
+							color: $black;
+						}
+						.featured-product-slogan {
+							color: $black;
+						}
+						.btn-submit {
+							background: $purple;
+						}
+					}
+				}
 			}
 		}
 		.owl-dots {
@@ -55,25 +64,35 @@
 @media screen and (min-width: $breakpoint-small) {
 	.featured-products {
 		text-align: left;
+		max-width: $breakpoint-large;
+		margin: 0 auto;
 
-		.product-list .product .product-details {
-			max-width: 640px;
-			margin: 0 auto;
+		.featured-products-list .featured-product {
+			.featured-product-details {
+				max-width: 640px;
+				margin: 0 auto;
 
-			.product-image {
-				width: 40%;
-				float: left;
-			}
-			.product-copy {
-				width: 60%;
-				float: right;
-
-				.btn-submit {
-					display: block;
-					font-size: 4em;
-					padding-left: 40px;
-					padding-right: 40px;
+				.featured-product-image {
+					width: 45%;
+					float: left;
+					padding-right: 20px;
 				}
+				.featured-product-copy {
+					width: 55%;
+					float: right;
+					padding-top: 40px;
+
+					.btn-submit {
+						display: block;
+						font-size: 4em;
+						padding-left: 40px;
+						padding-right: 40px;
+					}
+				}
+			}
+			&.snowboards .featured-product-details .featured-product-image img { // &.apparel .product-details .product-image img
+				width: 140%;
+				margin-left: -20%;
 			}
 		}
 	}

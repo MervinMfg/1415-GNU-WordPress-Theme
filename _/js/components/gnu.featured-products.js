@@ -11,7 +11,7 @@ GNU.FeaturedProducts = function () {
 		loop: false
 	};
 	// check to see if slider should be activated
-	if ($('.featured-products .product-list .product').length > 1) {
+	if ($('.featured-products .featured-products-list .featured-product').length > 1) {
 		this.config.dots = true;
 		this.config.loop = true;
 	}

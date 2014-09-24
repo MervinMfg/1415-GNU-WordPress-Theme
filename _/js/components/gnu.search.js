@@ -16,12 +16,6 @@ GNU.Search.prototype = {
 		$('.site-header .header-main .search-toggle a').off('mouseenter.search').off('mouseleave.search');
 		$('.site-header .header-main .search-toggle a').off('click.search');
 		// SEARCH BAR FUNCTIONALITY
-		// spin compass w/ gif
-		$('.site-header .header-main .search-toggle a').on('mouseenter.search', function () {
-			$(this).css('background-image', 'url("' + GNU.Main.config.wpImgPath + 'search-compass.gif")').css('background-position', '0px 0px');
-		}).on('mouseleave.search', function () {
-			$(this).removeAttr('style');
-		});
 		// check for click event on search icon
 		$('.site-header .header-main .search-toggle a').on('click.search', function (e) {
 			e.preventDefault();

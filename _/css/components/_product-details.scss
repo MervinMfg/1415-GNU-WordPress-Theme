@@ -121,6 +121,10 @@
 				border-radius: 0px;
 				vertical-align: baseline;
 				padding: 0 10px;
+
+				&.alert {
+					color: $pink;
+				}
 			}
 			.btn-submit {
 				font-size: 2.4em;

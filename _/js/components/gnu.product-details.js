@@ -308,7 +308,7 @@ GNU.ProductDetails.prototype = {
 			productSKU = $('.product-variation').val();
 			if (productSKU === "-1") {
 				// add alert to class
-				$('#product-variation').addClass('alert');
+				$('.product-variation').addClass('alert');
 				return;
 			}
 			// hide add to cart, show loading while request is made

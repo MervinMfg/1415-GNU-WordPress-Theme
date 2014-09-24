@@ -9,7 +9,65 @@
 
 // GET THE REGION
 getCurrencyCode();
-
+// GET THE PAGE TITLE
+$GLOBALS['pageTitle'] = "";
+if (function_exists('is_tag') && is_tag()) {
+	$GLOBALS['pageTitle'] .= single_tag_title("Tag Archive for &quot;", false) . '&quot; - ';
+} elseif (is_archive()) {
+	$GLOBALS['pageTitle'] .= wp_title('', false) . ' Archive - ';
+} elseif (is_search()) {
+	$GLOBALS['pageTitle'] .= 'Search for &quot;'.wp_specialchars($s).'&quot; - ';
+} elseif (!(is_404()) && (is_single()) || (is_page()) && !(is_front_page())) {
+	$GLOBALS['pageTitle'] .= wp_title('-',false,'right');
+} elseif (is_404()) {
+	$GLOBALS['pageTitle'] .=  'Not Found - ';
+}
+if (is_home() || is_front_page()) {
+	$GLOBALS['pageTitle'] .= get_bloginfo('name') . ' - ' . get_bloginfo('description');
+} else {
+	$GLOBALS['pageTitle'] .= get_bloginfo('name');
+}
+if ($paged>1) {
+	$GLOBALS['pageTitle'] .=  ' - page '. $paged;
+}
+// SET DEFAULT PAGE IMAGE
+$GLOBALS['pageImage'] = get_template_directory_uri() . "/_/img/social-share.jpg";
+$pageDescriptionDefault = "GNU speed-entry performance bindings and snowboards handbuilt by snowboarders with jobs in the USA since 1977. Keep snowboarding weird!";
+// GET THE PAGE DESCRIPTION, AND IMAGE IF IT'S SINGLE
+if (is_single()){
+	if (have_posts()){
+		while (have_posts()){
+			the_post();
+			$pageDescription = strip_tags(get_the_excerpt());
+			// set page thumbnail now that we know we have a single post, used for FB likes
+			$GLOBALS['pageImage'] = get_post_image('medium');
+			$GLOBALS['pageImage'] = $GLOBALS['pageImage'][0];
+		}
+	}else{
+		$pageDescription = $pageDescriptionDefault;
+	}
+	// check for product image
+	if( get_field('libtech_product_image') ) {
+        $GLOBALS['pageImage'] = get_field('gnu_product_image');
+        $GLOBALS['pageImage'] = $GLOBALS['pageImage']['sizes']['medium'];
+    }
+}else{
+	if(has_post_thumbnail($post->ID) && !is_home()){
+		$GLOBALS['pageImage'] = get_post_image('medium');
+		$GLOBALS['pageImage'] = $GLOBALS['pageImage'][0];
+	}
+	if (have_posts() && !is_home()){
+		while (have_posts()){
+			the_post();
+			$pageDescription = strip_tags(get_the_excerpt());
+			if($pageDescription == ""){
+				$pageDescription = $pageDescriptionDefault;
+			}
+		}
+	}else {
+		$pageDescription = $pageDescriptionDefault;
+	}
+}
 ?><!doctype html>
 <!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" <?php language_attributes(); ?>> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" <?php language_attributes(); ?>> <![endif]-->
@@ -38,29 +96,31 @@ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG         GGGGGG
 
                - HANDBUILT IN THE USA BY SNOWBOARDERS WITH JOBS -
 -->
-<head id="mervinmfg-template" data-template-set="mervinmfg-wordpress-theme-template">
+<head id="www-gnu-com" data-template-set="gnu-wordpress-theme">
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<!--[if IE ]>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<![endif]-->
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
-	<meta name="description" content="<?php bloginfo('description'); ?>" />
-	<meta name="keywords" content="XXXXXXXXXX" />
+	<title><?php echo $GLOBALS['pageTitle']; ?></title>
+	<meta name="description" content="<?php echo $pageDescription; ?>" />
+	<meta name="keywords" content="GNU, snowboarding, snowboard, snowboards, Outerwear, Clothing, Apparel, Accessories, snow, snowboard technology, technology, mage-traction" />
+	<meta name="author" content="GNU" />
+	<meta name="Copyright" content="Copyright GNU <?php echo date('Y'); ?>. All Rights Reserved." />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="google-site-verification" content="XXXXXXXXXX" />
+	<meta name="google-site-verification" content="6YUIRABPjekB2v-5E5jCD-uMTBL0rUjqGsQveG2_BL0" />
 <?php if (is_search()) echo "\t" . '<meta name="robots" content="noindex, nofollow" />' . "\n"; ?>
-	<meta property="og:title" content="<?php wp_title( '|', true, 'right' ); ?>" />
-	<meta property="og:description" content="<?php bloginfo('description'); ?>" />
-	<meta property="og:url" content="<?php the_permalink(); ?>" />
-	<meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/_/img/social-icon.png" />
+	<meta property="og:title" content="<?php echo $GLOBALS['pageTitle']; ?>" />
+	<meta property="og:description" content="<?php echo $pageDescription; ?>" />
+	<meta property="og:url" content="<? the_permalink(); ?>" />
+	<meta property="og:image" content="<?php echo $GLOBALS['pageImage']; ?>" />
 	<meta property="og:type" content="website" />
-	<meta property="og:site_name" content="XXXXXXXXXX" />
-	<meta property="fb:app_id" content="XXXXXXXXXX"/>
-	<meta itemprop="name" content="<?php wp_title( '|', true, 'right' ); ?>" />
-	<meta itemprop="description" content="<?php bloginfo('description'); ?>" />
-	<meta itemprop="image" content="<?php echo get_template_directory_uri(); ?>/_/img/social-icon.png" />
-	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:site" content="@XXXXXXXXXX" />
+	<meta property="og:site_name" content="GNU Snowboards" />
+	<meta property="fb:app_id" content="217173258409585"/>
+	<meta itemprop="name" content="<?php echo $GLOBALS['pageTitle']; ?>" />
+	<meta itemprop="description" content="<?php echo $pageDescription; ?>" />
+	<meta itemprop="image" content="<?php echo $GLOBALS['pageImage']; ?>" />
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@gnuSnowboards">
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/_/img/favicon.ico" />
 	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/_/img/apple-touch-icon-precomposed.png" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />

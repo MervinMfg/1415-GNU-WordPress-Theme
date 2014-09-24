@@ -53,40 +53,6 @@ function html5reset_scripts_styles() {
 		wp_enqueue_script( 'comment-reply' );
 }
 add_action( 'wp_enqueue_scripts', 'html5reset_scripts_styles' );
-// WP Title (based on twentythirteen: http://make.wordpress.org/core/tag/twentythirteen/)
-function html5reset_wp_title( $title, $sep ) {
-	global $paged, $page;
-	if ( is_feed() )
-		return $title;
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'html5reset' ), max( $paged, $page ) );
-	//FIX
-	/*if (function_exists('is_tag') && is_tag()) {
-		single_tag_title("Tag Archive for &quot;"); echo '&quot; - '; }
-	elseif (is_archive()) {
-		wp_title(''); echo ' Archive - '; }
-	elseif (is_search()) {
-		echo 'Search for &quot;'.wp_specialchars($s).'&quot; - '; }
-	elseif (!(is_404()) && (is_single()) || (is_page())) {
-		wp_title(''); echo ' - '; }
-	elseif (is_404()) {
-		echo 'Not Found - '; }
-	if (is_home()) {
-		bloginfo('name'); echo ' - '; bloginfo('description'); }
-	else {
-		bloginfo('name'); }
-	if ($paged>1) {
-		echo ' - page '. $paged; }
-	return $title;*/
-}
-add_filter( 'wp_title', 'html5reset_wp_title', 10, 2 );
 //OLD STUFF BELOW
 // Load jQuery
 if ( !function_exists( 'core_mods' ) ) {

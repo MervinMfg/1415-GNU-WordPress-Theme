@@ -131,6 +131,9 @@
 				padding-left: 20px;
 				padding-right: 20px;
 			}
+			.instructions {
+				display: none;
+			}
 		}
 		.product-list {
 			.product {
@@ -317,6 +320,26 @@
 			.sign.medium {
 				top: 55px;
 				@include vendorize(transform, rotate(8deg));
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-large) {
+	.product-overview {
+		.product-filters {
+			.instructions {
+				display: block;
+				text-align: center;
+				
+				img {
+					max-height: 30px;
+					padding-top: 10px;
+					@include vendorize(opacity, 0);
+					@include transition(opacity, 500ms, ease-out);
+				}
+				&.show img {
+					@include vendorize(opacity, 1);
+				}
 			}
 		}
 	}

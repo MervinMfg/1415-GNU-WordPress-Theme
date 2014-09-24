@@ -24,6 +24,7 @@ Template Name: Product Overview
 				</header>
 				<div class="product-filters">
 					<button class="btn-filter">Board Filters</button>
+					<div class="instructions"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/carousel-instructions-snowboards.gif" alt="Click and Drag Boards" class="lazy" /></div>
 				</div>
 				<div class="product-list owl-carousel">
 
@@ -88,6 +89,7 @@ Template Name: Product Overview
 				</header>
 				<div class="product-filters">
 					<button class="btn-filter">Board Filters</button>
+					<div class="instructions"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/carousel-instructions-snowboards.gif" alt="Click and Drag Boards" class="lazy" /></div>
 				</div>
 				<div class="product-list owl-carousel">
 					<?php
@@ -153,7 +155,9 @@ Template Name: Product Overview
 					</div>
 					<div class="vibe vibe-6"></div>
 				</header>
-				<div class="product-filters"></div>
+				<div class="product-filters">
+					<div class="instructions"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/carousel-instructions-bindings.gif" alt="Click and Drag Bindings" class="lazy" /></div>
+				</div>
 				<div class="product-list owl-carousel">
 					<?php
 						// Get Mens Bindings
@@ -215,7 +219,9 @@ Template Name: Product Overview
 					</div>
 					<div class="vibe vibe-3"></div>
 				</header>
-				<div class="product-filters"></div>
+				<div class="product-filters">
+					<div class="instructions"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/carousel-instructions-bindings.gif" alt="Click and Drag Bindings" class="lazy" /></div>
+				</div>
 				<div class="product-list owl-carousel">
 					<?php
 						// Get Womens Bindings
@@ -313,6 +319,7 @@ Template Name: Product Overview
 				</header>
 				<div class="product-filters">
 					<button class="btn-filter">Supply Filters</button>
+					<div class="instructions"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/carousel-instructions-supplies.gif" alt="Click and Drag Supplies" class="lazy" /></div>
 				</div>
 				<div class="product-list owl-carousel">
 					<?php
@@ -378,6 +385,7 @@ Template Name: Product Overview
 				</header>
 				<div class="product-filters">
 					<button class="btn-filter">Supply Filters</button>
+					<div class="instructions"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/carousel-instructions-supplies.gif" alt="Click and Drag Supplies" class="lazy" /></div>
 				</div>
 				<div class="product-list owl-carousel">
 					<?php
@@ -443,6 +451,7 @@ Template Name: Product Overview
 				</header>
 				<div class="product-filters">
 					<button class="btn-filter">Supply Filters</button>
+					<div class="instructions"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/carousel-instructions-supplies.gif" alt="Click and Drag Supplies" class="lazy" /></div>
 				</div>
 				<div class="product-list owl-carousel">
 					<?php

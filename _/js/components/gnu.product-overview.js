@@ -17,21 +17,22 @@ GNU.ProductOverview.prototype = {
 		$(window).on('resize.productOverview', function () {
 			if ( responsiveSize != "base" && GNU.Main.utilities.responsiveCheck() == "base" ) {
 				responsiveSize = "base";
-				self.setupProducts();
+				self.productsInit();
 			} else if ( responsiveSize != "small" && GNU.Main.utilities.responsiveCheck() == "small" ) {
 				responsiveSize = "small";
-				self.setupProducts();
+				self.productsInit();
 			} else if ( responsiveSize != "medium" && GNU.Main.utilities.responsiveCheck() == "medium" ) {
 				responsiveSize = "medium";
-				self.setupProducts();
+				self.productsInit();
 			} else if ( responsiveSize != "large" && GNU.Main.utilities.responsiveCheck() == "large" ) {
 				responsiveSize = "large";
-				self.setupProducts();
+				self.productsInit();
 			}
 		});
-		self.setupProducts();
+		self.productsInit();
+		self.instructionsInit();
 	},
-	setupProducts: function () {
+	productsInit: function () {
 		var self = this;
 		// reset owl carousel(s)
 		if (typeof $(".product-overview .owl-carousel").data('owl.carousel') !== 'undefined') {
@@ -88,5 +89,14 @@ GNU.ProductOverview.prototype = {
 				loop: true
 			});
 		}
+	},
+	instructionsInit: function () {
+		var instructionTimeout = window.setTimeout( function () {
+			$('.product-overview .product-filters .instructions').addClass('show');
+		}, 3000);
+		$('.product-list').on('mousedown.instructions', function () {
+			window.clearTimeout(instructionTimeout);
+			$('.product-overview .product-filters .instructions').removeClass('show');
+		});	
 	}
 };

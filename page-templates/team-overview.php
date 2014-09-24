@@ -24,6 +24,9 @@ Template Name: Team Overview
 					</div>
 					<div class="vibe vibe-2"></div>
 				</header>
+				<div class="product-filters">
+					<div class="instructions"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/carousel-instructions-team.gif" alt="Click and Drag Team" class="lazy" /></div>
+				</div>
 				<div class="product-list owl-carousel">
 
 					<?php
@@ -92,6 +95,9 @@ Template Name: Team Overview
 					</div>
 					<div class="vibe vibe-6"></div>
 				</header>
+				<div class="product-filters">
+					<div class="instructions"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/carousel-instructions-team.gif" alt="Click and Drag Team" class="lazy" /></div>
+				</div>
 				<div class="product-list owl-carousel">
 
 					<?php

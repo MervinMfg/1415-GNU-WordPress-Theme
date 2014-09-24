@@ -342,6 +342,26 @@ Template Name: Product Overview
 						while ( $loop->have_posts() ) : $loop->the_post();
 							$image = get_field('gnu_product_image');
 							$detail = 'Wearables';
+							// get the slug of first found category
+							$categories = get_the_terms( $post->ID , 'gnu_apparel_categories' );
+							foreach ( $categories as $cat ) {
+								$mainCatSlug = $cat->slug;
+								break;
+							}
+							// determine load image
+							switch ($mainCatSlug) {
+								case "sweatshirts":
+									$loadImage = "loading-sweatshirt.png";
+									break;
+								case "t-shirts":
+									$loadImage = "loading-t-shirt.png";
+									break;
+								case "socks":
+									$loadImage = "loading-sock.png";
+									break;
+								default:
+									$loadImage = "loading-t-shirt.png";
+							}
 					?>
 
 					<div class="product">
@@ -355,7 +375,7 @@ Template Name: Product Overview
 									</div>
 								</div>
 							</div>
-							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
+							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/<?php echo $loadImage; ?>" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
 						</a>
 					</div><!-- .product -->
 
@@ -421,7 +441,7 @@ Template Name: Product Overview
 									</div>
 								</div>
 							</div>
-							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
+							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-headwear.png" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
 						</a>
 					</div><!-- .product -->
 
@@ -479,7 +499,7 @@ Template Name: Product Overview
 									</div>
 								</div>
 							</div>
-							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
+							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-accessory.png" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
 						</a>
 					</div><!-- .product -->
 

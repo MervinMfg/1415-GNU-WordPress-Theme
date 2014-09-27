@@ -11,8 +11,75 @@ GNU.ProductOverview = function () {
 };
 GNU.ProductOverview.prototype = {
 	init: function () {
-		var self, responsiveSize;
+		var self, responsiveObject, responsiveSize;
 		self = this;
+		// set up owl carousel(s)
+		if ($('#mens-snowboards').length) {
+			// we're viewing snowboards
+			responsiveObject = {
+				0:{ items: 1, dots: false },
+				310: { items: 2, dots: false },
+				430: { items: 3, dots: false },
+				550:{ items: 4, dots: false },
+				670:{ items: 5, dots: false },
+				748:{ items: 3, dots: true },
+				950:{ items: 4, dots: true },
+				1170:{ items: 5, dots: true },
+				1390:{ items: 6, dots: true },
+				1610:{ items: 7, dots: true },
+				1830:{ items: 8, dots: true },
+				2050:{ items: 9, dots: true },
+				2270:{ items: 10, dots: true },
+				2490:{ items: 11, dots: true },
+				2710:{ items: 12, dots: true },
+				2930:{ items: 13, dots: true },
+				3150:{ items: 14, dots: true },
+				3370:{ items: 15, dots: true }
+			};
+		} else if ($('#mens-team').length) {
+			// we're viewing team
+			responsiveObject = {
+				0:{ items: 1, dots: false },
+				550: { items: 2, dots: false },
+				748: { items: 1, dots: true },
+				970: { items: 2, dots: true },
+				1420: { items: 3, dots: true },
+				1870:{ items: 4, dots: true },
+				2320:{ items: 5, dots: true },
+				2770:{ items: 6, dots: true },
+				3220:{ items: 7, dots: true },
+				3670:{ items: 8, dots: true },
+				4120:{ items: 9, dots: true }
+			};
+		} else {
+			// we're viewing bindings and supplies
+			responsiveObject = {
+				0:{ items: 1, dots: false },
+				320: { items: 2, dots: false, stagePadding: 5 },
+				390: { items: 2, dots: false },
+				550: { items: 3, dots: false },
+				710:{ items: 4, dots: false },
+				748:{ items: 2, dots: true, stagePadding: 20 },
+				790:{ items: 2, dots: true },
+				1150:{ items: 3, dots: true },
+				1510:{ items: 4, dots: true },
+				1870:{ items: 5, dots: true },
+				2230:{ items: 6, dots: true },
+				2590:{ items: 7, dots: true },
+				2950:{ items: 8, dots: true },
+				3310:{ items: 9, dots: true },
+				3670:{ items: 10, dots: true },
+				4030:{ items: 11, dots: true },
+				4390:{ items: 12, dots: true }
+			};
+		}
+		$(".product-overview .owl-carousel").owlCarousel({
+			lazyLoad: true,
+			slideBy: 2,
+			stagePadding: 40,
+			margin: 10,
+			responsive: responsiveObject
+		});
 		// (RE)INIT MENU ON RESIZE
 		$(window).on('resize.productOverview', function () {
 			if ( responsiveSize != "base" && GNU.Main.utilities.responsiveCheck() == "base" ) {
@@ -34,12 +101,6 @@ GNU.ProductOverview.prototype = {
 	},
 	productsInit: function () {
 		var self = this;
-		// reset owl carousel(s)
-		if (typeof $(".product-overview .owl-carousel").data('owl.carousel') !== 'undefined') {
-			$(".product-overview .owl-carousel").each(function() {
-				$(this).data('owl.carousel').destroy();
-			});
-		}
 		if ( GNU.Main.utilities.responsiveCheck() === 'medium' || GNU.Main.utilities.responsiveCheck() === 'large' ) {
 			TweenMax.to('.product-overview .product-list .product a .info', 0, {scale: 1, force3D: true});
 			TweenMax.to('.product-overview .product-list .product a .image', 0, {scale: 0.95, force3D: true});
@@ -55,39 +116,12 @@ GNU.ProductOverview.prototype = {
 				TweenMax.to($info, 0.2, {scale: 1, force3D: true});
 				TweenMax.to($image, 0.2, {scale: 0.95, force3D: true});
 			});
-			// set up owl carousel(s)
-			$(".product-overview .owl-carousel").owlCarousel({
-				items: 8,
-				responsive: false,
-				autoWidth: true,
-				dots: false,
-				lazyLoad: true,
-				autoplay: true,
-				autoplayTimeout: 3000,
-				autoplayHoverPause: true,
-				margin: 20,
-				loop: true,
-				nav: false
-			});
 		} else {
 			TweenMax.to('.product-overview .product-list .product a .info', 0, {scale: 1, force3D: true});
 			TweenMax.to('.product-overview .product-list .product a .image', 0, {scale: 1, force3D: true});
-			$('.product-overview .product-list .product a .info').removeAttr('style'); // omit '.product-overview .product-list .product a .image'
+			$('.product-overview .product-list .product a .info, .product-overview .product-list .product a .image').removeAttr('style');
 			// remove listeners for mobile
 			$('.product-overview .product-list .product a').off('mouseover.productOverview, mouseout.productOverview');
-			// set up owl carousel(s)
-			$(".product-overview .owl-carousel").owlCarousel({
-				items: 8,
-				responsive: false,
-				autoWidth: true,
-				dots: false,
-				lazyLoad: true,
-				autoplay: true,
-				autoplayTimeout: 3000,
-				autoplayHoverPause: true,
-				margin: 10,
-				loop: true
-			});
 		}
 	},
 	instructionsInit: function () {

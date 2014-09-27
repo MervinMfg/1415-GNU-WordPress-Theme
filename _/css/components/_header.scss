@@ -1,11 +1,16 @@
 /* ==========================================================================
    COMPONENTS/_HEADER.SCSS
    ========================================================================== */
+
 .site-header {
 	background: $white url('../img/bg-horizontal-color.png') no-repeat;
 	padding-top: 4px;
 	background-size: 100% 4px;
 	position: relative;
+
+	* {
+		-webkit-transform: translateZ(0); /* Safari (5.1.10) Fix */
+	}
 
 	.header-wrapper {
 		background: url('../img/bg-green-triangles.png') repeat-x bottom;

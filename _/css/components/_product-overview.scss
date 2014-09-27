@@ -11,6 +11,7 @@
 	}
 	.product-list {
 		text-align: center;
+		padding: 10px 0 5px;
 
 		.product {
 			width: 150px;
@@ -138,14 +139,12 @@
 		.product-list {
 			.product {
 				width: 350px;
-				height: 445px;
+				height: 400px;
 
 				.info {
 					height: 88px;
-					bottom: 40px;
+					bottom: 0;
 					padding: 0 10px;
-					//@include vendorize(transform, scale(1,1));
-					//@include transition(transform, 100ms, ease-in-out);
 
 					.detail {
 						display: block;
@@ -171,18 +170,6 @@
 					height: 350px;
 					max-width: 350px;
 					left: 0px;
-
-					//@include vendorize(transform, scale(0.95, 0.95));
-					//@include transition(transform, 100ms, ease-in-out);
-				}
-				a:hover,
-				a:focus {
-					.info {
-						//@include vendorize(transform, scale(1.05, 1.05));
-					}
-					.image {
-						//@include vendorize(transform, scale(1, 1));
-					}
 				}
 			}
 		}
@@ -195,6 +182,7 @@
 
 			.info {
 				height: 88px;
+				bottom: 40px;
 			}
 			.image {
 				width: 640px;
@@ -212,6 +200,7 @@
 
 			.info {
 				height: 88px;
+				bottom: 40px;
 			}
 			.image {
 				width: 640px;

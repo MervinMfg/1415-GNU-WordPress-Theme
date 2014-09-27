@@ -128,15 +128,11 @@ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG         GGGGGG
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<?php include '_/inc/header-includes.php' ?>
-	<?php
-	$respondGif = get_template_directory_uri() . '/_/js/lib/respond/respond.proxy.gif';
-	$respondProxy = get_template_directory_uri() . '/_/js/lib/respond/respond.proxy.js';
-	?>
 	<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/_/js/lib/respond/respond-1.4.2.min.js"></script>
-	<link href="<?php echo get_template_directory_uri(); ?>/_/js/lib/respond/cross-domain/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
-	<link href="<?php echo $respondGif; ?>" id="respond-redirect" rel="respond-redirect" />
-	<script src="<?php echo $respondProxy; ?>"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/_/js/lib/respond-1.4.2.min.js"></script>
+	<link href="http://bfwck11rnvh1f4a4f4dmjvr3.wpengine.netdna-cdn.com/respond-proxy/" id="respond-proxy" rel="respond-proxy" />
+	<link href="<?php echo get_template_directory_uri(); ?>/_/img/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+	<script src="<?php echo get_template_directory_uri(); ?>/_/js/lib/respond.proxy.js"></script>
 	<![endif]-->
 	<!-- WordPress Head -->
 	<?php

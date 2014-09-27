@@ -165,10 +165,8 @@ GNU.Shop.prototype = {
 	showQuickCart: function () {
 		var self, quickCartEvent;
 		self = this;
-		// Create and dispatch event to notify others when cart is shown
-		quickCartEvent = document.createEvent('Event');
-		quickCartEvent.initEvent('QuickCartShow', true, true);
-		document.dispatchEvent(quickCartEvent);
+		// dispatch event to notify others when cart is shown
+		GNU.Main.utilities.events.trigger('QuickCartShow');
 		// set quik cart visuals
 		$('.site-header .quick-cart').removeClass('hide');
 		TweenLite.to('.site-header .quick-cart', 0.2, {opacity: 1});

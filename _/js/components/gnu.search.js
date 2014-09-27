@@ -30,10 +30,8 @@ GNU.Search.prototype = {
 	showSearch: function () {
 		var self, searchEvent;
 		self = this;
-		// Create and dispatch event to notify others when search is shown
-		searchEvent = document.createEvent('Event');
-		searchEvent.initEvent('SearchShow', true, true);
-		document.dispatchEvent(searchEvent);
+		// dispatch event to notify others when search is shown
+		GNU.Main.utilities.events.trigger('SearchShow');
 		// set search box visuals
 		$('.site-header .search-box-wrapper').removeClass('hide');
 		TweenLite.to('.site-header .search-box-wrapper', 0.2, {opacity: 1, onComplete: function () {$('.site-header .search-box-wrapper .search-form .input-text').focus();}});

@@ -26,7 +26,7 @@ Template Name: Product Overview
 					<button class="btn-filter">Board Filters</button>
 					<div class="instructions"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/carousel-instructions-snowboards.gif" alt="Click and Drag Boards" class="lazy" /></div>
 				</div>
-				<div class="product-list owl-carousel">
+				<div class="product-list owl-carousel owl-theme">
 
 					<?php
 						// Get Mens
@@ -59,7 +59,7 @@ Template Name: Product Overview
 									<?php echo getPrice( get_field('gnu_product_price_us'), get_field('gnu_product_price_ca'), get_field('gnu_product_price_eur'), get_field('gnu_product_on_sale'), get_field('gnu_product_sale_percentage') ); ?>
 								</div>
 							</div>
-							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-board.png" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
+							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-board.png" data-src="<?php echo $image['sizes']['medium']; ?>" data-src-retina="<?php echo $image['sizes']['large']; ?>"  alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
 						</a>
 					</div><!-- .product -->
 
@@ -91,7 +91,7 @@ Template Name: Product Overview
 					<button class="btn-filter">Board Filters</button>
 					<div class="instructions"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/carousel-instructions-snowboards.gif" alt="Click and Drag Boards" class="lazy" /></div>
 				</div>
-				<div class="product-list owl-carousel">
+				<div class="product-list owl-carousel owl-theme">
 					<?php
 						// Get Womens
 						$args = array(
@@ -125,7 +125,7 @@ Template Name: Product Overview
 									</div>
 								</div>
 							</div>
-							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-board.png" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
+							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-board.png" data-src="<?php echo $image['sizes']['medium']; ?>" data-src-retina="<?php echo $image['sizes']['large']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
 						</a>
 					</div><!-- .product -->
 
@@ -143,7 +143,7 @@ Template Name: Product Overview
 				<header class="product-header section-header alt">
 					<div class="header-wrapper">
 						<h2 class="title">Men's Bindings</h2>
-						<h5 class="subtitle">Strangely Comfortable</h5>
+						<h5 class="subtitle">Click, Click, Ride</h5>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">
@@ -158,7 +158,7 @@ Template Name: Product Overview
 				<div class="product-filters">
 					<div class="instructions"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/carousel-instructions-bindings.gif" alt="Click and Drag Bindings" class="lazy" /></div>
 				</div>
-				<div class="product-list owl-carousel">
+				<div class="product-list owl-carousel owl-theme">
 					<?php
 						// Get Mens Bindings
 						$args = array(
@@ -192,7 +192,7 @@ Template Name: Product Overview
 									</div>
 								</div>
 							</div>
-							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-binding.png" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
+							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-binding.png" data-src="<?php echo $image['sizes']['medium']; ?>" data-src-retina="<?php echo $image['sizes']['large']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
 						</a>
 					</div><!-- .product -->
 
@@ -207,7 +207,7 @@ Template Name: Product Overview
 				<header class="product-header section-header">
 					<div class="header-wrapper">
 						<h2 class="title">Women's Bindings</h2>
-						<h5 class="subtitle">Lightweight, Performance, Strength and Comfort</h5>
+						<h5 class="subtitle">Faster, Easier, Smarter</h5>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">
@@ -222,7 +222,7 @@ Template Name: Product Overview
 				<div class="product-filters">
 					<div class="instructions"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/carousel-instructions-bindings.gif" alt="Click and Drag Bindings" class="lazy" /></div>
 				</div>
-				<div class="product-list owl-carousel">
+				<div class="product-list owl-carousel owl-theme">
 					<?php
 						// Get Womens Bindings
 						$args = array(
@@ -256,7 +256,7 @@ Template Name: Product Overview
 									</div>
 								</div>
 							</div>
-							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-binding.png" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
+							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-binding.png" data-src="<?php echo $image['sizes']['medium']; ?>" data-src-retina="<?php echo $image['sizes']['large']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
 						</a>
 					</div><!-- .product -->
 
@@ -321,7 +321,7 @@ Template Name: Product Overview
 					<button class="btn-filter">Supply Filters</button>
 					<div class="instructions"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/carousel-instructions-supplies.gif" alt="Click and Drag Supplies" class="lazy" /></div>
 				</div>
-				<div class="product-list owl-carousel">
+				<div class="product-list owl-carousel owl-theme">
 					<?php
 						// Get Wearables
 						$args = array(
@@ -375,7 +375,7 @@ Template Name: Product Overview
 									</div>
 								</div>
 							</div>
-							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/<?php echo $loadImage; ?>" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
+							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/<?php echo $loadImage; ?>" data-src="<?php echo $image['sizes']['medium']; ?>" data-src-retina="<?php echo $image['sizes']['large']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
 						</a>
 					</div><!-- .product -->
 
@@ -407,7 +407,7 @@ Template Name: Product Overview
 					<button class="btn-filter">Supply Filters</button>
 					<div class="instructions"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/carousel-instructions-supplies.gif" alt="Click and Drag Supplies" class="lazy" /></div>
 				</div>
-				<div class="product-list owl-carousel">
+				<div class="product-list owl-carousel owl-theme">
 					<?php
 						// Get Wearables
 						$args = array(
@@ -441,7 +441,7 @@ Template Name: Product Overview
 									</div>
 								</div>
 							</div>
-							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-headwear.png" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
+							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-headwear.png" data-src="<?php echo $image['sizes']['medium']; ?>" data-src-retina="<?php echo $image['sizes']['large']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
 						</a>
 					</div><!-- .product -->
 
@@ -473,7 +473,7 @@ Template Name: Product Overview
 					<button class="btn-filter">Supply Filters</button>
 					<div class="instructions"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/carousel-instructions-supplies.gif" alt="Click and Drag Supplies" class="lazy" /></div>
 				</div>
-				<div class="product-list owl-carousel">
+				<div class="product-list owl-carousel owl-theme">
 					<?php
 						// Get Wearables
 						$args = array(
@@ -499,7 +499,7 @@ Template Name: Product Overview
 									</div>
 								</div>
 							</div>
-							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-accessory.png" data-src="<?php echo $image['sizes']['large']; ?>" data-src-retina="<?php echo $image['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
+							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-accessory.png" data-src="<?php echo $image['sizes']['medium']; ?>" data-src-retina="<?php echo $image['sizes']['large']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
 						</a>
 					</div><!-- .product -->
 

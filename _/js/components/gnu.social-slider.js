@@ -147,7 +147,9 @@ GNU.SocialSlider.prototype = {
 			$(".social-slider .social-list .facebook img.lazy").unveil();
 			// auto-clamp based on available height
 			$('.social-slider .social-list .facebook .item-copy .fb-excerpt').each(function () {
-				$clamp(this, {clamp: 'auto'});
+				if (!$('html').hasClass('ie-lt9')) {
+					$clamp(this, {clamp: 'auto'});
+				}
 			});
 		}
 	},

@@ -27,7 +27,7 @@ Template Name: Team Overview
 				<div class="product-filters">
 					<div class="instructions"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/carousel-instructions-team.gif" alt="Click and Drag Team" class="lazy" /></div>
 				</div>
-				<div class="product-list owl-carousel">
+				<div class="product-list owl-carousel owl-theme">
 
 					<?php
 						$args = array(
@@ -58,7 +58,7 @@ Template Name: Team Overview
 									<p class="detail"><?php echo $detail; ?></p>
 								</div>
 							</div>
-							<?php if($profilePhoto): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-team.png" data-src="<?php echo $profilePhoto['sizes']['large']; ?>" data-src-retina="<?php echo $profilePhoto['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
+							<?php if($profilePhoto): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-team.png" data-src="<?php echo $profilePhoto['sizes']['medium']; ?>" data-src-retina="<?php echo $profilePhoto['sizes']['large']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
 						</a>
 					</div><!-- .product -->
 
@@ -98,7 +98,7 @@ Template Name: Team Overview
 				<div class="product-filters">
 					<div class="instructions"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/carousel-instructions-team.gif" alt="Click and Drag Team" class="lazy" /></div>
 				</div>
-				<div class="product-list owl-carousel">
+				<div class="product-list owl-carousel owl-theme">
 
 					<?php
 						$args = array(
@@ -129,7 +129,7 @@ Template Name: Team Overview
 									<p class="detail"><?php echo $detail; ?></p>
 								</div>
 							</div>
-							<?php if($profilePhoto): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-team.png" data-src="<?php echo $profilePhoto['sizes']['large']; ?>" data-src-retina="<?php echo $profilePhoto['url']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
+							<?php if($profilePhoto): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-team.png" data-src="<?php echo $profilePhoto['sizes']['medium']; ?>" data-src-retina="<?php echo $profilePhoto['sizes']['large']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
 						</a>
 					</div><!-- .product -->
 

@@ -27,12 +27,12 @@ GNU.Main = {
 		// trigger load before scroll or resize
 		$(window).on('load.lazy', function () { $(window).resize(); $(window).off('load.lazy'); });
 		// Listen for the events between quick cart and search
-		document.addEventListener('QuickCartShow', function (e) {
+		self.utilities.events.listen('QuickCartShow', function () {
 			search.hideSearch();
-		}, false);
-		document.addEventListener('SearchShow', function (e) {
+		});
+		self.utilities.events.listen('SearchShow', function () {
 			self.config.shop.hideQuickCart();
-		}, false);
+		});
 		// init respective page template
 		if ($body.hasClass('home')) {
 			self.homeInit();
@@ -173,6 +173,28 @@ GNU.Main = {
 		});
 	},
 	utilities: {
+		events: {
+			listen: function (eventName, callback) {
+				if(document.addEventListener) {
+					document.addEventListener(eventName, callback, false);
+				} else {
+					document.documentElement.attachEvent('onpropertychange', function (e) {
+						if(e.propertyName  == eventName) {
+							callback();
+						}
+					});
+				}
+			},
+			trigger: function (eventName) {
+				if(document.createEvent) {
+					var event = document.createEvent('Event');
+					event.initEvent(eventName, true, true);
+					document.dispatchEvent(event);
+				} else {
+					document.documentElement[eventName]++;
+				}
+			}
+		},
 		cookie: {
 			getCookie: function (name) {
 				var nameEQ = name + "=";

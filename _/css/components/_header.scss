@@ -8,10 +8,6 @@
 	background-size: 100% 4px;
 	position: relative;
 
-	* {
-		-webkit-transform: translateZ(0); /* Safari (5.1.10) Fix */
-	}
-
 	.header-wrapper {
 		background: url('../img/bg-green-triangles.png') repeat-x bottom;
 	}
@@ -177,7 +173,7 @@
 			right: 0;
 			width: 100%;
 			background: $white;
-			background: rgba(255, 255, 255, 0.5);
+			background: rgba(255, 255, 255, 0.8);
 			border-bottom: 1px solid $black;
 			z-index: 100;
 
@@ -268,6 +264,10 @@
 		position: fixed;
 		width: 100%;
 		z-index: 15;
+
+		* {
+			-webkit-transform: translateZ(0); /* Safari (5.1.10) Fix */
+		}
 
 		.header-main {
 			.menu-toggle {

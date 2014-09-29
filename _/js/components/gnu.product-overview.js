@@ -36,23 +36,8 @@ GNU.ProductOverview.prototype = {
 				3150:{ items: 14, dots: true },
 				3370:{ items: 15, dots: true }
 			};
-		} else if ($('#mens-team').length) {
-			// we're viewing team
-			responsiveObject = {
-				0:{ items: 1, dots: false },
-				550: { items: 2, dots: false },
-				748: { items: 1, dots: true },
-				970: { items: 2, dots: true },
-				1420: { items: 3, dots: true },
-				1870:{ items: 4, dots: true },
-				2320:{ items: 5, dots: true },
-				2770:{ items: 6, dots: true },
-				3220:{ items: 7, dots: true },
-				3670:{ items: 8, dots: true },
-				4120:{ items: 9, dots: true }
-			};
 		} else {
-			// we're viewing bindings and supplies
+			// we're viewing bindings, supplies and team
 			responsiveObject = {
 				0:{ items: 1, dots: false },
 				320: { items: 2, dots: false, stagePadding: 5 },

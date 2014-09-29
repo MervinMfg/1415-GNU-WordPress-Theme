@@ -2229,8 +2229,8 @@ body.international .shopping-cart-wrapper {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\0000398}}
 #mens-team .product-list .product,
 #womens-team .product-list .product {
-  width: 230px;
-  height: 335px;
+  width: 150px;
+  height: 274px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003102}}
 #mens-team .product-list .product .info,
@@ -2240,10 +2240,10 @@ body.international .shopping-cart-wrapper {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003105}}
 #mens-team .product-list .product .image,
 #womens-team .product-list .product .image {
-  width: 335px;
-  height: 335px;
-  max-width: 335px;
-  left: -52px;
+  width: 274px;
+  height: 274px;
+  max-width: 274px;
+  left: -62px;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003113}}
@@ -2338,7 +2338,7 @@ body.international .shopping-cart-wrapper {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003197}}
   #mens-team .product-list .product,
   #womens-team .product-list .product {
-    width: 440px;
+    width: 350px;
     height: 640px;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003201}}
@@ -2353,7 +2353,7 @@ body.international .shopping-cart-wrapper {
     width: 640px;
     height: 640px;
     max-width: 640px;
-    left: -100px;
+    left: -145px;
   }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003216}}

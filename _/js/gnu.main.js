@@ -218,15 +218,18 @@ GNU.Main = {
 				document.cookie = name + "=" + value + expires + "; path=/";
 			}
 		},
-		pageScroll: function (hash, duration) {
+		pageScroll: function (hash, duration, updateLocation) {
 			var yPosition;
 			// check duration
 			if (typeof duration === 'undefined') {
 				duration = 1;
 			}
+			if (typeof updateLocation === 'undefined') {
+				updateLocation = true;
+			}
 			// Smooth Page Scrolling, update hash on complete of animation
 			yPosition = $(hash).offset().top;
-			TweenMax.to(window, duration, {scrollTo:{y: yPosition, x: 0}, onComplete: function () { window.location = hash; }});
+			TweenMax.to(window, duration, {scrollTo:{y: yPosition, x: 0}, onComplete: function () { if (updateLocation) window.location = hash; }});
 		},
 		responsiveCheck: function () {
 			var size;

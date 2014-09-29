@@ -184,6 +184,10 @@
 	}
 }
 @media screen and (min-width: $breakpoint-medium) {
+	#social-slider {
+		padding-top: 75px;
+		margin-top: -75px;
+	}
 	.social-slider {
 		height: 260px;
 		min-height: 260px;
@@ -227,6 +231,10 @@
 	}
 }
 @media screen and (min-width: $breakpoint-large) {
+	#social-slider {
+		padding-top: 55px;
+		margin-top: -55px;
+	}
 	.social-slider.video {
 		min-height: 640px;
 

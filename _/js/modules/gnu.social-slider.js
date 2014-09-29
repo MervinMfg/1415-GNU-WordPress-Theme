@@ -182,7 +182,6 @@ GNU.SocialSlider.prototype = {
 		});
 	},
 	initVideo: function (videoID, videoTitle) {
-		console.log('init video');
 		$('.social-slider').addClass('video');
 		$('.social-slider .video-player .video-title').html(videoTitle);
 		$('.social-slider .video-player .video-wrapper').html('<iframe src="http://player.vimeo.com/video/' + videoID + '?title=0&amp;byline=0&amp;portrait=0&amp;color=99CC33&amp;autoplay=1&amp;loop=1" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');
@@ -193,6 +192,7 @@ GNU.SocialSlider.prototype = {
 			$('.social-slider .video-player .btn-close').off('click');
 			$('.social-slider').removeClass('video');
 		});
+		GNU.Main.utilities.pageScroll("#social-slider", 0.5, false);
 	},
 	utilities: {
 		getVimeoId: function (url) {

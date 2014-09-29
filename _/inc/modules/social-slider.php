@@ -37,25 +37,27 @@
 	}
 ?>
 
-			<section class="social-slider" data-instagram="<?php echo $instagram; ?>" data-facebook="<?php echo $facebook; ?>">
-				<div class="social-list owl-carousel loading">
+			<section id="social-slider">
+				<div class="social-slider" data-instagram="<?php echo $instagram; ?>" data-facebook="<?php echo $facebook; ?>">
+					<div class="social-list owl-carousel loading">
 
-					<?php foreach ($videos as $video) : ?>
+						<?php foreach ($videos as $video) : ?>
 
-					<div class="social-item vimeo">
-						<a href="https://vimeo.com/<?php echo $video['id']; ?>" target="_blank" class="owl-lazy" data-src="<?php echo $video['details'][0]['thumbnail_large']; ?>" title="<?php echo $video['details'][0]['title']; ?>">
-							<div class="item-icon">
-								<div class="icon"></div>
-							</div>
-						</a>
-					</div>
-					
-					<?php endforeach; ?>
+						<div class="social-item vimeo">
+							<a href="https://vimeo.com/<?php echo $video['id']; ?>" target="_blank" class="owl-lazy" data-src="<?php echo $video['details'][0]['thumbnail_large']; ?>" title="<?php echo $video['details'][0]['title']; ?>">
+								<div class="item-icon">
+									<div class="icon"></div>
+								</div>
+							</a>
+						</div>
+						
+						<?php endforeach; ?>
 
-				</div><!-- .social-list -->
-				<div class="video-player">
-					<h3 class="video-title">Headline for video</h3>
-					<button class="btn-close white"><span class="offscreen">Close</span></button>
-					<div class="video-wrapper"><!-- rendered by JavaScript --></div>
-				</div><!-- .video-player -->
-			</section><!-- .social-slider -->
+					</div><!-- .social-list -->
+					<div class="video-player">
+						<h3 class="video-title">Headline for video</h3>
+						<button class="btn-close white"><span class="offscreen">Close</span></button>
+						<div class="video-wrapper"><!-- rendered by JavaScript --></div>
+					</div><!-- .video-player -->
+				</div><!-- .social-slider -->
+			</section><!-- #social-slider -->

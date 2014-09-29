@@ -14,6 +14,7 @@ module.exports = function (grunt) {
 		'_/js/lib/underscore-1.6.0.js',
 		'_/js/lib/clamp-0.5.1.js',
 		'_/js/gnu.main.js',
+		'_/js/modules/*.js',
 		'_/js/components/*.js'
 	];
 	// PROJECT CONFIG

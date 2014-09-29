@@ -35,10 +35,16 @@ GNU.SocialSlider.prototype = {
 				success: function (photosJSON) {
 					var photosData = photosJSON.data;
 					for (var i = 0; i < photosData.length; i++) {
-						var photoData, postItem;
+						var photoData, postItem, photoText;
 						photoData = photosData[i];
+						// check for caption
+						if (photoData.caption !== null) {
+							photoText = photoData.caption.text;
+						} else {
+							photoText = "";
+						}
 						// set up instagram item
-						postItem = '<div class="social-item instagram"><a href="' + photoData.link + '" target="_blank" class="owl-lazy" data-src="' + photoData.images.low_resolution.url + '" title="' + photoData.caption.text + '"><div class="item-icon"><div class="icon"></div></div></a></div>';
+						postItem = '<div class="social-item instagram"><a href="' + photoData.link + '" target="_blank" class="owl-lazy" data-src="' + photoData.images.low_resolution.url + '" title="' + photoText + '"><div class="item-icon"><div class="icon"></div></div></a></div>';
 						self.config.instagramPosts.push(postItem);
 					}
 					// randomize/shuffle instagram posts with underscore.js

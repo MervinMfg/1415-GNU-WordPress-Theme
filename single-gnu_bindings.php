@@ -88,7 +88,7 @@ Template Name: Bindings Detail
 							<?php foreach ($bindingOptions as $bindingOption) : if ($bindingOption['image']) :?>
 							
 							<div class="product-thumbnail">
-								<a href="<?php echo $bindingOption['image']['url']; ?>" title="<?php echo $bindingOption['name']; ?> - <?php echo $bindingOption['sizes']; ?>" data-sku="<?php echo $bindingOption['skus']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-binding.png" data-src="<?php echo $bindingOption['image']['sizes']['medium']; ?>" alt="<?php echo $bindingOption['name']; ?> - <?php echo $bindingOption['sizes']; ?>" class="owl-lazy" /></a>
+								<a href="<?php echo $bindingOption['image']['url']; ?>" title="<?php echo $bindingOption['name']; ?> - <?php echo $bindingOption['sizes']; ?>" data-sku="<?php echo $bindingOption['skus']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-binding.png" data-src="<?php echo $bindingOption['image']['sizes']['medium']; ?>" alt="<?php echo $bindingOption['name']; ?> - <?php echo $bindingOption['sizes']; ?>" class="owl-lazy" /><p class="small"><?php echo $bindingOption['name']; ?></p></a>
 							</div><!-- .product-image -->
 
 							<?php endif; endforeach; ?>

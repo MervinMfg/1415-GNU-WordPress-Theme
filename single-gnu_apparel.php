@@ -90,7 +90,7 @@ Template Name: Apparel Detail
 							?>
 							
 							<div class="product-thumbnail">
-								<a href="<?php echo $apparelImage['image']['url']; ?>" title="<?php the_title(); ?> - <?php echo $apparelImage['color']; ?>" data-sku="<?php echo $skus; ?>"><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-apparel.png" data-src="<?php echo $apparelImage['image']['sizes']['medium']; ?>" alt="<?php the_title(); ?> - <?php echo $apparelImage['color']; ?>" class="owl-lazy" /></a>
+								<a href="<?php echo $apparelImage['image']['url']; ?>" title="<?php the_title(); ?> - <?php echo $apparelImage['color']; ?>" data-sku="<?php echo $skus; ?>"><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-apparel.png" data-src="<?php echo $apparelImage['image']['sizes']['medium']; ?>" alt="<?php the_title(); ?> - <?php echo $apparelImage['color']; ?>" class="owl-lazy" /><p class="small"><?php echo $apparelImage['color']; ?></p></a>
 							</div><!-- .product-image -->
 
 							<?php endforeach; ?>

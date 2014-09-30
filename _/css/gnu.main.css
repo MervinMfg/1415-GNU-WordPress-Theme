@@ -2615,6 +2615,10 @@ body.international .shopping-cart-wrapper {
   width: 105px;
   display: inline-block;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\0000374}}
+.product-thumbnails .image-list .product-thumbnail a p.small {
+  margin-bottom: 0;
+}
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\0000380}}
 .product-note {

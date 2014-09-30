@@ -89,6 +89,7 @@
 		li {
 			display: inline-block;
 			padding: 0 5px;
+			position: relative;
 
 			img {
 				width: 70px;
@@ -534,6 +535,25 @@
 	.product-awards-price {
 		width: 520px;
 		margin: 0 auto;
+
+		.product-awards ul li {
+			&:hover,
+			&:focus {
+				.tool-tip {
+					display: block;
+					font-family: $neuron;
+					font-size: 1.8em;
+					padding: 10px;
+					border: 1px solid $black;
+					position: absolute;
+					z-index: 10;
+					top: 40px;
+					right: 40px;
+					width: 200px;
+					background-color: $white;
+				}
+			}
+		}
 	}
 	.product-buy {
 		width: 520px;
@@ -778,6 +798,15 @@
 					margin-left: 0;
 					width: 100%;
 					max-width: none;
+				}
+			}
+		}
+		.product-awards ul li {
+			&:hover,
+			&:focus {
+				.tool-tip {
+					right: auto;
+					left: 40px;
 				}
 			}
 		}

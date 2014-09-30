@@ -145,11 +145,21 @@ GNU.ProductDetails.prototype = {
 		if ($(".product-thumbnails .image-list .product-thumbnail").length > 1) {
 			// set up owl carousel
 			$(".product-thumbnails .owl-carousel").owlCarousel({
-				items: 3,
-				responsive: false,
 				dots: false,
 				lazyLoad: true,
-				nav: false
+				nav: false,
+				responsive: {
+					0: { items: 1 },
+					210: { items: 2 },
+					320: { items: 3 },
+					420: { items: 4 },
+					525: { items: 5 },
+					630: { items: 6 },
+					735: { items: 7 },
+					840: { items: 8 },
+					945: { items: 9 },
+					1056: { items: 5 }
+				}
 			});
 		} else {
 			$(".product-thumbnails").addClass('hidden');

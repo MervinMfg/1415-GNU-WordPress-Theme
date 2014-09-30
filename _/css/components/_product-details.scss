@@ -59,14 +59,15 @@
 	}
 }
 .product-thumbnails {
-	margin-bottom: 20px;
-
 	&.hidden {
 		display: none;
 	}
 	.image-list {
 		text-align: center;
 
+		.owl-stage {
+			display: inline-block;
+		}
 		.product-thumbnail {
 			width: 105px;
 			display: inline-block;

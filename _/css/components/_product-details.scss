@@ -166,6 +166,14 @@
 	}
 	.shopatron-secure {}
 }
+.international .product-buy {
+	&.available .product-available {
+		display: none;
+	}
+	.shopatron-secure {
+		display: none;
+	}
+}
 .product-share {
 	display: none;
 }
@@ -401,6 +409,7 @@
 			position: absolute;
 			top: -20px;
 			right: 15px;
+			z-index: 12;
 
 			ul li {
 				padding: 0;

@@ -480,7 +480,15 @@ Template Name: Product Overview
 							'post_type' => 'gnu_accessories',
 							'posts_per_page' => -1,
 							'orderby' => 'menu_order',
-							'order' => 'ASC'
+							'order' => 'ASC',
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'gnu_accessories_categories',
+									'field' => 'slug',
+									'terms' => 'snowboard-accessories',
+									'include_children' => false
+								)
+							)
 						);
 						$loop = new WP_Query( $args );
 						while ( $loop->have_posts() ) : $loop->the_post();

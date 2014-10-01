@@ -52,6 +52,8 @@ GNU.Main = {
 			self.aboutInit();
 		} else if ($body.hasClass('page-template-page-templatespartners-php')) {
 			self.partnersInit();
+		} else if ($body.hasClass('page-template-page-templatesspare-parts-php')) {
+			self.sparePartsInit();
 		} else if ($body.hasClass('blog') || $body.hasClass('archive')) {
 			self.blogInit();
 		} else if ($body.hasClass('single')) {
@@ -114,6 +116,15 @@ GNU.Main = {
 		$('.section-header').each(function (index) {
 			new GNU.SectionHeader($(this), self.config.scrollController);
 		});
+	},
+	sparePartsInit: function () {
+		var self = this;
+		// grab all section headers and assign correct scrolling
+		$('.section-header').each(function (index) {
+			new GNU.SectionHeader($(this), self.config.scrollController);
+		});
+		new GNU.ProductOverview();
+		self.sidebarInit();
 	},
 	blogInit: function () {
 		var self = this;

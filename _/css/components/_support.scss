@@ -2,6 +2,19 @@
    COMPONENTS/_SUPPORT.SCSS
    ========================================================================== */
 
+.default-section .default-content {
+	h1, h2, h3 {
+		margin-bottom: 1em;
+	}
+}
+.page-template-page-templatesspare-parts-php .default-section {
+	background: $white url("../img/bg-grey-triangles.png") center center;
+
+	.default-content .spare-part-links {
+		max-width: $breakpoint-small;
+		margin: 0 auto;
+	}
+}
 @media screen and (min-width: $breakpoint-medium) {
 	.contact-form {
 		width: 60%;

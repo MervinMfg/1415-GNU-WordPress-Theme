@@ -62,6 +62,24 @@
 	padding: 20px;
 	max-width: $breakpoint-large;
 	margin: 0 auto;
+
+	ul,
+	ol {
+		padding: 0 20px 0 60px;
+		margin-bottom: 2em;
+		list-style: square;
+
+		li {
+			font-family: $neuronLight;
+			font-size: 1.8em;
+			font-weight: 700;
+			line-height: 2em;
+			margin-bottom: 0.5em;
+		}
+	}
+	ol {
+		list-style: decimal;
+	}
 }
 @media screen and (min-width: $breakpoint-medium) {
 	.site-main {

@@ -12,7 +12,9 @@ a {
         color: $purple;
     }
 }
-p a {
+p a,
+.default-section .default-content ul a,
+.default-section .default-content ol a {
 	color: $blue;
 	font-family: $neuron;
 

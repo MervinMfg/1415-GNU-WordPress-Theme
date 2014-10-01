@@ -1,0 +1,14 @@
+/* ==========================================================================
+   COMPONENTS/_SUPPORT.SCSS
+   ========================================================================== */
+
+@media screen and (min-width: $breakpoint-medium) {
+	.contact-form {
+		width: 60%;
+		float: left;
+	}
+	.contact-details {
+		width: 40%;
+		float: left;
+	}
+}

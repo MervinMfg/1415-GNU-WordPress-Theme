@@ -4422,6 +4422,22 @@ body.international .shopping-cart-wrapper {
   }
 }
 /* ==========================================================================
+   COMPONENTS/_SUPPORT.SCSS
+   ========================================================================== */
+@media screen and (min-width: 748px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_support\.scss}line{font-family:\000036}}
+  .contact-form {
+    width: 60%;
+    float: left;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_support\.scss}line{font-family:\0000310}}
+  .contact-details {
+    width: 40%;
+    float: left;
+  }
+}
+/* ==========================================================================
    MODULES/_FEATURED-SLIDER.SCSS
    ========================================================================== */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/modules\/_featured-slider\.scss}line{font-family:\000035}}

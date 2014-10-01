@@ -23,6 +23,7 @@
 				</header>
 				<div class="default-content">
 					<?php the_content(); ?>
+					<div class="clearfix"></div>
 				</div><!-- .content -->
 			</section><!-- .default-section -->
 		

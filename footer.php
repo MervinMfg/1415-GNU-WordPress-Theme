@@ -132,9 +132,9 @@
 						<div class="nav-group">
 							<h3>Support</h3>
 							<ul class="nav-menu">
-								<li class="menu-item"><a href="http://www.mervin.com/contact/" target="_blank">Contact</a></li>
+								<li class="menu-item"><a href="/support/contact/">Contact</a></li>
 								<li class="menu-item"><a href="http://www.mervin.com/support/register/" target="_blank">Register</a></li>
-								<li class="menu-item"><a href="http://www.mervin.com/support/warranty/">Warranty</a></li>
+								<li class="menu-item"><a href="/support/warranty/">Warranty</a></li>
 								<!-- <li class="menu-item"><a href="/faq/">Faq</a></li> -->
 								<li class="menu-item"><a href="/support/binding-manual/">Binding Manual</a></li>
 								<li class="menu-item"><a href="/supplies/#accessories">Spare Parts</a></li>

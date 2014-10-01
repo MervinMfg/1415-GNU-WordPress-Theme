@@ -50,6 +50,7 @@ Template Name: Partners
 								<p class="small"><span class="category"><?php echo $categoryName; ?></span> <?php echo $content; ?></p>
 								<div class="partner-link"><a href="<?php echo $link; ?>" target="_blank" class="bold-black">view site</a></div>
 							</div>
+							<div class="clearfix"></div>
 						</li>
 						<?php
 							endwhile;

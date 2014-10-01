@@ -3625,33 +3625,31 @@ body.international .shopping-cart-wrapper {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_partners\.scss}line{font-family:\0000310}}
 .partners .content .partner-list .partner {
+  max-width: 320px;
+  margin: 0 auto;
   padding-bottom: 40px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_partners\.scss}line{font-family:\0000313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_partners\.scss}line{font-family:\0000315}}
 .partners .content .partner-list .partner .partner-images {
-  width: 35%;
-  display: inline-block;
-  vertical-align: middle;
+  width: 38%;
+  float: left;
+  padding-right: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_partners\.scss}line{font-family:\0000318}}
-.partners .content .partner-list .partner .partner-images .partner-image {
-  display: none;
-  padding-right: 10px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_partners\.scss}line{font-family:\0000322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_partners\.scss}line{font-family:\0000321}}
 .partners .content .partner-list .partner .partner-images .partner-image.logo {
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_partners\.scss}line{font-family:\0000327}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_partners\.scss}line{font-family:\0000326}}
 .partners .content .partner-list .partner .partner-title {
-  width: 64%;
-  display: inline-block;
-  vertical-align: middle;
+  width: 62%;
+  float: right;
+  margin-bottom: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_partners\.scss}line{font-family:\0000332}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_partners\.scss}line{font-family:\0000331}}
 .partners .content .partner-list .partner .partner-description {
-  padding-top: 20px;
-  clear: both;
+  width: 62%;
+  float: right;
+  margin-bottom: 0;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_partners\.scss}line{font-family:\0000336}}
 .partners .content .partner-list .partner .partner-description p {
@@ -3668,30 +3666,32 @@ body.international .shopping-cart-wrapper {
   text-align: center;
 }
 
-@media screen and (min-width: 476px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_partners\.scss}line{font-family:\0000358}}
-  .partners .content .partner-list .partner .partner-images {
-    width: 30%;
+@media screen and (min-width: 748px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_partners\.scss}line{font-family:\0000355}}
+  .partners .content {
+    max-width: 748px;
+    margin: 0 auto;
+    padding: 20px 10px;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_partners\.scss}line{font-family:\0000361}}
-  .partners .content .partner-list .partner .partner-title {
-    width: 69%;
-  }
-}
-@media screen and (min-width: 748px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_partners\.scss}line{font-family:\0000371}}
-  .partners .content {
-    max-width: 1056px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_partners\.scss}line{font-family:\0000377}}
   .partners .content .partner-list .partner {
-    width: 49%;
+    padding: 0 10px 40px;
+    width: 362px;
+    max-width: none;
     display: inline-block;
     vertical-align: top;
-    padding-left: 20px;
-    padding-right: 20px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_partners\.scss}line{font-family:\0000368}}
+  .partners .content .partner-list .partner .partner-images {
+    width: 35%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_partners\.scss}line{font-family:\0000371}}
+  .partners .content .partner-list .partner .partner-title {
+    width: 65%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_partners\.scss}line{font-family:\0000374}}
+  .partners .content .partner-list .partner .partner-description {
+    width: 65%;
   }
 }
 /* ==========================================================================

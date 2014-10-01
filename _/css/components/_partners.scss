@@ -8,30 +8,30 @@
 
 		.partner-list {
 			.partner {
+				max-width: 320px;
+				margin: 0 auto;
 				padding-bottom: 40px;
 
 				.partner-images {
-					width: 35%;
-					display: inline-block;
-					vertical-align: middle;
+					width: 38%;
+					float: left;
+					padding-right: 20px;
 
 					.partner-image {
-						display: none;
-						padding-right: 10px;
-
 						&.logo {
 							display: block;
 						}
 					}
 				}
 				.partner-title {
-					width: 64%;
-					display: inline-block;
-					vertical-align: middle;
+					width: 62%;
+					float: right;
+					margin-bottom: 10px;
 				}
 				.partner-description {
-					padding-top: 20px;
-					clear: both;
+					width: 62%;
+					float: right;
+					margin-bottom: 0;
 
 					p {
 						margin-bottom: 1em;
@@ -50,36 +50,30 @@
 		}
 	}
 }
-@media screen and (min-width: $breakpoint-small) {
-	.partners {
-		.content {
-			.partner-list {
-				.partner {
-					.partner-images {
-						width: 30%;
-					}
-					.partner-title {
-						width: 69%;
-					}
-				}
-			}
-		}
-	}
-}
 @media screen and (min-width: $breakpoint-medium) {
 	.partners {
 		.content {
-			max-width: $breakpoint-large;
+			max-width: $breakpoint-medium;
 			margin: 0 auto;
-			padding: 20px;
+			padding: 20px 10px;
 
 			.partner-list {
 				.partner {
-					width: 49%;
+					padding: 0 10px 40px;
+					width: 362px;
+					max-width: none;
 					display: inline-block;
 					vertical-align: top;
-					padding-left: 20px;
-					padding-right: 20px;
+
+					.partner-images {
+						width: 35%;
+					}
+					.partner-title {
+						width: 65%;
+					}
+					.partner-description {
+						width: 65%;
+					}
 				}
 			}
 		}

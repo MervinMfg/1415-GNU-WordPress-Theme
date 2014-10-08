@@ -6,13 +6,17 @@
 	.product-header {
 		
 	}
-	.product-filters {
+	.product-utility {
 		display: none;
 	}
 	.product-list {
 		text-align: center;
 		padding: 10px 0 5px;
+		display: block;
 
+		.owl-stage {
+			display: inline-block;
+		}
 		.product {
 			width: 150px;
 			height: 190px;
@@ -115,22 +119,191 @@
 }
 @media screen and (min-width: $breakpoint-medium) {
 	.product-overview {
-		.product-filters {
+		.product-utility {
 			display: block;
 			height: 40px;
 			background: url('../img/bg-black-triangles-filter.png');
 
-			.btn-filter {
-				display: none;
-				height: 40px;
-				background: url('../img/bg-yellow-triangles-filter.png');
-				text-transform: uppercase;
-				color: $black;
-				font-size: 2.4em;
-				font-family: $neuron;
-				font-weight: 700;
-				padding-left: 20px;
-				padding-right: 20px;
+			.product-filters {
+				max-width: $breakpoint-large;
+				margin: 0 auto;
+
+				.filter-controls {
+					background: url('../img/bg-yellow-triangles-filter.png') center center;
+					float: left;
+
+					.btn-open,
+					.btn-filter {
+						display: inline-block;
+						height: 40px;
+						text-transform: uppercase;
+						color: $black;
+						font-size: 2.4em;
+						font-family: $neuron;
+						font-weight: 700;
+						padding-left: 20px;
+						padding-right: 20px;
+					}
+					.btn-open {
+						span {
+							width: 15px;
+							height: 15px;
+							background: url('../img/sprite.png') -345px -10px;
+							display: inline-block;
+							margin-left: 10px;
+						}
+						&:hover,
+						&:focus {
+							color: $purple;
+
+							span {
+								background-position: -370px -10px;
+							}
+						}
+					}
+					.btn-close,
+					.btn-wrapper {
+						display: none;
+					}
+				}
+				.filter-collection {
+					display: none;
+				}
+			}
+			&.filters-active {
+				height: auto;
+
+				.instructions {
+					display: none;
+				}
+				.product-filters {
+					background: url('../img/bg-yellow-lines.png') bottom center;
+
+					.filter-controls {
+						text-align: center;
+						float: none;
+						position: relative;
+
+						.btn-open {
+							display: none;
+						}
+						.btn-close {
+							display: block;
+							position: absolute;
+							top: 11px;
+							right: 11px;
+						}
+						.btn-wrapper {
+							display: inline-block;
+							margin: 0 10px;
+
+							.btn-filter:hover,
+							.btn-filter:focus {
+								color: $blue;
+							}
+							.btn-remove {
+								display: none;
+							}
+							&.set {
+								position: relative;
+
+								.btn-filter {
+									font-family: $neuronExtraBold;
+									font-weight: 400;
+								}
+								.btn-remove {
+									display: block;
+									position: absolute;
+									top: 13px;
+									right: -5px;
+									font-family: $neuron;
+									font-size: 1.4em;
+
+									span {
+										font-family: $neuronExtraBold;
+										padding: 0 2px;
+									}
+								}
+							}
+						}
+					}
+					&.categories .filter-controls .categories .btn-filter,
+					&.contours .filter-controls .contours .btn-filter,
+					&.sizes .filter-controls .sizes .btn-filter,
+					&.pricing .filter-controls .pricing .btn-filter {
+						color: $blue;
+					}
+					.filter-collection {
+						text-align: center;
+						padding: 10px;
+
+						.filter-list {
+							max-width: 680px;
+							margin: 0 auto;
+							
+							.filter-item {
+								display: inline-block;
+								margin: 0 10px;
+
+								.btn-option {
+									font-family: $neuron;
+									font-size: 1.8em;
+									text-transform: uppercase;
+									height: 24px;
+
+									&:hover,
+									&:focus,
+									&.selected {
+										color: $blue;
+									}
+								}
+							}
+						}
+					}
+					&.categories .filter-collection.categories {
+						display: block;
+					}
+					&.contours .filter-collection.contours {
+						display: block;
+					}
+					&.sizes .filter-collection.sizes {
+						display: block;
+
+						.filter-list {
+							display: none;
+						}
+						.btn-size-group {
+							font-size: 1.8em;
+							font-family: $neuron;
+							text-transform: uppercase;
+							margin: 0 10px 10px;
+
+							&:hover,
+							&:focus {
+								color: $blue;
+							}
+						}
+						&.standard {
+							.btn-size-group.standard-width {
+								color: $blue;
+							}
+							.filter-list.standard-widths {
+								display: block;
+							}
+						}
+						&.wide {
+							.btn-size-group.wide-width {
+								color: $blue;
+							}
+							.filter-list.wide-widths {
+								display: block;
+							}
+						}
+					}
+					&.pricing .filter-collection.pricing {
+						display: block;
+					}
+				}
 			}
 			.instructions {
 				display: none;
@@ -176,19 +349,23 @@
 	}
 	#mens-snowboards,
 	#womens-snowboards {
-		.product-list .product {
-			width: 210px;
-			height: 640px;
+		.product-list {
+			min-height: 665px;
 
-			.info {
-				height: 88px;
-				bottom: 40px;
-			}
-			.image {
-				width: 640px;
+			.product {
+				width: 210px;
 				height: 640px;
-				max-width: 640px;
-				left: -215px;
+
+				.info {
+					height: 88px;
+					bottom: 40px;
+				}
+				.image {
+					width: 640px;
+					height: 640px;
+					max-width: 640px;
+					left: -215px;
+				}
 			}
 		}
 	}
@@ -315,14 +492,19 @@
 }
 @media screen and (min-width: $breakpoint-large) {
 	.product-overview {
-		.product-filters {
+		.product-utility {
+			position: relative;
+
 			.instructions {
 				display: block;
-				text-align: center;
+				top: 10px;
+				left: 50%;
+				margin-left: -105px;
+				position: absolute;
 				
 				img {
-					max-height: 30px;
-					padding-top: 10px;
+					width: 210px;
+					height: 20px;
 					@include vendorize(opacity, 0);
 					@include transition(opacity, 500ms, ease-out);
 				}

@@ -6,17 +6,20 @@
 var GNU = GNU || {};
 
 GNU.ProductOverview = function () {
-	this.config = {};
+	this.config = {
+		overviewGroups: [],
+		carouselBreakpoints: {}
+	};
 	this.init();
 };
 GNU.ProductOverview.prototype = {
 	init: function () {
-		var self, responsiveObject, responsiveSize;
+		var self, responsiveSize;
 		self = this;
 		// set up owl carousel(s)
 		if ($('#mens-snowboards').length) {
 			// we're viewing snowboards
-			responsiveObject = {
+			self.config.carouselBreakpoints = {
 				0:{ items: 1, dots: false },
 				310: { items: 2, dots: false },
 				430: { items: 3, dots: false },
@@ -38,7 +41,7 @@ GNU.ProductOverview.prototype = {
 			};
 		} else {
 			// we're viewing bindings, supplies and team
-			responsiveObject = {
+			self.config.carouselBreakpoints = {
 				0:{ items: 1, dots: false },
 				320: { items: 2, dots: false, stagePadding: 5 },
 				390: { items: 2, dots: false },
@@ -58,13 +61,19 @@ GNU.ProductOverview.prototype = {
 				4390:{ items: 12, dots: true }
 			};
 		}
+		// setup default overviews
+		$('.product-overview .product-list').each(function (index) {
+			self.config.overviewGroups.push($(this).html());
+		});
+		// set up carousels
 		$(".product-overview .owl-carousel").owlCarousel({
 			lazyLoad: true,
 			slideBy: 2,
 			stagePadding: 40,
 			margin: 10,
-			responsive: responsiveObject
+			responsive: self.config.carouselBreakpoints
 		});
+		//$(".product-overview .owl-carousel").data('owl.carousel').destroy();
 		// (RE)INIT MENU ON RESIZE
 		$(window).on('resize.productOverview', function () {
 			if ( responsiveSize != "base" && GNU.Main.utilities.responsiveCheck() == "base" ) {
@@ -83,6 +92,7 @@ GNU.ProductOverview.prototype = {
 		});
 		self.productsInit();
 		self.instructionsInit();
+		self.filtersInit();
 	},
 	productsInit: function () {
 		var self = this;
@@ -111,11 +121,201 @@ GNU.ProductOverview.prototype = {
 	},
 	instructionsInit: function () {
 		var instructionTimeout = window.setTimeout( function () {
-			$('.product-overview .product-filters .instructions').addClass('show');
+			$('.product-overview .product-utility .instructions').addClass('show');
 		}, 3000);
 		$('.product-list').on('mousedown.instructions', function () {
 			window.clearTimeout(instructionTimeout);
-			$('.product-overview .product-filters .instructions').removeClass('show');
+			$('.product-overview .product-utility .instructions').removeClass('show');
 		});	
+	},
+	filtersInit: function () {
+		var self = this;
+		// add open and close handlers
+		$('.product-filters .filter-controls .btn-open').on('click', function () {
+			$(this).parents('.product-utility').addClass('filters-active');
+		});
+		$('.product-filters .filter-controls .btn-close').on('click', function () {
+			$(this).parents('.product-utility').removeClass('filters-active');
+			$(this).parents('.product-filters').addClass('categories').removeClass('categories contours sizes pricing');
+		});
+		// add filter handlers
+		$('.product-filters .filter-controls .categories .btn-filter').on('click', function () {
+			$(this).parents('.product-filters').addClass('categories').removeClass('contours sizes pricing');
+		});
+		$('.product-filters .filter-controls .contours .btn-filter').on('click', function () {
+			$(this).parents('.product-filters').addClass('contours').removeClass('categories sizes pricing');
+		});
+		$('.product-filters .filter-controls .sizes .btn-filter').on('click', function () {
+			$(this).parents('.product-filters').addClass('sizes').removeClass('categories contours pricing');
+		});
+		$('.product-filters .filter-controls .pricing .btn-filter').on('click', function () {
+			$(this).parents('.product-filters').addClass('pricing').removeClass('categories contours sizes');
+		});
+		// add filter option handlers
+		$('.product-filters .filter-collection .filter-list .filter-item .btn-option').on('click', function () {
+			self.filtersUpdate($(this).parents('.product-overview'), this);
+		});
+		// add filter remove handlers
+		$('.product-filters .filter-controls .btn-wrapper .btn-remove').on('click', function () {
+			$this = $(this);
+			$this.parent().removeClass('set');
+			if ($this.parent().hasClass('categories')) {
+				$this.parents('.product-filters').find('.filter-collection.categories .btn-option').removeClass('selected');
+			} else if ($this.parent().hasClass('contours')) {
+				$this.parents('.product-filters').find('.filter-collection.contours .btn-option').removeClass('selected');
+			} else if ($this.parent().hasClass('sizes')) {
+				$this.parents('.product-filters').find('.filter-collection.sizes .btn-option').removeClass('selected');
+			} else if ($this.parent().hasClass('pricing')) {
+				$this.parents('.product-filters').find('.filter-collection.pricing .btn-option').removeClass('selected');
+			}
+			self.filtersUpdate($(this).parents('.product-overview'));
+		});
+		// add size listeners and set default to standard
+		$('.product-filters .filter-collection.sizes').addClass('standard');
+		$('.product-filters .filter-collection.sizes .btn-size-group.standard-width').on('click', function () {
+			$(this).parent().addClass('standard').removeClass('wide');
+		});
+		$('.product-filters .filter-collection.sizes .btn-size-group.wide-width').on('click', function () {
+			$(this).parent().addClass('wide').removeClass('standard');
+		});
+	},
+	filtersUpdate: function ($overviewGroup, toggledFilter) {
+		var self, toggledData;
+		self = this;
+		$overviewGroup.categoryFilters = [];
+		$overviewGroup.contourFilters = [];
+		$overviewGroup.sizeFilters = [];
+		$overviewGroup.pricingFilter = "";
+		// if toggledFilter is set
+		if (toggledFilter) {
+			$(toggledFilter).toggleClass('selected').blur();
+			$overviewGroup.find('.product-filters .filter-controls .btn-wrapper').removeClass('set');
+			// check pricing filter, only one can be toggled for pricing
+			toggledData = $(toggledFilter).attr('data-filter');
+			if (toggledData == "Low" || toggledData == "High" || toggledData == "Available") {
+				$overviewGroup.find('.product-filters .filter-collection.pricing .btn-option').removeClass('selected');
+				$(toggledFilter).addClass('selected');
+			}
+		}
+		// loop through filters and set values
+		$overviewGroup.find('.product-filters .filter-collection').each(function (index) {
+			var $filterCollection = $(this);
+			$(this).find('.selected').each(function (index) {
+				var filterValue = $(this).attr('data-filter');
+				// filter is set
+				if ($filterCollection.hasClass('categories')) {
+					$overviewGroup.categoryFilters.push(filterValue);
+					$overviewGroup.find('.product-filters .filter-controls .categories').addClass('set');
+				} else if ($filterCollection.hasClass('contours')) {
+					$overviewGroup.contourFilters.push(filterValue);
+					$overviewGroup.find('.product-filters .filter-controls .contours').addClass('set');
+				} else if ($filterCollection.hasClass('sizes')) {
+					$overviewGroup.sizeFilters.push(filterValue);
+					$overviewGroup.find('.product-filters .filter-controls .sizes').addClass('set');
+				} else if ($filterCollection.hasClass('pricing')) {
+					$overviewGroup.pricingFilter = filterValue;
+					$overviewGroup.find('.product-filters .filter-controls .pricing').addClass('set');
+				}
+			});
+		});
+		// disable carousels
+		$overviewGroup.find('.owl-carousel').data('owl.carousel').destroy();
+		// resetup default overviews
+		// clear html, add default back
+		$overviewGroup.find('.product-list').html('').html(self.config.overviewGroups[$overviewGroup.index()]);
+		// find which products to display
+		$overviewGroup.find('.product-list .product').each(function (index) {
+			var filters, i, filterValue, categoryMatch, contourMatch, sizeMatch, priceMatch;
+			// reset old filter
+			$(this).removeClass('hide');
+			// check categories
+			if ($overviewGroup.categoryFilters.length > 0) {
+				filters = $(this).attr('data-categories');
+				for (i = 0; i < $overviewGroup.categoryFilters.length; i++) {
+					filterValue = $overviewGroup.categoryFilters[i];
+					if (filters.indexOf(filterValue) != -1) {
+						categoryMatch = true;
+					}
+				}
+			} else {
+				categoryMatch = true;
+			}
+			// check contours
+			if ($overviewGroup.contourFilters.length > 0) {
+				filters = $(this).attr('data-contour');
+				for (i = 0; i < $overviewGroup.contourFilters.length; i++) {
+					filterValue = $overviewGroup.contourFilters[i];
+					if (filters.indexOf(filterValue) != -1) {
+						contourMatch = true;
+					}
+				}
+			} else {
+				contourMatch = true;
+			}
+			// check sizes
+			if ($overviewGroup.sizeFilters.length > 0) {
+				filters = $(this).attr('data-sizes');
+				for (i = 0; i < $overviewGroup.sizeFilters.length; i++) {
+					filterValue = $overviewGroup.sizeFilters[i];
+					if (filters.indexOf(filterValue) != -1) {
+						sizeMatch = true;
+					}
+				}
+			} else {
+				sizeMatch = true;
+			}
+			if ($overviewGroup.pricingFilter.length > 0) {
+				var products;
+				if ($overviewGroup.pricingFilter == "Available" && $(this).attr('data-avail-us') == "Yes") {
+					priceMatch = true;
+				} else if ($overviewGroup.pricingFilter == "High") {
+					// sort by low to high
+					products = $overviewGroup.find('.product-list .product');
+					products.sort(function(a, b){
+						var an = b.getAttribute('data-price'),
+						bn = a.getAttribute('data-price');
+						if(an > bn) {
+							return 1;
+						}
+						if(an < bn) {
+							return -1;
+						}
+						return 0;
+					});
+					products.detach().appendTo($overviewGroup.find('.product-list'));
+					priceMatch = true;
+				} else if ($overviewGroup.pricingFilter == "Low") {
+					// sort by low to high
+					products = $overviewGroup.find('.product-list .product');
+					products.sort(function(a, b){
+						var an = a.getAttribute('data-price'),
+						bn = b.getAttribute('data-price');
+						if(an > bn) {
+							return 1;
+						}
+						if(an < bn) {
+							return -1;
+						}
+						return 0;
+					});
+					products.detach().appendTo($overviewGroup.find('.product-list'));
+					priceMatch = true;
+				}
+			} else {
+				priceMatch = true;
+			}
+			if (categoryMatch !== true || contourMatch !== true || sizeMatch !== true || priceMatch !== true) {
+				$(this).remove();
+			}
+		});
+		// reinit owl carousel
+		$overviewGroup.find('.owl-carousel').owlCarousel({
+			lazyLoad: true,
+			slideBy: 2,
+			stagePadding: 40,
+			margin: 10,
+			responsive: self.config.carouselBreakpoints
+		});
+		self.productsInit();
 	}
 };

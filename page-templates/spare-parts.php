@@ -14,7 +14,7 @@ Template Name: Spare Parts
 					</div>
 					<div class="vibe vibe-4"></div>
 				</header>
-				<div class="product-filters">
+				<div class="product-utility">
 					<div class="instructions"><img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo get_template_directory_uri(); ?>/_/img/carousel-instructions-supplies.gif" alt="Click and Drag Supplies" class="lazy" /></div>
 				</div>
 				<div class="product-list owl-carousel owl-theme">

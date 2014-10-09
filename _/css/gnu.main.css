@@ -2276,23 +2276,276 @@ body.international .shopping-cart-wrapper {
 }
 
 @media screen and (min-width: 748px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003119}}
+  /* Keyframe animations for filtering UI */
+  @keyframes open-filters {
+    /* line 120, components/_product-overview.scss */
+    0% {
+      width: 215px;
+    }
+
+    /* line 121, components/_product-overview.scss */
+    100% {
+      width: 100%;
+    }
+  }
+  @-webkit-keyframes open-filters {
+    /* line 124, components/_product-overview.scss */
+    0% {
+      width: 215px;
+    }
+
+    /* line 125, components/_product-overview.scss */
+    100% {
+      width: 100%;
+    }
+  }
+  @-moz-keyframes open-filters {
+    /* line 128, components/_product-overview.scss */
+    0% {
+      width: 215px;
+    }
+
+    /* line 129, components/_product-overview.scss */
+    100% {
+      width: 100%;
+    }
+  }
+  @keyframes show-filter-buttons {
+    /* line 132, components/_product-overview.scss */
+    0% {
+      display: none;
+      opacity: 0;
+    }
+
+    /* line 133, components/_product-overview.scss */
+    50% {
+      display: none;
+      opacity: 0;
+    }
+
+    /* line 134, components/_product-overview.scss */
+    100% {
+      display: inline-block;
+      opactiy: 1;
+    }
+  }
+  @-webkit-keyframes show-filter-buttons {
+    /* line 137, components/_product-overview.scss */
+    0% {
+      display: none;
+      opacity: 0;
+    }
+
+    /* line 138, components/_product-overview.scss */
+    50% {
+      display: none;
+      opacity: 0;
+    }
+
+    /* line 139, components/_product-overview.scss */
+    100% {
+      display: inline-block;
+      opactiy: 1;
+    }
+  }
+  @-moz-keyframes show-filter-buttons {
+    /* line 142, components/_product-overview.scss */
+    0% {
+      display: none;
+      opacity: 0;
+    }
+
+    /* line 143, components/_product-overview.scss */
+    50% {
+      display: none;
+      opacity: 0;
+    }
+
+    /* line 144, components/_product-overview.scss */
+    100% {
+      display: inline-block;
+      opactiy: 1;
+    }
+  }
+  @keyframes show-filter-collection {
+    /* line 147, components/_product-overview.scss */
+    0% {
+      height: 0px;
+      padding: 0px 10px;
+    }
+
+    /* line 148, components/_product-overview.scss */
+    100% {
+      height: 44px;
+      padding: 10px;
+    }
+  }
+  @-webkit-keyframes show-filter-collection {
+    /* line 151, components/_product-overview.scss */
+    0% {
+      height: 0px;
+      padding: 0px 10px;
+    }
+
+    /* line 152, components/_product-overview.scss */
+    100% {
+      height: 44px;
+      padding: 10px;
+    }
+  }
+  @-moz-keyframes show-filter-collection {
+    /* line 155, components/_product-overview.scss */
+    0% {
+      height: 0px;
+      padding: 0px 10px;
+    }
+
+    /* line 156, components/_product-overview.scss */
+    100% {
+      height: 44px;
+      padding: 10px;
+    }
+  }
+  @keyframes show-filter-collection-sizes {
+    /* line 159, components/_product-overview.scss */
+    0% {
+      height: 0px;
+      padding: 0px 10px;
+    }
+
+    /* line 160, components/_product-overview.scss */
+    100% {
+      height: 97px;
+      padding: 10px;
+    }
+  }
+  @-webkit-keyframes show-filter-collection-sizes {
+    /* line 163, components/_product-overview.scss */
+    0% {
+      height: 0px;
+      padding: 0px 10px;
+    }
+
+    /* line 164, components/_product-overview.scss */
+    100% {
+      height: 97px;
+      padding: 10px;
+    }
+  }
+  @-moz-keyframes show-filter-collection-sizes {
+    /* line 167, components/_product-overview.scss */
+    0% {
+      height: 0px;
+      padding: 0px 10px;
+    }
+
+    /* line 168, components/_product-overview.scss */
+    100% {
+      height: 97px;
+      padding: 10px;
+    }
+  }
+  @keyframes show-filter-collection-sizes-wide {
+    /* line 171, components/_product-overview.scss */
+    0% {
+      height: 0px;
+      padding: 0px 10px;
+    }
+
+    /* line 172, components/_product-overview.scss */
+    100% {
+      height: 73px;
+      padding: 10px;
+    }
+  }
+  @-webkit-keyframes show-filter-collection-sizes-wide {
+    /* line 175, components/_product-overview.scss */
+    0% {
+      height: 0px;
+      padding: 0px 10px;
+    }
+
+    /* line 176, components/_product-overview.scss */
+    100% {
+      height: 73px;
+      padding: 10px;
+    }
+  }
+  @-moz-keyframes show-filter-collection-sizes-wide {
+    /* line 179, components/_product-overview.scss */
+    0% {
+      height: 0px;
+      padding: 0px 10px;
+    }
+
+    /* line 180, components/_product-overview.scss */
+    100% {
+      height: 73px;
+      padding: 10px;
+    }
+  }
+  @keyframes show-filter-collection-sizes-womens {
+    /* line 183, components/_product-overview.scss */
+    0% {
+      height: 0px;
+      padding: 0px 10px;
+    }
+
+    /* line 184, components/_product-overview.scss */
+    100% {
+      height: 68px;
+      padding: 10px;
+    }
+  }
+  @-webkit-keyframes show-filter-collection-sizes-womens {
+    /* line 187, components/_product-overview.scss */
+    0% {
+      height: 0px;
+      padding: 0px 10px;
+    }
+
+    /* line 188, components/_product-overview.scss */
+    100% {
+      height: 68px;
+      padding: 10px;
+    }
+  }
+  @-moz-keyframes show-filter-collection-sizes-womens {
+    /* line 191, components/_product-overview.scss */
+    0% {
+      height: 0px;
+      padding: 0px 10px;
+    }
+
+    /* line 192, components/_product-overview.scss */
+    100% {
+      height: 68px;
+      padding: 10px;
+    }
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003195}}
   .product-overview .product-utility {
     display: block;
     height: 40px;
     background: url("../img/bg-black-triangles-filter.png");
+    -webkit-transition: all 100ms ease-in-out;
+    -moz-transition: all 100ms ease-in-out;
+    -ms-transition: all 100ms ease-in-out;
+    -o-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003124}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003201}}
   .product-overview .product-utility .product-filters {
     max-width: 1056px;
     margin: 0 auto;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003128}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003205}}
   .product-overview .product-utility .product-filters .filter-controls {
     background: url("../img/bg-yellow-triangles-filter.png") center center;
-    float: left;
+    width: 215px;
+    height: 40px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003132}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003210}}
   .product-overview .product-utility .product-filters .filter-controls .btn-open,
   .product-overview .product-utility .product-filters .filter-controls .btn-filter {
     display: inline-block;
@@ -2305,7 +2558,7 @@ body.international .shopping-cart-wrapper {
     padding-left: 20px;
     padding-right: 20px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003145}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003223}}
   .product-overview .product-utility .product-filters .filter-controls .btn-open span {
     width: 15px;
     height: 15px;
@@ -2313,76 +2566,80 @@ body.international .shopping-cart-wrapper {
     display: inline-block;
     margin-left: 10px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003152}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003230}}
   .product-overview .product-utility .product-filters .filter-controls .btn-open:hover, .product-overview .product-utility .product-filters .filter-controls .btn-open:focus {
     color: #9933cc;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003156}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003234}}
   .product-overview .product-utility .product-filters .filter-controls .btn-open:hover span, .product-overview .product-utility .product-filters .filter-controls .btn-open:focus span {
     background-position: -370px -10px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003161}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003239}}
   .product-overview .product-utility .product-filters .filter-controls .btn-close,
   .product-overview .product-utility .product-filters .filter-controls .btn-wrapper {
     display: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003166}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003244}}
   .product-overview .product-utility .product-filters .filter-collection {
     display: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003170}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003248}}
   .product-overview .product-utility.filters-active {
     height: auto;
+    min-height: 40px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003173}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003252}}
   .product-overview .product-utility.filters-active .instructions {
     display: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003176}}
-  .product-overview .product-utility.filters-active .product-filters {
-    background: url("../img/bg-yellow-lines.png") bottom center;
-  }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003179}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003257}}
   .product-overview .product-utility.filters-active .product-filters .filter-controls {
     text-align: center;
-    float: none;
     position: relative;
+    width: 100%;
+    overflow: hidden;
+    animation: open-filters 500ms ease-out;
+    -moz-animation: open-filters 500ms ease-out;
+    -webkit-animation: open-filters 500ms ease-out;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003184}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003267}}
   .product-overview .product-utility.filters-active .product-filters .filter-controls .btn-open {
     display: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003187}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003270}}
   .product-overview .product-utility.filters-active .product-filters .filter-controls .btn-close {
     display: block;
     position: absolute;
     top: 11px;
     right: 11px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003193}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003276}}
   .product-overview .product-utility.filters-active .product-filters .filter-controls .btn-wrapper {
     display: inline-block;
     margin: 0 10px;
+    animation: show-filter-buttons 1s ease-out;
+    -moz-animation: show-filter-buttons 1s ease-out;
+    -webkit-animation: show-filter-buttons 1s ease-out;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003197}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003284}}
   .product-overview .product-utility.filters-active .product-filters .filter-controls .btn-wrapper .btn-filter:hover,
   .product-overview .product-utility.filters-active .product-filters .filter-controls .btn-wrapper .btn-filter:focus {
     color: #0099ff;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003201}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003288}}
   .product-overview .product-utility.filters-active .product-filters .filter-controls .btn-wrapper .btn-remove {
     display: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003204}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003291}}
   .product-overview .product-utility.filters-active .product-filters .filter-controls .btn-wrapper.set {
     position: relative;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003207}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003294}}
   .product-overview .product-utility.filters-active .product-filters .filter-controls .btn-wrapper.set .btn-filter {
     font-family: "Neuron Extra Bold", Helvetica, Arial, sans-serif;
     font-weight: 400;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003211}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003298}}
   .product-overview .product-utility.filters-active .product-filters .filter-controls .btn-wrapper.set .btn-remove {
     display: block;
     position: absolute;
@@ -2391,108 +2648,134 @@ body.international .shopping-cart-wrapper {
     font-family: "Neuron", Helvetica, Arial, sans-serif;
     font-size: 1.4em;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003219}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003306}}
   .product-overview .product-utility.filters-active .product-filters .filter-controls .btn-wrapper.set .btn-remove span {
     font-family: "Neuron Extra Bold", Helvetica, Arial, sans-serif;
     padding: 0 2px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003227}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003314}}
   .product-overview .product-utility.filters-active .product-filters.categories .filter-controls .categories .btn-filter, .product-overview .product-utility.filters-active .product-filters.contours .filter-controls .contours .btn-filter, .product-overview .product-utility.filters-active .product-filters.sizes .filter-controls .sizes .btn-filter, .product-overview .product-utility.filters-active .product-filters.pricing .filter-controls .pricing .btn-filter {
     color: #0099ff;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003233}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003320}}
   .product-overview .product-utility.filters-active .product-filters .filter-collection {
     text-align: center;
     padding: 10px;
+    background: url("../img/bg-yellow-lines.png") center center;
+    overflow: hidden;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003237}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003326}}
   .product-overview .product-utility.filters-active .product-filters .filter-collection .filter-list {
     max-width: 680px;
     margin: 0 auto;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003241}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003330}}
   .product-overview .product-utility.filters-active .product-filters .filter-collection .filter-list .filter-item {
     display: inline-block;
     margin: 0 10px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003245}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003334}}
   .product-overview .product-utility.filters-active .product-filters .filter-collection .filter-list .filter-item .btn-option {
     font-family: "Neuron", Helvetica, Arial, sans-serif;
     font-size: 1.8em;
     text-transform: uppercase;
     height: 24px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003251}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003340}}
   .product-overview .product-utility.filters-active .product-filters .filter-collection .filter-list .filter-item .btn-option:hover, .product-overview .product-utility.filters-active .product-filters .filter-collection .filter-list .filter-item .btn-option:focus, .product-overview .product-utility.filters-active .product-filters .filter-collection .filter-list .filter-item .btn-option.selected {
     color: #0099ff;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003260}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003349}}
   .product-overview .product-utility.filters-active .product-filters.categories .filter-collection.categories {
     display: block;
+    animation: show-filter-collection 200ms ease-out;
+    -moz-animation: show-filter-collection 200ms ease-out;
+    -webkit-animation: show-filter-collection 200ms ease-out;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003263}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003356}}
   .product-overview .product-utility.filters-active .product-filters.contours .filter-collection.contours {
     display: block;
+    animation: show-filter-collection 200ms ease-out;
+    -moz-animation: show-filter-collection 200ms ease-out;
+    -webkit-animation: show-filter-collection 200ms ease-out;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003266}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003363}}
   .product-overview .product-utility.filters-active .product-filters.sizes .filter-collection.sizes {
     display: block;
+    animation: show-filter-collection-sizes 300ms ease-out;
+    -moz-animation: show-filter-collection-sizes 300ms ease-out;
+    -webkit-animation: show-filter-collection-sizes 300ms ease-out;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003269}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003370}}
   .product-overview .product-utility.filters-active .product-filters.sizes .filter-collection.sizes .filter-list {
     display: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003272}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003373}}
   .product-overview .product-utility.filters-active .product-filters.sizes .filter-collection.sizes .btn-size-group {
     font-size: 1.8em;
     font-family: "Neuron", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     margin: 0 10px 10px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003278}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003379}}
   .product-overview .product-utility.filters-active .product-filters.sizes .filter-collection.sizes .btn-size-group:hover, .product-overview .product-utility.filters-active .product-filters.sizes .filter-collection.sizes .btn-size-group:focus {
     color: #0099ff;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003284}}
-  .product-overview .product-utility.filters-active .product-filters.sizes .filter-collection.sizes.standard .btn-size-group.standard-width {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003386}}
+  .product-overview .product-utility.filters-active .product-filters.sizes .filter-collection.sizes.standard .btn-size-group.standard-width, .product-overview .product-utility.filters-active .product-filters.sizes .filter-collection.sizes.womens .btn-size-group.standard-width {
     color: #0099ff;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003287}}
-  .product-overview .product-utility.filters-active .product-filters.sizes .filter-collection.sizes.standard .filter-list.standard-widths {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003389}}
+  .product-overview .product-utility.filters-active .product-filters.sizes .filter-collection.sizes.standard .filter-list.standard-widths, .product-overview .product-utility.filters-active .product-filters.sizes .filter-collection.sizes.womens .filter-list.standard-widths {
     display: block;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003292}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003393}}
+  .product-overview .product-utility.filters-active .product-filters.sizes .filter-collection.sizes.womens {
+    animation: show-filter-collection-sizes-womens 300ms ease-out;
+    -moz-animation: show-filter-collection-sizes-womens 300ms ease-out;
+    -webkit-animation: show-filter-collection-sizes-womens 300ms ease-out;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003398}}
+  .product-overview .product-utility.filters-active .product-filters.sizes .filter-collection.sizes.wide {
+    animation: show-filter-collection-sizes-wide 300ms ease-out;
+    -moz-animation: show-filter-collection-sizes-wide 300ms ease-out;
+    -webkit-animation: show-filter-collection-sizes-wide 300ms ease-out;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003403}}
   .product-overview .product-utility.filters-active .product-filters.sizes .filter-collection.sizes.wide .btn-size-group.wide-width {
     color: #0099ff;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003295}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003406}}
   .product-overview .product-utility.filters-active .product-filters.sizes .filter-collection.sizes.wide .filter-list.wide-widths {
     display: block;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003300}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003411}}
   .product-overview .product-utility.filters-active .product-filters.pricing .filter-collection.pricing {
     display: block;
+    animation: show-filter-collection 200ms ease-out;
+    -moz-animation: show-filter-collection 200ms ease-out;
+    -webkit-animation: show-filter-collection 200ms ease-out;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003305}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003420}}
   .product-overview .product-utility .instructions {
     display: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003309}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003424}}
   .product-overview .product-list {
     min-height: 400px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003312}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003427}}
   .product-overview .product-list .product {
     width: 350px;
     height: 400px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003431}}
   .product-overview .product-list .product .info {
     height: 88px;
     bottom: 0;
     padding: 0 10px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003321}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003436}}
   .product-overview .product-list .product .info .detail {
     display: block;
     color: white;
@@ -2500,11 +2783,11 @@ body.international .shopping-cart-wrapper {
     margin-bottom: 0.3em;
     line-height: 1em;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003443}}
   .product-overview .product-list .product .info .price {
     display: block;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003446}}
   .product-overview .product-list .product .info .price p {
     color: #999999;
     text-transform: uppercase;
@@ -2512,36 +2795,36 @@ body.international .shopping-cart-wrapper {
     line-height: 1em;
     font-size: 1.4em;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003455}}
   .product-overview .product-list .product .image {
     width: 350px;
     height: 350px;
     max-width: 350px;
     left: 0px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003462}}
   .product-overview .product-list .product-none {
     padding-top: 170px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003354}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003469}}
   #mens-snowboards .product-list,
   #womens-snowboards .product-list {
     min-height: 665px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003472}}
   #mens-snowboards .product-list .product,
   #womens-snowboards .product-list .product {
     width: 210px;
     height: 640px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003361}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003476}}
   #mens-snowboards .product-list .product .info,
   #womens-snowboards .product-list .product .info {
     height: 88px;
     bottom: 40px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003365}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003480}}
   #mens-snowboards .product-list .product .image,
   #womens-snowboards .product-list .product .image {
     width: 640px;
@@ -2549,25 +2832,25 @@ body.international .shopping-cart-wrapper {
     max-width: 640px;
     left: -215px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003487}}
   #mens-snowboards .product-list .product-none,
   #womens-snowboards .product-list .product-none {
     padding-top: 250px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003379}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003494}}
   #mens-team .product-list .product,
   #womens-team .product-list .product {
     width: 350px;
     height: 640px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003498}}
   #mens-team .product-list .product .info,
   #womens-team .product-list .product .info {
     height: 88px;
     bottom: 40px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003502}}
   #mens-team .product-list .product .image,
   #womens-team .product-list .product .image {
     width: 640px;
@@ -2576,12 +2859,12 @@ body.international .shopping-cart-wrapper {
     left: -145px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003398}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003513}}
   #mens-snowboards .product-header .signs .post,
   #mens-bindings .product-header .signs .post {
     top: 40px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003401}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003516}}
   #mens-snowboards .product-header .signs .sign,
   #mens-bindings .product-header .signs .sign {
     top: 60px;
@@ -2592,12 +2875,12 @@ body.international .shopping-cart-wrapper {
     transform: rotate(-8deg);
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003410}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003525}}
   #womens-snowboards .product-header .signs .post,
   #womens-bindings .product-header .signs .post {
     top: 60px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003413}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003528}}
   #womens-snowboards .product-header .signs .sign,
   #womens-bindings .product-header .signs .sign {
     top: 80px;
@@ -2608,11 +2891,11 @@ body.international .shopping-cart-wrapper {
     transform: rotate(8deg);
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003421}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003536}}
   #compare-bindings .product-header .signs .post {
     top: 40px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003424}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003539}}
   #compare-bindings .product-header .signs .sign.medium {
     top: 50px;
     -webkit-transform: rotate(8deg);
@@ -2621,7 +2904,7 @@ body.international .shopping-cart-wrapper {
     -o-transform: rotate(8deg);
     transform: rotate(8deg);
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003428}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003543}}
   #compare-bindings .product-header .signs .sign.large {
     top: 100px;
     -webkit-transform: rotate(4deg);
@@ -2631,12 +2914,12 @@ body.international .shopping-cart-wrapper {
     transform: rotate(4deg);
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003437}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003552}}
   #wearables .product-header .signs .post,
   #headwear .product-header .signs .post {
     top: 40px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003440}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003555}}
   #wearables .product-header .signs .sign.small,
   #headwear .product-header .signs .sign.small {
     top: 50px;
@@ -2646,13 +2929,13 @@ body.international .shopping-cart-wrapper {
     -o-transform: rotate(-4deg);
     transform: rotate(-4deg);
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003444}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003559}}
   #wearables .product-header .signs .sign.small a,
   #headwear .product-header .signs .sign.small a {
     font-size: 0.7em;
     padding: 9px 0 0 22px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003449}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003564}}
   #wearables .product-header .signs .sign.large,
   #headwear .product-header .signs .sign.large {
     top: 100px;
@@ -2662,19 +2945,19 @@ body.international .shopping-cart-wrapper {
     -o-transform: rotate(-8deg);
     transform: rotate(-8deg);
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003453}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003568}}
   #wearables .product-header .signs .sign.large a,
   #headwear .product-header .signs .sign.large a {
     font-size: 0.8em;
     padding: 13px 0 0 22px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003463}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003578}}
   #headwear .product-header .signs .post,
   #accessories .product-header .signs .post {
     top: 20px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003466}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003581}}
   #headwear .product-header .signs .sign.medium,
   #accessories .product-header .signs .sign.medium {
     top: 35px;
@@ -2684,18 +2967,18 @@ body.international .shopping-cart-wrapper {
     -o-transform: rotate(4deg);
     transform: rotate(4deg);
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003470}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003585}}
   #headwear .product-header .signs .sign.medium a,
   #accessories .product-header .signs .sign.medium a {
     font-size: 0.8em;
     padding: 8px 0 0 22px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003479}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003594}}
   #accessories .product-header .signs .post {
     top: 40px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003482}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003597}}
   #accessories .product-header .signs .sign.small {
     top: 110px;
     -webkit-transform: rotate(4deg);
@@ -2704,12 +2987,12 @@ body.international .shopping-cart-wrapper {
     -o-transform: rotate(4deg);
     transform: rotate(4deg);
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003486}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003601}}
   #accessories .product-header .signs .sign.small a {
     font-size: 0.7em;
     padding: 9px 0 0 22px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003491}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003606}}
   #accessories .product-header .signs .sign.medium {
     top: 55px;
     -webkit-transform: rotate(8deg);
@@ -2720,11 +3003,11 @@ body.international .shopping-cart-wrapper {
   }
 }
 @media screen and (min-width: 1056px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003500}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003615}}
   .product-overview .product-utility {
     position: relative;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003503}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003618}}
   .product-overview .product-utility .instructions {
     display: block;
     top: 10px;
@@ -2732,7 +3015,7 @@ body.international .shopping-cart-wrapper {
     margin-left: -105px;
     position: absolute;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003510}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003625}}
   .product-overview .product-utility .instructions img {
     width: 210px;
     height: 20px;
@@ -2747,7 +3030,7 @@ body.international .shopping-cart-wrapper {
     -o-transition: opacity 500ms ease-out;
     transition: opacity 500ms ease-out;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003516}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/GNU-WordPress\/wp-content\/themes\/1415-GNU-WordPress-Theme\/_\/css\/components\/_product-overview\.scss}line{font-family:\00003631}}
   .product-overview .product-utility .instructions.show img {
     -webkit-opacity: 1;
     -moz-opacity: 1;

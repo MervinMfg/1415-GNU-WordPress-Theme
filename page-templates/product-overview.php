@@ -318,11 +318,10 @@ Template Name: Product Overview
 								<li class="filter-item"><button class="btn-option" data-filter="(BTX)">BTX</button></li>
 								<li class="filter-item"><button class="btn-option" data-filter="(EC2_BTX)">EC2 BTX</button></li>
 								<li class="filter-item"><button class="btn-option" data-filter="(C2_BTX)">C2 BTX</button></li>
-								<li class="filter-item"><button class="btn-option" data-filter="(XC2_BTX)">XC2 BTX</button></li>
 								<li class="filter-item"><button class="btn-option" data-filter="(C3_BTX)">C3 BTX</button></li>
 							</ul>
 						</div><!-- .filter-collection -->
-						<div class="filter-collection sizes standard">
+						<div class="filter-collection sizes womens">
 							<ul class="filter-list standard-widths">
 								<?php foreach ($lengths as $length) : ?>
 								<li class="filter-item"><button class="btn-option" data-filter="<?php echo str_replace('.', '_', $length); ?>"><?php echo $length; ?></button></li>
@@ -518,7 +517,6 @@ Template Name: Product Overview
 						<div class="filter-collection categories">
 							<ul class="filter-list">
 								<li class="filter-item"><button class="btn-option" data-filter="rear-entry">Rear Entry</button></li>
-								<li class="filter-item"><button class="btn-option" data-filter="front-entry">Front Entry</button></li>
 								<li class="filter-item"><button class="btn-option" data-filter="splitboard">Splitboard</button></li>
 								<li class="filter-item"><button class="btn-option" data-filter="youth">Youth</button></li>
 							</ul>

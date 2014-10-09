@@ -115,11 +115,88 @@
 	}
 }
 @media screen and (min-width: $breakpoint-medium) {
+	/* Keyframe animations for filtering UI */
+	@keyframes open-filters {
+		0%   {width: 215px;}
+		100% {width: 100%;}
+	}
+	@-webkit-keyframes open-filters {
+		0%   {width: 215px;}
+		100% {width: 100%;}
+	}
+	@-moz-keyframes open-filters {
+		0%   {width: 215px;}
+		100% {width: 100%;}
+	}
+	@keyframes show-filter-buttons {
+		0%   {display: none; opacity: 0;}
+		50%  {display: none; opacity: 0;}
+		100% {display: inline-block; opactiy: 1;}
+	}
+	@-webkit-keyframes show-filter-buttons {
+		0%   {display: none; opacity: 0;}
+		50%  {display: none; opacity: 0;}
+		100% {display: inline-block; opactiy: 1;}
+	}
+	@-moz-keyframes show-filter-buttons {
+		0%   {display: none; opacity: 0;}
+		50%  {display: none; opacity: 0;}
+		100% {display: inline-block; opactiy: 1;}
+	}
+	@keyframes show-filter-collection {
+		0%   {height: 0px; padding: 0px 10px;}
+		100% {height: 44px; padding: 10px;}
+	}
+	@-webkit-keyframes show-filter-collection {
+		0%   {height: 0px; padding: 0px 10px;}
+		100% {height: 44px; padding: 10px;}
+	}
+	@-moz-keyframes show-filter-collection {
+		0%   {height: 0px; padding: 0px 10px;}
+		100% {height: 44px; padding: 10px;}
+	}
+	@keyframes show-filter-collection-sizes {
+		0%   {height: 0px; padding: 0px 10px;}
+		100% {height: 97px; padding: 10px;}
+	}
+	@-webkit-keyframes show-filter-collection-sizes {
+		0%   {height: 0px; padding: 0px 10px;}
+		100% {height: 97px; padding: 10px;}
+	}
+	@-moz-keyframes show-filter-collection-sizes {
+		0%   {height: 0px; padding: 0px 10px;}
+		100% {height: 97px; padding: 10px;}
+	}
+	@keyframes show-filter-collection-sizes-wide {
+		0%   {height: 0px; padding: 0px 10px;}
+		100% {height: 73px; padding: 10px;}
+	}
+	@-webkit-keyframes show-filter-collection-sizes-wide {
+		0%   {height: 0px; padding: 0px 10px;}
+		100% {height: 73px; padding: 10px;}
+	}
+	@-moz-keyframes show-filter-collection-sizes-wide {
+		0%   {height: 0px; padding: 0px 10px;}
+		100% {height: 73px; padding: 10px;}
+	}
+	@keyframes show-filter-collection-sizes-womens {
+		0%   {height: 0px; padding: 0px 10px;}
+		100% {height: 68px; padding: 10px;}
+	}
+	@-webkit-keyframes show-filter-collection-sizes-womens {
+		0%   {height: 0px; padding: 0px 10px;}
+		100% {height: 68px; padding: 10px;}
+	}
+	@-moz-keyframes show-filter-collection-sizes-womens {
+		0%   {height: 0px; padding: 0px 10px;}
+		100% {height: 68px; padding: 10px;}
+	}
 	.product-overview {
 		.product-utility {
 			display: block;
 			height: 40px;
 			background: url('../img/bg-black-triangles-filter.png');
+			@include transition(all, 100ms, ease-in-out);
 
 			.product-filters {
 				max-width: $breakpoint-large;
@@ -127,7 +204,8 @@
 
 				.filter-controls {
 					background: url('../img/bg-yellow-triangles-filter.png') center center;
-					float: left;
+					width: 215px;
+					height: 40px;
 
 					.btn-open,
 					.btn-filter {
@@ -169,17 +247,22 @@
 			}
 			&.filters-active {
 				height: auto;
+				min-height: 40px;
 
 				.instructions {
 					display: none;
 				}
 				.product-filters {
-					background: url('../img/bg-yellow-lines.png') bottom center;
 
 					.filter-controls {
 						text-align: center;
-						float: none;
 						position: relative;
+						width: 100%;
+						overflow: hidden;
+
+						animation: open-filters 500ms ease-out;
+						-moz-animation: open-filters 500ms ease-out;
+						-webkit-animation: open-filters 500ms ease-out;
 
 						.btn-open {
 							display: none;
@@ -193,6 +276,10 @@
 						.btn-wrapper {
 							display: inline-block;
 							margin: 0 10px;
+
+							animation: show-filter-buttons 1s ease-out;
+							-moz-animation: show-filter-buttons 1s ease-out;
+							-webkit-animation: show-filter-buttons 1s ease-out;
 
 							.btn-filter:hover,
 							.btn-filter:focus {
@@ -233,6 +320,8 @@
 					.filter-collection {
 						text-align: center;
 						padding: 10px;
+						background: url('../img/bg-yellow-lines.png') center center;
+						overflow: hidden;
 
 						.filter-list {
 							max-width: 680px;
@@ -259,12 +348,24 @@
 					}
 					&.categories .filter-collection.categories {
 						display: block;
+
+						animation: show-filter-collection 200ms ease-out;
+						-moz-animation: show-filter-collection 200ms ease-out;
+						-webkit-animation: show-filter-collection 200ms ease-out;
 					}
 					&.contours .filter-collection.contours {
 						display: block;
+
+						animation: show-filter-collection 200ms ease-out;
+						-moz-animation: show-filter-collection 200ms ease-out;
+						-webkit-animation: show-filter-collection 200ms ease-out;
 					}
 					&.sizes .filter-collection.sizes {
 						display: block;
+
+						animation: show-filter-collection-sizes 300ms ease-out;
+						-moz-animation: show-filter-collection-sizes 300ms ease-out;
+						-webkit-animation: show-filter-collection-sizes 300ms ease-out;
 
 						.filter-list {
 							display: none;
@@ -280,7 +381,8 @@
 								color: $blue;
 							}
 						}
-						&.standard {
+						&.standard,
+						&.womens {
 							.btn-size-group.standard-width {
 								color: $blue;
 							}
@@ -288,7 +390,16 @@
 								display: block;
 							}
 						}
+						&.womens {
+							animation: show-filter-collection-sizes-womens 300ms ease-out;
+							-moz-animation: show-filter-collection-sizes-womens 300ms ease-out;
+							-webkit-animation: show-filter-collection-sizes-womens 300ms ease-out;
+						}
 						&.wide {
+							animation: show-filter-collection-sizes-wide 300ms ease-out;
+							-moz-animation: show-filter-collection-sizes-wide 300ms ease-out;
+							-webkit-animation: show-filter-collection-sizes-wide 300ms ease-out;
+
 							.btn-size-group.wide-width {
 								color: $blue;
 							}
@@ -299,6 +410,10 @@
 					}
 					&.pricing .filter-collection.pricing {
 						display: block;
+
+						animation: show-filter-collection 200ms ease-out;
+						-moz-animation: show-filter-collection 200ms ease-out;
+						-webkit-animation: show-filter-collection 200ms ease-out;
 					}
 				}
 			}

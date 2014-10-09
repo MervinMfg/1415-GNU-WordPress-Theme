@@ -79,9 +79,13 @@ GNU.ProductOverview.prototype = {
 			if ( responsiveSize != "base" && GNU.Main.utilities.responsiveCheck() == "base" ) {
 				responsiveSize = "base";
 				self.productsInit();
+				// reset filters
+				$('.product-filters .filter-controls .btn-close').click();
 			} else if ( responsiveSize != "small" && GNU.Main.utilities.responsiveCheck() == "small" ) {
 				responsiveSize = "small";
 				self.productsInit();
+				// reset filters
+				$('.product-filters .filter-controls .btn-close').click();
 			} else if ( responsiveSize != "medium" && GNU.Main.utilities.responsiveCheck() == "medium" ) {
 				responsiveSize = "medium";
 				self.productsInit();
@@ -136,7 +140,9 @@ GNU.ProductOverview.prototype = {
 		});
 		$('.product-filters .filter-controls .btn-close').on('click', function () {
 			$(this).parents('.product-utility').removeClass('filters-active');
-			$(this).parents('.product-filters').addClass('categories').removeClass('categories contours sizes pricing');
+			$(this).parents('.product-filters').removeClass('categories contours sizes pricing').find('.filter-collection .btn-option').removeClass('selected');
+			$(this).parents('.product-filters').find('.filter-controls .btn-wrapper').removeClass('set');
+			self.filtersUpdate($(this).parents('.product-overview'));
 		});
 		// add filter handlers
 		$('.product-filters .filter-controls .categories .btn-filter').on('click', function () {
@@ -219,7 +225,9 @@ GNU.ProductOverview.prototype = {
 			});
 		});
 		// disable carousels
-		$overviewGroup.find('.owl-carousel').data('owl.carousel').destroy();
+		if ($overviewGroup.find('.owl-carousel').data('owl.carousel')) {
+			$overviewGroup.find('.owl-carousel').data('owl.carousel').destroy();
+		}
 		// resetup default overviews
 		// clear html, add default back
 		$overviewGroup.find('.product-list').html('').html(self.config.overviewGroups[$overviewGroup.index()]);
@@ -265,8 +273,26 @@ GNU.ProductOverview.prototype = {
 				sizeMatch = true;
 			}
 			if ($overviewGroup.pricingFilter.length > 0) {
-				var products;
-				if ($overviewGroup.pricingFilter == "Available" && $(this).attr('data-avail-us') == "Yes") {
+				var products, currencyCookie, prodAvail;
+				// CHECK AND DISPLAY CORRECT CURRENCY
+				currencyCookie = GNU.Main.utilities.cookie.getCookie('gnu_currency');
+				if (currencyCookie !== null || currencyCookie !== "") {
+					switch(currencyCookie) {
+						case 'USD':
+							prodAvail = $(this).attr('data-avail-us');
+							break;
+						case 'CAD':
+							prodAvail = $(this).attr('data-avail-ca');
+							break;
+						case 'EUD':
+							prodAvail = $(this).attr('data-avail-eur');
+							break;
+						default:
+							prodAvail = $(this).attr('data-avail-us');
+					}
+				}
+				// check pricing filters
+				if ($overviewGroup.pricingFilter == "Available" && prodAvail == "Yes") {
 					priceMatch = true;
 				} else if ($overviewGroup.pricingFilter == "High") {
 					// sort by low to high
@@ -308,14 +334,18 @@ GNU.ProductOverview.prototype = {
 				$(this).remove();
 			}
 		});
-		// reinit owl carousel
-		$overviewGroup.find('.owl-carousel').owlCarousel({
-			lazyLoad: true,
-			slideBy: 2,
-			stagePadding: 40,
-			margin: 10,
-			responsive: self.config.carouselBreakpoints
-		});
-		self.productsInit();
+		if ($overviewGroup.find('.product-list').children('.product').length > 0) {
+			// reinit owl carousel
+			$overviewGroup.find('.owl-carousel').owlCarousel({
+				lazyLoad: true,
+				slideBy: 2,
+				stagePadding: 40,
+				margin: 10,
+				responsive: self.config.carouselBreakpoints
+			});
+			self.productsInit();
+		} else {
+			$overviewGroup.find('.product-list').html('<div class="product-none"><h3>No products are available with these specifications.<br />Better luck next year!</h3></div>');
+		}
 	}
 };

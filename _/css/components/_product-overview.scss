@@ -114,9 +114,6 @@
 		}
 	}
 }
-#compare-bindings {
-	display: none;
-}
 @media screen and (min-width: $breakpoint-medium) {
 	.product-overview {
 		.product-utility {
@@ -310,6 +307,8 @@
 			}
 		}
 		.product-list {
+			min-height: 400px;
+
 			.product {
 				width: 350px;
 				height: 400px;
@@ -345,6 +344,9 @@
 					left: 0px;
 				}
 			}
+			.product-none {
+				padding-top: 170px;
+			}
 		}
 	}
 	#mens-snowboards,
@@ -366,6 +368,9 @@
 					max-width: 640px;
 					left: -215px;
 				}
+			}
+			.product-none {
+				padding-top: 250px;
 			}
 		}
 	}

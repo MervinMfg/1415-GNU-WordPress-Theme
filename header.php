@@ -130,7 +130,7 @@ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG         GGGGGG
 	<?php include '_/inc/header-includes.php' ?>
 	<!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/_/js/lib/respond-1.4.2.min.js"></script>
-	<link href="http://bfwck11rnvh1f4a4f4dmjvr3.wpengine.netdna-cdn.com/respond-proxy/" id="respond-proxy" rel="respond-proxy" />
+	<link href="http://cdn.gnu.com/respond-proxy/" id="respond-proxy" rel="respond-proxy" />
 	<link href="<?php echo get_template_directory_uri(); ?>/_/img/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
 	<script src="<?php echo get_template_directory_uri(); ?>/_/js/lib/respond.proxy.js"></script>
 	<![endif]-->

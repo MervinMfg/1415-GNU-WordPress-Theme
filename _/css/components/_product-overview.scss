@@ -196,7 +196,6 @@
 			display: block;
 			height: 40px;
 			background: url('../img/bg-black-triangles-filter.png');
-			@include transition(all, 100ms, ease-in-out);
 
 			.product-filters {
 				max-width: $breakpoint-large;
@@ -463,6 +462,9 @@
 				padding-top: 170px;
 			}
 		}
+	}
+	.ie-lt9 .product-overview .product-utility .product-filters {
+		display: none;
 	}
 	#mens-snowboards,
 	#womens-snowboards {

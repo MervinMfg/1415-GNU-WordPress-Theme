@@ -142,7 +142,7 @@ Template Name: Team Overview
 				<div class="more-riders">
 					<h3 class="title">More Riders</h3>
 					<ul class="rider-list">
-						<li class="list-item p"><a href="/category/team/womens/regional-womens/jenna-blasman/">Jenna Blasman</a></li>
+						<li class="list-item p"><a href="/category/team/womens/regional-womens/maribeth-kramer/">Maribeth Kramer</a></li>
 					</ul>
 				</div>
 				<div class="clearfix"></div>

@@ -16,7 +16,6 @@
 							<li class="menu-item"><a href="http://www.facebook.com/gnuSnowboards" class="icon-facebook" target="_blank"><span class="offscreen">Facebook</span></a></li>
 							<li class="menu-item"><a href="http://instagram.com/GNUsnowboards" class="icon-instagram" target="_blank"><span class="offscreen">Instagram</span></a></li>
 							<li class="menu-item"><a href="http://twitter.com/GNUsnowboards" class="icon-twitter" target="_blank"><span class="offscreen">Twitter</span></a></li>
-							<li class="menu-item"><a href="http://pinterest.com/gnugirls" class="icon-pinterest" target="_blank"><span class="offscreen">Pinterest</span></a></li>
 							<li class="menu-item"><a href="http://vimeo.com/gnu" class="icon-vimeo" target="_blank"><span class="offscreen">Vimeo</span></a></li>
 							<li class="menu-item"><a href="<?php bloginfo('rss2_url'); ?>" class="icon-rss" target="_blank"><span class="offscreen">RSS</span></a></li>
 						</ul>

@@ -17,10 +17,10 @@
 					<h3 class="location-title">North America</h3>
 					<ul class="location-list">
 						<li class="us">
-							<p class="small"><a href="#region-selector" data-currency="USD">United States <span>(USD)</span></a></p>
+							<p class="small"><a href="#region-selector" data-currency="USD"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/usa.gif" alt="USA Flag" />United States <span>(USD)</span></a></p>
 						</li>
 						<li class="ca">
-							<p class="small"><a href="#region-selector" data-currency="CAD">Canada <span>(CAD)</span></a></p>
+							<p class="small"><a href="#region-selector" data-currency="CAD"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/canada.gif" alt="Canada Flag" />Canada <span>(CAD)</span></a></p>
 						</li>
 					</ul>
 				</div>
@@ -98,7 +98,7 @@
 					<h3 class="location-title">Other</h3>
 					<ul class="location-list">
 						<li class="us">
-							<p class="small"><a href="#region-selector" data-currency="INT">International</a></p>
+							<p class="small"><a href="#region-selector" data-currency="INT"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/international.gif" alt="International Flag" />International</a></p>
 						</li>
 					</ul>
 				</div>

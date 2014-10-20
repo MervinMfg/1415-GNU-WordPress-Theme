@@ -491,13 +491,15 @@ body.international .shopping-cart-wrapper { display: none; }
 .region-selector .head { padding-top: 5px; clear: both; text-align: center; }
 .region-selector .subhead { text-align: center; line-height: 1em; margin-bottom: 1.12em; }
 .region-selector .location-group { max-width: 300px; margin: 0 auto; }
-.region-selector .location-group.europe { display: none; }
 .region-selector .location-group .location-title { clear: both; margin-bottom: 0.42em; }
-.region-selector .location-group .location-list { width: 50%; float: left; padding-bottom: 1.5em; }
+.region-selector .location-group .location-list { padding-bottom: 1.5em; }
 .region-selector .location-group .location-list li p { margin-bottom: 0; }
 .region-selector .location-group .location-list li p a { color: #000; }
+.region-selector .location-group .location-list li p a img { display: inline-block; width: 25px; height: 12px; padding-right: 5px; }
 .region-selector .location-group .location-list li p a span { font-weight: 700; }
 .region-selector .location-group .location-list li p a:hover { color: #9933CC; }
+.region-selector .location-group.europe { display: none; }
+.region-selector .location-group.europe .location-list { width: 50%; float: left; }
 
 @media screen and (min-width: 748px) { .region-selector { padding-top: 125px; padding-bottom: 60px; }
   .region-selector .head { padding-top: 30px; margin-bottom: 0.28em; }

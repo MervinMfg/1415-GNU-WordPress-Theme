@@ -23,16 +23,11 @@
 		max-width: 300px;
 		margin: 0 auto;
 
-		&.europe {
-			display: none;
-		}
 		.location-title {
 			clear: both;
 			margin-bottom: 0.42em;
 		}
 		.location-list {
-			width: 50%;
-			float: left;
 			padding-bottom: 1.5em;
 
 			li p {
@@ -41,6 +36,12 @@
 				a {
 					color: $black;
 
+					img {
+						display: inline-block;
+						width: 25px;
+						height: 12px;
+						padding-right: 5px;
+					}
 					span {
 						font-weight: 700;
 					}
@@ -48,6 +49,14 @@
 						color: $purple;
 					}
 				}
+			}
+		}
+		&.europe {
+			display: none;
+
+			.location-list {
+				width: 50%;
+				float: left;
 			}
 		}
 	}

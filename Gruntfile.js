@@ -23,23 +23,24 @@ module.exports = function (grunt) {
 		sass: {
 			dev: {
 				files: {
-					'_/css/gnu.main.css': '_/css/gnu.main.scss'
+					'_/compiled/gnu.main.css': '_/css/gnu.main.scss'
 				},
 				options: {
 					style: 'expanded',
-					sourcemap: true,
+					sourcemap: 'auto',
 					trace: true,
 					debugInfo: true,
-					lineNumbers: true
+					lineNumbers: true,
+					update: true
 				}
 			},
 			prod: {
 				files: {
-					'_/css/gnu.main.min.css': '_/css/gnu.main.scss'
+					'_/css/gnu.main.css': '_/css/gnu.main.scss'
 				},
 				options: {
 					style: 'compact',
-					sourcemap: false,
+					sourcemap: 'none',
 					trace: false,
 					debugInfo: false,
 					lineNumbers: false
@@ -60,7 +61,7 @@ module.exports = function (grunt) {
 					banner: '/*! <%= pkg.name %> v<%= pkg.version %> | (c) <%= grunt.template.today("yyyy") %> Mervin Mfg. | mervin.com */\n'
 				},
 				files: {
-					'_/css/gnu.main.min.css': ['_/css/gnu.main.min.css']
+					'_/css/gnu.main.min.css': ['_/css/gnu.main.css']
 				}
 			}
 		},
@@ -90,7 +91,7 @@ module.exports = function (grunt) {
 			},
 			sass: {
 				files: ['_/css/*.scss', '_/css/**/*.scss'],
-				tasks: ['sass'],
+				tasks: ['sass:dev'],
 				options: {
 					livereload: true
 				}

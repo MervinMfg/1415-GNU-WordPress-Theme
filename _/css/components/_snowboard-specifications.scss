@@ -1,0 +1,90 @@
+/* ==========================================================================
+   COMPONENTS/_SNOWBOARD-SPECIFICATIONS.SCSS
+   ========================================================================== */
+
+.specifications {
+	width: 100%;
+	overflow: scroll;
+	padding-bottom: 20px;
+
+	.specs-key {
+		background: #000 url('../img/bg-overview-title.png') center center;
+		width: 100%;
+		min-width: $breakpoint-medium;
+		height: 40px;
+		padding-top: 12px;
+		margin-bottom: 20px;
+
+		table {
+			width: $breakpoint-medium;
+			margin: 0 auto;
+
+			th {
+				color: #FFF;
+				vertical-align: top;
+				width: 10%;
+				font-size: 1.4em;
+				text-transform: uppercase;
+
+				span {
+					font-size: 0.71em;
+					display: block;
+					text-transform: none;
+				}
+			}
+		}
+		.board-size {
+			width: 8%;
+		}
+		.table-head-wide {
+			width: 13%;
+		}
+	}
+	.spec-tables {
+		font-family: $neuron;
+
+		table {
+			width: $breakpoint-medium;
+			margin: 0 auto 20px auto;
+			
+			tr {
+				height: 25px;
+			}
+			td {
+				width: 10%;
+				font-size: 1.4em;
+				text-align: center;
+				line-height: 25px;
+			}
+		}
+		.table-heading {
+			font-size: 2.4em;
+			text-transform: uppercase;
+			padding-bottom: 6px;
+			text-align: left;
+			padding-left: 20px;
+
+			span {
+				font-weight: 400;
+				font-style: italic;
+			}
+		}
+		.content-table-row:nth-child(odd) {
+			background: #bfbfbf;
+		}
+		.board-length {
+			width: 8%;
+			background: #000;
+			color: #FFF;
+		}
+		.table-head-wide {
+			width: 13%;
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-medium) {
+	.specifications .spec-tables .table-heading {
+		text-align: center;
+		padding-left: 0;
+	}
+}

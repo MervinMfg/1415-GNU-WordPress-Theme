@@ -188,7 +188,7 @@ GNU.ProductDetails.prototype = {
 				self.config.scrollController.removeScene(self.config.scene);
 			}
 			$('.product-navigation').removeAttr('style');
-			navOffset = Math.floor($(window).height() / 2) - $('.site-header').outerHeight() + 1;
+			navOffset = Math.floor($(window).height() / 2) - ($('.site-header').outerHeight() + $('.site-header').position().top) + 1;
 			self.config.scene = new ScrollScene({triggerElement: ".product-navigation", offset: navOffset}).setPin(".product-navigation").addTo(self.config.scrollController);
 		} else if (GNU.Main.utilities.responsiveCheck() != "other") {
 			responsiveSize = "other";

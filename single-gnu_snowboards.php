@@ -369,6 +369,9 @@ Template Name: Snowboards Detail
 						</div>
 					</div>
 					<?php endforeach; ?>
+					<div class="specs-link-container">
+						<a href="/snowboard-specifications/" class="all-specs-link" >All Board Specs</a>
+					</div>
 				</div><!-- .product-specifications -->
 			</section><!-- #specifications -->
 

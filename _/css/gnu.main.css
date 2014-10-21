@@ -759,6 +759,9 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-specifications .spec-navigation li { display: inline-block; margin-bottom: 5px; }
 .product-specifications .spec-navigation li a { color: #FFF; padding: 5px; display: block; }
 .product-specifications .spec-navigation li a:hover, .product-specifications .spec-navigation li a:focus, .product-specifications .spec-navigation li a.active { color: #000; background: #FFF; }
+.product-specifications .specs-link-container { text-align: center; }
+.product-specifications .specs-link-container .all-specs-link { display: inline-block; color: #FFF; font-family: "Neuron Extra Bold", Helvetica, Arial, sans-serif; font-size: 1.8em; text-transform: uppercase; padding: 10px; margin: 10px auto; }
+.product-specifications .specs-link-container .all-specs-link:hover, .product-specifications .specs-link-container .all-specs-link:focus, .product-specifications .specs-link-container .all-specs-link:active { color: #000; background: #FFF; }
 .product-specifications .spec-listing { padding: 0 20px 10px; max-width: 320px; margin: 0 auto; display: none; }
 .product-specifications .spec-listing.active { display: block; }
 .product-specifications .spec-listing .group-1, .product-specifications .spec-listing .group-2, .product-specifications .spec-listing .group-3 { clear: both; float: left; width: 100%; }
@@ -1057,6 +1060,25 @@ body.international .shopping-cart-wrapper { display: none; }
 
 @media screen and (min-width: 748px) { .contact-form { width: 60%; float: left; }
   .contact-details { width: 40%; float: left; } }
+/* ========================================================================== COMPONENTS/_SNOWBOARD-SPECIFICATIONS.SCSS ========================================================================== */
+.specifications { width: 100%; overflow: scroll; padding-bottom: 20px; }
+.specifications .specs-key { background: #000 url("../img/bg-overview-title.png") center center; width: 100%; min-width: 748px; height: 40px; padding-top: 12px; margin-bottom: 20px; }
+.specifications .specs-key table { width: 748px; margin: 0 auto; }
+.specifications .specs-key table th { color: #FFF; vertical-align: top; width: 10%; font-size: 1.4em; text-transform: uppercase; }
+.specifications .specs-key table th span { font-size: 0.71em; display: block; text-transform: none; }
+.specifications .specs-key .board-size { width: 8%; }
+.specifications .specs-key .table-head-wide { width: 13%; }
+.specifications .spec-tables { font-family: "Neuron", Helvetica, Arial, sans-serif; }
+.specifications .spec-tables table { width: 748px; margin: 0 auto 20px auto; }
+.specifications .spec-tables table tr { height: 25px; }
+.specifications .spec-tables table td { width: 10%; font-size: 1.4em; text-align: center; line-height: 25px; }
+.specifications .spec-tables .table-heading { font-size: 2.4em; text-transform: uppercase; padding-bottom: 6px; text-align: left; padding-left: 20px; }
+.specifications .spec-tables .table-heading span { font-weight: 400; font-style: italic; }
+.specifications .spec-tables .content-table-row:nth-child(odd) { background: #bfbfbf; }
+.specifications .spec-tables .board-length { width: 8%; background: #000; color: #FFF; }
+.specifications .spec-tables .table-head-wide { width: 13%; }
+
+@media screen and (min-width: 748px) { .specifications .spec-tables .table-heading { text-align: center; padding-left: 0; } }
 /* ========================================================================== MODULES/_FEATURED-SLIDER.SCSS ========================================================================== */
 .featured-slider { position: relative; height: 195px; }
 .featured-slider .slide-list .slide-item { height: 195px; background-repeat: none; overflow: hidden; background-size: cover; background-position: 50% 50%; }

@@ -363,6 +363,26 @@
 			}
 		}
 	}
+	.specs-link-container {
+		text-align: center;
+
+		.all-specs-link {
+			display: inline-block;
+			color: $white;
+			font-family: $neuronExtraBold;
+			font-size: 1.8em;
+			text-transform: uppercase;
+			padding: 10px;
+			margin: 10px auto;
+
+			&:hover,
+			&:focus,
+			&:active {
+				color: $black;
+				background: $white;
+			}
+		}
+	}
 	.spec-listing {
 		padding: 0 20px 10px;
 		max-width: 320px;

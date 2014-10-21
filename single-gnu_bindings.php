@@ -174,13 +174,12 @@ Template Name: Bindings Detail
 								$terrain = get_field('gnu_binding_terrain');
 								// find the associated tax associated with binding
 								$taxTerms = get_the_terms($post->ID, 'gnu_bindings_categories');
-								$categoryName = "";
+								$categorySlugs = Array();
 								foreach( $taxTerms as $term ) {
-									$categoryName = $term->slug;
-									unset($taxTerms);
+									array_push($categorySlugs, $term->slug);
 								}
 								// figure out gender for image name
-								if ($categoryName == "womens") {
+								if (in_array('womens', $categorySlugs, true)) {
 									$bindingAnimationGender = "womens";
 								} else {
 									$bindingAnimationGender = "mens";

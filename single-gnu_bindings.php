@@ -176,11 +176,11 @@ Template Name: Bindings Detail
 								$taxTerms = get_the_terms($post->ID, 'gnu_bindings_categories');
 								$categoryName = "";
 								foreach( $taxTerms as $term ) {
-									$categoryName = $term->name;
+									$categoryName = $term->slug;
 									unset($taxTerms);
 								}
 								// figure out gender for image name
-								if ($categoryName == "Womens") {
+								if ($categoryName == "womens") {
 									$bindingAnimationGender = "womens";
 								} else {
 									$bindingAnimationGender = "mens";
@@ -209,22 +209,27 @@ Template Name: Bindings Detail
 							<div class="binding-animation">
 								<div class="binding-steps owl-carousel owl-theme">
 									<div class="binding-step">
-										<img src="<?php echo get_template_directory_uri(); ?>/_/img/bindings/gnu-binding-sequence-<?php echo $bindingAnimationGender; ?>-1.png" data-src="<?php echo get_template_directory_uri(); ?>/_/img/bindings/gnu-binding-sequence-<?php echo $bindingAnimationGender; ?>-1.png" alt="Reclining Highback" class="owl-lazy" />
+										<img src="<?php echo get_template_directory_uri(); ?>/_/img/bindings/gnu-binding-sequence-<?php echo $bindingAnimationGender; ?>-1.png" data-src="<?php echo get_template_directory_uri(); ?>/_/img/bindings/gnu-binding-sequence-<?php echo $bindingAnimationGender; ?>-1.png" alt="Easy Rider" class="owl-lazy" />
+										<h4>Easy Rider</h4>
+										<p class="small">Speed entry binding systems. Lightweight, performance and strength in an incredibly fast binding system.</p>
+									</div><!-- .binding-step -->
+									<div class="binding-step">
+										<img src="<?php echo get_template_directory_uri(); ?>/_/img/bindings/gnu-binding-sequence-<?php echo $bindingAnimationGender; ?>-1.png" data-src="<?php echo get_template_directory_uri(); ?>/_/img/bindings/gnu-binding-sequence-<?php echo $bindingAnimationGender; ?>-2.png" alt="Reclining Highback" class="owl-lazy" />
 										<h4>Reclining Highback</h4>
 										<p class="small">Makes entry and exit incredibly fast and easy with one hand! No more fumbling with ratchet buckles and ladders.</p>
 									</div><!-- .binding-step -->
 									<div class="binding-step">
-										<img src="<?php echo get_template_directory_uri(); ?>/_/img/bindings/gnu-binding-sequence-<?php echo $bindingAnimationGender; ?>-1.png" data-src="<?php echo get_template_directory_uri(); ?>/_/img/bindings/gnu-binding-sequence-<?php echo $bindingAnimationGender; ?>-2.png" alt="Auto Open Lever" class="owl-lazy" />
+										<img src="<?php echo get_template_directory_uri(); ?>/_/img/bindings/gnu-binding-sequence-<?php echo $bindingAnimationGender; ?>-1.png" data-src="<?php echo get_template_directory_uri(); ?>/_/img/bindings/gnu-binding-sequence-<?php echo $bindingAnimationGender; ?>-3.png" alt="Auto Open Lever" class="owl-lazy" />
 										<h4>Auto Open Lever</h4>
 										<p class="small">Auto Open Lever opens strap automatically when highback is lowered. Close easily with one click. Magic!</p>
 									</div><!-- .binding-step -->
 									<div class="binding-step">
-										<img src="<?php echo get_template_directory_uri(); ?>/_/img/bindings/gnu-binding-sequence-<?php echo $bindingAnimationGender; ?>-1.png" data-src="<?php echo get_template_directory_uri(); ?>/_/img/bindings/gnu-binding-sequence-<?php echo $bindingAnimationGender; ?>-3.png" alt="Micro Buckle" class="owl-lazy" />
+										<img src="<?php echo get_template_directory_uri(); ?>/_/img/bindings/gnu-binding-sequence-<?php echo $bindingAnimationGender; ?>-1.png" data-src="<?php echo get_template_directory_uri(); ?>/_/img/bindings/gnu-binding-sequence-<?php echo $bindingAnimationGender; ?>-4.png" alt="Micro Buckle" class="owl-lazy" />
 										<h4>Micro Buckle</h4>
 										<p class="small">With the Micro Buckle a rider can easily adjust strap tension on the go.</p>
 									</div><!-- .binding-step -->
 									<div class="binding-step">
-										<img src="<?php echo get_template_directory_uri(); ?>/_/img/bindings/gnu-binding-sequence-<?php echo $bindingAnimationGender; ?>-1.png" data-src="<?php echo get_template_directory_uri(); ?>/_/img/bindings/gnu-binding-sequence-<?php echo $bindingAnimationGender; ?>-4.png" alt="Pressure Relief Button" class="owl-lazy" />
+										<img src="<?php echo get_template_directory_uri(); ?>/_/img/bindings/gnu-binding-sequence-<?php echo $bindingAnimationGender; ?>-1.png" data-src="<?php echo get_template_directory_uri(); ?>/_/img/bindings/gnu-binding-sequence-<?php echo $bindingAnimationGender; ?>-5.png" alt="Pressure Relief Button" class="owl-lazy" />
 										<h4>Pressure Relief Button</h4>
 										<p class="small">Relief Button can be pressed to relax ankle strap pressure and increase circulation on your front foot.</p>
 									</div><!-- .binding-step -->

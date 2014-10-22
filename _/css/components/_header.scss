@@ -3,8 +3,10 @@
    ========================================================================== */
 
 .site-header {
-	background: $white url('../img/bg-horizontal-color.png') no-repeat;
 	padding-top: 4px;
+	background-color: $green;
+	background-image: url('../img/bg-horizontal-color.png');
+	background-repeat: no-repeat;
 	background-size: 100% 4px;
 	position: relative;
 

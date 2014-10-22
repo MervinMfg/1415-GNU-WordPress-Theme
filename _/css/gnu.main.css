@@ -334,6 +334,7 @@ abbr { border-bottom: 1px dotted #666; cursor: help; }
 .site-footer .footer-content .region-social-wrapper { clear: both; }
 .site-footer .footer-content .region-toggle { text-transform: uppercase; text-align: center; padding-bottom: 20px; }
 .site-footer .footer-content .region-toggle a { color: #FFF; }
+.site-footer .footer-content .region-toggle a img { display: none; }
 .site-footer .footer-content p { margin: 0; text-align: center; }
 .site-footer .footer-content p span { display: block; }
 

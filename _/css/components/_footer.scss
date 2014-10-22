@@ -25,9 +25,7 @@
 				float: left;
 				padding: 10px 0 30px 20px;
 
-				h3 {
-					
-				}
+				h3 {}
 				.nav-menu {
 					.menu-item {
 						a {
@@ -47,11 +45,13 @@
 			text-align: center;
 			padding-bottom: 20px;
 
-			h5 {
-				
-			}
+			h5 {}
 			a {
 				color: $white;
+
+				img {
+					display: none;
+				}
 			}
 		}
 		p {
@@ -131,9 +131,7 @@
 		.footer-menu {
 			width: 70%;
 
-			.nav-group {
-				//
-			}
+			.nav-group {}
 		}
 		.region-social-wrapper {
 			width: 30%;
@@ -152,23 +150,3 @@
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

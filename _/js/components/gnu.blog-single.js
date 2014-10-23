@@ -14,8 +14,12 @@ GNU.BlogSingle = function () {
 GNU.BlogSingle.prototype = {
 	init: function () {
 		var self = this;
-		self.checkVideos();
-		self.checkImages();
+		if($('body').hasClass('single-format-video')) {
+			self.checkVideos();
+		}
+		if($('body').hasClass('single-format-image') || $('body').hasClass('single-format-gallery')) {
+			self.checkImages();
+		}
 	},
 	checkVideos: function () {
 		var self = this;

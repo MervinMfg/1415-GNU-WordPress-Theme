@@ -752,7 +752,9 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-technology .tech-minor li .title { margin-bottom: 10px; }
 .product-technology .tech-minor li .description { margin-bottom: 0; }
 
-.product-video { padding: 40px 0; background: #FFF url("../img/bg-grey-triangles.png") center center; }
+.product-video { padding: 40px 0; background: #FFF url("../img/bg-grey-triangles.png") bottom center; }
+
+#collaboration { display: none; }
 
 .product-specifications { background: #000 url("../img/bg-overview-title.png") center center; color: #FFF; }
 .product-specifications .specs-title { text-align: center; padding: 20px 20px 10px; max-width: 320px; margin: 0 auto; }
@@ -828,6 +830,18 @@ body.international .shopping-cart-wrapper { display: none; }
   .product-technology .tech-major li .description { width: 300px; }
   .product-technology .tech-minor { max-width: none; padding: 0 10px; }
   .product-technology .tech-minor li { display: inline-block; width: 49.5%; padding: 10px; vertical-align: top; }
+  #collaboration { display: block; }
+  .product-collab { padding: 50px 0; background: #FFF url("../img/bg-grey-triangles.png") bottom center; }
+  .product-collab.video-active { background: none; }
+  .product-collab .collab-wrapper { width: 480px; margin: 0 auto; }
+  .product-collab .collab-image { width: 200px; float: left; }
+  .product-collab .collab-image img { width: 100%; }
+  .product-collab .collab-details { width: 280px; float: left; padding: 20px 0 0 80px; }
+  .product-collab .collab-details h4 { font-size: 2.4em; padding-bottom: 10px; }
+  .product-collab .collab-details h3 { font-size: 3.6em; font-family: "Neuron Light", Helvetica, Arial, sans-serif; padding-bottom: 30px; font-weight: 400; }
+  .product-collab .collab-details .btn-submit { font-size: 4em; padding: 0 40px; }
+  .product-collab .collab-link h4, .product-collab .collab-link h4:hover, .product-collab .collab-link h3, .product-collab .collab-link h3:hover { color: #000; }
+  .product-collab .collab-link .btn-submit:hover { background: #9933CC; }
   .product-specifications .specs-title, .product-specifications .spec-navigation { max-width: 748px; }
   .product-specifications .spec-listing { max-width: 748px; }
   .product-specifications .spec-listing .group-1, .product-specifications .spec-listing .group-2, .product-specifications .spec-listing .group-3 { width: 33.3%; float: left; }
@@ -861,9 +875,12 @@ body.international .shopping-cart-wrapper { display: none; }
   .product-technology { max-width: 1056px; margin: 0 auto; background-position: 0 -8px; }
   .product-technology .section-content { max-width: 520px; }
   .product-technology .h1 { padding: 60px 20px 40px; }
-  .product-video { padding: 40px 0; background: #FFF url("../img/bg-grey-triangles.png") center center; }
+  .product-video { padding: 40px 0; }
   .product-video .section-content { max-width: 1056px; margin: 0 auto; }
   .product-video .section-content .video-wrapper { width: 520px; }
+  .product-collab .section-content { max-width: 1056px; margin: 0 auto; }
+  .product-collab .section-content .collab-wrapper { width: 520px; margin: 0; }
+  .product-collab .section-content .collab-image { width: 240px; padding-left: 40px; }
   .product-specifications .specs-title, .product-specifications .spec-navigation { max-width: 1056px; }
   .product-specifications .spec-listing { max-width: 1056px; }
   .product-specifications .spec-listing .group-1 p, .product-specifications .spec-listing .group-2 p, .product-specifications .spec-listing .group-3 p { padding: 0 40px; } }

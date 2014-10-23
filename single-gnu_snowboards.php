@@ -295,7 +295,7 @@ Template Name: Snowboards Detail
 			</section><!-- #technology -->
 
 			<?php
-				// display video if we have an id
+				// display video or binding if we have an id
 				$videoID = get_field('gnu_product_video');
 				if( $videoID ):
 			?>
@@ -307,10 +307,44 @@ Template Name: Snowboards Detail
 						</div>
 					</div>
 				</div><!-- .product-video -->
-			</section><!-- #video -->
+			</section>
+			<?php endif; ?>
+
 			<?php
-				endif;
+				$bindings = get_field('gnu_snowboard_collab');
+				if( $bindings ):
 			?>
+			<section id="collaboration">
+				<div class="product-collab<?php if( $videoID ){ echo " video-active"; } ?>">
+					<div class="section-content">
+						<div class="collab-wrapper">
+							<?php
+								// get each related product
+								foreach( $bindings as $binding):
+									$postType = $binding->post_type;
+									// check which image size to use based on post type
+									$bindingImage = get_field('gnu_product_image', $binding->ID);
+									$bindingLink = get_permalink($binding->ID);
+									$bindingTitle = get_the_title($binding->ID);
+									// render out co-lab product
+							?>
+							<a href="<?php echo $bindingLink; ?>" class="collab-link">
+								<div class="collab-image">
+									<img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo $bindingImage['sizes']['square-medium']; ?>" alt="<?php echo $bindingImage['alt']; ?>" class="lazy" />
+								</div>
+								<div class="collab-details">
+									<h4>Co - Lab Binding</h4>
+									<h3><?php echo $bindingTitle; ?></h3>
+									<button class="btn-submit">Buy</button>
+								</div>
+								<div class="clearfix"></div>
+							</a>
+							<?php endforeach; ?>
+						</div>
+					</div>
+				</div><!-- .product-collab -->
+			</section>
+			<?php endif; ?>
 
 			<section id="specifications">
 				<div class="product-specifications">

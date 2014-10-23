@@ -14,9 +14,7 @@ GNU.BlogSingle = function () {
 GNU.BlogSingle.prototype = {
 	init: function () {
 		var self = this;
-		if($('body').hasClass('single-format-video')) {
-			self.checkVideos();
-		}
+		self.checkVideos();
 		if($('body').hasClass('single-format-image') || $('body').hasClass('single-format-gallery')) {
 			self.checkImages();
 		}
@@ -33,7 +31,7 @@ GNU.BlogSingle.prototype = {
 			}
 			$(this).wrap('<div class="post-video"></div>');
 			// check if it's the first element
-			if (index === 0) {
+			if ($('body').hasClass('single-format-video') && index === 0) {
 				$('.post-video').prependTo('.post .post-content');
 				self.config.firstMediaFound = true;
 			}

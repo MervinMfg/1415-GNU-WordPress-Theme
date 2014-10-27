@@ -15,7 +15,7 @@ SASS Structure and base styles inspired by [Brad Frost](http://bradfrostweb.com/
 
 **CSS/SASS**
 
-CSS files are compiled into the **_/css/** directory from the files imported by the **_ui/css/gnu.main.scss** file. Note that whenever a new .scss file is added, it must be manually added to the **_ui/css/gnu.main.scss** file.
+CSS development files are compiled into the **_/compiled/** directory from the files imported by the **_ui/css/gnu.main.scss** file. They are then compressed into a production file (**_ui/css/gnu.main.css**) without debug info or a source map. The main CSS file is then minified for a final production build (**_ui/css/gnu.main.min.css**). Note that whenever a new .scss file is added, it must be manually added to the **_ui/css/gnu.main.scss** file.
 
 The CSS directory structure broken into four categories.
 
@@ -73,7 +73,7 @@ Below you'll fine a list of commands to perform varying tasks followed by a deta
 grunt run
 ```
 * **CSS/SASS**
-	* The run grunt task will check the **_/css/gnu.main.scss** file and compile all the specified scss files into **_/css/gnu.main.css**. This CSS style is expanded, have a sourcemap file, trace, debug info and line number. This is the CSS file loaded when viewing the development site.
+	* The run grunt task will check the **_/css/gnu.main.scss** file and compile all the specified scss files into **_/compiled/gnu.main.css**. This CSS style is expanded, have a sourcemap file, trace, debug info and line number. This is the CSS file loaded when viewing the development site.
 * **JavaScript**
 	* The run grunt task will also run through the js files included in the **Gruntfile.js** and create the two PHP files to include (**_/inc/header-scripts.php** and **_/inc/footer-scripts.php**). **header-scripts.php** includes only libraries that live in the **headerScripts** array variable at the top of the **Gruntfile.js** configuration. **footer-scripts.php** includes those in the **footerScripts** array variable at the top of the **Gruntfile.js** configuration, which currently includes the main JavaScript application file (**_/js/gnu.main.js**).
 
@@ -89,8 +89,8 @@ The build task should be run when you're ready to generate or update your optimi
 
 * **CSS/SASS**
 	* Again, the task will check your **_/css/gnu.main.scss** file for which SASS files to include. 
-	* This time, it will compile to **_/css/gnu.main.min.css** but will be compressed and will not include any of the debug options turned on for the development build. 
-	* From that compiled file, CSS minification will be performed, further compressing the file size.
+	* This time, it will compile to **_/css/gnu.main.css** but will be compressed and will not include any of the debug options turned on for the development build. 
+	* From that compiled file, CSS minification will be performed, further compressing the file size to a new production ready file **_/css/gnu.main.min.css**.
 * **JavaScript** 
 	* Again, the **_/inc/header-scripts.php** and **_/inc/footer-scripts.php** files will be created. 
 	* From those, two files will be created (**_/js/gnu.header.min.js** and **_/js/gnu.footer.min.js**) where all of the separate files listed in the PHP includes will be concatenated. 

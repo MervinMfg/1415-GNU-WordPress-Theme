@@ -90,10 +90,13 @@ Template Name: Product Overview
 				wp_reset_query();
 			?>
 			<section id="mens-snowboards" class="product-overview deeplink-top-fix">
-				<header class="product-header section-header">
+				<header class="product-header section-header special">
 					<div class="header-wrapper">
 						<h2 class="title">Men's Snowboards</h2>
 						<h5 class="subtitle">Innovation Creation Since 1977</h5>
+						<div class="product-special">
+							<p class="small">Free standard shipping on orders over $75</p>
+						</div>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">
@@ -268,10 +271,13 @@ Template Name: Product Overview
 				wp_reset_query();
 			?>
 			<section id="womens-snowboards" class="product-overview deeplink-top-fix">
-				<header class="product-header section-header alt">
+				<header class="product-header section-header alt special">
 					<div class="header-wrapper">
 						<h2 class="title">Women's Snowboards</h2>
 						<h5 class="subtitle">Gold Metal Technology To Make Magic On</h5>
+						<div class="product-special">
+							<p class="small">Free standard shipping on orders over $75</p>
+						</div>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">
@@ -364,10 +370,13 @@ Template Name: Product Overview
 			<?php elseif (get_the_title() == "Bindings") : ?>
 
 			<section id="mens-bindings" class="product-overview deeplink-top-fix">
-				<header class="product-header section-header alt">
+				<header class="product-header section-header alt special">
 					<div class="header-wrapper">
 						<h2 class="title">Men's Bindings</h2>
 						<h5 class="subtitle">Click, Click, Ride</h5>
+						<div class="product-special">
+							<p class="small">Free standard shipping on orders over $75</p>
+						</div>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">
@@ -497,10 +506,13 @@ Template Name: Product Overview
 				<div class="clearfix"></div>
 			</section><!-- .product-overview -->
 			<section id="womens-bindings" class="product-overview deeplink-top-fix">
-				<header class="product-header section-header">
+				<header class="product-header section-header special">
 					<div class="header-wrapper">
 						<h2 class="title">Women's Bindings</h2>
 						<h5 class="subtitle">Faster, Easier, Smarter</h5>
+						<div class="product-special">
+							<p class="small">Free standard shipping on orders over $75</p>
+						</div>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">
@@ -632,10 +644,13 @@ Template Name: Product Overview
 			<?php elseif (get_the_title() == "Supplies") : ?>
 
 			<section id="wearables" class="product-overview deeplink-top-fix">
-				<header class="product-header section-header">
+				<header class="product-header section-header special">
 					<div class="header-wrapper">
 						<h2 class="title">Wearables</h2>
 						<h5 class="subtitle">The Weirdwear Collection</h5>
+						<div class="product-special">
+							<p class="small">Free standard shipping on orders over $75</p>
+						</div>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">
@@ -783,10 +798,13 @@ Template Name: Product Overview
 				<div class="clearfix"></div>
 			</section><!-- .product-overview -->
 			<section id="headwear" class="product-overview deeplink-top-fix">
-				<header class="product-header section-header alt">
+				<header class="product-header section-header alt special">
 					<div class="header-wrapper">
 						<h2 class="title">Headwear</h2>
 						<h5 class="subtitle">Advanced Dome Enhancers</h5>
+						<div class="product-special">
+							<p class="small">Free standard shipping on orders over $75</p>
+						</div>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">
@@ -923,10 +941,13 @@ Template Name: Product Overview
 				<div class="clearfix"></div>
 			</section><!-- .product-overview -->
 			<section id="accessories" class="product-overview deeplink-top-fix">
-				<header class="product-header section-header">
+				<header class="product-header section-header special">
 					<div class="header-wrapper">
 						<h2 class="title">Accessories</h2>
 						<h5 class="subtitle">Tuning for Your Gold Metal Technology</h5>
+						<div class="product-special">
+							<p class="small">Free standard shipping on orders over $75</p>
+						</div>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">

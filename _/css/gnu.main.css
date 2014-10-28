@@ -515,6 +515,7 @@ body.international .shopping-cart-wrapper { display: none; }
   .active-takeover .region-selector { padding-top: 534px; } }
 @media screen and (min-width: 1056px) { .region-selector { min-height: 850px; } }
 /* ========================================================================== COMPONENTS/_PRODUCT-OVERVIEW.SCSS ========================================================================== */
+.product-overview .product-header.special .product-special { padding: 0; margin: 0; }
 .product-overview .product-utility { display: none; }
 .product-overview .product-list { text-align: center; padding: 10px 0 5px; display: block; }
 .product-overview .product-list .owl-stage { display: inline-block; }
@@ -595,6 +596,8 @@ body.international .shopping-cart-wrapper { display: none; }
     100% { height: 68px; padding: 10px; } }
   @-moz-keyframes show-filter-collection-sizes-womens { 0% { height: 0px; padding: 0px 10px; }
     100% { height: 68px; padding: 10px; } }
+  .product-overview .product-header.special { padding-bottom: 25px; }
+  .product-overview .product-header.special .product-special { padding-top: 25px; position: relative; z-index: 2; }
   .product-overview .product-utility { display: block; height: 40px; background: url("../img/bg-black-triangles-filter.png"); }
   .product-overview .product-utility .product-filters { max-width: 1056px; margin: 0 auto; }
   .product-overview .product-utility .product-filters .filter-controls { background: url("../img/bg-yellow-triangles-filter.png") center center; width: 215px; height: 40px; }
@@ -713,6 +716,10 @@ body.international .shopping-cart-wrapper { display: none; }
 
 .product-price { margin-bottom: 20px; }
 .product-price p { line-height: 1em; font-size: 3.6em; }
+.product-price.special { margin-bottom: 0; }
+
+.product-special { color: #FF3399; text-transform: uppercase; padding: 0 20px; margin-bottom: 10px; text-align: center; }
+.product-special p { margin-bottom: 0px; }
 
 .product-buy { text-align: center; margin-bottom: 40px; }
 .product-buy .product-available { display: none; }

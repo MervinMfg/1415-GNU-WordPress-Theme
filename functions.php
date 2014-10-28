@@ -219,9 +219,9 @@ function bindingSizeLookup ($sizeString, $verbose = true) {
                 $returnString = "S";
             }
             break;
-        case "S (US M 6-8), S (US W 7-9)":
+        case "S (US M 6-8 – US W 7-9)":
             if ($verbose) {
-                $returnString = "S (US M 6-8), S (US W 7-9)";
+                $returnString = "S (US M 6-8 – US W 7-9)";
             } else {
                 $returnString = "S";
             }
@@ -261,9 +261,9 @@ function bindingSizeLookup ($sizeString, $verbose = true) {
                 $returnString = "M";
             }
             break;
-        case "M (US M 8.5-11), W (US W 8+)":
+        case "M (US M 8.5-11 – US W 9.5+)":
             if ($verbose) {
-                $returnString = "M (US M 8.5-11), W (US W 8+)";
+                $returnString = "M (US M 8.5-11 – US W 9.5+)";
             } else {
                 $returnString = "M";
             }

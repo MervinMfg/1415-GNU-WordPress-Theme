@@ -519,7 +519,7 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-overview .product-list { text-align: center; padding: 10px 0 5px; display: block; }
 .product-overview .product-list .owl-stage { display: inline-block; }
 .product-overview .product-list .product { width: 150px; height: 190px; overflow: hidden; position: relative; display: inline-block; }
-.product-overview .product-list .product .info { background: #000; background-image: url("../img/bg-overview-title.png"); height: 35px; width: 100%; position: absolute; bottom: 10px; z-index: 2; padding: 0 5px; /*
+.product-overview .product-list .product .info { background: #000; background-image: url("../img/bg-overview-title.png"); height: 45px; width: 100%; position: absolute; bottom: 10px; z-index: 2; padding: 0 5px; /*
 	VERTICAL CENTERING
 	Check this url for more on vertical centering
 	http://css-tricks.com/centering-in-the-unknown/
@@ -529,6 +529,21 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-overview .product-list .product .info .name { color: #FFF; }
 .product-overview .product-list .product .info .detail { display: none; }
 .product-overview .product-list .product .info .price { display: none; }
+.product-overview .product-list .product .info .colorways { margin-top: 5px; }
+.product-overview .product-list .product .info .colorways .swatch { width: 20px; height: 12px; border: 1px solid #FFF; display: inline-block; margin: 0 2px; background: url("../img/color-swatches.jpg") 0px 0px; /* default black */ }
+.product-overview .product-list .product .info .colorways .swatch:hover, .product-overview .product-list .product .info .colorways .swatch:focus { border-color: #666; }
+.product-overview .product-list .product .info .colorways .swatch.white { background-position: -18px 0px; }
+.product-overview .product-list .product .info .colorways .swatch.grey, .product-overview .product-list .product .info .colorways .swatch.heather-grey { background-position: -36px 0px; }
+.product-overview .product-list .product .info .colorways .swatch.orange { background-position: -54px 0px; }
+.product-overview .product-list .product .info .colorways .swatch.red { background-position: -72px 0px; }
+.product-overview .product-list .product .info .colorways .swatch.green { background-position: -90px 0px; }
+.product-overview .product-list .product .info .colorways .swatch.teal { background-position: -108px 0px; }
+.product-overview .product-list .product .info .colorways .swatch.dark-sea { background-position: -126px 0px; }
+.product-overview .product-list .product .info .colorways .swatch.olive { background-position: -144px 0px; }
+.product-overview .product-list .product .info .colorways .swatch.acid-yellow { background-position: -162px 0px; }
+.product-overview .product-list .product .info .colorways .swatch.gunmetal-heather { background-position: -180px 0px; }
+.product-overview .product-list .product .info .colorways .swatch.tan { background-position: -198px 0px; }
+.product-overview .product-list .product .info .colorways .swatch.indigo { background-position: -216px 0px; }
 .product-overview .product-list .product .image { width: 150px; height: 150px; max-width: 150px; position: absolute; left: 0; z-index: 1; }
 .product-overview .product-list .product a:hover .info .name, .product-overview .product-list .product a:hover .info .detail, .product-overview .product-list .product a:focus .info .name, .product-overview .product-list .product a:focus .info .detail { color: #FF3399; }
 
@@ -627,6 +642,7 @@ body.international .shopping-cart-wrapper { display: none; }
   .product-overview .product-list .product .info .detail { display: block; color: #FFF; text-transform: uppercase; margin-bottom: 0.3em; line-height: 1em; }
   .product-overview .product-list .product .info .price { display: block; }
   .product-overview .product-list .product .info .price p { color: #999; text-transform: uppercase; margin-bottom: 0; line-height: 1em; font-size: 1.4em; }
+  .product-overview .product-list .product .info .colorways { position: absolute; top: 1px; left: 5px; }
   .product-overview .product-list .product .image { width: 350px; height: 350px; max-width: 350px; left: 0px; }
   .product-overview .product-list .product-none { padding-top: 170px; }
   .ie-lt9 .product-overview .product-utility .product-filters { display: none; }

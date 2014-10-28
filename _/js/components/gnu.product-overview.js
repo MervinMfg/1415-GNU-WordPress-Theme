@@ -100,19 +100,20 @@ GNU.ProductOverview.prototype = {
 	},
 	productsInit: function () {
 		var self = this;
+		$('.product-overview .product-list .product a .colorways .swatch').off('click.colorway'); // remove old listeners
 		if ( GNU.Main.utilities.responsiveCheck() === 'medium' || GNU.Main.utilities.responsiveCheck() === 'large' ) {
 			TweenMax.to('.product-overview .product-list .product a .info', 0, {scale: 1, force3D: true});
 			TweenMax.to('.product-overview .product-list .product a .image', 0, {scale: 0.95, force3D: true});
 			// add listners for over and out
 			$('.product-overview .product-list .product a').on('mouseover.productOverview', function () {
-				$info = $(this).find('.info');
+				//$info = $(this).find('.info');
 				$image = $(this).find('.image');
-				TweenMax.to($info, 0.2, {scale: 1.05, force3D: true});
+				//TweenMax.to($info, 0.2, {scale: 1.05, force3D: true});
 				TweenMax.to($image, 0.2, {scale: 1, force3D: true});
 			}).on('mouseout.productOverview', function () {
-				$info = $(this).find('.info');
+				//$info = $(this).find('.info');
 				$image = $(this).find('.image');
-				TweenMax.to($info, 0.2, {scale: 1, force3D: true});
+				//TweenMax.to($info, 0.2, {scale: 1, force3D: true});
 				TweenMax.to($image, 0.2, {scale: 0.95, force3D: true});
 			});
 		} else {
@@ -122,6 +123,12 @@ GNU.ProductOverview.prototype = {
 			// remove listeners for mobile
 			$('.product-overview .product-list .product a').off('mouseover.productOverview, mouseout.productOverview');
 		}
+		// colorways
+		$('.product-overview .product-list .product a .colorways .swatch').on('click.colorway', function (e) {
+			e.preventDefault();
+			// set image src of product image
+			$(this).parent().parent().parent().parent().find('.image').attr('src', $(this).attr('data-src'));
+		});
 	},
 	instructionsInit: function () {
 		var instructionTimeout = window.setTimeout( function () {

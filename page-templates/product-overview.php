@@ -442,9 +442,14 @@ Template Name: Product Overview
 							$availUS = "No";
 							$availCA = "No";
 							$availEUR = "No";
+							$colorways = Array();
 							if(get_field('gnu_binding_options')):
 								while(the_repeater_field('gnu_binding_options')):
 									// get variations
+									$optionColor = get_sub_field('gnu_binding_options_color');
+									$optionClass = str_replace(' ', '-', strtolower($optionColor));
+									$optionImage = get_sub_field('gnu_binding_options_img');
+									array_push($colorways, Array('color' => $optionColor, 'class' => $optionClass, 'img' => $optionImage));
 									$optionVariations = get_sub_field('gnu_binding_options_variations');
 									// loop through variations
 									if ($optionVariations) :
@@ -471,6 +476,13 @@ Template Name: Product Overview
 									<div class="price">
 										<?php echo getPrice( get_field('gnu_product_price_us'), get_field('gnu_product_price_ca'), get_field('gnu_product_price_eur'), get_field('gnu_product_on_sale'), get_field('gnu_product_sale_percentage') ); ?>
 									</div>
+									<?php if (count($colorways) > 1) : ?>
+									<div class="colorways">
+										<?php foreach ($colorways as $colorway) : ?>
+										<div class="swatch <?php echo $colorway['class']; ?>" data-src="<?php echo $colorway['img']['sizes']['medium']; ?>" title="<?php echo $colorway['color']; ?>"></div>
+										<?php endforeach; ?>
+									</div>
+									<?php endif; ?>
 								</div>
 							</div>
 							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-binding.png" data-src="<?php echo $image['sizes']['medium']; ?>" data-src-retina="<?php echo $image['sizes']['large']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
@@ -562,9 +574,14 @@ Template Name: Product Overview
 							$availUS = "No";
 							$availCA = "No";
 							$availEUR = "No";
+							$colorways = Array();
 							if(get_field('gnu_binding_options')):
 								while(the_repeater_field('gnu_binding_options')):
 									// get variations
+									$optionColor = get_sub_field('gnu_binding_options_color');
+									$optionClass = str_replace(' ', '-', strtolower($optionColor));
+									$optionImage = get_sub_field('gnu_binding_options_img');
+									array_push($colorways, Array('color' => $optionColor, 'class' => $optionClass, 'img' => $optionImage));
 									$optionVariations = get_sub_field('gnu_binding_options_variations');
 									// loop through variations
 									if ($optionVariations) :
@@ -591,6 +608,13 @@ Template Name: Product Overview
 									<div class="price">
 										<?php echo getPrice( get_field('gnu_product_price_us'), get_field('gnu_product_price_ca'), get_field('gnu_product_price_eur'), get_field('gnu_product_on_sale'), get_field('gnu_product_sale_percentage') ); ?>
 									</div>
+									<?php if (count($colorways) > 1) : ?>
+									<div class="colorways">
+										<?php foreach ($colorways as $colorway) : ?>
+										<div class="swatch <?php echo $colorway['class']; ?>" data-src="<?php echo $colorway['img']['sizes']['medium']; ?>" title="<?php echo $colorway['color']; ?>"></div>
+										<?php endforeach; ?>
+									</div>
+									<?php endif; ?>
 								</div>
 							</div>
 							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-binding.png" data-src="<?php echo $image['sizes']['medium']; ?>" data-src-retina="<?php echo $image['sizes']['large']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
@@ -708,6 +732,25 @@ Template Name: Product Overview
 									if($optionAvailEUR == "Yes") $availEUR = "Yes";
 								endwhile;
 							endif;
+							$colorways = Array();
+							if (get_field('gnu_apparel_images')) :
+								while(the_repeater_field('gnu_apparel_images')):
+									// get variations
+									$optionColor = get_sub_field('gnu_apparel_images_color');
+									$optionClass = str_replace(' ', '-', strtolower($optionColor));
+									$optionImage = get_sub_field('gnu_apparel_images_img');
+									// don't add duplicate colors
+									$colorFound = false;
+									foreach ($colorways as $colorway) {
+										if ($optionColor == $colorway['color']) {
+											$colorFound = true;
+										}
+									}
+									if (!$colorFound) {
+										array_push($colorways, Array('color' => $optionColor, 'class' => $optionClass, 'img' => $optionImage));
+									}	
+								endwhile;
+							endif;
 					?>
 
 					<div class="product" data-categories="<?php echo $categoryFilters; ?>" data-price="<?php echo $filterPrice; ?>" data-avail-us="<?php echo $availUS; ?>" data-avail-ca="<?php echo $availCA; ?>" data-avail-eur="<?php echo $availEUR; ?>">
@@ -719,6 +762,13 @@ Template Name: Product Overview
 									<div class="price">
 										<?php echo getPrice( get_field('gnu_product_price_us'), get_field('gnu_product_price_ca'), get_field('gnu_product_price_eur'), get_field('gnu_product_on_sale'), get_field('gnu_product_sale_percentage') ); ?>
 									</div>
+									<?php if (count($colorways) > 1) : ?>
+									<div class="colorways">
+										<?php foreach ($colorways as $colorway) : ?>
+										<div class="swatch <?php echo $colorway['class']; ?>" data-src="<?php echo $colorway['img']['sizes']['medium']; ?>" title="<?php echo $colorway['color']; ?>"></div>
+										<?php endforeach; ?>
+									</div>
+									<?php endif; ?>
 								</div>
 							</div>
 							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/<?php echo $loadImage; ?>" data-src="<?php echo $image['sizes']['medium']; ?>" data-src-retina="<?php echo $image['sizes']['large']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>
@@ -822,6 +872,25 @@ Template Name: Product Overview
 									if($optionAvailEUR == "Yes") $availEUR = "Yes";
 								endwhile;
 							endif;
+							$colorways = Array();
+							if (get_field('gnu_apparel_images')) :
+								while(the_repeater_field('gnu_apparel_images')):
+									// get variations
+									$optionColor = get_sub_field('gnu_apparel_images_color');
+									$optionClass = str_replace(' ', '-', strtolower($optionColor));
+									$optionImage = get_sub_field('gnu_apparel_images_img');
+									// don't add duplicate colors
+									$colorFound = false;
+									foreach ($colorways as $colorway) {
+										if ($optionColor == $colorway['color']) {
+											$colorFound = true;
+										}
+									}
+									if (!$colorFound) {
+										array_push($colorways, Array('color' => $optionColor, 'class' => $optionClass, 'img' => $optionImage));
+									}	
+								endwhile;
+							endif;
 					?>
 
 					<div class="product" data-categories="<?php echo $categoryFilters; ?>" data-price="<?php echo $filterPrice; ?>" data-avail-us="<?php echo $availUS; ?>" data-avail-ca="<?php echo $availCA; ?>" data-avail-eur="<?php echo $availEUR; ?>">
@@ -833,6 +902,13 @@ Template Name: Product Overview
 									<div class="price">
 										<?php echo getPrice( get_field('gnu_product_price_us'), get_field('gnu_product_price_ca'), get_field('gnu_product_price_eur'), get_field('gnu_product_on_sale'), get_field('gnu_product_sale_percentage') ); ?>
 									</div>
+									<?php if (count($colorways) > 1) : ?>
+									<div class="colorways">
+										<?php foreach ($colorways as $colorway) : ?>
+										<div class="swatch <?php echo $colorway['class']; ?>" data-src="<?php echo $colorway['img']['sizes']['medium']; ?>" title="<?php echo $colorway['color']; ?>"></div>
+										<?php endforeach; ?>
+									</div>
+									<?php endif; ?>
 								</div>
 							</div>
 							<?php if($image): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-headwear.png" data-src="<?php echo $image['sizes']['medium']; ?>" data-src-retina="<?php echo $image['sizes']['large']; ?>" alt="<?php the_title(); ?> Image" class="image owl-lazy" /><?php endif; ?>

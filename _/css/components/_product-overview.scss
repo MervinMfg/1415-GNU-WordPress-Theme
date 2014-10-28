@@ -3,9 +3,7 @@
    ========================================================================== */
 
 .product-overview {
-	.product-header {
-		
-	}
+	.product-header {}
 	.product-utility {
 		display: none;
 	}
@@ -27,7 +25,7 @@
 			.info {
 				background: $black;
 				background-image: url('../img/bg-overview-title.png');
-				height: 35px;
+				height: 45px;
 				width: 100%;
 				position: absolute;
 				bottom: 10px;
@@ -58,6 +56,60 @@
 				}
 				.price {
 					display: none;
+				}
+				.colorways {
+					margin-top: 5px;
+
+					.swatch {
+						width: 20px;
+						height: 12px;
+						border: 1px solid $white;
+						display: inline-block;
+						margin: 0 2px;
+						background: url('../img/color-swatches.jpg') 0px 0px; /* default black */
+
+						&:hover,
+						&:focus {
+							border-color: $gray;
+						}
+						&.white {
+							background-position: -18px 0px;
+						}
+						&.grey,
+						&.heather-grey {
+							background-position: -36px 0px;
+						}
+						&.orange {
+							background-position: -54px 0px;
+						}
+						&.red {
+							background-position: -72px 0px;
+						}
+						&.green {
+							background-position: -90px 0px;
+						}
+						&.teal {
+							background-position: -108px 0px;
+						}
+						&.dark-sea {
+							background-position: -126px 0px;
+						}
+						&.olive {
+							background-position: -144px 0px;
+						}
+						&.acid-yellow {
+							background-position: -162px 0px;
+						}
+						&.gunmetal-heather {
+							background-position: -180px 0px;
+						}
+						&.tan {
+							background-position: -198px 0px;
+						}
+						&.indigo {
+							background-position: -216px 0px;
+						}
+					}
 				}
 			}
 			.image {
@@ -449,6 +501,11 @@
 							line-height: 1em;
 							font-size: 1.4em;
 						}
+					}
+					.colorways {
+						position: absolute;
+						top: 1px;
+						left: 5px;
 					}
 				}
 				.image {

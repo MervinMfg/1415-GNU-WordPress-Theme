@@ -73,7 +73,7 @@ Template Name: Bindings Detail
 						endforeach;
 						// sort sizes
 						function bindingSizeSort ($a, $b) {
-							$sizesF = array(
+							$sizeIndexes = array(
 								"XS (US 1-4)" => 0,
 								"S (US W 5-7)" => 1,
 								"S (US M 6-8, US W 7-9)" => 2,
@@ -92,12 +92,12 @@ Template Name: Bindings Detail
 								"L (US M 11.5-13)" => 15,
 								"XL (US M 11-14)" => 16
 							);
-							$asize = $sizesF[$a];
-							$bsize = $sizesF[$b];
-							if ($asize == $bsize) {
+							$aSize = $sizeIndexes[$a];
+							$bSize = $sizeIndexes[$b];
+							if ($aSize == $bSize) {
 								return 0;
 							}
-							return ($asize > $bsize) ? 1 : -1;
+							return ($aSize > $bSize) ? 1 : -1;
 						}
 						usort($sizes, "bindingSizeSort");
 						// setup sizes text display

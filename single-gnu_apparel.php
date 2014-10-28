@@ -140,7 +140,7 @@ Template Name: Apparel Detail
 							<p>Item is currently not available online.</p>
 						</div><!-- .product-unavailable -->
 						<div class="dealer-link">
-							<a href="/dealer-locator/" class="h5">Find a dealer</a>
+							<a href="/store-locator/" class="h5">Find a store</a>
 						</div>
 						<div class="shopatron-secure">
 							<img src="<?php echo get_template_directory_uri(); ?>/_/img/shopatron-secure-logo.png" alt="Shopatron Secure"/>

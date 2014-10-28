@@ -72,7 +72,34 @@ Template Name: Bindings Detail
 							}
 						endforeach;
 						// sort sizes
-						array_multisort($sizes, SORT_DESC);
+						function bindingSizeSort ($a, $b) {
+							$sizesF = array(
+								"XS (US 1-4)" => 0,
+								"S (US W 5-7)" => 1,
+								"S (US M 6-8, US W 7-9)" => 2,
+								"S (US M 4-7)" => 3,
+								"S/M (US W 4-7)" => 4,
+								"S/M (US M 5-9)" => 5,
+								"M (US W 7-9)" => 6,
+								"M (US M 7-9)" => 7,
+								"M (US M 8.5-11, US W 9.5+)" => 8,
+								"M (US M 7-10)" => 9,
+								"M/L (US W 6-9)" => 10,
+								"M/L (US M 9-14)" => 11,
+								"L (US W 9-10)" => 12,
+								"L (US M 9-11)" => 13,
+								"L (US M 9-12)" => 14,
+								"L (US M 11.5-13)" => 15,
+								"XL (US M 11-14)" => 16
+							);
+							$asize = $sizesF[$a];
+							$bsize = $sizesF[$b];
+							if ($asize == $bsize) {
+								return 0;
+							}
+							return ($asize > $bsize) ? 1 : -1;
+						}
+						usort($sizes, "bindingSizeSort");
 						// setup sizes text display
 						$sizesString = "";
 						for ($i = 0; $i < count($sizes); $i++) {

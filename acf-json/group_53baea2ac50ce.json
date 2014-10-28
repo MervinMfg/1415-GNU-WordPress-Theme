@@ -119,6 +119,13 @@
                 "operator": "==",
                 "value": "posts_page"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/technology.php"
+            }
         ]
     ],
     "menu_order": 0,

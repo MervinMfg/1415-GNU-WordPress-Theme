@@ -25,3 +25,4 @@
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/gnu.section-header.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/gnu.shop.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/gnu.specifications.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/gnu.technology.js"></script>

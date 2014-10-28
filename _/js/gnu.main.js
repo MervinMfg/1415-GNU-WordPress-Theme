@@ -50,6 +50,8 @@ GNU.Main = {
 			self.teamDetailInit();
 		} else if ($body.hasClass('page-template-page-templatesabout-php')) {
 			self.aboutInit();
+		} else if ($body.hasClass('page-template-page-templatestechnology-php')) {
+			self.technologyInit();
 		} else if ($body.hasClass('page-template-page-templatespartners-php')) {
 			self.partnersInit();
 		} else if ($body.hasClass('page-template-page-templatesspare-parts-php')) {
@@ -111,6 +113,15 @@ GNU.Main = {
 		var self = this;
 		new GNU.PhotoSlider(self.config.scrollController);
 		new GNU.Follow(self.config.scrollController);
+	},
+	technologyInit: function () {
+		var self = this;
+		// grab all section headers and assign correct scrolling
+		$('.section-header').each(function (index) {
+			new GNU.SectionHeader($(this), self.config.scrollController);
+		});
+		new GNU.Technology(self.config.scrollController);
+		new GNU.FeaturedSlider(self.config.scrollController);
 	},
 	partnersInit: function () {
 		var self = this;

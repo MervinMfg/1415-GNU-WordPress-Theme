@@ -1,0 +1,43 @@
+{
+    "key": "group_544fcf4a96412",
+    "title": "Technology page",
+    "fields": [
+        {
+            "key": "field_544fcfba0f1ef",
+            "label": "Banana Technology",
+            "name": "gnu_banana_technology",
+            "prefix": "",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "post_type": [
+                "gnu_technology"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "elements": "",
+            "max": "",
+            "return_format": "object"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/technology.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ""
+}

@@ -29,8 +29,11 @@ GNU.Specifications.prototype = {
 				self.config.scrollController.removeScene(self.config.scene);
 			}
 			$specsKey.removeAttr('style');
-			navOffset = Math.floor($(window).height() / 2) - ($('.site-header').outerHeight() + $('.site-header').position().top) + 1;
-			self.config.scene = new ScrollScene({triggerElement: ".specs-key", offset: navOffset}).setPin(".specs-key").addTo(self.config.scrollController);
+			// if not ie8 or less, run fixed scroll code
+			if ($('html').hasClass('ie-lt9') != true) {
+				navOffset = Math.floor($(window).height() / 2) - ($('.site-header').outerHeight() + $('.site-header').position().top) + 1;
+				self.config.scene = new ScrollScene({triggerElement: ".specs-key", offset: navOffset}).setPin(".specs-key").addTo(self.config.scrollController);
+			}
 		} else if ( responsiveSize != "medium" && GNU.Main.utilities.responsiveCheck() == "medium" ) {
 			responsiveSize = "medium";
 			// if scene already exists, remove it
@@ -38,8 +41,11 @@ GNU.Specifications.prototype = {
 				self.config.scrollController.removeScene(self.config.scene);
 			}
 			$specsKey.removeAttr('style');
-			navOffset = Math.floor($(window).height() / 2) - ($('.site-header').outerHeight() + $('.site-header').position().top) + 1;
-			self.config.scene = new ScrollScene({triggerElement: ".specs-key", offset: navOffset}).setPin(".specs-key").addTo(self.config.scrollController);
+			// if not ie8 or less, run fixed scroll code
+			if ($('html').hasClass('ie-lt9') != true) {
+				navOffset = Math.floor($(window).height() / 2) - ($('.site-header').outerHeight() + $('.site-header').position().top) + 1;
+				self.config.scene = new ScrollScene({triggerElement: ".specs-key", offset: navOffset}).setPin(".specs-key").addTo(self.config.scrollController);
+			}
 		} else if (GNU.Main.utilities.responsiveCheck() != "other") {
 			responsiveSize = "other";
 			// if scene already exists, remove it

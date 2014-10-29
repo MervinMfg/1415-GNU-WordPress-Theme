@@ -8,7 +8,8 @@ var GNU = GNU || {};
 GNU.Specifications = function (scrollController) {
 	this.config = {
 		scene: null,
-		scrollController: scrollController
+		scrollController: scrollController,
+		responsiveSize: null
 	};
 	this.init();
 };
@@ -18,36 +19,24 @@ GNU.Specifications.prototype = {
 		self.initSpecsKey();
 	},
 	initSpecsKey: function () {
-		var self, responsiveSize, navOffset, specs;
+		var self, navOffset, specs;
 		self = this;
 		$specsKey = $('.specs-key');
 		// if we're large or bigger, do the scroll
-		if ( responsiveSize != "large" && GNU.Main.utilities.responsiveCheck() == "large" ) {
-			responsiveSize = "large";
+		if (self.config.responsiveSize != "large" && GNU.Main.utilities.responsiveCheck() == "large") {
+			self.config.responsiveSize = "large";
 			// if scene already exists, remove it
 			if (typeof self.config.scene !== 'undefined') {
 				self.config.scrollController.removeScene(self.config.scene);
 			}
 			$specsKey.removeAttr('style');
 			// if not ie8 or less, run fixed scroll code
-			if ($('html').hasClass('ie-lt9') != true) {
+			if ($('html').hasClass('ie-lt9') !== true) {
 				navOffset = Math.floor($(window).height() / 2) - ($('.site-header').outerHeight() + $('.site-header').position().top) + 1;
 				self.config.scene = new ScrollScene({triggerElement: ".specs-key", offset: navOffset}).setPin(".specs-key").addTo(self.config.scrollController);
 			}
-		} else if ( responsiveSize != "medium" && GNU.Main.utilities.responsiveCheck() == "medium" ) {
-			responsiveSize = "medium";
-			// if scene already exists, remove it
-			if (typeof self.config.scene !== 'undefined') {
-				self.config.scrollController.removeScene(self.config.scene);
-			}
-			$specsKey.removeAttr('style');
-			// if not ie8 or less, run fixed scroll code
-			if ($('html').hasClass('ie-lt9') != true) {
-				navOffset = Math.floor($(window).height() / 2) - ($('.site-header').outerHeight() + $('.site-header').position().top) + 1;
-				self.config.scene = new ScrollScene({triggerElement: ".specs-key", offset: navOffset}).setPin(".specs-key").addTo(self.config.scrollController);
-			}
-		} else if (GNU.Main.utilities.responsiveCheck() != "other") {
-			responsiveSize = "other";
+		} else if (self.config.responsiveSize != "other" && GNU.Main.utilities.responsiveCheck() != "large") {
+			self.config.responsiveSize = "other";
 			// if scene already exists, remove it
 			if (typeof self.config.scene !== 'undefined') {
 				self.config.scrollController.removeScene(self.config.scene);

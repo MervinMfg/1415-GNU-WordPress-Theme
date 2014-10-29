@@ -10,7 +10,8 @@ GNU.ProductDetails = function (scrollController) {
 		productCarousel: null,
 		pastWaypoint: false,
 		scene: null,
-		scrollController: scrollController
+		scrollController: scrollController,
+		responsiveSize: null
 	};
 	this.init();
 };
@@ -178,23 +179,23 @@ GNU.ProductDetails.prototype = {
 		});
 	},
 	initProductNavigation: function () {
-		var self, responsiveSize, navOffset;
+		var self, navOffset;
 		self = this;
 		// if we're large or bigger, do the scroll
-		if ( responsiveSize != "large" && GNU.Main.utilities.responsiveCheck() == "large" ) {
-			responsiveSize = "large";
+		if ( self.config.responsiveSize != "large" && GNU.Main.utilities.responsiveCheck() == "large" ) {
+			self.config.responsiveSize = "large";
 			// if scene already exists, remove it
 			if (typeof self.config.scene !== 'undefined') {
 				self.config.scrollController.removeScene(self.config.scene);
 			}
 			$('.product-navigation').removeAttr('style');
 			// if not ie8 or less, run fixed scroll code
-			if ($('html').hasClass('ie-lt9') != true) {
+			if ($('html').hasClass('ie-lt9') !== true) {
 				navOffset = Math.floor($(window).height() / 2) - ($('.site-header').outerHeight() + $('.site-header').position().top) + 1;
 				self.config.scene = new ScrollScene({triggerElement: ".product-navigation", offset: navOffset}).setPin(".product-navigation").addTo(self.config.scrollController);
 			}
-		} else if (GNU.Main.utilities.responsiveCheck() != "other") {
-			responsiveSize = "other";
+		} else if (self.config.responsiveSize != "other" && GNU.Main.utilities.responsiveCheck() != "large") {
+			self.config.responsiveSize = "other";
 			// if scene already exists, remove it
 			if (typeof self.config.scene !== 'undefined') {
 				self.config.scrollController.removeScene(self.config.scene);
@@ -202,7 +203,7 @@ GNU.ProductDetails.prototype = {
 			$('.product-navigation').removeAttr('style');
 		}
 		// listen for click on nav items
-		$('.product-navigation a').on('click', function (e) {
+		$('.product-navigation a').on('click.productNavigation', function (e) {
 			e.preventDefault();
 			var url = $(this).attr('href');
 			GNU.Main.utilities.pageScroll(url, 0.5);
@@ -210,7 +211,7 @@ GNU.ProductDetails.prototype = {
 		// listen for resize
 		$(window).on('resize.productNavigation', function () {
 			$(this).off('resize.productNavigation');
-			$('.product-navigation a').off('click');
+			$('.product-navigation a').off('click.productNavigation');
 			self.initProductNavigation();
 		});
 	},

@@ -123,8 +123,8 @@
 								<li class="menu-item"><a href="/team/">Team</a></li>
 								<li class="menu-item"><a href="/blog/">Blog</a></li>
 								<li class="menu-item"><a href="/about/">About</a></li>
-								<!-- <li class="menu-item"><a href="/about/technology/">Technology</a></li>
-								<li class="menu-item"><a href="/about/environmental/">Environmental</a></li> -->
+								<li class="menu-item"><a href="/about/technology/">Technology</a></li>
+								<!-- <li class="menu-item"><a href="/about/environmental/">Environmental</a></li> -->
 								<li class="menu-item"><a href="/about/partners/">Partners</a></li>
 								<li class="menu-item"><a href="/store-locator/">Store Locator</a></li>
 							</ul>

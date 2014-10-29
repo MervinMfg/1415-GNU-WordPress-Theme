@@ -21,7 +21,7 @@ Template Name: About
 				<h5 class="subtitle">Gold Metal Technology</h5>
 				<div class="content">
 					<p>The wonders of science are our playground: impossibly light and strong metals that burn, polymers that travel through space, trees that grow to 20 feet in one year or cover hundreds of acres as a single organism. We test in all on Mt. Weird and have ecologically applied them to this year's Gnu snowboards.</p>
-					<!-- <a href="/about/technology/" class="h3">View Technology</a> -->
+					<a href="/about/technology/" class="h3">View Technology</a>
 				</div><!-- .content -->
 			</section><!-- .about-section -->
 			<section class="about-section about-partners">

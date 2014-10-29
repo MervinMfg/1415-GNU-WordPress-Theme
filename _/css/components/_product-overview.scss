@@ -3,7 +3,12 @@
    ========================================================================== */
 
 .product-overview {
-	.product-header {}
+	.product-header.special {
+		.product-special {
+			padding: 0;
+			margin: 0;
+		}
+	}
 	.product-utility {
 		display: none;
 	}
@@ -244,6 +249,15 @@
 		100% {height: 68px; padding: 10px;}
 	}
 	.product-overview {
+		.product-header.special {
+			padding-bottom: 25px;
+
+			.product-special {
+				padding-top: 25px;
+				position: relative;
+				z-index: 2;
+			}
+		}
 		.product-utility {
 			display: block;
 			height: 40px;

@@ -108,6 +108,20 @@
 		line-height: 1em;
 		font-size: 3.6em;
 	}
+	&.special {
+		margin-bottom: 0;
+	}
+}
+.product-special {
+	color: $pink;
+	text-transform: uppercase;
+	padding: 0 20px;
+	margin-bottom: 10px;
+	text-align: center;
+
+	p {
+		margin-bottom: 0px;
+	}
 }
 .product-buy {
 	text-align: center;

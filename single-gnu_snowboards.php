@@ -167,9 +167,12 @@ Template Name: Snowboards Detail
 						</div><!-- .product-awards -->
 						<? endif; // end awards ?>
 
-						<div class="product-price">
+						<div class="product-price special">
 							<?php echo getPrice( get_field('gnu_product_price_us'), get_field('gnu_product_price_ca'), get_field('gnu_product_price_eur'), get_field('gnu_product_on_sale'), get_field('gnu_product_sale_percentage') ); ?>
 						</div><!-- .product-price -->
+						<div class="product-special">
+							<p class="small">Free standard shipping on orders over $75</p>
+						</div>
 					</div><!-- .product-awards-price -->
 					<div class="product-buy" data-avail-us="<?php echo $productAvailUS; ?>" data-avail-ca="<?php echo $productAvailCA; ?>" data-avail-eur="<?php echo $productAvailEUR; ?>">
 						<div class="product-available">

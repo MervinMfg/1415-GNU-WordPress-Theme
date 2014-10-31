@@ -379,10 +379,15 @@ abbr { border-bottom: 1px dotted #666; cursor: help; }
 	background-position: -93px -60px; 
 } */ }
 .social-icons.black .menu-item a.icon-facebook { background-position: -10px -60px; }
+.social-icons.black .menu-item a.icon-facebook:hover, .social-icons.black .menu-item a.icon-facebook:focus { background-position: -298px -60px; }
 .social-icons.black .menu-item a.icon-instagram { background-position: -216px -60px; }
+.social-icons.black .menu-item a.icon-instagram:hover, .social-icons.black .menu-item a.icon-instagram:focus { background-position: -504px -60px; }
 .social-icons.black .menu-item a.icon-twitter { background-position: -51px -60px; }
+.social-icons.black .menu-item a.icon-twitter:hover, .social-icons.black .menu-item a.icon-twitter:focus { background-position: -339px -60px; }
 .social-icons.black .menu-item a.icon-vimeo { background-position: -134px -60px; }
+.social-icons.black .menu-item a.icon-vimeo:hover, .social-icons.black .menu-item a.icon-vimeo:focus { background-position: -422px -60px; }
 .social-icons.black .menu-item a.icon-rss { background-position: -176px -60px; }
+.social-icons.black .menu-item a.icon-rss:hover, .social-icons.black .menu-item a.icon-rss:focus { background-position: -464px -60px; }
 
 .default-section .default-content { padding: 20px; max-width: 1056px; margin: 0 auto; }
 .default-section .default-content ul, .default-section .default-content ol { padding: 0 20px 0 60px; margin-bottom: 2em; list-style: square; }
@@ -1339,6 +1344,7 @@ body.international .shopping-cart-wrapper { display: none; }
 .follow .follow-groups .follow-group h5 { text-transform: uppercase; }
 .follow .follow-groups .follow-group.email-group .input-text { padding: 0.29em 0.33em; width: 182px; height: 32px; }
 .follow .follow-groups .follow-group.email-group .btn-submit { font-size: 2.4em; padding: 0.15em 0.33em; height: 32px; }
+.follow .follow-groups .follow-group.email-group .btn-submit:hover, .follow .follow-groups .follow-group.email-group .btn-submit:focus { background: #9933CC; }
 .follow .follow-groups .follow-group.social-group { padding-top: 20px; }
 
 @media screen and (min-width: 476px) { .follow .follow-groups .follow-group.email-group .input-text { width: 282px; }

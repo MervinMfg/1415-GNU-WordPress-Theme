@@ -80,21 +80,46 @@
 
 			&.icon-facebook {
 				background-position: -10px -112px; 
+
+				&:hover,
+				&:focus {
+					background-position: -189px -112px;
+				}
 			}
 			&.icon-twitter {
 				background-position: -40px -112px; 
+
+				&:hover,
+				&:focus {
+					background-position: -219px -112px;
+				}
 			}
 			/* &.icon-pinterest {
 				background-position: -70px -112px; 
 			} */
 			&.icon-vimeo {
 				background-position: -100px -112px; 
+
+				&:hover,
+				&:focus {
+					background-position: -279px -112px;
+				}
 			}
 			&.icon-rss {
 				background-position: -130px -112px; 
+
+				&:hover,
+				&:focus {
+					background-position: -309px -112px;
+				}
 			}
 			&.icon-instagram {
 				background-position: -160px -112px; 
+
+				&:hover,
+				&:hover {
+					background-position: -339px -112px;
+				}
 			}
 		}
 	}

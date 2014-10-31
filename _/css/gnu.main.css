@@ -344,10 +344,15 @@ abbr { border-bottom: 1px dotted #666; cursor: help; }
 	background-position: -70px -112px; 
 } */ }
 .social-icons .menu-item a.icon-facebook { background-position: -10px -112px; }
+.social-icons .menu-item a.icon-facebook:hover, .social-icons .menu-item a.icon-facebook:focus { background-position: -189px -112px; }
 .social-icons .menu-item a.icon-twitter { background-position: -40px -112px; }
+.social-icons .menu-item a.icon-twitter:hover, .social-icons .menu-item a.icon-twitter:focus { background-position: -219px -112px; }
 .social-icons .menu-item a.icon-vimeo { background-position: -100px -112px; }
+.social-icons .menu-item a.icon-vimeo:hover, .social-icons .menu-item a.icon-vimeo:focus { background-position: -279px -112px; }
 .social-icons .menu-item a.icon-rss { background-position: -130px -112px; }
+.social-icons .menu-item a.icon-rss:hover, .social-icons .menu-item a.icon-rss:focus { background-position: -309px -112px; }
 .social-icons .menu-item a.icon-instagram { background-position: -160px -112px; }
+.social-icons .menu-item a.icon-instagram:hover, .social-icons .menu-item a.icon-instagram:hover { background-position: -339px -112px; }
 
 @media screen and (min-width: 748px) { .site-footer .footer-content { max-width: 100%; }
   .site-footer .footer-content .footer-menu .nav-group { width: 25%; float: left; }

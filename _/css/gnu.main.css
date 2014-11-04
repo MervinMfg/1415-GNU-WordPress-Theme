@@ -737,7 +737,7 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-buy .product-available .form .product-variation { border-radius: 0px; vertical-align: baseline; padding: 0 10px; }
 .product-buy .product-available .form .product-variation.alert { color: #FF3399; }
 .product-buy .product-available .form .btn-submit { font-size: 2.4em; border: 1px solid #000; padding: 0 10px; }
-.product-buy .product-available .form .btn-submit:hover, .product-buy .product-available .form .btn-submit:focus { background: #9933CC; border-color: #9933CC; }
+.product-buy .product-available .form .btn-submit:hover, .product-buy .product-available .form .btn-submit:focus { background: #0099FF; border-color: #0099FF; }
 .product-buy .product-available .loading { display: inline-block; }
 .product-buy .product-available .failure { padding: 0 20px; }
 .product-buy .product-available .form.hidden, .product-buy .product-available .loading.hidden, .product-buy .product-available .failure.hidden { display: none; }
@@ -874,7 +874,7 @@ body.international .shopping-cart-wrapper { display: none; }
   .product-collab .collab-details h3 { font-size: 3.6em; font-family: "Neuron Light", Helvetica, Arial, sans-serif; padding-bottom: 30px; font-weight: 400; }
   .product-collab .collab-details .btn-submit { font-size: 4em; padding: 0 40px; }
   .product-collab .collab-link h4, .product-collab .collab-link h4:hover, .product-collab .collab-link h3, .product-collab .collab-link h3:hover { color: #000; }
-  .product-collab .collab-link .btn-submit:hover { background: #9933CC; }
+  .product-collab .collab-link .btn-submit:hover { background: #0099FF; }
   .product-specifications .specs-title, .product-specifications .spec-navigation { max-width: 748px; }
   .product-specifications .spec-listing { max-width: 748px; }
   .product-specifications .spec-listing .group-1, .product-specifications .spec-listing .group-2, .product-specifications .spec-listing .group-3 { width: 33.3%; float: left; }
@@ -1337,7 +1337,7 @@ body.international .shopping-cart-wrapper { display: none; }
 .featured-products .featured-products-list .featured-product .featured-product-details .featured-product-copy .btn-submit { display: none; }
 .featured-products .featured-products-list .featured-product .featured-product-details a:hover .featured-product-copy .featured-product-title, .featured-products .featured-products-list .featured-product .featured-product-details a:focus .featured-product-copy .featured-product-title { color: #000; }
 .featured-products .featured-products-list .featured-product .featured-product-details a:hover .featured-product-copy .featured-product-slogan, .featured-products .featured-products-list .featured-product .featured-product-details a:focus .featured-product-copy .featured-product-slogan { color: #000; }
-.featured-products .featured-products-list .featured-product .featured-product-details a:hover .featured-product-copy .btn-submit, .featured-products .featured-products-list .featured-product .featured-product-details a:focus .featured-product-copy .btn-submit { background: #9933CC; }
+.featured-products .featured-products-list .featured-product .featured-product-details a:hover .featured-product-copy .btn-submit, .featured-products .featured-products-list .featured-product .featured-product-details a:focus .featured-product-copy .btn-submit { background: #0099FF; }
 .featured-products .featured-products-list .owl-dots { position: absolute; bottom: 0px; width: 100%; }
 .featured-products .featured-products-list .owl-dots .owl-dot.active span, .featured-products .featured-products-list .owl-dots .owl-dot:hover span { background: #99CC33; }
 
@@ -1352,7 +1352,7 @@ body.international .shopping-cart-wrapper { display: none; }
 .follow .follow-groups .follow-group h5 { text-transform: uppercase; }
 .follow .follow-groups .follow-group.email-group .input-text { padding: 0.29em 0.33em; width: 182px; height: 32px; }
 .follow .follow-groups .follow-group.email-group .btn-submit { font-size: 2.4em; padding: 0.15em 0.33em; height: 32px; }
-.follow .follow-groups .follow-group.email-group .btn-submit:hover, .follow .follow-groups .follow-group.email-group .btn-submit:focus { background: #9933CC; }
+.follow .follow-groups .follow-group.email-group .btn-submit:hover, .follow .follow-groups .follow-group.email-group .btn-submit:focus { background: #0099FF; }
 .follow .follow-groups .follow-group.social-group { padding-top: 20px; }
 
 @media screen and (min-width: 476px) { .follow .follow-groups .follow-group.email-group .input-text { width: 282px; }

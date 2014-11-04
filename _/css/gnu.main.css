@@ -1284,6 +1284,8 @@ body.international .shopping-cart-wrapper { display: none; }
   .social-slider.video { min-height: 640px; }
   .social-slider.video .video-player .video-wrapper { width: 1056px; margin: 0 auto; padding: 0 20px 20px; } }
 /* ========================================================================== MODULES/_PHOTO-SLIDER.SCSS ========================================================================== */
+.home .photo-slider, .single-gnu-snowboards .photo-slider, .single-gnu-bindings .photo-slider, .single-gnu-apparel .photo-slider { display: none; }
+
 .photo-slider { position: relative; height: 260px; }
 .photo-slider .photo-list .photo-item { height: 260px; background-repeat: none; overflow: hidden; background-size: cover; background-position: 50% 50%; }
 .photo-slider .photo-list .photo-item .photo-details { margin-top: 175px; padding: 0 20px; }
@@ -1295,7 +1297,8 @@ body.international .shopping-cart-wrapper { display: none; }
 
 @media screen and (min-width: 476px) { .photo-slider { height: 300px; }
   .photo-slider .photo-list .photo-item { height: 300px; } }
-@media screen and (min-width: 748px) { .photo-slider { height: 420px; }
+@media screen and (min-width: 748px) { .home .photo-slider, .single-gnu-snowboards .photo-slider, .single-gnu-bindings .photo-slider, .single-gnu-apparel .photo-slider { display: block; }
+  .photo-slider { height: 420px; }
   .photo-slider .photo-list .photo-item { height: 420px; }
   .photo-slider .photo-list .photo-item .photo-details { margin-top: 200px; padding: 0 40px; } }
 @media screen and (min-width: 1056px) { .photo-slider { height: 560px; }

@@ -1,7 +1,15 @@
 /* ==========================================================================
    MODULES/_PHOTO-SLIDER.SCSS
    ========================================================================== */
-
+.home,
+.single-gnu-snowboards,
+.single-gnu-bindings,
+.single-gnu-apparel
+ {
+	.photo-slider {
+		display: none;
+	}
+}
 .photo-slider {
 	position: relative;
 	height: 260px;
@@ -54,6 +62,15 @@
 	}
 }
 @media screen and (min-width: $breakpoint-medium) {
+	.home,
+	.single-gnu-snowboards,
+	.single-gnu-bindings,
+	.single-gnu-apparel {
+		
+		.photo-slider {
+			display: block;
+			}
+	}
 	.photo-slider {
 		height: 420px;
 

@@ -128,6 +128,8 @@ GNU.ProductOverview.prototype = {
 			e.preventDefault();
 			// set image src of product image
 			$(this).parent().parent().parent().parent().find('.image').attr('src', $(this).attr('data-src'));
+			$(this).parent().parent().parent().parent().find('.swatch').removeClass('active');
+			$(this).addClass('active');
 		});
 	},
 	instructionsInit: function () {

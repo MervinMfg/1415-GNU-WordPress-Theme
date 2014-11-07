@@ -511,7 +511,6 @@ body.international .shopping-cart-wrapper { display: none; }
 .region-selector .location-group .location-list li p a img { display: inline-block; width: 25px; height: 12px; padding-right: 5px; }
 .region-selector .location-group .location-list li p a span { font-weight: 700; }
 .region-selector .location-group .location-list li p a:hover { color: #9933CC; }
-.region-selector .location-group.europe { display: none; }
 .region-selector .location-group.europe .location-list { width: 50%; float: left; }
 
 @media screen and (min-width: 748px) { .region-selector { padding-top: 125px; padding-bottom: 60px; }

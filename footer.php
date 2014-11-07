@@ -28,69 +28,36 @@
 					<h3 class="location-title">Europe</h3>
 					<ul class="location-list">
 						<li class="us">
-							<p class="small"><a href="#region-selector" data-currency="EUD">Austria <span>(EUD)</span></a></p>
+							<p class="small"><a href="#region-selector" data-currency="EUD"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/austria.gif" alt="Austria Flag" />Austria <span>(EUD)</span></a></p>
 						</li>
 						<li class="ca">
-							<p class="small"><a href="#region-selector" data-currency="EUD">Belgium <span>(EUD)</span></a></p>
+							<p class="small"><a href="#region-selector" data-currency="EUD"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/belgium.gif" alt="Belgium Flag" />Belgium <span>(EUD)</span></a></p>
 						</li>
 						<li class="ca">
-							<p class="small"><a href="#region-selector" data-currency="EUD">Czech Republic <span>(EUD)</span></a></p>
+							<p class="small"><a href="#region-selector" data-currency="EUD"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/czech.gif" alt="Czech Republic Flag" />Czech Republic <span>(EUD)</span></a></p>
 						</li>
 						<li class="ca">
-							<p class="small"><a href="#region-selector" data-currency="EUD">Denmark <span>(EUD)</span></a></p>
+							<p class="small"><a href="#region-selector" data-currency="EUD"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/france.gif" alt="France Flag" />France <span>(EUD)</span></a></p>
 						</li>
 						<li class="ca">
-							<p class="small"><a href="#region-selector" data-currency="EUD">Estonia <span>(EUD)</span></a></p>
-						</li>
-						<li class="ca">
-							<p class="small"><a href="#region-selector" data-currency="EUD">France <span>(EUD)</span></a></p>
-						</li>
-						<li class="ca">
-							<p class="small"><a href="#region-selector" data-currency="EUD">Germany <span>(EUD)</span></a></p>
-						</li>
-						<li class="ca">
-							<p class="small"><a href="#region-selector" data-currency="EUD">Hungary <span>(EUD)</span></a></p>
-						</li>
-						<li class="ca">
-							<p class="small"><a href="#region-selector" data-currency="EUD">Ireland <span>(EUD)</span></a></p>
-						</li>
-						<li class="ca">
-							<p class="small"><a href="#region-selector" data-currency="EUD">Italy <span>(EUD)</span></a></p>
-						</li>
-						<li class="ca">
-							<p class="small"><a href="#region-selector" data-currency="EUD">Latvia <span>(EUD)</span></a></p>
+							<p class="small"><a href="#region-selector" data-currency="EUD"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/germany.gif" alt="Germany Flag" />Germany <span>(EUD)</span></a></p>
 						</li>
 					</ul>
 					<ul class="location-list">
 						<li class="ca">
-							<p class="small"><a href="#region-selector" data-currency="EUD">Liechtenstein <span>(EUD)</span></a></p>
+							<p class="small"><a href="#region-selector" data-currency="EUD"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/luxembourg.gif" alt="Luxembourg Flag" />Luxembourg <span>(EUD)</span></a></p>
 						</li>
 						<li class="ca">
-							<p class="small"><a href="#region-selector" data-currency="EUD">Lithuania <span>(EUD)</span></a></p>
+							<p class="small"><a href="#region-selector" data-currency="EUD"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/netherlands.gif" alt="Netherlands Flag" />Netherlands <span>(EUD)</span></a></p>
 						</li>
 						<li class="ca">
-							<p class="small"><a href="#region-selector" data-currency="EUD">Luxembourg <span>(EUD)</span></a></p>
+							<p class="small"><a href="#region-selector" data-currency="EUD"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/poland.gif" alt="Poland Flag" />Poland <span>(EUD)</span></a></p>
 						</li>
 						<li class="ca">
-							<p class="small"><a href="#region-selector" data-currency="EUD">Netherlands <span>(EUD)</span></a></p>
+							<p class="small"><a href="#region-selector" data-currency="EUD"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/portugal.gif" alt="Portugal Flag" />Portugal <span>(EUD)</span></a></p>
 						</li>
 						<li class="ca">
-							<p class="small"><a href="#region-selector" data-currency="EUD">Poland <span>(EUD)</span></a></p>
-						</li>
-						<li class="ca">
-							<p class="small"><a href="#region-selector" data-currency="EUD">Portugal <span>(EUD)</span></a></p>
-						</li>
-						<li class="ca">
-							<p class="small"><a href="#region-selector" data-currency="EUD">Romania <span>(EUD)</span></a></p>
-						</li>
-						<li class="ca">
-							<p class="small"><a href="#region-selector" data-currency="EUD">Slovakia <span>(EUD)</span></a></p>
-						</li>
-						<li class="ca">
-							<p class="small"><a href="#region-selector" data-currency="EUD">Slovenia <span>(EUD)</span></a></p>
-						</li>
-						<li class="ca">
-							<p class="small"><a href="#region-selector" data-currency="EUD">Spain <span>(EUD)</span></a></p>
+							<p class="small"><a href="#region-selector" data-currency="EUD"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/slovakia.gif" alt="Slovakia Flag" />Slovakia <span>(EUD)</span></a></p>
 						</li>
 					</ul>
 				</div>

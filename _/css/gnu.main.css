@@ -541,7 +541,7 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-overview .product-list .product .info .price { display: none; }
 .product-overview .product-list .product .info .colorways { margin-top: 5px; }
 .product-overview .product-list .product .info .colorways .swatch { width: 20px; height: 12px; border: 1px solid #FFF; display: inline-block; margin: 0 2px; background: url("../img/color-swatches.jpg") 0px 0px; /* default black */ }
-.product-overview .product-list .product .info .colorways .swatch:hover, .product-overview .product-list .product .info .colorways .swatch:focus { border-color: #666; }
+.product-overview .product-list .product .info .colorways .swatch:hover, .product-overview .product-list .product .info .colorways .swatch:focus, .product-overview .product-list .product .info .colorways .swatch.active { border-color: #666; }
 .product-overview .product-list .product .info .colorways .swatch.white { background-position: -18px 0px; }
 .product-overview .product-list .product .info .colorways .swatch.grey, .product-overview .product-list .product .info .colorways .swatch.heather-grey { background-position: -36px 0px; }
 .product-overview .product-list .product .info .colorways .swatch.orange { background-position: -54px 0px; }

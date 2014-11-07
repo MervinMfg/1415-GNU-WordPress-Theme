@@ -74,7 +74,8 @@
 						background: url('../img/color-swatches.jpg') 0px 0px; /* default black */
 
 						&:hover,
-						&:focus {
+						&:focus,
+						&.active {
 							border-color: $gray;
 						}
 						&.white {

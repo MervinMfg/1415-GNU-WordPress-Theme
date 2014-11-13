@@ -34,7 +34,7 @@ GNU.Shop.prototype = {
 				$('#link-ordering').attr('href', 'http://gnu-ca.shptron.com/home/ordering/4374.7.1.2');
 				// set my account in header for Canada
 				$('header .nav-utility .link-account a').attr('href', 'http://gnu-ca.shptron.com/account/?mfg_id=4374.7&language_id=1');
-			} else if (currency === 'EUR') {
+			} else if (currency === 'EUD') {
 				shopAPIKey = self.config.shopKeyEuro; // European key
 				// set shopatron footer links for Europe
 				$('#link-privacy').attr('href', 'http://gnu-euro.shptron.com/home/privacy/4374.7.1.2');

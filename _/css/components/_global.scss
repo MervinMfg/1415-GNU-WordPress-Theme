@@ -106,6 +106,44 @@
 		list-style: decimal;
 	}
 }
+.global-alert {
+	background: $pink;
+	padding: 5px 0;
+	display: none;
+
+	.message {
+		display: none;
+		margin-bottom: 0;
+		text-align: center;
+		color: $white;
+		padding: 0 10px;
+		line-height: 1.33em;
+	}
+}
+.currency-usd .global-alert {
+	display: block;
+
+	.usd {
+		display: block;
+	}
+}
+.currency-cad .global-alert {
+	display: block;
+
+	.cad {
+		display: block;
+	}
+}
+.currency-eur .global-alert {
+	display: block;
+
+	.eur {
+		display: block;
+	}
+}
+.international .global-alert {
+	display: none;
+}
 @media screen and (min-width: $breakpoint-medium) {
 	.site-main {
 		padding-top: 75px;

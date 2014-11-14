@@ -23,6 +23,8 @@ GNU.RegionSelector.prototype = {
 			} else {
 				$body.addClass("international");
 			}
+			var currencyClass = "currency-" + currencyCookie;
+			$body.addClass(currencyClass.toLowerCase());
 			$(".region-toggle a").html(regionCookie);
 		} else {
 			if (navigator.cookieEnabled === true) {

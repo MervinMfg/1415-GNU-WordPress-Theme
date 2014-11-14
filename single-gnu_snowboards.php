@@ -13,7 +13,6 @@ Template Name: Snowboards Detail
 		if(get_field('gnu_snowboard_options')):
 			while(the_repeater_field('gnu_snowboard_options')):
 				$optionName = get_sub_field('gnu_snowboard_options_name');
-				$optionImage = get_sub_field('gnu_snowboard_options_img');
 				// get variations
 				$optionVariations = get_sub_field('gnu_snowboard_options_variations');
 				$optionVariationSizes = "";
@@ -54,7 +53,14 @@ Template Name: Snowboards Detail
 						array_push($snowboards, Array('name' => $variationName, 'sku' => $variationSKU, 'availUS' => $variationAvailUS, 'availCA' => $variationAvailCA, 'availEUR' => $variationAvailEUR));
 					}
 				endif;
-				array_push($snowboardOptions, Array('image' => $optionImage, 'name' => $optionName, 'sizes' => $optionVariationSizes, 'skus' => $optionVariationSKUs));
+				$optionImages = Array();
+				if(get_sub_field('gnu_snowboard_options_images')):
+					while(the_repeater_field('gnu_snowboard_options_images')):
+						$optionImage = get_sub_field('gnu_snowboard_options_images_img');
+						array_push($optionImages, $optionImage);
+					endwhile;
+				endif;
+				array_push($snowboardOptions, Array('images' => $optionImages, 'name' => $optionName, 'sizes' => $optionVariationSizes, 'skus' => $optionVariationSKUs));
 			endwhile;
 		endif;
 		// sort by variation name
@@ -68,13 +74,13 @@ Template Name: Snowboards Detail
 					<div class="product-images">
 						<div class="image-list owl-carousel owl-theme">
 
-							<?php foreach ($snowboardOptions as $snowboardOption) : if ($snowboardOption['image']) : ?>
+							<?php foreach ($snowboardOptions as $snowboardOption) : if ($snowboardOption['images']) : foreach ($snowboardOption['images'] as $snowboardImage) : ?>
 
 							<div class="product-image">
-								<a href="<?php echo $snowboardOption['image']['url']; ?>" title="<?php the_title(); ?> - <?php echo $snowboardOption['sizes']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-product-detail.gif" data-src="<?php echo $snowboardOption['image']['url']; ?>" alt="<?php the_title(); ?> - <?php echo $snowboardOption['sizes']; ?>" class="owl-lazy" /></a>
+								<a href="<?php echo $snowboardImage['url']; ?>" title="<?php the_title(); ?> - <?php echo $snowboardOption['sizes']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-product-detail.gif" data-src="<?php echo $snowboardImage['url']; ?>" alt="<?php the_title(); ?> - <?php echo $snowboardOption['sizes']; ?>" class="owl-lazy" /></a>
 							</div><!-- .product-image -->
 
-							<?php endif; endforeach; ?>
+							<?php endforeach; endif; endforeach; ?>
 							
 						</div><!-- .image-list -->
 						<div class="zoom-icon"></div>
@@ -124,13 +130,13 @@ Template Name: Snowboards Detail
 					</div><!-- product-sizes -->
 					<div class="product-thumbnails">
 						<div class="image-list owl-carousel">
-							<?php foreach ($snowboardOptions as $snowboardOption) : if ($snowboardOption['image']) :?>
+							<?php foreach ($snowboardOptions as $snowboardOption) : if ($snowboardOption['images']) : foreach ($snowboardOption['images'] as $snowboardImage) : ?>
 							
 							<div class="product-thumbnail">
-								<a href="<?php echo $snowboardOption['image']['url']; ?>" title="<?php echo $snowboardOption['name']; ?> - <?php echo $snowboardOption['sizes']; ?>" data-sku="<?php echo $snowboardOption['skus']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-board-detail.png" data-src="<?php echo $snowboardOption['image']['sizes']['medium']; ?>" alt="<?php echo $snowboardOption['name']; ?> - <?php echo $snowboardOption['sizes']; ?>" class="owl-lazy" /><p class="small"><?php echo $snowboardOption['name']; ?></p></a>
+								<a href="<?php echo $snowboardImage['url']; ?>" title="<?php echo $snowboardOption['name']; ?> - <?php echo $snowboardOption['sizes']; ?>" data-sku="<?php echo $snowboardOption['skus']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-board-detail.png" data-src="<?php echo $snowboardImage['sizes']['medium']; ?>" alt="<?php echo $snowboardOption['name']; ?> - <?php echo $snowboardOption['sizes']; ?>" class="owl-lazy" /><p class="small"><?php echo $snowboardOption['name']; ?></p></a>
 							</div><!-- .product-image -->
 
-							<?php endif; endforeach; ?>
+							<?php endforeach; endif; endforeach; ?>
 						</div>
 					</div><!-- product-thumbnails -->
 
@@ -170,9 +176,6 @@ Template Name: Snowboards Detail
 						<div class="product-price special">
 							<?php echo getPrice( get_field('gnu_product_price_us'), get_field('gnu_product_price_ca'), get_field('gnu_product_price_eur'), get_field('gnu_product_on_sale'), get_field('gnu_product_sale_percentage') ); ?>
 						</div><!-- .product-price -->
-						<div class="product-special">
-							<p class="small">Free standard shipping on orders over $75</p>
-						</div>
 					</div><!-- .product-awards-price -->
 					<div class="product-buy" data-avail-us="<?php echo $productAvailUS; ?>" data-avail-ca="<?php echo $productAvailCA; ?>" data-avail-eur="<?php echo $productAvailEUR; ?>">
 						<div class="product-available">

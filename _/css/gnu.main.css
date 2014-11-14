@@ -399,6 +399,20 @@ abbr { border-bottom: 1px dotted #666; cursor: help; }
 .default-section .default-content ul li, .default-section .default-content ol li { font-family: "Neuron Light", Helvetica, Arial, sans-serif; font-size: 1.8em; font-weight: 700; line-height: 2em; margin-bottom: 0.5em; }
 .default-section .default-content ol { list-style: decimal; }
 
+.global-alert { background: #FF3399; padding: 5px 0; display: none; }
+.global-alert .message { display: none; margin-bottom: 0; text-align: center; color: #FFF; padding: 0 10px; line-height: 1.33em; }
+
+.currency-usd .global-alert { display: block; }
+.currency-usd .global-alert .usd { display: block; }
+
+.currency-cad .global-alert { display: block; }
+.currency-cad .global-alert .cad { display: block; }
+
+.currency-eur .global-alert { display: block; }
+.currency-eur .global-alert .eur { display: block; }
+
+.international .global-alert { display: none; }
+
 @media screen and (min-width: 748px) { .site-main { padding-top: 75px; }
   /* fix for fixed header, adds spacing to div you have anchor links to */
   .deeplink-top-fix:before { display: block; content: ""; height: 75px; margin: -75px 0 0; z-index: -1; position: relative; }
@@ -726,9 +740,6 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-price { margin-bottom: 20px; }
 .product-price p { line-height: 1em; font-size: 3.6em; }
 .product-price.special { margin-bottom: 0; }
-
-.product-special { color: #FF3399; text-transform: uppercase; padding: 0 20px; margin-bottom: 10px; text-align: center; }
-.product-special p { margin-bottom: 0px; }
 
 .product-buy { text-align: center; margin-bottom: 40px; }
 .product-buy .product-available { display: none; }

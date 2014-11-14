@@ -222,3 +222,7 @@ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG         GGGGGG
 			</div>
 		</header><!-- .site-header -->
 		<div id="main" class="site-main">
+			<div class="global-alert">
+				<p class="small message usd cad">Free Shipping on Orders over $75</p>
+				<p class="small message eur">Now Shipping to Select Countries in Europe – Free Shipping on Orders over $75</p>
+			</div>

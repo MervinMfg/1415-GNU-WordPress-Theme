@@ -130,7 +130,7 @@ function getPrice ($usPrice, $caPrice, $eurPrice, $sale, $salePercent) {
 		// CA Price
 		$price .= '<p class="ca-price">$' . $caPrice . ' <span>CAD</span></p>';
 		// CA Price
-		$price .= '<p class="eur-price">€' . $eurPrice . ' <span>EUD incl. VAT</span></p>';
+		$price .= '<p class="eur-price">€' . $eurPrice . ' <span>EUR incl. VAT</span></p>';
 	//}
     $price .= '</div><!-- .price -->';
 	return $price;

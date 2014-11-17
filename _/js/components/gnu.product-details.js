@@ -234,7 +234,7 @@ GNU.ProductDetails.prototype = {
 				} else {
 					$(".product-buy").addClass('unavailable');
 				}
-			} else if (currency === 'EUD') {
+			} else if (currency === 'EUR') {
 				if ($('.product-buy').data('avail-eur') == "Yes") {
 					$(".product-buy").addClass('available');
 					// disable unavailable options for specific currency

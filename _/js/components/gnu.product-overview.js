@@ -293,7 +293,7 @@ GNU.ProductOverview.prototype = {
 						case 'CAD':
 							prodAvail = $(this).attr('data-avail-ca');
 							break;
-						case 'EUD':
+						case 'EUR':
 							prodAvail = $(this).attr('data-avail-eur');
 							break;
 						default:

@@ -3,19 +3,6 @@
     "title": "Snowboard Details",
     "fields": [
         {
-            "key": "field_53e3b799f70d4",
-            "label": "Overview Image",
-            "name": "gnu_snowboard_overview_img",
-            "prefix": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "return_format": "array",
-            "preview_size": "thumbnail",
-            "library": "all"
-        },
-        {
             "key": "field_503fe882efa2e",
             "label": "Board Shape",
             "name": "gnu_snowboard_shape",
@@ -24,6 +11,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "choices": {
                 "Directional": "Directional",
                 "Directional Twin": "Directional Twin",
@@ -45,6 +37,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "choices": {
                 "BTX": "BTX",
                 "PBTX": "PBTX",
@@ -72,6 +69,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "choices": {
                 "Random Bases": "Random Bases",
                 "Alternate Colorways": "Alternate Colorways"
@@ -88,6 +90,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -105,6 +112,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -122,6 +134,11 @@
             "instructions": "If this snowboard is associated with a binding, select the binding below.",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "object",
             "post_type": [
                 "gnu_bindings"

@@ -232,7 +232,7 @@ abbr { border-bottom: 1px dotted #666; cursor: help; }
 .btn-close:hover, .btn-close:focus { background-position: -316px -10px; }
 
 /* ========================================================================== COMPONENTS/_HEADER.SCSS ========================================================================== */
-.site-header { padding-top: 4px; background-color: #99CC33; background-image: url("../img/bg-horizontal-color.png"); background-repeat: no-repeat; background-size: 100% 4px; position: relative; }
+.site-header { padding-top: 4px; background-image: url("../img/bg-horizontal-color.png"); background-repeat: no-repeat; background-size: 100% 4px; position: relative; }
 .site-header .header-wrapper { background: url("../img/bg-green-triangles.png") repeat-x bottom; }
 .site-header .header-main { position: relative; height: 71px; }
 .site-header .header-main .site-title { position: absolute; left: 0; bottom: 0; width: 146px; height: 51px; z-index: 10; background: url("../img/gnu-logo.gif") no-repeat -9999px -9999px; }
@@ -275,7 +275,7 @@ abbr { border-bottom: 1px dotted #666; cursor: help; }
   .site-header .header-main .secondary-navigation .nav-menu .events, .site-header .header-main .secondary-navigation .nav-menu .about { display: inline-block; }
   .site-header .header-main .black-bar { height: 51px; width: 45%; background: url("../img/bg-black-triangles-nav.png") top right; display: block; position: absolute; bottom: 0; left: 146px; z-index: 1; } }
 @media screen and (min-width: 748px) { .site-header { position: fixed; width: 100%; z-index: 15; }
-  .site-header * { -webkit-transform: translateZ(0); /* Safari (5.1.10) Fix */ }
+  .site-header * { -webkit-backface-visibility: hidden; /* Safari (5.1.10) Fix */ }
   .site-header .header-main .menu-toggle { display: none; }
   .site-header .header-main .primary-navigation { position: absolute; bottom: 0; top: auto; left: 146px; width: auto; height: 51px; z-index: 2; padding: 23px 45px 0 15px; background: url("../img/bg-black-triangles-nav.png") no-repeat top right; }
   .site-header .header-main .primary-navigation .nav-menu { text-align: left; font-family: "Neuron Extra Bold", Helvetica, Arial, sans-serif; }

@@ -4,7 +4,6 @@
 
 .site-header {
 	padding-top: 4px;
-	background-color: $green;
 	background-image: url('../img/bg-horizontal-color.png');
 	background-repeat: no-repeat;
 	background-size: 100% 4px;
@@ -268,9 +267,8 @@
 		z-index: 15;
 
 		* {
-			-webkit-transform: translateZ(0); /* Safari (5.1.10) Fix */
+			-webkit-backface-visibility: hidden; /* Safari (5.1.10) Fix */
 		}
-
 		.header-main {
 			.menu-toggle {
 				display: none;

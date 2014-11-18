@@ -105,12 +105,14 @@ GNU.ProductOverview.prototype = {
 			TweenMax.to('.product-overview .product-list .product a .info', 0, {scale: 1, force3D: true});
 			TweenMax.to('.product-overview .product-list .product a .image', 0, {scale: 0.95, force3D: true});
 			// add listners for over and out
-			$('.product-overview .product-list .product a').on('mouseover.productOverview', function () {
+			$('.product-overview .product-list .product a').off('mouseenter.productOverview, mouseleave.productOverview');
+			$('.product-overview .product-list .product a').on('mouseenter.productOverview', function () {
+				console.log('hover: ' + this);
 				//$info = $(this).find('.info');
 				$image = $(this).find('.image');
 				//TweenMax.to($info, 0.2, {scale: 1.05, force3D: true});
 				TweenMax.to($image, 0.2, {scale: 1, force3D: true});
-			}).on('mouseout.productOverview', function () {
+			}).on('mouseleave.productOverview', function () {
 				//$info = $(this).find('.info');
 				$image = $(this).find('.image');
 				//TweenMax.to($info, 0.2, {scale: 1, force3D: true});
@@ -121,7 +123,7 @@ GNU.ProductOverview.prototype = {
 			TweenMax.to('.product-overview .product-list .product a .image', 0, {scale: 1, force3D: true});
 			$('.product-overview .product-list .product a .info, .product-overview .product-list .product a .image').removeAttr('style');
 			// remove listeners for mobile
-			$('.product-overview .product-list .product a').off('mouseover.productOverview, mouseout.productOverview');
+			$('.product-overview .product-list .product a').off('mouseenter.productOverview, mouseleave.productOverview');
 		}
 		// colorways
 		$('.product-overview .product-list .product a .colorways .swatch').on('click.colorway', function (e) {

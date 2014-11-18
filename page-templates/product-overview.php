@@ -29,7 +29,7 @@ Template Name: Product Overview
 				while ( $loop->have_posts() ) : $loop->the_post();
 					$title = get_the_title();
 					$url = get_the_permalink();
-					$image = get_field('gnu_snowboard_overview_img');
+					$image = "";
 					$detail = get_field('gnu_snowboard_contour');
 					$price = getPrice( get_field('gnu_product_price_us'), get_field('gnu_product_price_ca'), get_field('gnu_product_price_eur'), get_field('gnu_product_on_sale'), get_field('gnu_product_sale_percentage') );
 					$filterPrice = str_replace('.', '', get_field('gnu_product_price_us'));
@@ -47,8 +47,24 @@ Template Name: Product Overview
 					$availEUR = "No";
 					$standardWidth = Array();
 					$wideWidth = Array();
+					$colorways = Array();
 					if(get_field('gnu_snowboard_options')):
 						while(the_repeater_field('gnu_snowboard_options')):
+							if ($image == "") {
+								$image = get_sub_field('gnu_snowboard_options_overview_img');
+							}
+							// get colorways
+							$optionColor = get_the_title();
+							if (get_sub_field('gnu_snowboard_options_name')) {
+								$optionColor .= " " . get_sub_field('gnu_snowboard_options_name');
+							}
+							$optionSlug = str_replace(' ', '-', strtolower($optionColor));
+							$optionSlug = str_replace('&#8243;', '', strtolower($optionSlug));
+							$optionSlug = str_replace('ñ', 'n', strtolower($optionSlug));
+							$optionSlug = str_replace('.', '_', strtolower($optionSlug));
+							$optionSlug = 'snowboards/' . str_replace('/', '', strtolower($optionSlug));
+							$optionImage = get_sub_field('gnu_snowboard_options_overview_img');
+							array_push($colorways, Array('color' => $optionColor, 'slug' => $optionSlug, 'img' => $optionImage));
 							// get variations
 							$optionVariations = get_sub_field('gnu_snowboard_options_variations');
 							// loop through variations
@@ -85,18 +101,15 @@ Template Name: Product Overview
 					endif;
 					array_multisort($standardWidths, SORT_ASC);
 					array_multisort($wideWidths, SORT_ASC);
-					array_push($products, Array('title' => $title, 'url' => $url, 'image' => $image, 'detail' => $detail, 'standardWidth' => $standardWidth, 'wideWidth' => $wideWidth, 'price' => $price, 'filterPrice' => $filterPrice, 'availUS' => $availUS, 'availCA' => $availCA, 'availEUR' => $availEUR, 'categoryFilters' => $categoryFilters, 'sizeFilters' => $sizeFilters, 'contourFilter' => $contourFilter));
+					array_push($products, Array('title' => $title, 'url' => $url, 'image' => $image, 'detail' => $detail, 'standardWidth' => $standardWidth, 'wideWidth' => $wideWidth, 'price' => $price, 'filterPrice' => $filterPrice, 'availUS' => $availUS, 'availCA' => $availCA, 'availEUR' => $availEUR, 'categoryFilters' => $categoryFilters, 'sizeFilters' => $sizeFilters, 'contourFilter' => $contourFilter, 'colorways' => $colorways));
 				endwhile;
 				wp_reset_query();
 			?>
 			<section id="mens-snowboards" class="product-overview deeplink-top-fix">
-				<header class="product-header section-header special">
+				<header class="product-header section-header">
 					<div class="header-wrapper">
 						<h2 class="title">Men's Snowboards</h2>
 						<h5 class="subtitle">Innovation Creation Since 1977</h5>
-						<div class="product-special">
-							<p class="small">Free standard shipping on orders over $75</p>
-						</div>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">
@@ -181,7 +194,13 @@ Template Name: Product Overview
 								<div class="vertical-center">
 									<h4 class="name"><?php echo $product['title']; ?></h4>
 									<p class="detail"><?php echo $product['detail']; ?></p>
-									<?php echo $product['price']; ?>
+									<?php echo $product['price']; if (count($product['colorways']) > 1) : ?>
+									<div class="colorways">
+										<?php foreach ($product['colorways'] as $colorway) : ?>
+										<div class="swatch" data-src="<?php echo $colorway['img']['sizes']['medium']; ?>" title="<?php echo $colorway['color']; ?>"><img src="<?php bloginfo('template_directory'); ?>/_/img/colorways/<?php echo $colorway['slug']; ?>.jpg" alt="" /></div>
+										<?php endforeach; ?>
+									</div>
+									<?php endif; ?>
 								</div>
 							</div>
 							<?php if($product['image']): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-board.png" data-src="<?php echo $product['image']['sizes']['medium']; ?>" data-src-retina="<?php echo $product['image']['sizes']['large']; ?>"  alt="<?php $product['title']; ?> Image" class="image owl-lazy" /><?php endif; ?>
@@ -217,7 +236,7 @@ Template Name: Product Overview
 				while ( $loop->have_posts() ) : $loop->the_post();
 					$title = get_the_title();
 					$url = get_the_permalink();
-					$image = get_field('gnu_snowboard_overview_img');
+					$image = "";
 					$detail = get_field('gnu_snowboard_contour');
 					$price = getPrice( get_field('gnu_product_price_us'), get_field('gnu_product_price_ca'), get_field('gnu_product_price_eur'), get_field('gnu_product_on_sale'), get_field('gnu_product_sale_percentage') );
 					$filterPrice = str_replace('.', '', get_field('gnu_product_price_us'));
@@ -236,8 +255,24 @@ Template Name: Product Overview
 					$availEUR = "No";
 					$standardWidth = Array();
 					$length = Array();
+					$colorways = Array();
 					if(get_field('gnu_snowboard_options')):
 						while(the_repeater_field('gnu_snowboard_options')):
+							if ($image == "") {
+								$image = get_sub_field('gnu_snowboard_options_overview_img');
+							}
+							// get colorways
+							$optionColor = get_the_title();
+							if (get_sub_field('gnu_snowboard_options_name')) {
+								$optionColor .= " " . get_sub_field('gnu_snowboard_options_name');
+							}
+							$optionSlug = str_replace(' ', '-', strtolower($optionColor));
+							$optionSlug = str_replace('&#8243;', '', strtolower($optionSlug));
+							$optionSlug = str_replace('ñ', 'n', strtolower($optionSlug));
+							$optionSlug = str_replace('.', '_', strtolower($optionSlug));
+							$optionSlug = 'snowboards/' . str_replace('/', '', strtolower($optionSlug));
+							$optionImage = get_sub_field('gnu_snowboard_options_overview_img');
+							array_push($colorways, Array('color' => $optionColor, 'slug' => $optionSlug, 'img' => $optionImage));
 							// get variations
 							$optionVariations = get_sub_field('gnu_snowboard_options_variations');
 							// loop through variations
@@ -253,7 +288,6 @@ Template Name: Product Overview
 									if($variationAvailCA == "Yes") $availCA = "Yes";
 									if($variationAvailEUR == "Yes") $availEUR = "Yes";
 									// setup readable short form of length and width
-									
 									$sizeFilters .= str_replace('.', '_', $variationLength) . " ";
 									array_push($length, $variationLength);
 									// add value to array if it does not exist
@@ -266,18 +300,15 @@ Template Name: Product Overview
 					endif;
 					array_multisort($lengths, SORT_ASC);
 					array_multisort($length, SORT_ASC);
-					array_push($products, Array('title' => $title, 'url' => $url, 'image' => $image, 'detail' => $detail, 'length' => $length, 'price' => $price, 'filterPrice' => $filterPrice, 'availUS' => $availUS, 'availCA' => $availCA, 'availEUR' => $availEUR, 'categoryFilters' => $categoryFilters, 'sizeFilters' => $sizeFilters, 'contourFilter' => $contourFilter));
+					array_push($products, Array('title' => $title, 'url' => $url, 'image' => $image, 'detail' => $detail, 'length' => $length, 'price' => $price, 'filterPrice' => $filterPrice, 'availUS' => $availUS, 'availCA' => $availCA, 'availEUR' => $availEUR, 'categoryFilters' => $categoryFilters, 'sizeFilters' => $sizeFilters, 'contourFilter' => $contourFilter, 'colorways' => $colorways));
 				endwhile;
 				wp_reset_query();
 			?>
 			<section id="womens-snowboards" class="product-overview deeplink-top-fix">
-				<header class="product-header section-header alt special">
+				<header class="product-header section-header alt">
 					<div class="header-wrapper">
 						<h2 class="title">Women's Snowboards</h2>
 						<h5 class="subtitle">Gold Metal Technology To Make Magic On</h5>
-						<div class="product-special">
-							<p class="small">Free standard shipping on orders over $75</p>
-						</div>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">
@@ -354,7 +385,13 @@ Template Name: Product Overview
 								<div class="vertical-center">
 									<h4 class="name"><?php echo $product['title']; ?></h4>
 									<p class="detail"><?php echo $product['detail']; ?></p>
-									<?php echo $product['price']; ?>
+									<?php echo $product['price']; if (count($product['colorways']) > 1) : ?>
+									<div class="colorways">
+										<?php foreach ($product['colorways'] as $colorway) : ?>
+										<div class="swatch" data-src="<?php echo $colorway['img']['sizes']['medium']; ?>" title="<?php echo $colorway['color']; ?>"><img src="<?php bloginfo('template_directory'); ?>/_/img/colorways/<?php echo $colorway['slug']; ?>.jpg" alt="" /></div>
+										<?php endforeach; ?>
+									</div>
+									<?php endif; ?>
 								</div>
 							</div>
 							<?php if($product['image']): ?><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-board.png" data-src="<?php echo $product['image']['sizes']['medium']; ?>" data-src-retina="<?php echo $product['image']['sizes']['large']; ?>"  alt="<?php $product['title']; ?> Image" class="image owl-lazy" /><?php endif; ?>
@@ -370,13 +407,10 @@ Template Name: Product Overview
 			<?php elseif (get_the_title() == "Bindings") : ?>
 
 			<section id="mens-bindings" class="product-overview deeplink-top-fix">
-				<header class="product-header section-header alt special">
+				<header class="product-header section-header alt">
 					<div class="header-wrapper">
 						<h2 class="title">Men's Bindings</h2>
 						<h5 class="subtitle">Click, Click, Ride</h5>
-						<div class="product-special">
-							<p class="small">Free standard shipping on orders over $75</p>
-						</div>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">
@@ -506,13 +540,10 @@ Template Name: Product Overview
 				<div class="clearfix"></div>
 			</section><!-- .product-overview -->
 			<section id="womens-bindings" class="product-overview deeplink-top-fix">
-				<header class="product-header section-header special">
+				<header class="product-header section-header">
 					<div class="header-wrapper">
 						<h2 class="title">Women's Bindings</h2>
 						<h5 class="subtitle">Faster, Easier, Smarter</h5>
-						<div class="product-special">
-							<p class="small">Free standard shipping on orders over $75</p>
-						</div>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">
@@ -644,13 +675,10 @@ Template Name: Product Overview
 			<?php elseif (get_the_title() == "Supplies") : ?>
 
 			<section id="wearables" class="product-overview deeplink-top-fix">
-				<header class="product-header section-header special">
+				<header class="product-header section-header">
 					<div class="header-wrapper">
 						<h2 class="title">Wearables</h2>
 						<h5 class="subtitle">The Weirdwear Collection</h5>
-						<div class="product-special">
-							<p class="small">Free standard shipping on orders over $75</p>
-						</div>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">
@@ -798,13 +826,10 @@ Template Name: Product Overview
 				<div class="clearfix"></div>
 			</section><!-- .product-overview -->
 			<section id="headwear" class="product-overview deeplink-top-fix">
-				<header class="product-header section-header alt special">
+				<header class="product-header section-header alt">
 					<div class="header-wrapper">
 						<h2 class="title">Headwear</h2>
 						<h5 class="subtitle">Advanced Dome Enhancers</h5>
-						<div class="product-special">
-							<p class="small">Free standard shipping on orders over $75</p>
-						</div>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">
@@ -941,13 +966,10 @@ Template Name: Product Overview
 				<div class="clearfix"></div>
 			</section><!-- .product-overview -->
 			<section id="accessories" class="product-overview deeplink-top-fix">
-				<header class="product-header section-header special">
+				<header class="product-header section-header">
 					<div class="header-wrapper">
 						<h2 class="title">Accessories</h2>
 						<h5 class="subtitle">Tuning for Your Gold Metal Technology</h5>
-						<div class="product-special">
-							<p class="small">Free standard shipping on orders over $75</p>
-						</div>
 						<div class="signs">
 							<div class="post"></div>
 							<nav class="sign-navigation" role="navigation">

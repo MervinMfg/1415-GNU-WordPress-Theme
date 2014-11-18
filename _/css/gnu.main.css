@@ -668,7 +668,6 @@ body.international .shopping-cart-wrapper { display: none; }
   .product-overview .product-list .product .info .detail { display: block; color: #FFF; text-transform: uppercase; margin-bottom: 0.3em; line-height: 1em; }
   .product-overview .product-list .product .info .price { display: block; }
   .product-overview .product-list .product .info .price p { color: #999; text-transform: uppercase; margin-bottom: 0; line-height: 1em; font-size: 1.4em; }
-  .product-overview .product-list .product .info .colorways { position: absolute; top: 1px; left: 5px; }
   .product-overview .product-list .product .image { width: 350px; height: 350px; max-width: 350px; left: 0px; }
   .product-overview .product-list .product-none { padding-top: 170px; }
   .ie-lt9 .product-overview .product-utility .product-filters { display: none; }

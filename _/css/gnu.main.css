@@ -738,7 +738,6 @@ body.international .shopping-cart-wrapper { display: none; }
 
 .product-price { margin-bottom: 20px; }
 .product-price p { line-height: 1em; font-size: 3.6em; }
-.product-price.special { margin-bottom: 0; }
 
 .product-buy { text-align: center; margin-bottom: 40px; }
 .product-buy .product-available { display: none; }

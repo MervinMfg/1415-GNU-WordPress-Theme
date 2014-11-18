@@ -173,7 +173,7 @@ Template Name: Snowboards Detail
 						</div><!-- .product-awards -->
 						<? endif; // end awards ?>
 
-						<div class="product-price special">
+						<div class="product-price">
 							<?php echo getPrice( get_field('gnu_product_price_us'), get_field('gnu_product_price_ca'), get_field('gnu_product_price_eur'), get_field('gnu_product_on_sale'), get_field('gnu_product_sale_percentage') ); ?>
 						</div><!-- .product-price -->
 					</div><!-- .product-awards-price -->

@@ -107,7 +107,6 @@ GNU.ProductOverview.prototype = {
 			// add listners for over and out
 			$('.product-overview .product-list .product a').off('mouseenter.productOverview, mouseleave.productOverview');
 			$('.product-overview .product-list .product a').on('mouseenter.productOverview', function () {
-				console.log('hover: ' + this);
 				//$info = $(this).find('.info');
 				$image = $(this).find('.image');
 				//TweenMax.to($info, 0.2, {scale: 1.05, force3D: true});
@@ -241,7 +240,7 @@ GNU.ProductOverview.prototype = {
 		}
 		// resetup default overviews
 		// clear html, add default back
-		$overviewGroup.find('.product-list').html('').html(self.config.overviewGroups[$overviewGroup.index()]);
+		$overviewGroup.find('.product-list').html('').html(self.config.overviewGroups[$overviewGroup.index() - 1]);
 		// find which products to display
 		$overviewGroup.find('.product-list .product').each(function (index) {
 			var filters, i, filterValue, categoryMatch, contourMatch, sizeMatch, priceMatch;

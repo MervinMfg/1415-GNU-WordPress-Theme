@@ -232,7 +232,7 @@ abbr { border-bottom: 1px dotted #666; cursor: help; }
 .btn-close:hover, .btn-close:focus { background-position: -316px -10px; }
 
 /* ========================================================================== COMPONENTS/_HEADER.SCSS ========================================================================== */
-.site-header { padding-top: 4px; background-image: url("../img/bg-horizontal-color.png"); background-repeat: no-repeat; background-size: 100% 4px; position: relative; }
+.site-header { padding-top: 4px; background-color: #FFF; background-image: url("../img/bg-horizontal-color.png"); background-repeat: no-repeat; background-size: 100% 4px; position: relative; }
 .site-header .header-wrapper { background: url("../img/bg-green-triangles.png") repeat-x bottom; }
 .site-header .header-main { position: relative; height: 71px; }
 .site-header .header-main .site-title { position: absolute; left: 0; bottom: 0; width: 146px; height: 51px; z-index: 10; background: url("../img/gnu-logo.gif") no-repeat -9999px -9999px; }

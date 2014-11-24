@@ -764,6 +764,65 @@ function register_custom_post_types() {
     );
     register_taxonomy( 'gnu_partner_categories', 'gnu_partners', $args );
     // END PARTNERS
+
+    // START FAQS
+    $labels = array(
+        'name' => _x('FAQs', 'post type general name'),
+        'singular_name' => _x('FAQ', 'post type singular name'),
+        'add_new' => _x('Add New', 'gnu_faqs'),
+        'add_new_item' => __('Add New FAQ'),
+        'edit_item' => __('Edit FAQ'),
+        'new_item' => __('New FAQ'),
+        'all_items' => __('All FAQs'),
+        'view_item' => __('View FAQ'),
+        'search_items' => __('Search FAQs'),
+        'not_found' =>  __('No FAQ Found'),
+        'not_found_in_trash' => __('No FAQ Found In Trash'), 
+        'parent_item_colon' => '',
+        'menu_name' => 'FAQs'
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true, 
+        'show_in_menu' => true, 
+        'query_var' => true,
+        'capability_type' => 'page',
+        'has_archive' => false, 
+        'hierarchical' => false,
+        'menu_position' => null,
+        'supports' => array( 'title', 'editor', 'page-attributes' )
+    ); 
+    register_post_type('gnu_faqs',$args);
+    // start taxonamy for FAQs
+    $labels = array(
+        'name'                          => 'Categories',
+        'singular_name'                 => 'Category',
+        'search_items'                  => 'Search Category',
+        'popular_items'                 => 'Popular Categories',
+        'all_items'                     => 'All Categories',
+        'parent_item'                   => 'Parent Category',
+        'edit_item'                     => 'Edit Category',
+        'update_item'                   => 'Update Category',
+        'add_new_item'                  => 'Add New Category',
+        'new_item_name'                 => 'New Category',
+        'separate_items_with_commas'    => 'Separate Categories with commas',
+        'add_or_remove_items'           => 'Add or remove Categories',
+        'choose_from_most_used'         => 'Choose from most used Categories'
+    );
+    $args = array(
+        'label'                         => 'Categories',
+        'labels'                        => $labels,
+        'public'                        => true,
+        'hierarchical'                  => true,
+        'show_ui'                       => true,
+        'show_in_nav_menus'             => true,
+        'args'                          => array( 'orderby' => 'term_order' ),
+        'query_var'                     => true
+    );
+    register_taxonomy( 'gnu_faq_categories', 'gnu_faqs', $args );
+    // END FAQS
 }
 // run the registration
 add_action( 'init', 'register_custom_post_types' );

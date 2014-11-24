@@ -58,6 +58,8 @@ GNU.Main = {
 			self.sparePartsInit();
 		} else if ($body.hasClass('page-template-page-templatessnowboard-specifications-php')) {
 			self.specificationsInit();
+		} else if ($body.hasClass('page-template-page-templatesfaq-php')) {
+			self.faqInit();
 		} else if ($body.hasClass('blog') || $body.hasClass('archive')) {
 			self.blogInit();
 		} else if ($body.hasClass('single')) {
@@ -138,6 +140,14 @@ GNU.Main = {
 		});
 		new GNU.ProductOverview();
 		self.sidebarInit();
+	},
+	faqInit: function () {
+		var self = this;
+		// grab all section headers and assign correct scrolling
+		$('.section-header').each(function (index) {
+			new GNU.SectionHeader($(this), self.config.scrollController);
+		});
+		new GNU.FAQ(self.config.scrollController);
 	},
 	blogInit: function () {
 		var self = this;

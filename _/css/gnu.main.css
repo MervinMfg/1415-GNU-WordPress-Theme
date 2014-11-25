@@ -1239,9 +1239,9 @@ body.international .shopping-cart-wrapper { display: none; }
   .page-template-page-templatesfaq-php.admin-bar #general-faq, .page-template-page-templatesfaq-php.admin-bar #snowboard-faq, .page-template-page-templatesfaq-php.admin-bar #binding-faq { padding-top: 145px; margin-top: -145px; }
   .page-template-page-templatesfaq-php .faq-navigation .nav-container { background: #000 url("../img/bg-overview-title.png") center center; }
   .page-template-page-templatesfaq-php .faq-navigation .nav-container ul { max-width: 748px; height: 40px; margin: 0 auto; text-align: center; }
-  .page-template-page-templatesfaq-php .faq-navigation .nav-container ul li { background: none; display: inline-block; width: auto; padding: 0 30px; }
-  .page-template-page-templatesfaq-php .content-wrapper { padding: 40px 0; } }
-@media screen and (min-width: 1056px) { .page-template-page-templatesfaq-php #general-faq, .page-template-page-templatesfaq-php #snowboard-faq, .page-template-page-templatesfaq-php #binding-faq { padding-top: 135px; margin-top: -135px; clear: both; }
+  .page-template-page-templatesfaq-php .faq-navigation .nav-container ul li { background: none; display: inline-block; width: auto; padding: 0 30px; } }
+@media screen and (min-width: 1056px) { .page-template-page-templatesfaq-php .content-wrapper { padding: 40px 0; }
+  .page-template-page-templatesfaq-php #general-faq, .page-template-page-templatesfaq-php #snowboard-faq, .page-template-page-templatesfaq-php #binding-faq { padding-top: 135px; margin-top: -135px; clear: both; }
   .page-template-page-templatesfaq-php.admin-bar #general-faq, .page-template-page-templatesfaq-php.admin-bar #snowboard-faq, .page-template-page-templatesfaq-php.admin-bar #binding-faq { padding-top: 167px; margin-top: -167px; } }
 /* ========================================================================== MODULES/_FEATURED-SLIDER.SCSS ========================================================================== */
 .featured-slider { position: relative; height: 195px; }

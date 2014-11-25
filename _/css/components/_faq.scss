@@ -133,15 +133,16 @@
 				}
 			}
 		}
-		.content-wrapper {
-			padding: 40px 0;
-		}
 	}
 }
 @media screen and (min-width: $breakpoint-large) {
 
 	.page-template-page-templatesfaq-php {
 
+		.content-wrapper {
+			padding: 40px 0;
+		}
+		
 		#general-faq,
 		#snowboard-faq,
 		#binding-faq {

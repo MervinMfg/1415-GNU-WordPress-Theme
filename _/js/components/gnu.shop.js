@@ -35,7 +35,6 @@ GNU.Shop.prototype = {
 				// set my account in header for Canada
 				$('header .nav-utility .link-account a').attr('href', 'http://gnu-ca.shptron.com/account/?mfg_id=4374.7&language_id=1');
 			} else if (currency === 'EUR') {
-				console.log('europe');
 				shopAPIKey = self.config.shopKeyEuro; // European key
 				// set shopatron footer links for Europe
 				$('#link-privacy').attr('href', 'http://gnueu.shptron.com/home/privacy/4374.14.4.10');

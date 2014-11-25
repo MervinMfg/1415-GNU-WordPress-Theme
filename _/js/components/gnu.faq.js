@@ -19,7 +19,6 @@ GNU.FAQ.prototype = {
 		self.initMenu();
 	},
 	initMenu: function () {
-		console.log('faq');
 		var self, $faqNav, navOffset, specs;
 		self = this;
 		$faqNav = $('.faq-navigation');

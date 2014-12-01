@@ -2,7 +2,7 @@
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/lib/jquery-1.11.1.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/lib/GSAP/TweenMax.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/lib/GSAP/plugins/ScrollToPlugin.js"></script>
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/lib/jquery.scrollmagic-1.0.8.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/lib/jquery.scrollmagic-1.3.0.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/lib/jquery.fitvids-1.1.0.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/lib/jquery.unveil.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/lib/owl.carousel-2.0.0.js"></script>

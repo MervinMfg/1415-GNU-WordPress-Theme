@@ -101,4 +101,5 @@ The build task should be run when you're ready to generate or update your optimi
 * Modernizr 2.7.2
 * FitVids 1.1.0
 * RespondJS 1.4.2
-* GSAP 1.11.8
+* GSAP 1.14.2
+* ScrollMagic 1.3.0

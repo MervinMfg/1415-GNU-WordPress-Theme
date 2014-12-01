@@ -37,12 +37,12 @@ GNU.Shop.prototype = {
 			} else if (currency === 'EUR') {
 				shopAPIKey = self.config.shopKeyEuro; // European key
 				// set shopatron footer links for Europe
-				$('#link-privacy').attr('href', 'http://gnu-euro.shptron.com/home/privacy/4374.7.1.2');
-				$('#link-policies').attr('href', 'http://gnu-euro.shptron.com/home/policies/4374.7.1.2');
-				$('#link-login').attr('href', 'http://gnu-euro.shptron.com/account/?mfg_id=4374.7&language_id=1');
-				$('#link-safety').attr('href', 'http://gnu-euro.shptron.com/home/security/4374.7.1.2');
-				$('#link-returns').attr('href', 'http://gnu-euro.shptron.com/home/policies/4374.7.1.2#Returns');
-				$('#link-ordering').attr('href', 'http://gnu-euro.shptron.com/home/ordering/4374.7.1.2');
+				$('#link-privacy').attr('href', 'http://gnueu.shptron.com/home/privacy/4374.14.4.10');
+				$('#link-policies').attr('href', 'http://gnueu.shptron.com/home/policies/4374.14.4.10');
+				$('#link-login').attr('href', 'http://gnueu.shptron.com/account/?mfg_id=4374.14&language_id=4');
+				$('#link-safety').attr('href', 'http://gnueu.shptron.com/home/security/4374.14.4.10');
+				$('#link-returns').attr('href', 'http://gnueu.shptron.com/home/policies/4374.14.4.10#13');
+				$('#link-ordering').attr('href', 'http://gnueu.shptron.com/home/ordering/4374.14.4.10');
 				// set my account in header for Europe
 				$('header .nav-utility .link-account a').attr('href', 'http://gnu-euro.shptron.com/account/?mfg_id=4374.7&language_id=1');
 			} else if (currency === 'INT') {
@@ -217,8 +217,8 @@ GNU.Shop.prototype = {
 			$("a.link-ordering-info").prop("href", "http://gnu-ca.shptron.com/k/ordering");
 			$("a.link-return-policy").prop("href", "http://gnu-ca.shptron.com/k/policies#Returns");
 		} else if (lang === 'EUR') {
-			$("a.link-ordering-info").prop("href", "http://gnu-euro.shptron.com/k/ordering");
-			$("a.link-return-policy").prop("href", "http://gnu-euro.shptron.com/k/policies#Returns");
+			$("a.link-ordering-info").prop("href", "http://gnueu.shptron.com/home/ordering/4374.14.4.10");
+			$("a.link-return-policy").prop("href", "http://gnueu.shptron.com/home/policies/4374.14.4.10#13");
 		} else {
 			$("a.link-ordering-info").prop("href", "http://gnu.shptron.com/k/ordering");
 			$("a.link-return-policy").prop("href", "http://gnu.shptron.com/k/policies#Returns");

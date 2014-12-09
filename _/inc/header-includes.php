@@ -11,8 +11,10 @@
 		echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/_/css/gnu.main.css" />' . "\n";
 		include 'header-scripts.php';
 	} else {
+		// include script version for file versioning on production environment
+		include_once 'script-version.php';
 		// if production, provide the minified CSS and compiled/uglified JavaScript files
-		echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/_/css/gnu.main.min.css" />' . "\n\t";
-		echo '<script type="text/javascript" src="' . get_template_directory_uri() . '/_/js/gnu.header.min.js"></script>' . "\n";
+		echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/_/css/gnu.main.min.css?v=' . $GLOBALS['SCRIPT_VERSION'] . '" />' . "\n\t";
+		echo '<script type="text/javascript" src="' . get_template_directory_uri() . '/_/js/gnu.header.min.js?v=' . $GLOBALS['SCRIPT_VERSION'] . '"></script>' . "\n";
 	}
 ?>

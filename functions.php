@@ -328,7 +328,7 @@ CODE FOR CUSTOM POST TYPES
 function set_custom_post_types_admin_order($wp_query) {  
   if (is_admin()) {  
     $post_type = $wp_query->query['post_type'];
-    if ( $post_type == 'gnu_snowboards' || $post_type == 'gnu_bindings' || $post_type == 'gnu_accessories' || $post_type == 'gnu_weirdwear' || $post_type == 'gnu_technology' || $post_type == 'gnu_awards' || $post_type == 'gnu_team' || $post_type == 'gnu_partners' ) { 
+    if ( $post_type == 'gnu_snowboards' || $post_type == 'gnu_bindings' || $post_type == 'gnu_accessories' || $post_type == 'gnu_weirdwear' || $post_type == 'gnu_technology' || $post_type == 'gnu_awards' || $post_type == 'gnu_team' || $post_type == 'gnu_partners' || $post_type == 'gnu_faqs' ) { 
       $wp_query->set('orderby', 'menu_order');  
       $wp_query->set('order', 'ASC');  
     }  

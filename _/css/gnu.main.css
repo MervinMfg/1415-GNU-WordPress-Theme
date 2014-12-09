@@ -568,6 +568,8 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-overview .product-list .product .info .colorways .swatch.gunmetal-heather { background-position: -180px 0px; }
 .product-overview .product-list .product .info .colorways .swatch.tan { background-position: -198px 0px; }
 .product-overview .product-list .product .info .colorways .swatch.indigo { background-position: -216px 0px; }
+.product-overview .product-list .product .info .colorways .swatch.triangle-print { background-position: -234px 0px; }
+.product-overview .product-list .product .info .colorways .swatch.charcoal-nep { background-position: -252px 0px; }
 .product-overview .product-list .product .image { width: 150px; height: 150px; max-width: 150px; position: absolute; left: 0; z-index: 1; }
 .product-overview .product-list .product a:hover .info .name, .product-overview .product-list .product a:hover .info .detail, .product-overview .product-list .product a:focus .info .name, .product-overview .product-list .product a:focus .info .detail { color: #FF3399; }
 

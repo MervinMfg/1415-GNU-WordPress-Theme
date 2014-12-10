@@ -28,6 +28,7 @@ Template Name: Partners
 							while ( $loop->have_posts() ) : $loop->the_post();
 								$title = get_the_title();
 								$content = get_the_content();
+								$slug = $post->post_name; 
 								$link = get_field('gnu_partners_link');
 								$logo = get_field('gnu_partners_logo');
 								// get category name
@@ -45,7 +46,7 @@ Template Name: Partners
 								<div class="partner-image"><a href="<?php echo $partnerPhoto['url']; ?>"><img src="<?php echo $partnerPhoto['url']; ?>" alt="<?php echo $title; ?> Photo" /></a></div>
 								<?php endwhile; ?>
 							</div>
-							<h3 class="partner-title"><?php echo $title; ?></h3>
+							<h3 class="partner-title" id="<?php echo $slug; ?>"><?php echo $title; ?></h3>
 							<div class="partner-description">
 								<p class="small"><span class="category"><?php echo $categoryName; ?></span> <?php echo $content; ?></p>
 								<div class="partner-link"><a href="<?php echo $link; ?>" target="_blank" class="bold-black">view site</a></div>

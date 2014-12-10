@@ -39,18 +39,20 @@ Template Name: Partners
 									unset($taxTerms);
 								}
 						?>
-						<li class="partner">
-							<div class="partner-images">
-								<div class="partner-image logo"><img src="<?php echo $logo['url']; ?>" alt="<?php echo $title; ?> Logo" /></div>
-								<?php while(the_repeater_field('gnu_partners_photos')): $partnerPhoto = get_sub_field('gnu_partners_photos_img'); ?>
-								<div class="partner-image"><a href="<?php echo $partnerPhoto['url']; ?>"><img src="<?php echo $partnerPhoto['url']; ?>" alt="<?php echo $title; ?> Photo" /></a></div>
-								<?php endwhile; ?>
-							</div>
-							<h3 class="partner-title" id="<?php echo $slug; ?>"><?php echo $title; ?></h3>
-							<div class="partner-description">
-								<p class="small"><span class="category"><?php echo $categoryName; ?></span> <?php echo $content; ?></p>
-								<div class="partner-link"><a href="<?php echo $link; ?>" target="_blank" class="bold-black">view site</a></div>
-							</div>
+						<li class="partner" id="<?php echo $slug; ?>">
+							<div class="partner-wrapper">
+								<div class="partner-images">
+									<div class="partner-image logo"><img src="<?php echo $logo['url']; ?>" alt="<?php echo $title; ?> Logo" /></div>
+									<?php while(the_repeater_field('gnu_partners_photos')): $partnerPhoto = get_sub_field('gnu_partners_photos_img'); ?>
+									<div class="partner-image"><a href="<?php echo $partnerPhoto['url']; ?>"><img src="<?php echo $partnerPhoto['url']; ?>" alt="<?php echo $title; ?> Photo" /></a></div>
+									<?php endwhile; ?>
+								</div>
+								<h3 class="partner-title"><?php echo $title; ?></h3>
+								<div class="partner-description">
+									<p class="small"><span class="category"><?php echo $categoryName; ?></span> <?php echo $content; ?></p>
+									<div class="partner-link"><a href="<?php echo $link; ?>" target="_blank" class="bold-black">view site</a></div>
+								</div>
+							</div><!-- .partner-wrapper -->
 							<div class="clearfix"></div>
 						</li>
 						<?php

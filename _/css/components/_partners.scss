@@ -52,6 +52,7 @@
 }
 @media screen and (min-width: $breakpoint-medium) {
 	.partners {
+		
 		.content {
 			max-width: $breakpoint-medium;
 			margin: 0 auto;
@@ -59,7 +60,8 @@
 
 			.partner-list {
 				.partner {
-					padding: 0 10px 40px;
+					margin-top: -95px;
+					padding: 95px 10px 40px;
 					width: 362px;
 					max-width: none;
 					display: inline-block;
@@ -77,5 +79,11 @@
 				}
 			}
 		}
+	}
+}
+@media screen and (min-width: $breakpoint-large) {
+	.partners .content .partner-list .partner {
+		padding-top: 75px;
+		margin-top: -75px;
 	}
 }

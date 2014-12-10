@@ -1043,10 +1043,11 @@ body.international .shopping-cart-wrapper { display: none; }
 .partners .content .partner-list .partner .partner-description .partner-link { text-align: center; }
 
 @media screen and (min-width: 748px) { .partners .content { max-width: 748px; margin: 0 auto; padding: 20px 10px; }
-  .partners .content .partner-list .partner { padding: 0 10px 40px; width: 362px; max-width: none; display: inline-block; vertical-align: top; }
+  .partners .content .partner-list .partner { margin-top: -95px; padding: 95px 10px 40px; width: 362px; max-width: none; display: inline-block; vertical-align: top; }
   .partners .content .partner-list .partner .partner-images { width: 35%; }
   .partners .content .partner-list .partner .partner-title { width: 65%; }
   .partners .content .partner-list .partner .partner-description { width: 65%; } }
+@media screen and (min-width: 1056px) { .partners .content .partner-list .partner { padding-top: 75px; margin-top: -75px; } }
 /* ========================================================================== COMPONENTS/_TEAM-OVERVIEW.SCSS ========================================================================== */
 .team-overview .more-riders { display: none; }
 

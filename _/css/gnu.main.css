@@ -1124,8 +1124,13 @@ body.international .shopping-cart-wrapper { display: none; }
 
 .single-post .featured-posts .more-news { display: none; }
 
-@media screen and (min-width: 748px) { .blog .featured-slider, .blog .social-slider, .blog-navigation { display: block; }
-  .blog-navigation { background: #000 url("../img/bg-overview-title.png") center center; width: 100%; }
+@media screen and (min-width: 748px) { .category-mens .blog-navigation .nav-container ul li .mens { color: #FFFF00; }
+  .category-womens .blog-navigation .nav-container ul li .womens { color: #99CC33; }
+  .category-events .blog-navigation .nav-container ul li .events { color: #FF3399; }
+  .category-product .blog-navigation .nav-container ul li .product { color: #0099FF; }
+  .category-art .blog-navigation .nav-container ul li .art { color: #9933CC; }
+  .blog .featured-slider, .blog .social-slider, .blog-navigation { display: block; }
+  .blog-navigation { background: #000 url("../img/bg-overview-title.png") center center; width: 100%; z-index: 3; }
   .blog-navigation .nav-container { display: table; text-align: center; width: 100%; }
   .blog-navigation .nav-container ul { height: 40px; display: table-cell; vertical-align: middle; }
   .blog-navigation .nav-container ul li { display: inline-block; padding: 0 20px; }

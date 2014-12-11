@@ -229,6 +229,22 @@
 }
 
 @media screen and (min-width: $breakpoint-medium) {
+	.category-mens .blog-navigation .nav-container ul li .mens {
+		color: $yellow;
+	}
+	.category-womens .blog-navigation .nav-container ul li .womens {
+		color: $green;
+	}
+	.category-events .blog-navigation .nav-container ul li .events {
+		color: $pink;
+	}
+	.category-product .blog-navigation .nav-container ul li .product {
+		color: $blue;
+	}
+	.category-art .blog-navigation .nav-container ul li .art {
+		color: $purple;
+	}
+
 	.blog .featured-slider,
 	.blog .social-slider,
 	.blog-navigation {
@@ -237,6 +253,7 @@
 	.blog-navigation {
 		background: $black url('../img/bg-overview-title.png') center center;
 		width: 100%;
+		z-index: 3;
 
 		.nav-container {
 			display: table;
@@ -257,7 +274,7 @@
 						text-transform: uppercase;
 
 						&.mens:hover,
-						&.mens:focus {
+						&.mens:focus, {
 							color: $yellow;
 						}
 						&.womens:hover,

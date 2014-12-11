@@ -1,11 +1,11 @@
 /**
  * 1415 GNU WordPress Theme - http://www.gnu.com
- * Author: brian.behrens@mervin.com & tony.keller@mervin.com - http://www.mervin.com
+ * Authors: brian.behrens@mervin.com & tony.keller@mervin.com - http://www.mervin.com
  */
 
 var GNU = GNU || {};
 
-GNU.Technology = function (scrollController) {
+GNU.Blog = function (scrollController) {
 	this.config = {
 		scene: null,
 		scrollController: scrollController,
@@ -13,21 +13,24 @@ GNU.Technology = function (scrollController) {
 	};
 	this.init();
 };
-GNU.Technology.prototype = {
+GNU.Blog.prototype = {
 	init: function () {
 		var self = this;
 		self.initMenu();
+		self.postLinkHoverInit();
+	},
+	postLinkHoverInit: function () {
+		// hover links
+		$('.blog-posts .blog-post .post-link').on('mouseenter', function () {
+			$(this).parents('.blog-post').find('.post-link').addClass('selected');
+		}).on('mouseleave', function () {
+			$(this).parents('.blog-post').find('.post-link').removeClass('selected');
+		});
 	},
 	initMenu: function () {
-		var self, $techNav, navOffset, specs;
+		var self, $blogNav, navOffset, specs;
 		self = this;
-		$techNav = $('.technology-navigation');
-		// listen for click on nav items
-		$techNav.find('a').on('click.techNav', function (e) {
-			e.preventDefault();
-			var url = $(this).attr('href');
-			GNU.Main.utilities.pageScroll(url, 0.5);
-		});
+		$blogNav = $('.blog-navigation');
 		// if we're large or bigger, do the scroll
 		if ( self.config.responsiveSize != "large" && GNU.Main.utilities.responsiveCheck() == "large" ) {
 			self.config.responsiveSize = "large";
@@ -35,21 +38,21 @@ GNU.Technology.prototype = {
 			if (typeof self.config.scene !== 'undefined') {
 				self.config.scrollController.removeScene(self.config.scene);
 			}
-			$techNav.removeAttr('style');
+			$blogNav.removeAttr('style');
 			navOffset = Math.floor($(window).height() / 2) - ($('.site-header').outerHeight() + $('.site-header').position().top) + 1;
-			self.config.scene = new ScrollScene({triggerElement: ".technology-navigation", offset: navOffset}).setPin(".technology-navigation").addTo(self.config.scrollController);
+			self.config.scene = new ScrollScene({triggerElement: ".blog-navigation", offset: navOffset}).setPin(".blog-navigation").addTo(self.config.scrollController);
 		} else if (self.config.responsiveSize != "other" && GNU.Main.utilities.responsiveCheck() != "large") {
 			self.config.responsiveSize = "other";
 			// if scene already exists, remove it
 			if (typeof self.config.scene !== 'undefined') {
 				self.config.scrollController.removeScene(self.config.scene);
 			}
-			$techNav.removeAttr('style');
+			$blogNav.removeAttr('style');
 		}
 		// listen for resize
-		$(window).on('resize.techNav', function () {
-			$(this).off('resize.techNav');
-			$techNav.find('a').off('click.techNav');
+		$(window).on('resize.blogNav', function () {
+			$(this).off('resize.blogNav');
+			$blogNav.find('a').off('click.blogNav');
 			self.initMenu();
 		});
 	}

@@ -157,12 +157,7 @@ GNU.Main = {
 		$('.section-header').each(function (index) {
 			new GNU.SectionHeader($(this), self.config.scrollController);
 		});
-		// hover links
-		$('.blog-posts .blog-post .post-link').on('mouseenter', function () {
-			$(this).parents('.blog-post').find('.post-link').addClass('selected');
-		}).on('mouseleave', function () {
-			$(this).parents('.blog-post').find('.post-link').removeClass('selected');
-		});
+		new GNU.Blog(self.config.scrollController);
 	},
 	blogSingleInit: function () {
 		var self = this;

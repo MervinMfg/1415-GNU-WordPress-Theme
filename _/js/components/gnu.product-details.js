@@ -10,6 +10,10 @@ GNU.ProductDetails = function (scrollController) {
 		productCarousel: null,
 		pastWaypoint: false,
 		scene: null,
+		scene2: null,
+		scene3: null,
+		scene4: null,
+		scene5: null,
 		scrollController: scrollController,
 		responsiveSize: null
 	};
@@ -187,20 +191,38 @@ GNU.ProductDetails.prototype = {
 			// if scene already exists, remove it
 			if (typeof self.config.scene !== 'undefined') {
 				self.config.scrollController.removeScene(self.config.scene);
+				self.config.scrollController.removeScene(self.config.scene2);
+				self.config.scrollController.removeScene(self.config.scene3);
+				self.config.scrollController.removeScene(self.config.scene4);
+				self.config.scrollController.removeScene(self.config.scene5);
+
 			}
 			$('.product-navigation').removeAttr('style');
+			$('.product-navigation a').removeClass('active');
 			// if not ie8 or less, run fixed scroll code
 			if ($('html').hasClass('ie-lt9') !== true) {
 				navOffset = Math.floor($(window).height() / 2) - ($('.site-header').outerHeight() + $('.site-header').position().top) + 1;
 				self.config.scene = new ScrollScene({triggerElement: ".product-navigation", offset: navOffset}).setPin(".product-navigation").addTo(self.config.scrollController);
 			}
+			// fixed navigation active states
+			navOffset = $(window).height() / 2 - 1;
+			self.config.scene2 = new ScrollScene({triggerElement: "#information", offset: navOffset, duration: $('#information').height() }).setClassToggle('.product-navigation .info', 'active').addTo(self.config.scrollController);
+			self.config.scene3 = new ScrollScene({triggerElement: "#technology", offset: navOffset, duration: $('#technology').height() }).setClassToggle('.product-navigation .tech', 'active').addTo(self.config.scrollController);
+			self.config.scene4 = new ScrollScene({triggerElement: "#video", offset: navOffset, duration: $('#video').height() }).setClassToggle('.product-navigation .video', 'active').addTo(self.config.scrollController);
+			self.config.scene5 = new ScrollScene({triggerElement: "#specifications", offset: navOffset, duration: $('#specifications').height() }).setClassToggle('.product-navigation .specs', 'active').addTo(self.config.scrollController);
+
 		} else if (self.config.responsiveSize != "other" && GNU.Main.utilities.responsiveCheck() != "large") {
 			self.config.responsiveSize = "other";
 			// if scene already exists, remove it
 			if (typeof self.config.scene !== 'undefined') {
 				self.config.scrollController.removeScene(self.config.scene);
+				self.config.scrollController.removeScene(self.config.scene2);
+				self.config.scrollController.removeScene(self.config.scene3);
+				self.config.scrollController.removeScene(self.config.scene4);
+				self.config.scrollController.removeScene(self.config.scene5);
 			}
 			$('.product-navigation').removeAttr('style');
+			$('.product-navigation').removeClass('active');
 		}
 		// listen for click on nav items
 		$('.product-navigation a').on('click.productNavigation', function (e) {

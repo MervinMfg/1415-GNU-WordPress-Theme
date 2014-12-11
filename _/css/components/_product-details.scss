@@ -200,19 +200,23 @@
 					text-transform: uppercase;
 
 					&.info:hover,
-					&.info:focus {
+					&.info:focus,
+					&.info.active {
 						color: $yellow;
 					}
 					&.tech:hover,
-					&.tech:focus {
+					&.tech:focus,
+					&.tech.active {
 						color: $green;
 					}
 					&.video:hover,
-					&.video:focus {
+					&.video:focus,
+					&.video.active {
 						color: $pink;
 					}
 					&.specs:hover,
-					&.specs:focus {
+					&.specs:focus,
+					&.specs.active {
 						color: $blue;
 					}
 				}
@@ -642,7 +646,8 @@
 					background-position: -10px -151px;
 				}
 				&:hover,
-				&:focus {
+				&:focus,
+				&.active {
 					.nav-icon {
 						background-position: -150px -151px;
 					}
@@ -653,7 +658,8 @@
 					background-position: -46px -151px;
 				}
 				&:hover,
-				&:focus {
+				&:focus,
+				&.active {
 					.nav-icon {
 						background-position: -186px -151px;
 					}
@@ -664,7 +670,8 @@
 					background-position: -116px -151px;
 				}
 				&:hover,
-				&:focus {
+				&:focus,
+				&.active {
 					.nav-icon {
 						background-position: -256px -151px;
 					}
@@ -675,7 +682,8 @@
 					background-position: -81px -151px;
 				}
 				&:hover,
-				&:focus {
+				&:focus,
+				&.active {
 					.nav-icon {
 						background-position: -221px -151px;
 					}

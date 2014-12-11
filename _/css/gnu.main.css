@@ -766,10 +766,10 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-navigation .nav-container ul { height: 40px; display: table-cell; vertical-align: middle; }
 .product-navigation .nav-container ul li { display: inline-block; padding: 0 8px; }
 .product-navigation .nav-container ul li a { color: #FFF; text-transform: uppercase; }
-.product-navigation .nav-container ul li a.info:hover, .product-navigation .nav-container ul li a.info:focus { color: #FFFF00; }
-.product-navigation .nav-container ul li a.tech:hover, .product-navigation .nav-container ul li a.tech:focus { color: #99CC33; }
-.product-navigation .nav-container ul li a.video:hover, .product-navigation .nav-container ul li a.video:focus { color: #FF3399; }
-.product-navigation .nav-container ul li a.specs:hover, .product-navigation .nav-container ul li a.specs:focus { color: #0099FF; }
+.product-navigation .nav-container ul li a.info:hover, .product-navigation .nav-container ul li a.info:focus, .product-navigation .nav-container ul li a.info.active { color: #FFFF00; }
+.product-navigation .nav-container ul li a.tech:hover, .product-navigation .nav-container ul li a.tech:focus, .product-navigation .nav-container ul li a.tech.active { color: #99CC33; }
+.product-navigation .nav-container ul li a.video:hover, .product-navigation .nav-container ul li a.video:focus, .product-navigation .nav-container ul li a.video.active { color: #FF3399; }
+.product-navigation .nav-container ul li a.specs:hover, .product-navigation .nav-container ul li a.specs:focus, .product-navigation .nav-container ul li a.specs.active { color: #0099FF; }
 
 .product-info { background: #FFF url("../img/bg-grey-triangles-details.png") center center; padding: 40px 20px; }
 .product-info h3, .product-info .h3 { text-align: center; margin-bottom: 0.5em; }
@@ -854,13 +854,13 @@ body.international .shopping-cart-wrapper { display: none; }
   .product-navigation .nav-container ul li a { vertical-align: middle; }
   .product-navigation .nav-container ul li a .nav-icon { display: inline-block; width: 25px; height: 25px; background-image: url("../img/sprite.png"); margin-left: 10px; margin-bottom: -3px; }
   .product-navigation .nav-container ul li a.info .nav-icon { background-position: -10px -151px; }
-  .product-navigation .nav-container ul li a.info:hover .nav-icon, .product-navigation .nav-container ul li a.info:focus .nav-icon { background-position: -150px -151px; }
+  .product-navigation .nav-container ul li a.info:hover .nav-icon, .product-navigation .nav-container ul li a.info:focus .nav-icon, .product-navigation .nav-container ul li a.info.active .nav-icon { background-position: -150px -151px; }
   .product-navigation .nav-container ul li a.tech .nav-icon { background-position: -46px -151px; }
-  .product-navigation .nav-container ul li a.tech:hover .nav-icon, .product-navigation .nav-container ul li a.tech:focus .nav-icon { background-position: -186px -151px; }
+  .product-navigation .nav-container ul li a.tech:hover .nav-icon, .product-navigation .nav-container ul li a.tech:focus .nav-icon, .product-navigation .nav-container ul li a.tech.active .nav-icon { background-position: -186px -151px; }
   .product-navigation .nav-container ul li a.video .nav-icon { background-position: -116px -151px; }
-  .product-navigation .nav-container ul li a.video:hover .nav-icon, .product-navigation .nav-container ul li a.video:focus .nav-icon { background-position: -256px -151px; }
+  .product-navigation .nav-container ul li a.video:hover .nav-icon, .product-navigation .nav-container ul li a.video:focus .nav-icon, .product-navigation .nav-container ul li a.video.active .nav-icon { background-position: -256px -151px; }
   .product-navigation .nav-container ul li a.specs .nav-icon { background-position: -81px -151px; }
-  .product-navigation .nav-container ul li a.specs:hover .nav-icon, .product-navigation .nav-container ul li a.specs:focus .nav-icon { background-position: -221px -151px; }
+  .product-navigation .nav-container ul li a.specs:hover .nav-icon, .product-navigation .nav-container ul li a.specs:focus .nav-icon, .product-navigation .nav-container ul li a.specs.active .nav-icon { background-position: -221px -151px; }
   #information, #technology, #video, #specifications { padding-top: 75px; margin-top: -75px; }
   .product-info .binding-chart { width: 50%; margin: 0; max-width: none; float: left; }
   .product-info .binding-chart ul li h3 { width: 100%; float: none; text-align: center; padding: 0; }

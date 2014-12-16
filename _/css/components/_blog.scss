@@ -414,8 +414,14 @@
 				width: 100%;
 				margin-left: 0;
 
-				.gallery-item img {
-					height: 395px;
+				.gallery-item {
+
+					img {
+						height: 395px;
+					}
+					.gallery-caption {
+						width: 100%;
+					}
 				}
 				.owl-dots {
 					width: 100%;

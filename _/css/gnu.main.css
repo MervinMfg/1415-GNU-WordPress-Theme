@@ -1162,6 +1162,7 @@ body.international .shopping-cart-wrapper { display: none; }
   .blog-post-details .post-content p { padding: 0 20px; }
   .blog-post-details .post-content .gallery { width: 100%; margin-left: 0; }
   .blog-post-details .post-content .gallery .gallery-item img { height: 395px; }
+  .blog-post-details .post-content .gallery .gallery-item .gallery-caption { width: 100%; }
   .blog-post-details .post-content .gallery .owl-dots { width: 100%; }
   .blog-post-details .post-content .post-video { max-width: 710px; margin: 0 auto 20px; border: 1px solid #000; }
   .blog-post-details .post-content blockquote { margin: 0 60px; }

@@ -217,7 +217,7 @@ blockquote { font-style: italic; border-left: 1px solid #666; color: #666; paddi
 
 abbr { border-bottom: 1px dotted #666; cursor: help; }
 
-@media screen and (min-width: 748px) { h1, .h1, h2, .h2 { font-size: 7.2em; line-height: 0.7em; }
+@media screen and (min-width: 748px) { h1, .h1, h2, .h2 { font-size: 7.2em; line-height: 0.85em; }
   h3, .h3 { font-family: "Neuron Extra Bold", Helvetica, Arial, sans-serif; font-size: 3.0em; font-weight: 400; }
   h4, .h4 { font-size: 2.4em; line-height: 1em; }
   h5, .h5 { font-family: "Neuron Light", Helvetica, Arial, sans-serif; font-size: 3.6em; } }
@@ -1110,6 +1110,10 @@ body.international .shopping-cart-wrapper { display: none; }
 .blog-post-details .post-content h1, .blog-post-details .post-content h2, .blog-post-details .post-content h3, .blog-post-details .post-content h4, .blog-post-details .post-content h5, .blog-post-details .post-content h6 { margin-bottom: 0.5em; text-align: center; }
 .blog-post-details .post-content blockquote { margin: 0 40px; }
 .blog-post-details .post-content blockquote p { padding-left: 10px; }
+.blog-post-details .post-content .gallery { position: relative; padding-bottom: 20px; width: 200%; margin-left: -50%; }
+.blog-post-details .post-content .gallery .gallery-item img { height: 210px; width: auto; }
+.blog-post-details .post-content .gallery .gallery-item .gallery-caption { width: 50%; text-align: center; margin: 0 auto; padding-top: 5px; line-height: 1.3em; }
+.blog-post-details .post-content .gallery .owl-dots { position: absolute; top: 170px; display: table-cell; width: 100%; }
 .blog-post-details .post-content .post-video { margin-bottom: 20px; border-top: 1px solid #000; border-bottom: 1px solid #000; background: #000 url("../img/loading-black.gif") no-repeat center center; }
 .blog-post-details .post-content ul, .blog-post-details .post-content ol { padding: 0 20px 0 60px; margin-bottom: 2em; list-style: square; }
 .blog-post-details .post-content ul li, .blog-post-details .post-content ol li { font-family: "Neuron Light", Helvetica, Arial, sans-serif; font-size: 1.8em; font-weight: 700; line-height: 2em; margin-bottom: 0.5em; }
@@ -1124,6 +1128,8 @@ body.international .shopping-cart-wrapper { display: none; }
 
 .single-post .featured-posts .more-news { display: none; }
 
+@media screen and (min-width: 476px) and (orientation: landscape) { .blog-post-details .post-content .gallery .gallery-item img { height: 270px; }
+  .blog-post-details .post-content .gallery .owl-dots { top: 230px; } }
 @media screen and (min-width: 748px) { .category-mens .blog-navigation .nav-container ul li .mens { color: #FFFF00; }
   .category-womens .blog-navigation .nav-container ul li .womens { color: #99CC33; }
   .category-events .blog-navigation .nav-container ul li .events { color: #FF3399; }
@@ -1153,6 +1159,9 @@ body.international .shopping-cart-wrapper { display: none; }
   .blog-post-details { max-width: 900px; margin: 0 auto; }
   .blog-post-details .post-meta { font-size: 2.4em; }
   .blog-post-details .post-content p { padding: 0 20px; }
+  .blog-post-details .post-content .gallery { width: 100%; margin-left: 0; }
+  .blog-post-details .post-content .gallery .gallery-item img { height: 395px; }
+  .blog-post-details .post-content .gallery .owl-dots { top: 350px; }
   .blog-post-details .post-content .post-video { max-width: 710px; margin: 0 auto 20px; border: 1px solid #000; }
   .blog-post-details .post-content blockquote { margin: 0 60px; }
   .blog-post-details .post-content blockquote p { padding-left: 20px; }

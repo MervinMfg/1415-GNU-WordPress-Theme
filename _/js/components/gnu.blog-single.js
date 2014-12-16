@@ -15,8 +15,15 @@ GNU.BlogSingle.prototype = {
 	init: function () {
 		var self = this;
 		self.checkVideos();
-		if($('body').hasClass('single-format-image') || $('body').hasClass('single-format-gallery')) {
+		if($('body').hasClass('single-format-image')) {
 			self.checkImages();
+		}
+		if($('body').hasClass('single-format-gallery')) {
+			self.checkGallery();
+		}
+		// check for gallery, init if exists
+		if($('gallery')) {
+			self.galleryInit();
 		}
 	},
 	checkVideos: function () {
@@ -54,8 +61,6 @@ GNU.BlogSingle.prototype = {
 					self.config.firstMediaFound = true;
 				} else if (firstImage.parent().is('.gallery-icon')) {
 					// wrapped by gallery, do nothing
-					// TODO: Add gallery to top of page
-					self.config.firstMediaFound = false;
 				} else {
 					// not wrapped by caption, so add paragraph
 					firstImage.wrap('<p class="first-image"></p>');
@@ -67,5 +72,32 @@ GNU.BlogSingle.prototype = {
 				}
 			}
 		}
+	},
+	checkGallery: function () {
+		var self, $firstGallery;
+		self = this;
+		// if no video was found, find the first image
+		if (!self.config.firstMediaFound) {
+			$firstGallery = $('.post .post-content').find('.gallery:first');
+			if ($firstGallery.length) {
+				self.config.firstMediaFound = true;
+				// image was found, prepend it
+				$firstGallery.prependTo('.post .post-content');
+			}
+		}
+	},
+	galleryInit: function () {
+		var self, carousel;
+		self = this;
+		// set up owl carousel
+		carousel = $(".gallery .owl-carousel").owlCarousel({
+			items: 1,
+			dots: true,
+			lazyLoad: true,
+			autoplay: true,
+			autoplayTimeout: 5000,
+			autoplayHoverPause: true,
+			loop: true
+		});
 	}
 };

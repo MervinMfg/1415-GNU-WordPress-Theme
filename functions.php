@@ -321,6 +321,82 @@ function bindingSizeLookup ($sizeString, $verbose = true) {
     return $returnString;
 }
 
+// REWRITE WORDPRESS GALLERY FUNCTIONALITY
+function gnu_gallery_shortcode($attr) {
+    $post = get_post();
+    static $instance = 0;
+    $instance++;
+    if ( ! empty( $attr['ids'] ) ) {
+        // 'ids' is explicitly ordered, unless you specify otherwise.
+        if ( empty( $attr['orderby'] ) )
+            $attr['orderby'] = 'post__in';
+        $attr['include'] = $attr['ids'];
+    }
+    // Allow plugins/themes to override the default gallery template.
+    $output = apply_filters('post_gallery', '', $attr);
+    if ( $output != '' )
+        return $output;
+    // We're trusting author input, so let's at least make sure it looks like a valid orderby statement
+    if ( isset( $attr['orderby'] ) ) {
+        $attr['orderby'] = sanitize_sql_orderby( $attr['orderby'] );
+        if ( !$attr['orderby'] )
+            unset( $attr['orderby'] );
+    }
+    extract(shortcode_atts(array(
+        'order'      => 'ASC',
+        'orderby'    => 'menu_order ID',
+        'id'         => $post ? $post->ID : 0,
+        'itemtag'    => 'li',
+        'icontag'    => 'div',
+        'captiontag' => 'div',
+        'columns'    => 3,
+        'size'       => 'large',
+        'include'    => '',
+        'exclude'    => ''
+    ), $attr, 'gallery'));
+    $id = intval($id);
+    if ( 'RAND' == $order )
+        $orderby = 'none';
+    if ( !empty($include) ) {
+        $_attachments = get_posts( array('include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+        $attachments = array();
+        foreach ( $_attachments as $key => $val ) {
+            $attachments[$val->ID] = $_attachments[$key];
+        }
+    } elseif ( !empty($exclude) ) {
+        $attachments = get_children( array('post_parent' => $id, 'exclude' => $exclude, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+    } else {
+        $attachments = get_children( array('post_parent' => $id, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+    }
+    if ( empty($attachments) )
+        return '';
+    if ( is_feed() ) {
+        $output = "\n";
+        foreach ( $attachments as $att_id => $attachment )
+            $output .= wp_get_attachment_link($att_id, $size, true) . "\n";
+        return $output;
+    }
+    $selector = "gallery-{$instance}";
+    $output = "<div id=\"$selector\" class=\"gallery galleryid-{$id}\">\n\t\t\t\t\t\t<div class=\"gallery-list owl-carousel owl-theme\">\n";
+    $i = 0;
+    foreach ( $attachments as $id => $attachment ) {
+        // always make it grab the link to the file
+        $image_output = wp_get_attachment_link( $id, $size, false, false );
+        $image_meta  = wp_get_attachment_metadata( $id );
+        $orientation = '';
+        if ( isset( $image_meta['height'], $image_meta['width'] ) )
+            $orientation = ( $image_meta['height'] > $image_meta['width'] ) ? 'portrait' : 'landscape';
+        $output .= "\t\t\t\t\t\t\t<div class='gallery-item'>\n\t\t\t\t\t\t\t\t<div class='gallery-icon {$orientation}'>$image_output</div>";
+        if ( $captiontag && trim($attachment->post_excerpt) ) {
+            $output .= "\n\t\t\t<p class='gallery-caption small'>" . wptexturize($attachment->post_excerpt) . "</p>";
+        }
+        $output .= "\n\t\t\t\t\t\t\t</div>\n";
+    }
+    $output .= "\t\t\t\t\t\t</div>\n\t\t\t\t\t</div><!-- END .gallery -->\n";
+    return $output;
+}
+add_shortcode('gallery', 'gnu_gallery_shortcode');
+
 /******************************
 CODE FOR CUSTOM POST TYPES
 ******************************/

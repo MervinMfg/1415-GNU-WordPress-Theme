@@ -63,12 +63,23 @@ Template Name: Apparel Detail
 							}
 						endforeach;
 						// setup sizes text display
+						// check taxonomy terms to see if we're a sock
+						$categories_terms = get_the_terms( $post->ID , 'gnu_apparel_categories' );
+						$categories = Array();
+						foreach ( $categories_terms as $category ) {
+							array_push($categories, $category->name);
+						}
+						// if socks, display fixed sizes
+						if (in_array('Socks', $categories, true)) {
+							$sizesString = '<span class="us-sizes">S (US M 7-9)</span><span class="eu-sizes">S (EU M 39-42)</span><span class="us-sizes">M (US M 9-11)</span><span class="eu-sizes">M (EU M 42-44)</span><span class="us-sizes">L (US M 11-13)</span><span class="eu-sizes">L (EU M 44-47)</span>';
+						} else {
 						$sizesString = "";
 						for ($i = 0; $i < count($sizes); $i++) {
 							$sizesString .= ' <span>' . $sizes[$i] . '</span> ';
 						}
+					}
+						
 					?>
-
 					<div class="product-sizes">
 						<p class="small"><span class="size-title">SIZES</span> <?php echo $sizesString; ?></p>
 					</div><!-- product-sizes -->

@@ -58,6 +58,16 @@
 		}
 	}
 }
+.currency-eur .product-sizes p span.us-sizes {
+	display: none;
+}
+.currency-usd,
+.currency-cad,
+.currency-int {
+	.product-sizes p span.eu-sizes {
+		display: none;
+	}
+}
 .product-thumbnails {
 	&.hidden {
 		display: none;

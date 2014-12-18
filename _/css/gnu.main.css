@@ -724,6 +724,10 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-sizes p span { padding: 0 3px; }
 .product-sizes p span.size-title { font-weight: 700; }
 
+.currency-eur .product-sizes p span.us-sizes { display: none; }
+
+.currency-usd .product-sizes p span.eu-sizes, .currency-cad .product-sizes p span.eu-sizes, .currency-int .product-sizes p span.eu-sizes { display: none; }
+
 .product-thumbnails.hidden { display: none; }
 .product-thumbnails .image-list { text-align: center; }
 .product-thumbnails .image-list .owl-stage { display: inline-block; }

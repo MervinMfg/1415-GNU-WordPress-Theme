@@ -223,6 +223,6 @@ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG         GGGGGG
 		</header><!-- .site-header -->
 		<div id="main" class="site-main">
 			<div class="global-alert">
-				<p class="small message usd cad">Free shipping on orders over $75 - Orders must be placed by noon PST 12/18 for 12/24 Holiday delivery.</p>
+				<p class="small message usd cad">Free shipping on orders over $75 - Orders must be placed by 10:00am PST 12/22 for 12/24 Holiday delivery.</p>
 				<p class="small message eur">Now shipping to select countries in Europe – Free shipping on orders over €75 - Orders must be placed by noon PST 12/18 for 12/24 Holiday delivery.</p>
 			</div>

@@ -17,12 +17,12 @@ Template Name: Apparel Detail
 				$optionColor = get_sub_field('gnu_apparel_variations_color');
 				$optionSKU = get_sub_field('gnu_apparel_variations_sku');
 				// grab availability
-				$optionAvailUS = get_sub_field('gnu_apparel_variations_availability_us');
-				$optionAvailCA = get_sub_field('gnu_apparel_variations_availability_ca');
-				$optionAvailEUR = get_sub_field('gnu_apparel_variations_availability_eur');
-				if($optionAvailUS == "Yes") $productAvailUS = "Yes";
-				if($optionAvailCA == "Yes") $productAvailCA = "Yes";
-				if($optionAvailEUR == "Yes") $productAvailEUR = "Yes";
+				$optionAvailUS = getProductAvailability($optionSKU, 'US');
+				$optionAvailCA = getProductAvailability($optionSKU, 'CA');
+				$optionAvailEUR = getProductAvailability($optionSKU, 'EU');
+				if($optionAvailUS['amount'] > 0) $productAvailUS = "Yes";
+				if($optionAvailCA['amount'] > 0) $productAvailCA = "Yes";
+				if($optionAvailEUR['amount'] > 0) $productAvailEUR = "Yes";
 				array_push($apparelVariations, Array('size' => $optionSize, 'color' => $optionColor, 'sku' => $optionSKU, 'availUS' => $optionAvailUS, 'availCA' => $optionAvailCA, 'availEUR' => $optionAvailEUR));
 			endwhile;
 		endif;
@@ -138,7 +138,7 @@ Template Name: Apparel Detail
 								<select class="product-variation input-text">
 									<option value="-1">Select a Size</option>
 									<?php foreach ($apparelVariations as $apparelVariation) : // render out apparel dropdown ?>
-									<option value="<?php echo $apparelVariation['sku']; ?>" title="<?php echo $apparelVariation['color'] . ' - ' . $apparelVariation['size']; ?>" class="selectable-option" data-avail-us="<?php echo $apparelVariation['availUS']; ?>" data-avail-ca="<?php echo $apparelVariation['availCA']; ?>" data-avail-eur="<?php echo $apparelVariation['availEUR']; ?>"><?php echo $apparelVariation['color'] . ' - ' . $apparelVariation['size']; ?></option>
+									<option value="<?php echo $apparelVariation['sku']; ?>" title="<?php echo $apparelVariation['color'] . ' - ' . $apparelVariation['size']; ?>" class="selectable-option" data-avail-us="<?php echo $apparelVariation['availUS']['amount']; ?>" data-avail-ca="<?php echo $apparelVariation['availCA']['amount']; ?>" data-avail-eur="<?php echo $apparelVariation['availEUR']['amount']; ?>"><?php echo $apparelVariation['color'] . ' - ' . $apparelVariation['size']; ?></option>
 									<?php endforeach; ?>
 								</select><button class="add-to-cart btn-submit visible">Add to Cart</button>
 							</div><!-- .form -->

@@ -352,9 +352,6 @@ Template Name: Bindings Detail
 				endif;
 			?>
 
-
-
-
 			<?php
 				$snowboards = get_field('gnu_binding_collab');
 				if( $snowboards ):
@@ -390,8 +387,6 @@ Template Name: Bindings Detail
 				</div><!-- .product-collab -->
 			</section>
 			<?php endif; ?>
-
-
 
 			<?php comments_template(); ?>
 

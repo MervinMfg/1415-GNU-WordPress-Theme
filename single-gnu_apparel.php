@@ -16,13 +16,53 @@ Template Name: Apparel Detail
 				$optionSize = get_sub_field('gnu_apparel_variations_size');
 				$optionColor = get_sub_field('gnu_apparel_variations_color');
 				$optionSKU = get_sub_field('gnu_apparel_variations_sku');
-				// grab availability
-				$optionAvailUS = getProductAvailability($optionSKU, 'US');
-				$optionAvailCA = getProductAvailability($optionSKU, 'CA');
-				$optionAvailEUR = getProductAvailability($optionSKU, 'EU');
-				if($optionAvailUS['amount'] > 0) $productAvailUS = "Yes";
-				if($optionAvailCA['amount'] > 0) $productAvailCA = "Yes";
-				if($optionAvailEUR['amount'] > 0) $productAvailEUR = "Yes";
+				// grab availability overwrite
+				$optionAvailUS = get_sub_field('gnu_apparel_variations_availability_us');
+				$optionAvailCA = get_sub_field('gnu_apparel_variations_availability_ca');
+				$optionAvailEUR = get_sub_field('gnu_apparel_variations_availability_eur');
+				// check availability based on overrides in WP Admin
+				switch ($optionAvailUS) {
+					case "Inventory":
+						$optionAvailUS = getProductAvailability($optionSKU, 'US');
+						break;
+					case "Yes":
+						$optionAvailUS = Array('amount' => "Yes");
+						break;
+					case "No":
+						$optionAvailUS = Array('amount' => "No");
+						break;
+					default:
+						$optionAvailUS = getProductAvailability($optionSKU, 'US');
+				}
+				switch ($optionAvailCA) {
+					case "Inventory":
+						$optionAvailCA = getProductAvailability($optionSKU, 'CA');
+						break;
+					case "Yes":
+						$optionAvailCA = Array('amount' => "Yes");
+						break;
+					case "No":
+						$optionAvailCA = Array('amount' => "No");
+						break;
+					default:
+						$optionAvailCA = getProductAvailability($optionSKU, 'CA');
+				}
+				switch ($optionAvailEUR) {
+					case "Inventory":
+						$optionAvailEUR = getProductAvailability($optionSKU, 'EU');
+						break;
+					case "Yes":
+						$optionAvailEUR = Array('amount' => "Yes");
+						break;
+					case "No":
+						$optionAvailEUR = Array('amount' => "No");
+						break;
+					default:
+						$optionAvailEUR = getProductAvailability($optionSKU, 'EU');
+				}
+				if($optionAvailUS['amount'] > 0 || $optionAvailUS['amount'] == "Yes") $productAvailUS = "Yes";
+				if($optionAvailCA['amount'] > 0 || $optionAvailCA['amount'] == "Yes") $productAvailCA = "Yes";
+				if($optionAvailEUR['amount'] > 0 || $optionAvailEUR['amount'] == "Yes") $productAvailEUR = "Yes";
 				array_push($apparelVariations, Array('size' => $optionSize, 'color' => $optionColor, 'sku' => $optionSKU, 'availUS' => $optionAvailUS, 'availCA' => $optionAvailCA, 'availEUR' => $optionAvailEUR));
 			endwhile;
 		endif;
@@ -146,6 +186,10 @@ Template Name: Apparel Detail
 							<div class="failure hidden">
 								<p class="small">There has been an error adding the item to your cart. Try again later or <a href="/contact/">contact us</a> if the problem persists.</p>
 							</div><!-- .failure -->
+							<div class="available-alert">
+								<p class="small low-inventory"><span>Product Alert:</span> Currently less than 10 available.</p>
+								<p class="small no-inventory"><span>Product Alert:</span> We are currently out of stock on this item in our warehouse, but we can check with our dealer network to see if they can fulfill this order.</p>
+							</div><!-- .available-alert -->
 						</div><!-- .product-available -->
 						<div class="product-unavailable">
 							<p>Item is currently not available online.</p>

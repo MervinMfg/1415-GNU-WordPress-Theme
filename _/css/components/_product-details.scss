@@ -161,6 +161,27 @@
 		.failure.hidden {
 			display: none;
 		}
+		.available-alert {
+			.low-inventory,
+			.no-inventory {
+				display: none;
+				margin-bottom: 0.8em;
+
+				span {
+					color: $pink;
+				}
+			}
+			&.available-alert.low {
+				.low-inventory {
+					display: block;
+				}
+			}
+			&.available-alert.no {
+				.no-inventory {
+					display: block;
+				}
+			}
+		}
 	}
 	.product-unavailable {
 		display: none;

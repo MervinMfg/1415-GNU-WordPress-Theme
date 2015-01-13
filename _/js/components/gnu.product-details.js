@@ -7,6 +7,7 @@ var GNU = GNU || {};
 
 GNU.ProductDetails = function (scrollController) {
 	this.config = {
+		currency: null,
 		productCarousel: null,
 		pastWaypoint: false,
 		scene: null,
@@ -195,7 +196,6 @@ GNU.ProductDetails.prototype = {
 				self.config.scrollController.removeScene(self.config.scene3);
 				self.config.scrollController.removeScene(self.config.scene4);
 				self.config.scrollController.removeScene(self.config.scene5);
-
 			}
 			$('.product-navigation').removeAttr('style');
 			$('.product-navigation a').removeClass('active');
@@ -206,11 +206,10 @@ GNU.ProductDetails.prototype = {
 			}
 			// fixed navigation active states
 			navOffset = $(window).height() / 2 - 1;
-			self.config.scene2 = new ScrollScene({triggerElement: "#information", offset: navOffset, duration: $('#information').height() }).setClassToggle('.product-navigation .info', 'active').addTo(self.config.scrollController);
-			self.config.scene3 = new ScrollScene({triggerElement: "#technology", offset: navOffset, duration: $('#technology').height() }).setClassToggle('.product-navigation .tech', 'active').addTo(self.config.scrollController);
-			self.config.scene4 = new ScrollScene({triggerElement: "#video", offset: navOffset, duration: $('#video').height() }).setClassToggle('.product-navigation .video', 'active').addTo(self.config.scrollController);
-			self.config.scene5 = new ScrollScene({triggerElement: "#specifications", offset: navOffset, duration: $('#specifications').height() }).setClassToggle('.product-navigation .specs', 'active').addTo(self.config.scrollController);
-
+			if ($("#information").length) self.config.scene2 = new ScrollScene({triggerElement: "#information", offset: navOffset, duration: $('#information').height() }).setClassToggle('.product-navigation .info', 'active').addTo(self.config.scrollController);
+			if ($("#technology").length) self.config.scene3 = new ScrollScene({triggerElement: "#technology", offset: navOffset, duration: $('#technology').height() }).setClassToggle('.product-navigation .tech', 'active').addTo(self.config.scrollController);
+			if ($("#video").length) self.config.scene4 = new ScrollScene({triggerElement: "#video", offset: navOffset, duration: $('#video').height() }).setClassToggle('.product-navigation .video', 'active').addTo(self.config.scrollController);
+			if ($("#specifications").length) self.config.scene5 = new ScrollScene({triggerElement: "#specifications", offset: navOffset, duration: $('#specifications').height() }).setClassToggle('.product-navigation .specs', 'active').addTo(self.config.scrollController);
 		} else if (self.config.responsiveSize != "other" && GNU.Main.utilities.responsiveCheck() != "large") {
 			self.config.responsiveSize = "other";
 			// if scene already exists, remove it
@@ -238,30 +237,40 @@ GNU.ProductDetails.prototype = {
 		});
 	},
 	initAvailability: function () {
-		var currencyCookie, currency;
+		var self, currencyCookie;
+		self = this;
 		currencyCookie = GNU.Main.utilities.cookie.getCookie('gnu_currency');
 		if (currencyCookie !== null || currencyCookie !== "") {
-			currency = currencyCookie;
+			self.config.currency = currencyCookie;
+		} else {
+			self.config.currency = "USD";
 		}
-		if (currency) {
-			if (currency === 'CAD') {
+		if (self.config.currency) {
+			if (self.config.currency === 'CAD') {
 				if ($('.product-buy').data('avail-ca') == "Yes") {
 					$('.product-buy').addClass('available');
 					// disable unavailable options for specific currency
 					$('.product-buy .product-variation option').each(function(index) {
-						if ($(this).data('avail-ca') == "No") {
+						// snowboards in CA are not handled direct
+						if ($('body').hasClass('single-gnu_snowboards')) {
+							if ($(this).data('avail-ca') == "No") {
+								$(this).attr('disabled', 'disabled');
+							}
+						} else if ($(this).data('avail-ca') < 1 || $(this).data('avail-ca') == "No") {
+							// all other products are handled direct
 							$(this).attr('disabled', 'disabled');
 						}
 					});
 				} else {
 					$(".product-buy").addClass('unavailable');
 				}
-			} else if (currency === 'EUR') {
+			} else if (self.config.currency === 'EUR') {
 				if ($('.product-buy').data('avail-eur') == "Yes") {
 					$(".product-buy").addClass('available');
 					// disable unavailable options for specific currency
 					$('.product-buy .product-variation option').each(function(index) {
-						if ($(this).data('avail-eur') == "No") {
+						// all products are handled direct
+						if ($(this).data('avail-eur') < 1 || $(this).data('avail-eur') == "No") {
 							$(this).attr('disabled', 'disabled');
 						}
 					});
@@ -273,7 +282,13 @@ GNU.ProductDetails.prototype = {
 					$(".product-buy").addClass('available');
 					// disable unavailable options for specific currency
 					$('.product-buy .product-variation option').each(function(index) {
-						if ($(this).data('avail-us') == "No") {
+						// snowboards in US are not handled direct
+						if ($('body').hasClass('single-gnu_snowboards')) {
+							if ($(this).data('avail-us') == "No") {
+								$(this).attr('disabled', 'disabled');
+							}
+						} else if ($(this).data('avail-us') < 1 || $(this).data('avail-us') == "No") {
+							// all other products are handled direct
 							$(this).attr('disabled', 'disabled');
 						}
 					});
@@ -317,12 +332,29 @@ GNU.ProductDetails.prototype = {
 		// FUNCTIONALITY FOR PRODUCTS WITH ONLY 1 SELECTION
 		$('.product-variation').change(function () {
 			// display the correct image matching selected option
-			var productSKU, productSKUs, productThumbs;
+			var productSKU, productSKUs, productAvail, productThumbs;
 			productSKU = $(this).val();
 			productSKUs = [];
 			if (productSKU != "-1") {
 				$(this).removeClass('alert');
 			}
+			// check current stock based on currency
+			if (self.config.currency == "CAD") {
+				productAvail = $(this).find(':selected').attr('data-avail-ca');
+			} else if (self.config.currency == "EUR") {
+				productAvail = $(this).find(':selected').attr('data-avail-eur');
+			} else {
+				productAvail = $(this).find(':selected').attr('data-avail-us');
+			}
+			// reset available alert message
+			$('.product-buy .available-alert').removeClass('no low');
+			// check if we're a snowboard with none avail, or if we're a product with low avail
+			if ( ($('body').hasClass('single-gnu_snowboards') && productAvail == "0") || ($('body').hasClass('single-gnu_snowboards') && productAvail === "")) {
+				$('.product-buy .available-alert').addClass('no');
+			} else if (productAvail < 10) {
+				$('.product-buy .available-alert').addClass('low');
+			}
+			// remove active states from product thumbnails
 			$(".product-thumbnails .product-thumbnail a").each(function () {
 				var skus = $(this).attr('data-sku');
 				productSKUs.push([$(this), skus]);

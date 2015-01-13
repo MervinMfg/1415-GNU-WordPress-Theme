@@ -23,13 +23,55 @@ Template Name: Snowboards Detail
 						$variationWidth = $optionVariations[$i]['gnu_snowboard_options_variations_width'];
 						$variationLength = $optionVariations[$i]['gnu_snowboard_options_variations_length'];
 						$variationSKU = $optionVariations[$i]['gnu_snowboard_options_variations_sku'];
-						// grab availability
+						// grab availability overwrite
 						$variationAvailUS = $optionVariations[$i]['gnu_snowboard_options_variations_availability_us'];
 						$variationAvailCA = $optionVariations[$i]['gnu_snowboard_options_variations_availability_ca'];
 						$variationAvailEUR = $optionVariations[$i]['gnu_snowboard_options_variations_availability_eur'];
-						if($variationAvailUS == "Yes") $productAvailUS = "Yes";
-						if($variationAvailCA == "Yes") $productAvailCA = "Yes";
-						if($variationAvailEUR == "Yes") $productAvailEUR = "Yes";
+						// check availability based on overrides in WP Admin
+						switch ($variationAvailUS) {
+							case "Inventory":
+								$variationAvailUS = getProductAvailability($variationSKU, 'US');
+								break;
+							case "Yes":
+								$variationAvailUS = Array('amount' => 'Yes');
+								break;
+							case "No":
+								$variationAvailUS = Array('amount' => 'No');
+								break;
+							default:
+								$variationAvailUS = getProductAvailability($variationSKU, 'US');
+						}
+						switch ($variationAvailCA) {
+							case "Inventory":
+								$variationAvailCA = getProductAvailability($variationSKU, 'CA');
+								break;
+							case "Yes":
+								$variationAvailCA = Array('amount' => 'Yes');
+								break;
+							case "No":
+								$variationAvailCA = Array('amount' => 'No');
+								break;
+							default:
+								$variationAvailCA = getProductAvailability($variationSKU, 'CA');
+						}
+						switch ($variationAvailEUR) {
+							case "Inventory":
+								$variationAvailEUR = getProductAvailability($variationSKU, 'EU');
+								break;
+							case "Yes":
+								$variationAvailEUR = Array('amount' => 'Yes');
+								break;
+							case "No":
+								$variationAvailEUR = Array('amount' => 'No');
+								break;
+							default:
+								$variationAvailEUR = getProductAvailability($variationSKU, 'EU');
+						}
+						// snowboards are available always, even when we have 0 in stock, unless we specifically say NO
+						if($variationAvailUS['amount'] != "No") $productAvailUS = "Yes";
+						if($variationAvailCA['amount'] != "No") $productAvailCA = "Yes";
+						// Europe is handled like other products, direct
+						if($variationAvailEUR['amount'] > 0 || $variationAvailEUR['amount'] == "Yes") $productAvailEUR = "Yes";
 						// setup readable short form of length and width
 						if($variationWidth == "Narrow"){
 							$variationLength = $variationLength . "N";
@@ -183,7 +225,7 @@ Template Name: Snowboards Detail
 								<select class="product-variation input-text">
 									<option value="-1">Select a Size</option>
 									<?php foreach ($snowboards as $snowboard) : // render out snowboards dropdown ?>
-									<option value="<?php echo $snowboard['sku']; ?>" title="<?php echo $snowboard['name']; ?>" class="selectable-option" data-avail-us="<?php echo $snowboard['availUS']; ?>" data-avail-ca="<?php echo $snowboard['availCA']; ?>" data-avail-eur="<?php echo $snowboard['availEUR']; ?>"><?php echo $snowboard['name']; ?></option>
+									<option value="<?php echo $snowboard['sku']; ?>" title="<?php echo $snowboard['name']; ?>" class="selectable-option" data-avail-us="<?php echo $snowboard['availUS']['amount']; ?>" data-avail-ca="<?php echo $snowboard['availCA']['amount']; ?>" data-avail-eur="<?php echo $snowboard['availEUR']['amount']; ?>"><?php echo $snowboard['name']; ?></option>
 									<?php endforeach; ?>
 								</select><button class="add-to-cart btn-submit visible">Add to Cart</button>
 							</div><!-- .form -->
@@ -191,6 +233,10 @@ Template Name: Snowboards Detail
 							<div class="failure hidden">
 								<p class="small">There has been an error adding the item to your cart. Try again later or <a href="/contact/">contact us</a> if the problem persists.</p>
 							</div><!-- .failure -->
+							<div class="available-alert">
+								<p class="small low-inventory"><span>Product Alert:</span> Currently less than 10 available.</p>
+								<p class="small no-inventory"><span>Product Alert:</span> We are currently out of stock on this item in our warehouse, but we can check with our dealer network to see if they can fulfill this order.</p>
+							</div><!-- .available-alert -->
 						</div><!-- .product-available -->
 						<div class="product-unavailable">
 							<p>Item is currently not available online.</p>

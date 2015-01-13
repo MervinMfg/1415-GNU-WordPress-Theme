@@ -6,9 +6,56 @@ Template Name: Accessories Detail
 	if (have_posts()) : while (have_posts()) : the_post();
 		$productSKU = get_field('gnu_accessory_sku');
 		// grab availability
-		$productAvailUS = get_field('gnu_accessory_availability_us');
-		$productAvailCA = get_field('gnu_accessory_availability_ca');
-		$productAvailEUR = get_field('gnu_accessory_availability_eur');
+		$productAvailUS = "No";
+		$productAvailCA = "No";
+		$productAvailEUR = "No";
+		// grab availability overwrite
+		$optionAvailUS = get_field('gnu_accessory_availability_us');
+		$optionAvailCA = get_field('gnu_accessory_availability_ca');
+		$optionAvailEUR = get_field('gnu_accessory_availability_eur');
+		// check availability based on overrides in WP Admin
+		switch ($optionAvailUS) {
+			case "Inventory":
+				$optionAvailUS = getProductAvailability($productSKU, 'US');
+				break;
+			case "Yes":
+				$optionAvailUS = Array('amount' => "Yes");
+				break;
+			case "No":
+				$optionAvailUS = Array('amount' => "No");
+				break;
+			default:
+				$optionAvailUS = getProductAvailability($productSKU, 'US');
+		}
+		switch ($optionAvailCA) {
+			case "Inventory":
+				$optionAvailCA = getProductAvailability($productSKU, 'CA');
+				break;
+			case "Yes":
+				$optionAvailCA = Array('amount' => "Yes");
+				break;
+			case "No":
+				$optionAvailCA = Array('amount' => "No");
+				break;
+			default:
+				$optionAvailCA = getProductAvailability($productSKU, 'CA');
+		}
+		switch ($optionAvailEUR) {
+			case "Inventory":
+				$optionAvailEUR = getProductAvailability($productSKU, 'EU');
+				break;
+			case "Yes":
+				$optionAvailEUR = Array('amount' => "Yes");
+				break;
+			case "No":
+				$optionAvailEUR = Array('amount' => "No");
+				break;
+			default:
+				$optionAvailEUR = getProductAvailability($productSKU, 'EU');
+		}
+		if($optionAvailUS['amount'] > 0 || $optionAvailUS['amount'] == "Yes") $productAvailUS = "Yes";
+		if($optionAvailCA['amount'] > 0 || $optionAvailCA['amount'] == "Yes") $productAvailCA = "Yes";
+		if($optionAvailEUR['amount'] > 0 || $optionAvailEUR['amount'] == "Yes") $productAvailEUR = "Yes";		
 ?>
 
 			<section class="product-main">
@@ -61,13 +108,17 @@ Template Name: Accessories Detail
 						<div class="product-available">
 							<div class="form">
 								<select class="product-variation input-text hide">
-									<option value="<?php echo $productSKU; ?>" title="<?php the_title(); ?>" class="selectable-option" data-avail-us="<?php echo $productAvailUS; ?>" data-avail-ca="<?php echo $productAvailCA; ?>" data-avail-eur="<?php echo $productAvailEUR; ?>"><?php the_title(); ?></option>
+									<option value="<?php echo $productSKU; ?>" title="<?php the_title(); ?>" class="selectable-option" data-avail-us="<?php echo $optionAvailUS['amount']; ?>" data-avail-ca="<?php echo $optionAvailCA['amount']; ?>" data-avail-eur="<?php echo $optionAvailEUR['amount']; ?>"><?php the_title(); ?></option>
 								</select><button class="add-to-cart btn-submit visible">Add to Cart</button>
 							</div><!-- .form -->
 							<div class="loading hidden"></div>
 							<div class="failure hidden">
 								<p class="small">There has been an error adding the item to your cart. Try again later or <a href="/contact/">contact us</a> if the problem persists.</p>
 							</div><!-- .failure -->
+							<div class="available-alert">
+								<p class="small low-inventory"><span>Product Alert:</span> Currently less than 10 available.</p>
+								<p class="small no-inventory"><span>Product Alert:</span> We are currently out of stock on this item in our warehouse, but we can check with our dealer network to see if they can fulfill this order.</p>
+							</div><!-- .available-alert -->
 						</div><!-- .product-available -->
 						<div class="product-unavailable">
 							<p>Item is currently not available online.</p>

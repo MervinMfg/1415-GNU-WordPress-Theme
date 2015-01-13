@@ -213,10 +213,11 @@
                             "multiple": 0,
                             "allow_null": 0,
                             "choices": {
+                                "Inventory": "Inventory",
                                 "Yes": "Yes",
                                 "No": "No"
                             },
-                            "default_value": "Yes",
+                            "default_value": "Inventory",
                             "layout": "vertical",
                             "other_choice": 0,
                             "save_other_choice": 0
@@ -238,10 +239,11 @@
                             "multiple": 0,
                             "allow_null": 0,
                             "choices": {
+                                "Inventory": "Inventory",
                                 "Yes": "Yes",
                                 "No": "No"
                             },
-                            "default_value": "Yes",
+                            "default_value": "Inventory",
                             "layout": "vertical",
                             "other_choice": 0,
                             "save_other_choice": 0
@@ -261,12 +263,13 @@
                                 "id": ""
                             },
                             "choices": {
+                                "Inventory": "Inventory",
                                 "Yes": "Yes",
                                 "No": "No"
                             },
                             "other_choice": 0,
                             "save_other_choice": 0,
-                            "default_value": "Yes",
+                            "default_value": "Inventory",
                             "layout": "vertical"
                         }
                     ]

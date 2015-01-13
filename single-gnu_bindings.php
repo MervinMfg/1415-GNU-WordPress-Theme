@@ -352,6 +352,47 @@ Template Name: Bindings Detail
 				endif;
 			?>
 
+
+
+
+			<?php
+				$snowboards = get_field('gnu_binding_collab');
+				if( $snowboards ):
+			?>
+			<section id="collaboration">
+				<div class="product-collab<?php if( $videoID ){ echo " video-active"; } ?>">
+					<div class="section-content">
+						<div class="collab-wrapper">
+							<?php
+								// get each related product
+								foreach( $snowboards as $snowboard):
+									$postType = $snowboard->post_type;
+									// check which image size to use based on post type
+									$snowboardImage = get_field('gnu_product_image', $snowboard->ID);
+									$snowboardLink = get_permalink($snowboard->ID);
+									$snowboardTitle = get_the_title($snowboard->ID);
+									// render out co-lab product
+							?>
+							<a href="<?php echo $snowboardLink; ?>" class="collab-link">
+								<div class="collab-image">
+									<img src="<?php echo get_template_directory_uri(); ?>/_/img/square.gif" data-src="<?php echo $snowboardImage['sizes']['square-medium']; ?>" alt="<?php echo $snowboardImage['alt']; ?>" class="lazy" />
+								</div>
+								<div class="collab-details">
+									<h4>Co - Lab Snowboard</h4>
+									<h3><?php echo $snowboardTitle; ?></h3>
+									<button class="btn-submit">Buy</button>
+								</div>
+								<div class="clearfix"></div>
+							</a>
+							<?php endforeach; ?>
+						</div>
+					</div>
+				</div><!-- .product-collab -->
+			</section>
+			<?php endif; ?>
+
+
+
 			<?php comments_template(); ?>
 
 			<?php include get_template_directory() . '/_/inc/modules/featured-products.php'; ?>

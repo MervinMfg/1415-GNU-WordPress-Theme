@@ -72,13 +72,16 @@ Template Name: Product Overview
 								for ($i = 0; $i < count($optionVariations); $i++) {
 									$variationWidth = $optionVariations[$i]['gnu_snowboard_options_variations_width'];
 									$variationLength = $optionVariations[$i]['gnu_snowboard_options_variations_length'];
+									$variationSKU = $optionVariations[$i]['gnu_snowboard_options_variations_sku'];
 									// grab availability
 									$variationAvailUS = $optionVariations[$i]['gnu_snowboard_options_variations_availability_us'];
 									$variationAvailCA = $optionVariations[$i]['gnu_snowboard_options_variations_availability_ca'];
 									$variationAvailEUR = $optionVariations[$i]['gnu_snowboard_options_variations_availability_eur'];
-									if($variationAvailUS == "Yes") $availUS = "Yes";
-									if($variationAvailCA == "Yes") $availCA = "Yes";
-									if($variationAvailEUR == "Yes") $availEUR = "Yes";
+									$variationAvailEURAmount = getProductAvailability($variationSKU, 'EU');
+									if($variationAvailUS != "No") $availUS = "Yes";
+									if($variationAvailCA != "No") $availCA = "Yes";
+									// snowboards in europe are handled as direct
+									if($variationAvailEUR != "No" && $variationAvailEURAmount['amount'] > 0) $availEUR = "Yes";
 									// setup readable short form of length and width
 									if($variationWidth == "Standard"){
 										$sizeFilters .= str_replace('.', '_', $variationLength) . " ";
@@ -280,13 +283,16 @@ Template Name: Product Overview
 								for ($i = 0; $i < count($optionVariations); $i++) {
 									$variationWidth = $optionVariations[$i]['gnu_snowboard_options_variations_width'];
 									$variationLength = $optionVariations[$i]['gnu_snowboard_options_variations_length'];
+									$variationSKU = $optionVariations[$i]['gnu_snowboard_options_variations_sku'];
 									// grab availability
 									$variationAvailUS = $optionVariations[$i]['gnu_snowboard_options_variations_availability_us'];
 									$variationAvailCA = $optionVariations[$i]['gnu_snowboard_options_variations_availability_ca'];
 									$variationAvailEUR = $optionVariations[$i]['gnu_snowboard_options_variations_availability_eur'];
-									if($variationAvailUS == "Yes") $availUS = "Yes";
-									if($variationAvailCA == "Yes") $availCA = "Yes";
-									if($variationAvailEUR == "Yes") $availEUR = "Yes";
+									$variationAvailEURAmount = getProductAvailability($variationSKU, 'EU');
+									if($variationAvailUS != "No") $availUS = "Yes";
+									if($variationAvailCA != "No") $availCA = "Yes";
+									// snowboards in europe are handled as direct
+									if($variationAvailEUR != "No" && $variationAvailEURAmount['amount'] > 0) $availEUR = "Yes";
 									// setup readable short form of length and width
 									$sizeFilters .= str_replace('.', '_', $variationLength) . " ";
 									array_push($length, $variationLength);
@@ -497,13 +503,54 @@ Template Name: Product Overview
 									// loop through variations
 									if ($optionVariations) :
 										for ($i = 0; $i < count($optionVariations); $i++) {
+											$variationSKU = $optionVariations[$i]['gnu_binding_options_variations_sku'];
 											// grab availability
 											$variationAvailUS = $optionVariations[$i]['gnu_binding_options_variations_availability_us'];
 											$variationAvailCA = $optionVariations[$i]['gnu_binding_options_variations_availability_ca'];
 											$variationAvailEUR = $optionVariations[$i]['gnu_binding_options_variations_availability_eur'];
-											if($variationAvailUS == "Yes") $availUS = "Yes";
-											if($variationAvailCA == "Yes") $availCA = "Yes";
-											if($variationAvailEUR == "Yes") $availEUR = "Yes";
+											// check availability based on overrides in WP Admin
+											switch ($variationAvailUS) {
+												case "Inventory":
+													$variationAvailUS = getProductAvailability($variationSKU, 'US');
+													break;
+												case "Yes":
+													$variationAvailUS = Array('amount' => "Yes");
+													break;
+												case "No":
+													$variationAvailUS = Array('amount' => "No");
+													break;
+												default:
+													$variationAvailUS = getProductAvailability($variationSKU, 'US');
+											}
+											switch ($variationAvailCA) {
+												case "Inventory":
+													$variationAvailCA = getProductAvailability($variationSKU, 'CA');
+													break;
+												case "Yes":
+													$variationAvailCA = Array('amount' => "Yes");
+													break;
+												case "No":
+													$variationAvailCA = Array('amount' => "No");
+													break;
+												default:
+													$variationAvailCA = getProductAvailability($variationSKU, 'CA');
+											}
+											switch ($variationAvailEUR) {
+												case "Inventory":
+													$variationAvailEUR = getProductAvailability($variationSKU, 'EU');
+													break;
+												case "Yes":
+													$variationAvailEUR = Array('amount' => "Yes");
+													break;
+												case "No":
+													$variationAvailEUR = Array('amount' => "No");
+													break;
+												default:
+													$variationAvailEUR = getProductAvailability($variationSKU, 'EU');
+											}
+											if($variationAvailUS['amount'] > 0 || $variationAvailUS['amount'] == "Yes") $availUS = "Yes";
+											if($variationAvailCA['amount'] > 0 || $variationAvailCA['amount'] == "Yes") $availCA = "Yes";
+											if($variationAvailEUR['amount'] > 0 || $variationAvailEUR['amount'] == "Yes") $availEUR = "Yes";
 										}
 									endif;
 								endwhile;
@@ -629,13 +676,54 @@ Template Name: Product Overview
 									// loop through variations
 									if ($optionVariations) :
 										for ($i = 0; $i < count($optionVariations); $i++) {
+											$variationSKU = $optionVariations[$i]['gnu_binding_options_variations_sku'];
 											// grab availability
 											$variationAvailUS = $optionVariations[$i]['gnu_binding_options_variations_availability_us'];
 											$variationAvailCA = $optionVariations[$i]['gnu_binding_options_variations_availability_ca'];
 											$variationAvailEUR = $optionVariations[$i]['gnu_binding_options_variations_availability_eur'];
-											if($variationAvailUS == "Yes") $availUS = "Yes";
-											if($variationAvailCA == "Yes") $availCA = "Yes";
-											if($variationAvailEUR == "Yes") $availEUR = "Yes";
+											// check availability based on overrides in WP Admin
+											switch ($variationAvailUS) {
+												case "Inventory":
+													$variationAvailUS = getProductAvailability($variationSKU, 'US');
+													break;
+												case "Yes":
+													$variationAvailUS = Array('amount' => "Yes");
+													break;
+												case "No":
+													$variationAvailUS = Array('amount' => "No");
+													break;
+												default:
+													$variationAvailUS = getProductAvailability($variationSKU, 'US');
+											}
+											switch ($variationAvailCA) {
+												case "Inventory":
+													$variationAvailCA = getProductAvailability($variationSKU, 'CA');
+													break;
+												case "Yes":
+													$variationAvailCA = Array('amount' => "Yes");
+													break;
+												case "No":
+													$variationAvailCA = Array('amount' => "No");
+													break;
+												default:
+													$variationAvailCA = getProductAvailability($variationSKU, 'CA');
+											}
+											switch ($variationAvailEUR) {
+												case "Inventory":
+													$variationAvailEUR = getProductAvailability($variationSKU, 'EU');
+													break;
+												case "Yes":
+													$variationAvailEUR = Array('amount' => "Yes");
+													break;
+												case "No":
+													$variationAvailEUR = Array('amount' => "No");
+													break;
+												default:
+													$variationAvailEUR = getProductAvailability($variationSKU, 'EU');
+											}
+											if($variationAvailUS['amount'] > 0 || $variationAvailUS['amount'] == "Yes") $availUS = "Yes";
+											if($variationAvailCA['amount'] > 0 || $variationAvailCA['amount'] == "Yes") $availCA = "Yes";
+											if($variationAvailEUR['amount'] > 0 || $variationAvailEUR['amount'] == "Yes") $availEUR = "Yes";
 										}
 									endif;
 								endwhile;
@@ -766,13 +854,54 @@ Template Name: Product Overview
 							$availEUR = "No";
 							if (get_field('gnu_apparel_variations')) :
 								while(the_repeater_field('gnu_apparel_variations')):
-									// grab availability
+									$optionSKU = get_sub_field('gnu_apparel_variations_sku');
+									// grab availability overwrite
 									$optionAvailUS = get_sub_field('gnu_apparel_variations_availability_us');
 									$optionAvailCA = get_sub_field('gnu_apparel_variations_availability_ca');
 									$optionAvailEUR = get_sub_field('gnu_apparel_variations_availability_eur');
-									if($optionAvailUS == "Yes") $availUS = "Yes";
-									if($optionAvailCA == "Yes") $availCA = "Yes";
-									if($optionAvailEUR == "Yes") $availEUR = "Yes";
+									// check availability based on overrides in WP Admin
+									switch ($optionAvailUS) {
+										case "Inventory":
+											$optionAvailUS = getProductAvailability($optionSKU, 'US');
+											break;
+										case "Yes":
+											$optionAvailUS = Array('amount' => "Yes");
+											break;
+										case "No":
+											$optionAvailUS = Array('amount' => "No");
+											break;
+										default:
+											$optionAvailUS = getProductAvailability($optionSKU, 'US');
+									}
+									switch ($optionAvailCA) {
+										case "Inventory":
+											$optionAvailCA = getProductAvailability($optionSKU, 'CA');
+											break;
+										case "Yes":
+											$optionAvailCA = Array('amount' => "Yes");
+											break;
+										case "No":
+											$optionAvailCA = Array('amount' => "No");
+											break;
+										default:
+											$optionAvailCA = getProductAvailability($optionSKU, 'CA');
+									}
+									switch ($optionAvailEUR) {
+										case "Inventory":
+											$optionAvailEUR = getProductAvailability($optionSKU, 'EU');
+											break;
+										case "Yes":
+											$optionAvailEUR = Array('amount' => "Yes");
+											break;
+										case "No":
+											$optionAvailEUR = Array('amount' => "No");
+											break;
+										default:
+											$optionAvailEUR = getProductAvailability($optionSKU, 'EU');
+									}
+									if($optionAvailUS['amount'] > 0 || $optionAvailUS['amount'] == "Yes") $availUS = "Yes";
+									if($optionAvailCA['amount'] > 0 || $optionAvailCA['amount'] == "Yes") $availCA = "Yes";
+									if($optionAvailEUR['amount'] > 0 || $optionAvailEUR['amount'] == "Yes") $availEUR = "Yes";
 								endwhile;
 							endif;
 							$colorways = Array();
@@ -906,13 +1035,54 @@ Template Name: Product Overview
 							$availEUR = "No";
 							if (get_field('gnu_apparel_variations')) :
 								while(the_repeater_field('gnu_apparel_variations')):
-									// grab availability
+									$optionSKU = get_sub_field('gnu_apparel_variations_sku');
+									// grab availability overwrite
 									$optionAvailUS = get_sub_field('gnu_apparel_variations_availability_us');
 									$optionAvailCA = get_sub_field('gnu_apparel_variations_availability_ca');
 									$optionAvailEUR = get_sub_field('gnu_apparel_variations_availability_eur');
-									if($optionAvailUS == "Yes") $availUS = "Yes";
-									if($optionAvailCA == "Yes") $availCA = "Yes";
-									if($optionAvailEUR == "Yes") $availEUR = "Yes";
+									// check availability based on overrides in WP Admin
+									switch ($optionAvailUS) {
+										case "Inventory":
+											$optionAvailUS = getProductAvailability($optionSKU, 'US');
+											break;
+										case "Yes":
+											$optionAvailUS = Array('amount' => "Yes");
+											break;
+										case "No":
+											$optionAvailUS = Array('amount' => "No");
+											break;
+										default:
+											$optionAvailUS = getProductAvailability($optionSKU, 'US');
+									}
+									switch ($optionAvailCA) {
+										case "Inventory":
+											$optionAvailCA = getProductAvailability($optionSKU, 'CA');
+											break;
+										case "Yes":
+											$optionAvailCA = Array('amount' => "Yes");
+											break;
+										case "No":
+											$optionAvailCA = Array('amount' => "No");
+											break;
+										default:
+											$optionAvailCA = getProductAvailability($optionSKU, 'CA');
+									}
+									switch ($optionAvailEUR) {
+										case "Inventory":
+											$optionAvailEUR = getProductAvailability($optionSKU, 'EU');
+											break;
+										case "Yes":
+											$optionAvailEUR = Array('amount' => "Yes");
+											break;
+										case "No":
+											$optionAvailEUR = Array('amount' => "No");
+											break;
+										default:
+											$optionAvailEUR = getProductAvailability($optionSKU, 'EU');
+									}
+									if($optionAvailUS['amount'] > 0 || $optionAvailUS['amount'] == "Yes") $availUS = "Yes";
+									if($optionAvailCA['amount'] > 0 || $optionAvailCA['amount'] == "Yes") $availCA = "Yes";
+									if($optionAvailEUR['amount'] > 0 || $optionAvailEUR['amount'] == "Yes") $availEUR = "Yes";
 								endwhile;
 							endif;
 							$colorways = Array();
@@ -1041,9 +1211,58 @@ Template Name: Product Overview
 								$categoryFilters .= $category->slug . " ";
 							}
 							$filterPrice = str_replace('.', '', get_field('gnu_product_price_us'));
-							$availUS = get_field('gnu_accessory_availability_us');
-							$availCA = get_field('gnu_accessory_availability_ca');
-							$availEUR = get_field('gnu_accessory_availability_eur');
+							$availUS = "No";
+							$availCA = "No";
+							$availEUR = "No";
+							// grab sku
+							$productSKU = get_field('gnu_accessory_sku');
+							// grab availability overwrite
+							$optionAvailUS = get_field('gnu_accessory_availability_us');
+							$optionAvailCA = get_field('gnu_accessory_availability_ca');
+							$optionAvailEUR = get_field('gnu_accessory_availability_eur');
+							// check availability based on overrides in WP Admin
+							switch ($optionAvailUS) {
+								case "Inventory":
+									$optionAvailUS = getProductAvailability($productSKU, 'US');
+									break;
+								case "Yes":
+									$optionAvailUS = Array('amount' => "Yes");
+									break;
+								case "No":
+									$optionAvailUS = Array('amount' => "No");
+									break;
+								default:
+									$optionAvailUS = getProductAvailability($productSKU, 'US');
+							}
+							switch ($optionAvailCA) {
+								case "Inventory":
+									$optionAvailCA = getProductAvailability($productSKU, 'CA');
+									break;
+								case "Yes":
+									$optionAvailCA = Array('amount' => "Yes");
+									break;
+								case "No":
+									$optionAvailCA = Array('amount' => "No");
+									break;
+								default:
+									$optionAvailCA = getProductAvailability($productSKU, 'CA');
+							}
+							switch ($optionAvailEUR) {
+								case "Inventory":
+									$optionAvailEUR = getProductAvailability($productSKU, 'EU');
+									break;
+								case "Yes":
+									$optionAvailEUR = Array('amount' => "Yes");
+									break;
+								case "No":
+									$optionAvailEUR = Array('amount' => "No");
+									break;
+								default:
+									$optionAvailEUR = getProductAvailability($productSKU, 'EU');
+							}
+							if($optionAvailUS['amount'] > 0 || $optionAvailUS['amount'] == "Yes") $availUS = "Yes";
+							if($optionAvailCA['amount'] > 0 || $optionAvailCA['amount'] == "Yes") $availCA = "Yes";
+							if($optionAvailEUR['amount'] > 0 || $optionAvailEUR['amount'] == "Yes") $availEUR = "Yes";
 					?>
 
 					<div class="product" data-categories="<?php echo $categoryFilters; ?>" data-price="<?php echo $filterPrice; ?>" data-avail-us="<?php echo $availUS; ?>" data-avail-ca="<?php echo $availCA; ?>" data-avail-eur="<?php echo $availEUR; ?>">

@@ -30,13 +30,53 @@ Template Name: Bindings Detail
 							$optionVariationSizes .= ", ";
 							$optionVariationSKUs .= ", ";
 						}
-						// grab availability
+						// grab availability overwrite
 						$variationAvailUS = $optionVariations[$i]['gnu_binding_options_variations_availability_us'];
 						$variationAvailCA = $optionVariations[$i]['gnu_binding_options_variations_availability_ca'];
 						$variationAvailEUR = $optionVariations[$i]['gnu_binding_options_variations_availability_eur'];
-						if($variationAvailUS == "Yes") $productAvailUS = "Yes";
-						if($variationAvailCA == "Yes") $productAvailCA = "Yes";
-						if($variationAvailEUR == "Yes") $productAvailEUR = "Yes";
+						// check availability based on overrides in WP Admin
+						switch ($variationAvailUS) {
+							case "Inventory":
+								$variationAvailUS = getProductAvailability($variationSKU, 'US');
+								break;
+							case "Yes":
+								$variationAvailUS = Array('amount' => "Yes");
+								break;
+							case "No":
+								$variationAvailUS = Array('amount' => "No");
+								break;
+							default:
+								$variationAvailUS = getProductAvailability($variationSKU, 'US');
+						}
+						switch ($variationAvailCA) {
+							case "Inventory":
+								$variationAvailCA = getProductAvailability($variationSKU, 'CA');
+								break;
+							case "Yes":
+								$variationAvailCA = Array('amount' => "Yes");
+								break;
+							case "No":
+								$variationAvailCA = Array('amount' => "No");
+								break;
+							default:
+								$variationAvailCA = getProductAvailability($variationSKU, 'CA');
+						}
+						switch ($variationAvailEUR) {
+							case "Inventory":
+								$variationAvailEUR = getProductAvailability($variationSKU, 'EU');
+								break;
+							case "Yes":
+								$variationAvailEUR = Array('amount' => "Yes");
+								break;
+							case "No":
+								$variationAvailEUR = Array('amount' => "No");
+								break;
+							default:
+								$variationAvailEUR = getProductAvailability($variationSKU, 'EU');
+						}
+						if($variationAvailUS['amount'] > 0 || $variationAvailUS['amount'] == "Yes") $productAvailUS = "Yes";
+						if($variationAvailCA['amount'] > 0 || $variationAvailCA['amount'] == "Yes") $productAvailCA = "Yes";
+						if($variationAvailEUR['amount'] > 0 || $variationAvailEUR['amount'] == "Yes") $productAvailEUR = "Yes";
 						array_push($bindings, Array('name' => $optionName, 'size' => $variationSize, 'sku' => $variationSKU, 'availUS' => $variationAvailUS, 'availCA' => $variationAvailCA, 'availEUR' => $variationAvailEUR));
 					}
 				endif;
@@ -152,7 +192,7 @@ Template Name: Bindings Detail
 								<select class="product-variation input-text">
 									<option value="-1">Select a Size</option>
 									<?php foreach ($bindings as $binding) : // render out bindings dropdown ?>
-									<option value="<?php echo $binding['sku']; ?>" title="<?php echo $binding['name']; ?>" class="selectable-option" data-avail-us="<?php echo $binding['availUS']; ?>" data-avail-ca="<?php echo $binding['availCA']; ?>" data-avail-eur="<?php echo $binding['availEUR']; ?>"><?php echo $binding['name'] . ' - ' . bindingSizeLookup($binding['size'], false); ?></option>
+									<option value="<?php echo $binding['sku']; ?>" title="<?php echo $binding['name']; ?>" class="selectable-option" data-avail-us="<?php echo $binding['availUS']['amount']; ?>" data-avail-ca="<?php echo $binding['availCA']['amount']; ?>" data-avail-eur="<?php echo $binding['availEUR']['amount']; ?>"><?php echo $binding['name'] . ' - ' . bindingSizeLookup($binding['size'], false); ?></option>
 									<?php endforeach; ?>
 								</select><button class="add-to-cart btn-submit visible">Add to Cart</button>
 							</div><!-- .form -->
@@ -160,6 +200,10 @@ Template Name: Bindings Detail
 							<div class="failure hidden">
 								<p class="small">There has been an error adding the item to your cart. Try again later or <a href="/contact/">contact us</a> if the problem persists.</p>
 							</div><!-- .failure -->
+							<div class="available-alert">
+								<p class="small low-inventory"><span>Product Alert:</span> Currently less than 10 available.</p>
+								<p class="small no-inventory"><span>Product Alert:</span> We are currently out of stock on this item in our warehouse, but we can check with our dealer network to see if they can fulfill this order.</p>
+							</div><!-- .available-alert -->
 						</div><!-- .product-available -->
 						<div class="product-unavailable">
 							<p>Item is currently not available online.</p>

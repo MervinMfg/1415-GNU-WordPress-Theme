@@ -755,6 +755,10 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-buy .product-available .loading { display: inline-block; }
 .product-buy .product-available .failure { padding: 0 20px; }
 .product-buy .product-available .form.hidden, .product-buy .product-available .loading.hidden, .product-buy .product-available .failure.hidden { display: none; }
+.product-buy .product-available .available-alert .low-inventory, .product-buy .product-available .available-alert .no-inventory { display: none; margin-bottom: 0.8em; }
+.product-buy .product-available .available-alert .low-inventory span, .product-buy .product-available .available-alert .no-inventory span { color: #FF3399; }
+.product-buy .product-available .available-alert.available-alert.low .low-inventory { display: block; }
+.product-buy .product-available .available-alert.available-alert.no .no-inventory { display: block; }
 .product-buy .product-unavailable { display: none; }
 .product-buy.available .product-available { display: block; }
 .product-buy.unavailable .product-unavailable { display: block; }

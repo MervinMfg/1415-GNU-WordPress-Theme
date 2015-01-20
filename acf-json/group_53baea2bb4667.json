@@ -18,6 +18,7 @@
             },
             "choices": {
                 "Directional": "Directional",
+                "Asym Directional": "Asym Directional",
                 "Directional Twin": "Directional Twin",
                 "True Twin": "True Twin",
                 "Asym Twin": "Asym Twin",

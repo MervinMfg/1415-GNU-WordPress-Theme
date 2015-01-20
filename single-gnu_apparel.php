@@ -16,13 +16,53 @@ Template Name: Apparel Detail
 				$optionSize = get_sub_field('gnu_apparel_variations_size');
 				$optionColor = get_sub_field('gnu_apparel_variations_color');
 				$optionSKU = get_sub_field('gnu_apparel_variations_sku');
-				// grab availability
+				// grab availability overwrite
 				$optionAvailUS = get_sub_field('gnu_apparel_variations_availability_us');
 				$optionAvailCA = get_sub_field('gnu_apparel_variations_availability_ca');
 				$optionAvailEUR = get_sub_field('gnu_apparel_variations_availability_eur');
-				if($optionAvailUS == "Yes") $productAvailUS = "Yes";
-				if($optionAvailCA == "Yes") $productAvailCA = "Yes";
-				if($optionAvailEUR == "Yes") $productAvailEUR = "Yes";
+				// check availability based on overrides in WP Admin
+				switch ($optionAvailUS) {
+					case "Inventory":
+						$optionAvailUS = getProductAvailability($optionSKU, 'US');
+						break;
+					case "Yes":
+						$optionAvailUS = Array('amount' => "Yes");
+						break;
+					case "No":
+						$optionAvailUS = Array('amount' => "No");
+						break;
+					default:
+						$optionAvailUS = getProductAvailability($optionSKU, 'US');
+				}
+				switch ($optionAvailCA) {
+					case "Inventory":
+						$optionAvailCA = getProductAvailability($optionSKU, 'CA');
+						break;
+					case "Yes":
+						$optionAvailCA = Array('amount' => "Yes");
+						break;
+					case "No":
+						$optionAvailCA = Array('amount' => "No");
+						break;
+					default:
+						$optionAvailCA = getProductAvailability($optionSKU, 'CA');
+				}
+				switch ($optionAvailEUR) {
+					case "Inventory":
+						$optionAvailEUR = getProductAvailability($optionSKU, 'EU');
+						break;
+					case "Yes":
+						$optionAvailEUR = Array('amount' => "Yes");
+						break;
+					case "No":
+						$optionAvailEUR = Array('amount' => "No");
+						break;
+					default:
+						$optionAvailEUR = getProductAvailability($optionSKU, 'EU');
+				}
+				if($optionAvailUS['amount'] > 0 || $optionAvailUS['amount'] == "Yes") $productAvailUS = "Yes";
+				if($optionAvailCA['amount'] > 0 || $optionAvailCA['amount'] == "Yes") $productAvailCA = "Yes";
+				if($optionAvailEUR['amount'] > 0 || $optionAvailEUR['amount'] == "Yes") $productAvailEUR = "Yes";
 				array_push($apparelVariations, Array('size' => $optionSize, 'color' => $optionColor, 'sku' => $optionSKU, 'availUS' => $optionAvailUS, 'availCA' => $optionAvailCA, 'availEUR' => $optionAvailEUR));
 			endwhile;
 		endif;
@@ -138,7 +178,7 @@ Template Name: Apparel Detail
 								<select class="product-variation input-text">
 									<option value="-1">Select a Size</option>
 									<?php foreach ($apparelVariations as $apparelVariation) : // render out apparel dropdown ?>
-									<option value="<?php echo $apparelVariation['sku']; ?>" title="<?php echo $apparelVariation['color'] . ' - ' . $apparelVariation['size']; ?>" class="selectable-option" data-avail-us="<?php echo $apparelVariation['availUS']; ?>" data-avail-ca="<?php echo $apparelVariation['availCA']; ?>" data-avail-eur="<?php echo $apparelVariation['availEUR']; ?>"><?php echo $apparelVariation['color'] . ' - ' . $apparelVariation['size']; ?></option>
+									<option value="<?php echo $apparelVariation['sku']; ?>" title="<?php echo $apparelVariation['color'] . ' - ' . $apparelVariation['size']; ?>" class="selectable-option" data-avail-us="<?php echo $apparelVariation['availUS']['amount']; ?>" data-avail-ca="<?php echo $apparelVariation['availCA']['amount']; ?>" data-avail-eur="<?php echo $apparelVariation['availEUR']['amount']; ?>"><?php echo $apparelVariation['color'] . ' - ' . $apparelVariation['size']; ?></option>
 									<?php endforeach; ?>
 								</select><button class="add-to-cart btn-submit visible">Add to Cart</button>
 							</div><!-- .form -->
@@ -146,6 +186,10 @@ Template Name: Apparel Detail
 							<div class="failure hidden">
 								<p class="small">There has been an error adding the item to your cart. Try again later or <a href="/contact/">contact us</a> if the problem persists.</p>
 							</div><!-- .failure -->
+							<div class="available-alert">
+								<p class="small low-inventory"><span>Product Alert:</span> Currently less than 10 available.</p>
+								<p class="small no-inventory"><span>Product Alert:</span> We are currently out of stock on this item in our warehouse, but we can check with our dealer network to see if they can fulfill this order.</p>
+							</div><!-- .available-alert -->
 						</div><!-- .product-available -->
 						<div class="product-unavailable">
 							<p>Item is currently not available online.</p>

@@ -1,0 +1,184 @@
+/* ==========================================================================
+   COMPONENTS/_SNOWBOARD-FINDER.SCSS
+   ========================================================================== */
+
+.page-template-snowboard-finder {
+	.product-utility {
+		width: 100%;
+		height: 40px;
+		background: url(../img/bg-black-triangles-filter.png);
+	}
+	.content-wrapper {
+		.content-top {
+			max-width: $breakpoint-large;
+			margin: 0 auto;
+
+			.finder-step {
+				padding-bottom: 40px;
+
+				h3 {
+					text-transform: uppercase;
+
+					&.title {
+						text-align: center;
+						padding: 40px 0;
+					}
+				}
+				.step-selection-list {
+					li {
+						.selection-title {
+							display: block;
+							text-align: center;
+							margin-bottom: 20px;
+						}
+						.last {
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+			.bf-step-2 {
+				.control-input {
+					text-align: center;
+
+					input {
+						width: 75%;
+						margin: 10px 0 20px 0;
+					}
+				}
+				.measurement-options {
+					text-align: center;
+					padding-top: 25px;
+
+					input {
+						margin-right: 10px;
+
+						&.right {
+							margin-left: 30px;
+						}
+					}
+				}
+			}
+			.bf-step-3 {
+				.step-selection-list {
+					li {
+						.last {
+							padding-bottom: 40px;
+						}
+					}
+				}
+			}
+			.btn-submit {
+				font-size: 4em;
+				padding: 0 40px;
+				display: block;
+				margin: 0 auto 60px auto;
+
+				&:hover,
+				&:focus {
+					background-color: $blue;
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-small) {
+	.page-template-snowboard-finder {
+		.content-wrapper {
+			.content-top {
+				.bf-step-2 {
+					.control-input {
+						input {
+							width: 50%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-medium) {
+	.page-template-snowboard-finder {
+		.content-wrapper {
+			.content-top {
+				.finder-step {
+					width: 33%;
+					display: inline-block;
+					vertical-align: top;
+
+					.h2 {
+						font-size: 3em;
+					}
+					h3 {
+						font-size: 2em;
+
+						&.title {
+							font-size: 2.4em;
+							padding: 80px 0 60px 0;
+						}
+					}
+				}
+				.bf-step-2 {
+					.control-input {
+						input {
+							width: 90%;
+							margin-bottom: 30px;
+						}
+					}
+					.measurement-options {
+						padding-top: 30px;
+					}
+				}
+				.bf-step-3 {
+					.finder-step-content {
+						.step-selection-list {
+							li {
+								.last {
+									padding-bottom: 60px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-large) {
+
+	.page-template-snowboard-finder {
+		.content-wrapper {
+			.content-top {
+				.bf-step-1 {
+					.finder-step-content {
+						.step-selection-list {
+
+							li {
+								width: 49%;
+								height: 400px;
+								display: inline-block;
+							}
+
+							.mens {
+								width: 100%;
+								height: 100%;
+								background: url('../img/board-finder/mens-bg-image.png') top center no-repeat;
+								background-size: auto 100%;
+								margin-bottom: 0;
+								padding-top: 135px;
+							}
+							.womens {
+								width:100%;
+								height: 100%;
+								background: url('../img/board-finder/womens-bg-image.png') top center no-repeat;
+								background-size: auto 100%;
+								margin-bottom: 0;
+								padding-top: 135px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

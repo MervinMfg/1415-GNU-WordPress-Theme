@@ -58,6 +58,8 @@ GNU.Main = {
 			self.sparePartsInit();
 		} else if ($body.hasClass('page-template-page-templatessnowboard-specifications-php')) {
 			self.specificationsInit();
+		} else if ($body.hasClass('page-template-snowboard-finder')) {
+			self.snowboardFinderInit();
 		} else if ($body.hasClass('page-template-page-templatesfaq-php')) {
 			self.faqInit();
 		} else if ($body.hasClass('blog') || $body.hasClass('archive')) {
@@ -70,7 +72,7 @@ GNU.Main = {
 			self.error404Init();
 		} else if ($body.hasClass('page-template-default')) {
 			self.defaultPageInit();
-		}
+		} 
 	},
 	homeInit: function () {
 		var self = this;
@@ -202,6 +204,14 @@ GNU.Main = {
 		});
 	},
 	specificationsInit: function() {	
+		var self = this;
+		// grab all section headers and assign correct scrolling
+		$('.section-header').each(function (index) {
+			new GNU.SectionHeader($(this), self.config.scrollController);
+		});
+		new GNU.Specifications(self.config.scrollController);
+	},
+	snowboardFinderInit: function() {	
 		var self = this;
 		// grab all section headers and assign correct scrolling
 		$('.section-header').each(function (index) {

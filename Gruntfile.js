@@ -13,6 +13,7 @@ module.exports = function (grunt) {
 		'_/js/lib/owl.carousel-2.0.0.js',
 		'_/js/lib/underscore-1.6.0.js',
 		'_/js/lib/clamp-0.5.1.js',
+		'_/js/lib/jquery.ui-1.11.2.js',
 		'_/js/gnu.main.js',
 		'_/js/modules/*.js',
 		'_/js/components/*.js'

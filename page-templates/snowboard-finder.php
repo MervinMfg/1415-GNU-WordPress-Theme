@@ -14,76 +14,53 @@ Template Name: Snowboard Finder
 			</div>
 			<div class="vibe vibe-1"></div>
 		</header>
-
+		
 		<div class="product-utility"></div>
 		
 		<div class="content-wrapper">
 			<div class="content-top">
 				<section class="bf-step-1 finder-step">
-					<h3 class="title">Step 1</h3>
+					<h4 class="title">Gender</h3>
 					<div class="finder-step-content">
 						<ul class="step-selection-list">
-							<li><a href="#" class="selection-title h2 mens">Mens</a></li>
-							<li><a href="#" class="selection-title h2 last womens">Womens</a></li>
+							<li><a href="#" class="selection-title bold-black mens">Mens</a></li>
+							<li><a href="#" class="selection-title bold-black last womens">Womens</a></li>
 						</ul>
 					</div>
 				</section><!-- .bf-step-1 -->
 				<section class="bf-step-2 finder-step">
-					<h3 class="title">Step 2</h3>
+					<h4 class="title">Type</h3>
 					<div class="finder-step-content">
-						<div class="control-input weight">
-							<h3 class="control-title">Weight:</h3>
-							<input type="range" min="0" max="100" value="50" step="5" list="none">
-							<datalist id="tickmarks">
-								<option>0</option>
-								<option>5</option>
-								<option>10</option>
-								<option>15</option>
-								<option>20</option>
-								<option>25</option>
-								<option>30</option>
-								<option>35</option>
-								<option>40</option>
-								<option>45</option>
-								<option>50</option>
-								<option>55</option>
-								<option>60</option>
-								<option>65</option>
-								<option>70</option>
-								<option>75</option>
-								<option>80</option>
-								<option>85</option>
-								<option>90</option>
-								<option>95</option>
-								<option>100</option>
-							</datalist>
+						<div class="slider-weight-wrapper">
+							<p class="control-title bold">Weight: <span class="weight-result h5"></span></p>
+							<div  class="slider-weight" class="control-input weight"></div>
 						</div>
-						<div class="control-input height">
-							<h3 class="control-title">Height:</h3>
-							<input type="range" min="0" max="100" value="50" step="10">
+						<div class="slider-height-wrapper">
+							<p class="control-title bold">Height: <span class="height-result h5"></span></p>
+							<div class="slider-height" class="control-input height"></div>
 						</div>
-						<div class="control-input boot">
-							<h3 class="control-title">Boot Size:</h3>
-							<input type="range" min="0" max="100" value="50" step="10">
+						<div class="slider-boot-wrapper">
+							<p class="control-title bold">Boot Size: <span class="boot-result h5"></span></p>
+							<div class="slider-boot" class="control-input boot"></div>
 						</div>
 						<div class="measurement-options">
-							<input type="radio" name="measurements" value="imperial" class="h3"><label for="imperial" class="h4">Imperial</label>
+							<input type="radio" name="measurements" value="imperial" class="h3" checked><label for="imperial" class="h4">Imperial</label>
 							<input type="radio" name="measurements" value="metric" class="h3 right"><label for="metric" class="h4">Metric</label>
 						</div>
 					</div>
 				</section><!-- .bf-step-2 -->
 				<section class="bf-step-3 finder-step">
-					<h3 class="title">Step 3</h3>
+					<h4 class="title">Style</h3>
 					<div class="finder-step-content">
 						<ul class="step-selection-list">
-							<li><a href="#" class="selection-title h2">Beginner</a></li>
-							<li><a href="#" class="selection-title h2">Intermediate</a></li>
-							<li><a href="#" class="selection-title h2 last">Advanced</a></li>
+							<li><a href="#" class="selection-title bold-black">Beginner</a></li>
+							<li><a href="#" class="selection-title bold-black">Intermediate</a></li>
+							<li><a href="#" class="selection-title bold-black last">Advanced</a></li>
 						</ul>
 						<ul class="step-selection-list">
-							<li><a href="#" class="selection-title h2">Freeride</a></li>
-							<li><a href="#" class="selection-title h2">Freestyle</a></li>
-							<li><a href="#" class="selection-title h2 last">Powder</a></li>
+							<li><a href="#" class="selection-title bold-black">Freeride</a></li>
+							<li><a href="#" class="selection-title bold-black">Freestyle</a></li>
+							<li><a href="#" class="selection-title bold-black last">Powder</a></li>
 						</ul>
 					</div>
 				</section><!-- .bf-step-3 -->
@@ -108,3 +85,54 @@ Template Name: Snowboard Finder
 	endwhile; endif;
 	get_footer();
 ?>
+
+<script>
+	// board finder weight slider
+	$(function() {
+		$( ".slider-weight" ).slider({
+			min: 0,
+			max: 300,
+			value:150,
+			step: 5,
+			slide: function( event, ui ) {
+				$( ".control-title .weight-result" ).html( ui.value );
+			}
+		});
+		var value = $( ".slider-weight" ).slider( "value" );
+		$( ".control-title .weight-result" ).html( value );
+	});
+
+	// board finder height slider
+	function toInches(n) {
+		return Math.floor(n /12) + "' " + (n % 12) + '"';
+	}
+
+	$(function(){
+		$(".slider-height").slider({
+			min: 45,
+			max: 85,
+			value: 65,
+			slide: function( event, ui ) {
+				$( ".control-title .height-result" ).html(toInches( ui.value ));
+			}
+		});
+		var value = $( ".slider-height" ).slider( "value" );
+		$( ".control-title .height-result" ).html( toInches( value ));
+	});
+
+	// board finder boot slider
+	$(function() {
+		$( ".slider-boot" ).slider({
+			min: 4,
+			max: 16,
+			value: 10,
+			step: .5,
+			slide: function( event, ui ) {
+				$( ".control-title .boot-result" ).html( ui.value );
+			}
+		});
+		var value = $( ".slider-boot" ).slider( "value" );
+		$( ".control-title .boot-result" ).html( value );
+	});
+</script>
+

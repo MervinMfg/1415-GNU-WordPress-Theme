@@ -16,12 +16,45 @@
 			.finder-step {
 				padding-bottom: 40px;
 
-				h3 {
+				h4 {
 					text-transform: uppercase;
 
 					&.title {
 						text-align: center;
 						padding: 40px 0;
+					}
+				}
+				.finder-step-content {
+					text-align: center;
+
+					.control-title {
+						font-family: $neuronExtraBold;
+						display: inline-block;
+						margin-bottom: 0;
+						line-height: 1;
+
+						.weight-result,
+						.height-result,
+						.boot-result {
+							display: inline-block;
+							padding-left: 10px;
+							font-size: 1em;
+						}
+					}
+					.slider-weight,
+					.slider-height,
+					.slider-boot {
+						margin: 10px 0 30px 0;
+					}
+					.slider-weight {
+						.ui-state-hover,
+						.ui-widget-content .ui-state-hover,
+						.ui-widget-header .ui-state-hover,
+						.ui-state-focus,
+						.ui-widget-content .ui-state-focus,
+						.ui-widget-header .ui-state-focus {
+							color: $pink;
+						}
 					}
 				}
 				.step-selection-list {
@@ -38,6 +71,10 @@
 				}
 			}
 			.bf-step-2 {
+				.finder-step-content {
+					width: 60%;
+					margin: 0 auto;
+				}
 				.control-input {
 					text-align: center;
 
@@ -109,16 +146,14 @@
 					.h2 {
 						font-size: 3em;
 					}
-					h3 {
-						font-size: 2em;
-
-						&.title {
-							font-size: 2.4em;
-							padding: 80px 0 60px 0;
-						}
-					}
+				 	.title {
+				 		padding: 80px 0 60px 0;
+				 	}
 				}
 				.bf-step-2 {
+					.finder-step-content {
+						width: 95%;
+					}
 					.control-input {
 						input {
 							width: 90%;
@@ -158,7 +193,6 @@
 								height: 400px;
 								display: inline-block;
 							}
-
 							.mens {
 								width: 100%;
 								height: 100%;
@@ -176,6 +210,11 @@
 								padding-top: 135px;
 							}
 						}
+					}
+				}
+				.bf-step-2 {
+					.finder-step-content {
+						width: 80%;
 					}
 				}
 			}

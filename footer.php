@@ -109,7 +109,7 @@
 							<h3>Support</h3>
 							<ul class="nav-menu">
 								<li class="menu-item"><a href="/support/contact/">Contact</a></li>
-								<li class="menu-item"><a href="http://www.mervin.com/support/register/" target="_blank">Register</a></li>
+								<li class="menu-item"><a href="/support/register/">Register</a></li>
 								<li class="menu-item"><a href="/support/warranty/">Warranty</a></li>
 								<!-- <li class="menu-item"><a href="/support/faq/">Faq</a></li> -->
 								<li class="menu-item"><a href="/support/binding-manual/">Binding Manual</a></li>

@@ -198,7 +198,7 @@ Template Name: Bindings Detail
 							</div><!-- .form -->
 							<div class="loading hidden"></div>
 							<div class="failure hidden">
-								<p class="small">There has been an error adding the item to your cart. Try again later or <a href="/contact/">contact us</a> if the problem persists.</p>
+								<p class="small">There has been an error adding the item to your cart. Try again later or <a href="/support/contact/">contact us</a> if the problem persists.</p>
 							</div><!-- .failure -->
 							<div class="available-alert">
 								<p class="small low-inventory"><span>Product Alert:</span> Currently less than 10 available.</p>

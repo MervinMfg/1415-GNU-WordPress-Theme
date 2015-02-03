@@ -27,7 +27,7 @@ Template Name: About
 			<section class="about-section about-partners">
 				<h2 class="title">Partners</h2>
 				<div class="content">
-					<p>Gnu is proud to work with these partners and sponsorship programs. Below is a list of our featured partners. If you’re interested in partnering with Gnu, <a href="http://www.mervin.com/contact/" target="_blank">contact us here</a>.</p>
+					<p>Gnu is proud to work with these partners and sponsorship programs. Below is a list of our featured partners. If you’re interested in partnering with Gnu, <a href="/support/contact/">contact us here</a>.</p>
 					<ul class="partners-list">
 						<?php
 							// get full list of partners and render logos

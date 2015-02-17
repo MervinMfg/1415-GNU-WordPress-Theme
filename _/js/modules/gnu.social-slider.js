@@ -67,37 +67,39 @@ GNU.SocialSlider.prototype = {
 				url: '/feeds/facebook/?username=' + self.config.facebookUsername + '&limit=16',
 				success: function (postsJSON) {
 					var postsData;
-					postsData = postsJSON.data;
-					for (var i = 0; i < postsData.length; i++) {
-						var postData, postItem;
-						postData = postsData[i];
-						if (postData.type != "status") {
-							var postDate, monthArray, postImage, postMessage;
-							// process date stamp
-							postDate = postData.created_time;
-							monthArray = {
-								Jan: "January", Feb: "February", Mar: "March", Apr: "April", May: "May", Jun: "June", Jul: "July", Aug: "August", Sep: "September", Oct: "October", Nov: "November", Dec: "December"
-							};
-							// make friendly for Safari and IE
-							postDate = postDate.replace(/-/g, '/').replace(/T/, ' ').replace(/\+/, ' +');
-							// create date string
-							postDate = String(new Date(postDate)).replace(
-								/\w{3} (\w{3}) (\d{2}) (\d{4}) (\d{2}):(\d{2}):[^(]+\(([A-Z]{3})\)/,
-								function ($0, $1, $2, $3, $4, $5, $6) {
-									return monthArray[$1] + " " + $2 + ", " + $3; //+ " - " + $4%12 + ":" + $5 + ( + $4 > 12 ? "PM" : "AM") + " " + $6 hide time and date
-								}
-							);
-							// if still invalid, make it blank
-							if(postDate == "Invalid Date") postDate = "";
-							// get larger picture
-							postImage = postData.picture;
-							postImage = postImage.replace("_s", "_n");
-							// get message
-							postMessage = postData.message;
-							if(postMessage === undefined) postMessage = "";
-							// set up facebook item
-							postItem = '<a href="' + postData.link + '" target="_blank"><div class="item-icon"><div class="icon"></div></div><div class="item-photo"><img src="' + GNU.Main.config.wpImgPath + 'square.gif" alt="" class="lazy" data-src="' + postImage + '" /></div><div class="item-copy"><p class="fb-page">' + postData.from.name + ' on Facebook</p><p class="fb-date">' + postDate + '</p><p class="fb-excerpt">' + postMessage + '</p></div></a>';
-							self.config.facebookPosts.push(postItem);
+					if (postsJSON.data) {
+						postsData = postsJSON.data;
+						for (var i = 0; i < postsData.length; i++) {
+							var postData, postItem;
+							postData = postsData[i];
+							if (postData.type != "status") {
+								var postDate, monthArray, postImage, postMessage;
+								// process date stamp
+								postDate = postData.created_time;
+								monthArray = {
+									Jan: "January", Feb: "February", Mar: "March", Apr: "April", May: "May", Jun: "June", Jul: "July", Aug: "August", Sep: "September", Oct: "October", Nov: "November", Dec: "December"
+								};
+								// make friendly for Safari and IE
+								postDate = postDate.replace(/-/g, '/').replace(/T/, ' ').replace(/\+/, ' +');
+								// create date string
+								postDate = String(new Date(postDate)).replace(
+									/\w{3} (\w{3}) (\d{2}) (\d{4}) (\d{2}):(\d{2}):[^(]+\(([A-Z]{3})\)/,
+									function ($0, $1, $2, $3, $4, $5, $6) {
+										return monthArray[$1] + " " + $2 + ", " + $3; //+ " - " + $4%12 + ":" + $5 + ( + $4 > 12 ? "PM" : "AM") + " " + $6 hide time and date
+									}
+								);
+								// if still invalid, make it blank
+								if(postDate == "Invalid Date") postDate = "";
+								// get larger picture
+								postImage = postData.picture;
+								postImage = postImage.replace("_s", "_n");
+								// get message
+								postMessage = postData.message;
+								if(postMessage === undefined) postMessage = "";
+								// set up facebook item
+								postItem = '<a href="' + postData.link + '" target="_blank"><div class="item-icon"><div class="icon"></div></div><div class="item-photo"><img src="' + GNU.Main.config.wpImgPath + 'square.gif" alt="" class="lazy" data-src="' + postImage + '" /></div><div class="item-copy"><p class="fb-page">' + postData.from.name + ' on Facebook</p><p class="fb-date">' + postDate + '</p><p class="fb-excerpt">' + postMessage + '</p></div></a>';
+								self.config.facebookPosts.push(postItem);
+							}
 						}
 					}
 					self.loadComplete();

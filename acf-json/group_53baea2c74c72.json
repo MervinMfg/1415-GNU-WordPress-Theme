@@ -11,6 +11,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "array",
             "preview_size": "thumbnail",
             "library": "all"
@@ -24,6 +29,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "array",
             "preview_size": "thumbnail",
             "library": "all"
@@ -37,6 +47,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "formatting": "none",
             "maxlength": "",
@@ -55,6 +70,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "formatting": "none",
             "maxlength": "",
@@ -73,6 +93,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "formatting": "none",
             "maxlength": "",
@@ -91,6 +116,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "formatting": "none",
             "maxlength": "",
@@ -109,6 +139,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "formatting": "none",
             "maxlength": "",
@@ -127,6 +162,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "formatting": "none",
             "maxlength": "",
@@ -135,97 +175,6 @@
             "append": "",
             "readonly": 0,
             "disabled": 0
-        },
-        {
-            "key": "field_506c6a35d4717",
-            "label": "Featured Videos",
-            "name": "gnu_team_featured_videos",
-            "prefix": "",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "row_min": 0,
-            "row_limit": "",
-            "layout": "row",
-            "button_label": "Add Video",
-            "min": 0,
-            "max": 0,
-            "sub_fields": [
-                {
-                    "key": "field_506c6a35d50c1",
-                    "label": "Type",
-                    "name": "gnu_team_featured_videos_type",
-                    "prefix": "",
-                    "type": "radio",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "column_width": "",
-                    "choices": {
-                        "Vimeo": "Vimeo",
-                        "YouTube": "YouTube"
-                    },
-                    "default_value": "Vimeo",
-                    "layout": "vertical",
-                    "other_choice": 0,
-                    "save_other_choice": 0
-                },
-                {
-                    "key": "field_506c6a35d7d4b",
-                    "label": "ID",
-                    "name": "gnu_team_featured_videos_id",
-                    "prefix": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "column_width": "",
-                    "default_value": "",
-                    "formatting": "none",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "readonly": 0,
-                    "disabled": 0
-                },
-                {
-                    "key": "field_506c6a35d9ee8",
-                    "label": "Name",
-                    "name": "gnu_team_featured_videos_name",
-                    "prefix": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "column_width": "",
-                    "default_value": "",
-                    "formatting": "none",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "readonly": 0,
-                    "disabled": 0
-                },
-                {
-                    "key": "field_506c6a35ddd26",
-                    "label": "Details",
-                    "name": "gnu_team_featured_videos_details",
-                    "prefix": "",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "column_width": "",
-                    "default_value": "",
-                    "toolbar": "basic",
-                    "media_upload": 0,
-                    "the_content": "no",
-                    "tabs": "all"
-                }
-            ]
         }
     ],
     "location": [
@@ -242,5 +191,6 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": ""
+    "hide_on_screen": "",
+    "modified": 1424203845
 }

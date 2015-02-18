@@ -13,6 +13,8 @@ GNU.FeaturedProducts = function () {
 	// check to see if slider should be activated
 	if ($('.featured-products .featured-products-list .featured-product').length > 1) {
 		this.config.dots = true;
+	}
+	if ($('.featured-products .featured-products-list .featured-product').length > 4) {
 		this.config.loop = true;
 	}
 	this.init();
@@ -35,8 +37,16 @@ GNU.FeaturedProducts.prototype = {
 				0:{
 					items: 1
 				},
-				1056:{
+				748:{
 					items: 2,
+					margin: 10
+				},
+				1056:{
+					items: 3,
+					margin: 10
+				},
+				1424:{
+					items: 4,
 					margin: 10
 				}
 			}

@@ -1397,10 +1397,11 @@ body.international .shopping-cart-wrapper { display: none; }
 .featured-products .featured-products-list .featured-product .featured-product-details a:hover .featured-product-copy .featured-product-title, .featured-products .featured-products-list .featured-product .featured-product-details a:focus .featured-product-copy .featured-product-title { color: #000; }
 .featured-products .featured-products-list .featured-product .featured-product-details a:hover .featured-product-copy .featured-product-slogan, .featured-products .featured-products-list .featured-product .featured-product-details a:focus .featured-product-copy .featured-product-slogan { color: #000; }
 .featured-products .featured-products-list .featured-product .featured-product-details a:hover .featured-product-copy .btn-submit, .featured-products .featured-products-list .featured-product .featured-product-details a:focus .featured-product-copy .btn-submit { background: #0099FF; }
-.featured-products .featured-products-list .owl-dots { position: absolute; bottom: 0px; width: 100%; }
+.featured-products .featured-products-list .owl-stage { margin: 0 auto; }
+.featured-products .featured-products-list .owl-dots { width: 100%; }
 .featured-products .featured-products-list .owl-dots .owl-dot.active span, .featured-products .featured-products-list .owl-dots .owl-dot:hover span { background: #99CC33; }
 
-@media screen and (min-width: 476px) { .featured-products { text-align: left; max-width: 1056px; margin: 0 auto; }
+@media screen and (min-width: 476px) { .featured-products { text-align: left; max-width: 1800px; margin: 0 auto; }
   .featured-products .featured-products-list .featured-product .featured-product-details { max-width: 640px; margin: 0 auto; }
   .featured-products .featured-products-list .featured-product .featured-product-details .featured-product-image { width: 45%; float: left; padding-right: 20px; }
   .featured-products .featured-products-list .featured-product .featured-product-details .featured-product-copy { width: 55%; float: right; padding-top: 40px; }

@@ -49,9 +49,10 @@
 				}
 			}
 		}
+		.owl-stage {
+			margin: 0 auto;
+		}
 		.owl-dots {
-			position: absolute;
-			bottom: 0px;
 			width: 100%;
 
 			.owl-dot.active span,
@@ -64,7 +65,7 @@
 @media screen and (min-width: $breakpoint-small) {
 	.featured-products {
 		text-align: left;
-		max-width: $breakpoint-large;
+		max-width: 1800px;
 		margin: 0 auto;
 
 		.featured-products-list .featured-product {

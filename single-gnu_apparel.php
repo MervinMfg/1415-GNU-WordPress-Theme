@@ -210,16 +210,21 @@ Template Name: Apparel Detail
 				</div><!-- .section-content -->
 			</section><!-- product-main -->
 			<nav class="product-navigation">
-				<div class="nav-container"> 
+				<div class="nav-container">
 					<ul>
-						<?php if (get_field('gnu_product_video')) : ?>
+						<?php if (in_array('T-Shirts', $categories, true) || in_array('Sweatshirts', $categories, true)) : ?>
+						
 						<li><a href="#information" class="h4 info">Info<span class="nav-icon"></span></a></li>
-						<li><a href="#video" class="h4 video">Video<span class="nav-icon"></span></a></li>
-						<?php endif; ?> 
+						<?php if (get_field('gnu_product_video')) : ?><li><a href="#video" class="h4 video">Video<span class="nav-icon"></span></a></li><?php endif; ?>
+						<li><a href="#specifications" class="h4 specs">Specs<span class="nav-icon"></span></a></li>
+					
+						<?php endif; ?>
 					</ul>
+
 					<div class="clearfix"></div>
 				</div><!-- .nav-container -->
 			</nav><!-- .product-navigation -->
+
 			<section id="information">
 				<div class="product-info">
 					<div class="section-wrapper">
@@ -233,11 +238,8 @@ Template Name: Apparel Detail
 
 			<?php include get_template_directory() . '/_/inc/modules/photo-slider.php'; ?>
 
-			<?php
-				// display video if we have an id
-				$videoID = get_field('gnu_product_video');
-				if( $videoID ):
-			?>
+			<?php $videoID = get_field('gnu_product_video'); if( $videoID ): // display video if we have an id ?>
+
 			<section id="video">
 				<div class="product-video">
 					<div class="section-content">
@@ -247,9 +249,97 @@ Template Name: Apparel Detail
 					</div>
 				</div><!-- .product-video -->
 			</section><!-- #video -->
-			<?php
-				endif;
-			?>
+
+			<?php endif; ?>
+
+			<?php if (in_array('T-Shirts', $categories, true) || in_array('Sweatshirts', $categories, true)) : ?>
+
+			<section id="specifications">
+				<div class="product-specifications">
+					<h3 class="specs-title">Sizing Information</h3>
+					<nav class="spec-navigation">
+						<ul>
+							<li><a href="#small" class="h4">S</a></li>
+							<li><a href="#medium" class="h4">M</a></li>
+							<li><a href="#large" class="h4">L</a></li>
+							<li><a href="#xlarge" class="h4">XL</a></li>
+							<li><a href="#xxlarge" class="h4">XXL</a></li>
+						</ul>
+					</nav>
+					<div id="small" class="spec-listing clearfix">
+						<div class="group-1">
+							<p><span class="spec-title">Height</span> <span class="spec-value">5'2" - 5'6"</span></p>
+							<p><span class="spec-title">Neck</span> <span class="spec-value">13.5"</span></p>
+						</div>
+						<div class="group-2">
+							<p><span class="spec-title">Shoulder</span> <span class="spec-value">16"</span></p>
+							<p><span class="spec-title">Bicep</span> <span class="spec-value">13"</span></p>
+						</div>
+						<div class="group-3">
+							<p><span class="spec-title">Chest</span> <span class="spec-value">36"</span></p>
+							<p><span class="spec-title">Body Inseam</span> <span class="spec-value">30"</span></p>
+						</div>
+					</div>
+					<div id="medium" class="spec-listing clearfix">
+						<div class="group-1">
+							<p><span class="spec-title">Height</span> <span class="spec-value">5'6" - 5'10"</span></p>
+							<p><span class="spec-title">Neck</span> <span class="spec-value">14"</span></p>
+						</div>
+						<div class="group-2">
+							<p><span class="spec-title">Shoulder</span> <span class="spec-value">18"</span></p>
+							<p><span class="spec-title">Bicep</span> <span class="spec-value">14"</span></p>
+						</div>
+						<div class="group-3">
+							<p><span class="spec-title">Chest</span> <span class="spec-value">40"</span></p>
+							<p><span class="spec-title">Body Inseam</span> <span class="spec-value">31"</span></p>
+						</div>
+					</div>
+					<div id="large" class="spec-listing clearfix">
+						<div class="group-1">
+							<p><span class="spec-title">Height</span> <span class="spec-value">5'10" - 6'1"</span></p>
+							<p><span class="spec-title">Neck</span> <span class="spec-value">14.5"</span></p>
+						</div>
+						<div class="group-2">
+							<p><span class="spec-title">Shoulder</span> <span class="spec-value">20"</span></p>
+							<p><span class="spec-title">Bicep</span> <span class="spec-value">15"</span></p>
+						</div>
+						<div class="group-3">
+							<p><span class="spec-title">Chest</span> <span class="spec-value">44"</span></p>
+							<p><span class="spec-title">Body Inseam</span> <span class="spec-value">32"</span></p>
+						</div>
+					</div>
+					<div id="xlarge" class="spec-listing clearfix">
+						<div class="group-1">
+							<p><span class="spec-title">Height</span> <span class="spec-value">5'11" - 6'3"</span></p>
+							<p><span class="spec-title">Neck</span> <span class="spec-value">15"</span></p>
+						</div>
+						<div class="group-2">
+							<p><span class="spec-title">Shoulder</span> <span class="spec-value">22"</span></p>
+							<p><span class="spec-title">Bicep</span> <span class="spec-value">16"</span></p>
+						</div>
+						<div class="group-3">
+							<p><span class="spec-title">Chest</span> <span class="spec-value">48"</span></p>
+							<p><span class="spec-title">Body Inseam</span> <span class="spec-value">33"</span></p>
+						</div>
+					</div>
+					<div id="xxlarge" class="spec-listing clearfix">
+						<div class="group-1">
+							<p><span class="spec-title">Height</span> <span class="spec-value">6'2" - 6'5"</span></p>
+							<p><span class="spec-title">Neck</span> <span class="spec-value">16"</span></p>
+						</div>
+						<div class="group-2">
+							<p><span class="spec-title">Shoulder</span> <span class="spec-value">24"</span></p>
+							<p><span class="spec-title">Bicep</span> <span class="spec-value">17"</span></p>
+						</div>
+						<div class="group-3">
+							<p><span class="spec-title">Chest</span> <span class="spec-value">52"</span></p>
+							<p><span class="spec-title">Body Inseam</span> <span class="spec-value">34"</span></p>
+						</div>
+					</div>
+				</div><!-- .product-specifications -->
+			</section><!-- #specifications -->
+
+			<?php endif; // end check for t-shirt and sweatshirts ?>
 
 			<?php comments_template(); ?>
 

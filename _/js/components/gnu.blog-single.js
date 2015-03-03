@@ -25,6 +25,8 @@ GNU.BlogSingle.prototype = {
 		if($('gallery')) {
 			self.galleryInit();
 		}
+		// add link to copied text
+		$('.blog-post-details').on('copy', self.addLink);
 	},
 	checkVideos: function () {
 		var self = this;
@@ -99,5 +101,24 @@ GNU.BlogSingle.prototype = {
 			autoplayHoverPause: true,
 			loop: true
 		});
+	},
+	addLink: function () {
+		//get selected text and append source link
+		var selection = window.getSelection();
+		if (selection.toString().length > 50) {
+			var pageLink = '<br /><br /> Read more at: ' + document.location.href;
+			var copyText = selection + pageLink;
+			var newDiv = document.createElement('div');
+			//hide new contatiner
+			newDiv.style.position = 'absolute';
+			newDiv.style.left = '-99999px';
+			//insert contatiner, fill with text and define selection
+			document.body.appendChild(newDiv);
+			newDiv.innerHTML = copyText;
+			selection.selectAllChildren(newDiv);
+			window.setTimeout(function () {
+				document.body.removeChild(newDiv);
+			}, 100);
+		}
 	}
 };

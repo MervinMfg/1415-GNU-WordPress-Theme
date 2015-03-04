@@ -12,7 +12,7 @@
 				the_row();
 				$videoEmbed = get_sub_field('gnu_social_slider_videos_vid');
 				// find vimeo video ID
-				preg_match('/src="\/\/player.vimeo.com\/video\/([^"]+)"/', $videoEmbed, $match);
+				preg_match('/src="https:\/\/player.vimeo.com\/video\/([^"]+)"/', $videoEmbed, $match);
 				$videoID = $match[1];
 				$videoDetails = unserialize(file_get_contents("http://vimeo.com/api/v2/video/$videoID.php"));
 				array_push($videos, Array('embed' => $videoEmbed, 'id' => $videoID, 'details' => $videoDetails));
@@ -28,7 +28,7 @@
 				the_row();
 				$videoEmbed = get_sub_field('gnu_social_slider_videos_vid');
 				// find vimeo video ID
-				preg_match('/src="\/\/player.vimeo.com\/video\/([^"]+)"/', $videoEmbed, $match);
+				preg_match('/src="https:\/\/player.vimeo.com\/video\/([^"]+)"/', $videoEmbed, $match);
 				$videoID = $match[1];
 				$videoDetails = unserialize(file_get_contents("http://vimeo.com/api/v2/video/$videoID.php"));
 				array_push($videos, Array('embed' => $videoEmbed, 'id' => $videoID, 'details' => $videoDetails));

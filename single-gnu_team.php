@@ -5,9 +5,9 @@ Template Name: Team Detail
 	get_header();
 	if (have_posts()) : while (have_posts()) : the_post();
 ?>
-			<section class="team-details">
+			<section class="team-details" itemscope itemtype="http://schema.org/Person">
 				<div class="team-content">
-					<h1 class="team-title"><?php the_title(); ?></h1>
+					<h1 class="team-title" itemprop="name"><?php the_title(); ?></h1>
 					<h5 class="team-subtitle"><?php echo get_the_content(); ?></h5>
 					<ul class="social-icons black nav-menu">
 						<?php if(get_field('gnu_team_facebook_username')) : ?><li class="menu-item"><a href="http://www.facebook.com/<?php the_field('gnu_team_facebook_username'); ?>" class="icon-facebook" target="_blank"><span class="offscreen">Facebook</span></a></li><?php endif; ?>
@@ -20,7 +20,7 @@ Template Name: Team Detail
 
 				<?php if (get_field('gnu_team_profile_photo')) : ?>
 
-				<div class="team-photo"><img src="<?php $photo = get_field('gnu_team_profile_photo'); echo $photo['url']; ?>" alt="<?php the_title(); ?> Profile Photo" /></div>
+				<div class="team-photo"><img src="<?php $photo = get_field('gnu_team_profile_photo'); echo $photo['url']; ?>" alt="<?php the_title(); ?> Profile Photo" itemprop="image" /></div>
 
 				<?php endif; ?>
 

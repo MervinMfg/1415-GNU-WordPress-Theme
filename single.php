@@ -19,11 +19,11 @@
 				$mainCategory = $topCat[0];
 	?>
 
-			<article <?php post_class('blog-post-details') ?> id="post-<?php the_ID(); ?>">
-				<h1 class="post-title h2"><?php the_title(); ?></h1>
-				<div class="post-meta"><?php echo $mainCategory; ?> | <time datetime="<?php the_time('c') ?>"><?php the_time('F jS, Y') ?></time></div>
-				<div class="post-content">
-					
+			<article <?php post_class('blog-post-details') ?> id="post-<?php the_ID(); ?>" itemscope="" itemtype="http://schema.org/BlogPosting">
+				<h1 class="post-title h2" itemprop="name"><?php the_title(); ?></h1>
+				<div class="post-meta"><?php echo $mainCategory; ?> | <time datetime="<?php the_time('c') ?>"><span itemprop="datePublished"><?php the_time('F jS, Y') ?></span></time></div>
+				<div class="post-content" itemprop="articleBody">
+
 					<?php the_content(); ?>
 
 					<div class="clearfix"></div>
@@ -41,7 +41,7 @@
 			<?php comments_template(); ?>
 
 	<?php endwhile; endif; ?>
-	
+
 <?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

@@ -121,18 +121,20 @@ function getPrice ($usPrice, $caPrice, $eurPrice, $sale, $salePercent) {
 	$price = '<div class="price">';
 	/*if ($sale == "Yes") {
 		// US Sale Price
-		$price = '<p class="us-price strike"><span>$' . $usPrice . '</span> USD</p><p class="us-price"><span>$' . round($usPrice * ((100 - $salePercent) / 100), 2) . '</span> USD (' . $salePercent . '% off)</p>';
+		$price .= '<p class="us-price strike">$' . $usPrice . ' <span class="currency-note">USD</span></p><p class="us-price"><span itemprop="priceCurrency" content="USD">$</span><span itemprop="price">' . round($usPrice * ((100 - $salePercent) / 100), 2) . '</span> <span class="currency-note">USD (' . $salePercent . '% off)</span></p>';
 		// CA Sale Price
-		$price .= '<p class="ca-price strike"><span>$' . $caPrice . '</span> CAD</p><p class="ca-price"><span>$' . round($caPrice * ((100 - $salePercent) / 100), 2) . '</span> CAD (' . $salePercent . '% off)</p>';
+		$price .= '<p class="ca-price strike">$' . $caPrice . ' <span class="currency-note">CAD</span></p><p class="ca-price">$' . round($caPrice * ((100 - $salePercent) / 100), 2) . ' <span class="currency-note">CAD (' . $salePercent . '% off)</span></p>';
+		// EU Sale Price
+		$price .= '<p class="eur-price strike">€' . $eurPrice . ' <span class="currency-note">EUR incl. VAT</span></p><p class="eur-price">€' . round($eurPrice * ((100 - $salePercent) / 100), 2) . ' <span class="currency-note">EUR incl. VAT (' . $salePercent . '% off)<span></p>';
 	} else {*/
 		// US Price
-		$price .= '<p class="us-price">$' . $usPrice . ' <span>USD</span></p>';
+		$price .= '<p class="us-price"><span itemprop="priceCurrency" content="USD">$</span><span itemprop="price" content="' . $usPrice . '">' . $usPrice . '</span> <span class="currency-note">USD</span></p>';
 		// CA Price
-		$price .= '<p class="ca-price">$' . $caPrice . ' <span>CAD</span></p>';
-		// CA Price
-		$price .= '<p class="eur-price">€' . $eurPrice . ' <span>EUR incl. VAT</span></p>';
+		$price .= '<p class="ca-price">$' . $caPrice . ' <span class="currency-note">CAD</span></p>';
+		// EU Price
+		$price .= '<p class="eur-price">€' . $eurPrice . ' <span class="currency-note">EUR incl. VAT</span></p>';
 	//}
-    $price .= '</div><!-- .price -->';
+	$price .= '</div><!-- .price -->';
 	return $price;
 }
 
@@ -267,7 +269,7 @@ function bindingSizeLookup ($sizeString, $verbose = true) {
             } else {
                 $returnString = "M";
             }
-            break;            
+            break;
         case "M/L (US W 6-9)":
             if ($verbose) {
                 $returnString = "M/L (US W 6-9), (MP 23-26)";
@@ -401,16 +403,16 @@ add_shortcode('gallery', 'gnu_gallery_shortcode');
 CODE FOR CUSTOM POST TYPES
 ******************************/
 // order menus for custom post types
-function set_custom_post_types_admin_order($wp_query) {  
-  if (is_admin()) {  
+function set_custom_post_types_admin_order($wp_query) {
+  if (is_admin()) {
     $post_type = $wp_query->query['post_type'];
-    if ( $post_type == 'gnu_snowboards' || $post_type == 'gnu_bindings' || $post_type == 'gnu_accessories' || $post_type == 'gnu_weirdwear' || $post_type == 'gnu_technology' || $post_type == 'gnu_awards' || $post_type == 'gnu_team' || $post_type == 'gnu_partners' || $post_type == 'gnu_faqs' ) { 
-      $wp_query->set('orderby', 'menu_order');  
-      $wp_query->set('order', 'ASC');  
-    }  
-  }  
-}  
-add_filter('pre_get_posts', 'set_custom_post_types_admin_order');  
+    if ( $post_type == 'gnu_snowboards' || $post_type == 'gnu_bindings' || $post_type == 'gnu_accessories' || $post_type == 'gnu_weirdwear' || $post_type == 'gnu_technology' || $post_type == 'gnu_awards' || $post_type == 'gnu_team' || $post_type == 'gnu_partners' || $post_type == 'gnu_faqs' ) {
+      $wp_query->set('orderby', 'menu_order');
+      $wp_query->set('order', 'ASC');
+    }
+  }
+}
+add_filter('pre_get_posts', 'set_custom_post_types_admin_order');
 
 // SET UP CUSTOM POST TYPES
 function register_custom_post_types() {
@@ -426,7 +428,7 @@ function register_custom_post_types() {
         'view_item' => __('View Snowboard'),
         'search_items' => __('Search Snowboards'),
         'not_found' =>  __('No Snowboard Found'),
-        'not_found_in_trash' => __('No Snowbaords Found In Trash'), 
+        'not_found_in_trash' => __('No Snowbaords Found In Trash'),
         'parent_item_colon' => '',
         'menu_name' => 'Snowboards'
     );
@@ -434,16 +436,16 @@ function register_custom_post_types() {
         'labels' => $labels,
         'public' => true,
         'publicly_queryable' => true,
-        'show_ui' => true, 
-        'show_in_menu' => true, 
+        'show_ui' => true,
+        'show_in_menu' => true,
         'query_var' => true,
         'rewrite' => array("slug" => "snowboards"),
         'capability_type' => 'page',
-        'has_archive' => false, 
+        'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes', 'comments' )
-    ); 
+    );
     register_post_type('gnu_snowboards',$args);
     // start taxonamy for Snowboards
     $labels = array(
@@ -486,7 +488,7 @@ function register_custom_post_types() {
         'view_item' => __('View Binding'),
         'search_items' => __('Search Bindings'),
         'not_found' =>  __('No Binding Found'),
-        'not_found_in_trash' => __('No Bindings Found In Trash'), 
+        'not_found_in_trash' => __('No Bindings Found In Trash'),
         'parent_item_colon' => '',
         'menu_name' => 'Bindings'
     );
@@ -494,16 +496,16 @@ function register_custom_post_types() {
         'labels' => $labels,
         'public' => true,
         'publicly_queryable' => true,
-        'show_ui' => true, 
-        'show_in_menu' => true, 
+        'show_ui' => true,
+        'show_in_menu' => true,
         'query_var' => true,
         'rewrite' => array("slug" => "bindings"),
         'capability_type' => 'page',
-        'has_archive' => false, 
+        'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes', 'comments' )
-    ); 
+    );
     register_post_type('gnu_bindings',$args);
     // start taxonamy for Bindings
     $labels = array(
@@ -546,7 +548,7 @@ function register_custom_post_types() {
         'view_item' => __('View Accessory'),
         'search_items' => __('Search Accessories'),
         'not_found' =>  __('No Accessories Found'),
-        'not_found_in_trash' => __('No Accessories Found In Trash'), 
+        'not_found_in_trash' => __('No Accessories Found In Trash'),
         'parent_item_colon' => '',
         'menu_name' => 'Accessories'
     );
@@ -554,16 +556,16 @@ function register_custom_post_types() {
         'labels' => $labels,
         'public' => true,
         'publicly_queryable' => true,
-        'show_ui' => true, 
-        'show_in_menu' => true, 
+        'show_ui' => true,
+        'show_in_menu' => true,
         'query_var' => true,
         'rewrite' => array("slug" => 'supplies/accessories'),
         'capability_type' => 'page',
-        'has_archive' => false, 
+        'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes', 'comments' )
-    ); 
+    );
     register_post_type('gnu_accessories',$args);
     // start taxonamy for Accessories
     $labels = array(
@@ -593,7 +595,7 @@ function register_custom_post_types() {
     );
     register_taxonomy( 'gnu_accessories_categories', 'gnu_accessories', $args );
     // END ACCESSORIES
-    
+
     // START APPAREL
     $labels = array(
         'name' => _x('Apparel', 'post type general name'),
@@ -606,7 +608,7 @@ function register_custom_post_types() {
         'view_item' => __('View Apparel'),
         'search_items' => __('Search Apparel'),
         'not_found' =>  __('No Apparel Found'),
-        'not_found_in_trash' => __('No Apparel Found In Trash'), 
+        'not_found_in_trash' => __('No Apparel Found In Trash'),
         'parent_item_colon' => '',
         'menu_name' => 'Apparel'
     );
@@ -614,16 +616,16 @@ function register_custom_post_types() {
         'labels' => $labels,
         'public' => true,
         'publicly_queryable' => true,
-        'show_ui' => true, 
-        'show_in_menu' => true, 
+        'show_ui' => true,
+        'show_in_menu' => true,
         'query_var' => true,
         'rewrite' => array("slug" => 'supplies/apparel'),
         'capability_type' => 'page',
-        'has_archive' => false, 
+        'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes', 'comments' )
-    ); 
+    );
     register_post_type('gnu_apparel',$args);
     // start taxonamy for Apparel
     $labels = array(
@@ -666,7 +668,7 @@ function register_custom_post_types() {
         'view_item' => __('View Tech Item'),
         'search_items' => __('Search Technology'),
         'not_found' =>  __('No Tech Item Found'),
-        'not_found_in_trash' => __('No Technology Found In Trash'), 
+        'not_found_in_trash' => __('No Technology Found In Trash'),
         'parent_item_colon' => '',
         'menu_name' => 'Technology'
     );
@@ -674,16 +676,16 @@ function register_custom_post_types() {
         'labels' => $labels,
         'public' => true,
         'publicly_queryable' => true,
-        'show_ui' => true, 
-        'show_in_menu' => true, 
+        'show_ui' => true,
+        'show_in_menu' => true,
         'query_var' => true,
         'rewrite' => array("slug" => "technology"),
         'capability_type' => 'page',
-        'has_archive' => false, 
+        'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes' )
-    ); 
+    );
     register_post_type('gnu_technology',$args);
     // END TECHNOLOGY
 
@@ -699,7 +701,7 @@ function register_custom_post_types() {
         'view_item' => __('View Award'),
         'search_items' => __('Search Awards'),
         'not_found' =>  __('No Award Found'),
-        'not_found_in_trash' => __('No Awards Found In Trash'), 
+        'not_found_in_trash' => __('No Awards Found In Trash'),
         'parent_item_colon' => '',
         'menu_name' => 'Awards'
     );
@@ -707,16 +709,16 @@ function register_custom_post_types() {
         'labels' => $labels,
         'public' => true,
         'publicly_queryable' => true,
-        'show_ui' => true, 
-        'show_in_menu' => true, 
+        'show_ui' => true,
+        'show_in_menu' => true,
         'query_var' => true,
         'rewrite' => array("slug" => "awards"),
         'capability_type' => 'page',
-        'has_archive' => false, 
+        'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'page-attributes' )
-    ); 
+    );
     register_post_type('gnu_awards',$args);
     // END AWARDS
 
@@ -732,7 +734,7 @@ function register_custom_post_types() {
         'view_item' => __('View Team Member'),
         'search_items' => __('Search Team'),
         'not_found' =>  __('No Team Member Found'),
-        'not_found_in_trash' => __('No Team Member Found In Trash'), 
+        'not_found_in_trash' => __('No Team Member Found In Trash'),
         'parent_item_colon' => '',
         'menu_name' => 'Team'
     );
@@ -740,16 +742,16 @@ function register_custom_post_types() {
         'labels' => $labels,
         'public' => true,
         'publicly_queryable' => true,
-        'show_ui' => true, 
-        'show_in_menu' => true, 
+        'show_ui' => true,
+        'show_in_menu' => true,
         'query_var' => true,
         'rewrite' => array("slug" => "team"),
         'capability_type' => 'page',
-        'has_archive' => false, 
+        'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes' )
-    ); 
+    );
     register_post_type('gnu_team',$args);
     // start taxonamy for Team
     $labels = array(
@@ -793,7 +795,7 @@ function register_custom_post_types() {
         'view_item' => __('View Partner'),
         'search_items' => __('Search Partners'),
         'not_found' =>  __('No Partner Found'),
-        'not_found_in_trash' => __('No Partner Found In Trash'), 
+        'not_found_in_trash' => __('No Partner Found In Trash'),
         'parent_item_colon' => '',
         'menu_name' => 'Partners'
     );
@@ -801,16 +803,16 @@ function register_custom_post_types() {
         'labels' => $labels,
         'public' => true,
         'publicly_queryable' => true,
-        'show_ui' => true, 
-        'show_in_menu' => true, 
+        'show_ui' => true,
+        'show_in_menu' => true,
         'query_var' => true,
         //'rewrite' => array("slug" => "dealers"),
         'capability_type' => 'page',
-        'has_archive' => false, 
+        'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes' )
-    ); 
+    );
     register_post_type('gnu_partners',$args);
     // start taxonamy for Partners
     $labels = array(
@@ -853,7 +855,7 @@ function register_custom_post_types() {
         'view_item' => __('View FAQ'),
         'search_items' => __('Search FAQs'),
         'not_found' =>  __('No FAQ Found'),
-        'not_found_in_trash' => __('No FAQ Found In Trash'), 
+        'not_found_in_trash' => __('No FAQ Found In Trash'),
         'parent_item_colon' => '',
         'menu_name' => 'FAQs'
     );
@@ -861,15 +863,15 @@ function register_custom_post_types() {
         'labels' => $labels,
         'public' => true,
         'publicly_queryable' => true,
-        'show_ui' => true, 
-        'show_in_menu' => true, 
+        'show_ui' => true,
+        'show_in_menu' => true,
         'query_var' => true,
         'capability_type' => 'page',
-        'has_archive' => false, 
+        'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes' )
-    ); 
+    );
     register_post_type('gnu_faqs',$args);
     // start taxonamy for FAQs
     $labels = array(

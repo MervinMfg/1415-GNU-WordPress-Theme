@@ -16,9 +16,12 @@
 		display: block;
 		margin: 0;
 	}
-	span {
+	.currency-note {
 		font-size: 0.5em;
 		font-style: italic;
+	}
+	&.strike {
+		text-decoration: line-through;
 	}
 }
 .loading {
@@ -48,7 +51,7 @@
 		}
 	}
 	&.icon-instagram {
-		background-position: -216px -60px; 
+		background-position: -216px -60px;
 
 		&:hover,
 		&:focus {
@@ -61,13 +64,13 @@
 		&:hover,
 		&:focus {
 			background-position: -339px -60px;
-		} 
+		}
 	}
 	/* &.icon-pinterest {
-		background-position: -93px -60px; 
+		background-position: -93px -60px;
 	} */
 	&.icon-vimeo {
-		background-position: -134px -60px; 
+		background-position: -134px -60px;
 
 		&:hover,
 		&:focus {
@@ -80,7 +83,7 @@
 		&:hover,
 		&:focus {
 			background-position: -464px -60px;
-		} 
+		}
 	}
 }
 .default-section .default-content {

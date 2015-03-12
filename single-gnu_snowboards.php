@@ -106,181 +106,184 @@ Template Name: Snowboards Detail
 			endwhile;
 		endif;
 		// sort by variation name
-		asort($snowboards);				
+		asort($snowboards);
 ?>
+			<div class="schema-wrapper" itemscope itemtype="http://schema.org/Product">
+				<section class="product-main">
+					<div class="section-content">
+						<h1 class="product-title" itemprop="name"><?php the_title(); ?></h1>
+						<h5 class="product-slogan"><span><?php the_field('gnu_snowboard_contour'); ?></span> <?php the_field('gnu_product_slogan'); ?></h5>
+						<div class="product-images">
+							<meta itemprop="image" content="<?php echo $snowboardOptions[0]['images'][0]['url']; ?>" />
+							<div class="image-list owl-carousel owl-theme">
 
-			<section class="product-main">
-				<div class="section-content">
-					<h1 class="product-title"><?php the_title(); ?></h1>
-					<h5 class="product-slogan"><span><?php the_field('gnu_snowboard_contour'); ?></span> <?php the_field('gnu_product_slogan'); ?></h5>
-					<div class="product-images">
-						<div class="image-list owl-carousel owl-theme">
+								<?php foreach ($snowboardOptions as $snowboardOption) : if ($snowboardOption['images']) : foreach ($snowboardOption['images'] as $snowboardImage) : ?>
 
-							<?php foreach ($snowboardOptions as $snowboardOption) : if ($snowboardOption['images']) : foreach ($snowboardOption['images'] as $snowboardImage) : ?>
+								<div class="product-image">
+									<a href="<?php echo $snowboardImage['url']; ?>" title="<?php the_title(); ?> - <?php echo $snowboardOption['sizes']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-product-detail.gif" data-src="<?php echo $snowboardImage['url']; ?>" alt="<?php the_title(); ?> - <?php echo $snowboardOption['sizes']; ?>" class="owl-lazy" /></a>
+								</div><!-- .product-image -->
 
-							<div class="product-image">
-								<a href="<?php echo $snowboardImage['url']; ?>" title="<?php the_title(); ?> - <?php echo $snowboardOption['sizes']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-product-detail.gif" data-src="<?php echo $snowboardImage['url']; ?>" alt="<?php the_title(); ?> - <?php echo $snowboardOption['sizes']; ?>" class="owl-lazy" /></a>
-							</div><!-- .product-image -->
+								<?php endforeach; endif; endforeach; ?>
 
-							<?php endforeach; endif; endforeach; ?>
-							
-						</div><!-- .image-list -->
-						<div class="zoom-icon"></div>
-					</div><!-- .product-images -->
-					<?php
-						// Build String of Sizes
-						$normalSizes = Array();
-						$midWideSizes = Array();
-						$wideSizes = Array();
-						if(get_field('gnu_snowboard_specs')):
-							while(the_repeater_field('gnu_snowboard_specs')):
-								$snowboardLength = get_sub_field('gnu_snowboard_specs_length');
-								$snowboardWidth = get_sub_field('gnu_snowboard_specs_width');
-								// add the proper width abbreviation if not standard
-								if ($snowboardWidth == "Wide") {
-									$snowboardLength = $snowboardLength . "W";
-									array_push($wideSizes, $snowboardLength);
-								} else if ($snowboardWidth == "Mid Wide") {
-									$snowboardLength = $snowboardLength . "MW";
-									array_push($midWideSizes, $snowboardLength);
-								} else {
-									array_push($normalSizes, $snowboardLength);
-								}
-							endwhile;
-						endif;
-						// sort sizes
-						array_multisort($normalSizes, SORT_ASC);
-						array_multisort($midWideSizes, SORT_ASC);
-						array_multisort($wideSizes, SORT_ASC);
-						// setup sizes text display
-						$normalSizesString = "";
-						for ($i = 0; $i < count($normalSizes); $i++) {
-							$normalSizesString .= ' <span>' . $normalSizes[$i] . '</span> ';
-						}
-						$midWideSizesString = "";
-						for ($i = 0; $i < count($midWideSizes); $i++) {
-							$midWideSizesString .= ' <span>' . $midWideSizes[$i] . '</span> ';
-						}
-						$wideSizesString = "";
-						for ($i = 0; $i < count($wideSizes); $i++) {
-							$wideSizesString .= ' <span>' . $wideSizes[$i] . '</span> ';
-						}
-					?>
-
-					<div class="product-sizes">
-						<p class="small"><span class="size-title">SIZES</span> <?php echo $normalSizesString . $midWideSizesString . $wideSizesString; ?></p>
-					</div><!-- product-sizes -->
-					<div class="product-thumbnails">
-						<div class="image-list owl-carousel">
-							<?php foreach ($snowboardOptions as $snowboardOption) : if ($snowboardOption['images']) : foreach ($snowboardOption['images'] as $snowboardImage) : ?>
-							
-							<div class="product-thumbnail">
-								<a href="<?php echo $snowboardImage['url']; ?>" title="<?php echo $snowboardOption['name']; ?> - <?php echo $snowboardOption['sizes']; ?>" data-sku="<?php echo $snowboardOption['skus']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-board-detail.png" data-src="<?php echo $snowboardImage['sizes']['medium']; ?>" alt="<?php echo $snowboardOption['name']; ?> - <?php echo $snowboardOption['sizes']; ?>" class="owl-lazy" /><p class="small"><?php echo $snowboardOption['name']; ?></p></a>
-							</div><!-- .product-image -->
-
-							<?php endforeach; endif; endforeach; ?>
-						</div>
-					</div><!-- product-thumbnails -->
-
-					<?php
-						if (get_field('gnu_snowboard_colorways')) {
-							// check for base / colorway disclaimer
-							if (in_array('Random Bases', get_field('gnu_snowboard_colorways'))) {
-								echo '<p class="small product-note">Bases come in random colorways</p>';
+							</div><!-- .image-list -->
+							<div class="zoom-icon"></div>
+						</div><!-- .product-images -->
+						<?php
+							// Build String of Sizes
+							$normalSizes = Array();
+							$midWideSizes = Array();
+							$wideSizes = Array();
+							if(get_field('gnu_snowboard_specs')):
+								while(the_repeater_field('gnu_snowboard_specs')):
+									$snowboardLength = get_sub_field('gnu_snowboard_specs_length');
+									$snowboardWidth = get_sub_field('gnu_snowboard_specs_width');
+									// add the proper width abbreviation if not standard
+									if ($snowboardWidth == "Wide") {
+										$snowboardLength = $snowboardLength . "W";
+										array_push($wideSizes, $snowboardLength);
+									} else if ($snowboardWidth == "Mid Wide") {
+										$snowboardLength = $snowboardLength . "MW";
+										array_push($midWideSizes, $snowboardLength);
+									} else {
+										array_push($normalSizes, $snowboardLength);
+									}
+								endwhile;
+							endif;
+							// sort sizes
+							array_multisort($normalSizes, SORT_ASC);
+							array_multisort($midWideSizes, SORT_ASC);
+							array_multisort($wideSizes, SORT_ASC);
+							// setup sizes text display
+							$normalSizesString = "";
+							for ($i = 0; $i < count($normalSizes); $i++) {
+								$normalSizesString .= ' <span>' . $normalSizes[$i] . '</span> ';
 							}
-							if (in_array('Alternate Colorways', get_field('gnu_snowboard_colorways'))) {
-								echo '<p class="small product-note">Alternate Colorways</p>';
+							$midWideSizesString = "";
+							for ($i = 0; $i < count($midWideSizes); $i++) {
+								$midWideSizesString .= ' <span>' . $midWideSizes[$i] . '</span> ';
 							}
-						}
-					?>
+							$wideSizesString = "";
+							for ($i = 0; $i < count($wideSizes); $i++) {
+								$wideSizesString .= ' <span>' . $wideSizes[$i] . '</span> ';
+							}
+						?>
 
-					<div class="product-awards-price">
+						<div class="product-sizes">
+							<p class="small"><span class="size-title">SIZES</span> <?php echo $normalSizesString . $midWideSizesString . $wideSizesString; ?></p>
+						</div><!-- product-sizes -->
+						<div class="product-thumbnails">
+							<div class="image-list owl-carousel">
+								<?php foreach ($snowboardOptions as $snowboardOption) : if ($snowboardOption['images']) : foreach ($snowboardOption['images'] as $snowboardImage) : ?>
+
+								<div class="product-thumbnail">
+									<a href="<?php echo $snowboardImage['url']; ?>" title="<?php echo $snowboardOption['name']; ?> - <?php echo $snowboardOption['sizes']; ?>" data-sku="<?php echo $snowboardOption['skus']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/_/img/loading-board-detail.png" data-src="<?php echo $snowboardImage['sizes']['medium']; ?>" alt="<?php echo $snowboardOption['name']; ?> - <?php echo $snowboardOption['sizes']; ?>" class="owl-lazy" /><p class="small"><?php echo $snowboardOption['name']; ?></p></a>
+								</div><!-- .product-image -->
+
+								<?php endforeach; endif; endforeach; ?>
+							</div>
+						</div><!-- product-thumbnails -->
 
 						<?php
-							// display awards if there are any
-							$awards = get_field('gnu_product_awards');
-							if( $awards ):
-						?>
-						<div class="product-awards">
-							<ul>
-							<?php
-								foreach( $awards as $award):
-									$imageID = get_field('gnu_award_image', $award->ID);
-									$imageFile = wp_get_attachment_image_src($imageID, 'thumbnail');
-									echo '<li><img src="'.$imageFile[0].'" width="'.$imageFile[1].'" height="'.$imageFile[2].'" /><div class="tool-tip">' . get_the_title($award->ID) . '</div></li>';
-								endforeach;
-							?>
-
-							</ul>
-						</div><!-- .product-awards -->
-						<? endif; // end awards ?>
-
-						<div class="product-price">
-							<?php echo getPrice( get_field('gnu_product_price_us'), get_field('gnu_product_price_ca'), get_field('gnu_product_price_eur'), get_field('gnu_product_on_sale'), get_field('gnu_product_sale_percentage') ); ?>
-						</div><!-- .product-price -->
-					</div><!-- .product-awards-price -->
-					<div class="product-buy" data-avail-us="<?php echo $productAvailUS; ?>" data-avail-ca="<?php echo $productAvailCA; ?>" data-avail-eur="<?php echo $productAvailEUR; ?>">
-						<div class="product-available">
-							<div class="form">
-								<select class="product-variation input-text">
-									<option value="-1">Select a Size</option>
-									<?php foreach ($snowboards as $snowboard) : // render out snowboards dropdown ?>
-									<option value="<?php echo $snowboard['sku']; ?>" title="<?php echo $snowboard['name']; ?>" class="selectable-option" data-avail-us="<?php echo $snowboard['availUS']['amount']; ?>" data-avail-ca="<?php echo $snowboard['availCA']['amount']; ?>" data-avail-eur="<?php echo $snowboard['availEUR']['amount']; ?>"><?php echo $snowboard['name']; ?></option>
-									<?php endforeach; ?>
-								</select><button class="add-to-cart btn-submit visible">Add to Cart</button>
-							</div><!-- .form -->
-							<div class="loading hidden"></div>
-							<div class="failure hidden">
-								<p class="small">There has been an error adding the item to your cart. Try again later or <a href="/support/contact/">contact us</a> if the problem persists.</p>
-							</div><!-- .failure -->
-							<div class="available-alert">
-								<p class="small low-inventory"><span>Product Alert:</span> Currently less than 10 available.</p>
-								<p class="small no-inventory"><span>Product Alert:</span> We are currently out of stock on this item in our warehouse, but we can check with our dealer network to see if they can fulfill this order.</p>
-							</div><!-- .available-alert -->
-						</div><!-- .product-available -->
-						<div class="product-unavailable">
-							<p>Item is currently not available online.</p>
-						</div><!-- .product-unavailable -->
-						<div class="dealer-link">
-							<a href="/store-locator/" class="h5">Find a store</a>
-						</div>
-						<div class="shopatron-secure">
-							<img src="<?php echo get_template_directory_uri(); ?>/_/img/shopatron-secure-logo.png" alt="Shopatron Secure"/>
-						</div>
-					</div><!-- .product-buy -->
-					<ul class="product-share">
-						<li class="facebook"><div class="fb-like" data-href="<? the_permalink(); ?>" data-layout="button" data-action="like" data-share="false" data-show-faces="false" data-colorscheme="light"></div></li>
-						<li class="twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-via="GNUsnowboards" data-count="none">Tweet</a></li>
-						<li class="g-plus"><div class="g-plusone" data-size="tall" data-annotation="none" data-href="<? the_permalink(); ?>"></div></li>
-						<li class="pinterest"><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo $GLOBALS['pageImage']; ?>&description=<?php echo $GLOBALS['pageTitle']; ?>" data-pin-do="buttonPin" data-pin-config="none" data-pin-color="white"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_white_20.png" alt="Pin It" /></a></li>
-					</ul><!-- .product-share -->
-				</div><!-- .section-content -->
-			</section><!-- product-main -->
-			<nav class="product-navigation">
-				<div class="nav-container">
-					<ul>
-						<li><a href="#information" class="h4 info">Info<span class="nav-icon"></span></a></li>
-						<li><a href="#technology" class="h4 tech">Tech<span class="nav-icon"></span></a></li>
-						<?php if (get_field('gnu_product_video')) : ?><li><a href="#video" class="h4 video">Video<span class="nav-icon"></span></a></li><?php endif; ?>
-						<li><a href="#specifications" class="h4 specs">Specs<span class="nav-icon"></span></a></li>
-					</ul>
-					<div class="clearfix"></div>
-				</div><!-- .nav-container -->
-			</nav><!-- .product-navigation -->
-			<section id="information">
-				<div class="product-info">
-					<div class="section-wrapper">
-						<div class="section-content">
-							<?php
-								the_content();
-								if (get_field('gnu_snowboard_artists_name')) {
-									echo '<h3><a href="' . get_field('gnu_snowboard_artists_url') . '" target="_blank">Art by ' . get_field('gnu_snowboard_artists_name') . '</a></h3>';
+							if (get_field('gnu_snowboard_colorways')) {
+								// check for base / colorway disclaimer
+								if (in_array('Random Bases', get_field('gnu_snowboard_colorways'))) {
+									echo '<p class="small product-note">Bases come in random colorways</p>';
 								}
+								if (in_array('Alternate Colorways', get_field('gnu_snowboard_colorways'))) {
+									echo '<p class="small product-note">Alternate Colorways</p>';
+								}
+							}
+						?>
+
+						<div class="product-awards-price">
+
+							<?php
+								// display awards if there are any
+								$awards = get_field('gnu_product_awards');
+								if( $awards ):
 							?>
-						</div><!-- .section-content -->
-					</div><!-- .section-wrapper -->
-				</div><!-- .product-info -->
-			</section><!-- #information -->
+							<div class="product-awards">
+								<ul>
+								<?php
+									foreach( $awards as $award):
+										$imageID = get_field('gnu_award_image', $award->ID);
+										$imageFile = wp_get_attachment_image_src($imageID, 'thumbnail');
+										echo '<li><img src="'.$imageFile[0].'" width="'.$imageFile[1].'" height="'.$imageFile[2].'" /><div class="tool-tip">' . get_the_title($award->ID) . '</div></li>';
+									endforeach;
+								?>
+
+								</ul>
+							</div><!-- .product-awards -->
+							<? endif; // end awards ?>
+
+							<div class="product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<?php echo getPrice( get_field('gnu_product_price_us'), get_field('gnu_product_price_ca'), get_field('gnu_product_price_eur'), get_field('gnu_product_on_sale'), get_field('gnu_product_sale_percentage') ); ?>
+								<link itemprop="itemCondition" href="http://schema.org/NewCondition" />
+							</div><!-- .product-price -->
+						</div><!-- .product-awards-price -->
+						<div class="product-buy" data-avail-us="<?php echo $productAvailUS; ?>" data-avail-ca="<?php echo $productAvailCA; ?>" data-avail-eur="<?php echo $productAvailEUR; ?>">
+							<div class="product-available">
+								<div class="form">
+									<select class="product-variation input-text">
+										<option value="-1">Select a Size</option>
+										<?php foreach ($snowboards as $snowboard) : // render out snowboards dropdown ?>
+										<option value="<?php echo $snowboard['sku']; ?>" title="<?php echo $snowboard['name']; ?>" class="selectable-option" data-avail-us="<?php echo $snowboard['availUS']['amount']; ?>" data-avail-ca="<?php echo $snowboard['availCA']['amount']; ?>" data-avail-eur="<?php echo $snowboard['availEUR']['amount']; ?>"><?php echo $snowboard['name']; ?></option>
+										<?php endforeach; ?>
+									</select><button class="add-to-cart btn-submit visible">Add to Cart</button>
+								</div><!-- .form -->
+								<div class="loading hidden"></div>
+								<div class="failure hidden">
+									<p class="small">There has been an error adding the item to your cart. Try again later or <a href="/support/contact/">contact us</a> if the problem persists.</p>
+								</div><!-- .failure -->
+								<div class="available-alert">
+									<p class="small low-inventory"><span>Product Alert:</span> Currently less than 10 available.</p>
+									<p class="small no-inventory"><span>Product Alert:</span> We are currently out of stock on this item in our warehouse, but we can check with our dealer network to see if they can fulfill this order.</p>
+								</div><!-- .available-alert -->
+							</div><!-- .product-available -->
+							<div class="product-unavailable">
+								<p>Item is currently not available online.</p>
+							</div><!-- .product-unavailable -->
+							<div class="dealer-link">
+								<a href="/store-locator/" class="h5">Find a store</a>
+							</div>
+							<div class="shopatron-secure">
+								<img src="<?php echo get_template_directory_uri(); ?>/_/img/shopatron-secure-logo.png" alt="Shopatron Secure"/>
+							</div>
+						</div><!-- .product-buy -->
+						<ul class="product-share">
+							<li class="facebook"><div class="fb-like" data-href="<? the_permalink(); ?>" data-layout="button" data-action="like" data-share="false" data-show-faces="false" data-colorscheme="light"></div></li>
+							<li class="twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-via="GNUsnowboards" data-count="none">Tweet</a></li>
+							<li class="g-plus"><div class="g-plusone" data-size="tall" data-annotation="none" data-href="<? the_permalink(); ?>"></div></li>
+							<li class="pinterest"><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo $GLOBALS['pageImage']; ?>&description=<?php echo $GLOBALS['pageTitle']; ?>" data-pin-do="buttonPin" data-pin-config="none" data-pin-color="white"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_white_20.png" alt="Pin It" /></a></li>
+						</ul><!-- .product-share -->
+					</div><!-- .section-content -->
+				</section><!-- product-main -->
+				<nav class="product-navigation">
+					<div class="nav-container">
+						<ul>
+							<li><a href="#information" class="h4 info">Info<span class="nav-icon"></span></a></li>
+							<li><a href="#technology" class="h4 tech">Tech<span class="nav-icon"></span></a></li>
+							<?php if (get_field('gnu_product_video')) : ?><li><a href="#video" class="h4 video">Video<span class="nav-icon"></span></a></li><?php endif; ?>
+							<li><a href="#specifications" class="h4 specs">Specs<span class="nav-icon"></span></a></li>
+						</ul>
+						<div class="clearfix"></div>
+					</div><!-- .nav-container -->
+				</nav><!-- .product-navigation -->
+				<section id="information">
+					<div class="product-info">
+						<div class="section-wrapper">
+							<div class="section-content" itemprop="description">
+								<?php
+									the_content();
+									if (get_field('gnu_snowboard_artists_name')) {
+										echo '<h3><a href="' . get_field('gnu_snowboard_artists_url') . '" target="_blank">Art by ' . get_field('gnu_snowboard_artists_name') . '</a></h3>';
+									}
+								?>
+							</div><!-- .section-content -->
+						</div><!-- .section-wrapper -->
+					</div><!-- .product-info -->
+				</section><!-- #information -->
+			</div><!-- .schema-wrapper -->
 
 			<?php include get_template_directory() . '/_/inc/modules/photo-slider.php'; ?>
 

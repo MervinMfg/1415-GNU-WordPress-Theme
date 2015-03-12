@@ -146,9 +146,9 @@ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG         GGGGGG
 <body <?php body_class($bodyClass); ?>>
 	<div id="page">
 		<header id="masthead" class="site-header" role="banner">
-			<div class="header-wrapper">
+			<div class="header-wrapper" itemscope itemtype="http://schema.org/Organization">
 				<div class="header-main">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" id="logo" class="site-title" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/_/img/gnu-logo.png" alt="<?php bloginfo( 'name' ); ?>" /></a>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" id="logo" class="site-title" rel="home" itemprop="url"><img src="<?php echo get_template_directory_uri(); ?>/_/img/gnu-logo.png" alt="<?php bloginfo( 'name' ); ?>" itemprop="image"/></a>
 					<a href="#primary-navigation" class="menu-toggle"><span class="toggle-icon"></span>Menu</a>
 					<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
 						<a class="screen-reader-text skip-link" href="#content">Skip to content</a>

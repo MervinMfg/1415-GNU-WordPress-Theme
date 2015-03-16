@@ -223,6 +223,6 @@ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG         GGGGGG
 		</header><!-- .site-header -->
 		<div id="main" class="site-main">
 			<div class="global-alert">
-				<p class="small message usd cad">2014/15 Snowboards and Bindings now 20% OFF! Free standard shipping on orders over $75</p>
-				<p class="small message eur">2014/15 Snowboards and Bindings now 20% OFF! Free standard shipping on orders over €75</p>
+				<p class="small message usd cad">2014/15 Snowboards, Bindings and Apparel now 20% OFF! Free standard shipping on orders over $75</p>
+				<p class="small message eur">2014/15 Snowboards, Bindings and Apparel now 20% OFF! Free standard shipping on orders over €75</p>
 			</div>

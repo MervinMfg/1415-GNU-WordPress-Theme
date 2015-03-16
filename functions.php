@@ -119,21 +119,21 @@ function getCurrencyCode () {
 // GET PRICE DISPLAY
 function getPrice ($usPrice, $caPrice, $eurPrice, $sale, $salePercent) {
 	$price = '<div class="price">';
-	/*if ($sale == "Yes") {
+	if ($sale == "Yes") {
 		// US Sale Price
 		$price .= '<p class="us-price strike">$' . $usPrice . ' <span class="currency-note">USD</span></p><p class="us-price"><span itemprop="priceCurrency" content="USD">$</span><span itemprop="price">' . round($usPrice * ((100 - $salePercent) / 100), 2) . '</span> <span class="currency-note">USD (' . $salePercent . '% off)</span></p>';
 		// CA Sale Price
 		$price .= '<p class="ca-price strike">$' . $caPrice . ' <span class="currency-note">CAD</span></p><p class="ca-price">$' . round($caPrice * ((100 - $salePercent) / 100), 2) . ' <span class="currency-note">CAD (' . $salePercent . '% off)</span></p>';
 		// EU Sale Price
 		$price .= '<p class="eur-price strike">€' . $eurPrice . ' <span class="currency-note">EUR incl. VAT</span></p><p class="eur-price">€' . round($eurPrice * ((100 - $salePercent) / 100), 2) . ' <span class="currency-note">EUR incl. VAT (' . $salePercent . '% off)<span></p>';
-	} else {*/
+	} else {
 		// US Price
 		$price .= '<p class="us-price"><span itemprop="priceCurrency" content="USD">$</span><span itemprop="price" content="' . $usPrice . '">' . $usPrice . '</span> <span class="currency-note">USD</span></p>';
 		// CA Price
 		$price .= '<p class="ca-price">$' . $caPrice . ' <span class="currency-note">CAD</span></p>';
 		// EU Price
 		$price .= '<p class="eur-price">€' . $eurPrice . ' <span class="currency-note">EUR incl. VAT</span></p>';
-	//}
+	}
 	$price .= '</div><!-- .price -->';
 	return $price;
 }

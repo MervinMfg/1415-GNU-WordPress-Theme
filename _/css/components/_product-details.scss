@@ -1,6 +1,7 @@
-/* ==========================================================================
-   COMPONENTS/_PRODUCT-DETAILS.SCSS
-   ========================================================================== */
+// ==========================================================================
+// COMPONENTS/_PRODUCT-DETAILS.SCSS
+// ==========================================================================
+
 .product-title,
 .product-slogan,
 .product-sizes,
@@ -20,36 +21,36 @@
 
 .product-images {
   margin-bottom: 18px;
-}
 
-.image-list {
-  .product-image {
-    display: none;
-
-    &:first-child {
-      display: block;
-    }
-  }
-}
-
-.owl-carousel {
-  display: block;
-
-  .owl-item {
-    visibility: hidden;
-
-    &.active,
-    &.animated {
-      visibility: visible;
-    }
-
+  .image-list {
     .product-image {
-      display: block;
+      display: none;
+
+      &:first-child {
+        display: block;
+      }
     }
   }
 
-  .owl-dots {
-    display: none;
+  .owl-carousel {
+    display: block;
+
+    .owl-item {
+      visibility: hidden;
+
+      &.active,
+      &.animated {
+        visibility: visible;
+      }
+
+      .product-image {
+        display: block;
+      }
+    }
+
+    .owl-dots {
+      display: none;
+    }
   }
 }
 
@@ -125,13 +126,12 @@
     }
   }
 }
-
 .product-price {
   margin-bottom: 20px;
 
   p {
-    font-size: 3.6em;
     line-height: 1em;
+    font-size: 3.6em;
   }
 }
 
@@ -222,6 +222,8 @@
   .dealer-link {
     margin-bottom: 10px;
   }
+
+  .shopatron-secure {}
 }
 
 .international .product-buy {
@@ -239,7 +241,7 @@
 }
 
 .product-navigation {
-  background: $black url('../img/bg-overview-title.png') center center;
+  background: $black url("../img/bg-overview-title.png") center center;
   width: 100%;
 
   .nav-container {
@@ -288,14 +290,13 @@
     }
   }
 }
-
 .product-info {
-  background: $white url('../img/bg-grey-triangles-details.png') center center;
+  background: $white url("../img/bg-grey-triangles-details.png") center center;
   padding: 40px 20px;
 
   h3,
   .h3 {
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
     text-align: center;
 
     &:last-child {
@@ -333,7 +334,6 @@
       }
     }
   }
-
   .binding-animation {
     .owl-carousel {
       .owl-item {
@@ -348,13 +348,12 @@
 
     .binding-steps .binding-step {
       h4 {
-        margin-bottom: .5em;
+        margin-bottom: 0.5em;
         text-align: center;
       }
     }
   }
 }
-
 .product-technology {
   .h1 {
     padding: 40px 20px;
@@ -390,8 +389,8 @@
   }
 
   .tech-minor {
-    margin: 0 auto;
     max-width: 320px;
+    margin: 0 auto;
     padding: 0 20px;
 
     li {
@@ -409,7 +408,7 @@
 }
 
 .product-video {
-  background: $white url('../img/bg-grey-triangles.png') bottom center;
+  background: $white url("../img/bg-grey-triangles.png") bottom center;
   padding: 40px 0;
 }
 
@@ -418,104 +417,103 @@
 }
 
 .product-specifications {
-  background: $black url('../img/bg-overview-title.png') center center;
+  background: $black url("../img/bg-overview-title.png") center center;
   color: $white;
-}
 
-.specs-title {
-  margin: 0 auto;
-  max-width: 320px;
-  padding: 20px 20px 10px;
-  text-align: center;
-}
+  .specs-title {
+    margin: 0 auto;
+    max-width: 320px;
+    padding: 20px 20px 10px;
+    text-align: center;
+  }
 
-.spec-navigation {
-  margin: 0 auto;
-  max-width: 320px;
-  padding: 0 10px 20px;
-  text-align: center;
+  .spec-navigation {
+    margin: 0 auto;
+    max-width: 320px;
+    padding: 0 10px 20px;
+    text-align: center;
 
-  li {
-    display: inline-block;
-    margin-bottom: 5px;
+    li {
+      display: inline-block;
+      margin-bottom: 5px;
 
-    a {
+      a {
+        color: $white;
+        display: block;
+        padding: 5px;
+
+        &:hover,
+        &:focus,
+        &.active {
+          background: $white;
+          color: $black;
+        }
+      }
+    }
+  }
+
+  .specs-link-container {
+    text-align: center;
+
+    .all-specs-link {
       color: $white;
-      display: block;
-      padding: 5px;
+      display: inline-block;
+      font-family: $neuronExtraBold;
+      font-size: 1.8em;
+      margin: 10px auto;
+      padding: 10px;
+      text-transform: uppercase;
 
       &:hover,
       &:focus,
-      &.active {
+      &:active {
         background: $white;
         color: $black;
       }
     }
   }
-}
 
-.specs-link-container {
-  text-align: center;
+  .spec-listing {
+    display: none;
+    margin: 0 auto;
+    max-width: 320px;
+    padding: 0 20px 10px;
 
-  .all-specs-link {
-    color: $white;
-    display: inline-block;
-    font-family: $neuronExtraBold;
-    font-size: 1.8em;
-    margin: 10px auto;
-    padding: 10px;
-    text-transform: uppercase;
-
-    &:hover,
-    &:focus,
-    &:active {
-      background: $white;
-      color: $black;
+    &.active {
+      display: block;
     }
-  }
-}
 
-.spec-listing {
-  display: none;
-  margin: 0 auto;
-  max-width: 320px;
-  padding: 0 20px 10px;
-
-  &.active {
-    display: block;
-  }
-
-  .group-1,
-  .group-2,
-  .group-3 {
-    clear: both;
-    float: left;
-    width: 100%;
-  }
-
-  p {
-    clear: both;
-    height: 30px;
-    line-height: 1em;
-    margin: 0;
-
-    .spec-title {
+    .group-1,
+    .group-2,
+    .group-3 {
+      clear: both;
       float: left;
-      width: 50%;
+      width: 100%;
+    }
 
-      .spec-small {
-        font-size: .6em;
+    p {
+      clear: both;
+      height: 30px;
+      line-height: 1em;
+      margin: 0;
+
+      .spec-title {
+        float: left;
+        width: 50%;
+
+        .spec-small {
+          font-size: 0.6em;
+        }
+      }
+
+      .spec-value {
+        float: left;
+        text-align: right;
+        width: 50%;
       }
     }
-
-    .spec-value {
-      float: left;
-      text-align: right;
-      width: 50%;
-    }
   }
 }
-
 @media screen and (min-width: $breakpoint-small) {
   .product-awards-price {
     position: relative;
@@ -634,7 +632,6 @@
     }
   }
 }
-
 @media screen and (min-width: $breakpoint-medium) {
   .product-main {
     .product-images {
@@ -674,8 +671,8 @@
   }
 
   .product-awards-price {
-    width: 520px;
     margin: 0 auto;
+    width: 520px;
 
     .product-awards ul li {
       &:hover,
@@ -708,7 +705,7 @@
           width: 50%;
 
           option.selectable-option {
-            font-size: 0.7em;
+            font-size: .7em;
           }
         }
 
@@ -743,7 +740,7 @@
       vertical-align: middle;
 
       .nav-icon {
-        background-image: url('../img/sprite.png');
+        background-image: url("../img/sprite.png");
         display: inline-block;
         height: 25px;
         margin-bottom: -3px;
@@ -826,10 +823,10 @@
 
       ul li {
         h3 {
-          width: 100%;
           float: none;
-          text-align: center;
           padding: 0;
+          text-align: center;
+          width: 100%;
         }
 
         img {
@@ -848,7 +845,7 @@
   }
 
   .product-technology {
-    background: url('../img/weird-science.png') no-repeat top left;
+    background: url("../img/weird-science.png") no-repeat top left;
     background-position: 10% -8px;
     background-size: 224px 148px;
 
@@ -1028,8 +1025,8 @@
 
       .product-images {
         position: relative;
-        top: 0;
         right: 0;
+        top: 0;
         width: 100%;
 
         .image-list .product-image a img {

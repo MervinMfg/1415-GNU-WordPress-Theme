@@ -1,188 +1,210 @@
-/* ==========================================================================
-   COMPONENTS/_GLOBAL.SCSS
-   ========================================================================== */
+// ==========================================================================
+// COMPONENTS/_GLOBAL.SCSS
+// ==========================================================================
 
 .site-main {
-	position: relative;
+  position: relative;
 }
+
 .section-spacer {
-	height: 10px;
-	background: url('../img/bg-grey-triangles.png') top center;;
+  background: url('../img/bg-grey-triangles.png') top center;
+  height: 10px;
 }
+
 .price p {
-	display: none;
+  display: none;
 
-	&.active {
-		display: block;
-		margin: 0;
-	}
-	.currency-note {
-		font-size: 0.5em;
-		font-style: italic;
-	}
-	&.strike {
-		text-decoration: line-through;
-	}
+  &.active {
+    display: block;
+    margin: 0;
+  }
+
+  .currency-note {
+    font-size: .5em;
+    font-style: italic;
+  }
+
+  &.strike {
+    text-decoration: line-through;
+  }
 }
+
 .loading {
-	width: 100px;
-	height: 50px;
-	background: url("../img/loading.gif") no-repeat top left;
-	display: block;
+  background: url('../img/loading.gif') no-repeat top left;
+  display: block;
+  height: 50px;
+  width: 100px;
 }
+
 .zoom-icon {
-	display: none;
+  display: none;
 }
+
 #disqus_thread {
-	padding: 10px 20px;
-	max-width: $breakpoint-large;
-	margin: 0 auto;
+  margin: 0 auto;
+  max-width: $breakpoint-large;
+  padding: 10px 20px;
 }
+
 .social-icons.black .menu-item a {
-	width: 36px;
-	height: 41px;
+  height: 41px;
+  width: 36px;
 
-	&.icon-facebook {
-		background-position: -10px -60px;
+  &.icon-facebook {
+    background-position: -10px -60px;
 
-		&:hover,
-		&:focus {
-			background-position: -298px -60px;
-		}
-	}
-	&.icon-instagram {
-		background-position: -216px -60px;
+    &:hover,
+    &:focus {
+      background-position: -298px -60px;
+    }
+  }
 
-		&:hover,
-		&:focus {
-			background-position: -504px -60px;
-		}
-	}
-	&.icon-twitter {
-		background-position: -51px -60px;
+  &.icon-instagram {
+    background-position: -216px -60px;
 
-		&:hover,
-		&:focus {
-			background-position: -339px -60px;
-		}
-	}
-	/* &.icon-pinterest {
-		background-position: -93px -60px;
-	} */
-	&.icon-vimeo {
-		background-position: -134px -60px;
+    &:hover,
+    &:focus {
+      background-position: -504px -60px;
+    }
+  }
 
-		&:hover,
-		&:focus {
-			background-position: -422px -60px;
-		}
-	}
-	&.icon-rss {
-		background-position: -176px -60px;
+  &.icon-twitter {
+    background-position: -51px -60px;
 
-		&:hover,
-		&:focus {
-			background-position: -464px -60px;
-		}
-	}
+    &:hover,
+    &:focus {
+      background-position: -339px -60px;
+    }
+  }
+
+  &.icon-vimeo {
+    background-position: -134px -60px;
+
+    &:hover,
+    &:focus {
+      background-position: -422px -60px;
+    }
+  }
+
+  &.icon-rss {
+    background-position: -176px -60px;
+
+    &:hover,
+    &:focus {
+      background-position: -464px -60px;
+    }
+  }
 }
+
 .default-section .default-content {
-	padding: 20px;
-	max-width: $breakpoint-large;
-	margin: 0 auto;
+  margin: 0 auto;
+  max-width: $breakpoint-large;
+  padding: 20px;
 
-	ul,
-	ol {
-		padding: 0 20px 0 60px;
-		margin-bottom: 2em;
-		list-style: square;
+  ul,
+  ol {
+    list-style: square;
+    margin-bottom: 2em;
+    padding: 0 20px 0 60px;
 
-		li {
-			font-family: $neuronLight;
-			font-size: 1.8em;
-			font-weight: 700;
-			line-height: 2em;
-			margin-bottom: 0.5em;
-		}
-	}
-	ol {
-		list-style: decimal;
-	}
+    li {
+      font-family: $neuronLight;
+      font-size: 1.8em;
+      font-weight: 700;
+      line-height: 2em;
+      margin-bottom: .5em;
+    }
+  }
+
+  ol {
+    list-style: decimal;
+  }
 }
+
 .global-alert {
-	background: $pink;
-	padding: 5px 0;
-	display: none;
+  background: $pink;
+  padding: 5px 0;
 
-	.message {
-		display: none;
-		margin-bottom: 0;
-		text-align: center;
-		color: $white;
-		padding: 0 10px;
-		line-height: 1.33em;
-	}
-}
-.currency-usd .global-alert {
-	display: block;
+  .message {
+    color: $white;
+    display: none;
+    line-height: 1.33em;
+    margin-bottom: 0;
+    padding: 0 10px;
+    text-align: center;
 
-	.usd {
-		display: block;
-	}
+    &.usd {
+      display: block;
+    }
+  }
 }
-.currency-cad .global-alert {
-	display: block;
 
-	.cad {
-		display: block;
-	}
-}
-.currency-eur .global-alert {
-	display: block;
-
-	.eur {
-		display: block;
-	}
-}
 .international .global-alert {
-	display: none;
+  display: none;
 }
+
+.currency-cad .global-alert {
+  .usd {
+    display: none;
+  }
+
+  .cad {
+    display: block;
+  }
+}
+
+.currency-eur .global-alert {
+  .usd {
+    display: none;
+  }
+
+  .eur {
+    display: block;
+  }
+}
+
 @media screen and (min-width: $breakpoint-medium) {
-	.site-main {
-		padding-top: 75px;
-	}
-	/* fix for fixed header, adds spacing to div you have anchor links to */
-	.deeplink-top-fix:before {
-		display: block;
-		content: "";
-		height: 75px;
-		margin: -75px 0 0;
-		z-index: -1;
-		position: relative;
-	}
-	.zoom-icon {
-		display: block;
-		width: 40px;
-		height: 40px;
-		background: url("../img/sprite.png") no-repeat;
-		background-position: -111px -10px;
-	}
-	.zoom-active .zoom-icon {
-		background-position: -162px -10px;
-	}
+  .site-main {
+    padding-top: 75px;
+  }
+
+  // fix for fixed header, adds spacing to div you have anchor links to
+  .deeplink-top-fix:before {
+    content: '';
+    display: block;
+    height: 75px;
+    margin: -75px 0 0;
+    position: relative;
+    z-index: -1;
+  }
+
+  .zoom-icon {
+    background: url('../img/sprite.png') no-repeat;
+    background-position: -111px -10px;
+    display: block;
+    height: 40px;
+    width: 40px;
+  }
+
+  .zoom-active .zoom-icon {
+    background-position: -162px -10px;
+  }
 }
+
 @media screen and (min-width: $breakpoint-large) {
-	.site-main {
-		padding-top: 55px;
-	}
-	.active-takeover .site-main {
-		padding-top: 484px;
-	}
-	/* fix for fixed header, adds spacing to div you have anchor links to */
-	.deeplink-top-fix:before {
-		display: block;
-		content: "";
-		height: 55px;
-		margin: -55px 0 0;
-	}
+  .site-main {
+    padding-top: 55px;
+  }
+
+  .active-takeover .site-main {
+    padding-top: 484px;
+  }
+
+  // fix for fixed header, adds spacing to div you have anchor links to
+  .deeplink-top-fix:before {
+    content: '';
+    display: block;
+    height: 55px;
+    margin: -55px 0 0;
+  }
 }

@@ -365,25 +365,22 @@ abbr { border-bottom: 1px dotted #666; cursor: help; }
   .site-footer .footer-content .region-social-wrapper { width: 30%; float: left; clear: none; padding: 30px 0 0; }
   .site-footer .footer-content .region-social-wrapper .region-toggle, .site-footer .footer-content .region-social-wrapper .social-icons { width: 100%; padding: 0; }
   .site-footer .footer-content .region-social-wrapper .social-icons { padding-top: 20px; } }
-/* ========================================================================== COMPONENTS/_GLOBAL.SCSS ========================================================================== */
 .site-main { position: relative; }
 
-.section-spacer { height: 10px; background: url("../img/bg-grey-triangles.png") top center; }
+.section-spacer { background: url("../img/bg-grey-triangles.png") top center; height: 10px; }
 
 .price p { display: none; }
 .price p.active { display: block; margin: 0; }
-.price p .currency-note { font-size: 0.5em; font-style: italic; }
+.price p .currency-note { font-size: .5em; font-style: italic; }
 .price p.strike { text-decoration: line-through; }
 
-.loading { width: 100px; height: 50px; background: url("../img/loading.gif") no-repeat top left; display: block; }
+.loading { background: url("../img/loading.gif") no-repeat top left; display: block; height: 50px; width: 100px; }
 
 .zoom-icon { display: none; }
 
-#disqus_thread { padding: 10px 20px; max-width: 1056px; margin: 0 auto; }
+#disqus_thread { margin: 0 auto; max-width: 1056px; padding: 10px 20px; }
 
-.social-icons.black .menu-item a { width: 36px; height: 41px; /* &.icon-pinterest {
-	background-position: -93px -60px;
-} */ }
+.social-icons.black .menu-item a { height: 41px; width: 36px; }
 .social-icons.black .menu-item a.icon-facebook { background-position: -10px -60px; }
 .social-icons.black .menu-item a.icon-facebook:hover, .social-icons.black .menu-item a.icon-facebook:focus { background-position: -298px -60px; }
 .social-icons.black .menu-item a.icon-instagram { background-position: -216px -60px; }
@@ -395,34 +392,30 @@ abbr { border-bottom: 1px dotted #666; cursor: help; }
 .social-icons.black .menu-item a.icon-rss { background-position: -176px -60px; }
 .social-icons.black .menu-item a.icon-rss:hover, .social-icons.black .menu-item a.icon-rss:focus { background-position: -464px -60px; }
 
-.default-section .default-content { padding: 20px; max-width: 1056px; margin: 0 auto; }
-.default-section .default-content ul, .default-section .default-content ol { padding: 0 20px 0 60px; margin-bottom: 2em; list-style: square; }
-.default-section .default-content ul li, .default-section .default-content ol li { font-family: "Neuron Light", Helvetica, Arial, sans-serif; font-size: 1.8em; font-weight: 700; line-height: 2em; margin-bottom: 0.5em; }
+.default-section .default-content { margin: 0 auto; max-width: 1056px; padding: 20px; }
+.default-section .default-content ul, .default-section .default-content ol { list-style: square; margin-bottom: 2em; padding: 0 20px 0 60px; }
+.default-section .default-content ul li, .default-section .default-content ol li { font-family: "Neuron Light", Helvetica, Arial, sans-serif; font-size: 1.8em; font-weight: 700; line-height: 2em; margin-bottom: .5em; }
 .default-section .default-content ol { list-style: decimal; }
 
-.global-alert { background: #FF3399; padding: 5px 0; display: none; }
-.global-alert .message { display: none; margin-bottom: 0; text-align: center; color: #FFF; padding: 0 10px; line-height: 1.33em; }
-
-.currency-usd .global-alert { display: block; }
-.currency-usd .global-alert .usd { display: block; }
-
-.currency-cad .global-alert { display: block; }
-.currency-cad .global-alert .cad { display: block; }
-
-.currency-eur .global-alert { display: block; }
-.currency-eur .global-alert .eur { display: block; }
+.global-alert { background: #FF3399; padding: 5px 0; }
+.global-alert .message { color: #FFF; display: none; line-height: 1.33em; margin-bottom: 0; padding: 0 10px; text-align: center; }
+.global-alert .message.usd { display: block; }
 
 .international .global-alert { display: none; }
 
+.currency-cad .global-alert .usd { display: none; }
+.currency-cad .global-alert .cad { display: block; }
+
+.currency-eur .global-alert .usd { display: none; }
+.currency-eur .global-alert .eur { display: block; }
+
 @media screen and (min-width: 748px) { .site-main { padding-top: 75px; }
-  /* fix for fixed header, adds spacing to div you have anchor links to */
-  .deeplink-top-fix:before { display: block; content: ""; height: 75px; margin: -75px 0 0; z-index: -1; position: relative; }
-  .zoom-icon { display: block; width: 40px; height: 40px; background: url("../img/sprite.png") no-repeat; background-position: -111px -10px; }
+  .deeplink-top-fix:before { content: ''; display: block; height: 75px; margin: -75px 0 0; position: relative; z-index: -1; }
+  .zoom-icon { background: url("../img/sprite.png") no-repeat; background-position: -111px -10px; display: block; height: 40px; width: 40px; }
   .zoom-active .zoom-icon { background-position: -162px -10px; } }
 @media screen and (min-width: 1056px) { .site-main { padding-top: 55px; }
   .active-takeover .site-main { padding-top: 484px; }
-  /* fix for fixed header, adds spacing to div you have anchor links to */
-  .deeplink-top-fix:before { display: block; content: ""; height: 55px; margin: -55px 0 0; } }
+  .deeplink-top-fix:before { content: ''; display: block; height: 55px; margin: -55px 0 0; } }
 /* ========================================================================== COMPONENTS/_SHOPATRON.SCSS ========================================================================== */
 /* hide shopatron api key */
 #shopatronCart { display: none; }

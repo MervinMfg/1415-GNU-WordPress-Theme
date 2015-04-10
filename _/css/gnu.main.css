@@ -371,7 +371,7 @@ abbr { border-bottom: 1px dotted #666; cursor: help; }
 
 .price p { display: none; }
 .price p.active { display: block; margin: 0; }
-.price p .currency-note { font-size: .5em; font-style: italic; }
+.price p .currency-note { font-size: .8em; font-style: italic; }
 .price p.strike { text-decoration: line-through; }
 
 .loading { background: url("../img/loading.gif") no-repeat top left; display: block; height: 50px; width: 100px; }

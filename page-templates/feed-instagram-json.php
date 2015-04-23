@@ -1,15 +1,15 @@
-<?php 
+<?php
 /*
 Template Name: Instagram JSON
 */
 
 // REQUEST THE INSTAGRAM POSTS
-// CLIENT ID	4c33ba16771a4311948cfafffe58c345
-// CLIENT SECRET	e5af31a72a7d4bf19ecf42fe7bf07fd5
-// ACCESS TOKEN URL https://instagram.com/oauth/authorize/?client_id=4c33ba16771a4311948cfafffe58c345&redirect_uri=http://www.lib-tech.com&response_type=token
-
-$clientId = '4c33ba16771a4311948cfafffe58c345';
-$accessToken = '18520998.4c33ba1.51dab4853b2748fda33c031a14ae17b5'; // libtechnologies user access token
+$clientId = '5fcbe8507f58425d81c9c0d6fccbbbe2';
+$clientSecret = '27f03ea749d743e3804ea3d382a6e509';
+// ACCESS TOKEN URL
+// https://instagram.com/oauth/authorize/?client_id=CLIENT-ID&redirect_uri=REDIRECT-URI&response_type=token
+// https://instagram.com/oauth/authorize/?client_id=5fcbe8507f58425d81c9c0d6fccbbbe2&redirect_uri=http://www.gnu.com&response_type=token
+$accessToken = '14985997.5fcbe85.874e0380e1134a148581aa298fc31bd8'; // libtechnologies user access token
 $limit = 10; // set default limit
 if (isset($_GET["limit"])) {
 	$limit = $_GET["limit"]; // update limit if declared

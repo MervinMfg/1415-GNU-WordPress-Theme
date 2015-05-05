@@ -20,12 +20,17 @@
   }
 
   .currency-note {
-    font-size: .8em;
+    font-size: .5em;
     font-style: italic;
   }
 
   &.strike {
     text-decoration: line-through;
+    font-size: 3em;
+
+    .currency-note {
+      font-size: .7em;
+    }
   }
 }
 

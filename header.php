@@ -232,6 +232,6 @@ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG         GGGGGG
 		</header><!-- .site-header -->
 		<div id="main" class="site-main">
 			<div class="global-alert">
-				<p class="small message usd cad">2014/15 Snowboards, Bindings and Apparel now 20% OFF! Free standard shipping on orders over $75</p>
-				<p class="small message eur">2014/15 Snowboards, Bindings and Apparel now 20% OFF! Free standard shipping on orders over €75</p>
+				<p class="small message usd cad">The UNREAL DEAL - Up to 30% OFF most 14/15 products! FREE standard shipping on all orders over $75</p>
+				<p class="small message eur">The UNREAL DEAL - Up to 30% OFF most 14/15 products! FREE standard shipping on all orders over €75</p>
 			</div>
